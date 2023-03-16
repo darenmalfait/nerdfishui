@@ -1,0 +1,103 @@
+export const metaTitle = 'Toast'
+export const description = 'Toast component of Nerdfishui'
+export const pkg = 'ui'
+export const path = 'toast'
+
+# Toast
+
+Toast is a message that is displayed temporarily on the screen. It is used to
+display a message to the user.
+
+<Code
+  code={`import { Toast, ToastViewport, ToastProvider } from '@nerdfish/ui'`}
+/>
+
+---
+
+## Preview
+
+<Preview code={`<Toast title="example title">Content of the toast</Toast>`}>
+  <div className="p-8">
+    <Toast title="example title">Content of the toast</Toast>
+  </div>
+</Preview>
+
+---
+
+## Properties
+
+<Properties>
+  <Property name="title" type="string" required>
+    The title of the toast.
+  </Property>
+  <Property
+    name="variant"
+    type="[default, warning, danger, success, info]"
+    required
+  >
+    The type of the toast.
+  </Property>
+  <Property name="children" type="[React.ReactNode]" required>
+    The content of the component.
+  </Property>
+</Properties>
+
+---
+
+## Configuration
+
+### ToastProvider
+
+This needs to be wrapped around the root component of your application.
+
+<Code
+  code={`<ToastProvider>
+  <App />
+</ToastProvider>`}
+/>
+
+### ToastViewport
+
+This needs to be placed in the root component of your application.
+
+<Code code={`<ToastViewport />`} />
+
+## Type
+
+<Preview
+  code={`<Toast variant="default" title="example title">
+  Content of the toast
+</Toast>
+<Toast variant="success" title="Success Example">
+  Content of the toast
+</Toast>
+<Toast variant="warning" title="Warning Example">
+  Content of the toast
+</Toast>
+<Toast variant="info" title="Info Example">
+  Content of the toast
+</Toast>
+<Toast variant="danger" title="Danger Example">
+  Content of the toast
+</Toast>`}
+>
+  <div className="flex flex-wrap gap-3 p-8">
+    <Toast variant="default" title="example title">
+      Content of the toast
+    </Toast>
+    <Toast variant="success" title="Success Example">
+      Content of the toast
+    </Toast>
+    <Toast variant="warning" title="Warning Example">
+      Content of the toast
+    </Toast>
+    <Toast variant="info" title="Info Example">
+      Content of the toast
+    </Toast>
+    <Toast variant="danger" title="Danger Example">
+      Content of the toast
+    </Toast>
+  </div>
+</Preview>
+
+---

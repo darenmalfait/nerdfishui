@@ -1,0 +1,36 @@
+export const metaTitle = 'ButtonLink'
+export const description = 'ButtonLink component of Nerdfishui'
+export const pkg = 'ui'
+export const path = 'button-link'
+
+# ButtonLink
+
+ButtonLink is a link that looks like a [Button](/button).
+
+<Code code={`import { ButtonLink } from '@nerdfish/ui'`} />
+
+## Preview
+
+<Preview
+  code={`<ButtonLink href="https://www.nerdfish.be">Click me</ButtonLink>`}
+>
+  <div className="space-y-2">
+    <ButtonLink href="https://www.nerdfish.be">Click me</ButtonLink>
+  </div>
+</Preview>
+
+---
+
+## Properties
+
+<Properties>
+  <Property name="external" type="boolean">
+    If true, the link will open in a new tab.
+  </Property>
+  <Property name="variant" type={['primary', 'secondary', 'danger', 'success']}>
+    styling preset for the button-link.
+  </Property>
+  <Property name="size" type={['small', 'medium', 'large']}>
+    The size of the button-link.
+  </Property>
+</Properties>

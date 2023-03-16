@@ -1,0 +1,10 @@
+{
+  "name": "@nerdfish/tsconfig",
+  "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

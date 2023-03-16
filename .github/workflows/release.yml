@@ -1,0 +1,59 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@b173b6ec0100793626c2d9e6b90435061f4fc3e5 # 0.11.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - uses: pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd # v2.2.4
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@940f3d7cf195ba83374c77632d1e2cbb2f24ae68 # v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint code
+        run: pnpm build && pnpm validate
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

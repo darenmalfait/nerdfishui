@@ -1,0 +1,41 @@
+# Dependency directories
+node_modules/
+
+# dist
+packages/*/dist
+build
+
+# next.js
+/.next/
+/out/
+
+# Optional npm cache directory
+.npm
+
+# Mac files
+.DS_Store
+
+# misc
+lerna-debug.log
+.history
+package-lock.json
+packages/**/yarn.lock
+styles.output.css
+.turbo
+tsconfig.tsbuildinfo
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+yarn-error.log
+
+# Local Netlify folder
+.netlify
+
+# vercel
+.vercel

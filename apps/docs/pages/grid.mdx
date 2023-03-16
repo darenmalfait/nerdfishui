@@ -1,0 +1,42 @@
+export const metaTitle = 'Grid'
+export const description = 'Grid component of Nerdfishui'
+export const pkg = 'ui'
+export const path = 'grid'
+
+# Grid
+
+Grid is a layout component that allows you to use grid functionality in your
+application with some predefined styling.
+
+<Code code={`import { Grid } from '@nerdfish/ui'`} />
+
+## Preview
+
+<Preview
+  code={`<Grid nested>
+  <div className="col-span-full">col-span-full</div>
+  <div className="col-span-4">col-span-4</div>
+  <div className="col-span-4">col-span-4</div>
+  <div className="col-span-4">col-span-4</div>
+</Grid>`}
+>
+  <Grid nested>
+    <div className="col-span-full">col-span-full</div>
+    <div className="col-span-4">col-span-4</div>
+    <div className="col-span-4">col-span-4</div>
+    <div className="col-span-4">col-span-4</div>
+  </Grid>
+</Preview>
+
+---
+
+## Properties
+
+<Properties>
+  <Property name="nested" type="boolean">
+    If true, the grid will take up the full width of the parent container.
+  </Property>
+  <Property name="children" type="React.ReactNode" required>
+    The content of the grid.
+  </Property>
+</Properties>
