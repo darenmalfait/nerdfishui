@@ -1,0 +1,64 @@
+export const metaTitle = 'Combobox'
+export const description =
+  'The combobox component is used to select an option from a list of options.'
+export const pkg = 'ui'
+export const path = 'combobox'
+
+# Combobox
+
+The combobox component is used to select an option from a list of options.
+
+<Code code={`import { Combobox } from '@nerdfish/ui'`} />
+
+## Preview
+
+<Preview
+  code={`<Grid nested>
+  <Combobox>
+    <div>Hello world</div>
+    <div>Hello world</div>
+  </Combobox>
+</Grid>`}
+>
+  <div className="space-y-2">
+    <Combobox
+      emptyString="No frameworks found"
+      placeholder="Select a framework"
+      items={[
+        {
+          value: 'next.js',
+          label: 'Next.js',
+        },
+        {
+          value: 'sveltekit',
+          label: 'SvelteKit',
+        },
+        {
+          value: 'nuxt.js',
+          label: 'Nuxt.js',
+        },
+        {
+          value: 'remix',
+          label: 'Remix',
+        },
+        {
+          value: 'astro',
+          label: 'Astro',
+        },
+      ]}
+    />
+  </div>
+</Preview>
+
+---
+
+## Properties
+
+<Properties>
+  <Property name="size" type="[small, default, medium, full]">
+    The width of the container.
+  </Property>
+  <Property name="children" type="React.ReactNode" required>
+    The content of the container.
+  </Property>
+</Properties>

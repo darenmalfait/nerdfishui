@@ -1,0 +1,62 @@
+export const metaTitle = 'Tabs'
+export const description = 'Tabs component of Nerdfishui'
+export const pkg = 'ui'
+export const path = 'tabs'
+
+# Tabs
+
+Tabs is a component that allows you to switch between different views.
+
+<Code code={`import { Tabs } from '@nerdfish/ui'`} />
+
+---
+
+## Preview
+
+<Preview
+  code={`<Tabs defaultValue="general" className="w-[400px]">
+  <Tabs.List>
+    <Tabs.Trigger value="general">General</Tabs.Trigger>
+    <Tabs.Trigger value="privacy">Privacy</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="general">
+    <p className="text-sm text-primary">
+      General settings tab
+    </p>
+  </Tabs.Content>
+  <Tabs.Content value="privacy">
+    <p className="text-sm text-primary">
+      Privacy settings tab
+    </p>
+  </Tabs.Content>
+</Tabs>`}
+>
+  <div className="p-8">
+    <Tabs defaultValue="general" className="w-[400px]">
+      <Tabs.List>
+        <Tabs.Trigger value="general">General</Tabs.Trigger>
+        <Tabs.Trigger value="privacy">Privacy</Tabs.Trigger>
+      </Tabs.List>
+      <Tabs.Content value="general">
+        <p className="text-sm text-primary">General settings tab</p>
+      </Tabs.Content>
+      <Tabs.Content value="privacy">
+        <p className="text-sm text-primary">Privacy settings tab</p>
+      </Tabs.Content>
+    </Tabs>
+  </div>
+</Preview>
+
+---
+
+## Properties
+
+<Properties>
+  <Property
+    name="children"
+    type="[React.ReactNode, Tabs, Tabs.Content, Tabs.List, Tabs.Trigger]"
+    required
+  >
+    The content of the component.
+  </Property>
+</Properties>
