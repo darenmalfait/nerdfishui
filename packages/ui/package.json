@@ -33,7 +33,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@nerdfish/utils": "workspace:^0.0.0",
+    "@nerdfish/utils": "workspace:*",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-alert-dialog": "^1.0.3",
     "@radix-ui/react-aspect-ratio": "^1.0.2",
