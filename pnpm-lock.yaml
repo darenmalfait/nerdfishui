@@ -53,7 +53,7 @@ importers:
       clsx: ^1.2.1
       cross-env: ^7.0.3
       eslint-config-daren: ^4.0.12
-      framer-motion: ^10.4.0
+      framer-motion: ^10.5.0
       lodash: ^4.17.21
       lucide-react: ^0.125.0
       match-sorter: ^6.3.1
@@ -92,7 +92,7 @@ importers:
       '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
       acorn: 8.8.2
       clsx: 1.2.1
-      framer-motion: 10.4.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 10.5.0_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       lucide-react: 0.125.0_react@18.2.0
       match-sorter: 6.3.1
@@ -5378,7 +5378,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
-      tailwindcss: 3.2.7_aesdjsunmf4wiehhujt67my7tu
+      tailwindcss: 3.2.7_postcss@8.4.21
     dev: true
 
   /eslint-scope/5.1.1:
@@ -5767,8 +5767,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion/10.4.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-nhQTbtRxaE7eoNuFeDpp0CdDMHWV5WIKZtV1CSD+zbVZzp5I0vmagOdCTivgBVKgA3ErJH5fIFf8l9FILTYKHQ==}
+  /framer-motion/10.5.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-84Gh6Ct+KCk82YOnS7oq68IMlqcyaejrj2Xtxmh+CPOi7gqa1SZORZYWMJujQ2Qw0YRM2j1xQQdQo/+BtoQicQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -7900,6 +7900,7 @@ packages:
       postcss: 8.4.21
       ts-node: 10.9.1_cbfmry4sbbh4vatmdrsmatfg5a
       yaml: 1.10.2
+    dev: false
 
   /postcss-load-config/3.1.4_postcss@8.4.21:
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
@@ -9052,6 +9053,7 @@ packages:
       resolve: 1.22.1
     transitivePeerDependencies:
       - ts-node
+    dev: false
 
   /tailwindcss/3.2.7_postcss@8.4.21:
     resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
