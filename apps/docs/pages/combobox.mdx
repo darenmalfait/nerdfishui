@@ -22,6 +22,7 @@ The combobox component is used to select an option from a list of options.
 >
   <div className="space-y-2">
     <Combobox
+      label="Framework"
       emptyString="No frameworks found"
       placeholder="Select a framework"
       items={[
@@ -55,10 +56,16 @@ The combobox component is used to select an option from a list of options.
 ## Properties
 
 <Properties>
-  <Property name="size" type="[small, default, medium, full]">
-    The width of the container.
+  <Property name="items" type="Array" required>
+    An array of objects with a value and label property.
   </Property>
-  <Property name="children" type="React.ReactNode" required>
-    The content of the container.
+  <Property name="label" type="String" required>
+    The label of the combobox.
+  </Property>
+  <Property name="placeholder" type="String">
+    The placeholder of the combobox.
+  </Property>
+  <Property name="emptyString" type="String">
+    The string that is displayed when no items are found.
   </Property>
 </Properties>
