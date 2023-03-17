@@ -22,11 +22,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-Introducing Nerdfishui, a custom component library built with React and
-TailwindCSS. Designed to streamline the proof of concept development process and
-provide a collection of visually pleasing and functional components, Nerdfishui
-is the perfect tool for any developer looking to quickly and efficiently build
-beautiful and functional user interfaces.
+Introducing Nerdfishui - a custom component library built with React and TailwindCSS to help streamline proof of concept development and provide visually pleasing and functional components. Nerdfishui is the perfect tool for developers who want to quickly create stunning and user-friendly interfaces.
 
 It's an opinionated library, so you might not agree with all the design, but
 you can add your own styles to the components.
