@@ -13,12 +13,33 @@ The combobox component is used to select an option from a list of options.
 ## Preview
 
 <Preview
-  code={`<Grid nested>
-  <Combobox>
-    <div>Hello world</div>
-    <div>Hello world</div>
-  </Combobox>
-</Grid>`}
+  code={`<Combobox
+  label="Framework"
+  emptyString="No frameworks found"
+  placeholder="Select a framework"
+  items={[
+    {
+      value: 'next.js',
+      label: 'Next.js',
+    },
+    {
+      value: 'sveltekit',
+      label: 'SvelteKit',
+    },
+    {
+      value: 'nuxt.js',
+      label: 'Nuxt.js',
+    },
+    {
+      value: 'remix',
+      label: 'Remix',
+    },
+    {
+      value: 'astro',
+      label: 'Astro',
+    },
+  ]}
+/>`}
 >
   <div className="space-y-2">
     <Combobox
