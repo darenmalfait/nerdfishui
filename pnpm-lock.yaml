@@ -53,7 +53,7 @@ importers:
       clsx: ^1.2.1
       cross-env: ^7.0.3
       eslint-config-daren: ^4.0.12
-      framer-motion: ^10.5.0
+      framer-motion: ^10.6.0
       lodash: ^4.17.21
       lucide-react: ^0.125.0
       match-sorter: ^6.3.1
@@ -92,7 +92,7 @@ importers:
       '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
       acorn: 8.8.2
       clsx: 1.2.1
-      framer-motion: 10.5.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 10.6.0_biqbaboplfbrettd7655fr4n2y
       lodash: 4.17.21
       lucide-react: 0.125.0_react@18.2.0
       match-sorter: 6.3.1
@@ -5767,8 +5767,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion/10.5.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-84Gh6Ct+KCk82YOnS7oq68IMlqcyaejrj2Xtxmh+CPOi7gqa1SZORZYWMJujQ2Qw0YRM2j1xQQdQo/+BtoQicQ==}
+  /framer-motion/10.6.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-RkZe8iBhdWNs1y2HfYh4WlM9Co11/Vu+JCSQzmLaP5alM3QbBiue6OkeXygfxsRDp4yCar95ExoHE0CZQNyuVQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
