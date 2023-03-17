@@ -1,14 +1,12 @@
 {
-  "baseBranch": "main",
-  "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
+  "$schema": "https://unpkg.com/@changesets/config@2.2.0/schema.json",
   "changelog": [
     "@changesets/changelog-github",
     {"repo": "darenmalfait/nerdfishui"}
   ],
   "commit": false,
-  "fixed": [],
   "linked": [],
   "access": "public",
-  "updateInternalDependencies": "patch",
+  "baseBranch": "main",
   "ignore": ["@nerdfish/docs"]
 }
