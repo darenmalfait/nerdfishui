@@ -37,8 +37,19 @@ styling, with strong inspiration from
 
 To install the component-library run the following within your project directory.
 
+npm 
 ```sh
-npm i @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
+npm i @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
+```
+
+yarn 
+```sh
+yarn add @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
+```
+
+npm 
+```sh
+pnpm add @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
 ```
 
 ### Configuration

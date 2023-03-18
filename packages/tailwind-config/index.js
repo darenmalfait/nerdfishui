@@ -75,7 +75,7 @@ module.exports = plugin(
         '@apply text-primary shadow-outline bg-transparent rounded-lg px-2 py-1 !text-2xs':
           {},
       },
-      // keep these styles in sync with the ones in packages/ui-core/src/components/typography/
+      // keep these styles in sync with the ones in packages/ui/src/typography
       // not .not-prose prose
 
       '.prose h1:not(:where([class~="not-prose"] *))': {

@@ -8,9 +8,25 @@ export const path = 'quickstart'
 To install the component-library run the following within your project
 directory.
 
+npm
+
 <Code
   language="bash"
-  code={`npm i @nerdfish/ui-core @nerdfish/ui postcss tailwindcss @tailwindcss/typography @heroicons/react`}
+  code={`npm i @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography @heroicons/react`}
+/>
+
+yarn
+
+<Code
+  language="bash"
+  code={`yarn add @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography @heroicons/react`}
+/>
+
+pnpm
+
+<Code
+  language="bash"
+  code={`pnpm add @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography @heroicons/react`}
 />
 
 ## Configuration
@@ -31,7 +47,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography'), require('@nerdfish/ui-core')], 
+  plugins: [require('@tailwindcss/typography'), require('@nerdfish/tailwind-config')], 
 }`}
 />
 
