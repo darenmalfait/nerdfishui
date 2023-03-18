@@ -1,4 +1,4 @@
-import type {Dict} from './types'
+import {type Dict} from './types'
 
 function omit<T extends Dict, K extends keyof T>(object: T, keys: K[]) {
   const result: Dict = {}
