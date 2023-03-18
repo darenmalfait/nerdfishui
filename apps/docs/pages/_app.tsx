@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {Inter as interFont} from '@next/font/google'
-import type {AppProps} from 'next/app'
+import {type AppProps} from 'next/app'
 import {LazyMotion, domAnimation} from 'framer-motion'
 
 import {Layout} from '../components/layout'
