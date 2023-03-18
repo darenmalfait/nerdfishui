@@ -4,7 +4,7 @@ import * as React from 'react'
 import {VariantProps, cva, cx} from '@nerdfish/utils'
 import {Check} from 'lucide-react'
 
-import type {InputProps} from './input'
+import {type InputProps} from './input'
 
 const toggleVariants = cva(
   'relative flex items-center justify-center rounded-full focus:scale-75',
