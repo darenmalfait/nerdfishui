@@ -135,7 +135,7 @@ importers:
       npm-run-all: ^4.1.5
       react: ^18.2.0
       tailwindcss: 3.2.7
-      tsup: ^6.6.3
+      tsup: ^6.7.0
       typescript: ^5.0.2
     dependencies:
       tailwindcss: 3.2.7_postcss@8.4.21
@@ -148,7 +148,7 @@ importers:
       eslint-config-daren: 4.0.13_ppjdh4y6s3llhxbsspcfntpi7u
       npm-run-all: 4.1.5
       react: 18.2.0
-      tsup: 6.6.3_7ebhnmodlyu4vpxptcd62x65qe
+      tsup: 6.7.0_7ebhnmodlyu4vpxptcd62x65qe
       typescript: 5.0.2
 
   packages/theme:
@@ -163,7 +163,7 @@ importers:
       npm-run-all: ^4.1.5
       react: ^18.2.0
       tailwind-merge: ^1.10.0
-      tsup: ^6.6.3
+      tsup: ^6.7.0
       typescript: ^5.0.2
     dependencies:
       '@nerdfish/utils': link:../utils
@@ -177,7 +177,7 @@ importers:
       eslint-config-daren: 4.0.13_ppjdh4y6s3llhxbsspcfntpi7u
       npm-run-all: 4.1.5
       react: 18.2.0
-      tsup: 6.6.3_7ebhnmodlyu4vpxptcd62x65qe
+      tsup: 6.7.0_7ebhnmodlyu4vpxptcd62x65qe
       typescript: 5.0.2
 
   packages/tsconfig:
@@ -209,7 +209,7 @@ importers:
       npm-run-all: ^4.1.5
       prism-react-renderer: ^1.3.5
       react: ^18.2.0
-      tsup: ^6.6.3
+      tsup: ^6.7.0
       typescript: ^5.0.2
     dependencies:
       '@nerdfish/utils': link:../utils
@@ -237,7 +237,7 @@ importers:
       eslint-config-daren: 4.0.13_ppjdh4y6s3llhxbsspcfntpi7u
       npm-run-all: 4.1.5
       react: 18.2.0
-      tsup: 6.6.3_7ebhnmodlyu4vpxptcd62x65qe
+      tsup: 6.7.0_7ebhnmodlyu4vpxptcd62x65qe
       typescript: 5.0.2
 
   packages/utils:
@@ -252,7 +252,7 @@ importers:
       npm-run-all: ^4.1.5
       react: ^18.2.0
       tailwind-merge: ^1.10.0
-      tsup: ^6.6.3
+      tsup: ^6.7.0
       typescript: ^5.0.2
     dependencies:
       class-variance-authority: 0.4.0_typescript@5.0.2
@@ -266,7 +266,7 @@ importers:
       eslint-config-daren: 4.0.13_ppjdh4y6s3llhxbsspcfntpi7u
       npm-run-all: 4.1.5
       react: 18.2.0
-      tsup: 6.6.3_7ebhnmodlyu4vpxptcd62x65qe
+      tsup: 6.7.0_7ebhnmodlyu4vpxptcd62x65qe
       typescript: 5.0.2
 
 packages:
@@ -9251,14 +9251,14 @@ packages:
     engines: {node: '>=0.6.x'}
     dev: false
 
-  /tsup/6.6.3_7ebhnmodlyu4vpxptcd62x65qe:
-    resolution: {integrity: sha512-OLx/jFllYlVeZQ7sCHBuRVEQBBa1tFbouoc/gbYakyipjVQdWy/iQOvmExUA/ewap9iQ7tbJf9pW0PgcEFfJcQ==}
+  /tsup/6.7.0_7ebhnmodlyu4vpxptcd62x65qe:
+    resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
       '@swc/core': ^1
       postcss: ^8.4.12
-      typescript: ^4.1.0
+      typescript: '>=4.1.0'
     peerDependenciesMeta:
       '@swc/core':
         optional: true
