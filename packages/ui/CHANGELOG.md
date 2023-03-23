@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.0.4
+
+### Patch Changes
+
+- [`0f86c47`](https://github.com/darenmalfait/nerdfishui/commit/0f86c47c3171276a5e3114475f04f19ac895cfc0) Thanks [@darenmalfait](https://github.com/darenmalfait)! - combobox: send correct value onChange
+
 ## 1.0.3
 
 ### Patch Changes
