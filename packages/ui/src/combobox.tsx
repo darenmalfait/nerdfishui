@@ -90,7 +90,10 @@ const RawCombobox = React.forwardRef<
           ) : null}
           <Command.Group>
             {items.map(item => (
-              <Command.Item key={item.value} onSelect={handleChange}>
+              <Command.Item
+                key={item.value}
+                onSelect={() => handleChange(item.value)}
+              >
                 <Check
                   className={cx(
                     'mr-2 h-4 w-4',
