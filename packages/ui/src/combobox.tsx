@@ -29,6 +29,7 @@ const RawCombobox = React.forwardRef<
   ComboboxProps & Pick<RawInputProps, 'hasError' | 'icon' | 'inputSize'>
 >(function RawCombobox(
   {
+    value: valueProp,
     className,
     placeholder = 'Search...',
     emptyString = 'No items found.',
@@ -43,7 +44,7 @@ const RawCombobox = React.forwardRef<
   ref,
 ) {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState(defaultValue)
+  const [value, setValue] = React.useState(valueProp ?? defaultValue)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -59,13 +60,7 @@ const RawCombobox = React.forwardRef<
             className,
           )}
         >
-          <input
-            ref={ref}
-            type="hidden"
-            defaultValue={defaultValue}
-            value={value}
-            {...props}
-          />
+          <input ref={ref} type="hidden" value={value} {...props} />
 
           {value
             ? items.find(item => item.value === value)?.label
