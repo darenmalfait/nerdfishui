@@ -12,7 +12,8 @@ import {
 } from './input'
 import {Popover} from './popover'
 
-interface ComboboxProps extends React.ComponentPropsWithoutRef<'input'> {
+interface ComboboxProps
+  extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> {
   id?: string
   items?: {
     value: string
@@ -22,6 +23,7 @@ interface ComboboxProps extends React.ComponentPropsWithoutRef<'input'> {
   placeholder?: string
   emptyString?: string
   searchDisabled?: boolean
+  onChange?: (value: string) => void
 }
 
 const RawCombobox = React.forwardRef<
@@ -39,12 +41,22 @@ const RawCombobox = React.forwardRef<
     icon: Icon = ChevronsUpDown,
     inputSize,
     searchDisabled,
+    onChange,
     ...props
   },
   ref,
 ) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState(valueProp ?? defaultValue)
+
+  const handleChange = React.useCallback(
+    (v: string) => {
+      setValue(v === value ? '' : v)
+      onChange?.(v)
+      setOpen(false)
+    },
+    [onChange, value],
+  )
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -78,13 +90,7 @@ const RawCombobox = React.forwardRef<
           ) : null}
           <Command.Group>
             {items.map(item => (
-              <Command.Item
-                key={item.value}
-                onSelect={currentValue => {
-                  setValue(currentValue === value ? '' : currentValue)
-                  setOpen(false)
-                }}
-              >
+              <Command.Item key={item.value} onSelect={handleChange}>
                 <Check
                   className={cx(
                     'mr-2 h-4 w-4',
@@ -128,7 +134,7 @@ const Combobox = React.forwardRef<HTMLInputElement, ComboboxProps & InputProps>(
 
         <RawCombobox
           ref={ref}
-          {...(props as ComboboxProps)}
+          {...props}
           name={name}
           id={inputId}
           autoComplete={name}
