@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.0.3
+
+### Patch Changes
+
+- [`f8252f0`](https://github.com/darenmalfait/nerdfishui/commit/f8252f01dd65180f5d536a19d3c308272dbf4c43) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox): add onChange handler
+
 ## 1.0.2
 
 ### Patch Changes
