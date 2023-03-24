@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.0.5
+
+### Patch Changes
+
+- [`090a5d6`](https://github.com/darenmalfait/nerdfishui/commit/090a5d6cc79f8a7c9491878ba9547f657991c537) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add missing props to combobox
+
 ## 1.0.4
 
 ### Patch Changes
