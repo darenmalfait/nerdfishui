@@ -13,7 +13,8 @@ import {
 import {Popover} from './popover'
 
 interface ComboboxProps
-  extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> {
+  extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
+    Pick<RawInputProps, 'hasError' | 'icon' | 'inputSize'> {
   id?: string
   items?: {
     value: string
@@ -26,89 +27,88 @@ interface ComboboxProps
   onChange?: (value: string) => void
 }
 
-const RawCombobox = React.forwardRef<
-  HTMLInputElement,
-  ComboboxProps & Pick<RawInputProps, 'hasError' | 'icon' | 'inputSize'>
->(function RawCombobox(
-  {
-    value: valueProp,
-    className,
-    placeholder = 'Search...',
-    emptyString = 'No items found.',
-    items = [],
-    defaultValue = '',
-    hasError,
-    icon: Icon = ChevronsUpDown,
-    inputSize,
-    searchDisabled,
-    onChange,
-    ...props
-  },
-  ref,
-) {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState(valueProp ?? defaultValue)
-
-  const handleChange = React.useCallback(
-    (v: string) => {
-      setValue(v === value ? '' : v)
-      onChange?.(v)
-      setOpen(false)
+const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
+  function RawCombobox(
+    {
+      value: valueProp,
+      className,
+      placeholder = 'Search...',
+      emptyString = 'No items found.',
+      items = [],
+      defaultValue = '',
+      hasError,
+      icon: Icon = ChevronsUpDown,
+      inputSize,
+      searchDisabled,
+      onChange,
+      ...props
     },
-    [onChange, value],
-  )
+    ref,
+  ) {
+    const [open, setOpen] = React.useState(false)
+    const [value, setValue] = React.useState(valueProp ?? defaultValue)
 
-  return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild>
-        <button
-          role="combobox"
-          aria-haspopup="listbox"
-          aria-controls="listbox"
-          aria-expanded={open}
-          className={cx(
-            getInputClassName(className, hasError, inputSize),
-            'flex justify-between items-center',
-            className,
-          )}
-        >
-          <input ref={ref} type="hidden" value={value} {...props} />
+    const handleChange = React.useCallback(
+      (v: string) => {
+        setValue(v === value ? '' : v)
+        onChange?.(v)
+        setOpen(false)
+      },
+      [onChange, value],
+    )
 
-          {value
-            ? items.find(item => item.value === value)?.label
-            : placeholder}
-          <Icon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </button>
-      </Popover.Trigger>
-      <Popover.Content className="w-full min-w-[200px] p-0">
-        <Command>
-          {!searchDisabled ? (
-            <>
-              <Command.Input placeholder={placeholder} />
-              <Command.Empty>{emptyString}</Command.Empty>
-            </>
-          ) : null}
-          <Command.Group>
-            {items.map(item => (
-              <Command.Item
-                key={item.value}
-                onSelect={() => handleChange(item.value)}
-              >
-                <Check
-                  className={cx(
-                    'mr-2 h-4 w-4',
-                    value === item.value ? 'opacity-100' : 'opacity-0',
-                  )}
-                />
-                {item.label}
-              </Command.Item>
-            ))}
-          </Command.Group>
-        </Command>
-      </Popover.Content>
-    </Popover>
-  )
-})
+    return (
+      <Popover open={open} onOpenChange={setOpen}>
+        <Popover.Trigger asChild>
+          <button
+            role="combobox"
+            aria-haspopup="listbox"
+            aria-controls="listbox"
+            aria-expanded={open}
+            className={cx(
+              getInputClassName(className, hasError, inputSize),
+              'flex justify-between items-center',
+              className,
+            )}
+          >
+            <input ref={ref} type="hidden" value={value} {...props} />
+
+            {value
+              ? items.find(item => item.value === value)?.label
+              : placeholder}
+            <Icon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          </button>
+        </Popover.Trigger>
+        <Popover.Content className="w-full min-w-[200px] p-0">
+          <Command>
+            {!searchDisabled ? (
+              <>
+                <Command.Input placeholder={placeholder} />
+                <Command.Empty>{emptyString}</Command.Empty>
+              </>
+            ) : null}
+            <Command.Group>
+              {items.map(item => (
+                <Command.Item
+                  key={item.value}
+                  onSelect={() => handleChange(item.value)}
+                >
+                  <Check
+                    className={cx(
+                      'mr-2 h-4 w-4',
+                      value === item.value ? 'opacity-100' : 'opacity-0',
+                    )}
+                  />
+                  {item.label}
+                </Command.Item>
+              ))}
+            </Command.Group>
+          </Command>
+        </Popover.Content>
+      </Popover>
+    )
+  },
+)
 RawCombobox.displayName = 'RawCombobox'
 
 const Combobox = React.forwardRef<HTMLInputElement, ComboboxProps & InputProps>(
