@@ -70,7 +70,7 @@ importers:
       react-dom: ^18.2.0
       recma-nextjs-static-props: ^1.0.0
       rehype-mdx-title: ^2.0.0
-      slugify: ^1.6.5
+      slugify: ^1.6.6
       styled-jsx: ^5.1.2
       tailwindcss: ^3.2.7
       tailwindcss-animate: ^1.0.5
@@ -103,7 +103,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       recma-nextjs-static-props: 1.0.0
       rehype-mdx-title: 2.0.0
-      slugify: 1.6.5
+      slugify: 1.6.6
       styled-jsx: 5.1.2_q2tyk3gci27qk4qoatek53e4vi
       tailwindcss-animate: 1.0.5_tailwindcss@3.2.7
       typescript: 5.0.2
@@ -8646,8 +8646,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /slugify/1.6.5:
-    resolution: {integrity: sha512-8mo9bslnBO3tr5PEVFzMPIWwWnipGS0xVbYf65zxDqfNwmzYn1LpiKNrR6DlClusuvo+hDHd1zKpmfAe83NQSQ==}
+  /slugify/1.6.6:
+    resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
     engines: {node: '>=8.0.0'}
     dev: false
 
