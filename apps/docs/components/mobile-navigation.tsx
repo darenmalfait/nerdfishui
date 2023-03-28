@@ -73,7 +73,7 @@ export function MobileNavigation() {
             >
               <motion.div
                 layoutScroll
-                className="ring-gray-900/7.5 shadow-gray-900/10 fixed left-0 top-14 bottom-0 w-full overflow-y-auto bg-white px-4 pt-6 pb-4 shadow-lg ring-1 dark:bg-gray-900 dark:ring-gray-800 min-[416px]:max-w-sm sm:px-6 sm:pb-10"
+                className="ring-gray-900/7.5 shadow-gray-900/10 fixed bottom-0 left-0 top-14 w-full overflow-y-auto bg-white px-4 pb-4 pt-6 shadow-lg ring-1 dark:bg-gray-900 dark:ring-gray-800 min-[416px]:max-w-sm sm:px-6 sm:pb-10"
               >
                 <Navigation />
               </motion.div>

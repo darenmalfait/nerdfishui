@@ -37,7 +37,7 @@ function Item<T>({
       className={getNavigationItemClassName(className as string)}
       {...props}
     >
-      {Icon ? <Icon className="mr-2 -ml-1 h-4 w-4 shrink-0" /> : null}
+      {Icon ? <Icon className="-ml-1 mr-2 h-4 w-4 shrink-0" /> : null}
       <span>{title}</span>
     </Link>
   )
