@@ -121,11 +121,11 @@ const RawInput = React.forwardRef<HTMLInputElement, RawInputProps>(
             <Icon
               width="20px"
               height="20px"
-              className="text-gray-300' absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0"
+              className="text-gray-300' absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0"
             />
           ) : null}
           {hasError ? (
-            <div className="absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0">
+            <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
               <AlertCircle
                 className="h-5 w-5 text-red-500"
                 aria-hidden="true"

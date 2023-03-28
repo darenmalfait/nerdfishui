@@ -179,7 +179,7 @@ function AppDemo() {
                         ))}
                       </div>
                     </div>
-                    <div className="mt-6 mb-2  space-y-1">
+                    <div className="mb-2 mt-6  space-y-1">
                       <H2>Made for You</H2>
                       <Paragraph>
                         Your personal playlists. Updated daily.
@@ -187,7 +187,7 @@ function AppDemo() {
                     </div>
                     <div className="relative">
                       <ScrollArea className="-ml-4">
-                        <div className=" flex space-x-4 py-2 pl-4 pb-4">
+                        <div className=" flex space-x-4 py-2 pb-4 pl-4">
                           {madeForYouAlbums.map(album => (
                             <AlbumArtwork
                               key={album.name}
@@ -215,7 +215,7 @@ function AppDemo() {
                     </div>
                     <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed border-gray-200 dark:border-gray-700">
                       <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
-                        <Paragraph className="mt-2 mb-4 text-sm text-gray-500 dark:text-gray-400">
+                        <Paragraph className="mb-4 mt-2 text-sm text-gray-500 dark:text-gray-400">
                           You have no ingredients added. Add ingredients to
                         </Paragraph>
                         <Button>Add Ingredient</Button>

@@ -115,7 +115,7 @@ const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
           />
         )}
         {hasError ? (
-          <div className="absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0">
+          <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
             <AlertCircle className="h-5 w-5 text-red-500" aria-hidden="true" />
           </div>
         ) : null}

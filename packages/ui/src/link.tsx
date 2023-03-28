@@ -90,7 +90,7 @@ const DoubleLabelLink = React.forwardRef<
       {...rest}
     >
       {children ? (
-        <span className="text-inverse bg-inverse rounded-full py-0.5 px-3 text-xs font-semibold uppercase leading-5 tracking-wide transition-colors">
+        <span className="text-inverse bg-inverse rounded-full px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide transition-colors">
           {children}
         </span>
       ) : null}
