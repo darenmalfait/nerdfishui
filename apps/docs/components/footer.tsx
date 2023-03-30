@@ -1,11 +1,11 @@
 import * as React from 'react'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
+import {usePathname} from 'next/navigation'
 import {ButtonLink} from '@nerdfish/ui'
 import {ArrowLeft, ArrowRight} from 'lucide-react'
 
+import {docs} from '../config/docs'
 import {GithubLogo} from './icons/github-logo'
-import {navigation} from './navigation'
 
 function PageLink({
   label,
@@ -30,11 +30,9 @@ function PageLink({
 }
 
 function PageNavigation() {
-  const router = useRouter()
-  const allPages = navigation.flatMap(group => group.links)
-  const currentPageIndex = allPages.findIndex(
-    page => page.href === router.pathname,
-  )
+  const pathname = usePathname()
+  const allPages = docs.navigation.flatMap(group => group.links)
+  const currentPageIndex = allPages.findIndex(page => page.href === pathname)
 
   if (currentPageIndex === -1) {
     return null

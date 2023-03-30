@@ -39,7 +39,7 @@ To install the component-library run the following within your project directory
 
 npm 
 ```sh
-npm i @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
+npm install @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
 ```
 
 yarn 
