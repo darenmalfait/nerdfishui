@@ -219,6 +219,7 @@ export const navigation = [
     title: 'Other',
     links: [
       {title: 'Accordion', href: '/accordion'},
+      {title: 'Collapsible', href: '/collapsible'},
       {title: 'Alert', href: '/alert'},
       {title: 'Avatar', href: '/avatar'},
       {title: 'DropdownMenu', href: '/dropdown-menu'},
