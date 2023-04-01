@@ -1,33 +1,30 @@
-export const metaTitle = 'Collapsible'
-export const description =
-  'An interactive component which expands/collapses a panel.'
-export const pkg = 'ui'
-export const path = 'collapsible'
+---
+title: Collapsible
+description: A collapsible component for hiding and showing content.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'collapsible.tsx'
+---
 
-# Collapsible
+<ComponentExample src="/components/examples/collapsible/demo.tsx">
+  <CollapsibleDemo />
+</ComponentExample>
 
-An interactive component which expands/collapses a panel.
+## Usage
 
-<Code code={`import { Collapsible } from '@nerdfish/ui'`} />
+```tsx
+import {Collapsible} from '@nerdfish/ui'
+import Image from 'next/image'
+```
 
-## Preview
-
-<Preview
-  code={`<Collapsible>
+```tsx
+<Collapsible>
   <Collapsible.Trigger>Can I use this in my project?</Collapsible.Trigger>
   <Collapsible.Content>
     Yes. Free to use for personal and commercial projects. No attribution
     required.
   </Collapsible.Content>
-</Collapsible>`}
->
-  <div className="space-y-2">
-    <Collapsible>
-      <Collapsible.Trigger>Can I use this in my project?</Collapsible.Trigger>
-      <Collapsible.Content>
-        Yes. Free to use for personal and commercial projects. No attribution
-        required.
-      </Collapsible.Content>
-    </Collapsible>
-  </div>
-</Preview>
+</Collapsible>
+```

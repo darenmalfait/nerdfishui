@@ -126,7 +126,7 @@ const components = {
       <>
         <pre
           className={cx(
-            'relative mt-6 mb-4 overflow-x-auto rounded-lg shadow-outline bg-secondary py-4 px-2',
+            'mt-6 mb-4 overflow-x-auto rounded-lg shadow-outline bg-secondary py-4 px-2',
             className,
           )}
           {...props}
@@ -160,7 +160,7 @@ const components = {
   code: ({className, ...props}: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cx(
-        'relative rounded bg-transparent ring-0 py-[0.2rem] px-[0.3rem] font-mono text-sm font-semibold text-gray-900 dark:text-gray-400',
+        'rounded bg-transparent ring-0 py-[0.2rem] font-mono text-sm font-semibold text-gray-900 dark:text-gray-400',
         className,
       )}
       {...props}

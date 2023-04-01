@@ -18,6 +18,7 @@ export const docs = {
     {
       title: 'Form Elements',
       links: [
+        {title: 'Checkbox', href: '/checkbox'},
         {title: 'Input', href: '/input'},
         {title: 'Combobox', href: '/combobox'},
         {title: 'Timepicker', href: '/timepicker'},
@@ -36,8 +37,13 @@ export const docs = {
       title: 'Other',
       links: [
         {title: 'Accordion', href: '/accordion'},
+        {title: 'Alert', href: '/alert'},
         {title: 'Alert Dialog', href: '/alert-dialog'},
+        {title: 'Aspect Ratio', href: '/aspect-ratio'},
         {title: 'Avatar', href: '/avatar'},
+        {title: 'Collapsible', href: '/collapsible'},
+        {title: 'Command', href: '/command'},
+        {title: 'Dialog', href: '/dialog'},
         {title: 'DropdownMenu', href: '/dropdown-menu'},
         {title: 'HoverCard', href: '/hover-card'},
         {title: 'NavigationList', href: '/navigation-list'},

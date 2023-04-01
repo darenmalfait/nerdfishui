@@ -1,0 +1,32 @@
+---
+title: Avatar
+description:
+  An avatar is a graphical representation of a user, typically used in a social
+  context.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'avatar.tsx'
+---
+
+<ComponentExample src="/components/examples/avatar/demo.tsx">
+  <AvatarDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Avatar} from '@nerdfish/ui'
+import Image from 'next/image'
+```
+
+```tsx
+<Avatar>
+  <Avatar.Image
+    src="https://avatars.githubusercontent.com/u/56068461?s=40&v=4"
+    alt="@darenmalfait"
+  />
+  <Avatar.Fallback>DM</Avatar.Fallback>
+</Avatar>
+```
