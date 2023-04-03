@@ -1,0 +1,29 @@
+---
+title: ProgressiveImage
+description:
+  ProgressiveImage component is used to show a loading state while an image is
+  loading.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'progressive-image.tsx'
+---
+
+<ComponentExample src="/components/examples/progressive-image/demo.tsx">
+  <ProgressiveImageDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {ProgressiveImage} from '@nerdfish/ui'
+```
+
+```tsx
+<ProgressiveImage
+  className="w-full"
+  img={<img src="https://picsum.photos/3000/3000" alt="picsum" />}
+  placeholder="https://picsum.photos/25/25"
+/>
+```

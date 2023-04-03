@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import {Button} from '@nerdfish/ui'
 import {Mail} from 'lucide-react'

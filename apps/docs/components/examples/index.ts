@@ -38,7 +38,25 @@ import {InputIcon} from './input/icon'
 import {InputSize} from './input/size'
 import {InputTextArea} from './input/textarea'
 import {LinkDemo} from './link/demo'
+import {NavigationListDemo} from './navigation-list/demo'
+import {PopoverDemo} from './popover/demo'
+import {ProgressiveImageDemo} from './progressive-image/demo'
+import {ScrollAreaDemo} from './scroll-area/demo'
 import {SectionDemo} from './section/demo'
+import {SwitchDemo} from './switch/demo'
+import {TabsDemo} from './tabs/demo'
+import {TimepickerDemo} from './timepicker/demo'
+import {ToastDemo} from './toast/demo'
+import {ToastVariant} from './toast/variant'
+import {ToggleDemo} from './toggle/demo'
+import {ToggleDisabled} from './toggle/disabled'
+import {ToggleSize} from './toggle/size'
+import {ToggleVariant} from './toggle/variant'
+import {ToggleWithText} from './toggle/with-text'
+import {TypographyDemo} from './typography/demo'
+import {TypographyParagraph} from './typography/paragraph'
+import {TypographyProse} from './typography/prose'
+import {TypographyTitle} from './typography/title'
 
 export const examples = {
   AccordionDemo,
@@ -71,6 +89,7 @@ export const examples = {
   ContainerDemo,
   ContainerSize,
   DialogDemo,
+  DoubleLabelLinkDemo,
   DropdownMenuDemo,
   GridDemo,
   HoverCardDemo,
@@ -79,7 +98,24 @@ export const examples = {
   InputIcon,
   InputSize,
   InputTextArea,
-  SectionDemo,
   LinkDemo,
-  DoubleLabelLinkDemo,
+  NavigationListDemo,
+  PopoverDemo,
+  ProgressiveImageDemo,
+  ScrollAreaDemo,
+  SectionDemo,
+  SwitchDemo,
+  TabsDemo,
+  TimepickerDemo,
+  ToastDemo,
+  ToastVariant,
+  ToggleDemo,
+  ToggleDisabled,
+  ToggleSize,
+  ToggleVariant,
+  ToggleWithText,
+  TypographyDemo,
+  TypographyParagraph,
+  TypographyProse,
+  TypographyTitle,
 }
