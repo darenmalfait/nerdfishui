@@ -23,6 +23,7 @@ packages/**/yarn.lock
 styles.output.css
 .turbo
 tsconfig.tsbuildinfo
+.contentlayer
 
 # Yarn
 .pnp.*
@@ -39,3 +40,7 @@ yarn-error.log
 
 # vercel
 .vercel
+
+# env files
+.env*
+!.env.example

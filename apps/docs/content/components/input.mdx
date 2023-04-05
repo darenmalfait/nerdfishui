@@ -1,0 +1,54 @@
+---
+title: Input
+description:
+  Input is a component that allows a user to give input to a form. It can be
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'input.tsx'
+---
+
+<ComponentExample src="/components/examples/input/demo.tsx">
+  <InputDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Input} from '@nerdfish/ui'
+```
+
+```tsx
+<Input
+  name="email"
+  label="email"
+  description="your login name"
+  type="email"
+  placeholder="Email"
+/>
+```
+
+## Error
+
+<ComponentExample src="/components/examples/input/error.tsx">
+  <InputError />
+</ComponentExample>
+
+## Size
+
+<ComponentExample src="/components/examples/input/size.tsx">
+  <InputSize />
+</ComponentExample>
+
+## Icon
+
+<ComponentExample src="/components/examples/input/icon.tsx">
+  <InputIcon />
+</ComponentExample>
+
+## TextArea
+
+<ComponentExample src="/components/examples/input/textarea.tsx">
+  <InputTextArea />
+</ComponentExample>

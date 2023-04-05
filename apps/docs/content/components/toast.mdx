@@ -1,0 +1,57 @@
+---
+title: Toast
+description: Pick a time
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'toast.tsx'
+---
+
+<ComponentExample src="/components/examples/toast/demo.tsx">
+  <ToastDemo />
+</ComponentExample>
+
+## Usage
+
+### ToastProvider
+
+This needs to be wrapped around the root component of your application.
+
+```tsx
+import {ToastProvider} from '@nerdfish/ui'
+```
+
+```tsx
+<ToastProvider>
+  <App />
+</ToastProvider>
+```
+
+### ToastViewport
+
+This needs to be placed in the root component of your application.
+
+```tsx
+import {ToastViewport} from '@nerdfish/ui'
+```
+
+```tsx
+<ToastViewport />
+```
+
+### Toast
+
+```tsx
+import {Toast} from '@nerdfish/ui'
+```
+
+```tsx
+<Toast title="example title">Content of the toast</Toast>
+```
+
+## Variant
+
+<ComponentExample src="/components/examples/toast/variant.tsx">
+  <ToastVariant />
+</ComponentExample>

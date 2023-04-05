@@ -1,21 +1,32 @@
 {
   "extends": "@nerdfish/tsconfig/react-library.json",
   "include": [
+    ".contentlayer/generated",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mdx"
+    "**/*.mdx",
+    ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "dist",
-    "build",
-    "node_modules"
-  ],
+  "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
     "resolveJsonModule": true,
-    "jsx": "preserve"
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    },
+    "strictNullChecks": true
   }
 }

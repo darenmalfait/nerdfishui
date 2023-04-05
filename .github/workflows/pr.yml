@@ -45,4 +45,6 @@ jobs:
         run: pnpm install
 
       - name: Lint code
+        env:
+          NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
         run: pnpm build && pnpm validate

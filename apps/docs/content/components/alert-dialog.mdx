@@ -1,0 +1,40 @@
+---
+title: Alert Dialog
+description:
+  A modal dialog that interrupts the user with important content and expects a
+  response
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'alert-dialog.tsx'
+---
+
+<ComponentExample src="/components/examples/alert-dialog/demo.tsx">
+  <AlertDialogDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {AlertDialog} from '@nerdfishui/ui'
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialog.Trigger>Open</AlertDialog.Trigger>
+  <AlertDialog.Content>
+    <AlertDialog.Header>
+      <AlertDialog.Title>Are you sure absolutely sure?</AlertDialog.Title>
+      <AlertDialog.Description>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </AlertDialog.Description>
+    </AlertDialog.Header>
+    <AlertDialog.Footer>
+      <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+      <AlertDialog.Action>Continue</AlertDialog.Action>
+    </AlertDialog.Footer>
+  </AlertDialog.Content>
+</AlertDialog>
+```
