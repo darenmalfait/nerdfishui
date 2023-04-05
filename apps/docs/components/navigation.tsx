@@ -26,7 +26,7 @@ export function Navigation(props: JSX.IntrinsicElements['nav']) {
                     key={link.title}
                     className={cx(
                       'pl-6 my-1 font-normal',
-                      stripPreSlash(pathname).toLowerCase() ===
+                      stripPreSlash(pathname ?? '').toLowerCase() ===
                         stripPreSlash(link.href).toLowerCase() &&
                         'bg-gray-100 dark:!bg-gray-800',
                     )}

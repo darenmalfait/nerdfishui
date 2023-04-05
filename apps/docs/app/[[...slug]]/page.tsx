@@ -1,9 +1,12 @@
 import * as React from 'react'
+import {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import {allDocs} from 'contentlayer/generated'
+import {generateOGImageUrl} from 'lib/utils/social'
 
 import {DocsPageHeader} from '../../components/docs-page-header'
 import {Mdx} from '../../components/mdx'
+import {getMetaData} from '../../lib/utils/seo'
 
 interface DocPageProps {
   params?: {
@@ -19,15 +22,33 @@ export async function generateStaticParams(): Promise<
   }))
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: {slug?: string[]}
+}): Promise<Metadata | undefined> {
+  const slug = params.slug?.join('/') ?? ''
+  const doc = allDocs.find(d => d.slugAsParams === slug)
+
+  if (!doc) {
+    notFound()
+  }
+
+  const title = `Nerdfishui ${doc.title} documentation`
+
+  return getMetaData({
+    ogImage: generateOGImageUrl({
+      heading: title,
+    }),
+    title,
+    url: slug,
+    description: doc.description,
+  })
+}
+
 export default async function DocPage({params}: DocPageProps) {
   const slug = params?.slug?.join('/') ?? ''
   const doc = allDocs.find(d => d.slugAsParams === slug)
-
-  // allDocs.forEach(doc => {
-  //   console.log('doc', doc._raw, doc.slugAsParams)
-  // })
-
-  // console.log('doc', doc)
 
   if (!doc) {
     notFound()
