@@ -1,36 +1,16 @@
+'use client'
+
 import * as React from 'react'
-import {ButtonLink, Container, Grid, ScrollArea} from '@nerdfish/ui'
+import {Container, Grid, ScrollArea, ToastViewport} from '@nerdfish/ui'
 
 import {Footer} from './footer'
-import {GithubLogo} from './icons/github-logo'
 import {Navigation} from './navigation'
 import {Prose} from './prose'
-import {Seo} from './seo'
 import {SiteHeader} from './site-header'
 
-export function Layout({
-  metaTitle: title,
-  children,
-  path,
-  description,
-  pkg,
-  image,
-}: {
-  metaTitle?: string
-  path?: string
-  children: React.ReactNode
-  description?: string
-  pkg?: string
-  image?: string
-}) {
+export function Layout({children}: {children: React.ReactNode}) {
   return (
     <>
-      <Seo
-        image={image}
-        url={path ?? '/'}
-        title={`${title ?? pkg ?? ''} | Nerdfishui`}
-        description={description ?? ''}
-      />
       <SiteHeader />
       <Grid>
         <Container size="full">
@@ -41,26 +21,13 @@ export function Layout({
               </ScrollArea>
             </aside>
             <div className="py-6">
-              {pkg ? (
-                <div className="mx-auto max-w-5xl">
-                  <ButtonLink
-                    size="sm"
-                    variant="subtle"
-                    href={`https://github.com/darenmalfait/nerdfishui/tree/main/packages/${pkg}`}
-                    className="mb-12 inline-flex space-x-2 text-gray-900 dark:text-white"
-                    external
-                  >
-                    <GithubLogo className="h-5 w-5" />
-                    <span>View on Github</span>
-                  </ButtonLink>
-                </div>
-              ) : null}
               <Prose as="article">{children}</Prose>
               <Footer />
             </div>
           </div>
         </Container>
       </Grid>
+      <ToastViewport />
     </>
   )
 }

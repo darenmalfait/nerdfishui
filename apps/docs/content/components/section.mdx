@@ -1,0 +1,28 @@
+---
+title: Section
+description: A section is a container for content.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'layout-components.tsx'
+---
+
+<ComponentExample src="/components/examples/section/demo.tsx">
+  <SectionDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Section} from '@nerdfish/ui'
+```
+
+```tsx
+<div className="space-y-2 w-full">
+  <Section>
+    <div>Hello world</div>
+    <div>Hello world</div>
+  </Section>
+</div>
+```

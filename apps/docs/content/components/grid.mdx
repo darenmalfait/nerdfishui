@@ -1,0 +1,30 @@
+---
+title: Grid
+description:
+  Grid is a layout component that allows you to use grid functionality in your
+  application with some predefined styling.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'grid.tsx'
+---
+
+<ComponentExample src="/components/examples/grid/demo.tsx">
+  <GridDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Grid} from '@nerdfish/ui'
+```
+
+```tsx
+<Grid nested>
+  <div className="col-span-full">col-span-full</div>
+  <div className="col-span-4">col-span-4</div>
+  <div className="col-span-4">col-span-4</div>
+  <div className="col-span-4">col-span-4</div>
+</Grid>
+```

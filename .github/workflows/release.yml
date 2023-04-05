@@ -46,6 +46,8 @@ jobs:
         run: pnpm install
 
       - name: Lint code
+        env:
+          NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
         run: pnpm build && pnpm validate
 
       - name: Create Release Pull Request or Publish to npm

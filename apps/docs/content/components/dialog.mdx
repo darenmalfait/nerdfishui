@@ -1,0 +1,36 @@
+---
+title: Dialog
+description:
+  Dialogs inform users about a task and can contain critical information,
+  require decisions, or involve multiple tasks.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'dialog.tsx'
+---
+
+<ComponentExample src="/components/examples/dialog/demo.tsx">
+  <DialogDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Dialog} from '@nerdfish/ui'
+```
+
+```tsx
+<Dialog>
+  <Dialog.Trigger>Remove order</Dialog.Trigger>
+  <Dialog.Content>
+    <Dialog.Header>
+      <Dialog.Title>Are you sure absolutely sure?</Dialog.Title>
+      <Dialog.Description>
+        This action cannot be undone. This will permanently delete your cake
+        order and remove your dessert from our kitchen.
+      </Dialog.Description>
+    </Dialog.Header>
+  </Dialog.Content>
+</Dialog>
+```

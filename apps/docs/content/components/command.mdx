@@ -1,0 +1,47 @@
+---
+title: Command
+description:
+  Command is a popup menu that can be used to display a list of actions.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'command.tsx'
+---
+
+<ComponentExample src="/components/examples/command/demo.tsx">
+  <CommandDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Command} from '@nerdfish/ui'
+import Image from 'next/image'
+```
+
+```tsx
+<Command>
+  <Command.Input placeholder="Type a command or search..." />
+  <Command.List>
+    <Command.Empty>No results found.</Command.Empty>
+    <Command.Group heading="Suggestions">
+      <Command.Item>Calendar</Command.Item>
+      <Command.Item>Search Emoji</Command.Item>
+      <Command.Item>Calculator</Command.Item>
+    </Command.Group>
+    <CommandSeparator />
+    <Command.Group heading="Settings">
+      <Command.Item>Profile</Command.Item>
+      <Command.Item>Billing</Command.Item>
+      <Command.Item>Settings</Command.Item>
+    </Command.Group>
+  </Command.List>
+</Command>
+```
+
+## Dialog
+
+<ComponentExample src="/components/examples/command/dialog.tsx">
+  <CommandDialog />
+</ComponentExample>

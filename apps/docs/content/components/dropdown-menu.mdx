@@ -1,0 +1,34 @@
+---
+title: DropdownMenu
+description:
+  A dropdown menu. It can be used to display a list of actions or links.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'dropdown-menu.tsx'
+---
+
+<ComponentExample src="/components/examples/dropdown-menu/demo.tsx">
+  <DropdownMenuDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {DropdownMenu} from '@nerdfish/ui'
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenu.Trigger>Open</DropdownMenu.Trigger>
+  <DropdownMenu.Content>
+    <DropdownMenu.Label>Cake Flavors</DropdownMenu.Label>
+    <DropdownMenu.Separator />
+    <DropdownMenu.Item>Chocolate</DropdownMenu.Item>
+    <DropdownMenu.Item>Vanilla</DropdownMenu.Item>
+    <DropdownMenu.Item>Strawberry</DropdownMenu.Item>
+    <DropdownMenu.Item>Red Velvet</DropdownMenu.Item>
+  </DropdownMenu.Content>
+</DropdownMenu>
+```

@@ -67,7 +67,7 @@ const Alert = React.forwardRef<
         {hideIcon ? null : (
           <div className="shrink-0">
             <Icon
-              className={cx('h-5 w-5', fgVariants({variant}))}
+              className={cx('h-5 w-5 mt-2', fgVariants({variant}))}
               aria-hidden="true"
             />
           </div>
