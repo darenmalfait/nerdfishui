@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/prefer-tag-over-role */
 import * as React from 'react'
 import {cx} from '@nerdfish/utils'
 import {Check, ChevronsUpDown} from 'lucide-react'
