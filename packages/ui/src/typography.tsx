@@ -33,12 +33,12 @@ const titleVariants = cva('', {
   variants: {
     size: {
       // Keep this the same to the prose styles in styles.css
-      h1: 'scroll-m-20 font-title text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]',
-      h2: 'mt-10 first:mt-0 scroll-m-20 font-title text-3xl font-extrabold tracking-tight lg:text-4xl',
-      h3: 'mt-8 first:mt-0 scroll-m-20 text-2xl font-semibold tracking-tight',
-      h4: 'mt-8 first:mt-0 scroll-m-20 text-xl font-semibold tracking-tight',
-      h5: 'mt-8 first:mt-0 text-lg font-bold md:text-xl',
-      h6: 'mt-8 first:mt-0 text-lg font-bold',
+      h1: 'font-title scroll-m-20 text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]',
+      h2: 'font-title mt-10 scroll-m-20 text-3xl font-extrabold tracking-tight first:mt-0 lg:text-4xl',
+      h3: 'mt-8 scroll-m-20 text-2xl font-semibold tracking-tight first:mt-0',
+      h4: 'mt-8 scroll-m-20 text-xl font-semibold tracking-tight first:mt-0',
+      h5: 'mt-8 text-lg font-bold first:mt-0 md:text-xl',
+      h6: 'mt-8 text-lg font-bold first:mt-0',
     },
     variant: {
       primary: 'text-primary',

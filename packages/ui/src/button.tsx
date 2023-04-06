@@ -6,26 +6,26 @@ import {ExtractProps, VariantProps, cva, cx} from '@nerdfish/utils'
 import {Link} from './link'
 
 const toggleVariants = cva(
-  'group rounded-full no-underline font-title font-bold inline-flex space-x-2 items-center transition-transform active:scale-90',
+  'font-title group inline-flex items-center space-x-2 rounded-full font-bold no-underline transition-transform active:scale-90',
   {
     variants: {
       variant: {
         default:
-          'bg-gray-900 text-white hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50 focus-ring',
+          'focus-ring bg-gray-900 text-white hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50',
         danger:
-          'bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600 focus-ring',
+          'focus-ring bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600',
         success:
-          'bg-green-500 text-white hover:bg-green-600 dark:hover:bg-green-600 focus-ring',
+          'focus-ring bg-green-500 text-white hover:bg-green-600 dark:hover:bg-green-600',
         outline:
-          'bg-transparent border border-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-700 dark:text-gray-100 focus-ring',
+          'focus-ring border border-gray-200 bg-transparent hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800',
         subtle:
-          'bg-gray-100 text-primary hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-700 focus-ring',
+          'text-primary focus-ring bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-700',
         ghost:
-          'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-100 dark:hover:text-gray-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent',
-        link: 'bg-transparent hover:underline text-primary hover:bg-transparent dark:hover:bg-transparent',
+          'bg-transparent hover:bg-gray-100 data-[state=open]:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:data-[state=open]:bg-transparent',
+        link: 'text-primary bg-transparent hover:bg-transparent hover:underline dark:hover:bg-transparent',
       },
       size: {
-        default: 'h-10 py-2 px-4 text-sm',
+        default: 'h-10 px-4 py-2 text-sm',
         sm: 'h-9 px-3 text-xs',
         lg: 'h-11 px-8 text-sm',
       },
