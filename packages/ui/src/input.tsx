@@ -5,13 +5,13 @@ import {VariantProps, cva, cx} from '@nerdfish/utils'
 import {AlertCircle} from 'lucide-react'
 
 const toggleVariants = cva(
-  'w-full group font-bold placeholder:text-gray-500 disabled:text-gray-200 rounded-lg text-md focus-ring',
+  'text-md focus-ring group w-full rounded-lg font-bold placeholder:text-gray-500 disabled:text-gray-200',
   {
     variants: {
       size: {
-        sm: 'py-1 px-2 text-sm',
-        md: 'py-3 px-4 text-base',
-        lg: 'py-5 px-8 text-lg',
+        sm: 'px-2 py-1 text-sm',
+        md: 'px-4 py-3 text-base',
+        lg: 'px-8 py-5 text-lg',
       },
     },
     defaultVariants: {
