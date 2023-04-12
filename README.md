@@ -114,8 +114,8 @@ function App() {
 
 ### Useful Commands
 
-- `pnpm build` - Build all packages, including the Storybook site
-- `pnpm dev` - Run all packages locally and preview with Storybook
+- `pnpm build` - Build all packages, including the docs
+- `pnpm dev` - Run all packages locally and preview the docs
 - `pnpm validate` - Lint all packages
 - `pnpm changeset` - Generate a changeset
 - `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
