@@ -27,6 +27,7 @@ import {CommandDemo} from './command/demo'
 import {CommandDialog} from './command/dialog'
 import {ContainerDemo} from './container/demo'
 import {ContainerSize} from './container/size'
+import {DatepickerDemo} from './datepicker/demo'
 import {DialogDemo} from './dialog/demo'
 import {DoubleLabelLinkDemo} from './double-label-link/demo'
 import {DropdownMenuDemo} from './dropdown-menu/demo'
@@ -88,6 +89,7 @@ export const examples = {
   CommandDialog,
   ContainerDemo,
   ContainerSize,
+  DatepickerDemo,
   DialogDemo,
   DoubleLabelLinkDemo,
   DropdownMenuDemo,

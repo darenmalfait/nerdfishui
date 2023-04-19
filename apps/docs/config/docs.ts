@@ -22,6 +22,7 @@ export const docs = {
         {title: 'Input', href: '/input'},
         {title: 'Combobox', href: '/combobox'},
         {title: 'Timepicker', href: '/timepicker'},
+        {title: 'Datepicker', href: '/datepicker'},
       ],
     },
     {
