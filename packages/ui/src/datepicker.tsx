@@ -85,6 +85,7 @@ const Datepicker = React.forwardRef<
         <Popover.Trigger asChild>
           <div className="relative w-full shadow-sm">
             <Button
+              type="button"
               variant="outline"
               className={cx(className, !selected && 'text-muted-foreground')}
             >
