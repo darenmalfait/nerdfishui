@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.2.2
+
+### Patch Changes
+
+- [`c74b935`](https://github.com/darenmalfait/nerdfishui/commit/c74b935cbb3282ac7887b19d0894142260c1ad3f) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add hidden input field for value storage
+
 ## 1.2.1
 
 ### Patch Changes
