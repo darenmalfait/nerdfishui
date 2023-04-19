@@ -7,6 +7,11 @@ import {AlertSuccess} from './alert/success'
 import {AlertWarning} from './alert/warning'
 import {AspectRatioDemo} from './aspect-ratio/demo'
 import {AvatarDemo} from './avatar/demo'
+import {BadgeDanger} from './badge/danger'
+import {BadgeDemo} from './badge/demo'
+import {BadgeOutline} from './badge/outline'
+import {BadgeSecondary} from './badge/secondary'
+import {BadgeSuccess} from './badge/success'
 import {ButtonDanger} from './button/danger'
 import {ButtonDemo} from './button/demo'
 import {ButtonGhost} from './button/ghost'
@@ -69,6 +74,11 @@ export const examples = {
   AlertWarning,
   AspectRatioDemo,
   AvatarDemo,
+  BadgeDemo,
+  BadgeDanger,
+  BadgeOutline,
+  BadgeSecondary,
+  BadgeSuccess,
   ButtonDanger,
   ButtonDemo,
   ButtonGhost,
