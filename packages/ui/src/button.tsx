@@ -5,7 +5,7 @@ import {ExtractProps, VariantProps, cva, cx} from '@nerdfish/utils'
 
 import {Link} from './link'
 
-const toggleVariants = cva(
+const buttonVariants = cva(
   'font-title group inline-flex items-center space-x-2 rounded-full font-bold no-underline transition-transform active:scale-90',
   {
     variants: {
@@ -41,14 +41,14 @@ function getButtonClassName({
   variant = 'default',
   size = 'default',
   className,
-}: VariantProps<typeof toggleVariants> & {
+}: VariantProps<typeof buttonVariants> & {
   className?: string
 }) {
-  return cx(toggleVariants({variant, size, className}))
+  return cx(buttonVariants({variant, size, className}))
 }
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof toggleVariants>
+  VariantProps<typeof buttonVariants>
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({variant, size, className, ...props}, ref) => {
@@ -102,4 +102,4 @@ const ButtonGroup = React.forwardRef<
 })
 ButtonGroup.displayName = 'ButtonGroup'
 
-export {Button, ButtonLink, ButtonGroup, getButtonClassName}
+export {Button, ButtonLink, ButtonGroup, getButtonClassName, buttonVariants}
