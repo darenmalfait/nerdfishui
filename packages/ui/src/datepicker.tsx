@@ -84,6 +84,7 @@ const Datepicker = React.forwardRef<
       <Popover>
         <Popover.Trigger asChild>
           <div className="relative w-full shadow-sm">
+            <input type="hidden" name={name} value={selected?.toISOString()} />
             <Button
               type="button"
               variant="outline"
