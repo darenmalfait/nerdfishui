@@ -42,6 +42,7 @@ export const docs = {
         {title: 'Alert Dialog', href: '/alert-dialog'},
         {title: 'Aspect Ratio', href: '/aspect-ratio'},
         {title: 'Avatar', href: '/avatar'},
+        {title: 'Badge', href: '/badge'},
         {title: 'Collapsible', href: '/collapsible'},
         {title: 'Command', href: '/command'},
         {title: 'Dialog', href: '/dialog'},
