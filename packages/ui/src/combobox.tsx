@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/prefer-tag-over-role */
 import * as React from 'react'
-import {cx} from '@nerdfish/utils'
+import {cx, useControllableState} from '@nerdfish/utils'
 import {Check, ChevronsUpDown} from 'lucide-react'
 
 import {Command} from './command'
@@ -47,7 +47,7 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
     ref,
   ) {
     const [open, setOpen] = React.useState(false)
-    const [value, setValue] = React.useState(valueProp ?? defaultValue)
+    const [value, setValue] = useControllableState(valueProp, defaultValue)
 
     const handleChange = React.useCallback(
       (v: string) => {
@@ -55,7 +55,7 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
         onChange?.(v)
         setOpen(false)
       },
-      [onChange, value],
+      [onChange, setValue, value],
     )
 
     return (
