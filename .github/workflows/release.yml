@@ -50,14 +50,14 @@ jobs:
           NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
         run: pnpm build && pnpm validate
 
-      - name: Create Release Pull Request or Publish to npm
+      - name: Create Version PR or Publish to NPM
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@v1.4.1
         with:
-          version: pnpm run changeset:version
-          commit: 'chore(release): publish'
-          title: 'chore(release): publish'
-          publish: pnpm changeset:release
+          commit: 'chore(release): version packages'
+          title: 'chore(release): version packages'
+          version: node .github/changeset-version.js
+          publish: npx changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

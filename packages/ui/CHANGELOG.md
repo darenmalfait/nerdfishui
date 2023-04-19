@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.2.1
+
+### Patch Changes
+
+- [`bfbaf79`](https://github.com/darenmalfait/nerdfishui/commit/bfbaf7930803e21b52c5c2cbf4d936af2c39b5fb) Thanks [@darenmalfait](https://github.com/darenmalfait)! - clicking the datepicker should not submit the form
+
 ## 1.2.0
 
 ### Minor Changes
