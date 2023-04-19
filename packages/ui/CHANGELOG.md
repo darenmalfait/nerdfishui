@@ -1,5 +1,17 @@
 # @nerdfish/ui
 
+## 1.2.0
+
+### Minor Changes
+
+- [`c92c74d`](https://github.com/darenmalfait/nerdfishui/commit/c92c74df5e7533ea56297d4f461c50f003b30630) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add datepicker component
+
+- [`5a4969a`](https://github.com/darenmalfait/nerdfishui/commit/5a4969a5b3b7b1052858e516e4ecc80723ede1b3) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new badge component
+
+### Patch Changes
+
+- [`a2b0a32`](https://github.com/darenmalfait/nerdfishui/commit/a2b0a32b70d29d97a655af4638bbbc365c96c39a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - make combobox controllable
+
 ## 1.1.0
 
 ### Minor Changes
