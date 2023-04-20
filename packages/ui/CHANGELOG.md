@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.2.3
+
+### Patch Changes
+
+- [`6171305`](https://github.com/darenmalfait/nerdfishui/commit/6171305cb073899900965ecdb1e59d0ff5125918) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add defaultSelected prop to datepicker
+
 ## 1.2.2
 
 ### Patch Changes
