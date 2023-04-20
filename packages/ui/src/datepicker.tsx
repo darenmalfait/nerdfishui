@@ -21,6 +21,7 @@ const Datepicker = React.forwardRef<
   HTMLInputElement,
   InputProps & {
     selected?: Date
+    defaultSelected?: Date
     onSelect?: (date: Date | undefined) => void
     presets?: {value: string; label: string}[] | false
     placeholder?: string
@@ -41,11 +42,12 @@ const Datepicker = React.forwardRef<
   placeholder = 'Pick a date',
   className: classNameProp,
   selected: selectedProp,
+  defaultSelected,
   onSelect,
 }) {
   const [selected, setSelected] = useControllableState<Date | undefined>(
     selectedProp,
-    undefined,
+    defaultSelected,
   )
 
   const inputId = name
