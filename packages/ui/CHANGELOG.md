@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.2.4
+
+### Patch Changes
+
+- [`f6f3532`](https://github.com/darenmalfait/nerdfishui/commit/f6f35320ec68d471cd6947f6e0f8a4d1997daa36) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix broken package
+
 ## 1.2.3
 
 ### Patch Changes
