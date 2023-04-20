@@ -45,6 +45,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --ignore-scripts
 
+      - name: build packages
+        env:
+          NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
+        run: pnpm run build
+
       - name: Create Version PR or Publish to NPM
         id: changesets
         uses: changesets/action@v1.4.1
