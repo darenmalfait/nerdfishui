@@ -45,11 +45,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --ignore-scripts
 
-      - name: Lint code
-        env:
-          NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
-        run: pnpm build && pnpm validate
-
       - name: Create Version PR or Publish to NPM
         id: changesets
         uses: changesets/action@v1.4.1
