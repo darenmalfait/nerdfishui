@@ -21,7 +21,7 @@
     "@nerdfish/tailwind-config": "workspace:^1.0.1",
     "@nerdfish/theme": "workspace:^1.0.1",
     "@nerdfish/tsconfig": "workspace:^1.0.0",
-    "@nerdfish/ui": "workspace:^1.2.2",
+    "@nerdfish/ui": "workspace:^1.2.3",
     "@nerdfish/utils": "workspace:^1.0.1",
     "@next/env": "^13.3.0",
     "@next/font": "^13.3.0",
