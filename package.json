@@ -23,10 +23,10 @@
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
-    "eslint": "^8.38.0",
+    "eslint": "^8.39.0",
     "eslint-config-daren": "^4.1.1",
     "husky": "^8.0.3",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.2.0"
+  "packageManager": "pnpm@8.3.1"
 }
