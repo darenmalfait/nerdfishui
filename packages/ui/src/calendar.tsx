@@ -17,8 +17,8 @@ function Calendar({
 }: CalendarProps) {
   return (
     <DayPicker
+      today={new Date()}
       showOutsideDays={showOutsideDays}
-      className={cx('p-3', className)}
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4',
@@ -37,12 +37,8 @@ function Calendar({
           'text-gray-600 dark:text-gray-400 rounded-md w-9 font-normal text-[0.8rem]',
         row: 'flex w-full mt-2',
         cell: 'text-center text-sm p-0 relative [&:has([aria-selected])]:bg-secondary first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
-        day: cx(
-          buttonVariants({variant: 'ghost'}),
-          'h-9 w-9 p-0 font-normal aria-selected:opacity-100 flex items-center justify-center',
-        ),
-        day_selected:
-          'bg-primary text-primary hover:bg-primary hover:text-primary focus:bg-primary focus:text-primary',
+        day: 'h-9 w-9 p-0 font-normal aria-selected:opacity-100 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary hover:scale-105 active:scale-100 transition-transform',
+        day_selected: 'bg-inverse text-inverse',
         day_today: 'bg-nerdfish-500 text-white',
         day_outside: 'text-gray-400 dark:text-gray-600 opacity-50',
         day_disabled: 'text-gray-400 dark:text-gray-600 opacity-50',
@@ -51,6 +47,7 @@ function Calendar({
         day_hidden: 'invisible',
         ...classNames,
       }}
+      className={className}
       components={{
         IconLeft: () => <ChevronLeft className="h-4 w-4" />,
         IconRight: () => <ChevronRight className="h-4 w-4" />,

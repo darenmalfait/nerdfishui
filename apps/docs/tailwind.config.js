@@ -11,6 +11,7 @@ module.exports = {
     fromRoot('./context/**/*.{js,jsx,ts,tsx}'),
     fromRoot('./styles/**/*.{js,jsx,ts,tsx}'),
     fromRoot('./pages/**/*.{js,jsx,ts,tsx,mdx}'),
+    fromRoot('./app/**/*.{js,jsx,ts,tsx,mdx}'),
     fromRoot('./mdx/**/*.{js,jsx,ts,tsx}'),
   ],
   darkMode: 'class',
