@@ -92,6 +92,9 @@ importers:
       contentlayer:
         specifier: ^0.3.1
         version: 0.3.1(esbuild@0.17.14)(markdown-wasm@1.2.0)
+      date-fns:
+        specifier: ^2.29.3
+        version: 2.29.3
       framer-motion:
         specifier: ^10.12.4
         version: 10.12.4(react-dom@18.2.0)(react@18.2.0)
@@ -122,6 +125,9 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      react-day-picker:
+        specifier: ^8.7.1
+        version: 8.7.1(date-fns@2.29.3)(react@18.2.0)
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)

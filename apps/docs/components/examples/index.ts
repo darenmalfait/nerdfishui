@@ -20,6 +20,8 @@ import {ButtonLoading} from './button/loading'
 import {ButtonOutline} from './button/outline'
 import {ButtonSubtle} from './button/subtle'
 import {ButtonWithIcon} from './button/with-icon'
+import {DateRangePicker} from './calendar/date-range-picker'
+import {CalendarDemo} from './calendar/demo'
 import {CheckboxColors} from './checkbox/colors'
 import {CheckboxDemo} from './checkbox/demo'
 import {CheckboxDisabled} from './checkbox/disabled'
@@ -87,6 +89,7 @@ export const examples = {
   ButtonOutline,
   ButtonSubtle,
   ButtonWithIcon,
+  CalendarDemo,
   CheckboxColors,
   CheckboxDemo,
   CheckboxDisabled,
@@ -100,6 +103,7 @@ export const examples = {
   ContainerDemo,
   ContainerSize,
   DatepickerDemo,
+  DateRangePicker,
   DialogDemo,
   DoubleLabelLinkDemo,
   DropdownMenuDemo,
