@@ -1,0 +1,38 @@
+---
+title: Calendar
+description: Pick a date
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'calendar.tsx'
+---
+
+<ComponentExample src="/components/examples/calendar/demo.tsx">
+  <CalendarDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Calendar} from '@nerdfish/ui'
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+return (
+  <Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className="rounded-md border"
+  />
+)
+```
+
+### Date Range Picker
+
+<ComponentExample src="/components/examples/calendar/date-range-picker.tsx">
+  <DateRangePicker />
+</ComponentExample>
