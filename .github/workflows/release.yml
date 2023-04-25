@@ -54,10 +54,10 @@ jobs:
         id: changesets
         uses: changesets/action@v1.4.1
         with:
-          version: node .github/changeset-version.mjs
-          commit: 'chore(release): version packages'
-          title: 'chore(release): version packages'
-          publish: npx changeset publish
+          version: pnpm run changeset:version
+          commit: 'chore(release): publish'
+          title: 'chore(release): publish'
+          publish: pnpm changeset:release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
