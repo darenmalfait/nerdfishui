@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.2.6
+
+### Patch Changes
+
+- [`5a67110`](https://github.com/darenmalfait/nerdfishui/commit/5a67110ea8bae51e7f282cb906d9fcb5e8a7397d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update calendar styling
+
 ## 1.2.5
 
 ### Patch Changes
