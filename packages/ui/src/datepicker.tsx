@@ -126,9 +126,10 @@ const Datepicker = React.forwardRef<
               }
             />
           ) : null}
-          <div className="rounded-md border">
+          <div className="rounded-md">
             <Calendar
               mode="single"
+              className="p-3"
               selected={selected}
               onSelect={handleChange}
             />
