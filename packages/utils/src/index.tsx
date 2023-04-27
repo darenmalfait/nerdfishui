@@ -1,5 +1,6 @@
 export * from './assertion'
 export * from './date'
+export * from './email'
 export * from './hooks'
 export * from './misc'
 export * from './object'

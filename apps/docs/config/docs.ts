@@ -20,6 +20,7 @@ export const docs = {
       links: [
         {title: 'Checkbox', href: '/checkbox'},
         {title: 'Input', href: '/input'},
+        {title: 'Multi Email', href: '/multi-email'},
         {title: 'Combobox', href: '/combobox'},
         {title: 'Timepicker', href: '/timepicker'},
         {title: 'Datepicker', href: '/datepicker'},
