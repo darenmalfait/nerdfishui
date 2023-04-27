@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.3.1
+
+### Patch Changes
+
+- [`a83e751`](https://github.com/darenmalfait/nerdfishui/commit/a83e751d20eb656da8ae99b49173ed7f384f665f) Thanks [@darenmalfait](https://github.com/darenmalfait)! - calendar: remove border on range selection
+
 ## 1.3.0
 
 ### Minor Changes
