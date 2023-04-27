@@ -46,6 +46,7 @@ import {InputIcon} from './input/icon'
 import {InputSize} from './input/size'
 import {InputTextArea} from './input/textarea'
 import {LinkDemo} from './link/demo'
+import {MultiEmailDemo} from './multi-email/demo'
 import {NavigationListDemo} from './navigation-list/demo'
 import {PopoverDemo} from './popover/demo'
 import {ProgressiveImageDemo} from './progressive-image/demo'
@@ -76,8 +77,8 @@ export const examples = {
   AlertWarning,
   AspectRatioDemo,
   AvatarDemo,
-  BadgeDemo,
   BadgeDanger,
+  BadgeDemo,
   BadgeOutline,
   BadgeSecondary,
   BadgeSuccess,
@@ -115,6 +116,7 @@ export const examples = {
   InputSize,
   InputTextArea,
   LinkDemo,
+  MultiEmailDemo,
   NavigationListDemo,
   PopoverDemo,
   ProgressiveImageDemo,

@@ -12,10 +12,7 @@ export function Prose({
 }) {
   return (
     <Component
-      className={cx(
-        className,
-        'prose mx-auto max-w-screen-lg dark:prose-invert',
-      )}
+      className={cx(className, 'mx-auto max-w-screen-lg')}
       {...props}
     />
   )
