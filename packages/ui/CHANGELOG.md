@@ -1,5 +1,18 @@
 # @nerdfish/ui
 
+## 1.3.0
+
+### Minor Changes
+
+- [`4bee241`](https://github.com/darenmalfait/nerdfishui/commit/4bee2417318c7e70006fe9bc45133c7e1240a15b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add multi-email component and util function
+
+### Patch Changes
+
+- [`ab20113`](https://github.com/darenmalfait/nerdfishui/commit/ab20113002b72ce5cb50997d628cd83d7c8992a5) Thanks [@darenmalfait](https://github.com/darenmalfait)! - calendar: change active today styling
+
+- Updated dependencies [[`4bee241`](https://github.com/darenmalfait/nerdfishui/commit/4bee2417318c7e70006fe9bc45133c7e1240a15b)]:
+  - @nerdfish/utils@1.1.0
+
 ## 1.2.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.1.0
+
+### Minor Changes
+
+- [`4bee241`](https://github.com/darenmalfait/nerdfishui/commit/4bee2417318c7e70006fe9bc45133c7e1240a15b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add multi-email component and util function
+
 ## 1.0.1
 
 ### Patch Changes
