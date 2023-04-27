@@ -38,9 +38,10 @@ function Calendar({
         row: 'flex w-full mt-2',
         cell: 'text-center text-sm p-0 relative [&:has([aria-selected])]:bg-secondary first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
         day: 'h-9 w-9 p-0 font-normal aria-selected:opacity-100 rounded-full flex items-center justify-center hover:bg-inverse hover:text-inverse hover:scale-105 active:scale-100 transition-transform',
-        day_selected: '!bg-inverse !text-inverse',
+        day_selected:
+          '!bg-inverse !text-inverse border border-gray-900 dark:!border-white rounded-full',
         day_today:
-          'bg-nerdfish-500 text-white hover:!bg-nerdfish-500 hover:!text-white',
+          '!bg-nerdfish-500 !text-white hover:!bg-nerdfish-500 hover:!text-white',
         day_outside: 'text-gray-400 dark:text-gray-600 opacity-50',
         day_disabled: 'text-gray-400 dark:text-gray-600 opacity-50',
         day_range_middle:
