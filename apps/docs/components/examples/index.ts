@@ -53,6 +53,7 @@ import {PopoverDemo} from './popover/demo'
 import {ProgressiveImageDemo} from './progressive-image/demo'
 import {ScrollAreaDemo} from './scroll-area/demo'
 import {SectionDemo} from './section/demo'
+import {SkeletonDemo} from './skeleton/demo'
 import {SwitchDemo} from './switch/demo'
 import {TabsDemo} from './tabs/demo'
 import {TimepickerDemo} from './timepicker/demo'
@@ -124,6 +125,7 @@ export const examples = {
   ProgressiveImageDemo,
   ScrollAreaDemo,
   SectionDemo,
+  SkeletonDemo,
   SwitchDemo,
   TabsDemo,
   TimepickerDemo,
