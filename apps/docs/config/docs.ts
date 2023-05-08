@@ -39,8 +39,8 @@ export const docs = {
       title: 'Other',
       links: [
         {title: 'Accordion', href: '/accordion'},
-        {title: 'Alert', href: '/alert'},
         {title: 'Alert Dialog', href: '/alert-dialog'},
+        {title: 'Alert', href: '/alert'},
         {title: 'Aspect Ratio', href: '/aspect-ratio'},
         {title: 'Avatar', href: '/avatar'},
         {title: 'Badge', href: '/badge'},
@@ -53,6 +53,7 @@ export const docs = {
         {title: 'NavigationList', href: '/navigation-list'},
         {title: 'ProgressiveImage', href: '/progressive-image'},
         {title: 'ScrollArea', href: '/scroll-area'},
+        {title: 'Skeleton', href: '/skeleton'},
         {title: 'Tabs', href: '/tabs'},
         {title: 'Toast', href: '/toast'},
       ],
