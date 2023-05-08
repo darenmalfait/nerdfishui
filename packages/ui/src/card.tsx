@@ -8,7 +8,7 @@ const CardRoot = React.forwardRef<
   <div
     ref={ref}
     className={cx(
-      'rounded-lg border bg-card text-primary shadow-sm',
+      'rounded-lg shadow-outline bg-card text-primary shadow-sm',
       className,
     )}
     {...props}
