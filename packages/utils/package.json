@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "@nerdfish/tsconfig": "workspace:*",
-    "@types/react": "^18.0.38",
-    "@types/react-dom": "^18.0.11",
-    "eslint": "^8.39.0",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "eslint": "^8.40.0",
     "eslint-config-daren": "^4.1.1",
     "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
@@ -33,7 +33,7 @@
     "access": "public"
   },
   "dependencies": {
-    "class-variance-authority": "^0.5.2",
+    "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "tailwind-merge": "^1.12.0"
   }
