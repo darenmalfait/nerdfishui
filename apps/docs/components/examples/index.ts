@@ -22,6 +22,7 @@ import {ButtonSubtle} from './button/subtle'
 import {ButtonWithIcon} from './button/with-icon'
 import {DateRangePicker} from './calendar/date-range-picker'
 import {CalendarDemo} from './calendar/demo'
+import {CardDemo} from './card/demo'
 import {CheckboxColors} from './checkbox/colors'
 import {CheckboxDemo} from './checkbox/demo'
 import {CheckboxDisabled} from './checkbox/disabled'
@@ -91,6 +92,7 @@ export const examples = {
   ButtonSubtle,
   ButtonWithIcon,
   CalendarDemo,
+  CardDemo,
   CheckboxColors,
   CheckboxDemo,
   CheckboxDisabled,

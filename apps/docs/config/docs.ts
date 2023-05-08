@@ -45,6 +45,7 @@ export const docs = {
         {title: 'Avatar', href: '/avatar'},
         {title: 'Badge', href: '/badge'},
         {title: 'Calendar', href: '/calendar'},
+        {title: 'Card', href: '/card'},
         {title: 'Collapsible', href: '/collapsible'},
         {title: 'Command', href: '/command'},
         {title: 'Dialog', href: '/dialog'},
