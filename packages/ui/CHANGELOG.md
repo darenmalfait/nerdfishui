@@ -1,5 +1,23 @@
 # @nerdfish/ui
 
+## 1.4.0
+
+### Minor Changes
+
+- [`bfb353d`](https://github.com/darenmalfait/nerdfishui/commit/bfb353d6690c1fa8246eb50813e49333accbb548) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add Tooltip component
+
+- [#41](https://github.com/darenmalfait/nerdfishui/pull/41) [`205ed4e`](https://github.com/darenmalfait/nerdfishui/commit/205ed4effd414fdc32965164d7ba1fc64fc02561) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add Card component
+
+- [`6ab9323`](https://github.com/darenmalfait/nerdfishui/commit/6ab93239717412963c7f4520f9dc0621d61ba2c0) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new table component
+
+- [#43](https://github.com/darenmalfait/nerdfishui/pull/43) [`bd782e8`](https://github.com/darenmalfait/nerdfishui/commit/bd782e8e31c789d1f1897a5cb3e2917d268f7859) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add Skeleton component
+
+- [`7c14315`](https://github.com/darenmalfait/nerdfishui/commit/7c14315f6624379fc6ecf772b34f595bf0b36c48) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new sheet component
+
+### Patch Changes
+
+- [`5dc3345`](https://github.com/darenmalfait/nerdfishui/commit/5dc334566847adba0e2afbb1ac0b7d50c1a0ed9d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - adjust text color in multiple components
+
 ## 1.3.1
 
 ### Patch Changes
