@@ -64,6 +64,7 @@ import {ToggleDisabled} from './toggle/disabled'
 import {ToggleSize} from './toggle/size'
 import {ToggleVariant} from './toggle/variant'
 import {ToggleWithText} from './toggle/with-text'
+import {TooltipDemo} from './tooltip/demo'
 import {TypographyDemo} from './typography/demo'
 import {TypographyParagraph} from './typography/paragraph'
 import {TypographyProse} from './typography/prose'
@@ -136,6 +137,7 @@ export const examples = {
   ToggleSize,
   ToggleVariant,
   ToggleWithText,
+  TooltipDemo,
   TypographyDemo,
   TypographyParagraph,
   TypographyProse,
