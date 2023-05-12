@@ -5,7 +5,9 @@ import {VariantProps, cva, cx} from '@nerdfish/utils'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
 import {X} from 'lucide-react'
 
-const RawSheet = SheetPrimitive.Root
+const RawSheet = function RawSheet(props: SheetPrimitive.DialogProps) {
+  return <SheetPrimitive.Root {...props} />
+}
 
 const SheetTrigger = SheetPrimitive.Trigger
 
@@ -140,7 +142,7 @@ const sheetVariants = cva(
   },
 )
 
-export interface DialogContentProps
+interface DialogContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {}
 

@@ -15,7 +15,7 @@ export function SheetDemo() {
             done.
           </Sheet.Description>
         </Sheet.Header>
-        <div className="flow-col flex space-y-2">
+        <div className="my-4 flex flex-col space-y-2">
           <Input
             name="name"
             id="name"
