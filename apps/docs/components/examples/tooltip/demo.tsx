@@ -7,7 +7,10 @@ export function TooltipDemo() {
     <TooltipProvider>
       <Tooltip>
         <Tooltip.Trigger asChild>
-          <Button variant="outline" className="w-10 rounded-full p-0">
+          <Button
+            variant="outline"
+            className="flex w-10 items-center justify-center rounded-full p-0"
+          >
             <Plus className="h-4 w-4" />
             <span className="sr-only">Add</span>
           </Button>
