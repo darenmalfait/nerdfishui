@@ -55,6 +55,7 @@ import {ScrollAreaDemo} from './scroll-area/demo'
 import {SectionDemo} from './section/demo'
 import {SkeletonDemo} from './skeleton/demo'
 import {SwitchDemo} from './switch/demo'
+import {TableDemo} from './table/demo'
 import {TabsDemo} from './tabs/demo'
 import {TimepickerDemo} from './timepicker/demo'
 import {ToastDemo} from './toast/demo'
@@ -128,6 +129,7 @@ export const examples = {
   SectionDemo,
   SkeletonDemo,
   SwitchDemo,
+  TableDemo,
   TabsDemo,
   TimepickerDemo,
   ToastDemo,

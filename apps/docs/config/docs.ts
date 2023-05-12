@@ -55,6 +55,7 @@ export const docs = {
         {title: 'ProgressiveImage', href: '/progressive-image'},
         {title: 'ScrollArea', href: '/scroll-area'},
         {title: 'Skeleton', href: '/skeleton'},
+        {title: 'Table', href: '/table'},
         {title: 'Tabs', href: '/tabs'},
         {title: 'Toast', href: '/toast'},
         {title: 'Tooltip', href: '/tooltip'},
