@@ -1,6 +1,6 @@
 {
   "name": "@nerdfish/ui",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "license": "MIT",
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,
