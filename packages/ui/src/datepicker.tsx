@@ -90,7 +90,7 @@ const Datepicker = React.forwardRef<
             <Button
               type="button"
               variant="outline"
-              className={cx(className, !selected && 'text-muted-foreground')}
+              className={cx(className, !selected && 'text-secondary')}
             >
               {selected ? format(selected, 'PPP') : <span>{placeholder}</span>}
               {!error ? (
