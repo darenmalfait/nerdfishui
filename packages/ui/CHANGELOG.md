@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.4.1
+
+### Patch Changes
+
+- [`731cce8`](https://github.com/darenmalfait/nerdfishui/commit/731cce8a16e2d593c556841a7811808ee890f6ea) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix dialog and sheet interference
+
 ## 1.4.0
 
 ### Minor Changes
