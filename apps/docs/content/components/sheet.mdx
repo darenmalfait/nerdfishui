@@ -1,0 +1,35 @@
+---
+title: Sheet
+description:
+  Sheets are used to represent content that is loading or doesn't exist yet.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'sheet.tsx'
+---
+
+<ComponentExample src="/components/examples/sheet/demo.tsx">
+  <SheetDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Sheet} from '@nerdfish/ui'
+```
+
+```tsx
+<Sheet>
+  <Sheet.Trigger>Open</Sheet.Trigger>
+  <Sheet.Content>
+    <Sheet.Header>
+      <Sheet.Title>Are you sure absolutely sure?</Sheet.Title>
+      <Sheet.Description>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </Sheet.Description>
+    </Sheet.Header>
+  </Sheet.Content>
+</Sheet>
+```
