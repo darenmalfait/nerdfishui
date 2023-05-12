@@ -57,6 +57,7 @@ export const docs = {
         {title: 'Skeleton', href: '/skeleton'},
         {title: 'Tabs', href: '/tabs'},
         {title: 'Toast', href: '/toast'},
+        {title: 'Tooltip', href: '/tooltip'},
       ],
     },
   ],
