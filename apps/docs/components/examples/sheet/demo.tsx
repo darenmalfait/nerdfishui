@@ -15,25 +15,21 @@ export function SheetDemo() {
             done.
           </Sheet.Description>
         </Sheet.Header>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Input
-              name="name"
-              id="name"
-              label="Name"
-              value="Pedro Duarte"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Input
-              name="username"
-              id="username"
-              label="Username"
-              value="@peduarte"
-              className="col-span-3"
-            />
-          </div>
+        <div className="flow-col flex space-y-2">
+          <Input
+            name="name"
+            id="name"
+            label="Name"
+            value="Pedro Duarte"
+            className="col-span-3"
+          />
+          <Input
+            name="username"
+            id="username"
+            label="Username"
+            value="@peduarte"
+            className="col-span-3"
+          />
         </div>
         <Sheet.Footer>
           <Button type="submit">Save changes</Button>
