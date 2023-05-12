@@ -54,6 +54,7 @@ export const docs = {
         {title: 'NavigationList', href: '/navigation-list'},
         {title: 'ProgressiveImage', href: '/progressive-image'},
         {title: 'ScrollArea', href: '/scroll-area'},
+        {title: 'Sheet', href: '/sheet'},
         {title: 'Skeleton', href: '/skeleton'},
         {title: 'Table', href: '/table'},
         {title: 'Tabs', href: '/tabs'},
