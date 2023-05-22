@@ -1,5 +1,5 @@
 {
-  "name": "@nerdfish/docs",
+  "name": "docs",
   "version": "0.0.0",
   "private": true,
   "description": "",
@@ -7,10 +7,11 @@
   "sideEffects": false,
   "scripts": {
     "build": "next build",
+    "contentlayer": "contentlayer build",
     "dev": "next dev",
     "export": "npm run build && next export",
     "lint:src": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "lint:types": "contentlayer build && tsc --noEmit",
+    "lint:types": "tsc --noEmit",
     "start": "npm run build && next start",
     "lint": "run-s lint:*"
   },
