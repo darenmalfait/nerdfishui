@@ -72,72 +72,71 @@ function Label({className, htmlFor, ...props}: JSX.IntrinsicElements['label']) {
   )
 }
 
-const RawInput = React.forwardRef<HTMLInputElement, RawInputProps>(
-  function RawInput(props, ref) {
-    const {
-      type,
-      hasError,
-      children,
-      inputSize,
-      icon: Icon,
-      ...rawInputProps
-    } = props
+const RawInput = React.forwardRef<
+  HTMLInputElement | HTMLTextAreaElement,
+  RawInputProps
+>(function RawInput(props, ref) {
+  const {
+    type,
+    hasError,
+    children,
+    inputSize,
+    icon: Icon,
+    ...rawInputProps
+  } = props
 
-    const className = getInputClassName(props.className, hasError, inputSize)
+  const className = getInputClassName(props.className, hasError, inputSize)
 
-    if (type === 'textarea') {
-      return (
-        <div className="relative flex w-full items-center space-x-2">
-          {Icon ? (
-            <Icon
-              width="20px"
-              height="20px"
-              className={cx(
-                'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0',
-                hasError && 'text-red-500',
-              )}
-            />
-          ) : null}
-          <textarea
-            {...(rawInputProps as JSX.IntrinsicElements['textarea'])}
-            aria-invalid={hasError}
-            className={cx('h-36', className, {'pr-14': !!Icon})}
-          />
-          {children ? <div className="flex shrink-0">{children}</div> : null}
-        </div>
-      )
-    }
-
+  if (type === 'textarea') {
     return (
-      <div className="flex flex-nowrap items-center space-x-2">
-        <div className="relative w-full shadow-sm">
-          <input
-            type={type}
-            {...(rawInputProps as JSX.IntrinsicElements['input'])}
-            className={cx(className, {'pr-14': !!Icon})}
-            ref={ref}
+      <div className="relative flex w-full items-center space-x-2">
+        {Icon ? (
+          <Icon
+            width="20px"
+            height="20px"
+            className={cx(
+              'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0',
+              hasError && 'text-red-500',
+            )}
           />
-          {Icon && !hasError ? (
-            <Icon
-              width="20px"
-              height="20px"
-              className="text-gray-300' absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0"
-            />
-          ) : null}
-          {hasError ? (
-            <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
-              <AlertCircle
-                className="h-5 w-5 text-red-500"
-                aria-hidden="true"
-              />
-            </div>
-          ) : null}
-        </div>
+        ) : null}
+        <textarea
+          {...(rawInputProps as JSX.IntrinsicElements['textarea'])}
+          ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
+          aria-invalid={hasError}
+          className={cx('h-36', className, {'pr-14': !!Icon})}
+        />
         {children ? <div className="flex shrink-0">{children}</div> : null}
       </div>
     )
-  },
-)
+  }
+
+  return (
+    <div className="flex flex-nowrap items-center space-x-2">
+      <div className="relative w-full shadow-sm">
+        <input
+          type={type}
+          {...(rawInputProps as JSX.IntrinsicElements['input'])}
+          className={cx(className, {'pr-14': !!Icon})}
+          ref={ref as React.ForwardedRef<HTMLInputElement>}
+        />
+        {Icon && !hasError ? (
+          <Icon
+            width="20px"
+            height="20px"
+            className="text-gray-300' absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0"
+          />
+        ) : null}
+        {hasError ? (
+          <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
+            <AlertCircle className="h-5 w-5 text-red-500" aria-hidden="true" />
+          </div>
+        ) : null}
+      </div>
+      {children ? <div className="flex shrink-0">{children}</div> : null}
+    </div>
+  )
+})
 
 function InputError({
   className,
@@ -158,53 +157,54 @@ function InputError({
   )
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputProps & RawInputProps>(
-  function Input(
-    {defaultValue, error, name, label, className, description, id, ...props},
-    ref,
-  ) {
-    const inputId = id ?? name
-    const errorId = `${inputId}-error`
-    const descriptionId = `${inputId}-description`
+const Input = React.forwardRef<
+  HTMLInputElement | HTMLTextAreaElement,
+  InputProps & RawInputProps
+>(function Input(
+  {defaultValue, error, name, label, className, description, id, ...props},
+  ref,
+) {
+  const inputId = id ?? name
+  const errorId = `${inputId}-error`
+  const descriptionId = `${inputId}-description`
 
-    return (
-      <div className="w-full">
-        {label ? (
-          <div className="flex justify-between">
-            <Label htmlFor={inputId} className="mb-2">
-              {label}
-            </Label>
-            {description ? (
-              <span className="text-sm text-gray-200" id={descriptionId}>
-                {description}
-              </span>
-            ) : null}
-          </div>
-        ) : null}
+  return (
+    <div className="w-full">
+      {label ? (
+        <div className="flex justify-between">
+          <Label htmlFor={inputId} className="mb-2">
+            {label}
+          </Label>
+          {description ? (
+            <span className="text-sm text-gray-200" id={descriptionId}>
+              {description}
+            </span>
+          ) : null}
+        </div>
+      ) : null}
 
-        <RawInput
-          hasError={!!error}
-          {...(props as RawInputProps)}
-          ref={ref}
-          name={name}
-          id={inputId}
-          autoComplete={name}
-          required
-          defaultValue={defaultValue}
-          aria-describedby={
-            error ? errorId : description ? descriptionId : undefined
-          }
-        />
+      <RawInput
+        hasError={!!error}
+        {...(props as RawInputProps)}
+        ref={ref}
+        name={name}
+        id={inputId}
+        autoComplete={name}
+        required
+        defaultValue={defaultValue}
+        aria-describedby={
+          error ? errorId : description ? descriptionId : undefined
+        }
+      />
 
-        {error ? (
-          <InputError className="mt-2" id={errorId}>
-            {error}
-          </InputError>
-        ) : null}
-      </div>
-    )
-  },
-)
+      {error ? (
+        <InputError className="mt-2" id={errorId}>
+          {error}
+        </InputError>
+      ) : null}
+    </div>
+  )
+})
 
 export {RawInput, Input, InputError, getInputClassName, FormHelperText, Label}
 export type {RawInputProps, InputProps, InputSize}

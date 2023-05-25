@@ -8,5 +8,5 @@
   "linked": [],
   "access": "public",
   "baseBranch": "main",
-  "ignore": ["@nerdfish/docs"]
+  "ignore": ["docs"]
 }
