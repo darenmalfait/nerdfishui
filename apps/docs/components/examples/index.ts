@@ -48,6 +48,7 @@ import {InputSize} from './input/size'
 import {InputTextArea} from './input/textarea'
 import {LinkDemo} from './link/demo'
 import {MultiEmailDemo} from './multi-email/demo'
+import {MultiSelectDemo} from './multi-select/demo'
 import {NavigationListDemo} from './navigation-list/demo'
 import {PopoverDemo} from './popover/demo'
 import {ProgressiveImageDemo} from './progressive-image/demo'
@@ -123,6 +124,7 @@ export const examples = {
   InputTextArea,
   LinkDemo,
   MultiEmailDemo,
+  MultiSelectDemo,
   NavigationListDemo,
   PopoverDemo,
   ProgressiveImageDemo,
