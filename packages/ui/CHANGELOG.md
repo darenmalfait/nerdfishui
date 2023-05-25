@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 1.4.2
+
+### Patch Changes
+
+- [`8173019`](https://github.com/darenmalfait/nerdfishui/commit/81730195e8e2e0610376f9437884d52ebfb2fa0e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add missing reference on textarea
+
 ## 1.4.1
 
 ### Patch Changes
