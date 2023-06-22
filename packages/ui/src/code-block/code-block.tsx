@@ -1,161 +1,52 @@
-'use client'
-
 import * as React from 'react'
-import {cx} from '@nerdfish/utils'
-import {ClipboardCopy} from 'lucide-react'
-import Highlight, {
-  Language,
-  PrismTheme,
-  defaultProps,
-} from 'prism-react-renderer'
+import {Lang, getHighlighter as shikiGetHighlighter} from 'shiki'
 
-import darkTheme from './vscode-dark'
-import lightTheme from './vscode-light'
+import {CopyButton} from './copy-button'
 
-function pad(num: number | string, size = 2) {
-  num = num.toString()
-  while (num.length < size) num = `0${num}`
+const highlighterPromise = shikiGetHighlighter({})
 
-  return num
+const getHighlighter = async (language: string) => {
+  const highlighter = await highlighterPromise
+  const loadedLanguages = highlighter.getLoadedLanguages()
+
+  const promises = []
+  if (!loadedLanguages.includes(language as Lang)) {
+    promises.push(highlighter.loadLanguage(language as Lang))
+  }
+
+  promises.push(highlighter.loadTheme('github-dark'))
+
+  await Promise.all(promises)
+
+  return highlighter
 }
 
-type CodeBlockLanguage = Language
-
-function CopyButton({code}: {code: string}) {
-  const [copyCount, setCopyCount] = React.useState(0)
-  const copied = copyCount > 0
-
-  React.useEffect(() => {
-    if (copyCount > 0) {
-      const timeout = setTimeout(() => setCopyCount(0), 1000)
-      return () => {
-        clearTimeout(timeout)
-      }
-    }
-  }, [copyCount])
-
-  return (
-    <button
-      type="button"
-      className={cx(
-        'group/button absolute top-3.5 right-4 z-10 overflow-hidden rounded-full py-1 pl-2 pr-3 text-xs font-medium opacity-0 backdrop-blur transition text-primary focus:opacity-100 group-hover:opacity-100',
-        copied
-          ? 'bg-green-400/10 ring-1 ring-inset ring-green-400/20'
-          : 'bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10',
-      )}
-      onClick={async () => {
-        await window.navigator.clipboard.writeText(code).then(() => {
-          setCopyCount(count => count + 1)
-        })
-      }}
-    >
-      <span
-        aria-hidden={copied}
-        className={cx(
-          'pointer-events-none flex items-center gap-0.5 text-gray-800 transition duration-300 dark:text-gray-200',
-          copied && '-translate-y-1.5 opacity-0',
-        )}
-      >
-        <ClipboardCopy className="h-5 w-5 fill-gray-500/20 stroke-gray-500 transition-colors group-hover/button:stroke-gray-400" />
-        Copy
-      </span>
-      <span
-        aria-hidden={!copied}
-        className={cx(
-          'pointer-events-none absolute inset-0 flex items-center justify-center text-green-400 transition duration-300',
-          !copied && 'translate-y-1.5 opacity-0',
-        )}
-      >
-        Copied!
-      </span>
-    </button>
-  )
+interface CodeProps {
+  code: string
+  lang?: string
 }
 
-function CodeBlock({
-  code,
-  language = 'typescript',
-  showLineNumbers,
-  showLanguage,
-  theme,
-  darkMode,
-  className: classNameProp,
-}: {
-  code?: string
-  language?: Language
-  showLineNumbers?: boolean
-  showLanguage?: boolean
-  theme?: PrismTheme
-  darkMode?: boolean
-  className?: string
-}) {
-  return (
-    <div className="group relative">
-      <Highlight
-        {...defaultProps}
-        code={code ?? ''}
-        language={language}
-        theme={
-          theme ?? darkMode
-            ? (darkTheme as PrismTheme)
-            : (lightTheme as PrismTheme)
-        }
-      >
-        {({className, style, tokens, getLineProps, getTokenProps}) => (
-          <div
-            className={cx(
-              classNameProp,
-              'rounded-xl bg-black/5 shadow-outline dark:bg-white/5',
-            )}
-          >
-            <div className="flex px-4 py-3">
-              <div className="mr-2 h-3 w-3 rounded-full bg-red-500" />
-              <div className="mr-2 h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
-            </div>
-            <CopyButton code={code ?? ''} />
-            <pre
-              className={cx(
-                className,
-                'relative my-5 mx-auto overflow-x-auto pt-0 pb-5 pr-8 text-sm leading-relaxed ',
-                {
-                  'pl-4': !showLineNumbers,
-                  'pl-16': showLineNumbers,
-                },
-              )}
-              style={style}
-            >
-              {tokens.map((line, i) => {
-                if (i === tokens.length - 1 && line.length === 0) return null
+async function CodeBlock({code, lang = 'typescript'}: CodeProps) {
+  const highlighter = await getHighlighter(lang)
 
-                return (
-                  // eslint-disable-next-line react/jsx-key
-                  <div {...getLineProps({line, key: i})}>
-                    {showLineNumbers ? (
-                      <span className="text-primary-300 absolute left-0 mr-[16px] grid w-[40px] shrink-0 place-items-center">
-                        {pad(i + 1)}
-                      </span>
-                    ) : null}
-                    {line.length === 0 ? <span>&#8203;</span> : null}
-                    {line.map((token, key) => (
-                      // eslint-disable-next-line react/jsx-key
-                      <span {...getTokenProps({token, key})} />
-                    ))}
-                  </div>
-                )
-              })}
-              {showLanguage ? (
-                <span className="sticky right-0 block w-full text-right text-xs">
-                  {language}
-                </span>
-              ) : null}
-            </pre>
-          </div>
-        )}
-      </Highlight>
+  const html = highlighter.codeToHtml(code, {
+    lang,
+    theme: 'github-dark',
+  })
+
+  return (
+    <div className="shadow-outline rounded-xl bg-black/5 dark:bg-white/5">
+      <div className="flex px-4 py-3">
+        <div className="mr-2 h-3 w-3 rounded-full bg-red-500" />
+        <div className="mr-2 h-3 w-3 rounded-full bg-yellow-500" />
+        <div className="h-3 w-3 rounded-full bg-green-500" />
+      </div>
+      <div className="relative -mt-8">
+        <CopyButton value={code} className="absolute right-2 top-4" />
+        <div dangerouslySetInnerHTML={{__html: html}} />
+      </div>
     </div>
   )
 }
 
 export {CodeBlock}
-export type {CodeBlockLanguage}
