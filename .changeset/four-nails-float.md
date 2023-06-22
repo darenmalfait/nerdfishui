@@ -1,5 +1,4 @@
 ---
-"docs": patch
 "@nerdfish/tailwind-config": patch
 "@nerdfish/theme": patch
 "@nerdfish/ui": patch
