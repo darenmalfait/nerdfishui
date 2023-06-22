@@ -1,5 +1,22 @@
 # @nerdfish/ui
 
+## 1.5.0
+
+### Minor Changes
+
+- [`f42c11c`](https://github.com/darenmalfait/nerdfishui/commit/f42c11cff80969a165a4848176c6830c754b8149) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add multi-select component
+
+### Patch Changes
+
+- [`8746b2d`](https://github.com/darenmalfait/nerdfishui/commit/8746b2d17e6c85f65e7ad7913add8cbc83103aa9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-email): pressing spacebar does not brake the entered text anymore
+
+- [`1f8a7f8`](https://github.com/darenmalfait/nerdfishui/commit/1f8a7f8ff35d53e92ef7288bcc66f17b0d68b893) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(switch): add background color
+
+- [#49](https://github.com/darenmalfait/nerdfishui/pull/49) [`16180d0`](https://github.com/darenmalfait/nerdfishui/commit/16180d0501bd2b716fb23fc23d018fae2afe7c11) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update all dependencies
+
+- Updated dependencies [[`16180d0`](https://github.com/darenmalfait/nerdfishui/commit/16180d0501bd2b716fb23fc23d018fae2afe7c11)]:
+  - @nerdfish/utils@1.1.1
+
 ## 1.4.2
 
 ### Patch Changes

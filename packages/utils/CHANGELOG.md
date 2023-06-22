@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.1.1
+
+### Patch Changes
+
+- [#49](https://github.com/darenmalfait/nerdfishui/pull/49) [`16180d0`](https://github.com/darenmalfait/nerdfishui/commit/16180d0501bd2b716fb23fc23d018fae2afe7c11) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update all dependencies
+
 ## 1.1.0
 
 ### Minor Changes
