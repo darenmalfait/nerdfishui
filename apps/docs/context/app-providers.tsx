@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import {ThemeProvider as NerdfishThemeProvider} from '@nerdfish/theme'
 import {ToastProvider} from '@nerdfish/ui'

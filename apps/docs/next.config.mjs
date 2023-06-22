@@ -2,6 +2,13 @@ import {withContentlayer} from 'next-contentlayer'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: !!process.env.CI,
+  },
+  /* We already do linting on GH actions */
+  eslint: {
+    ignoreDuringBuilds: !!process.env.CI,
+  },
   images: {
     domains: ['avatars.githubusercontent.com', 'images.unsplash.com'],
   },
@@ -9,6 +16,11 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
+    serverComponentsExternalPackages: [
+      '@nerdfish/ui',
+      '@headlessui/react',
+      '@floating-ui/dom',
+    ],
     fontLoaders: [
       {
         loader: '@next/font/google',
