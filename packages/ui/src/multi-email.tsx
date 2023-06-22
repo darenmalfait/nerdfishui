@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import {cx, isEmail as isEmailFn, useControllableState} from '@nerdfish/utils'
 

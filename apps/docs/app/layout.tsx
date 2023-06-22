@@ -1,12 +1,9 @@
-'use client'
-
 import * as React from 'react'
 import {Inter as fontSans} from '@next/font/google'
 
 import '@nerdfish/theme/dist/nerdfishui.css'
 import 'tailwindcss/tailwind.css'
 import {cx} from '@nerdfish/utils'
-import {LazyMotion, domAnimation} from 'framer-motion'
 
 import {Layout} from '../components/layout'
 import {AppProviders} from '../context/app-providers'
@@ -32,11 +29,9 @@ export default function RootLayout({children}: RootLayoutProps) {
         )}
       >
         <AppProviders>
-          <LazyMotion features={domAnimation}>
-            <main className={`${sans.variable} font-sans bg-primary`}>
-              <Layout>{children}</Layout>
-            </main>
-          </LazyMotion>
+          <main className={`${sans.variable} font-sans bg-primary`}>
+            <Layout>{children}</Layout>
+          </main>
         </AppProviders>
       </body>
     </html>

@@ -1,3 +1,5 @@
+'use client'
+
 export * from './accordion'
 export * from './alert-dialog'
 export * from './alert'
@@ -8,7 +10,6 @@ export * from './button'
 export * from './calendar'
 export * from './card'
 export * from './checkbox'
-export * from './code-block'
 export * from './collapsible'
 export * from './combobox'
 export * from './command'
