@@ -209,6 +209,9 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
           case 'Enter':
             e.preventDefault()
             break
+          case ' ':
+            e.preventDefault()
+            break
           case 'Backspace':
             if (!e.currentTarget.value) {
               removeEmail(emails.length - 1, false)
@@ -226,6 +229,7 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
 
         switch (e.key) {
           case 'Enter':
+          case ' ':
           case 'Backspace':
             await findEmailAddress(e.currentTarget.value, true)
             break
