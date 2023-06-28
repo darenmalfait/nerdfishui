@@ -1,7 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import {ButtonLink, H1, Paragraph} from '@nerdfish/ui'
+import Link from 'next/link'
+import {H1, Paragraph, getButtonClassName} from '@nerdfish/ui'
 import {cx} from '@nerdfish/utils'
 
 import {Icons} from './icons'
@@ -28,15 +29,17 @@ export function DocsPageHeader({
         </H1>
         {text ? <Paragraph className="max-w-[95%]">{text}</Paragraph> : null}
         {github ? (
-          <ButtonLink
+          <Link
             target="_blank"
             href={github}
-            className="mt-6"
+            className={getButtonClassName({
+              className: 'mt-6',
+            })}
             rel="noopener noreferrer"
           >
             <Icons.GitHub className="mr-2 h-5 w-5" />
             View on GitHub
-          </ButtonLink>
+          </Link>
         ) : null}
       </div>
 

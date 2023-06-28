@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
-import {ButtonLink} from '@nerdfish/ui'
+import {getButtonClassName} from '@nerdfish/ui'
 import {ArrowLeft, ArrowRight} from 'lucide-react'
 
 import {docs} from '../config/docs'
@@ -17,15 +17,17 @@ function PageLink({
   previous?: boolean
 }) {
   return (
-    <ButtonLink
+    <Link
       href={page.href}
       aria-label={`${label}: ${page.title}`}
-      className="flex space-x-2"
+      className={getButtonClassName({
+        className: 'flex space-x-2',
+      })}
     >
       {previous ? <ArrowLeft className="h-3 w-3" /> : null}
       <span>{page.title}</span>
       {!previous ? <ArrowRight className="h-3 w-3" /> : null}
-    </ButtonLink>
+    </Link>
   )
 }
 

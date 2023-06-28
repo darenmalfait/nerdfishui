@@ -39,7 +39,7 @@ export function CodeBlockWrapper({
           )}
         >
           <Collapsible.Trigger asChild>
-            <Button variant="subtle" className="h-8 text-xs">
+            <Button variant="secondary" className="h-8 text-xs">
               {isOpened ? 'Collapse' : expandButtonTitle}
             </Button>
           </Collapsible.Trigger>
