@@ -1,5 +1,21 @@
 # @nerdfish/ui
 
+## 2.0.0
+
+### Major Changes
+
+- [`184507c`](https://github.com/darenmalfait/nerdfishui/commit/184507cc7a2ea17aa94735a3924bfa10b50fde55) Thanks [@darenmalfait](https://github.com/darenmalfait)! - New button styles
+
+### Patch Changes
+
+- [`1485459`](https://github.com/darenmalfait/nerdfishui/commit/14854591e491523642d51e5cdaa97770ab8a7cb4) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase calendar inactive cells contrast
+
+- [`fac2f0c`](https://github.com/darenmalfait/nerdfishui/commit/fac2f0c6e8e7edde8e62adb8e5ee1905bfe4475e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - set datepicker to input styling
+
+- [`af4477c`](https://github.com/darenmalfait/nerdfishui/commit/af4477c227e2ec90ec838a64204cce8da8adfa92) Thanks [@darenmalfait](https://github.com/darenmalfait)! - multiselect(fix): fallback to default badge color when no color provided
+
+- [`8467891`](https://github.com/darenmalfait/nerdfishui/commit/84678916c92aadd1f0734bd877ac25ee6fc9f729) Thanks [@darenmalfait](https://github.com/darenmalfait)! - set multi-select to input styling
+
 ## 1.5.0
 
 ### Minor Changes
