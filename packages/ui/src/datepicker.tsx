@@ -5,7 +5,6 @@ import {cx, useControllableState} from '@nerdfish/utils'
 import {addDays, format} from 'date-fns'
 import {AlertCircle, Calendar as CalendarIcon} from 'lucide-react'
 
-import {Button} from './button'
 import {Calendar} from './calendar'
 import {Combobox} from './combobox'
 import {
@@ -54,7 +53,11 @@ const Datepicker = React.forwardRef<
   const errorId = `${inputId}-error`
   const descriptionId = `${inputId}-description`
 
-  const className = getInputClassName(classNameProp, !!error, inputSize)
+  const className = getInputClassName(
+    `flex justify-between${classNameProp}`,
+    !!error,
+    inputSize,
+  )
 
   const offset = React.useMemo(() => {
     if (!selected) return undefined
@@ -87,9 +90,8 @@ const Datepicker = React.forwardRef<
         <Popover.Trigger asChild>
           <div className="relative w-full shadow-sm">
             <input type="hidden" name={name} value={selected?.toISOString()} />
-            <Button
+            <button
               type="button"
-              variant="outline"
               className={cx(className, !selected && 'text-secondary')}
             >
               {selected ? format(selected, 'PPP') : <span>{placeholder}</span>}
@@ -107,7 +109,7 @@ const Datepicker = React.forwardRef<
                   />
                 </div>
               )}
-            </Button>
+            </button>
           </div>
         </Popover.Trigger>
         <Popover.Content className="flex w-auto flex-col space-y-2 p-2">
