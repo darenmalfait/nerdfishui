@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.1.0
+
+### Minor Changes
+
+- [`184507c`](https://github.com/darenmalfait/nerdfishui/commit/184507cc7a2ea17aa94735a3924bfa10b50fde55) Thanks [@darenmalfait](https://github.com/darenmalfait)! - New button styles
+
 ## 1.0.2
 
 ### Patch Changes
