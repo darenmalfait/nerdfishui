@@ -436,7 +436,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
             <Badge
               key={value}
               variant="outline"
-              style={badgeStyle(color ?? '#ffffff')}
+              style={color ? badgeStyle(color) : undefined}
               className="mb-2 mr-2"
             >
               {label}
