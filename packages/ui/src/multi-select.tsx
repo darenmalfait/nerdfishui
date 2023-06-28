@@ -239,6 +239,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
       items: itemsProp,
       onCreateItem,
       onDeleteItem,
+      hasError,
       onUpdateItem,
       editDisabled = false,
       placeholder = 'Select items',
@@ -306,11 +307,14 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
       <div>
         <Popover open={openCombobox} onOpenChange={onComboboxOpenChange}>
           <Popover.Trigger asChild>
-            <Button
-              variant="outline"
+            <button
               role="combobox"
+              aria-controls="listbox"
               aria-expanded={openCombobox}
-              className={getInputClassName(props.className)}
+              className={getInputClassName(
+                `flex items-center justify-between ${props.className}`,
+                hasError,
+              )}
             >
               <span className="truncate">
                 {selectedValues.length === 0 ? placeholder : null}
@@ -323,7 +327,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                   : null}
               </span>
               <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-            </Button>
+            </button>
           </Popover.Trigger>
           <Popover.Content className="w-[200px] p-0">
             <Command loop>
