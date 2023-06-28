@@ -1,33 +1,34 @@
 'use client'
 
 import * as React from 'react'
-import {ExtractProps, VariantProps, cva, cx} from '@nerdfish/utils'
-
-import {Link} from './link'
+import {VariantProps, cva, cx} from '@nerdfish/utils'
+import {Slot} from '@radix-ui/react-slot'
 
 const buttonVariants = cva(
-  'font-title group inline-flex items-center space-x-2 rounded-full font-bold no-underline transition-transform active:scale-90',
+  'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         default:
-          'focus-ring bg-gray-900 text-white hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50',
+          'bg-inverse text-inverse active-ring hover:bg-gray-700 dark:hover:bg-gray-200',
+        nerdfish:
+          'bg-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish text-white hover:bg-gradient-to-r',
         danger:
-          'focus-ring bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600',
-        success:
-          'focus-ring bg-green-500 text-white hover:bg-green-600 dark:hover:bg-green-600',
+          'bg-danger hover:bg-danger-900 active-ring set-colors-accent-danger text-white',
         outline:
-          'focus-ring border border-gray-200 bg-transparent hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800',
-        subtle:
-          'text-primary focus-ring bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-700',
+          'border-input text-primary bg-primary active-ring hover:text-primary border hover:bg-gray-100 dark:hover:bg-gray-800',
+        secondary:
+          'bg-secondary text-primary active-ring hover:bg-gray-200 dark:hover:bg-gray-700',
         ghost:
-          'bg-transparent hover:bg-gray-100 data-[state=open]:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:data-[state=open]:bg-transparent',
-        link: 'text-primary bg-transparent hover:bg-transparent hover:underline dark:hover:bg-transparent',
+          'hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white',
+        link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        default: 'h-10 px-4 py-2 text-sm',
-        sm: 'h-9 px-3 text-xs',
-        lg: 'h-11 px-8 text-sm',
+        default: 'h-10 px-4 py-2',
+        sm: 'h-9 rounded px-3',
+        lg: 'h-11 rounded px-8',
+        xl: 'h-12 rounded px-10',
+        icon: 'flex h-10 w-10 items-center justify-center',
       },
     },
     defaultVariants: {
@@ -47,13 +48,18 @@ function getButtonClassName({
   return cx(buttonVariants({variant, size, className}))
 }
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants>
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({variant, size, className, ...props}, ref) => {
+  ({variant, asChild, size, className, ...props}, ref) => {
+    const Comp = asChild ? Slot : 'button'
+
     return (
-      <button
+      <Comp
         className={getButtonClassName({
           variant,
           size,
@@ -66,24 +72,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   },
 )
 Button.displayName = 'Button'
-
-const ButtonLink = React.forwardRef<
-  HTMLAnchorElement,
-  ExtractProps<typeof Link> & ButtonProps
->(function ButtonLink({className, variant, size, disabled, ...rest}, ref) {
-  return (
-    <Link
-      ref={ref}
-      className={getButtonClassName({
-        variant,
-        size,
-        className,
-      })}
-      {...rest}
-    />
-  )
-})
-ButtonLink.displayName = 'ButtonLink'
 
 const ButtonGroup = React.forwardRef<
   HTMLDivElement,
@@ -102,4 +90,4 @@ const ButtonGroup = React.forwardRef<
 })
 ButtonGroup.displayName = 'ButtonGroup'
 
-export {Button, ButtonLink, ButtonGroup, getButtonClassName, buttonVariants}
+export {Button, ButtonGroup, getButtonClassName, buttonVariants}

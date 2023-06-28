@@ -12,13 +12,11 @@ import {BadgeDemo} from './badge/demo'
 import {BadgeOutline} from './badge/outline'
 import {BadgeSecondary} from './badge/secondary'
 import {BadgeSuccess} from './badge/success'
-import {ButtonDanger} from './button/danger'
 import {ButtonDemo} from './button/demo'
-import {ButtonGhost} from './button/ghost'
-import {ButtonLink} from './button/link'
+import {ButtonIconOnly} from './button/icon-only'
 import {ButtonLoading} from './button/loading'
-import {ButtonOutline} from './button/outline'
-import {ButtonSubtle} from './button/subtle'
+import {ButtonSizes} from './button/sizes'
+import {ButtonVariants} from './button/variants'
 import {ButtonWithIcon} from './button/with-icon'
 import {DateRangePicker} from './calendar/date-range-picker'
 import {CalendarDemo} from './calendar/demo'
@@ -88,13 +86,11 @@ export const examples = {
   BadgeOutline,
   BadgeSecondary,
   BadgeSuccess,
-  ButtonDanger,
   ButtonDemo,
-  ButtonGhost,
-  ButtonLink,
+  ButtonIconOnly,
   ButtonLoading,
-  ButtonOutline,
-  ButtonSubtle,
+  ButtonSizes,
+  ButtonVariants,
   ButtonWithIcon,
   CalendarDemo,
   CardDemo,

@@ -31,7 +31,6 @@ export const docs = {
       title: 'Buttons',
       links: [
         {title: 'Button', href: '/button'},
-        {title: 'ButtonLink', href: '/button-link'},
         {title: 'DoubleLabelLink', href: '/double-label-link'},
         {title: 'Link', href: '/link'},
       ],
