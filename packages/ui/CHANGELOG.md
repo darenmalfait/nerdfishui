@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.1.0
+
+### Minor Changes
+
+- [`ae3bb43`](https://github.com/darenmalfait/nerdfishui/commit/ae3bb43141e35c0d0d04537f61be9a6f756170f9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add success style to button
+
 ## 2.0.0
 
 ### Major Changes
