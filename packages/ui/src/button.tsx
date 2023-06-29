@@ -15,6 +15,8 @@ const buttonVariants = cva(
           'bg-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish text-white hover:bg-gradient-to-r',
         danger:
           'bg-danger hover:bg-danger-900 active-ring set-colors-accent-danger text-white',
+        success:
+          'bg-success hover:bg-success-900 active-ring set-colors-accent-success text-white',
         outline:
           'border-input text-primary bg-primary active-ring hover:text-primary border hover:bg-gray-100 dark:hover:bg-gray-800',
         secondary:
