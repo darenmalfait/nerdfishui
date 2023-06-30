@@ -1,5 +1,15 @@
 # @nerdfish/ui
 
+## 2.1.1
+
+### Patch Changes
+
+- [`1a35ea5`](https://github.com/darenmalfait/nerdfishui/commit/1a35ea5ff0e79fbd03d88f7850cd8a8683f8cb62) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix Sheet title color
+
+- [`4c6fa9d`](https://github.com/darenmalfait/nerdfishui/commit/4c6fa9de6bab37b4d67d69d65590ed8c065793c7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix multi-select text color
+
+- [`ff2a7ec`](https://github.com/darenmalfait/nerdfishui/commit/ff2a7ecc6f26182a5d68c7d9400b371196618fb3) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix calendar outside of month text contrast
+
 ## 2.1.0
 
 ### Minor Changes
