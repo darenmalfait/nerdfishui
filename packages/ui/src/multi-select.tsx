@@ -83,7 +83,7 @@ const CommandItemCreate = ({
     <Command.Item
       key={`${inputValue}`}
       value={`${inputValue}`}
-      className="text-muted-foreground text-xs"
+      className="text-secondary text-xs"
       onSelect={onSelect}
     >
       <div className={cx('mr-2 h-4 w-4')} />
@@ -372,7 +372,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                   <Command.Group>
                     <Command.Item
                       value={`:${inputValue}:`} // HACK: that way, the edit button will always be shown
-                      className="text-muted-foreground text-xs"
+                      className="text-secondary text-xs"
                       onSelect={() => setOpenDialog(true)}
                     >
                       <div className={cx('mr-2 h-4 w-4')} />
