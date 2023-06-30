@@ -42,8 +42,8 @@ function Calendar({
           '!bg-inverse !text-inverse border border-gray-900 dark:!border-white rounded-full',
         day_today:
           '!bg-nerdfish-500 !text-white hover:!bg-nerdfish-500 hover:!text-white',
-        day_outside: 'text-gray-200 dark:text-gray-800 opacity-50',
-        day_disabled: 'text-gray-200 dark:text-gray-800 opacity-50',
+        day_outside: 'text-gray-500 dark:text-gray-300 opacity-80',
+        day_disabled: 'text-gray-500 dark:text-gray-300 opacity-50',
         day_range_middle:
           'aria-selected:bg-secondary aria-selected:text-secondary !border-none',
         day_hidden: 'invisible',
