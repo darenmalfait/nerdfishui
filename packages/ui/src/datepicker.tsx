@@ -2,11 +2,11 @@
 
 import * as React from 'react'
 import {cx, useControllableState} from '@nerdfish/utils'
-import {addDays, format} from 'date-fns'
+import {addDays, addYears, format} from 'date-fns'
 import {AlertCircle, Calendar as CalendarIcon} from 'lucide-react'
 
+import {Badge} from './badge'
 import {Calendar} from './calendar'
-import {Combobox} from './combobox'
 import {
   InputError,
   InputProps,
@@ -59,11 +59,6 @@ const Datepicker = React.forwardRef<
     inputSize,
   )
 
-  const offset = React.useMemo(() => {
-    if (!selected) return undefined
-    return Math.abs(addDays(new Date(), -1).getDate() - selected.getDate()) - 1
-  }, [selected])
-
   const handleChange = React.useCallback<(s: Date | undefined) => void>(
     s => {
       setSelected(s)
@@ -113,29 +108,33 @@ const Datepicker = React.forwardRef<
           </div>
         </Popover.Trigger>
         <Popover.Content className="flex w-auto flex-col space-y-2 p-2">
-          {presets && presets.length > 0 ? (
-            <Combobox
-              name={`${name}-presets`}
-              value={
-                offset !== undefined
-                  ? presets.find(preset => preset.value === offset.toString())
-                      ?.value ?? ''
-                  : ''
-              }
-              items={presets}
-              onChange={value =>
-                handleChange(addDays(new Date(), parseInt(value, 10)))
-              }
-            />
-          ) : null}
           <div className="rounded-md">
             <Calendar
               mode="single"
+              captionLayout="dropdown-buttons"
+              fromYear={addYears(new Date(), -1).getFullYear()}
+              toYear={addYears(new Date(), 1).getFullYear()}
               className="p-3"
               selected={selected}
               onSelect={handleChange}
             />
           </div>
+          {presets && presets.length > 0 ? (
+            <div className="flex max-w-[250px] flex-wrap px-3">
+              {presets.map(({value, label: title}) => (
+                <button
+                  key={value}
+                  type="button"
+                  className="m-1 inline-flex text-sm text-gray-500 hover:text-gray-700"
+                  onClick={() =>
+                    handleChange(addDays(new Date(), parseInt(value, 10)))
+                  }
+                >
+                  <Badge>{title}</Badge>
+                </button>
+              ))}
+            </div>
+          ) : null}
         </Popover.Content>
       </Popover>
       {error ? (
