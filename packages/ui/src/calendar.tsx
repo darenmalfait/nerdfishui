@@ -2,10 +2,11 @@
 
 import * as React from 'react'
 import {cx} from '@nerdfish/utils'
+import {addYears} from 'date-fns'
 import {ChevronLeft, ChevronRight} from 'lucide-react'
 import {DayPicker, type DateRange} from 'react-day-picker'
 
-import {buttonVariants} from './button'
+import {getButtonClassName} from './button'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
@@ -13,48 +14,50 @@ function Calendar({
   className,
   classNames,
   showOutsideDays = true,
+  fromYear = addYears(new Date(), -10).getFullYear(),
+  toYear = addYears(new Date(), +10).getFullYear(),
   ...props
 }: CalendarProps) {
   return (
     <DayPicker
+      fromYear={fromYear}
+      toYear={toYear}
       today={new Date()}
       showOutsideDays={showOutsideDays}
       classNames={{
-        months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
-        month: 'space-y-4',
-        caption: 'flex justify-center pt-1 relative items-center',
-        caption_label: 'text-sm font-medium',
-        nav: 'space-x-1 flex items-center',
-        nav_button: cx(
-          buttonVariants({variant: 'outline'}),
-          'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
+        cell: 'text-center text-sm p-0 relative [&:has([aria-selected])]:bg-white/5 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
+        day: cx(
+          getButtonClassName({variant: 'ghost'}),
+          'h-9 w-9 p-0 font-normal aria-selected:opacity-100 hover:bg-nerdfish-900 hover:text-white/40',
         ),
-        nav_button_previous: 'absolute left-1 flex items-center justify-center',
-        nav_button_next: 'absolute right-1 flex items-center justify-center',
-        table: 'w-full border-collapse space-y-1',
-        head_row: 'flex',
-        head_cell:
-          'text-gray-800 dark:text-gray-200 rounded-md w-9 font-normal text-[0.8rem]',
-        row: 'flex w-full mt-2',
-        cell: 'text-center text-sm p-0 relative [&:has([aria-selected])]:bg-secondary first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
-        day: 'h-9 w-9 p-0 font-normal aria-selected:opacity-100 rounded-full flex items-center justify-center hover:bg-inverse hover:text-inverse hover:scale-105 active:scale-100 transition-transform',
-        day_selected:
-          '!bg-inverse !text-inverse border border-gray-900 dark:!border-white rounded-full',
-        day_today:
-          '!bg-nerdfish-500 !text-white hover:!bg-nerdfish-500 hover:!text-white',
-        day_outside: 'text-gray-500 dark:text-gray-300 opacity-80',
-        day_disabled: 'text-gray-500 dark:text-gray-300 opacity-50',
-        day_range_middle:
-          'aria-selected:bg-secondary aria-selected:text-secondary !border-none',
-        day_hidden: 'invisible',
+        day_today: 'rounded-full bg-nerdfish hover:bg-white/10 text-white',
+        day_selected: 'rounded-full bg-inverse hover:bg-white/10 text-inverse',
+        caption_label: 'hidden',
+        caption_dropdowns:
+          'flex w-full items-center justify-center space-x-2 mb-2',
+        nav_button_previous: 'hidden',
+        nav_button_next: 'hidden',
+        months: 'space-y-4',
+        day_range_middle: 'bg-white',
         ...classNames,
       }}
       className={className}
+      {...props}
       components={{
+        ...props.components,
+        Dropdown: ({...rest}) => (
+          <div className="w-full">
+            <select
+              autoFocus
+              {...rest}
+              className="focus-outline:none w-full space-x-4 rounded-md bg-white/5 px-1 py-2 text-sm text-white outline-none transition-all duration-300 hover:bg-white/10"
+            />
+          </div>
+        ),
         IconLeft: () => <ChevronLeft className="h-4 w-4" />,
         IconRight: () => <ChevronRight className="h-4 w-4" />,
       }}
-      {...props}
+      captionLayout="dropdown-buttons"
     />
   )
 }
