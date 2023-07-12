@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {ExtractProps, VariantProps, cva, cx} from '@nerdfish/utils'
+import {cva, cx, ExtractProps, VariantProps} from '@nerdfish/utils'
 
 const Paragraph = React.forwardRef<
   HTMLParagraphElement,

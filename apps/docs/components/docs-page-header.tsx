@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import {H1, Paragraph, getButtonClassName} from '@nerdfish/ui'
+import {getButtonClassName, H1, Paragraph} from '@nerdfish/ui'
 import {cx} from '@nerdfish/utils'
 
 import {Icons} from './icons'

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import {DropdownMenu} from '@nerdfish/ui'
-import {ExtractProps, cx} from '@nerdfish/utils'
+import {cx, ExtractProps} from '@nerdfish/utils'
 
 import {NpmCommands} from '../lib/types/unist'
 import {Icons} from './icons'
