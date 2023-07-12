@@ -8,11 +8,11 @@ import {AlertCircle, Calendar as CalendarIcon} from 'lucide-react'
 import {Badge} from './badge'
 import {Calendar} from './calendar'
 import {
+  getInputClassName,
   InputError,
   InputProps,
   Label,
   RawInputProps,
-  getInputClassName,
 } from './input'
 import {Popover} from './popover'
 

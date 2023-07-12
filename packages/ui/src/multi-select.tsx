@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {ExtractProps, cx, useControllableState} from '@nerdfish/utils'
+import {cx, ExtractProps, useControllableState} from '@nerdfish/utils'
 import {DialogClose} from '@radix-ui/react-dialog'
 import {Check, ChevronsUpDown, Edit2} from 'lucide-react'
 
@@ -12,12 +12,12 @@ import {Button} from './button'
 import {Command} from './command'
 import {Dialog} from './dialog'
 import {
+  getInputClassName,
   Input,
   InputError,
   InputProps,
   Label,
   RawInputProps,
-  getInputClassName,
 } from './input'
 import {Popover} from './popover'
 

@@ -1,15 +1,16 @@
 /* eslint-disable jsx-a11y/prefer-tag-over-role */
+
 import * as React from 'react'
 import {cx, useControllableState} from '@nerdfish/utils'
 import {Check, ChevronsUpDown} from 'lucide-react'
 
 import {Command} from './command'
 import {
+  getInputClassName,
   InputError,
   InputProps,
   Label,
   RawInputProps,
-  getInputClassName,
 } from './input'
 import {Popover} from './popover'
 
