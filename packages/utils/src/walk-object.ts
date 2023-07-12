@@ -1,4 +1,4 @@
-import {MappedLeavesObject, WalkObjectPredicate, isArray, isObject} from './'
+import {isArray, isObject, MappedLeavesObject, WalkObjectPredicate} from './'
 
 function walkObject<Target, LeafType>(
   target: Target,

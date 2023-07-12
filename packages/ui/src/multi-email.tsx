@@ -4,11 +4,11 @@ import * as React from 'react'
 import {cx, isEmail as isEmailFn, useControllableState} from '@nerdfish/utils'
 
 import {
+  getInputClassName,
   InputError,
   InputProps,
   Label,
   RawInputProps,
-  getInputClassName,
 } from './input'
 
 interface RawMultiEmailProps

@@ -3,6 +3,7 @@ import {Inter as fontSans} from '@next/font/google'
 
 import '@nerdfish/theme/dist/nerdfishui.css'
 import 'tailwindcss/tailwind.css'
+
 import {cx} from '@nerdfish/utils'
 
 import {Layout} from '../components/layout'
