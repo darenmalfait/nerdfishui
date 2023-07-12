@@ -50,7 +50,7 @@ function Calendar({
             <select
               autoFocus
               {...rest}
-              className="focus-outline:none w-full space-x-4 rounded-md bg-white/5 px-1 py-2 text-sm text-white outline-none transition-all duration-300 hover:bg-white/10"
+              className="focus-outline:none w-full space-x-4 rounded-md bg-black/5 px-1 py-2 text-sm text-black outline-none transition-all duration-300 hover:bg-black/10 dark:bg-white/5 dark:text-white  dark:hover:bg-white/10"
             />
           </div>
         ),
