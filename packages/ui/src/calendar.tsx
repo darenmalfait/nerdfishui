@@ -28,10 +28,12 @@ function Calendar({
         cell: 'text-center text-sm p-0 relative [&:has([aria-selected])]:bg-white/5 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
         day: cx(
           getButtonClassName({variant: 'ghost'}),
-          'h-9 w-9 p-0 font-normal aria-selected:opacity-100 hover:bg-nerdfish-900 hover:text-white/40',
+          'h-9 w-9 p-0 font-normal aria-selected:opacity-100 hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white',
         ),
-        day_today: 'rounded-full bg-nerdfish hover:bg-white/10 text-white',
-        day_selected: 'rounded-full bg-inverse hover:bg-white/10 text-inverse',
+        day_today:
+          'rounded-full bg-nerdfish hover:bg-black/10 dark:hover:bg-white/10 text-black text-white',
+        day_selected:
+          'rounded-full bg-inverse hover:bg-gray-800 dark:hover:!bg-gray-100 !text-white dark:!text-black',
         caption_label: 'hidden',
         caption_dropdowns:
           'flex w-full items-center justify-center space-x-2 mb-2',
