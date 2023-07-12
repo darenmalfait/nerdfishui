@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.1.2
+
+### Patch Changes
+
+- [`8496112`](https://github.com/darenmalfait/nerdfishui/commit/849611225c789e9072c5d68d7b75393fc1eaf87b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(datepicker): update styling
+
 ## 2.1.1
 
 ### Patch Changes
