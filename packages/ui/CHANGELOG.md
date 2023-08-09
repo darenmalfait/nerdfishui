@@ -1,5 +1,14 @@
 # @nerdfish/ui
 
+## 2.1.3
+
+### Patch Changes
+
+- [`1927c92`](https://github.com/darenmalfait/nerdfishui/commit/1927c92cb9f87cbd998da96e76375a791269fb2d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-select): fix item spacing
+
+- Updated dependencies [[`b1be040`](https://github.com/darenmalfait/nerdfishui/commit/b1be04052b5d835f610d950d78f614f00fe4e3c0)]:
+  - @nerdfish/utils@1.2.0
+
 ## 2.1.2
 
 ### Patch Changes
