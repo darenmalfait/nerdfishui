@@ -435,7 +435,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
             </Dialog.Content>
           </Dialog>
         ) : null}
-        <div className="relative -mb-24 mt-3 h-24 overflow-y-auto">
+        <div className="relative mt-3 overflow-y-auto">
           {selectedValues.map(({label, value, color}) => (
             <Badge
               key={value}
