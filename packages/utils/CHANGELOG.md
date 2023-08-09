@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.2.0
+
+### Minor Changes
+
+- [#59](https://github.com/darenmalfait/nerdfishui/pull/59) [`b1be040`](https://github.com/darenmalfait/nerdfishui/commit/b1be04052b5d835f610d950d78f614f00fe4e3c0) Thanks [@renovate](https://github.com/apps/renovate)! - fix(deps): update dependency clsx to v2
+
 ## 1.1.1
 
 ### Patch Changes
