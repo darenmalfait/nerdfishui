@@ -20,6 +20,7 @@ import {
   RawInputProps,
 } from './input'
 import {Popover} from './popover'
+import {ScrollArea} from './scroll-area'
 
 type Item = {
   value: string
@@ -221,6 +222,7 @@ type MultiSelectProps = Omit<
     value?: Item[]
     defaultValue?: Item[]
     editDisabled?: boolean
+    createDisabled?: boolean
     onCreateItem?: (item: Item) => void
     onDeleteItem?: (item: Item) => void
     onUpdateItem?: (item: Item) => void
@@ -237,6 +239,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
       defaultValue,
       onChange,
       items: itemsProp,
+      createDisabled,
       onCreateItem,
       onDeleteItem,
       hasError,
@@ -337,34 +340,38 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                 value={inputValue}
                 onValueChange={setInputValue}
               />
-              <Command.Group className="max-h-[145px] overflow-auto">
-                {items.map(item => {
-                  const isActive = selectedValues.includes(item)
-                  return (
-                    <Command.Item
-                      key={item.value}
-                      value={item.value}
-                      onSelect={() => toggleItem(item)}
-                    >
-                      <Check
-                        className={cx(
-                          'mr-2 h-4 w-4',
-                          isActive ? 'opacity-100' : 'opacity-0',
-                        )}
-                      />
-                      <div className="flex-1">{item.label}</div>
-                      <div
-                        className="h-4 w-4 rounded-full"
-                        style={{backgroundColor: item.color}}
-                      />
-                    </Command.Item>
-                  )
-                })}
-                <CommandItemCreate
-                  {...labels}
-                  onSelect={() => createItem(inputValue)}
-                  {...{inputValue, items}}
-                />
+              <Command.Group>
+                <ScrollArea className="h-32 w-full">
+                  {items.map(item => {
+                    const isActive = selectedValues.includes(item)
+                    return (
+                      <Command.Item
+                        key={item.value}
+                        value={item.value}
+                        onSelect={() => toggleItem(item)}
+                      >
+                        <Check
+                          className={cx(
+                            'mr-2 h-4 w-4',
+                            isActive ? 'opacity-100' : 'opacity-0',
+                          )}
+                        />
+                        <div className="flex-1">{item.label}</div>
+                        <div
+                          className="h-4 w-4 rounded-full"
+                          style={{backgroundColor: item.color}}
+                        />
+                      </Command.Item>
+                    )
+                  })}
+                  {!createDisabled ? (
+                    <CommandItemCreate
+                      {...labels}
+                      onSelect={() => createItem(inputValue)}
+                      {...{inputValue, items}}
+                    />
+                  ) : null}
+                </ScrollArea>
               </Command.Group>
               {!editDisabled ? (
                 <>
