@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.1.6
+
+### Patch Changes
+
+- [`68ec060`](https://github.com/darenmalfait/nerdfishui/commit/68ec060afb846aeec2cf1ebdf08792e06a50f5e1) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(dropdown): improve search
+
 ## 2.1.5
 
 ### Patch Changes
