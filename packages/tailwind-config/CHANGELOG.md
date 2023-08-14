@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.1.1
+
+### Patch Changes
+
+- [#58](https://github.com/darenmalfait/nerdfishui/pull/58) [`078887c`](https://github.com/darenmalfait/nerdfishui/commit/078887cb73592e2c77fc2040c3cf58720185c29a) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update all dependencies
+
 ## 1.1.0
 
 ### Minor Changes

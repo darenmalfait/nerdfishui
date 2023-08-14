@@ -1,5 +1,16 @@
 # @nerdfish/ui
 
+## 2.1.4
+
+### Patch Changes
+
+- [`81c00ad`](https://github.com/darenmalfait/nerdfishui/commit/81c00ada790958d12960f5c464b661a2b3871d8a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox): add scroll area
+
+- [#58](https://github.com/darenmalfait/nerdfishui/pull/58) [`078887c`](https://github.com/darenmalfait/nerdfishui/commit/078887cb73592e2c77fc2040c3cf58720185c29a) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update all dependencies
+
+- Updated dependencies [[`078887c`](https://github.com/darenmalfait/nerdfishui/commit/078887cb73592e2c77fc2040c3cf58720185c29a)]:
+  - @nerdfish/utils@1.2.1
+
 ## 2.1.3
 
 ### Patch Changes
