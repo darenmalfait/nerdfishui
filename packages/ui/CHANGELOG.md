@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.1.7
+
+### Patch Changes
+
+- [`70cce8c`](https://github.com/darenmalfait/nerdfishui/commit/70cce8c53d6cef43ea8cd90a2b86dc5d7c30bde7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(popover): remove portal form popover
+
 ## 2.1.6
 
 ### Patch Changes
