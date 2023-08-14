@@ -33,7 +33,7 @@ importers:
         specifier: ^8.0.3
         version: 8.0.3
       turbo:
-        specifier: ^1.10.8
+        specifier: ^1.10.4
         version: 1.10.12
 
   apps/docs:

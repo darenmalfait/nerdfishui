@@ -13,6 +13,7 @@ import {
   RawInputProps,
 } from './input'
 import {Popover} from './popover'
+import {ScrollArea} from './scroll-area'
 
 interface ComboboxProps
   extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
@@ -90,20 +91,22 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
               </>
             ) : null}
             <Command.Group>
-              {items.map(item => (
-                <Command.Item
-                  key={item.value}
-                  onSelect={() => handleChange(item.value)}
-                >
-                  <Check
-                    className={cx(
-                      'mr-2 h-4 w-4',
-                      value === item.value ? 'opacity-100' : 'opacity-0',
-                    )}
-                  />
-                  {item.label}
-                </Command.Item>
-              ))}
+              <ScrollArea className="h-32 w-full">
+                {items.map(item => (
+                  <Command.Item
+                    key={item.value}
+                    onSelect={() => handleChange(item.value)}
+                  >
+                    <Check
+                      className={cx(
+                        'mr-2 h-4 w-4',
+                        value === item.value ? 'opacity-100' : 'opacity-0',
+                      )}
+                    />
+                    {item.label}
+                  </Command.Item>
+                ))}
+              </ScrollArea>
             </Command.Group>
           </Command>
         </Popover.Content>

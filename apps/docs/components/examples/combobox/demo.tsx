@@ -16,6 +16,10 @@ export function ComboboxDemo() {
         {value: 'nuxt.js', label: 'Nuxt.js'},
         {value: 'remix', label: 'Remix'},
         {value: 'astro', label: 'Astro'},
+        {value: 'blitz', label: 'Blitz'},
+        {value: 'redwood', label: 'Redwood'},
+        {value: 'vite', label: 'Vite'},
+        {value: 'snowpack', label: 'Snowpack'},
       ]}
     />
   )
