@@ -239,12 +239,12 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
       defaultValue,
       onChange,
       items: itemsProp,
-      createDisabled,
       onCreateItem,
       onDeleteItem,
       hasError,
       onUpdateItem,
-      editDisabled = false,
+      editDisabled = true,
+      createDisabled = true,
       placeholder = 'Select items',
       customEditListItem: CustomEditListItem,
       labels: labelsProp,
@@ -333,7 +333,15 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
             </button>
           </Popover.Trigger>
           <Popover.Content className="w-[200px] p-0">
-            <Command loop>
+            <Command
+              filter={(value, search) => {
+                const item = items.find(({value: v}) => v === value)?.label
+
+                if (item?.toLowerCase().includes(search.toLowerCase())) return 1
+                return 0
+              }}
+              loop
+            >
               <Command.Input
                 ref={inputRef}
                 placeholder="Search items..."
@@ -409,7 +417,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                   {itemsEditDescriptionLabel}
                 </Dialog.Description>
               </Dialog.Header>
-              <div className="-mx-6 flex-1 overflow-scroll px-6 py-2">
+              <ScrollArea className="-mx-6 h-32 w-full flex-1 px-6 py-2">
                 {items.map(item => {
                   const ListItem = CustomEditListItem ?? DialogListItem
 
@@ -433,7 +441,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                     />
                   )
                 })}
-              </div>
+              </ScrollArea>
               <Dialog.Footer className="bg-secondary/40">
                 <DialogClose asChild>
                   <Button variant="outline">Close</Button>

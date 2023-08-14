@@ -83,7 +83,14 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
           </button>
         </Popover.Trigger>
         <Popover.Content className="w-full min-w-[200px] p-0">
-          <Command>
+          <Command
+            filter={(val, search) => {
+              const item = items.find(({value: v}) => v === val)?.label
+
+              if (item?.toLowerCase().includes(search.toLowerCase())) return 1
+              return 0
+            }}
+          >
             {!searchDisabled ? (
               <>
                 <Command.Input placeholder={placeholder} />
