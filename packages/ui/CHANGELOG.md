@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.1.5
+
+### Patch Changes
+
+- [`68372e8`](https://github.com/darenmalfait/nerdfishui/commit/68372e8c2d7ad0469b42aaafa7d907a7b260d811) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-select): add scrollarea to content
+
 ## 2.1.4
 
 ### Patch Changes
