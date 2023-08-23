@@ -50,6 +50,7 @@ import {MultiSelectDemo} from './multi-select/demo'
 import {NavigationListDemo} from './navigation-list/demo'
 import {PopoverDemo} from './popover/demo'
 import {ProgressiveImageDemo} from './progressive-image/demo'
+import {RadioGroupDemo} from './radio-group/demo'
 import {ScrollAreaDemo} from './scroll-area/demo'
 import {SectionDemo} from './section/demo'
 import {SheetDemo} from './sheet/demo'
@@ -124,6 +125,7 @@ export const examples = {
   NavigationListDemo,
   PopoverDemo,
   ProgressiveImageDemo,
+  RadioGroupDemo,
   ScrollAreaDemo,
   SectionDemo,
   SheetDemo,
