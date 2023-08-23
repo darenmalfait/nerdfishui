@@ -25,6 +25,7 @@ export const docs = {
         {title: 'Combobox', href: '/combobox'},
         {title: 'Timepicker', href: '/timepicker'},
         {title: 'Datepicker', href: '/datepicker'},
+        {title: 'Radio Group', href: '/radio-group'},
       ],
     },
     {

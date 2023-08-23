@@ -171,7 +171,7 @@ const Input = React.forwardRef<
   return (
     <div className="w-full">
       {label ? (
-        <div className="flex justify-between">
+        <div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
           <Label htmlFor={inputId} className="mb-2">
             {label}
           </Label>
