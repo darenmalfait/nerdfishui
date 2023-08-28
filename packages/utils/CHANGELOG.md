@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.3.0
+
+### Minor Changes
+
+- [`5000b38`](https://github.com/darenmalfait/nerdfishui/commit/5000b3844fda8c1f41721d172bb9d7f469bcd294) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new color utils
+
 ## 1.2.1
 
 ### Patch Changes

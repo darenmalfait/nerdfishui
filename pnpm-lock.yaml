@@ -61,10 +61,10 @@ importers:
         specifier: workspace:^1.0.0
         version: link:../../packages/tsconfig
       '@nerdfish/ui':
-        specifier: workspace:^2.1.7
+        specifier: workspace:^2.2.0
         version: link:../../packages/ui
       '@nerdfish/utils':
-        specifier: workspace:^1.2.1
+        specifier: workspace:^1.3.0
         version: link:../../packages/utils
       '@next/env':
         specifier: ^13.4.19
