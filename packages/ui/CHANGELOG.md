@@ -1,5 +1,20 @@
 # @nerdfish/ui
 
+## 2.2.0
+
+### Minor Changes
+
+- [`5000b38`](https://github.com/darenmalfait/nerdfishui/commit/5000b3844fda8c1f41721d172bb9d7f469bcd294) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new color utils
+
+- [`33eb9b4`](https://github.com/darenmalfait/nerdfishui/commit/33eb9b4ce962a0981932e308b0eb636124a8e00c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - new radio-group component
+
+- [`1be63c7`](https://github.com/darenmalfait/nerdfishui/commit/1be63c7d30429c53db14907cd7f9fab95897e9c6) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve multi-select
+
+### Patch Changes
+
+- Updated dependencies [[`5000b38`](https://github.com/darenmalfait/nerdfishui/commit/5000b3844fda8c1f41721d172bb9d7f469bcd294)]:
+  - @nerdfish/utils@1.3.0
+
 ## 2.1.7
 
 ### Patch Changes
