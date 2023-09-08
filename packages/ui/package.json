@@ -53,8 +53,8 @@
     "@radix-ui/react-tooltip": "^1.0.6",
     "cmdk": "^0.2.0",
     "date-fns": "^2.30.0",
-    "lucide-react": "^0.269.0",
+    "lucide-react": "^0.274.0",
     "react-day-picker": "^8.8.1",
-    "shiki": "^0.14.3"
+    "shiki": "^0.14.4"
   }
 }
