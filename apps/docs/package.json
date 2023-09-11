@@ -37,7 +37,7 @@
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.4",
     "lodash": "^4.17.21",
-    "lucide-react": "^0.274.0",
+    "lucide-react": "^0.276.0",
     "markdown-wasm": "^1.2.0",
     "match-sorter": "^6.3.1",
     "mdast-util-to-string": "^4.0.0",
@@ -58,7 +58,7 @@
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/eslint": "^8.44.2",
-    "@types/node": "^20.5.9",
+    "@types/node": "^20.6.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.15",
