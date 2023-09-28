@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.2.0
+
+### Minor Changes
+
+- [`df2ca20`](https://github.com/darenmalfait/nerdfishui/commit/df2ca2077b8045ffd26563874a277b9721f07303) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new jump animations
+
 ## 1.1.1
 
 ### Patch Changes
