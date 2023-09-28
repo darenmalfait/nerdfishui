@@ -26,7 +26,7 @@ export const colors: Colors = {
   },
   background: {
     500: '#ffffff',
-    600: '#F2F2F2',
+    600: '#F8F9FA',
     700: '#E6E6E6',
     800: '#D9D9D9',
     900: '#CCCCCC',

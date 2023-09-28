@@ -10,11 +10,19 @@ type NavigationItemProps = {
   to?: string
   as?: React.ElementType
   icon?: React.ElementType
+  active?: boolean
 }
 
-function getNavigationItemClassName(className?: string) {
+function getNavigationItemClassName({
+  className,
+  active,
+}: {
+  className?: string
+  active?: boolean
+}) {
   return cx(
-    'flex w-full items-center gap-x-2 px-3 py-2 no-underline truncate text-xs font-bold text-primary rounded-lg bg-black/0 transition hover:bg-black/5 dark:bg-white/0 dark:hover:bg-white/5',
+    'py-2.5 no-underline items-center cursor-pointer truncate text-sm my-0 mx-4 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-primary transition-colors',
+    active && 'shadow-md bg-primary',
     className,
   )
 }
@@ -26,6 +34,7 @@ function Item<T>({
   href,
   to,
   icon: Icon,
+  active,
   ...props
 }: NavigationItemProps & T) {
   const Link = as ?? 'a'
@@ -34,11 +43,30 @@ function Item<T>({
     <Link
       href={href}
       to={to}
-      className={getNavigationItemClassName(className as string)}
+      className={getNavigationItemClassName({
+        className: className as string,
+        active,
+      })}
       {...props}
     >
-      {Icon ? <Icon className="-ml-1 mr-2 h-4 w-4 shrink-0" /> : null}
-      <span>{title}</span>
+      {Icon ? (
+        <Icon
+          className={cx(
+            '-ml-1 mr-2 flex h-8 w-8 p-2 shrink-0 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center shadow-md xl:p-2.5',
+            active
+              ? 'bg-gradient-to-r from-nerdfish-100 via-nerdfish-500 to-nerdfish-900 text-white'
+              : 'bg-primary text-primary',
+          )}
+        />
+      ) : null}
+      <span
+        className={cx(
+          'pointer-events-none opacity-100 duration-300',
+          !Icon && 'py-2',
+        )}
+      >
+        {title}
+      </span>
     </Link>
   )
 }
