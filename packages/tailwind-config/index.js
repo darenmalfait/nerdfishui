@@ -305,6 +305,39 @@ module.exports = plugin(
             from: {height: 'var(--radix-accordion-content-height)'},
             to: {height: 0},
           },
+          jump: {
+            '0%, 100%': {
+              transform: 'scale(100%)',
+            },
+            '10%': {
+              transform: 'scale(80%)',
+            },
+            '50%': {
+              transform: 'scale(120%)',
+            },
+          },
+          'jump-in': {
+            '0%': {
+              transform: 'scale(0%)',
+            },
+            '80%': {
+              transform: 'scale(120%)',
+            },
+            '100%': {
+              transform: 'scale(100%)',
+            },
+          },
+          'jump-out': {
+            '0%': {
+              transform: 'scale(100%)',
+            },
+            '20%': {
+              transform: 'scale(120%)',
+            },
+            '100%': {
+              transform: 'scale(0%)',
+            },
+          },
           shake: {
             '0%, 100%': {
               transform: `translateX(0)`,
@@ -345,6 +378,9 @@ module.exports = plugin(
         animation: {
           'accordion-down': 'accordion-down 0.2s ease-out',
           'accordion-up': 'accordion-up 0.2s ease-out',
+          jump: 'jump .3s both',
+          'jump-in': 'jump-in .3s both',
+          'jump-out': 'jump-out .3s both',
           shake: `shake 0.5s forwards`,
           check: `check .5s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards`,
         },
