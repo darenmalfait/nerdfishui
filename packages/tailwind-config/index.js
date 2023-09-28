@@ -6,15 +6,16 @@ module.exports = plugin(
   ({addBase, addUtilities}) => {
     addUtilities({
       ':root': {
-        '--color-gray-100': '#e7e7e7',
-        '--color-gray-200': '#cfcfcf',
-        '--color-gray-300': '#b7b8b7',
-        '--color-gray-400': '#888888',
-        '--color-gray-500': '#707070',
-        '--color-gray-600': '#585858',
-        '--color-gray-700': '#404140',
-        '--color-gray-800': '#282928',
-        '--color-gray-900': '#161616',
+        '--color-gray-50': '#f8f9fa',
+        '--color-gray-100': '#ebeff4',
+        '--color-gray-200': '#e9ecef',
+        '--color-gray-300': '#d2d6da',
+        '--color-gray-400': '#ced4da',
+        '--color-gray-500': '#adb5bd',
+        '--color-gray-600': '#6c757d',
+        '--color-gray-700': '#495057',
+        '--color-gray-800': '#252f40',
+        '--color-gray-900': '#141727',
       },
       '.focus-ring': {
         '@apply focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-accent focus:ring-accent focus-within:ring-accent group-hover:ring-accent group-focus:ring-accent ring-accent ring-offset-4 dark:ring-offset-gray-900 ring-offset-white dark:hover:ring-accent-100 dark:focus:ring-accent-100 dark:focus-within:ring-accent-100 dark:group-hover:ring-accent-100 dark:group-focus:ring-accent-100 dark:ring-accent-100':
@@ -234,6 +235,20 @@ module.exports = plugin(
             800: 'var(--colors-text-800)',
             900: 'var(--colors-text-900)',
           },
+        },
+        boxShadow: {
+          'soft-xxs': '0 1px 5px 1px #ddd',
+          'soft-xs':
+            '0 3px 5px -1px rgba(0,0,0,.09),0 2px 3px -1px rgba(0,0,0,.07)',
+          'soft-sm':
+            '0 .25rem .375rem -.0625rem hsla(0,0%,8%,.12),0 .125rem .25rem -.0625rem hsla(0,0%,8%,.07)',
+          'soft-md':
+            '0 4px 7px -1px rgba(0,0,0,.11),0 2px 4px -1px rgba(0,0,0,.07)',
+          'soft-lg': '0 2px 12px 0 rgba(0,0,0,.16)',
+          'soft-xl': '0 20px 27px 0 rgba(0,0,0,.05)',
+          'soft-2xl': '0 .3125rem .625rem 0 rgba(0,0,0,.12)',
+          'soft-3xl':
+            '0 8px 26px -4px hsla(0,0%,8%,.15),0 8px 9px -5px hsla(0,0%,8%,.06)',
         },
         colors: {
           transparent: 'transparent',
