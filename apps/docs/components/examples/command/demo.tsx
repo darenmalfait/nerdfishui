@@ -13,7 +13,7 @@ import {
 
 export function CommandDemo() {
   return (
-    <Command className="rounded-lg border border-gray-100  shadow-md dark:border-gray-800">
+    <Command className="rounded-lg border border-gray-100 shadow-soft-xl dark:border-gray-800">
       <Command.Input placeholder="Type a command or search..." />
       <Command.List>
         <Command.Empty>No results found.</Command.Empty>
