@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.3.0
+
+### Minor Changes
+
+- [`92a0baf`](https://github.com/darenmalfait/nerdfishui/commit/92a0bafc32398b1ec55e445486e5bd8aa5695d4e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - introduce new shadow config
+
 ## 1.2.0
 
 ### Minor Changes

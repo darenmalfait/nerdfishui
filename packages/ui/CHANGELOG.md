@@ -1,5 +1,15 @@
 # @nerdfish/ui
 
+## 2.2.3
+
+### Patch Changes
+
+- [`48c8b84`](https://github.com/darenmalfait/nerdfishui/commit/48c8b84ba2623d12282ea1e3298ec0468badcab4) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase button border radius
+
+- [`92a0baf`](https://github.com/darenmalfait/nerdfishui/commit/92a0bafc32398b1ec55e445486e5bd8aa5695d4e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - introduce new shadow config
+
+- [`694b743`](https://github.com/darenmalfait/nerdfishui/commit/694b743555dd30dd03e7ca0c0e9fdbdba40b5faa) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update card layout
+
 ## 2.2.2
 
 ### Patch Changes

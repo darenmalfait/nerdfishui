@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 1.0.5
+
+### Patch Changes
+
+- [`070a9f8`](https://github.com/darenmalfait/nerdfishui/commit/070a9f8de89153f5a1daa45dd7e95314be11e95a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update gray pallet
+
 ## 1.0.4
 
 ### Patch Changes
