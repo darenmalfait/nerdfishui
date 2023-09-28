@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.1
+
+### Patch Changes
+
+- [`72165ff`](https://github.com/darenmalfait/nerdfishui/commit/72165ff58063ed346ab75331de7dc944265f4cc7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new button sizes
+
 ## 2.2.0
 
 ### Minor Changes
