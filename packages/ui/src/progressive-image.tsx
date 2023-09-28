@@ -27,7 +27,7 @@ const ProgressiveImage = React.forwardRef<
   // make this happen asap
   // if it's alrady loaded, don't bother fading it in.
   useSSRLayoutEffect(() => {
-    if (imgRef.current?.complete || isLoaded) setVisible(true)
+    if (imgRef.current?.complete ?? isLoaded) setVisible(true)
   }, [isLoaded])
 
   React.useEffect(() => {

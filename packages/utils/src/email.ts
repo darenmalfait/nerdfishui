@@ -97,7 +97,7 @@ function isFQDN(str: string, options?: IFqdnOptions) {
 export function isEmail(str: string, options?: IEmailOptions) {
   options = {...defaultEmailOptions, ...options}
 
-  if (options.requireDisplayName || options.allowDisplayName) {
+  if (options.requireDisplayName ?? options.allowDisplayName) {
     const displayEmail = str.match(displayName)
     if (displayEmail) {
       str = displayEmail[1]
