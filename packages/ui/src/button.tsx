@@ -5,7 +5,7 @@ import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {Slot} from '@radix-ui/react-slot'
 
 const buttonVariants = cva(
-  'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded-lg text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -27,12 +27,12 @@ const buttonVariants = cva(
       },
       size: {
         default: 'h-10 px-4 py-2',
-        xs: 'h-6 rounded px-2',
-        sm: 'h-9 rounded px-3',
-        lg: 'h-11 rounded px-8',
-        xl: 'h-12 rounded px-10',
-        icon: 'flex h-10 w-10 items-center justify-center rounded',
-        iconSm: 'flex h-8 w-8 items-center justify-center rounded',
+        xs: 'h-6 rounded-lg px-2',
+        sm: 'h-9 rounded-lg px-3',
+        lg: 'h-11 rounded-lg px-8',
+        xl: 'h-12 rounded-lg px-10',
+        icon: 'flex h-10 w-10 items-center justify-center rounded-lg',
+        iconSm: 'flex h-8 w-8 items-center justify-center rounded-lg',
       },
     },
     defaultVariants: {
