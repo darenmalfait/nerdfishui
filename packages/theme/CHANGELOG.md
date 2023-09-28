@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 1.0.4
+
+### Patch Changes
+
+- [`0fc29ef`](https://github.com/darenmalfait/nerdfishui/commit/0fc29ef086da08d0ea81289ed3abaaa2d4126343) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update navigation list styling
+
 ## 1.0.3
 
 ### Patch Changes
