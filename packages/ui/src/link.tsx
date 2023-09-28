@@ -16,41 +16,40 @@ type LinkProps = React.DetailedHTMLProps<
   children?: React.ReactNode
 }
 
-const Link = React.forwardRef<HTMLElement, LinkProps>(function Link(
-  props,
-  ref,
-) {
-  const {
-    disabled,
-    external,
-    onClick,
-    to,
-    href = to,
-    className,
-    as: Tag = 'a',
-    ...rest
-  } = props
-  const externalProps = external
-    ? {target: '_blank', rel: 'noopener noreferrer'}
-    : null
+const Link = React.forwardRef<HTMLElement, LinkProps>(
+  function Link(props, ref) {
+    const {
+      disabled,
+      external,
+      onClick,
+      to,
+      href = to,
+      className,
+      as: Tag = 'a',
+      ...rest
+    } = props
+    const externalProps = external
+      ? {target: '_blank', rel: 'noopener noreferrer'}
+      : null
 
-  return (
-    <Tag
-      ref={ref}
-      className={cx(
-        'bg-transparent text-primary hover:bg-transparent dark:hover:bg-transparent inline-flex space-x-2',
-        className,
-      )}
-      tabIndex={disabled ? -1 : undefined}
-      to={href}
-      href={href}
-      aria-disabled={disabled}
-      onClick={disabled ? (event: any) => event.preventDefault() : onClick}
-      {...externalProps}
-      {...rest}
-    />
-  )
-})
+    return (
+      <Tag
+        ref={ref}
+        className={cx(
+          'bg-transparent text-primary hover:bg-transparent dark:hover:bg-transparent inline-flex space-x-2',
+          className,
+        )}
+        tabIndex={disabled ? -1 : undefined}
+        to={href}
+        href={href}
+        aria-disabled={disabled}
+        onClick={disabled ? (event: any) => event.preventDefault() : onClick}
+        {...externalProps}
+        {...rest}
+      />
+    )
+  },
+)
 
 const DoubleLabelLink = React.forwardRef<
   HTMLElement,
