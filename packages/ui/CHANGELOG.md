@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 2.2.5
+
+### Patch Changes
+
+- [`ef13c0c`](https://github.com/darenmalfait/nerdfishui/commit/ef13c0c53a5e2db8685b98dbe5c8dc9c402e62e2) Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce tab list border radius
+
+- [`6a4b4c7`](https://github.com/darenmalfait/nerdfishui/commit/6a4b4c7e259f5640d9a7c9e6d21d45259ff91abe) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase calendar selected day contrast
+
 ## 2.2.4
 
 ### Patch Changes
