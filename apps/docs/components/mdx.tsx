@@ -65,7 +65,7 @@ const components = {
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     <img
-      className={cx('rounded-md border border-gray-200', className)}
+      className={cx('rounded-2xl border border-gray-200', className)}
       alt={alt}
       {...props}
     />
@@ -172,7 +172,7 @@ const components = {
   ComponentSource,
   CodeBlockWrapper: ({...props}) => (
     <CodeBlockWrapper
-      className="rounded-md border border-gray-100"
+      className="rounded-2xl border border-gray-100"
       {...props}
     />
   ),
@@ -184,11 +184,11 @@ interface MdxProps {
 }
 
 export function Mdx({code}: MdxProps) {
-  const Component = useMDXComponent(code)
+  const Component = useMDXComponent(code) as any
 
   return (
     <div className="mdx">
-      <Component components={components as any} />
+      <Component components={components} />
     </div>
   )
 }

@@ -28,7 +28,7 @@ export function CopyButton({value, className, src, ...props}: CopyButtonProps) {
   return (
     <button
       className={cx(
-        'relative z-20 inline-flex h-8 items-center justify-center rounded-md border-gray-200 p-2 text-sm font-medium text-gray-900 transition-all hover:bg-gray-100 focus:outline-none dark:text-gray-100 dark:hover:bg-gray-800',
+        'relative z-20 inline-flex h-8 items-center justify-center rounded-2xl border-gray-200 p-2 text-sm font-medium text-gray-900 transition-all hover:bg-gray-100 focus:outline-none dark:text-gray-100 dark:hover:bg-gray-800',
         className,
       )}
       onClick={async () => {
@@ -79,7 +79,7 @@ export function CopyWithClassNames({
     <DropdownMenu>
       <DropdownMenu.Trigger
         className={cx(
-          'relative z-20 inline-flex h-8 items-center justify-center rounded-md p-2 text-sm font-medium text-gray-900 transition-all hover:bg-gray-100 focus:outline-none dark:text-gray-100 dark:hover:bg-gray-800',
+          'relative z-20 inline-flex h-8 items-center justify-center rounded-2xl p-2 text-sm font-medium text-gray-900 transition-all hover:bg-gray-100 focus:outline-none dark:text-gray-100 dark:hover:bg-gray-800',
           className,
         )}
         {...props}
@@ -114,7 +114,9 @@ export function CopyNpmCommandButton({
   commands,
   className,
   ...props
-}: CopyNpmCommandButtonProps) {
+}: CopyNpmCommandButtonProps & {
+  className?: string
+}) {
   const [hasCopied, setHasCopied] = React.useState(false)
 
   React.useEffect(() => {
@@ -132,7 +134,7 @@ export function CopyNpmCommandButton({
     <DropdownMenu>
       <DropdownMenu.Trigger
         className={cx(
-          'relative z-20 inline-flex h-8 items-center justify-center rounded-md p-2 text-sm font-medium text-gray-900 transition-all hover:bg-gray-100 focus:outline-none',
+          'relative z-20 inline-flex h-8 items-center justify-center rounded-2xl p-2 text-sm font-medium text-gray-900 transition-all hover:bg-gray-100 focus:outline-none',
           className,
         )}
         {...props}

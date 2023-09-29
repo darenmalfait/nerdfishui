@@ -5,7 +5,7 @@ import {cva, cx, VariantProps} from '@nerdfish/utils'
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 
 const toggleVariants = cva(
-  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:focus:ring-offset-gray-900  dark:data-[state=on]:bg-gray-700 dark:data-[state=on]:text-gray-100',
+  'inline-flex items-center justify-center rounded-2xl text-sm font-medium transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:focus:ring-offset-gray-900  dark:data-[state=on]:bg-gray-700 dark:data-[state=on]:text-gray-100',
   {
     variants: {
       variant: {

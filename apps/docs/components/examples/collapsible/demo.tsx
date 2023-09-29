@@ -26,14 +26,14 @@ export function CollapsibleDemo() {
           </Button>
         </Collapsible.Trigger>
       </div>
-      <div className="rounded-md border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
+      <div className="rounded-2xl border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
         Omnis cum inventore harum exercitationem illum.
       </div>
       <Collapsible.Content className="space-y-2">
-        <div className="rounded-md border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
+        <div className="rounded-2xl border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
           Explicabo aut debitis vitae at quo.
         </div>
-        <div className="rounded-md border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
+        <div className="rounded-2xl border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
           Non tempora provident.
         </div>
       </Collapsible.Content>

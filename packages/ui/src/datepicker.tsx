@@ -108,7 +108,7 @@ const Datepicker = React.forwardRef<
           </div>
         </Popover.Trigger>
         <Popover.Content className="flex w-auto flex-col space-y-2 p-2">
-          <div className="rounded-md">
+          <div className="rounded-2xl">
             <Calendar
               mode="single"
               captionLayout="dropdown-buttons"

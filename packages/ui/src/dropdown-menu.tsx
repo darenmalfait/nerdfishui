@@ -34,7 +34,7 @@ const DropdownMenuSubContent = React.forwardRef<
   <DropdownMenuPrimitive.SubContent
     ref={ref}
     className={cx(
-      'animate-in slide-in-from-left-1 z-50 min-w-[8rem] overflow-hidden rounded-md border border-gray-100 bg-white p-1 text-gray-700 shadow-soft-xl dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200',
+      'animate-in slide-in-from-left-1 z-50 min-w-[8rem] overflow-hidden rounded-2xl border border-gray-100 bg-white p-1 text-gray-700 shadow-soft-xl dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200',
       className,
     )}
     {...props}
@@ -52,7 +52,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cx(
-        'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-md border border-gray-100 bg-white p-1 text-gray-700 shadow-soft-xl dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200',
+        'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-2xl border border-gray-100 bg-white p-1 text-gray-700 shadow-soft-xl dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200',
         className,
       )}
       {...props}
