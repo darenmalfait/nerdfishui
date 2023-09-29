@@ -31,8 +31,8 @@ function Calendar({
           'h-9 w-9 p-0 font-normal aria-selected:opacity-100 hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white',
         ),
         day_today:
-          'rounded-full bg-nerdfish hover:bg-black/10 dark:hover:bg-white/10 text-black text-white',
-        day_selected: 'rounded-full bg-secondary',
+          'rounded-full bg-nerdfish hover:bg-black/20 dark:hover:bg-white/20 text-black dark:text-white',
+        day_selected: 'rounded-full bg-secondary !text-black',
         caption_label: 'hidden',
         caption_dropdowns:
           'flex w-full items-center justify-center space-x-2 mb-2',
