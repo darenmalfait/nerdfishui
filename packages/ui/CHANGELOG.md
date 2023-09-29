@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 2.2.4
+
+### Patch Changes
+
+- [`836d555`](https://github.com/darenmalfait/nerdfishui/commit/836d555ae7144213bdbf39298bae780e91eae186) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve calendar dropdown styling
+
+- [`836d555`](https://github.com/darenmalfait/nerdfishui/commit/836d555ae7144213bdbf39298bae780e91eae186) Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor layout tweaks
+
 ## 2.2.3
 
 ### Patch Changes
