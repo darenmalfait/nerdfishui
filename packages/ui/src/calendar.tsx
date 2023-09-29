@@ -32,8 +32,7 @@ function Calendar({
         ),
         day_today:
           'rounded-full bg-nerdfish hover:bg-black/10 dark:hover:bg-white/10 text-black text-white',
-        day_selected:
-          'rounded-full bg-inverse hover:bg-gray-800 dark:hover:!bg-gray-100 !text-white dark:!text-black',
+        day_selected: 'rounded-full bg-secondary',
         caption_label: 'hidden',
         caption_dropdowns:
           'flex w-full items-center justify-center space-x-2 mb-2',
@@ -48,16 +47,16 @@ function Calendar({
       components={{
         ...props.components,
         Dropdown: ({...rest}) => (
-          <div className="w-full">
+          <div className="focus-outline:none flex w-full space-x-0 rounded-2xl bg-black/5 px-3 text-sm text-black outline-none transition-all duration-300 hover:bg-black/10 dark:bg-white/5 dark:text-white  dark:hover:bg-white/10">
             <select
               autoFocus
               {...rest}
-              className="focus-outline:none w-full space-x-4 rounded-md bg-black/5 px-1 py-2 text-sm text-black outline-none transition-all duration-300 hover:bg-black/10 dark:bg-white/5 dark:text-white  dark:hover:bg-white/10"
+              className="h-full w-full bg-transparent py-2"
             />
           </div>
         ),
         IconLeft: () => <ChevronLeft className="h-4 w-4" />,
-        IconRight: () => <ChevronRight className="h-4 w-4" />,
+        IconRight: () => <ChevronRight className="h-4 w-4 " />,
       }}
       captionLayout="dropdown-buttons"
     />

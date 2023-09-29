@@ -16,7 +16,7 @@ export function Callout({
   return (
     <div
       className={cx(
-        'my-6 flex items-start rounded-md border border-b-4 border-gray-900 p-4',
+        'my-6 flex items-start rounded-2xl border border-b-4 border-gray-900 p-4',
         {
           'border-gray-900 dark:border-gray-700': type === 'default',
           'border-red-600': type === 'danger',
