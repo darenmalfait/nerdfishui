@@ -11,7 +11,7 @@ const TabsList = React.forwardRef<
   <TabsPrimivite.List
     ref={ref}
     className={cx(
-      'inline-flex items-center justify-center rounded-2xl bg-gray-100 p-1 dark:bg-gray-800',
+      'inline-flex items-center justify-center rounded-md bg-gray-100 p-1 dark:bg-gray-800',
       className,
     )}
     {...props}
