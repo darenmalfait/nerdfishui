@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 1.0.6
+
+### Patch Changes
+
+- [`eebcf14`](https://github.com/darenmalfait/nerdfishui/commit/eebcf146901205bf800fbfd48fca0bb795f55268) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update text colors
+
 ## 1.0.5
 
 ### Patch Changes
