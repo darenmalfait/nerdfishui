@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.6
+
+### Patch Changes
+
+- [`094b929`](https://github.com/darenmalfait/nerdfishui/commit/094b9298c51341e25ccaa7529f53c4b132a5d3c6) Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce toggle border radius
+
 ## 2.2.5
 
 ### Patch Changes
