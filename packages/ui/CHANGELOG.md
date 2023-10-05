@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.7
+
+### Patch Changes
+
+- [`59cc461`](https://github.com/darenmalfait/nerdfishui/commit/59cc461a1dfdcb0a883ff6cba43d0474826000f4) Thanks [@darenmalfait](https://github.com/darenmalfait)! - table: minor layout tweaks
+
 ## 2.2.6
 
 ### Patch Changes
