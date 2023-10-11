@@ -21,8 +21,8 @@ function getNavigationItemClassName({
   active?: boolean
 }) {
   return cx(
-    'py-2.5 no-underline items-center cursor-pointer truncate text-sm my-0 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-primary transition-colors',
-    active && 'shadow-soft-xl bg-primary',
+    'py-2 no-underline items-center cursor-pointer truncate text-sm my-0 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-primary transition-colors',
+    active && 'shadow-soft-sm bg-primary',
     className,
   )
 }
