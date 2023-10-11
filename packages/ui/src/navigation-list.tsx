@@ -52,7 +52,7 @@ function Item<T>({
       {Icon ? (
         <Icon
           className={cx(
-            '-ml-1 mr-2 flex h-8 w-8 p-2 shrink-0 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center shadow-soft-xl xl:p-2.5',
+            '-ml-1 mr-2 flex h-8 w-8 p-2 shrink-0 items-center justify-center rounded-lg bg-center text-center shadow-soft-sm xl:p-2',
             active
               ? 'bg-gradient-to-r from-nerdfish-100 via-nerdfish-500 to-nerdfish-900 text-white'
               : 'bg-primary text-primary',
