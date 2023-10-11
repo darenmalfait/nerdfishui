@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 1.0.9
+
+### Patch Changes
+
+- [`f259a99`](https://github.com/darenmalfait/nerdfishui/commit/f259a99f27a08215db6d35033288f5654a422aac) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update bg colors
+
 ## 1.0.8
 
 ### Patch Changes

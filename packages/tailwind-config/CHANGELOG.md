@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.3.2
+
+### Patch Changes
+
+- [`f259a99`](https://github.com/darenmalfait/nerdfishui/commit/f259a99f27a08215db6d35033288f5654a422aac) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update bg colors
+
 ## 1.3.1
 
 ### Patch Changes
