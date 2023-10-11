@@ -6,16 +6,16 @@ module.exports = plugin(
   ({addBase, addUtilities}) => {
     addUtilities({
       ':root': {
-        '--color-gray-50': '#f8f9fa',
-        '--color-gray-100': '#ebeff4',
-        '--color-gray-200': '#e9ecef',
-        '--color-gray-300': '#d2d6da',
-        '--color-gray-400': '#ced4da',
-        '--color-gray-500': '#adb5bd',
-        '--color-gray-600': '#6c757d',
-        '--color-gray-700': '#495057',
-        '--color-gray-800': '#252f40',
-        '--color-gray-900': '#141727',
+        '--color-gray-900': '#000000',
+        '--color-gray-800': '#0A0A0A',
+        '--color-gray-700': '#1A1A1A',
+        '--color-gray-600': '#3f3f46',
+        '--color-gray-500': '#71717a',
+        '--color-gray-400': '#a1a1aa',
+        '--color-gray-300': '#d4d4d8',
+        '--color-gray-200': '#e4e4e7',
+        '--color-gray-100': '#f4f4f5',
+        '--color-gray-50': '#f8fafc',
       },
       '.focus-ring': {
         '@apply focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-accent focus:ring-accent focus-within:ring-accent group-hover:ring-accent group-focus:ring-accent ring-accent ring-offset-4 dark:ring-offset-gray-900 ring-offset-white dark:hover:ring-accent-100 dark:focus:ring-accent-100 dark:focus-within:ring-accent-100 dark:group-hover:ring-accent-100 dark:group-focus:ring-accent-100 dark:ring-accent-100':
