@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 1.0.8
+
+### Patch Changes
+
+- [`9d551d5`](https://github.com/darenmalfait/nerdfishui/commit/9d551d5742be7e41660a84b0b5b903212486d0d8) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update color scheme
+
 ## 1.0.7
 
 ### Patch Changes
