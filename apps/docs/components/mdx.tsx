@@ -65,7 +65,7 @@ const components = {
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     <img
-      className={cx('rounded-2xl border border-gray-200', className)}
+      className={cx('rounded-md border border-gray-200', className)}
       alt={alt}
       {...props}
     />
@@ -172,7 +172,7 @@ const components = {
   ComponentSource,
   CodeBlockWrapper: ({...props}) => (
     <CodeBlockWrapper
-      className="rounded-2xl border border-gray-100"
+      className="rounded-md border border-gray-100"
       {...props}
     />
   ),

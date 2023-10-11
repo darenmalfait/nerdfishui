@@ -47,7 +47,7 @@ function Calendar({
       components={{
         ...props.components,
         Dropdown: ({...rest}) => (
-          <div className="focus-outline:none flex w-full space-x-0 rounded-2xl bg-black/5 px-3 text-sm text-black outline-none transition-all duration-300 hover:bg-black/10 dark:bg-white/5 dark:text-white  dark:hover:bg-white/10">
+          <div className="focus-outline:none flex w-full space-x-0 rounded-md bg-black/5 px-3 text-sm text-black outline-none transition-all duration-300 hover:bg-black/10 dark:bg-white/5 dark:text-white  dark:hover:bg-white/10">
             <select
               autoFocus
               {...rest}

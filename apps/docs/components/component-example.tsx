@@ -67,11 +67,11 @@ export function ComponentExample({
         </Tabs.Content>
         <Tabs.Content value="code" className="border-none p-0">
           <div className="flex flex-col space-y-4">
-            <div className="w-full rounded-2xl [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+            <div className="w-full rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
               {Code}
             </div>
             {Children.length ? (
-              <div className="rounded-2xl [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+              <div className="rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
                 {Children}
               </div>
             ) : null}

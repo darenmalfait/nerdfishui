@@ -100,9 +100,9 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
   return (
-    <div className="mt-2 hidden rounded-2xl border border-gray-200 bg-gradient-to-b from-nerdfish-100 to-nerdfish-900 shadow-2xl dark:border-gray-800 xl:block">
+    <div className="mt-2 hidden rounded-md border border-gray-200 bg-gradient-to-b from-nerdfish-100 to-nerdfish-900 shadow-2xl dark:border-gray-800 xl:block">
       <div className="p-8">
-        <div className="rounded-2xl shadow-2xl transition-all bg-secondary">
+        <div className="rounded-md shadow-2xl transition-all bg-secondary">
           <div className="grid grid-cols-4 xl:grid-cols-5">
             <aside className="pb-12 pr-2 bg-primary">
               <div className="px-8 pt-6">
@@ -213,7 +213,7 @@ function AppDemo() {
                         </Paragraph>
                       </div>
                     </div>
-                    <div className="flex h-[450px] shrink-0 items-center justify-center rounded-2xl border border-dashed border-gray-200 dark:border-gray-700">
+                    <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed border-gray-200 dark:border-gray-700">
                       <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
                         <Paragraph className="mb-4 mt-2 text-sm text-gray-500 dark:text-gray-400">
                           You have no ingredients added. Add ingredients to
@@ -245,7 +245,7 @@ function AlbumArtwork({
 }: AlbumArtworkProps) {
   return (
     <div className={cx('space-y-3 group', className)} {...props}>
-      <div className="rounded-2xl object-cover">
+      <div className="rounded-md object-cover">
         <AspectRatio ratio={aspectRatio === 'square' ? 1 : 3 / 4}>
           <Image
             src={album.cover}

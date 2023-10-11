@@ -8,7 +8,7 @@ const CardRoot = React.forwardRef<
   <div
     ref={ref}
     className={cx(
-      'relative flex flex-col min-w-0 mb-6 break-words bg-primary border-0 shadow-outline shadow-soft-sm rounded-2xl',
+      'relative flex flex-col min-w-0 mb-6 break-words bg-primary border-0 shadow-outline shadow-soft-sm rounded-md',
       className,
     )}
     {...props}

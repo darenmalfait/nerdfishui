@@ -28,7 +28,7 @@ export function CardDemo({className, ...props}: CardProps) {
         <Card.Description>You have 3 unread cake messages.</Card.Description>
       </Card.Header>
       <Card.Content className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-2xl border p-4">
+        <div className=" flex items-center space-x-4 rounded-md border p-4">
           <BellRing />
           <div className="flex-1 space-y-1">
             <p className="text-sm font-medium leading-none">
