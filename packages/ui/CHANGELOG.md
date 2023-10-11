@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.10
+
+### Patch Changes
+
+- [`05fc899`](https://github.com/darenmalfait/nerdfishui/commit/05fc89983580d09fcb9d2d33e0150162725beab8) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix card colors
+
 ## 2.2.9
 
 ### Patch Changes
