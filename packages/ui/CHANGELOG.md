@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 2.2.8
+
+### Patch Changes
+
+- [`4489e21`](https://github.com/darenmalfait/nerdfishui/commit/4489e216d83d06f7777efef9be9ea1b9c39bd2b9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor card styling tweaks
+
+- [`cc8b2b5`](https://github.com/darenmalfait/nerdfishui/commit/cc8b2b5d2d08c97665bf7a857b9ac674bb8b80bf) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Minor navigation list tweaks
+
 ## 2.2.7
 
 ### Patch Changes
