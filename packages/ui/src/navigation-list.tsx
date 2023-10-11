@@ -21,8 +21,8 @@ function getNavigationItemClassName({
   active?: boolean
 }) {
   return cx(
-    'py-2 no-underline items-center cursor-pointer truncate text-sm my-0 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-primary transition-colors',
-    active && 'shadow-soft-sm bg-primary',
+    'py-2 no-underline items-center cursor-pointer truncate text-sm my-0 flex items-center whitespace-nowrap rounded-md px-4 font-semibold text-primary transition-colors',
+    active && 'bg-primary',
     className,
   )
 }
@@ -52,7 +52,7 @@ function Item<T>({
       {Icon ? (
         <Icon
           className={cx(
-            '-ml-1 mr-2 flex h-8 w-8 p-2 shrink-0 items-center justify-center rounded-lg bg-center text-center shadow-soft-sm xl:p-2',
+            '-ml-1 mr-2 flex h-8 w-8 p-2 shrink-0 items-center justify-center rounded-md bg-center text-center xl:p-2',
             active
               ? 'bg-gradient-to-r from-nerdfish-100 via-nerdfish-500 to-nerdfish-900 text-white'
               : 'bg-primary text-primary',
