@@ -8,7 +8,7 @@ const CardRoot = React.forwardRef<
   <div
     ref={ref}
     className={cx(
-      'relative flex flex-col min-w-0 mb-6 break-words bg-primary border-0 shadow-outline shadow-soft-xl rounded-2xl bg-clip-border',
+      'relative flex flex-col min-w-0 mb-6 break-words bg-primary border-0 shadow-outline shadow-soft-sm rounded-2xl',
       className,
     )}
     {...props}
@@ -23,7 +23,7 @@ const CardHeader = React.forwardRef<
   <div
     ref={ref}
     className={cx(
-      'p-6 pb-2 mb-0 bg-primary border-b-0 border-b-solid rounded-t-2xl border-b-transparent',
+      'p-6 pb-2 mb-0 bg-primary flex flex-col space-y-2 border-b-0 border-b-solid rounded-t-2xl border-b-transparent',
       className,
     )}
     {...props}
