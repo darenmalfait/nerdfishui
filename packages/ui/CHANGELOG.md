@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.9
+
+### Patch Changes
+
+- [`2c4e5df`](https://github.com/darenmalfait/nerdfishui/commit/2c4e5df479a33f258289c29977cb1979c0541318) Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce overall roundness
+
 ## 2.2.8
 
 ### Patch Changes
