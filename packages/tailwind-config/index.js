@@ -6,11 +6,11 @@ module.exports = plugin(
   ({addBase, addUtilities}) => {
     addUtilities({
       ':root': {
-        '--color-gray-900': '#000000',
-        '--color-gray-800': '#0A0A0A',
-        '--color-gray-700': '#1A1A1A',
-        '--color-gray-600': '#3f3f46',
-        '--color-gray-500': '#71717a',
+        '--color-gray-950': '#000000',
+        '--color-gray-900': '#0A0A0A',
+        '--color-gray-800': '#262626',
+        '--color-gray-700': '#3C3C43',
+        '--color-gray-600': '#71717a',
         '--color-gray-400': '#a1a1aa',
         '--color-gray-300': '#d4d4d8',
         '--color-gray-200': '#e4e4e7',
