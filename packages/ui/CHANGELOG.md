@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.11
+
+### Patch Changes
+
+- [`d357351`](https://github.com/darenmalfait/nerdfishui/commit/d3573518f8e355f108de0c8d9dda5744828d6f20) Thanks [@darenmalfait](https://github.com/darenmalfait)! - remove shadow from navigation list item
+
 ## 2.2.10
 
 ### Patch Changes
