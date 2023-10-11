@@ -11,7 +11,7 @@ export function ComponentSource({children, className}: ComponentSourceProps) {
   return (
     <CodeBlockWrapper
       expandButtonTitle="View Primitive"
-      className={cx('my-6 overflow-hidden rounded-2xl', className)}
+      className={cx('my-6 overflow-hidden rounded-md', className)}
     >
       {children}
     </CodeBlockWrapper>

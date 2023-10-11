@@ -42,7 +42,7 @@ export function MobileNavigation() {
     <>
       <button
         type="button"
-        className="hover:bg-gray-900/5 flex h-6 w-6 items-center justify-center rounded-2xl transition dark:hover:bg-white/5 md:hidden"
+        className="hover:bg-gray-900/5 flex h-6 w-6 items-center justify-center rounded-md transition dark:hover:bg-white/5 md:hidden"
         aria-label="Toggle navigation"
         onClick={toggle}
       >

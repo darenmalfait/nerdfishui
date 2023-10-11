@@ -4,7 +4,7 @@ import {cx} from '@nerdfish/utils'
 function Skeleton({className, ...props}: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cx('animate-pulse rounded-2xl bg-secondary', className)}
+      className={cx('animate-pulse rounded-md bg-secondary', className)}
       {...props}
     />
   )
