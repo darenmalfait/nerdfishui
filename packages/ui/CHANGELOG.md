@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.12
+
+### Patch Changes
+
+- [`f15a473`](https://github.com/darenmalfait/nerdfishui/commit/f15a4731532f7264bccdbfb165c918d34bfa619e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add button press animation
+
 ## 2.2.11
 
 ### Patch Changes
