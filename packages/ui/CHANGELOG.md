@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.2.13
+
+### Patch Changes
+
+- [`d6b8334`](https://github.com/darenmalfait/nerdfishui/commit/d6b8334d0b661c8fbcd3c9c069b1bf49f378bf91) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add icon property to combobox items
+
 ## 2.2.12
 
 ### Patch Changes
