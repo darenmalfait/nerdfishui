@@ -22,6 +22,7 @@ interface ComboboxProps
   items?: {
     value: string
     label: string
+    icon?: React.ElementType
   }[]
   hasError?: boolean
   placeholder?: string
@@ -99,20 +100,20 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
             ) : null}
             <Command.Group>
               <ScrollArea className="h-32 w-full">
-                {items.map(item => (
-                  <Command.Item
-                    key={item.value}
-                    onSelect={() => handleChange(item.value)}
-                  >
-                    <Check
-                      className={cx(
-                        'mr-2 h-4 w-4',
-                        value === item.value ? 'opacity-100' : 'opacity-0',
-                      )}
-                    />
-                    {item.label}
-                  </Command.Item>
-                ))}
+                {items.map(item => {
+                  const ItemIcon =
+                    value === item.value ? Check : item.icon ?? 'div'
+
+                  return (
+                    <Command.Item
+                      key={item.value}
+                      onSelect={() => handleChange(item.value)}
+                    >
+                      <ItemIcon className={cx('mr-2 h-4 w-4')} />
+                      {item.label}
+                    </Command.Item>
+                  )
+                })}
               </ScrollArea>
             </Command.Group>
           </Command>
