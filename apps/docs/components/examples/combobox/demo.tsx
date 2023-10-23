@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import {Combobox} from '@nerdfish/ui'
+import {Icons} from 'components/icons'
 
 export function ComboboxDemo() {
   return (
@@ -11,7 +12,7 @@ export function ComboboxDemo() {
       emptyString="No frameworks found"
       placeholder="Select a framework"
       items={[
-        {value: 'next.js', label: 'Next.js'},
+        {value: 'next.js', label: 'Next.js', icon: Icons.ArrowRight},
         {value: 'sveltekit', label: 'SvelteKit'},
         {value: 'nuxt.js', label: 'Nuxt.js'},
         {value: 'remix', label: 'Remix'},
