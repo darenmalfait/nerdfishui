@@ -30,8 +30,11 @@ const Thumb = React.forwardRef<
 >((props, ref) => (
   <SliderPrimitive.Thumb
     ref={ref}
-    className="border-primary bg-primary focus-visible:ring-ring block h-4 w-4 rounded-full border-2 ring-offset-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-gray-900"
     {...props}
+    className={cx(
+      'border-primary bg-primary focus-visible:ring-ring block h-4 w-4 rounded-full border-2 ring-offset-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-gray-900',
+      props.className,
+    )}
   />
 ))
 Thumb.displayName = SliderPrimitive.Thumb.displayName
