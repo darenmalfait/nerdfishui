@@ -5,6 +5,7 @@ export const docs = {
       links: [
         {title: 'Introduction', href: '/'},
         {title: 'Getting started', href: '/getting-started'},
+        {title: 'Typography', href: '/typography'},
       ],
     },
     {

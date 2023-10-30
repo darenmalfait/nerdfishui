@@ -5,7 +5,7 @@ import * as React from 'react'
 
 export function TypographyProse() {
   return (
-    <div className="prose">
+    <div className="prose dark:prose-invert">
       <h2>Chapter 1: The Beginning</h2>
       <p>
         Long ago, in a land far away, there was a magical kingdom ruled by a
