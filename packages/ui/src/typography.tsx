@@ -56,12 +56,14 @@ const Title = React.forwardRef<
   JSX.IntrinsicElements['h1'] &
     VariantProps<typeof titleVariants> & {
       as?: React.ElementType
+      blurredClassName?: string
     }
 >(function Title(
   {
     className,
     as,
     size,
+    blurredClassName,
     variant = size === 'h1' || size === 'h2' ? 'special' : 'primary',
     ...props
   },
@@ -81,7 +83,25 @@ const Title = React.forwardRef<
         variant === 'special' && specialClassName,
         className,
       )}
-    />
+    >
+      {size === 'h1' ||
+        (size === 'h2' && (
+          <div
+            className={cx(
+              'absolute -left-8 z-10 h-12 w-32 rounded-full opacity-50 blur-3xl',
+              {
+                'bg-nerdfish': variant === 'special' && !blurredClassName,
+                'bg-gray-900 dark:bg-gray-100':
+                  variant === 'primary' && !blurredClassName,
+                'bg-gray-800 dark:bg-gray-200':
+                  variant === 'secondary' && !blurredClassName,
+                blurredClassName,
+              },
+            )}
+          />
+        ))}
+      {props.children}
+    </Tag>
   )
 })
 
@@ -89,14 +109,32 @@ const H1 = React.forwardRef<
   HTMLHeadingElement,
   JSX.IntrinsicElements['h1'] & ExtractProps<typeof Title>
 >(function H1(props, ref) {
-  return <Title {...props} size="h1" ref={ref} />
+  return (
+    <Title
+      {...props}
+      className={cx('relative', props.className)}
+      size="h1"
+      ref={ref}
+    >
+      {props.children}
+    </Title>
+  )
 })
 
 const H2 = React.forwardRef<
   HTMLHeadingElement,
   JSX.IntrinsicElements['h2'] & ExtractProps<typeof Title>
 >(function H2(props, ref) {
-  return <Title {...props} size="h2" ref={ref} />
+  return (
+    <Title
+      {...props}
+      className={cx('relative', props.className)}
+      size="h2"
+      ref={ref}
+    >
+      {props.children}
+    </Title>
+  )
 })
 
 const H3 = React.forwardRef<
