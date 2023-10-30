@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.3.1
+
+### Patch Changes
+
+- [`0b700c6`](https://github.com/darenmalfait/nerdfishui/commit/0b700c6aed478078ebcdd56e70b972c6ec7c88e7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): add thumb as child
+
 ## 2.3.0
 
 ### Minor Changes
