@@ -1,5 +1,19 @@
 # @nerdfish/ui
 
+## 2.3.0
+
+### Minor Changes
+
+- [`3a90668`](https://github.com/darenmalfait/nerdfishui/commit/3a906688fb07c5c7a58d29ab4a18fd74b8b47d98) Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(ui): add new slider component
+
+### Patch Changes
+
+- [`74299e6`](https://github.com/darenmalfait/nerdfishui/commit/74299e6ceffd14501671527d5db9cdcc1d64770c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(theme): add shadow-highlight color variant
+
+- [`55b4904`](https://github.com/darenmalfait/nerdfishui/commit/55b49040576c49856d75235581ac173fa47ea823) Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(skeleton): add basic skeletons
+
+- [`ee784c2`](https://github.com/darenmalfait/nerdfishui/commit/ee784c25395d6295cc72663c6a37c9a71c8628ae) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(title): add blurred bg color for h1 and h2
+
 ## 2.2.13
 
 ### Patch Changes
