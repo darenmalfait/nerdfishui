@@ -237,6 +237,7 @@ module.exports = plugin(
           },
         },
         boxShadow: {
+          highlight: '0 0 1rem -0.15rem var(--colors-nerdfish-500)',
           'soft-xxs': '0 1px 5px 1px #ddd',
           'soft-xs':
             '0 3px 5px -1px rgba(0,0,0,.09),0 2px 3px -1px rgba(0,0,0,.07)',

@@ -84,22 +84,21 @@ const Title = React.forwardRef<
         className,
       )}
     >
-      {size === 'h1' ||
-        (size === 'h2' && (
-          <div
-            className={cx(
-              'absolute -left-8 z-10 h-12 w-32 rounded-full opacity-50 blur-3xl',
-              {
-                'bg-nerdfish': variant === 'special' && !blurredClassName,
-                'bg-gray-900 dark:bg-gray-100':
-                  variant === 'primary' && !blurredClassName,
-                'bg-gray-800 dark:bg-gray-200':
-                  variant === 'secondary' && !blurredClassName,
-                blurredClassName,
-              },
-            )}
-          />
-        ))}
+      {size === 'h1' || size === 'h2' ? (
+        <div
+          className={cx(
+            'absolute -left-8 z-10 h-12 w-32 rounded-full opacity-50 blur-3xl',
+            {
+              'bg-nerdfish': variant === 'special' && !blurredClassName,
+              'bg-gray-900 dark:bg-gray-100':
+                variant === 'primary' && !blurredClassName,
+              'bg-gray-800 dark:bg-gray-200':
+                variant === 'secondary' && !blurredClassName,
+              blurredClassName,
+            },
+          )}
+        />
+      ) : null}
       {props.children}
     </Tag>
   )
