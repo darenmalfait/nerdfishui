@@ -19,13 +19,14 @@ export const docs = {
       title: 'Form Elements',
       links: [
         {title: 'Checkbox', href: '/checkbox'},
+        {title: 'Combobox', href: '/combobox'},
+        {title: 'Datepicker', href: '/datepicker'},
         {title: 'Input', href: '/input'},
         {title: 'Multi Email', href: '/multi-email'},
         {title: 'Multi Select', href: '/multi-select'},
-        {title: 'Combobox', href: '/combobox'},
-        {title: 'Timepicker', href: '/timepicker'},
-        {title: 'Datepicker', href: '/datepicker'},
         {title: 'Radio Group', href: '/radio-group'},
+        {title: 'Slider', href: '/slider'},
+        {title: 'Timepicker', href: '/timepicker'},
       ],
     },
     {
