@@ -14,6 +14,8 @@ export function SliderDemo({className, ...props}: SliderProps) {
       step={1}
       className={cx('w-[60%]', className)}
       {...props}
-    />
+    >
+      <Slider.Thumb />
+    </Slider>
   )
 }
