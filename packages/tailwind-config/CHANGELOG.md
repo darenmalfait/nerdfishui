@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.3.3
+
+### Patch Changes
+
+- [`74299e6`](https://github.com/darenmalfait/nerdfishui/commit/74299e6ceffd14501671527d5db9cdcc1d64770c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(theme): add shadow-highlight color variant
+
 ## 1.3.2
 
 ### Patch Changes
