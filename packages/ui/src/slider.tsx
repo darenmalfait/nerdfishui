@@ -16,7 +16,7 @@ const RawSlider = React.forwardRef<
     )}
     {...props}
   >
-    <SliderPrimitive.Track className="bg-inverse relative h-2 w-full grow overflow-hidden rounded-full">
+    <SliderPrimitive.Track className="bg-secondary relative h-2 w-full grow overflow-hidden rounded-full">
       <SliderPrimitive.Range className="bg-success absolute h-full" />
     </SliderPrimitive.Track>
     {children}
