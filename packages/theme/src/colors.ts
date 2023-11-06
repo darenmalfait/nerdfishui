@@ -33,11 +33,13 @@ export const colors: Colors = {
   },
   danger: {
     100: '#fee2e2',
+    400: '#fca5a5',
     500: '#f87171',
     900: '#ef4444',
   },
   success: {
     100: '#dcfce7',
+    400: '#7feebe',
     500: '#4bde80',
     900: '#22c55e',
   },

@@ -13,6 +13,7 @@ import {BadgeOutline} from './badge/outline'
 import {BadgeSecondary} from './badge/secondary'
 import {BadgeSuccess} from './badge/success'
 import {ButtonDemo} from './button/demo'
+import {ButtonDisabled} from './button/disabled'
 import {ButtonIconOnly} from './button/icon-only'
 import {ButtonLoading} from './button/loading'
 import {ButtonSizes} from './button/sizes'
@@ -89,6 +90,7 @@ export const examples = {
   BadgeSecondary,
   BadgeSuccess,
   ButtonDemo,
+  ButtonDisabled,
   ButtonIconOnly,
   ButtonLoading,
   ButtonSizes,
