@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.3.4
+
+### Patch Changes
+
+- [`5240699`](https://github.com/darenmalfait/nerdfishui/commit/5240699eacf066f21ff235e26400e0f6ac84bd95) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): increase contrast for disabled state
+
 ## 1.3.3
 
 ### Patch Changes

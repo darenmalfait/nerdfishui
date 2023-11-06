@@ -1,5 +1,15 @@
 # @nerdfish/ui
 
+## 2.3.2
+
+### Patch Changes
+
+- [`1e6a3b4`](https://github.com/darenmalfait/nerdfishui/commit/1e6a3b440c2a7bd94a3d4d9687be0611b2915c18) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): adjust track color
+
+- [`5240699`](https://github.com/darenmalfait/nerdfishui/commit/5240699eacf066f21ff235e26400e0f6ac84bd95) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): increase contrast for disabled state
+
+- [`65cdfc5`](https://github.com/darenmalfait/nerdfishui/commit/65cdfc52d5572394c6bcaa81b450d166a6eec5ee) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): extend classname
+
 ## 2.3.1
 
 ### Patch Changes
