@@ -5,25 +5,25 @@ import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {Slot} from '@radix-ui/react-slot'
 
 const buttonVariants = cva(
-  'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-90 disabled:pointer-events-none disabled:opacity-50',
+  'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded-md border text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-90 disabled:pointer-events-none',
   {
     variants: {
       variant: {
         default:
-          'bg-inverse text-inverse active-ring hover:bg-gray-700 dark:hover:bg-gray-200',
+          'bg-inverse text-inverse active-ring border-gray-900 hover:bg-gray-700 disabled:!bg-gray-700 dark:hover:bg-gray-200 dark:disabled:!bg-gray-300',
         nerdfish:
-          'bg-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish text-white hover:bg-gradient-to-r',
+          'bg-nerdfish border-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish disabled:bg-nerdfish-100 text-white hover:bg-gradient-to-r dark:bg-opacity-50',
         danger:
-          'bg-danger hover:bg-danger-900 active-ring set-colors-accent-danger text-white',
+          'bg-danger hover:bg-danger-900 border-danger-500 active-ring set-colors-accent-danger disabled:bg-danger-100 text-white disabled:text-black',
         success:
-          'bg-success hover:bg-success-900 active-ring set-colors-accent-success text-white',
+          'bg-success border-success disabled:bg-success-100 hover:bg-success-900 border-success active-ring set-colors-accent-success text-white disabled:text-black',
         outline:
-          'border-input text-primary bg-primary active-ring hover:text-primary border hover:bg-gray-100 dark:hover:bg-gray-800',
+          'border-input text-primary bg-primary active-ring hover:text-primary hover:bg-gray-100 disabled:!border-gray-200 dark:hover:bg-gray-800 dark:disabled:!border-gray-800',
         secondary:
-          'bg-secondary text-primary active-ring hover:bg-gray-200 dark:hover:bg-gray-700',
+          'bg-secondary border-secondary text-primary active-ring hover:bg-gray-200 disabled:bg-gray-100 dark:!bg-gray-900 dark:hover:bg-gray-700 disabled:dark:bg-gray-900',
         ghost:
-          'hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white',
-        link: 'text-primary underline-offset-4 hover:underline',
+          'hover:text-primary hover:bg-gray-100 disabled:opacity-70 dark:hover:bg-gray-800 dark:hover:text-white',
+        link: 'text-primary border-none underline-offset-4 hover:underline disabled:opacity-70',
       },
       size: {
         default: 'h-10 px-4 py-2',

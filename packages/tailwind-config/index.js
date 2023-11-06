@@ -35,7 +35,10 @@ module.exports = plugin(
         '@apply bg-primary-500': {},
       },
       '.bg-secondary': {
-        '@apply bg-primary-600 dark:bg-gray-800': {},
+        '@apply bg-gray-200 dark:bg-gray-800': {},
+      },
+      '.border-secondary': {
+        '@apply border-gray-200 dark:border-gray-800': {},
       },
       '.text-primary': {
         '@apply text-primary-500 dark:text-primary-50': {},
@@ -235,6 +238,20 @@ module.exports = plugin(
             800: 'var(--colors-text-800)',
             900: 'var(--colors-text-900)',
           },
+          danger: {
+            DEFAULT: 'var(--colors-danger-500)',
+            100: 'var(--colors-danger-100)',
+            400: 'var(--colors-danger-400)',
+            500: 'var(--colors-danger-500)',
+            900: 'var(--colors-danger-900)',
+          },
+          success: {
+            DEFAULT: 'var(--colors-success-500)',
+            100: 'var(--colors-success-100)',
+            400: 'var(--colors-success-400)',
+            500: 'var(--colors-success-500)',
+            900: 'var(--colors-success-900)',
+          },
         },
         boxShadow: {
           highlight: '0 0 1rem -0.15rem var(--colors-nerdfish-500)',
@@ -270,12 +287,14 @@ module.exports = plugin(
           danger: {
             DEFAULT: 'var(--colors-danger-500)',
             100: 'var(--colors-danger-100)',
+            400: 'var(--colors-danger-400)',
             500: 'var(--colors-danger-500)',
             900: 'var(--colors-danger-900)',
           },
           success: {
             DEFAULT: 'var(--colors-success-500)',
             100: 'var(--colors-success-100)',
+            400: 'var(--colors-success-400)',
             500: 'var(--colors-success-500)',
             900: 'var(--colors-success-900)',
           },
