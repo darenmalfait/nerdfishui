@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.3.5
+
+### Patch Changes
+
+- [`7bfc30f`](https://github.com/darenmalfait/nerdfishui/commit/7bfc30f3d3695aab91674a2ed48fb2944a5d59f2) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(global): set secondary color
+
 ## 1.3.4
 
 ### Patch Changes
