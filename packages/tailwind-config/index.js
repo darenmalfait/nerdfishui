@@ -35,10 +35,10 @@ module.exports = plugin(
         '@apply bg-primary-500': {},
       },
       '.bg-secondary': {
-        '@apply bg-gray-200 dark:bg-gray-800': {},
+        '@apply bg-gray-100 dark:bg-gray-800': {},
       },
       '.border-secondary': {
-        '@apply border-gray-200 dark:border-gray-800': {},
+        '@apply border-gray-100 dark:border-gray-800': {},
       },
       '.text-primary': {
         '@apply text-primary-500 dark:text-primary-50': {},
