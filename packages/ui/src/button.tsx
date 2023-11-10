@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-inverse text-inverse active-ring border-gray-900 hover:bg-gray-700 disabled:!bg-gray-700 dark:hover:bg-gray-200 dark:disabled:!bg-gray-300',
+          'bg-inverse text-inverse active-ring border-gray-100 hover:bg-gray-700 disabled:!bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-200 dark:disabled:!bg-gray-300',
         nerdfish:
           'bg-nerdfish border-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish disabled:bg-nerdfish-100 text-white hover:bg-gradient-to-r dark:bg-opacity-50',
         danger:
@@ -23,7 +23,7 @@ const buttonVariants = cva(
           'bg-secondary border-secondary text-primary active-ring hover:bg-gray-200 disabled:bg-gray-100 dark:!bg-gray-900 dark:hover:bg-gray-700 disabled:dark:bg-gray-900',
         ghost:
           'hover:text-primary hover:bg-gray-100 disabled:opacity-70 dark:hover:bg-gray-800 dark:hover:text-white',
-        link: 'text-primary border-none underline-offset-4 hover:underline disabled:opacity-70',
+        link: 'text-primary border-none bg-transparent underline-offset-4 hover:underline disabled:opacity-70',
       },
       size: {
         default: 'h-10 px-4 py-2',
@@ -45,21 +45,28 @@ const buttonVariants = cva(
 function getButtonClassName({
   variant = 'default',
   size = 'default',
+  accentuate,
   className,
 }: VariantProps<typeof buttonVariants> & {
   className?: string
+  accentuate?: boolean
 }) {
-  return cx(buttonVariants({variant, size, className}))
+  return cx(
+    buttonVariants({variant, size, className}),
+    accentuate &&
+      'select-none rounded-full shadow-[0px_16px_6px_-16px_#ff4,4px_2px_4px_-2px_#f4f,-4px_2px_4px_-2px_#4f4] hover:shadow-[0px_16px_6px_-12px_#ff4,4px_6px_6px_-2px_#f4f,-4px_6px_6px_-2px_#4f4] active:translate-y-0 active:scale-[0.99] active:shadow-[0px_10px_3px_-16px_#ff4,8px_0px_2px_-2px_#f4f,-8px_0px_2px_-2px_#4f4]',
+  )
 }
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  accentuate?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({variant, asChild, size, className, ...props}, ref) => {
+  ({variant, asChild, size, className, accentuate, ...props}, ref) => {
     const Comp = asChild ? Slot : 'button'
 
     return (
@@ -67,6 +74,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={getButtonClassName({
           variant,
           size,
+          accentuate,
           className,
         })}
         ref={ref}
