@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.3.4
+
+### Patch Changes
+
+- [`afa6ab4`](https://github.com/darenmalfait/nerdfishui/commit/afa6ab4eedf49a57eec631ddb5810162b2717f04) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(button): hide ghost border
+
 ## 2.3.3
 
 ### Patch Changes
