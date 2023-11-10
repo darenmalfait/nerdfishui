@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 2.3.3
+
+### Patch Changes
+
+- [`b57bf24`](https://github.com/darenmalfait/nerdfishui/commit/b57bf24df97ca0ee3cccf4c166ec38fabf0ed66a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): add accentuate prop
+
 ## 2.3.2
 
 ### Patch Changes
