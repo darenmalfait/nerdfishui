@@ -126,6 +126,14 @@ module.exports = plugin(
       '.prose > div:not(:where([class~="not-prose"] *))': {
         '@apply mt-6 first:mt-0': {},
       },
+      '.bg-popover': {
+        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] shadow-blur bg-[hsla(0,0%,100%,0.7)] dark:bg-[hsla(0,0%,0%,0.5)]':
+          {},
+      },
+      '.bg-popover-inverse': {
+        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] shadow-blur bg-[hsla(0,0%,0%,0.7)] dark:bg-[hsla(0,100%,100%,0.95)]':
+          {},
+      },
     })
   },
   {
@@ -262,11 +270,10 @@ module.exports = plugin(
             '0 .25rem .375rem -.0625rem hsla(0,0%,8%,.12),0 .125rem .25rem -.0625rem hsla(0,0%,8%,.07)',
           'soft-md':
             '0 4px 7px -1px rgba(0,0,0,.11),0 2px 4px -1px rgba(0,0,0,.07)',
-          'soft-lg': '0 2px 12px 0 rgba(0,0,0,.16)',
           'soft-xl': '0 20px 27px 0 rgba(0,0,0,.05)',
-          'soft-2xl': '0 .3125rem .625rem 0 rgba(0,0,0,.12)',
-          'soft-3xl':
-            '0 8px 26px -4px hsla(0,0%,8%,.15),0 8px 9px -5px hsla(0,0%,8%,.06)',
+          blur: 'inset 0 0 1px 1px hsla(0,0%,100%,.9),0 20px 27px 0 rgba(0,0,0,.05)',
+          'blur-inverse':
+            'inset 0 0 1px 1px hsla(0,0%,0%,.9),0 20px 27px 0 rgba(0,0,0,.05)',
         },
         colors: {
           transparent: 'transparent',
