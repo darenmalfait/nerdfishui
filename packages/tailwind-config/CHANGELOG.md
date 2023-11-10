@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 1.3.6
+
+### Patch Changes
+
+- [`fae7e15`](https://github.com/darenmalfait/nerdfishui/commit/fae7e15fcced17ea5cf8394ca58e71e870cdfb00) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): improve shadow and colors
+
 ## 1.3.5
 
 ### Patch Changes
