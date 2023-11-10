@@ -10,15 +10,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-inverse text-inverse active-ring border-gray-100 hover:bg-gray-700 disabled:!bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-200 dark:disabled:!bg-gray-300',
+          'bg-popover-inverse text-inverse active-ring border-transparent hover:bg-gray-700 disabled:!bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-200 dark:disabled:!bg-gray-300',
         nerdfish:
-          'bg-nerdfish border-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish disabled:bg-nerdfish-100 text-white hover:bg-gradient-to-r dark:bg-opacity-50',
+          'bg-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish disabled:bg-nerdfish-100 disabled:!border-nerdfish dark:disabled:!border-nerdfish-500 border-transparent text-white hover:bg-gradient-to-r dark:bg-opacity-50',
         danger:
-          'bg-danger hover:bg-danger-900 border-danger-500 active-ring set-colors-accent-danger disabled:bg-danger-100 text-white disabled:text-black',
+          'bg-danger disabled:!border-danger dark:disabled:!border-danger hover:bg-danger-900 active-ring set-colors-accent-danger disabled:bg-danger-100 border-transparent text-white disabled:text-black',
         success:
-          'bg-success border-success disabled:bg-success-100 hover:bg-success-900 border-success active-ring set-colors-accent-success text-white disabled:text-black',
+          'bg-success disabled:bg-success-100 disabled:!border-success dark:disabled:!border-success hover:bg-success-900 active-ring set-colors-accent-success border-transparent text-white disabled:text-black',
         outline:
-          'border-input text-primary bg-primary active-ring hover:text-primary hover:bg-gray-100 disabled:!border-gray-200 dark:hover:bg-gray-800 dark:disabled:!border-gray-800',
+          'border-input text-primary bg-primary active-ring hover:text-primary disabled:!border-gray dark:disabled:!border-gray hover:bg-gray-100 dark:hover:bg-gray-800 dark:disabled:!border-gray-200',
         secondary:
           'bg-secondary border-secondary text-primary active-ring hover:bg-gray-200 disabled:bg-gray-100 dark:!bg-gray-900 dark:hover:bg-gray-700 disabled:dark:bg-gray-900',
         ghost:
@@ -54,7 +54,7 @@ function getButtonClassName({
   return cx(
     buttonVariants({variant, size, className}),
     accentuate &&
-      'select-none rounded-full shadow-[0px_16px_6px_-16px_#ff4,4px_2px_4px_-2px_#f4f,-4px_2px_4px_-2px_#4f4] hover:shadow-[0px_16px_6px_-12px_#ff4,4px_6px_6px_-2px_#f4f,-4px_6px_6px_-2px_#4f4] active:translate-y-0 active:scale-[0.99] active:shadow-[0px_10px_3px_-16px_#ff4,8px_0px_2px_-2px_#f4f,-8px_0px_2px_-2px_#4f4]',
+      'select-none rounded-full shadow-[0px_16px_6px_-16px_#ff4,4px_2px_4px_-2px_#f4f,-4px_2px_4px_-2px_#4f4] hover:shadow-[0px_16px_6px_-12px_#ff4,4px_6px_6px_-2px_#f4f,-4px_6px_6px_-2px_#4f4] active:translate-y-0 active:shadow-[0px_10px_3px_-16px_#ff4,8px_0px_2px_-2px_#f4f,-8px_0px_2px_-2px_#4f4]',
   )
 }
 
