@@ -1,3 +1,5 @@
+'use state'
+
 import {Dispatch, SetStateAction, useState} from 'react'
 
 function useControllableState<T>(

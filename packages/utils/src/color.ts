@@ -8,13 +8,15 @@ export function hexToRgb(hexColor: string) {
 }
 
 export function getLuminance(color: {r: number; g: number; b: number}) {
-  const [lumR, lumG, lumB] = [color.r, color.g, color.b].map(component => {
-    const proportion = component / 255
+  const [lumR = 0, lumG = 0, lumB = 0] = [color.r, color.g, color.b].map(
+    component => {
+      const proportion = component / 255
 
-    return proportion <= 0.03928
-      ? proportion / 12.92
-      : ((proportion + 0.055) / 1.055) ** 2.4
-  })
+      return proportion <= 0.03928
+        ? proportion / 12.92
+        : ((proportion + 0.055) / 1.055) ** 2.4
+    },
+  )
 
   return 0.2126 * lumR + 0.7152 * lumG + 0.0722 * lumB
 }

@@ -1,47 +1,27 @@
 {
-  "extends": "@nerdfish/tsconfig/react-library.json",
-  "include": [
-    ".contentlayer/generated",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.mdx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "dist",
-    "build",
-    "node_modules"
-  ],
+  "extends": "@nerdfish/tsconfig/nextjs.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ]
+      "~/*": ["src/*"]
     },
-    "strictNullChecks": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
-  }
+    ],
+    "verbatimModuleSyntax": false,
+    "strictNullChecks": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "./**/*.js",
+    "./**/*.ts",
+    "./**/*.tsx",
+    ".next/types/**/*.ts",
+    "next.config.js",
+    "next.config.mjs",
+    "postcss.config.cjs"
+  ],
+  "exclude": ["node_modules", ".next", "public"]
 }

@@ -100,7 +100,7 @@ export function isEmail(str: string, options?: IEmailOptions) {
   if (options.requireDisplayName ?? options.allowDisplayName) {
     const displayEmail = str.match(displayName)
     if (displayEmail) {
-      str = displayEmail[1]
+      str = displayEmail[1] ?? ''
     } else if (options.requireDisplayName) {
       return false
     }
@@ -134,7 +134,7 @@ export function isEmail(str: string, options?: IEmailOptions) {
   const userParts = user.split('.')
 
   for (let i = 0; i < userParts.length; i++) {
-    if (!pattern.test(userParts[i])) {
+    if (!pattern.test(userParts[i] ?? '')) {
       return false
     }
   }

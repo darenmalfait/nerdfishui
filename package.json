@@ -2,29 +2,38 @@
   "name": "nerdfishui",
   "private": true,
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tooling/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "changeset": "changeset",
     "changeset:release": "changeset publish",
     "changeset:version": "changeset version && pnpm install --no-frozen-lockfile && git add .",
-    "clean": "turbo run clean && rm -rf node_modules",
+    "checks": "turbo lint typecheck --continue",
+    "checks:fix": "turbo lint:fix typecheck --continue --force",
+    "clean": "turbo clean && rm -rf node_modules && rm -rf .turbo",
     "dev": "turbo run dev --no-cache --continue",
     "preinstall": "npx only-allow pnpm",
+    "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
+    "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "prepare": "husky install",
     "release": "turbo run build --filter=docs^... && changeset publish",
-    "validate": "turbo run lint"
+    "vercel-build": "turbo build"
   },
   "dependencies": {
     "tailwind": "^4.0.0",
     "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.2",
-    "@commitlint/cli": "^17.8.1",
-    "@commitlint/config-conventional": "^17.8.1",
-    "eslint": "^8.53.0",
-    "eslint-config-daren": "^4.2.0",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "eslint": "^8.54.0",
+    "eslint-config-daren": "^4.2.1",
     "husky": "^8.0.3",
     "turbo": "^1.10.16"
   },

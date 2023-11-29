@@ -15,17 +15,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    appDir: true,
     serverComponentsExternalPackages: [
       '@nerdfish/ui',
       '@headlessui/react',
       '@floating-ui/dom',
-    ],
-    fontLoaders: [
-      {
-        loader: '@next/font/google',
-        options: {subsets: ['latin']},
-      },
     ],
   },
 }
