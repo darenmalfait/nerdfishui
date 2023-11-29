@@ -1,6 +1,7 @@
 {
   "name": "@nerdfish/lint",
   "version": "0.0.0",
+  "private": true,
   "type": "commonjs",
   "files": [
     "node.js",
