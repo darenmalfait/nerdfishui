@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/prefer-tag-over-role */
+'use client'
 
 import * as React from 'react'
 import {cx, useControllableState} from '@nerdfish/utils'

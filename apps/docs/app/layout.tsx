@@ -1,5 +1,7 @@
+'use client'
+
 import * as React from 'react'
-import {Inter as fontSans} from '@next/font/google'
+import {Inter as fontSans} from 'next/font/google'
 
 import '@nerdfish/theme/dist/nerdfishui.css'
 import 'tailwindcss/tailwind.css'

@@ -124,7 +124,7 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
             const setArr = new Set(splitData)
             const arr = [...setArr]
 
-            const validations = []
+            const validations: Promise<string>[] = []
             do {
               validations.push(
                 validateEmails({

@@ -100,7 +100,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
             >
               <span className="truncate">
                 {selectedValues.length === 0 ? placeholder : null}
-                {selectedValues.length === 1 ? selectedValues[0].label : null}
+                {selectedValues.length === 1 ? selectedValues[0]?.label : null}
                 {selectedValues.length === 2
                   ? selectedValues.map(({label}) => label).join(', ')
                   : null}

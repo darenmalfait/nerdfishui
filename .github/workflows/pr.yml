@@ -47,4 +47,4 @@ jobs:
       - name: Lint code
         env:
           NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
-        run: pnpm build && pnpm validate
+        run: pnpm build && pnpm checks

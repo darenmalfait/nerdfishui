@@ -1,12 +1,12 @@
 import * as React from 'react'
 import {Metadata} from 'next'
 import {notFound} from 'next/navigation'
-import {allDocs} from 'contentlayer/generated'
 import {generateOGImageUrl} from 'lib/utils/social'
 
 import {DocsPageHeader} from '../../components/docs-page-header'
 import {Mdx} from '../../components/mdx'
 import {getMetaData} from '../../lib/utils/seo'
+import {allDocs} from '.contentlayer/generated'
 
 interface DocPageProps {
   params?: {
