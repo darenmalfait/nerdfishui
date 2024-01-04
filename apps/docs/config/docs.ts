@@ -52,6 +52,7 @@ export const docs = {
         {title: 'Collapsible', href: '/collapsible'},
         {title: 'Command', href: '/command'},
         {title: 'Dialog', href: '/dialog'},
+        {title: 'Drawer', href: '/drawer'},
         {title: 'DropdownMenu', href: '/dropdown-menu'},
         {title: 'HoverCard', href: '/hover-card'},
         {title: 'NavigationList', href: '/navigation-list'},

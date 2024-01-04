@@ -1,0 +1,49 @@
+---
+title: Drawer
+description:
+  A hovercard is a small overlay that appears when you hover over a link or
+  other element. Drawers are used to provide additional information about an
+  element without having to navigate to a new page.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'drawer.tsx'
+---
+
+<ComponentExample src="/components/examples/drawer/demo.tsx">
+  <DrawerDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Drawer, Button} from '@nerdfish/ui'
+```
+
+```tsx
+<Drawer>
+  <Drawer.Trigger>Open</Drawer.Trigger>
+  <Drawer.Content>
+    <Drawer.Header>
+      <Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
+      <Drawer.Description>This action cannot be undone.</Drawer.Description>
+    </Drawer.Header>
+    <Drawer.Footer>
+      <Button>Submit</Button>
+      <Drawer.Close>
+        <Button variant="outline">Cancel</Button>
+      </Drawer.Close>
+    </Drawer.Footer>
+  </Drawer.Content>
+</Drawer>
+```
+
+## Responsive
+
+You can combine the `Dialog` and `Drawer` components to create a responsive
+dialog. This renders a `Dialog` component on desktop and a `Drawer` on mobile.
+
+<ComponentExample src="/components/examples/drawer/responsive.tsx">
+  <DrawerResponsiveDemo />
+</ComponentExample>
