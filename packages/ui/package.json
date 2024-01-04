@@ -42,7 +42,8 @@
     "date-fns": "^2.30.0",
     "lucide-react": "^0.294.0",
     "react-day-picker": "^8.9.1",
-    "shiki": "^0.14.6"
+    "shiki": "^0.14.6",
+    "vaul": "^0.8.0"
   },
   "devDependencies": {
     "@nerdfish/lint": "workspace:*",

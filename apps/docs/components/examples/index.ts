@@ -38,6 +38,8 @@ import {ContainerSize} from './container/size'
 import {DatepickerDemo} from './datepicker/demo'
 import {DialogDemo} from './dialog/demo'
 import {DoubleLabelLinkDemo} from './double-label-link/demo'
+import {DrawerDemo} from './drawer/demo'
+import {DrawerResponsiveDemo} from './drawer/responsive'
 import {DropdownMenuDemo} from './dropdown-menu/demo'
 import {GridDemo} from './grid/demo'
 import {HoverCardDemo} from './hover-card/demo'
@@ -116,6 +118,8 @@ export const examples = {
   DateRangePicker,
   DialogDemo,
   DoubleLabelLinkDemo,
+  DrawerDemo,
+  DrawerResponsiveDemo,
   DropdownMenuDemo,
   GridDemo,
   HoverCardDemo,
