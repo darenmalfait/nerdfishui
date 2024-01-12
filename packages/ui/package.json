@@ -38,7 +38,7 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.7",
     "cmdk": "^0.2.0",
-    "date-fns": "^2.30.0",
+    "date-fns": "^3.2.0",
     "lucide-react": "^0.309.0",
     "react-day-picker": "^8.10.0",
     "shiki": "^0.14.7",
