@@ -64,6 +64,7 @@ import {SwitchDemo} from './switch/demo'
 import {TableDemo} from './table/demo'
 import {TabsDemo} from './tabs/demo'
 import {TimepickerDemo} from './timepicker/demo'
+import {ToastAction} from './toast/action'
 import {ToastDemo} from './toast/demo'
 import {ToastVariant} from './toast/variant'
 import {ToggleDemo} from './toggle/demo'
@@ -144,6 +145,7 @@ export const examples = {
   TableDemo,
   TabsDemo,
   TimepickerDemo,
+  ToastAction,
   ToastDemo,
   ToastVariant,
   ToggleDemo,

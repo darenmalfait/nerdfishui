@@ -1,45 +1,35 @@
 'use client'
 
 import * as React from 'react'
-import {Button, Toast} from '@nerdfish/ui'
-
-function ExampleToast(props: React.ComponentProps<typeof Toast>) {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false)
-
-  return (
-    <>
-      <Button onClick={() => setIsOpen(true)}>Show Toast</Button>
-      <Toast
-        {...props}
-        title="example title"
-        open={isOpen}
-        onOpenChange={open => setIsOpen(open)}
-        duration={3000}
-      >
-        Content of the toast
-      </Toast>
-    </>
-  )
-}
+import {Button, toast} from '@nerdfish/ui'
 
 export function ToastVariant() {
   return (
     <div className="flex flex-wrap gap-3 p-8">
-      <ExampleToast variant="default" title="example title">
+      <Button
+        variant="default"
+        onClick={() => toast.message('default example')}
+      >
         Default Example
-      </ExampleToast>
-      <ExampleToast variant="success" title="Success Example">
+      </Button>
+      <Button
+        variant="success"
+        onClick={() => toast.success('Success example')}
+      >
         Success Example
-      </ExampleToast>
-      <ExampleToast variant="warning" title="Warning Example">
+      </Button>
+      <Button
+        variant="secondary"
+        onClick={() => toast.warning('Warning example')}
+      >
         Warning Example
-      </ExampleToast>
-      <ExampleToast variant="info" title="Info Example">
+      </Button>
+      <Button variant="secondary" onClick={() => toast.info('Info example')}>
         Info Example
-      </ExampleToast>
-      <ExampleToast variant="danger" title="Danger Example">
+      </Button>
+      <Button variant="danger" onClick={() => toast.error('Danger example')}>
         Danger Example
-      </ExampleToast>
+      </Button>
     </div>
   )
 }
