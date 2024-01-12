@@ -95,7 +95,7 @@ export default makeSource({
         })
       },
       [
-        rehypePrettyCode,
+        rehypePrettyCode as any,
         {
           getHighlighter: async () => {
             const theme = await loadTheme(
