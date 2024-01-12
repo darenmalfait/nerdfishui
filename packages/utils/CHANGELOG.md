@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.4.0
+
+### Minor Changes
+
+- [`f3bffed`](https://github.com/darenmalfait/nerdfishui/commit/f3bffed30b1ec15a81425728ed00b80d59dccb47) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add use media query hook to utils
+
 ## 1.3.0
 
 ### Minor Changes

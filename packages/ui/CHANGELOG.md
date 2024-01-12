@@ -1,5 +1,18 @@
 # @nerdfish/ui
 
+## 2.4.0
+
+### Minor Changes
+
+- [`ad9dfaa`](https://github.com/darenmalfait/nerdfishui/commit/ad9dfaab13e742a06715edcbda368ff6953aca59) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update toast component to sonner
+
+- [`f3bffed`](https://github.com/darenmalfait/nerdfishui/commit/f3bffed30b1ec15a81425728ed00b80d59dccb47) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add Drawer component
+
+### Patch Changes
+
+- Updated dependencies [[`f3bffed`](https://github.com/darenmalfait/nerdfishui/commit/f3bffed30b1ec15a81425728ed00b80d59dccb47)]:
+  - @nerdfish/utils@1.4.0
+
 ## 2.3.5
 
 ### Patch Changes
