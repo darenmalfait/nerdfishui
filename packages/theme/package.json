@@ -22,14 +22,14 @@
   },
   "dependencies": {
     "@nerdfish/utils": "workspace:^*",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.0",
     "tailwind-merge": "^2.1.0"
   },
   "devDependencies": {
     "@nerdfish/lint": "workspace:*",
     "@nerdfish/tsconfig": "workspace:*",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.17",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
     "eslint": "^8.55.0",
     "eslint-config-daren": "^4.2.1",
     "npm-run-all": "^4.1.5",
