@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {Container, Grid, ScrollArea, ToastViewport} from '@nerdfish/ui'
+import {Container, Grid, ScrollArea, Toaster} from '@nerdfish/ui'
 
 import {Footer} from './footer'
 import {Navigation} from './navigation'
@@ -27,7 +27,7 @@ export function Layout({children}: {children: React.ReactNode}) {
           </div>
         </Container>
       </Grid>
-      <ToastViewport />
+      <Toaster />
     </>
   )
 }
