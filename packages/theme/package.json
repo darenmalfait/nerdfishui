@@ -23,7 +23,7 @@
   "dependencies": {
     "@nerdfish/utils": "workspace:^*",
     "clsx": "^2.1.0",
-    "tailwind-merge": "^2.1.0"
+    "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
     "@nerdfish/lint": "workspace:*",
