@@ -1,0 +1,38 @@
+---
+title: DatePicker
+description: Pick a date
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'date-picker.tsx'
+---
+
+<ComponentExample src="/components/examples/date-picker/demo.tsx">
+  <DatePickerDemo />
+</ComponentExample>
+
+## Usage
+
+DatePicker extends the [Input](/input) component. All props from Input are
+available.
+
+### DatePicker
+
+```tsx
+import {DatePicker} from '@nerdfish/ui'
+```
+
+```tsx
+<DatePicker onSelect={date => console.log(date)} />
+```
+
+### DateRangePicker
+
+```tsx
+import {DateRangePicker} from '@nerdfish/ui'
+```
+
+```tsx
+<DateRangePicker onSelect={dateRange => console.log(dateRange)} />
+```

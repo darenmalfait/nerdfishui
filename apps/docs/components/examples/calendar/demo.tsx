@@ -5,6 +5,7 @@ import {Calendar} from '@nerdfish/ui'
 
 export function CalendarDemo() {
   const [date, setDate] = React.useState<Date | undefined>(new Date())
+  const currentYear = new Date().getFullYear()
 
   return (
     <Calendar
@@ -12,6 +13,8 @@ export function CalendarDemo() {
       selected={date}
       onSelect={setDate}
       className="rounded-md border p-3"
+      fromYear={currentYear - 10}
+      toYear={currentYear + 10}
     />
   )
 }
