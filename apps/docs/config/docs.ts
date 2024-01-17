@@ -21,7 +21,7 @@ export const docs = {
       links: [
         {title: 'Checkbox', href: '/checkbox'},
         {title: 'Combobox', href: '/combobox'},
-        {title: 'Datepicker', href: '/datepicker'},
+        {title: 'DatePicker', href: '/date-picker'},
         {title: 'Input', href: '/input'},
         {title: 'Multi Email', href: '/multi-email'},
         {title: 'Multi Select', href: '/multi-select'},
