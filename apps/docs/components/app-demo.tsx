@@ -105,21 +105,16 @@ function AppDemo() {
         <div className="rounded-md shadow-2xl transition-all bg-secondary">
           <div className="grid grid-cols-4 xl:grid-cols-5">
             <aside className="pb-12 pr-2 bg-primary">
-              <div className="px-8 pt-6">
+              <div className="mb-8 px-8 pt-6">
                 <p className="flex items-center text-2xl font-semibold tracking-tight">
                   <ChefHat className="mr-2" />
                   Chef
                 </p>
               </div>
               <div className="space-y-4">
-                <div className="px-6">
-                  <H2
-                    variant="primary"
-                    className="mb-2 px-2 text-lg font-semibold tracking-tight"
-                  >
-                    Discover
-                  </H2>
+                <div className="px-3">
                   <NavigationList className="space-y-1">
+                    <NavigationList.Title>Discover</NavigationList.Title>
                     <NavigationList.Item
                       icon={Utensils}
                       title="Start Cooking"
@@ -128,14 +123,9 @@ function AppDemo() {
                     <NavigationList.Item icon={GridIcon} title="Browse" />
                   </NavigationList>
                 </div>
-                <div className="px-6 py-2">
-                  <H2
-                    variant="primary"
-                    className="mb-2 px-2 text-lg font-semibold tracking-tight"
-                  >
-                    Library
-                  </H2>
-                  <NavigationList className="space-y-1">
+                <div className="px-3 py-2">
+                  <NavigationList>
+                    <NavigationList.Title>Library</NavigationList.Title>
                     <NavigationList.Item icon={History} title="History" />
                     <NavigationList.Item icon={User} title="Your uploads" />
                   </NavigationList>
