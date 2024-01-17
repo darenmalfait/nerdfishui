@@ -1,5 +1,15 @@
 # @nerdfish/ui
 
+## 3.0.0
+
+### Major Changes
+
+- [`2dffd36`](https://github.com/darenmalfait/nerdfishui/commit/2dffd3685001bc904924d9bb8612ce01bb1eab5c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - new DatePicker component, removed the old
+
+### Minor Changes
+
+- [`8d3a226`](https://github.com/darenmalfait/nerdfishui/commit/8d3a226cbebea23403b4c9063bd967d18c1075f5) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve navigation-list layout
+
 ## 2.4.0
 
 ### Minor Changes
