@@ -1,41 +1,39 @@
+'use client'
+
 import * as React from 'react'
-import {usePathname} from 'next/navigation'
+import {useSelectedLayoutSegment} from 'next/navigation'
 import {NavigationList} from '@nerdfish/ui'
-import {cx} from '@nerdfish/utils'
 import {docs} from 'config/docs'
 import {stripPreSlash} from 'lib/utils/string'
 
 export function Navigation(props: JSX.IntrinsicElements['nav']) {
-  const pathname = usePathname()
+  const segment = useSelectedLayoutSegment() ?? '/'
 
   return (
     <nav {...props}>
       <NavigationList>
-        <div className="space-y-4">
-          {docs.navigation.map(item => (
-            <div key={item.title} className="py-1">
-              <NavigationList.Item
-                key={item.title}
-                {...item}
-                className="hover:!bg-transparent"
-              />
-              {docs.navigation
-                .find(group => group.title === item.title)
-                ?.links.map(link => (
+        {docs.navigation.map(item => (
+          <NavigationList.Section key={item.title}>
+            <NavigationList.Title
+              key={item.title}
+              {...item}
+              className="hover:!bg-transparent"
+            >
+              {item.title}
+            </NavigationList.Title>
+            {docs.navigation
+              .find(group => group.title === item.title)
+              ?.links.map(link => {
+                return (
                   <NavigationList.Item
                     key={link.title}
-                    className={cx(
-                      'pl-6 my-1 font-normal',
-                      stripPreSlash(pathname ?? '').toLowerCase() ===
-                        stripPreSlash(link.href).toLowerCase() &&
-                        'bg-gray-100 dark:!bg-gray-800',
-                    )}
+                    active={segment === stripPreSlash(link.href)}
                     {...link}
                   />
-                ))}
-            </div>
-          ))}
-        </div>
+                )
+              })}
+          </NavigationList.Section>
+        ))}
       </NavigationList>
     </nav>
   )
