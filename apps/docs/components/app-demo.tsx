@@ -114,7 +114,7 @@ function AppDemo() {
               <div className="space-y-4">
                 <div className="px-3">
                   <NavigationList className="space-y-1">
-                    <NavigationList.Title>Discover</NavigationList.Title>
+                    <NavigationList.Title title="Discover" />
                     <NavigationList.Item
                       icon={Utensils}
                       title="Start Cooking"
@@ -125,7 +125,7 @@ function AppDemo() {
                 </div>
                 <div className="px-3 py-2">
                   <NavigationList>
-                    <NavigationList.Title>Library</NavigationList.Title>
+                    <NavigationList.Title title="Library" />
                     <NavigationList.Item icon={History} title="History" />
                     <NavigationList.Item icon={User} title="Your uploads" />
                   </NavigationList>
