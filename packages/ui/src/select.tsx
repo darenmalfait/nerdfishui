@@ -16,11 +16,11 @@ import {
 import {Popover} from './popover'
 import {ScrollArea} from './scroll-area'
 
-interface ComboboxProps
+interface SelectProps
   extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
     Pick<RawInputProps, 'hasError' | 'icon' | 'inputSize'> {
   id?: string
-  items?: {
+  options?: {
     value: string
     label: string
     icon?: React.ElementType
@@ -32,14 +32,14 @@ interface ComboboxProps
   onChange?: (value: string) => void
 }
 
-const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
-  function RawCombobox(
+const RawSelect = React.forwardRef<HTMLInputElement, SelectProps>(
+  function RawSelect(
     {
       value: valueProp,
       className,
       placeholder = 'Search...',
       emptyString = 'No items found.',
-      items = [],
+      options = [],
       defaultValue = '',
       hasError,
       icon: Icon = ChevronsUpDown,
@@ -79,7 +79,7 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
             <input ref={ref} type="hidden" value={value} {...props} />
 
             {value
-              ? items.find(item => item.value === value)?.label
+              ? options.find(item => item.value === value)?.label
               : placeholder}
             <Icon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </button>
@@ -87,7 +87,7 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
         <Popover.Content className="w-full min-w-[200px] p-0">
           <Command
             filter={(val, search) => {
-              const item = items.find(({value: v}) => v === val)?.label
+              const item = options.find(({value: v}) => v === val)?.label
 
               if (item?.toLowerCase().includes(search.toLowerCase())) return 1
               return 0
@@ -101,7 +101,7 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
             ) : null}
             <Command.Group>
               <ScrollArea className="h-32 w-full">
-                {items.map(item => {
+                {options.map(item => {
                   const ItemIcon =
                     value === item.value ? Check : item.icon ?? 'div'
 
@@ -123,10 +123,10 @@ const RawCombobox = React.forwardRef<HTMLInputElement, ComboboxProps>(
     )
   },
 )
-RawCombobox.displayName = 'RawCombobox'
+RawSelect.displayName = 'RawSelect'
 
-const Combobox = React.forwardRef<HTMLInputElement, ComboboxProps & InputProps>(
-  function Combobox(
+const Select = React.forwardRef<HTMLInputElement, SelectProps & InputProps>(
+  function Select(
     {defaultValue, error, name, label, className, description, id, ...props},
     ref,
   ) {
@@ -149,7 +149,7 @@ const Combobox = React.forwardRef<HTMLInputElement, ComboboxProps & InputProps>(
           </div>
         ) : null}
 
-        <RawCombobox
+        <RawSelect
           ref={ref}
           {...props}
           name={name}
@@ -172,6 +172,6 @@ const Combobox = React.forwardRef<HTMLInputElement, ComboboxProps & InputProps>(
     )
   },
 )
-Combobox.displayName = 'Combobox'
+Select.displayName = 'Select'
 
-export {Combobox}
+export {Select}

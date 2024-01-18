@@ -1,17 +1,17 @@
 'use client'
 
 import * as React from 'react'
-import {Combobox} from '@nerdfish/ui'
+import {Select} from '@nerdfish/ui'
 import {Icons} from 'components/icons'
 
-export function ComboboxDemo() {
+export function SelectDemo() {
   return (
-    <Combobox
+    <Select
       name="framework"
       label="Framework"
       emptyString="No frameworks found"
       placeholder="Select a framework"
-      items={[
+      options={[
         {value: 'next.js', label: 'Next.js', icon: Icons.ArrowRight},
         {value: 'sveltekit', label: 'SvelteKit'},
         {value: 'nuxt.js', label: 'Nuxt.js'},

@@ -28,7 +28,7 @@ type MultiSelectProps = Omit<
   'onChange' | 'value' | 'defaultValue'
 > &
   Pick<RawInputProps, 'hasError' | 'icon' | 'inputSize'> & {
-    items?: Item[]
+    options?: Item[]
     placeholder?: string
     onChange?: React.Dispatch<React.SetStateAction<Item[] | undefined>>
     value?: Item[]
@@ -45,7 +45,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
       value: valueProp,
       defaultValue,
       onChange,
-      items = [],
+      options = [],
       onCreateItemsClicked,
       onEditItemsClicked,
       hasError,
@@ -57,7 +57,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
     ref,
   ) {
     const inputRef = React.useRef<HTMLInputElement>(null)
-    const [openCombobox, setOpenCombobox] = React.useState(false)
+    const [openSelect, setOpenSelect] = React.useState(false)
     const [inputValue, setInputValue] = React.useState<string>('')
     const [selectedValues = [], setSelectedValues] = useControllableState<
       Item[]
@@ -74,19 +74,19 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
       inputRef.current?.focus()
     }
 
-    function onComboboxOpenChange(value: boolean) {
+    function onSelectOpenChange(value: boolean) {
       inputRef.current?.blur() // HACK: otherwise, would scroll automatically to the bottom of page
-      setOpenCombobox(value)
+      setOpenSelect(value)
     }
 
     return (
       <div>
-        <Popover open={openCombobox} onOpenChange={onComboboxOpenChange}>
+        <Popover open={openSelect} onOpenChange={onSelectOpenChange}>
           <Popover.Trigger asChild>
             <button
               role="combobox"
               aria-controls="listbox"
-              aria-expanded={openCombobox}
+              aria-expanded={openSelect}
               className={getInputClassName(
                 `flex items-center justify-between ${props.className}`,
                 hasError,
@@ -108,7 +108,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
           <Popover.Content className="w-[200px] p-0">
             <Command
               filter={(value, search) => {
-                const item = items.find(({value: v}) => v === value)?.label
+                const item = options.find(({value: v}) => v === value)?.label
 
                 if (item?.toLowerCase().includes(search.toLowerCase())) return 1
                 return 0
@@ -123,7 +123,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
               />
               <ScrollArea className="h-32 w-full">
                 <Command.Group>
-                  {items.map(item => {
+                  {options.map(item => {
                     const isActive = selectedValues.includes(item)
 
                     return (
@@ -159,11 +159,11 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                   {onEditItemsClicked && inputValue.length === 0 ? (
                     <Command.Item
                       onSelect={() => {
-                        setOpenCombobox(false)
+                        setOpenSelect(false)
                         onEditItemsClicked()
                       }}
                       className="flex gap-x-2"
-                      {...{inputValue, items}}
+                      {...{inputValue, options}}
                     >
                       <span>
                         <Pencil className="h-4 w-4" />
@@ -175,7 +175,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                 {onCreateItemsClicked && inputValue.length > 0 ? (
                   <button
                     onSelect={() => {
-                      setOpenCombobox(false)
+                      setOpenSelect(false)
                       onCreateItemsClicked(inputValue)
                     }}
                     className="flex w-full items-center gap-x-2 px-2 py-1"
