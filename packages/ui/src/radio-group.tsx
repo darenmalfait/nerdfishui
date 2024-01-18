@@ -5,47 +5,38 @@ import {cx} from '@nerdfish/utils'
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import {Circle} from 'lucide-react'
 
-import {InputError, Label} from './input'
+import {Field} from './input'
 
 const RadioGroupRoot = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> & {
+    name: string
     label?: string
     description?: string
     error?: string
   }
->(({className, label, description, error, ...props}, ref) => {
-  const inputId = props.id ?? props.name
+>(({className, label, description, id, name, error, ...props}, ref) => {
+  const inputId = id ?? name
   const errorId = `${inputId}-error`
   const descriptionId = `${inputId}-description`
 
   return (
-    <div className="w-full">
-      {label ? (
-        <div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
-          <Label htmlFor={inputId} className="mb-2">
-            {label}
-          </Label>
-          {description ? (
-            <span className="text-sm text-gray-200" id={descriptionId}>
-              {description}
-            </span>
-          ) : null}
-        </div>
-      ) : null}
-
+    <Field
+      {...{
+        description,
+        descriptionId,
+        error,
+        errorId,
+        htmlFor: inputId,
+        label,
+      }}
+    >
       <RadioGroupPrimitive.Root
         className={cx('grid gap-2', className)}
         {...props}
         ref={ref}
       />
-
-      {error ? (
-        <InputError className="mt-2" id={errorId}>
-          {error}
-        </InputError>
-      ) : null}
-    </div>
+    </Field>
   )
 })
 RadioGroupRoot.displayName = RadioGroupPrimitive.Root.displayName

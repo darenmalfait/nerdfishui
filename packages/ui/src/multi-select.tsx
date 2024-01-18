@@ -6,13 +6,7 @@ import {Check, ChevronsUpDown, Pencil, Plus} from 'lucide-react'
 
 import {Badge} from './badge'
 import {Command} from './command'
-import {
-  getInputClassName,
-  InputError,
-  InputProps,
-  Label,
-  RawInputProps,
-} from './input'
+import {Field, getInputClassName, InputProps, RawInputProps} from './input'
 import {Popover} from './popover'
 import {ScrollArea} from './scroll-area'
 
@@ -226,20 +220,17 @@ const MultiSelect = React.forwardRef<
   const descriptionId = `${inputId}-description`
 
   return (
-    <div className="w-full">
-      {label ? (
-        <div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
-          <Label htmlFor={inputId} className="mb-2">
-            {label}
-          </Label>
-          {description ? (
-            <span className="text-sm text-gray-200" id={descriptionId}>
-              {description}
-            </span>
-          ) : null}
-        </div>
-      ) : null}
-
+    <Field
+      {...{
+        description,
+        descriptionId,
+        error,
+        errorId,
+        htmlFor: inputId,
+        label,
+        className,
+      }}
+    >
       <RawMultiSelect
         hasError={!!error}
         {...(props as MultiSelectProps)}
@@ -253,13 +244,7 @@ const MultiSelect = React.forwardRef<
           error ? errorId : description ? descriptionId : undefined
         }
       />
-
-      {error ? (
-        <InputError className="mt-2" id={errorId}>
-          {error}
-        </InputError>
-      ) : null}
-    </div>
+    </Field>
   )
 })
 
