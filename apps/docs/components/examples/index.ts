@@ -60,6 +60,7 @@ import {SelectDemo} from './select/demo'
 import {SheetDemo} from './sheet/demo'
 import {SkeletonDemo} from './skeleton/demo'
 import {SliderDemo} from './slider/demo'
+import {StepsDemo} from './steps/demo'
 import {SwitchDemo} from './switch/demo'
 import {TableDemo} from './table/demo'
 import {TabsDemo} from './tabs/demo'
@@ -141,6 +142,7 @@ export const examples = {
   SheetDemo,
   SkeletonDemo,
   SliderDemo,
+  StepsDemo,
   SwitchDemo,
   TableDemo,
   TabsDemo,

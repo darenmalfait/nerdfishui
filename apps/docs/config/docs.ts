@@ -60,6 +60,7 @@ export const docs = {
         {title: 'ScrollArea', href: '/scroll-area'},
         {title: 'Sheet', href: '/sheet'},
         {title: 'Skeleton', href: '/skeleton'},
+        {title: 'Steps', href: '/steps'},
         {title: 'Table', href: '/table'},
         {title: 'Tabs', href: '/tabs'},
         {title: 'Toast', href: '/toast'},
