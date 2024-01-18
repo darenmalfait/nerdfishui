@@ -3,7 +3,7 @@ import {Label, RadioGroup} from '@nerdfish/ui'
 
 export function RadioGroupDemo() {
   return (
-    <RadioGroup defaultValue="comfortable" label="Spacing">
+    <RadioGroup name="radio-demo" defaultValue="comfortable" label="Spacing">
       <div className="flex items-center space-x-2">
         <RadioGroup.Item value="default" id="r1" />
         <Label htmlFor="r1">Default</Label>
