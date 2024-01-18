@@ -1,5 +1,17 @@
 # @nerdfish/ui
 
+## 4.1.0
+
+### Minor Changes
+
+- [`1c1403a`](https://github.com/darenmalfait/nerdfishui/commit/1c1403ac56ed411ad62105025e6872e3977fbd3e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - NavigationList.Title has the same styling options as NavigationList.Item
+
+- [`1a69440`](https://github.com/darenmalfait/nerdfishui/commit/1a694400959216552b0fde592762b038413d405c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add new Steps component that cna be used as an indicator in a wizard form
+
+### Patch Changes
+
+- [`78b60b6`](https://github.com/darenmalfait/nerdfishui/commit/78b60b6876743623e52d65e49e8abdd842c08919) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix background color for Tabs in dark mode
+
 ## 4.0.0
 
 ### Major Changes
