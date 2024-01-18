@@ -4,8 +4,8 @@ import * as React from 'react'
 import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {AlertCircle} from 'lucide-react'
 
-const toggleVariants = cva(
-  'text-md focus-ring group w-full rounded-lg font-bold placeholder:text-gray-500 disabled:text-gray-200',
+const inputVariants = cva(
+  'text-md focus-ring group w-full rounded-lg font-bold placeholder:text-gray-500 disabled:opacity-70',
   {
     variants: {
       size: {
@@ -20,7 +20,7 @@ const toggleVariants = cva(
   },
 )
 
-type InputSize = VariantProps<typeof toggleVariants>['size']
+type InputSize = VariantProps<typeof inputVariants>['size']
 
 type RawInputProps = {
   hasError?: boolean
@@ -47,7 +47,7 @@ function getInputClassName(
   inputSize: InputSize = 'md',
 ) {
   return cx(
-    toggleVariants({size: inputSize}),
+    inputVariants({size: inputSize}),
     hasError
       ? 'border border-red-100 bg-red-50 dark:border-red-200 dark:border-red-200/20 dark:bg-red-500/10'
       : 'bg-black/5 dark:bg-white/10 text-primary',
