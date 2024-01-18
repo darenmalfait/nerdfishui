@@ -30,7 +30,6 @@ import {CheckboxError} from './checkbox/error'
 import {CheckboxIcon} from './checkbox/icon'
 import {CheckboxWithText} from './checkbox/with-text'
 import {CollapsibleDemo} from './collapsible/demo'
-import {ComboboxDemo} from './combobox/demo'
 import {CommandDemo} from './command/demo'
 import {CommandDialog} from './command/dialog'
 import {ContainerDemo} from './container/demo'
@@ -57,6 +56,7 @@ import {ProgressiveImageDemo} from './progressive-image/demo'
 import {RadioGroupDemo} from './radio-group/demo'
 import {ScrollAreaDemo} from './scroll-area/demo'
 import {SectionDemo} from './section/demo'
+import {SelectDemo} from './select/demo'
 import {SheetDemo} from './sheet/demo'
 import {SkeletonDemo} from './skeleton/demo'
 import {SliderDemo} from './slider/demo'
@@ -110,7 +110,7 @@ export const examples = {
   CheckboxIcon,
   CheckboxWithText,
   CollapsibleDemo,
-  ComboboxDemo,
+  SelectDemo,
   CommandDemo,
   CommandDialog,
   ContainerDemo,

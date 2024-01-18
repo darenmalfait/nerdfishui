@@ -15,7 +15,7 @@ export function MultiSelectDemo() {
       onEditItemsClicked={() => {
         console.info('Edit items')
       }}
-      items={[
+      options={[
         {value: 'next.js', label: 'Next.js', color: '#000000'},
         {value: 'sveltekit', label: 'SvelteKit', color: '#ff3e00'},
         {value: 'nuxt.js', label: 'Nuxt.js', color: '#00c58e'},

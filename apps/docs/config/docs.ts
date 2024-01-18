@@ -20,7 +20,7 @@ export const docs = {
       title: 'Form Elements',
       links: [
         {title: 'Checkbox', href: '/checkbox'},
-        {title: 'Combobox', href: '/combobox'},
+        {title: 'Select', href: '/select'},
         {title: 'DatePicker', href: '/date-picker'},
         {title: 'Input', href: '/input'},
         {title: 'Multi Email', href: '/multi-email'},
