@@ -157,6 +157,54 @@ function InputError({
   )
 }
 
+const Field = React.forwardRef<
+  HTMLDivElement,
+  JSX.IntrinsicElements['div'] & {
+    htmlFor: string
+    label?: string
+    error?: string | null
+    errorId?: string
+    description?: React.ReactNode
+    descriptionId?: string
+  }
+>(function Field(
+  {
+    children,
+    className,
+    description,
+    descriptionId,
+    error,
+    errorId,
+    htmlFor,
+    label,
+    ...props
+  },
+  ref,
+) {
+  return (
+    <div className={cx('w-full', className)} {...props} ref={ref}>
+      {label ? (
+        <div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
+          <Label htmlFor={htmlFor} className="mb-2">
+            {label}
+          </Label>
+          {description ? (
+            <span className="text-sm text-gray-200" id={descriptionId}>
+              {description}
+            </span>
+          ) : null}
+        </div>
+      ) : null}
+      {children}
+      {error ? (
+        <InputError className="mt-2" id={errorId}>
+          {error}
+        </InputError>
+      ) : null}
+    </div>
+  )
+})
+
 const Input = React.forwardRef<
   HTMLInputElement | HTMLTextAreaElement,
   InputProps & RawInputProps
@@ -169,20 +217,16 @@ const Input = React.forwardRef<
   const descriptionId = `${inputId}-description`
 
   return (
-    <div className="w-full">
-      {label ? (
-        <div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
-          <Label htmlFor={inputId} className="mb-2">
-            {label}
-          </Label>
-          {description ? (
-            <span className="text-sm text-gray-200" id={descriptionId}>
-              {description}
-            </span>
-          ) : null}
-        </div>
-      ) : null}
-
+    <Field
+      {...{
+        description,
+        descriptionId,
+        error,
+        errorId,
+        htmlFor: inputId,
+        label,
+      }}
+    >
       <RawInput
         hasError={!!error}
         {...(props as RawInputProps)}
@@ -196,15 +240,18 @@ const Input = React.forwardRef<
           error ? errorId : description ? descriptionId : undefined
         }
       />
-
-      {error ? (
-        <InputError className="mt-2" id={errorId}>
-          {error}
-        </InputError>
-      ) : null}
-    </div>
+    </Field>
   )
 })
 
-export {RawInput, Input, InputError, getInputClassName, FormHelperText, Label}
+export {
+  Field,
+  FormHelperText,
+  getInputClassName,
+  Input,
+  InputError,
+  Label,
+  RawInput,
+}
+
 export type {RawInputProps, InputProps, InputSize}

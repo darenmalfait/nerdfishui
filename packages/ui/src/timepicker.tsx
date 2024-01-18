@@ -4,13 +4,7 @@ import * as React from 'react'
 import {cx, roundToNearest15} from '@nerdfish/utils'
 import {AlertCircle, Clock} from 'lucide-react'
 
-import {
-  getInputClassName,
-  InputError,
-  InputProps,
-  Label,
-  RawInputProps,
-} from './input'
+import {Field, getInputClassName, InputProps, RawInputProps} from './input'
 
 const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
   function RawTimepicker(props, ref) {
@@ -138,20 +132,17 @@ const Timepicker = React.forwardRef<
   const descriptionId = `${inputId}-description`
 
   return (
-    <div className={cx(className, 'w-full')}>
-      {label ? (
-        <div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
-          <Label htmlFor={inputId} className="mb-2">
-            {label}
-          </Label>
-          {description ? (
-            <span className="text-sm text-gray-200" id={descriptionId}>
-              {description}
-            </span>
-          ) : null}
-        </div>
-      ) : null}
-
+    <Field
+      {...{
+        description,
+        descriptionId,
+        error,
+        errorId,
+        htmlFor: inputId,
+        label,
+        className,
+      }}
+    >
       <RawTimepicker
         hasError={!!error}
         {...(props as RawInputProps)}
@@ -165,13 +156,7 @@ const Timepicker = React.forwardRef<
           error ? errorId : description ? descriptionId : undefined
         }
       />
-
-      {error ? (
-        <InputError className="mt-2" id={errorId}>
-          {error}
-        </InputError>
-      ) : null}
-    </div>
+    </Field>
   )
 })
 
