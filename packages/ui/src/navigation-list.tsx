@@ -177,7 +177,7 @@ const NavigationListRoot = React.forwardRef<
     >
       <div
         className={cx(
-          'grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2',
+          'grid gap-1 group-[[data-collapsed=true]]:justify-center',
           className,
         )}
       >
