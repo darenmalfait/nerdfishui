@@ -33,7 +33,7 @@ type NavItemProps = JSX.IntrinsicElements['a'] & {
   icon?: React.ElementType
   active?: boolean
   label?: string
-  title?: string
+  title?: React.ReactNode
   as?: React.ElementType
 }
 
@@ -60,6 +60,7 @@ function Item<T>({
                 size: 'icon',
               }),
               'h-9 w-9',
+              className,
             )}
             {...props}
           >
@@ -83,6 +84,7 @@ function Item<T>({
       className={cx(
         navItemVariants({variant: active ? 'default' : 'ghost', size: 'sm'}),
         'justify-start',
+        className,
       )}
       {...props}
     >
@@ -94,20 +96,58 @@ function Item<T>({
 }
 
 function Title({
-  children,
+  title,
   className,
+  icon: Icon,
+  isCollapsed,
+  label,
 }: {
-  children: React.ReactNode
+  title: React.ReactNode
   className?: string
+  icon?: React.ElementType
+  isCollapsed?: boolean
+  label?: string
 }) {
+  if (isCollapsed) {
+    return (
+      <Tooltip delayDuration={0}>
+        <Tooltip.Trigger asChild>
+          <h2
+            className={cx(
+              navItemVariants({
+                variant: 'ghost',
+                size: 'icon',
+              }),
+              'h-9 w-9 hover:bg-transparent',
+              className,
+            )}
+          >
+            {Icon ? <Icon className="h-4 w-4" /> : null}
+            <span className="sr-only">{title}</span>
+          </h2>
+        </Tooltip.Trigger>
+
+        <Tooltip.Content side="right" className="flex items-center gap-4">
+          {title}
+          {label ? (
+            <span className="text-secondary ml-auto">{label}</span>
+          ) : null}
+        </Tooltip.Content>
+      </Tooltip>
+    )
+  }
+
   return (
     <h2
       className={cx(
-        'mb-2 px-2 text-lg font-semibold tracking-tight',
+        navItemVariants({variant: 'ghost', size: 'sm'}),
+        'justify-start text-lg font-semibold tracking-tight hover:bg-transparent',
         className,
       )}
     >
-      {children}
+      {Icon ? <Icon className="mr-2 h-4 w-4" /> : null}
+      <span className="min-w-0 max-w-full flex-1 truncate">{title}</span>
+      {label ? <span className={cx('ml-auto')}>{label}</span> : null}
     </h2>
   )
 }

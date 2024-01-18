@@ -18,9 +18,7 @@ export function Navigation(props: JSX.IntrinsicElements['nav']) {
               key={item.title}
               {...item}
               className="hover:!bg-transparent"
-            >
-              {item.title}
-            </NavigationList.Title>
+            />
             {docs.navigation
               .find(group => group.title === item.title)
               ?.links.map(link => {
