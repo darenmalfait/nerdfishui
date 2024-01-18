@@ -1,5 +1,22 @@
 # @nerdfish/ui
 
+## 4.0.0
+
+### Major Changes
+
+- [`f08b72c`](https://github.com/darenmalfait/nerdfishui/commit/f08b72c74a5e23313f35277af6df90968e34bc9a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - `Combobox` has been renamed to `Select`.
+  The `items` prop has been changed to `options` for `Select` and `MultiSelect` components.
+
+### Minor Changes
+
+- [`574601b`](https://github.com/darenmalfait/nerdfishui/commit/574601b9183d8d61aa152b766885dc1189ee595d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new Field utility component for label and error display of input fields
+
+### Patch Changes
+
+- [`fba918d`](https://github.com/darenmalfait/nerdfishui/commit/fba918d52560680934ab7b9d7de64c176ed9ca41) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add top padding to card content
+
+- [`cc8e2ff`](https://github.com/darenmalfait/nerdfishui/commit/cc8e2ff0f019d2ba0b36d29757c461e78e0b0f7d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - adjust disabled input styling
+
 ## 3.0.0
 
 ### Major Changes
