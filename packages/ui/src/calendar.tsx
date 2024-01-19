@@ -39,22 +39,21 @@ function Calendar({
         nav_button_next: 'absolute right-1',
         table: 'w-full border-collapse space-y-1',
         head_row: 'flex',
-        head_cell: 'text-secondary rounded-md w-9 font-normal text-[0.8rem]',
+        head_cell: 'text-muted rounded-md w-9 font-normal text-[0.8rem]',
         row: 'flex w-full mt-2',
-        cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-secondary [&:has([aria-selected])]:bg-secondary first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
+        cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-muted [&:has([aria-selected])]:bg-muted first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
         day: cx(
           buttonVariants({variant: 'ghost'}),
           'h-9 w-9 p-0 font-normal aria-selected:opacity-100',
         ),
         day_range_end: 'day-range-end',
         day_selected:
-          'bg-inverse rounded-full text-inverse hover:bg-primary hover:text-primary focus:bg-inverse focus:text-inverse',
+          'bg-inverted/30 rounded-full text-primary hover:bg-inverted/30 hover:text-muted',
         day_today: 'bg-nerdfish text-white',
         day_outside:
-          'day-outside text-secondary opacity-50 aria-selected:bg-secondary aria-selected:text-secondary aria-selected:opacity-80',
-        day_disabled: 'text-secondary opacity-50',
-        day_range_middle:
-          'aria-selected:bg-secondary aria-selected:text-primary',
+          'day-outside text-muted opacity-50 aria-selected:bg-muted aria-selected:text-muted aria-selected:opacity-80',
+        day_disabled: 'text-muted opacity-50',
+        day_range_middle: 'aria-selected:bg-muted aria-selected:text-primary',
         day_hidden: 'invisible',
         ...classNames,
       }}

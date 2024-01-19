@@ -10,20 +10,20 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-popover-inverse text-inverse active-ring border-transparent hover:bg-gray-700 disabled:!bg-gray-700 dark:border-gray-900 dark:hover:bg-gray-200 dark:disabled:!bg-gray-300',
-        nerdfish:
-          'bg-nerdfish hover:from-nerdfish active-ring hover:to-nerdfish-100 set-colors-accent-nerdfish disabled:bg-nerdfish-100 disabled:!border-nerdfish dark:disabled:!border-nerdfish-500 border-transparent text-white hover:bg-gradient-to-r dark:bg-opacity-50',
-        danger:
-          'bg-danger disabled:!border-danger dark:disabled:!border-danger hover:bg-danger-900 active-ring set-colors-accent-danger disabled:bg-danger-100 border-transparent text-white disabled:text-black',
-        success:
-          'bg-success disabled:bg-success-100 disabled:!border-success dark:disabled:!border-success hover:bg-success-900 active-ring set-colors-accent-success border-transparent text-white disabled:text-black',
-        outline:
-          'border-input text-primary bg-primary active-ring hover:text-primary disabled:!border-gray dark:disabled:!border-gray hover:bg-gray-100 dark:hover:bg-gray-800 dark:disabled:!border-gray-200',
+          'bg-inverted set-accent-foregroud text-inverted active-ring hover:bg-inverted/75 disabled:bg-inverted/50 disabled:text-inverted/80 border-transparent',
         secondary:
-          'bg-secondary border-secondary text-primary active-ring hover:bg-gray-200 disabled:bg-gray-100 dark:!bg-gray-900 dark:hover:bg-gray-700 disabled:dark:bg-gray-900',
+          'bg-muted text-primary set-accent-current active-ring hover:bg-inverted/20 disabled:bg-muted/50 disabled:text-muted/80 border-transparent',
+        nerdfish:
+          'bg-nerdfish set-accent-nerdfish active-ring hover:bg-nerdfish/75 disabled:bg-nerdfish/20 disabled:text-nerdfish border-transparent text-white',
+        danger:
+          'bg-danger hover:bg-danger-subtle set-accent-current border-danger disabled:bg-danger-subtle/50 disabled:text-danger/80 active-ring text-danger',
+        success:
+          'bg-success hover:bg-success-subtle set-accent-current border-success disabled:bg-success-subtle/50 disabled:text-success/80 active-ring text-success',
+        outline:
+          'border-primary text-primary bg-primary set-accent-current active-ring hover:bg-muted disabled:text-primary/50',
         ghost:
-          'hover:text-primary border-transparent hover:bg-gray-100 disabled:opacity-70 dark:hover:bg-gray-800 dark:hover:text-white',
-        link: 'text-primary border-none bg-transparent underline-offset-4 hover:underline disabled:opacity-70',
+          'text-primary hover:bg-muted disabled:text-primary/50 border-transparent',
+        link: 'text-primary disabled:text-primary/50 border-none bg-transparent underline-offset-4 hover:underline',
       },
       size: {
         default: 'h-10 px-4 py-2',

@@ -142,7 +142,7 @@ const Select = React.forwardRef<HTMLInputElement, SelectProps & InputProps>(
               {label}
             </Label>
             {description ? (
-              <span className="text-sm text-gray-200" id={descriptionId}>
+              <span className="text-muted text-sm" id={descriptionId}>
                 {description}
               </span>
             ) : null}

@@ -9,7 +9,7 @@ export function Skeleton({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cx('animate-pulse rounded-md bg-secondary', className)}
+      className={cx('animate-pulse rounded-md bg-muted', className)}
       {...props}
     />
   )
@@ -32,18 +32,16 @@ export function CardSkeleton({className}: {className?: string}) {
 
 export function H1Skeleton({className}: {className?: string}) {
   return (
-    <Skeleton className={cx('h-12 w-1/3 rounded-lg bg-secondary', className)} />
+    <Skeleton className={cx('h-12 w-1/3 rounded-lg bg-muted', className)} />
   )
 }
 
 export function H2Skeleton({className}: {className?: string}) {
   return (
-    <Skeleton className={cx('h-10 w-1/3 rounded-lg bg-secondary', className)} />
+    <Skeleton className={cx('h-10 w-1/3 rounded-lg bg-muted', className)} />
   )
 }
 
 export function ButtonSkeleton({className}: {className?: string}) {
-  return (
-    <Skeleton className={cx('h-4 w-16 rounded-lg bg-secondary', className)} />
-  )
+  return <Skeleton className={cx('h-4 w-16 rounded-lg bg-muted', className)} />
 }

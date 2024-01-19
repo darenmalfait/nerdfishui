@@ -1,18 +1,26 @@
 import fs from 'fs'
 
-import {colors} from './colors'
+import {dark, light} from './colors'
 import {toCSSVar} from './to-css-var'
 
 function createGlobalCssVars() {
-  const theme = toCSSVar({
-    colors,
+  const lightTheme = toCSSVar({
+    colors: light,
   })
 
-  const vars = Object.keys(theme.cssVars)
-    .map(key => `${key}: ${theme.cssVars[key]};`)
+  const darkTheme = toCSSVar({
+    colors: dark,
+  })
+
+  const lightVars = Object.keys(lightTheme.cssVars)
+    .map(key => `${key}: ${lightTheme.cssVars[key]};`)
     .join('\n')
 
-  const content = `:root {\n${vars}\n}`
+  const darkVars = Object.keys(darkTheme.cssVars)
+    .map(key => `${key}: ${darkTheme.cssVars[key]};`)
+    .join('\n')
+
+  const content = `:root {\n${lightVars}\n}\n\n.dark{\n${darkVars}\n}`
 
   if (!fs.existsSync('./dist')) {
     fs.mkdirSync('./dist')

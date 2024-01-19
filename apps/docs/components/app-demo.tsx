@@ -100,11 +100,11 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
   return (
-    <div className="mt-2 hidden rounded-md border border-gray-200 bg-gradient-to-b from-nerdfish-100 to-nerdfish-900 shadow-2xl dark:border-gray-800 xl:block">
+    <div className="mt-2 hidden rounded-md border border-primary bg-nerdfish shadow-2xl xl:block">
       <div className="p-8">
-        <div className="rounded-md shadow-2xl transition-all bg-secondary">
+        <div className="rounded-md bg-muted shadow-2xl transition-all">
           <div className="grid grid-cols-4 xl:grid-cols-5">
-            <aside className="pb-12 pr-2 bg-primary">
+            <aside className="bg-primary pb-12 pr-2">
               <div className="mb-8 px-8 pt-6">
                 <p className="flex items-center text-2xl font-semibold tracking-tight">
                   <ChefHat className="mr-2" />
@@ -147,7 +147,7 @@ function AppDemo() {
                   </div>
                   <Tabs.Content
                     value="recipes"
-                    className="border border-none p-0 bg-secondary"
+                    className="border border-none bg-muted p-0"
                   >
                     <div className="mb-2 flex items-center justify-between">
                       <div className="space-y-1">

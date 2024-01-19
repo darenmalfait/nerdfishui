@@ -2,52 +2,27 @@
 
 import * as React from 'react'
 import {Dialog, Transition} from '@headlessui/react'
+import {Button} from '@nerdfish/ui'
 
 import {useMobileNav} from '../context/mobile-nav-provider'
+import {Icons} from './icons'
 import {Navigation} from './navigation'
-
-function MenuIcon(props: JSX.IntrinsicElements['svg']) {
-  return (
-    <svg
-      viewBox="0 0 10 9"
-      fill="none"
-      strokeLinecap="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M.5 1h9M.5 8h9M.5 4.5h9" />
-    </svg>
-  )
-}
-
-function XIcon(props: JSX.IntrinsicElements['svg']) {
-  return (
-    <svg
-      viewBox="0 0 10 9"
-      fill="none"
-      strokeLinecap="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="m1.5 1 7 7M8.5 1l-7 7" />
-    </svg>
-  )
-}
 
 export function MobileNavigation() {
   const {isOpen, toggle, close} = useMobileNav()
-  const ToggleIcon = isOpen ? XIcon : MenuIcon
 
   return (
     <>
-      <button
+      <Button
+        size="icon"
+        variant="ghost"
         type="button"
-        className="hover:bg-gray-900/5 flex h-6 w-6 items-center justify-center rounded-md transition dark:hover:bg-white/5 md:hidden"
+        className="md:hidden"
         aria-label="Toggle navigation"
         onClick={toggle}
       >
-        <ToggleIcon className="w-2.5 stroke-gray-900 dark:stroke-white" />
-      </button>
+        <Icons.Menu className="h-4 w-4 text-primary" />
+      </Button>
       <Transition.Root show={isOpen} as={React.Fragment}>
         <Dialog onClose={close} className="fixed inset-0 z-50 lg:hidden">
           <Transition.Child

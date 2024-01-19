@@ -40,7 +40,7 @@ function RawCheckbox({
   return (
     <label className={cx(bgClassName, toggleVariants({variant}), className)}>
       <input {...props} className="peer sr-only" type="checkbox" />
-      <span className="border-primary-100 focus-ring peer-checked:animate-check dark:border-primary-300 inline-block h-full w-full cursor-pointer rounded-full border-2 text-current transition-all duration-300 peer-checked:border-transparent" />
+      <span className="border-primary focus-ring peer-checked:animate-check inline-block h-full w-full cursor-pointer rounded-full border-2 text-current transition-all duration-300 peer-checked:border-transparent" />
       <span className="absolute inset-0 hidden peer-checked:block">
         <Icon
           className={cx(textClassName, 'pointer-events-none h-full w-full p-1')}

@@ -148,7 +148,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                             <span className="flex-1">{item.label}</span>
                           </div>
                           {item.description ? (
-                            <span className="text-secondary text-[10px]">
+                            <span className="text-muted text-[10px]">
                               {item.description}
                             </span>
                           ) : null}
@@ -197,7 +197,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
               key={value}
               variant="outline"
               style={color ? badgeStyle(color) : undefined}
-              className="dark:!bg-opacity/20 bg-secondary shadow-outline mb-2 mr-2 border"
+              className="dark:!bg-opacity/20 bg-muted shadow-outline mb-2 mr-2 border"
             >
               {label}
             </Badge>

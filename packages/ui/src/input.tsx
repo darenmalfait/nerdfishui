@@ -5,7 +5,7 @@ import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {AlertCircle} from 'lucide-react'
 
 const inputVariants = cva(
-  'w-full rounded-lg border-0 bg-transparent outline-none placeholder:text-gray-500',
+  'placeholder:text-muted w-full rounded-lg border-0 bg-transparent outline-none',
   {
     variants: {
       size: {
@@ -69,7 +69,7 @@ function getInputClassName(
     'text-md focus-ring group w-full rounded-lg font-bold disabled:opacity-70',
     isInputField && inputVariants({size: inputSize}),
     hasError
-      ? 'border border-red-100 bg-red-50 dark:border-red-200 dark:border-red-200/20 dark:bg-red-500/10'
+      ? 'border-danger bg-danger-subtle/50 text-danger'
       : 'bg-black/5 dark:bg-white/10 text-primary',
 
     className,
@@ -77,16 +77,14 @@ function getInputClassName(
 }
 
 function FormHelperText({className, ...props}: JSX.IntrinsicElements['div']) {
-  return (
-    <div className={cx('text-sm text-primary-400', className)} {...props} />
-  )
+  return <div className={cx('text-sm text-muted', className)} {...props} />
 }
 
 function Label({className, htmlFor, ...props}: JSX.IntrinsicElements['label']) {
   return (
     <label
       htmlFor={htmlFor}
-      className={cx('block text-sm font-medium text-secondary', className)}
+      className={cx('block text-sm font-medium text-primary', className)}
       {...props}
     />
   )
@@ -143,7 +141,7 @@ const RawInput = React.forwardRef<
             height="20px"
             className={cx(
               'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0',
-              hasError && 'text-red-500',
+              hasError && 'text-danger',
             )}
           />
         ) : null}
@@ -189,7 +187,7 @@ const RawInput = React.forwardRef<
         ) : null}
         {hasError ? (
           <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
-            <AlertCircle className="h-5 w-5 text-red-500" aria-hidden="true" />
+            <AlertCircle className="text-danger h-5 w-5" aria-hidden="true" />
           </div>
         ) : null}
         {addOnTrailing ? (
@@ -215,7 +213,7 @@ function InputError({
   return (
     <p
       {...props}
-      className={cx('mb-0 text-sm text-left text-red-600', className)}
+      className={cx('mb-0 text-sm text-left text-danger', className)}
       role="alert"
       id={id}
     />
@@ -255,7 +253,7 @@ const Field = React.forwardRef<
       ) : null}
       {children}
       {description ? (
-        <span className="text-secondary mt-2 text-sm" id={descriptionId}>
+        <span className="text-muted mt-2 text-sm" id={descriptionId}>
           {description}
         </span>
       ) : null}

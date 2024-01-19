@@ -15,8 +15,8 @@ function Toaster(props: ToasterProps) {
       toastOptions={{
         classNames: {
           toast:
-            'group p-3 gap-3 toast group-[.toaster]:bg-secondary group-[.toaster]:text-primary group-[.toaster]:border-border group-[.toaster]:shadow-lg',
-          description: 'group-[.toast]:text-secondary',
+            'group p-3 gap-3 toast group-[.toaster]:bg-muted group-[.toaster]:text-primary group-[.toaster]:border-border group-[.toaster]:shadow-lg',
+          description: 'group-[.toast]:text-muted',
           actionButton: getButtonClassName({
             variant: 'default',
             size: 'default',

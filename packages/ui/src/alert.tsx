@@ -9,13 +9,10 @@ const DEFAULT_VARIANT = 'info'
 const bgVariants = cva('rounded-lg p-4', {
   variants: {
     variant: {
-      warning:
-        'border border-orange-100 bg-orange-50 dark:border-orange-200/20 dark:bg-orange-500/10',
-      success:
-        'border border-green-100 bg-green-50 dark:border-green-200/20 dark:bg-green-500/10',
-      info: 'border border-blue-100 bg-blue-50 dark:border-blue-200/20 dark:bg-blue-500/10',
-      danger:
-        'border border-red-100 bg-red-50 dark:border-red-200/20 dark:bg-red-500/10',
+      warning: 'border-warning bg-warning-subtle border',
+      success: 'border-success bg-success-subtle border',
+      info: 'border-info bg-info-subtle border',
+      danger: 'border-danger bg-danger-subtle border',
     },
   },
   defaultVariants: {
@@ -26,10 +23,10 @@ const bgVariants = cva('rounded-lg p-4', {
 const fgVariants = cva('', {
   variants: {
     variant: {
-      warning: 'text-orange-900 dark:text-orange-200',
-      success: 'text-green-900 dark:text-green-200',
-      info: 'text-blue-900 dark:text-blue-200',
-      danger: 'text-red-900 dark:text-red-200',
+      warning: 'text-warning',
+      success: 'text-success',
+      info: 'text-info',
+      danger: 'text-danger',
     },
   },
   defaultVariants: {

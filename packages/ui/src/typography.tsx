@@ -24,9 +24,6 @@ const Paragraph = React.forwardRef<
 })
 Paragraph.displayName = 'Paragraph'
 
-const specialClassName =
-  'relative bg-gradient-to-r from-[var(--colors-nerdfish-100)] via-[var(--colors-nerdfish-500)] to-[var(--colors-nerdfish-900)] bg-clip-text'
-
 const DEFAULT_TITLE_SIZE = 'h2'
 
 const titleVariants = cva('', {
@@ -42,8 +39,8 @@ const titleVariants = cva('', {
     },
     variant: {
       primary: 'text-primary',
-      secondary: 'text-secondary',
-      special: 'text-transparent',
+      secondary: 'text-muted',
+      nerdfish: 'text-nerdfish',
     },
   },
   defaultVariants: {
@@ -64,7 +61,7 @@ const Title = React.forwardRef<
     as,
     size,
     blurredClassName,
-    variant = size === 'h1' || size === 'h2' ? 'special' : 'primary',
+    variant = size === 'h1' || size === 'h2' ? 'nerdfish' : 'primary',
     ...props
   },
   ref,
@@ -80,7 +77,7 @@ const Title = React.forwardRef<
           size,
           variant,
         }),
-        variant === 'special' && specialClassName,
+        variant === 'nerdfish',
         className,
       )}
     >
@@ -89,11 +86,9 @@ const Title = React.forwardRef<
           className={cx(
             'absolute -left-8 z-10 h-12 w-32 rounded-full opacity-50 blur-3xl',
             {
-              'bg-nerdfish': variant === 'special' && !blurredClassName,
-              'bg-gray-900 dark:bg-gray-100':
-                variant === 'primary' && !blurredClassName,
-              'bg-gray-800 dark:bg-gray-200':
-                variant === 'secondary' && !blurredClassName,
+              'bg-nerdfish': variant === 'nerdfish' && !blurredClassName,
+              'bg-inverted': variant === 'primary' && !blurredClassName,
+              'bg-inverted/80': variant === 'secondary' && !blurredClassName,
               blurredClassName,
             },
           )}

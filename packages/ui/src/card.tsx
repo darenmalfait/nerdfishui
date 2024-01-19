@@ -52,7 +52,7 @@ const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({className, ...props}, ref) => (
-  <p ref={ref} className={cx('text-sm text-secondary', className)} {...props} />
+  <p ref={ref} className={cx('text-sm text-muted', className)} {...props} />
 ))
 CardDescription.displayName = 'CardDescription'
 

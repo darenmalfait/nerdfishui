@@ -29,7 +29,7 @@ const CommandDialog = ({children, ...props}: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <Dialog.Content className="overflow-hidden p-0 shadow-2xl [&_[dialog-overlay]]:bg-red-100">
-        <CommandRoot className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-gray-500 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+        <CommandRoot className="[&_[cmdk-group-heading]]:text-muted [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
           {children}
         </CommandRoot>
       </Dialog.Content>
@@ -50,7 +50,7 @@ const CommandInput = React.forwardRef<
     <CommandPrimitive.Input
       ref={ref}
       className={cx(
-        'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-gray-200 disabled:cursor-not-allowed disabled:opacity-50 dark:text-gray-50',
+        'flex h-11 w-full rounded-md bg-transparent py-3 text-primary text-sm outline-none placeholder:text-muted disabled:cursor-not-allowed disabled:opacity-50',
         className,
       )}
       {...props}
@@ -79,7 +79,7 @@ const CommandEmpty = React.forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="py-6 text-center text-sm text-gray-700 dark:text-gray-200"
+    className="text-muted py-6 text-center text-sm"
     {...props}
   />
 ))
@@ -93,7 +93,7 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cx(
-      'overflow-hidden py-3 px-2 text-gray-700 dark:text-gray-200 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:pb-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-gray-900 [&_[cmdk-group-heading]]:dark:text-gray-300',
+      'overflow-hidden py-3 px-2 text-muted [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:pb-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-gray-900 [&_[cmdk-group-heading]]:dark:text-gray-300',
       className,
     )}
     {...props}

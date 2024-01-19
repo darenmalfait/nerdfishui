@@ -25,49 +25,15 @@ module.exports = plugin(
         '@apply active:ring-2 active:ring-accent active:ring-offset-4 dark:active:ring-offset-gray-900 dark:active:ring-accent-100':
           {},
       },
-      // '@apply bg-primary-500 dark:bg-gray-900' is throwing an error which I don't to find the cause of. This is a workaround.
-      '.dark': {
-        '.bg-primary': {
-          '@apply bg-gray-900': {},
-        },
+      '.set-accent-nerdfish': {
+        '--colors-accent-500': 'hsl(var(--colors-nerdfish))',
+        '--colors-accent-100': 'hsl(var(--colors-nerdfish))',
       },
-      '.bg-primary': {
-        '@apply bg-primary-500': {},
+      '.set-accent-foreground': {
+        '--colors-accent-500': 'hsl(var(--colors-foreground-primary))',
+        '--colors-accent-100': 'hsl(var(--colors-foreground-primary))',
       },
-      '.bg-secondary': {
-        '@apply bg-gray-100 dark:bg-gray-800': {},
-      },
-      '.border-secondary': {
-        '@apply border-gray-100 dark:border-gray-800': {},
-      },
-      '.text-primary': {
-        '@apply text-primary-500 dark:text-primary-50': {},
-      },
-      '.text-secondary': {
-        '@apply text-primary-400 dark:text-primary-100': {},
-      },
-      '.text-inverse': {
-        '@apply text-primary-50 dark:text-primary-500': {},
-      },
-      '.bg-inverse': {
-        '@apply bg-gray-900 dark:bg-primary-500': {},
-      },
-      '.border-primary': {
-        '@apply border-primary-500 dark:border-primary-50': {},
-      },
-      '.set-colors-accent-nerdfish': {
-        '--colors-accent-500': 'var(--colors-nerdfish-500)',
-        '--colors-accent-100': 'var(--colors-nerdfish-500)',
-      },
-      '.set-colors-accent-danger': {
-        '--colors-accent-500': 'var(--colors-danger-500)',
-        '--colors-accent-100': 'var(--colors-danger-500)',
-      },
-      '.set-colors-accent-success': {
-        '--colors-accent-500': 'var(--colors-success-500)',
-        '--colors-accent-100': 'var(--colors-success-500)',
-      },
-      '.set-colors-current': {
+      '.set-accent-current': {
         '--colors-accent-500': 'currentColor',
         '--colors-accent-100': 'currentColor',
       },
@@ -210,59 +176,46 @@ module.exports = plugin(
             },
           }
         },
+
         backgroundColor: {
-          primary: {
-            500: 'var(--colors-background-500)',
-            600: 'var(--colors-background-600)',
-            700: 'var(--colors-background-700)',
-            800: 'var(--colors-background-800)',
-            900: 'var(--colors-background-900)',
+          primary: 'hsl(var(--colors-background-primary) / <alpha-value>)',
+          muted: 'hsl(var(--colors-background-muted) / <alpha-value>)',
+          inverted: 'hsl(var(--colors-background-inverted) / <alpha-value>)',
+          success: {
+            DEFAULT: 'hsl(var(--colors-success-300) / <alpha-value>)',
+            subtle: 'hsl(var(--colors-success-100) / <alpha-value>)',
+          },
+          danger: {
+            DEFAULT: 'hsl(var(--colors-danger-300) / <alpha-value>)',
+            subtle: 'hsl(var(--colors-danger-100) / <alpha-value>)',
+          },
+          warning: {
+            DEFAULT: 'hsl(var(--colors-warning-300) / <alpha-value>)',
+            subtle: 'hsl(var(--colors-warning-100) / <alpha-value>)',
+          },
+          info: {
+            DEFAULT: 'hsl(var(--colors-info-300) / <alpha-value>)',
+            subtle: 'hsl(var(--colors-info-100) / <alpha-value>)',
           },
         },
         textColor: {
-          primary: {
-            50: 'var(--colors-text-50)',
-            100: 'var(--colors-text-100)',
-            200: 'var(--colors-text-200)',
-            300: 'var(--colors-text-300)',
-            400: 'var(--colors-text-400)',
-            500: 'var(--colors-text-500)',
-            600: 'var(--colors-text-600)',
-            700: 'var(--colors-text-700)',
-            800: 'var(--colors-text-800)',
-            900: 'var(--colors-text-900)',
-          },
+          primary: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
+          muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
+          inverted: 'hsl(var(--colors-foreground-inverted) / <alpha-value>)',
+          success: 'hsl(var(--colors-success-500) / <alpha-value>)',
+          danger: 'hsl(var(--colors-danger-500) / <alpha-value>)',
+          warning: 'hsl(var(--colors-warning-500) / <alpha-value>)',
+          info: 'hsl(var(--colors-info-500) / <alpha-value>)',
         },
         borderColor: {
-          primary: {
-            50: 'var(--colors-text-50)',
-            100: 'var(--colors-text-100)',
-            200: 'var(--colors-text-200)',
-            300: 'var(--colors-text-300)',
-            400: 'var(--colors-text-400)',
-            500: 'var(--colors-text-500)',
-            600: 'var(--colors-text-600)',
-            700: 'var(--colors-text-700)',
-            800: 'var(--colors-text-800)',
-            900: 'var(--colors-text-900)',
-          },
-          danger: {
-            DEFAULT: 'var(--colors-danger-500)',
-            100: 'var(--colors-danger-100)',
-            400: 'var(--colors-danger-400)',
-            500: 'var(--colors-danger-500)',
-            900: 'var(--colors-danger-900)',
-          },
-          success: {
-            DEFAULT: 'var(--colors-success-500)',
-            100: 'var(--colors-success-100)',
-            400: 'var(--colors-success-400)',
-            500: 'var(--colors-success-500)',
-            900: 'var(--colors-success-900)',
-          },
+          primary: 'hsl(var(--colors-border) / <alpha-value>)',
+          success: 'hsl(var(--colors-success-300) / <alpha-value>)',
+          danger: 'hsl(var(--colors-danger-300) / <alpha-value>)',
+          warning: 'hsl(var(--colors-warning-300) / <alpha-value>)',
+          info: 'hsl(var(--colors-info-300) / <alpha-value>)',
         },
         boxShadow: {
-          highlight: '0 0 1rem -0.15rem var(--colors-nerdfish-500)',
+          highlight: '0 0 1rem -0.15rem hsl(var(--colors-nerdfish))',
           'soft-xxs': '0 1px 5px 1px #ddd',
           'soft-xs':
             '0 3px 5px -1px rgba(0,0,0,.09),0 2px 3px -1px rgba(0,0,0,.07)',
@@ -278,32 +231,13 @@ module.exports = plugin(
         colors: {
           transparent: 'transparent',
           current: 'currentColor',
-          nerdfish: {
-            DEFAULT: 'var(--colors-nerdfish-500)',
-            100: 'var(--colors-nerdfish-100)',
-            500: 'var(--colors-nerdfish-500)',
-            900: 'var(--colors-nerdfish-900)',
-          },
+          nerdfish: 'hsl(var(--colors-nerdfish) / <alpha-value>)',
           accent: {
             DEFAULT: 'var(--colors-accent-500)',
             100: 'var(--colors-accent-100)',
             400: 'var(--colors-accent-400)',
             500: 'var(--colors-accent-500)',
             600: 'var(--colors-accent-600)',
-          },
-          danger: {
-            DEFAULT: 'var(--colors-danger-500)',
-            100: 'var(--colors-danger-100)',
-            400: 'var(--colors-danger-400)',
-            500: 'var(--colors-danger-500)',
-            900: 'var(--colors-danger-900)',
-          },
-          success: {
-            DEFAULT: 'var(--colors-success-500)',
-            100: 'var(--colors-success-100)',
-            400: 'var(--colors-success-400)',
-            500: 'var(--colors-success-500)',
-            900: 'var(--colors-success-900)',
           },
           gray: {
             100: 'var(--color-gray-100)',
@@ -317,15 +251,6 @@ module.exports = plugin(
             900: 'var(--color-gray-900)',
           },
         },
-
-        spacing: {
-          '5vw': '5vw', // pull featured sections and navbar in the margin
-          '8vw': '8vw', // positions hero img inside the margin
-          '10vw': '10vw', // page margin
-        },
-        zIndex: {
-          '-1': '-10',
-        },
         screens: {
           xsm: breakpoints.xsm,
           sm: breakpoints.sm,
@@ -334,6 +259,14 @@ module.exports = plugin(
           xl: breakpoints.xl,
           '2xl': breakpoints.xxl,
           wd: breakpoints.wd,
+        },
+        spacing: {
+          '5vw': '5vw', // pull featured sections and navbar in the margin
+          '8vw': '8vw', // positions hero img inside the margin
+          '10vw': '10vw', // page margin
+        },
+        zIndex: {
+          '-1': '-10',
         },
         maxWidth: {
           '8xl': '96rem',

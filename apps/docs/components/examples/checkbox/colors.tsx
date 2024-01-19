@@ -7,7 +7,7 @@ export function CheckboxColors() {
   return (
     <div className="items-top flex flex-col space-x-2">
       <Checkbox
-        bgClassName="text-red-500"
+        bgClassName="text-danger"
         textClassName="text-white"
         name="newsletters4"
         label="Subscribe to our newsletter"

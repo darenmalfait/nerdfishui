@@ -9,7 +9,7 @@ export function TypographyTitle() {
       <H2>Default</H2>
       <H2 variant="primary">Primary</H2>
       <H2 variant="secondary">Secondary</H2>
-      <H2 variant="special">Special</H2>
+      <H2 variant="nerdfish">Nerdfish</H2>
     </div>
   )
 }

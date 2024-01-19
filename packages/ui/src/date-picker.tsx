@@ -72,7 +72,7 @@ export function DatePicker({
             variant="outline"
             className={cx(
               'w-[280px] justify-start text-left font-normal',
-              !selected && 'text-secondary',
+              !selected && 'text-muted',
               className,
             )}
           >
@@ -124,7 +124,7 @@ export function DateRangePicker({
               variant="outline"
               className={cx(
                 'w-[300px] justify-start text-left font-normal',
-                !selected && 'text-secondary',
+                !selected && 'text-muted',
               )}
             >
               <CalendarIcon className="mr-2 h-4 w-4" />

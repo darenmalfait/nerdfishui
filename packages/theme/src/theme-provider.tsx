@@ -1,12 +1,15 @@
 import * as React from 'react'
 import {Dict, WithCSSVar} from '@nerdfish/utils'
 
-import {colors} from './colors'
+import {dark as darkTheme, light as lightTheme} from './colors'
 import {toCSSVar} from './to-css-var'
 
 const ThemeContext = React.createContext<
   | {
-      theme: WithCSSVar<Dict>
+      theme: {
+        light: WithCSSVar<typeof lightTheme>
+        dark: WithCSSVar<typeof darkTheme>
+      }
     }
   | undefined
 >(undefined)
@@ -16,15 +19,21 @@ interface ThemeProviderProps {
 }
 
 function ThemeProvider({children}: ThemeProviderProps) {
-  const theme = toCSSVar({
-    colors,
+  const light = toCSSVar({
+    colors: lightTheme,
+  })
+  const dark = toCSSVar({
+    colors: darkTheme,
   })
 
   const value = React.useMemo(
     () => ({
-      theme,
+      theme: {
+        light,
+        dark,
+      },
     }),
-    [theme],
+    [dark, light],
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

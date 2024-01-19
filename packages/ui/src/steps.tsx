@@ -22,7 +22,7 @@ const Steps = React.forwardRef<
 ) {
   return (
     <div {...props} className={cx('space-y-2', className)} ref={ref}>
-      <p className="text-secondary text-xs font-medium">
+      <p className="text-muted text-xs font-medium">
         {stepLabel(currentStep, maxSteps)}
       </p>
       <div className="flex w-full space-x-2 rtl:space-x-reverse">
@@ -32,7 +32,7 @@ const Steps = React.forwardRef<
               key={`step-${index}`}
               onClick={() => navigateToStep?.(index)}
               className={cx(
-                'bg-inverse h-1 w-full rounded-[1px]',
+                'bg-inverted h-1 w-full rounded-[1px]',
                 index < currentStep - 1 ? 'cursor-pointer' : '',
               )}
               data-testid={`step-indicator-${index}`}
@@ -49,7 +49,7 @@ const Steps = React.forwardRef<
           ) : (
             <div
               key={`step-${index}`}
-              className="bg-secondary h-1 w-full rounded-[1px] opacity-25"
+              className="bg-muted h-1 w-full rounded-[1px] opacity-25"
               data-testid={`step-indicator-${index}`}
             />
           )

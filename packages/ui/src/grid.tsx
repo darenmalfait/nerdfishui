@@ -26,7 +26,7 @@ const Grid = React.forwardRef<
     >
       {featured ? (
         <div className="-mx-5vw absolute inset-0">
-          <div className="max-w-8xl bg-secondary mx-auto h-full w-full rounded-lg" />
+          <div className="max-w-8xl bg-muted mx-auto h-full w-full rounded-lg" />
         </div>
       ) : null}
 

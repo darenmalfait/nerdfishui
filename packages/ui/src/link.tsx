@@ -78,7 +78,7 @@ const DoubleLabelLink = React.forwardRef<
       ref={ref}
       className={cx(
         className,
-        'group inline-flex items-center rounded-full p-1 pr-2 transition-colors bg-secondary text-primary hover:bg-gray-200 dark:hover:bg-gray-700 sm:text-base lg:text-sm xl:text-base',
+        'group inline-flex items-center rounded-full p-1 pr-2 transition-colors bg-muted text-primary hover:bg-gray-200 dark:hover:bg-gray-700 sm:text-base lg:text-sm xl:text-base',
       )}
       to={href}
       href={href}
@@ -89,7 +89,7 @@ const DoubleLabelLink = React.forwardRef<
       {...rest}
     >
       {children ? (
-        <span className="text-inverse bg-inverse rounded-full px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide transition-colors">
+        <span className="text-inverted bg-inverted rounded-full px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide transition-colors">
           {children}
         </span>
       ) : null}
