@@ -11,8 +11,8 @@ const navItemVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-secondary text-primary hover:bg-gray-200 dark:hover:bg-gray-700',
-        ghost: 'hover:bg-secondary hover:text-primary',
+          'bg-muted text-primary hover:bg-gray-200 dark:hover:bg-gray-700',
+        ghost: 'hover:bg-muted hover:text-primary',
       },
       size: {
         default: 'h-10 px-4 py-2',
@@ -71,9 +71,7 @@ function Item<T>({
 
         <Tooltip.Content side="right" className="flex items-center gap-4">
           {title}
-          {label ? (
-            <span className="text-secondary ml-auto">{label}</span>
-          ) : null}
+          {label ? <span className="text-muted ml-auto">{label}</span> : null}
         </Tooltip.Content>
       </Tooltip>
     )
@@ -129,9 +127,7 @@ function Title({
 
         <Tooltip.Content side="right" className="flex items-center gap-4">
           {title}
-          {label ? (
-            <span className="text-secondary ml-auto">{label}</span>
-          ) : null}
+          {label ? <span className="text-muted ml-auto">{label}</span> : null}
         </Tooltip.Content>
       </Tooltip>
     )

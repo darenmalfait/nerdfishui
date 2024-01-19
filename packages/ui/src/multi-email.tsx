@@ -283,7 +283,7 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
             <div
               data-tag
               key={index}
-              className="bg-inverse text-inverse mr-2 mt-1 inline-flex items-center space-x-2 rounded-md px-2 py-1"
+              className="bg-inverted text-inverted mr-2 mt-1 inline-flex items-center space-x-2 rounded-md px-2 py-1"
             >
               <div data-tag-item>{email}</div>
               <button data-tag-handle onClick={() => removeEmail(index)}>

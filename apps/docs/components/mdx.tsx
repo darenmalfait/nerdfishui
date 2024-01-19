@@ -126,7 +126,7 @@ const components = {
       <>
         <pre
           className={cx(
-            'mt-6 mb-4 overflow-x-auto rounded-lg shadow-outline bg-secondary py-4 px-2',
+            'mt-6 mb-4 overflow-x-auto rounded-lg shadow-outline bg-muted py-4 px-2',
             className,
           )}
           {...props}

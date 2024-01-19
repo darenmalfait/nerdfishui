@@ -32,7 +32,7 @@ export default function RootLayout({children}: RootLayoutProps) {
         )}
       >
         <AppProviders>
-          <main className={`${sans.variable} font-sans bg-primary`}>
+          <main className={`${sans.variable} bg-primary font-sans`}>
             <Layout>{children}</Layout>
           </main>
         </AppProviders>

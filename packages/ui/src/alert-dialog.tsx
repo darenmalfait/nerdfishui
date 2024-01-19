@@ -108,7 +108,7 @@ const DialogDescription = React.forwardRef<
 >(({className, ...props}, ref) => (
   <AlertDialogPrimitive.Description
     ref={ref}
-    className={cx('text-sm text-gray-500', 'dark:text-gray-300', className)}
+    className={cx('text-sm text-muted', className)}
     {...props}
   />
 ))
@@ -121,7 +121,7 @@ const DialogAction = React.forwardRef<
   <AlertDialogPrimitive.Action
     ref={ref}
     className={cx(
-      'inline-flex h-10 items-center justify-center rounded-md bg-gray-900 py-2 px-4 text-sm font-semibold text-white transition-colors hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
+      'inline-flex h-10 items-center justify-center rounded-md bg-inverted py-2 px-4 text-sm font-semibold text-inverted transition-colors hover:bg-inverted/80 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
       className,
     )}
     {...props}
@@ -136,7 +136,7 @@ const DialogCancel = React.forwardRef<
   <AlertDialogPrimitive.Cancel
     ref={ref}
     className={cx(
-      'mt-2 inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-transparent py-2 px-4 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 sm:mt-0',
+      'mt-2 inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-transparent py-2 px-4 text-sm font-semibold text-primary transition-colors hover:bg-muted focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 sm:mt-0',
       className,
     )}
     {...props}

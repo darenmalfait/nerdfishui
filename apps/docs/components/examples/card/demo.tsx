@@ -34,9 +34,7 @@ export function CardDemo({className, ...props}: CardProps) {
             <p className="text-sm font-medium leading-none">
               Push Notifications
             </p>
-            <p className="text-sm text-secondary">
-              Send notifications to device.
-            </p>
+            <p className="text-sm text-muted">Send notifications to device.</p>
           </div>
           <Switch />
         </div>
@@ -51,9 +49,7 @@ export function CardDemo({className, ...props}: CardProps) {
                 <p className="text-sm font-medium leading-none">
                   {notification.title}
                 </p>
-                <p className="text-sm text-secondary">
-                  {notification.description}
-                </p>
+                <p className="text-sm text-muted">{notification.description}</p>
               </div>
             </div>
           ))}

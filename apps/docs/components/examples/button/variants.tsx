@@ -9,7 +9,9 @@ export function ButtonVariants() {
       <Button variant="default">Default</Button>
       <Button variant="nerdfish">Nerdfish</Button>
       <Button variant="secondary">Secondary</Button>
-      <Button variant="danger">Danger</Button>
+      <Button variant="danger" onClick={() => {}}>
+        Danger
+      </Button>
       <Button variant="success">Success</Button>
       <Button variant="ghost">Ghost</Button>
       <Button variant="outline">Outline</Button>

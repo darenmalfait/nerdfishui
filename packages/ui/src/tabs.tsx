@@ -11,7 +11,7 @@ const TabsList = React.forwardRef<
   <TabsPrimivite.List
     ref={ref}
     className={cx(
-      'inline-flex items-center justify-center rounded-md bg-gray-100 p-1 dark:bg-gray-800',
+      'inline-flex items-center justify-center rounded-md bg-muted p-1',
       className,
     )}
     {...props}
@@ -25,7 +25,7 @@ const TabsTrigger = React.forwardRef<
 >(({className, ...props}, ref) => (
   <TabsPrimivite.Trigger
     className={cx(
-      'inline-flex min-w-[100px] items-center justify-center rounded-[0.185rem] px-3 py-1.5  text-sm font-medium text-gray-700 transition-all  disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-gray-900 data-[state=active]:shadow-sm dark:text-gray-200 dark:data-[state=active]:text-gray-900 dark:data-[state=active]:bg-gray-100',
+      'inline-flex min-w-[100px] items-center justify-center rounded-[0.185rem] px-3 py-1.5 text-sm font-medium text-primary transition-all  disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-inverted/90 data-[state=active]:text-inverted data-[state=active]:shadow-sm',
       className,
     )}
     {...props}
@@ -40,7 +40,7 @@ const TabsContent = React.forwardRef<
 >(({className, ...props}, ref) => (
   <TabsPrimivite.Content
     className={cx(
-      'mt-2 rounded-md bg-primary border border-gray-200 p-6 dark:border-gray-700',
+      'mt-2 rounded-md bg-primary border shadow-outline p-6',
       className,
     )}
     {...props}
