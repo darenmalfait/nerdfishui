@@ -1,5 +1,18 @@
 # @nerdfish/ui
 
+## 4.2.0
+
+### Minor Changes
+
+- [`919da65`](https://github.com/darenmalfait/nerdfishui/commit/919da65a22e64fc95ae50a09bceec96503c6e730) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Input now has leading and trailing addon functionality
+
+### Patch Changes
+
+- [`a03a365`](https://github.com/darenmalfait/nerdfishui/commit/a03a3656a03e7a269c93ea6d33158e45abb69866) Thanks [@darenmalfait](https://github.com/darenmalfait)! - remove padding from NavigationList
+
+- Updated dependencies [[`919da65`](https://github.com/darenmalfait/nerdfishui/commit/919da65a22e64fc95ae50a09bceec96503c6e730)]:
+  - @nerdfish/utils@1.5.0
+
 ## 4.1.0
 
 ### Minor Changes

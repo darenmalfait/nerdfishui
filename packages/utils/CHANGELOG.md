@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.5.0
+
+### Minor Changes
+
+- [`919da65`](https://github.com/darenmalfait/nerdfishui/commit/919da65a22e64fc95ae50a09bceec96503c6e730) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new slugify function
+
 ## 1.4.0
 
 ### Minor Changes
