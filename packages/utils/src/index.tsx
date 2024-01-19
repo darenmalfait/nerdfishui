@@ -5,6 +5,7 @@ export * from './email'
 export * from './hooks'
 export * from './misc'
 export * from './object'
+export * from './slugify'
 export * from './types'
 export * from './walk-object'
 

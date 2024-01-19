@@ -42,6 +42,7 @@ import {DrawerResponsiveDemo} from './drawer/responsive'
 import {DropdownMenuDemo} from './dropdown-menu/demo'
 import {GridDemo} from './grid/demo'
 import {HoverCardDemo} from './hover-card/demo'
+import {InputAddonDemo} from './input/addon'
 import {InputDemo} from './input/demo'
 import {InputError} from './input/error'
 import {InputIcon} from './input/icon'
@@ -125,6 +126,7 @@ export const examples = {
   DropdownMenuDemo,
   GridDemo,
   HoverCardDemo,
+  InputAddonDemo,
   InputDemo,
   InputError,
   InputIcon,
