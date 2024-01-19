@@ -55,10 +55,10 @@ importers:
         specifier: workspace:^1.0.10
         version: link:../../packages/theme
       '@nerdfish/ui':
-        specifier: workspace:^4.1.0
+        specifier: workspace:^4.2.0
         version: link:../../packages/ui
       '@nerdfish/utils':
-        specifier: workspace:^1.4.0
+        specifier: workspace:^1.5.0
         version: link:../../packages/utils
       '@next/env':
         specifier: ^14.0.4
