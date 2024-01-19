@@ -5,13 +5,29 @@ import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {AlertCircle} from 'lucide-react'
 
 const inputVariants = cva(
-  'text-md focus-ring group w-full rounded-lg font-bold placeholder:text-gray-500 disabled:opacity-70',
+  'w-full rounded-lg border-0 bg-transparent outline-none placeholder:text-gray-500',
   {
     variants: {
       size: {
-        sm: 'px-2 py-1 text-sm',
+        sm: 'p-2 text-sm',
         md: 'px-4 py-3 text-base',
         lg: 'px-8 py-5 text-lg',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+    },
+  },
+)
+
+const addonVariants = cva(
+  'bg-popover inline-flex w-auto font-normal shadow-none',
+  {
+    variants: {
+      size: {
+        sm: 'm-1 px-3 py-0 text-xs',
+        md: 'm-1 px-3 py-1 text-base',
+        lg: 'mx-2 my-1 p-3 text-lg',
       },
     },
     defaultVariants: {
@@ -26,6 +42,8 @@ type RawInputProps = {
   hasError?: boolean
   icon?: React.ElementType
   inputSize?: InputSize
+  addOnLeading?: React.ReactNode
+  addOnTrailing?: React.ReactNode
   action?: () => void
 } & (
   | ({type: 'textarea'} & JSX.IntrinsicElements['textarea'])
@@ -45,9 +63,11 @@ function getInputClassName(
   className?: string,
   hasError?: boolean,
   inputSize: InputSize = 'md',
+  isInputField: boolean = true,
 ) {
   return cx(
-    inputVariants({size: inputSize}),
+    'text-md focus-ring group w-full rounded-lg font-bold disabled:opacity-70',
+    isInputField && inputVariants({size: inputSize}),
     hasError
       ? 'border border-red-100 bg-red-50 dark:border-red-200 dark:border-red-200/20 dark:bg-red-500/10'
       : 'bg-black/5 dark:bg-white/10 text-primary',
@@ -72,6 +92,24 @@ function Label({className, htmlFor, ...props}: JSX.IntrinsicElements['label']) {
   )
 }
 
+function Addon({
+  children,
+  className,
+  inputSize,
+}: {
+  children: React.ReactNode
+  className?: string
+  inputSize?: InputSize
+}) {
+  return (
+    <div className={cx(addonVariants({size: inputSize}), className)}>
+      <div className="flex flex-col justify-center leading-7">
+        <span className="flex whitespace-nowrap">{children}</span>
+      </div>
+    </div>
+  )
+}
+
 const RawInput = React.forwardRef<
   HTMLInputElement | HTMLTextAreaElement,
   RawInputProps
@@ -79,17 +117,26 @@ const RawInput = React.forwardRef<
   const {
     type,
     hasError,
+    addOnLeading,
+    addOnTrailing,
     children,
     inputSize,
     icon: Icon,
     ...rawInputProps
   } = props
 
-  const className = getInputClassName(props.className, hasError, inputSize)
+  const className = getInputClassName(
+    props.className,
+    hasError,
+    inputSize,
+    false,
+  )
 
   if (type === 'textarea') {
     return (
-      <div className="relative flex w-full items-center space-x-2">
+      <div
+        className={cx(className, 'relative flex w-full items-center space-x-2')}
+      >
         {Icon ? (
           <Icon
             width="20px"
@@ -104,7 +151,9 @@ const RawInput = React.forwardRef<
           {...(rawInputProps as JSX.IntrinsicElements['textarea'])}
           ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
           aria-invalid={hasError}
-          className={cx('h-36', className, {'pr-14': !!Icon})}
+          className={cx('h-36', inputVariants({size: inputSize}), {
+            'pr-14': !!Icon,
+          })}
         />
         {children ? <div className="flex shrink-0">{children}</div> : null}
       </div>
@@ -113,11 +162,22 @@ const RawInput = React.forwardRef<
 
   return (
     <div className="flex flex-nowrap items-center space-x-2">
-      <div className="relative w-full shadow-sm">
+      <div
+        className={cx(className, 'relative flex w-full items-center shadow-sm')}
+      >
+        {addOnLeading ? (
+          <Addon inputSize={inputSize} className="rounded-l-lg">
+            {addOnLeading}
+          </Addon>
+        ) : null}
         <input
           type={type}
           {...(rawInputProps as JSX.IntrinsicElements['input'])}
-          className={cx(className, {'pr-14': !!Icon})}
+          className={cx(
+            !!addOnLeading && '!pl-2',
+            !!Icon && 'pr-14',
+            inputVariants({size: inputSize}),
+          )}
           ref={ref as React.ForwardedRef<HTMLInputElement>}
         />
         {Icon && !hasError ? (
@@ -131,6 +191,11 @@ const RawInput = React.forwardRef<
           <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
             <AlertCircle className="h-5 w-5 text-red-500" aria-hidden="true" />
           </div>
+        ) : null}
+        {addOnTrailing ? (
+          <Addon inputSize={inputSize} className="rounded-r-lg">
+            {addOnTrailing}
+          </Addon>
         ) : null}
       </div>
       {children ? <div className="flex shrink-0">{children}</div> : null}
@@ -184,18 +249,16 @@ const Field = React.forwardRef<
   return (
     <div className={cx('w-full', className)} {...props} ref={ref}>
       {label ? (
-        <div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
-          <Label htmlFor={htmlFor} className="mb-2">
-            {label}
-          </Label>
-          {description ? (
-            <span className="text-sm text-gray-200" id={descriptionId}>
-              {description}
-            </span>
-          ) : null}
-        </div>
+        <Label htmlFor={htmlFor} className="mb-2">
+          {label}
+        </Label>
       ) : null}
       {children}
+      {description ? (
+        <span className="text-secondary mt-2 text-sm" id={descriptionId}>
+          {description}
+        </span>
+      ) : null}
       {error ? (
         <InputError className="mt-2" id={errorId}>
           {error}
