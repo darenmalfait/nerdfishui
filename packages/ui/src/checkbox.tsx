@@ -38,10 +38,17 @@ function RawCheckbox({
   ...props
 }: RawCheckboxProps) {
   return (
-    <label className={cx(bgClassName, toggleVariants({variant}), className)}>
+    <label
+      className={cx(
+        bgClassName,
+        props.disabled && 'opacity-50',
+        toggleVariants({variant}),
+        className,
+      )}
+    >
       <input {...props} className="peer sr-only" type="checkbox" />
-      <span className="border-primary focus-ring peer-checked:animate-check inline-block h-full w-full cursor-pointer rounded-full border-2 text-current transition-all duration-300 peer-checked:border-transparent" />
-      <span className="absolute inset-0 hidden peer-checked:block">
+      <span className="border-primary peer-[:not(:disabled)]:active-ring  peer-disabled:bg-inverted/20 peer-checked:animate-check peer-checked:border-success inline-block h-full w-full rounded-full border-2 text-current transition-all duration-300 peer-disabled:opacity-50 peer-[:not(:disabled)]:cursor-pointer" />
+      <span className="peer-[:not(:disabled)]:active-ring absolute inset-0 hidden rounded-full peer-checked:block peer-[:not(:disabled)]:cursor-pointer">
         <Icon
           className={cx(textClassName, 'pointer-events-none h-full w-full p-1')}
         />
@@ -74,7 +81,7 @@ const Checkbox = React.forwardRef<
       </div>
 
       {error ? (
-        <p className="mt-2 text-left text-sm text-red-600" id={errorId}>
+        <p className="text-danger mt-2 text-left text-sm" id={errorId}>
           {error}
         </p>
       ) : null}
