@@ -38,7 +38,7 @@ module.exports = plugin(
         '--colors-accent-100': 'currentColor',
       },
       '.shadow-outline': {
-        '@apply ring-1 ring-gray-100 dark:ring-gray-700': {},
+        '@apply ring-1 ring-gray-200 dark:ring-gray-700': {},
       },
       '.empty-content': {
         content: "''",
@@ -76,7 +76,7 @@ module.exports = plugin(
         '@apply leading-7 mt-6 first:mt-0': {},
       },
       '.prose blockquote:not(:where([class~="not-prose"] *))': {
-        '@apply mt-6 first:mt-0 border-gray-300 italic text-gray-700 dark:border-gray-700 dark:text-gray-400 ltr:border-l-2 ltr:pl-6 rtl:border-r-2 rtl:pr-6':
+        '@apply mt-6 first:mt-0 border-gray-300 italic text-muted dark:border-gray-700 ltr:border-l-2 ltr:pl-6 rtl:border-r-2 rtl:pr-6':
           {},
       },
       '.prose ul:not(:where([class~="not-prose"] *))': {

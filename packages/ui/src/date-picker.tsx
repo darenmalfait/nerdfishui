@@ -29,7 +29,7 @@ function Presets({
         <button
           key={value}
           type="button"
-          className="m-1 inline-flex text-sm text-gray-500 hover:text-gray-700"
+          className="text-primary/50 hover:text-primary/70 m-1 inline-flex text-sm"
           onClick={() => onChange?.(addDays(new Date(), parseInt(value, 10)))}
         >
           <Badge>{label}</Badge>

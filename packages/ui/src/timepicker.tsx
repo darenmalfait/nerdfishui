@@ -104,7 +104,7 @@ const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
             width="20px"
             height="20px"
             className={cx(
-              'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0 text-gray-300',
+              'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0 text-muted',
             )}
           />
         )}

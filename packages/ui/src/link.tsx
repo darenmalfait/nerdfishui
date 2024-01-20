@@ -78,7 +78,7 @@ const DoubleLabelLink = React.forwardRef<
       ref={ref}
       className={cx(
         className,
-        'group inline-flex items-center rounded-full p-1 pr-2 transition-colors bg-muted text-primary hover:bg-gray-200 dark:hover:bg-gray-700 sm:text-base lg:text-sm xl:text-base',
+        'group inline-flex items-center rounded-full p-1 pr-2 transition-colors bg-muted text-primary hover:bg-muted sm:text-base lg:text-sm xl:text-base',
       )}
       to={href}
       href={href}
@@ -95,7 +95,10 @@ const DoubleLabelLink = React.forwardRef<
       ) : null}
 
       {description ? <span className="ml-4 text-sm">{description}</span> : null}
-      <ChevronRight className="ml-2 h-5 w-5 text-gray-500" aria-hidden="true" />
+      <ChevronRight
+        className="text-primary/50 ml-2 h-5 w-5"
+        aria-hidden="true"
+      />
     </Tag>
   )
 })
