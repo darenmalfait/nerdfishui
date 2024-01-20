@@ -39,7 +39,7 @@ function Presets({
   )
 }
 
-export function DatePicker({
+function DatePicker({
   className,
   selected: selectedProp,
   onSelect: onSelectProp,
@@ -48,7 +48,8 @@ export function DatePicker({
   children,
   fromYear,
   toYear,
-}: Pick<CalendarProps, 'fromYear' | 'toYear'> & {
+  ...props
+}: CalendarProps & {
   className?: string
   selected?: Date
   onSelect?: (date: Date) => void
@@ -83,13 +84,14 @@ export function DatePicker({
       </PopoverTrigger>
       <Popover.Content className="w-auto p-0">
         <Calendar
+          {...props}
           mode="single"
           initialFocus
           defaultMonth={selected}
           selected={selected}
-          onSelect={onSelect}
           fromYear={fromYear}
           toYear={toYear}
+          onSelect={onSelect}
         />
         {presets?.length ? (
           <Presets presets={presets} className="py-3" onChange={onSelect} />
@@ -99,19 +101,19 @@ export function DatePicker({
   )
 }
 
-export function DateRangePicker({
+function DateRangePicker({
   className,
   selected,
   onSelect,
   children,
   fromYear,
   toYear,
-}: React.HTMLAttributes<HTMLDivElement> &
-  Pick<CalendarProps, 'fromYear' | 'toYear'> & {
-    selected?: DateRange
-    onSelect?: (date: DateRange) => void
-    children?: React.ReactNode
-  }) {
+  ...props
+}: CalendarProps & {
+  selected?: DateRange
+  onSelect?: (date: DateRange) => void
+  children?: React.ReactNode
+}) {
   return (
     <div className={cx('grid gap-2', className)}>
       <Popover>
@@ -145,6 +147,7 @@ export function DateRangePicker({
         </PopoverTrigger>
         <Popover.Content className="w-auto p-0" align="start">
           <Calendar
+            {...props}
             initialFocus
             mode="range"
             defaultMonth={selected?.from}
@@ -159,3 +162,6 @@ export function DateRangePicker({
     </div>
   )
 }
+
+export {DatePicker, DateRangePicker}
+export type {DateRange, Preset}

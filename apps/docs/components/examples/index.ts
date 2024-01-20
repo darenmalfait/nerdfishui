@@ -20,7 +20,6 @@ import {ButtonLoading} from './button/loading'
 import {ButtonSizes} from './button/sizes'
 import {ButtonVariants} from './button/variants'
 import {ButtonWithIcon} from './button/with-icon'
-import {DateRangePicker} from './calendar/date-range-picker'
 import {CalendarDemo} from './calendar/demo'
 import {CardDemo} from './card/demo'
 import {CheckboxColors} from './checkbox/colors'
@@ -34,6 +33,7 @@ import {CommandDemo} from './command/demo'
 import {CommandDialog} from './command/dialog'
 import {ContainerDemo} from './container/demo'
 import {ContainerSize} from './container/size'
+import {DateRangePickerExample} from './date-picker/date-range-picker'
 import {DatePickerDemo} from './date-picker/demo'
 import {DialogDemo} from './dialog/demo'
 import {DoubleLabelLinkDemo} from './double-label-link/demo'
@@ -118,7 +118,7 @@ export const examples = {
   ContainerDemo,
   ContainerSize,
   DatePickerDemo,
-  DateRangePicker,
+  DateRangePickerExample,
   DialogDemo,
   DoubleLabelLinkDemo,
   DrawerDemo,
