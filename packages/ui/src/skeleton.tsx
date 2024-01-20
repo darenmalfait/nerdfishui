@@ -24,7 +24,7 @@ export function CardSkeleton({className}: {className?: string}) {
       </Card.Header>
       <Card.Content className="h-10" />
       <Card.Footer>
-        <Skeleton className="h-8 w-[120px] bg-gray-200 dark:bg-gray-700" />
+        <Skeleton className="bg-inverted/30 h-8 w-[120px]" />
       </Card.Footer>
     </Card>
   )

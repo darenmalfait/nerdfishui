@@ -34,7 +34,7 @@ const DropdownMenuSubContent = React.forwardRef<
   <DropdownMenuPrimitive.SubContent
     ref={ref}
     className={cx(
-      'animate-in slide-in-from-left-1 z-50 min-w-[8rem] overflow-hidden rounded-md shadow-outline bg-muted text-muted p-1 text-gray-700 shadow-soft-xl',
+      'animate-in slide-in-from-left-1 z-50 min-w-[8rem] overflow-hidden rounded-md shadow-outline bg-muted p-1 text-inverted/700 shadow-soft-xl',
       className,
     )}
     {...props}
@@ -86,7 +86,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cx(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-bg-muted data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-gray-700',
+      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-muted data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className,
     )}
     checked={checked}
@@ -110,7 +110,7 @@ const DropdownMenuRadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cx(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-gray-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-gray-700',
+      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-muted data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className,
     )}
     {...props}
@@ -134,7 +134,7 @@ const DropdownMenuLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cx(
-      'px-2 py-1.5 text-sm font-semibold text-gray-900 dark:text-gray-100',
+      'px-2 py-1.5 text-sm font-semibold text-primary',
       inset && 'pl-8',
       className,
     )}
@@ -149,7 +149,7 @@ const DropdownMenuSeparator = React.forwardRef<
 >(({className, ...props}, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cx('-mx-1 my-1 h-px bg-gray-100 dark:bg-gray-700', className)}
+    className={cx('-mx-1 my-1 h-px bg-muted', className)}
     {...props}
   />
 ))
@@ -161,7 +161,10 @@ const DropdownMenuShortcut = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
-      className={cx('ml-auto text-xs tracking-widest text-gray-500', className)}
+      className={cx(
+        'ml-auto text-xs tracking-widest text-primary/50',
+        className,
+      )}
       {...props}
     />
   )

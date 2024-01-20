@@ -15,7 +15,7 @@ const CommandRoot = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cx(
-      'flex h-full w-full flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800',
+      'flex h-full w-full flex-col overflow-hidden rounded-lg bg-primary',
       className,
     )}
     {...props}
@@ -108,7 +108,7 @@ const CommandSeparator = React.forwardRef<
 >(({className, ...props}, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cx('-mx-1 h-px bg-gray-100 dark:bg-gray-700', className)}
+    className={cx('-mx-1 h-px bg-muted', className)}
     {...props}
   />
 ))
@@ -121,7 +121,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cx(
-      'relative flex cursor-pointer select-none items-center rounded-md py-1.5 px-2 text-sm font-medium outline-none aria-selected:bg-gray-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:aria-selected:bg-gray-700',
+      'relative flex cursor-pointer select-none items-center rounded-md py-1.5 px-2 text-sm font-medium outline-none aria-selected:bg-muted data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className,
     )}
     {...props}
@@ -136,7 +136,10 @@ const CommandShortcut = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
-      className={cx('ml-auto text-xs tracking-widest text-gray-500', className)}
+      className={cx(
+        'ml-auto text-xs tracking-widest text-primary/50',
+        className,
+      )}
       {...props}
     />
   )

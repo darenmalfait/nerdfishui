@@ -34,7 +34,7 @@ export function MobileNavigation() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="bg-gray-900/10 fixed inset-0 top-14 backdrop-blur-sm" />
+            <div className="fixed inset-0 top-14 bg-inverted/10 backdrop-blur-sm" />
           </Transition.Child>
 
           <Dialog.Panel>
@@ -47,7 +47,7 @@ export function MobileNavigation() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <div className="ring-gray-900/7.5 shadow-gray-900/10 fixed bottom-0 left-0 top-14 w-full overflow-y-auto bg-white px-4 pb-4 pt-6 shadow-lg ring-1 dark:bg-gray-900 dark:ring-gray-800 min-[416px]:max-w-sm sm:px-6 sm:pb-10">
+              <div className="ring-gray-900/7.5 shadow-gray-900/10 fixed bottom-0 left-0 top-14 w-full overflow-y-auto bg-primary px-4 pb-4 pt-6 shadow-lg ring-1 dark:ring-gray-800 min-[416px]:max-w-sm sm:px-6 sm:pb-10">
                 <Navigation />
               </div>
             </Transition.Child>

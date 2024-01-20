@@ -34,7 +34,7 @@ const components = {
   a: ({className, ...props}: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
       className={cx(
-        'font-medium text-gray-900 underline underline-offset-4 dark:text-gray-50',
+        'font-medium text-primary underline underline-offset-4',
         className,
       )}
       {...props}
@@ -84,7 +84,7 @@ const components = {
   tr: ({className, ...props}: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
       className={cx(
-        'm-0 border-t border-gray-300 p-0 even:bg-gray-100',
+        'm-0 border-t border-gray-300 p-0 even:bg-muted',
         className,
       )}
       {...props}

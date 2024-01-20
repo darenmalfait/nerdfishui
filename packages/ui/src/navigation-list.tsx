@@ -10,8 +10,7 @@ const navItemVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-muted text-primary hover:bg-gray-200 dark:hover:bg-gray-700',
+        default: 'bg-muted text-primary hover:bg-inverted/20',
         ghost: 'hover:bg-muted hover:text-primary',
       },
       size: {
