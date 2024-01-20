@@ -49,7 +49,7 @@ const Steps = React.forwardRef<
           ) : (
             <div
               key={`step-${index}`}
-              className="bg-muted h-1 w-full rounded-[1px] opacity-25"
+              className="bg-muted h-1 w-full rounded-[1px]"
               data-testid={`step-indicator-${index}`}
             />
           )
