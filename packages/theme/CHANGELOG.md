@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.0.0
+
+### Major Changes
+
+- [`fac54cb`](https://github.com/darenmalfait/nerdfishui/commit/fac54cbeab240248325c6046d74cf8be5c314df9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - new color pallet and variables
+
 ## 1.0.10
 
 ### Patch Changes

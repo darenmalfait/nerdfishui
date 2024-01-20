@@ -1,5 +1,21 @@
 # @nerdfish/ui
 
+## 4.2.1
+
+### Patch Changes
+
+- [`3998e5c`](https://github.com/darenmalfait/nerdfishui/commit/3998e5c1c50f32d7f76ac4276a54ecd9f33762a1) Thanks [@darenmalfait](https://github.com/darenmalfait)! - change slider color
+
+- [`fac54cb`](https://github.com/darenmalfait/nerdfishui/commit/fac54cbeab240248325c6046d74cf8be5c314df9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update styling across components
+
+- [`81e6bb0`](https://github.com/darenmalfait/nerdfishui/commit/81e6bb09fdb8016aae4e6b77160735c0d328286c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase opacity of inactive steps in Steps component
+
+- [`288eb25`](https://github.com/darenmalfait/nerdfishui/commit/288eb25d95962e885f7c0c69e32ff83ed4cbca2e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve disabled checkbox state
+
+- [`bd0e7a2`](https://github.com/darenmalfait/nerdfishui/commit/bd0e7a209f7f9e63ab2db00d407b7c3fa14d64a6) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase Skeleton opacity
+
+- [`7ffa527`](https://github.com/darenmalfait/nerdfishui/commit/7ffa5273bcbb1c29c340a914242114fdf696043b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - implement missing calendar-props
+
 ## 4.2.0
 
 ### Minor Changes
