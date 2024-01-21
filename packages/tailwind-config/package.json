@@ -1,6 +1,6 @@
 {
   "name": "@nerdfish/tailwind-config",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,

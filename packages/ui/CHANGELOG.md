@@ -1,5 +1,17 @@
 # @nerdfish/ui
 
+## 4.2.2
+
+### Patch Changes
+
+- [`83ff9cf`](https://github.com/darenmalfait/nerdfishui/commit/83ff9cf2e6a65a5adac46db42b17291f824b956b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - tweak basic styling
+
+- [`83ff9cf`](https://github.com/darenmalfait/nerdfishui/commit/83ff9cf2e6a65a5adac46db42b17291f824b956b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add more basic colors
+
+- [`9269ca1`](https://github.com/darenmalfait/nerdfishui/commit/9269ca13404cac3c90202bcace0b39db2c8a0e69) Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor styling improvements to the Switch component
+
+- [`aca9fab`](https://github.com/darenmalfait/nerdfishui/commit/aca9fab76ae1466abd689cd9f0b2c5d5fd1231ad) Thanks [@darenmalfait](https://github.com/darenmalfait)! - tweak popover background
+
 ## 4.2.1
 
 ### Patch Changes
