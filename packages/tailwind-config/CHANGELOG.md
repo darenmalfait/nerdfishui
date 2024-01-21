@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 2.1.1
+
+### Patch Changes
+
+- [`0d01bdc`](https://github.com/darenmalfait/nerdfishui/commit/0d01bdcfc5bc685c0d24f4415fd9ecbe652f5fc2) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix wrong color naming
+
 ## 2.1.0
 
 ### Minor Changes
