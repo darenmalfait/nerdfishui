@@ -57,6 +57,7 @@ export const docs = {
         {title: 'HoverCard', href: '/hover-card'},
         {title: 'NavigationList', href: '/navigation-list'},
         {title: 'ProgressiveImage', href: '/progressive-image'},
+        {title: 'Popover', href: '/popover'},
         {title: 'ScrollArea', href: '/scroll-area'},
         {title: 'Sheet', href: '/sheet'},
         {title: 'Skeleton', href: '/skeleton'},
