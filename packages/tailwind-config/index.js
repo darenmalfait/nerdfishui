@@ -193,19 +193,19 @@ module.exports = plugin(
           inverted: 'hsl(var(--colors-background-inverted) / <alpha-value>)',
           success: {
             DEFAULT: 'hsl(var(--colors-success-300) / <alpha-value>)',
-            subtle: 'hsl(var(--colors-success-100) / <alpha-value>)',
+            muted: 'hsl(var(--colors-success-100) / <alpha-value>)',
           },
           danger: {
             DEFAULT: 'hsl(var(--colors-danger-300) / <alpha-value>)',
-            subtle: 'hsl(var(--colors-danger-100) / <alpha-value>)',
+            muted: 'hsl(var(--colors-danger-100) / <alpha-value>)',
           },
           warning: {
             DEFAULT: 'hsl(var(--colors-warning-300) / <alpha-value>)',
-            subtle: 'hsl(var(--colors-warning-100) / <alpha-value>)',
+            muted: 'hsl(var(--colors-warning-100) / <alpha-value>)',
           },
           info: {
             DEFAULT: 'hsl(var(--colors-info-300) / <alpha-value>)',
-            subtle: 'hsl(var(--colors-info-100) / <alpha-value>)',
+            muted: 'hsl(var(--colors-info-100) / <alpha-value>)',
           },
         },
         textColor: {
