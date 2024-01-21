@@ -27,6 +27,7 @@ export const docs = {
         {title: 'Multi Select', href: '/multi-select'},
         {title: 'Radio Group', href: '/radio-group'},
         {title: 'Slider', href: '/slider'},
+        {title: 'Switch', href: '/switch'},
         {title: 'Timepicker', href: '/timepicker'},
       ],
     },
