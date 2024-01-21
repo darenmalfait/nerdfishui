@@ -69,7 +69,7 @@ function getInputClassName(
     'text-md focus-ring group w-full rounded-lg font-bold disabled:opacity-70',
     isInputField && inputVariants({size: inputSize}),
     hasError
-      ? 'border-danger bg-danger-subtle/50 text-danger'
+      ? 'border-danger bg-danger-muted/50 text-danger'
       : 'bg-black/5 dark:bg-white/10 text-primary',
 
     className,

@@ -100,7 +100,7 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
   return (
-    <div className="mt-2 hidden rounded-md border border-primary bg-nerdfish shadow-2xl xl:block">
+    <div className="mt-2 hidden rounded-md border border-muted bg-nerdfish shadow-2xl xl:block">
       <div className="p-8">
         <div className="rounded-md bg-muted shadow-2xl transition-all">
           <div className="grid grid-cols-4 xl:grid-cols-5">

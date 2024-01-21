@@ -10,17 +10,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-inverted set-accent-foregroud text-inverted active-ring hover:bg-inverted/75 disabled:bg-inverted/50 disabled:text-inverted/80 border-transparent',
+          'bg-inverted text-inverted active-ring hover:bg-inverted/75 disabled:bg-inverted/90 disabled:text-inverted/60 border-transparent',
         secondary:
-          'bg-muted text-primary set-accent-current active-ring hover:bg-inverted/20 disabled:bg-muted/50 disabled:text-muted/80 border-transparent',
+          'bg-muted active:ring-primary/20 text-primary active-ring hover:bg-inverted/20 disabled:bg-muted/50 disabled:text-muted/80 border-transparent',
         nerdfish:
-          'bg-nerdfish set-accent-nerdfish active-ring hover:bg-nerdfish/75 disabled:bg-nerdfish/20 disabled:text-nerdfish border-transparent text-white',
+          'bg-nerdfish active:ring-nerdfish active-ring hover:bg-nerdfish/75 disabled:bg-nerdfish/20 disabled:text-nerdfish border-transparent text-white',
         danger:
-          'bg-danger hover:bg-danger-subtle set-accent-current border-danger disabled:bg-danger-subtle/50 disabled:text-danger/80 active-ring text-danger',
+          'bg-danger hover:bg-danger-muted border-danger disabled:bg-danger-muted/50 disabled:text-danger/80 active-ring text-danger active:ring-current',
         success:
-          'bg-success hover:bg-success-subtle set-accent-current border-success disabled:bg-success-subtle/50 disabled:text-success/80 active-ring text-success',
+          'bg-success hover:bg-success-muted border-success disabled:bg-success-muted/50 disabled:text-success/80 active-ring text-success active:ring-current',
         outline:
-          'border-primary text-primary bg-primary set-accent-current active-ring hover:bg-muted disabled:text-primary/50',
+          'shadow-outline active:ring-muted/30 text-primary bg-primary active-ring hover:bg-muted disabled:text-primary/50',
         ghost:
           'text-primary hover:bg-muted disabled:text-primary/50 border-transparent',
         link: 'text-primary disabled:text-primary/50 border-none bg-transparent underline-offset-4 hover:underline',

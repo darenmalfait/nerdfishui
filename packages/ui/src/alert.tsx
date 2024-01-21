@@ -9,10 +9,10 @@ const DEFAULT_VARIANT = 'info'
 const bgVariants = cva('rounded-lg p-4', {
   variants: {
     variant: {
-      warning: 'border-warning bg-warning-subtle border',
-      success: 'border-success bg-success-subtle border',
-      info: 'border-info bg-info-subtle border',
-      danger: 'border-danger bg-danger-subtle border',
+      warning: 'border-warning bg-warning-muted border',
+      success: 'border-success bg-success-muted border',
+      info: 'border-info bg-info-muted border',
+      danger: 'border-danger bg-danger-muted border',
     },
   },
   defaultVariants: {

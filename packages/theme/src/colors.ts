@@ -2,12 +2,6 @@ import {Colors} from './types'
 
 export const light: Colors = {
   nerdfish: '17.85 64.75% 52.16%',
-  accent: {
-    100: '#ffffff',
-    400: '#5c5f61',
-    500: '#161b1d',
-    600: '#14181a',
-  },
   background: {
     primary: '0 0% 100%',
     muted: '240 4.8% 95.9%',
@@ -18,7 +12,10 @@ export const light: Colors = {
     muted: '240 3.8% 46.1%',
     inverted: '0 0% 98%',
   },
-  border: '240 5.9% 90%',
+  border: {
+    primary: '240 3.7% 15.9%',
+    muted: '240 3.7% 85.9%',
+  },
   info: {
     100: '208 100% 97%',
     300: '221 91% 91%',
@@ -43,6 +40,7 @@ export const light: Colors = {
 
 export const dark: typeof light = {
   ...light,
+  primary: '0 0% 0%',
   background: {
     primary: '0 0% 0%',
     muted: '240 3.7% 15.9%',
@@ -53,7 +51,10 @@ export const dark: typeof light = {
     muted: '240 5% 64.9%',
     inverted: '0 0% 2%',
   },
-  border: '240 3.7% 15.9%',
+  border: {
+    primary: '240 3.7% 85.9%',
+    muted: '240 3.7% 15.9%',
+  },
   info: {
     100: '215 100% 6%',
     300: '223 100% 12%',
