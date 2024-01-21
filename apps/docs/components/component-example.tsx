@@ -37,7 +37,7 @@ export function ComponentExample({
 
   return (
     <div
-      className={cx('group relative my-4 flex flex-col space-y-2', className)}
+      className={cx('relative my-4 flex flex-col space-y-2', className)}
       {...props}
     >
       <Tabs defaultValue="preview" className="mr-auto w-full">

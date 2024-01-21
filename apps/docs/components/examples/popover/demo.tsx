@@ -21,8 +21,8 @@ export function PopoverDemo() {
               Set the dimensions for the cake layer.
             </p>
           </div>
-          <div className="grid gap-2">
-            <div className="grid grid-cols-3 items-center gap-4">
+          <div className="grid gap-4">
+            <div className="grid grid-cols-2 items-center gap-4">
               <Label htmlFor="width">Diameter</Label>
               <Input
                 name="width"
@@ -31,7 +31,7 @@ export function PopoverDemo() {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-4">
+            <div className="grid grid-cols-2 items-center gap-4">
               <Label htmlFor="maxWidth">Max. Layers</Label>
               <Input
                 name="maxWidth"
@@ -40,7 +40,7 @@ export function PopoverDemo() {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-4">
+            <div className="grid grid-cols-2 items-center gap-4">
               <Label htmlFor="height">Height</Label>
               <Input
                 name="height"
@@ -49,7 +49,7 @@ export function PopoverDemo() {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-4">
+            <div className="grid grid-cols-2 items-center gap-4">
               <Label htmlFor="maxHeight">Max. Toppings</Label>
               <Input
                 name="maxHeight"

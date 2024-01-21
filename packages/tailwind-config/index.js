@@ -81,11 +81,11 @@ module.exports = plugin(
         '@apply mt-6 first:mt-0': {},
       },
       '.bg-popover': {
-        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] shadow-blur bg-[hsla(0,0%,100%,0.7)] dark:bg-[hsla(0,0%,0%,0.5)]':
+        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] bg-primary/70 dark:bg-primary/40':
           {},
       },
-      '.bg-popover-inverse': {
-        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] shadow-blur bg-[hsla(0,0%,0%,0.7)] dark:bg-[hsla(0,100%,100%,0.95)]':
+      '.bg-popover-inverted': {
+        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] bg-inverted/40 dark:bg-inverted/70':
           {},
       },
     })
