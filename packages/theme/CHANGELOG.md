@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.1.0
+
+### Minor Changes
+
+- [`83ff9cf`](https://github.com/darenmalfait/nerdfishui/commit/83ff9cf2e6a65a5adac46db42b17291f824b956b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add more basic colors
+
 ## 2.0.0
 
 ### Major Changes
