@@ -47,7 +47,7 @@ function RawCheckbox({
       )}
     >
       <input {...props} className="peer sr-only" type="checkbox" />
-      <span className="border-primary peer-[:not(:disabled)]:active-ring  peer-disabled:bg-inverted/20 peer-checked:animate-check peer-checked:border-success inline-block h-full w-full rounded-full border-2 text-current transition-all duration-300 peer-disabled:opacity-50 peer-[:not(:disabled)]:cursor-pointer" />
+      <span className="border-muted peer-[:not(:disabled)]:active-ring peer-disabled:bg-inverted/20 peer-checked:animate-check peer-checked:border-success inline-block h-full w-full rounded-full border-2 text-current transition-all duration-300 peer-disabled:opacity-50 peer-[:not(:disabled)]:cursor-pointer" />
       <span className="peer-[:not(:disabled)]:active-ring absolute inset-0 hidden rounded-full peer-checked:block peer-[:not(:disabled)]:cursor-pointer">
         <Icon
           className={cx(textClassName, 'pointer-events-none h-full w-full p-1')}

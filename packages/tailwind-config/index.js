@@ -18,27 +18,15 @@ module.exports = plugin(
         '--color-gray-50': '#f8fafc',
       },
       '.focus-ring': {
-        '@apply focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-accent focus:ring-accent focus-within:ring-accent group-hover:ring-accent group-focus:ring-accent ring-accent ring-offset-4 dark:ring-offset-gray-900 ring-offset-white dark:hover:ring-accent-100 dark:focus:ring-accent-100 dark:focus-within:ring-accent-100 dark:group-hover:ring-accent-100 dark:group-focus:ring-accent-100 dark:ring-accent-100':
+        '@apply focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-primary focus:ring-primary focus-within:ring-primary group-hover:ring-primary group-focus:ring-primary ring-primary ring-offset-4 ring-offset-inverted':
           {},
       },
       '.active-ring': {
-        '@apply active:ring-2 active:ring-accent active:ring-offset-4 dark:active:ring-offset-gray-900 dark:active:ring-accent-100':
+        '@apply active:ring-2 active:ring-primary active:ring-offset-inverted active:ring-offset-4':
           {},
       },
-      '.set-accent-nerdfish': {
-        '--colors-accent-500': 'hsl(var(--colors-nerdfish))',
-        '--colors-accent-100': 'hsl(var(--colors-nerdfish))',
-      },
-      '.set-accent-foreground': {
-        '--colors-accent-500': 'hsl(var(--colors-foreground-primary))',
-        '--colors-accent-100': 'hsl(var(--colors-foreground-primary))',
-      },
-      '.set-accent-current': {
-        '--colors-accent-500': 'currentColor',
-        '--colors-accent-100': 'currentColor',
-      },
       '.shadow-outline': {
-        '@apply ring-1 ring-gray-200 dark:ring-gray-700': {},
+        '@apply ring-1 ring-muted/30 border-transparent': {},
       },
       '.empty-content': {
         content: "''",
@@ -176,7 +164,29 @@ module.exports = plugin(
             },
           }
         },
-
+        colors: {
+          transparent: 'transparent',
+          current: 'currentColor',
+          nerdfish: 'hsl(var(--colors-nerdfish) / <alpha-value>)',
+          primary: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
+          muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
+          inverted: 'hsl(var(--colors-foreground-inverted) / <alpha-value>)',
+          success: 'hsl(var(--colors-success-500) / <alpha-value>)',
+          danger: 'hsl(var(--colors-danger-500) / <alpha-value>)',
+          warning: 'hsl(var(--colors-warning-500) / <alpha-value>)',
+          info: 'hsl(var(--colors-info-500) / <alpha-value>)',
+          gray: {
+            100: 'var(--color-gray-100)',
+            200: 'var(--color-gray-200)',
+            300: 'var(--color-gray-300)',
+            400: 'var(--color-gray-400)',
+            500: 'var(--color-gray-500)',
+            600: 'var(--color-gray-600)',
+            700: 'var(--color-gray-700)',
+            800: 'var(--color-gray-800)',
+            900: 'var(--color-gray-900)',
+          },
+        },
         backgroundColor: {
           primary: 'hsl(var(--colors-background-primary) / <alpha-value>)',
           muted: 'hsl(var(--colors-background-muted) / <alpha-value>)',
@@ -208,7 +218,8 @@ module.exports = plugin(
           info: 'hsl(var(--colors-info-500) / <alpha-value>)',
         },
         borderColor: {
-          primary: 'hsl(var(--colors-border) / <alpha-value>)',
+          primary: 'hsl(var(--colors-border-primary) / <alpha-value>)',
+          muted: 'hsl(var(--colors-border-muted) / <alpha-value>)',
           success: 'hsl(var(--colors-success-300) / <alpha-value>)',
           danger: 'hsl(var(--colors-danger-300) / <alpha-value>)',
           warning: 'hsl(var(--colors-warning-300) / <alpha-value>)',
@@ -228,29 +239,7 @@ module.exports = plugin(
           'blur-inverse':
             'inset 0 0 1px 1px hsla(0,0%,0%,.9),0 20px 27px 0 rgba(0,0,0,.05)',
         },
-        colors: {
-          transparent: 'transparent',
-          current: 'currentColor',
-          nerdfish: 'hsl(var(--colors-nerdfish) / <alpha-value>)',
-          accent: {
-            DEFAULT: 'var(--colors-accent-500)',
-            100: 'var(--colors-accent-100)',
-            400: 'var(--colors-accent-400)',
-            500: 'var(--colors-accent-500)',
-            600: 'var(--colors-accent-600)',
-          },
-          gray: {
-            100: 'var(--color-gray-100)',
-            200: 'var(--color-gray-200)',
-            300: 'var(--color-gray-300)',
-            400: 'var(--color-gray-400)',
-            500: 'var(--color-gray-500)',
-            600: 'var(--color-gray-600)',
-            700: 'var(--color-gray-700)',
-            800: 'var(--color-gray-800)',
-            900: 'var(--color-gray-900)',
-          },
-        },
+
         screens: {
           xsm: breakpoints.xsm,
           sm: breakpoints.sm,

@@ -6,7 +6,7 @@ import {ThemeToggle} from './theme-toggle'
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-primary">
+    <header className="sticky top-0 z-40 w-full border-b border-muted bg-primary">
       <Grid>
         <Container
           size="full"

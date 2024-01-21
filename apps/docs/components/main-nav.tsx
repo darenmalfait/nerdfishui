@@ -15,7 +15,7 @@ export function MainNav() {
           <Logo className="h-6" />
           <span className="ml-2 flex items-center space-x-2 text-lg font-semibold text-primary">
             Nerdfish
-            <span className="ml-1 rounded-md border border-primary p-1 text-[8px] leading-snug">
+            <span className="ml-1 rounded-md border border-muted p-1 text-[8px] leading-snug">
               UI
             </span>
           </span>
