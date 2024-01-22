@@ -16,8 +16,8 @@ const RawSlider = React.forwardRef<
     )}
     {...props}
   >
-    <SliderPrimitive.Track className="bg-muted relative h-2 w-full grow overflow-hidden rounded-full">
-      <SliderPrimitive.Range className="bg-info absolute h-full" />
+    <SliderPrimitive.Track className="bg-inverted/10 dark:bg-inverted/20 relative h-2 w-full grow overflow-hidden rounded-full">
+      <SliderPrimitive.Range className="bg-inverted absolute h-full" />
     </SliderPrimitive.Track>
     {children}
   </SliderPrimitive.Root>
@@ -32,7 +32,7 @@ const Thumb = React.forwardRef<
     ref={ref}
     {...props}
     className={cx(
-      'border-muted bg-primary focus-visible:ring-ring block h-4 w-4 rounded-full border-2 ring-offset-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-gray-900',
+      'border-muted bg-primary focus-visible:ring-ring block h-4 w-4 rounded-full border-2 ring-offset-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-inverted',
       props.className,
     )}
   />
