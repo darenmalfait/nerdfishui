@@ -32,19 +32,35 @@ type RawCheckboxProps = JSX.IntrinsicElements['input'] &
 function RawCheckbox({
   className,
   variant = 'sm',
-  bgClassName = 'bg-success',
-  textClassName = 'text-success',
+  bgClassName = 'bg-primary',
+  textClassName = 'text-primary',
   icon: Icon = Check,
   ...props
 }: RawCheckboxProps) {
   return (
-    <label className={cx(textClassName, toggleVariants({variant}), className)}>
+    <label
+      className={cx(
+        textClassName,
+        toggleVariants({variant}),
+        'disabled-within:active:scale-100 active:scale-75 transition-transform',
+        className,
+      )}
+    >
       <input {...props} className="peer sr-only" type="checkbox" />
       <span
         className={cx(
           bgClassName,
           textClassName,
-          'border-muted peer-[:not(:checked)]:bg-transparent peer-[:not(:disabled)]:active:ring-current peer-[:not(:disabled)]:active-ring peer-disabled:bg-muted peer-disabled:opacity-50 peer-checked:animate-jelly peer-checked:border-current inline-block h-full w-full rounded-md border-2 peer-checked:border transition-all peer-[:not(:disabled)]:cursor-pointer',
+          // basic styles
+          'inline-block h-full w-full rounded-md border transition-all peer-[:not(:disabled)]:cursor-pointer peer-focus:focus-outline',
+          // border
+          'border-transparent group-hover:peer-[:not(:disabled)]:border-primary/20',
+          // background
+          'peer-[:not(:checked)]:bg-muted',
+          // disabled state
+          'peer-disabled:opacity-50',
+          // checked state
+          'peer-checked:animate-jelly peer-checked:border-current peer-checked:border',
         )}
       />
       <span className="peer-checked:animate-jelly pointer-events-none absolute inset-0 hidden rounded-md peer-checked:block">
