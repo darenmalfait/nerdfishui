@@ -313,29 +313,27 @@ module.exports = plugin(
               transform: `translateX(10px)`,
             },
           },
-          check: {
-            '0%': {
-              transform: 'scale(1)',
+          jelly: {
+            from: {
+              transform: 'scale(1, 1)',
             },
-            '10%': {
-              transform: 'scale(0.7)',
-              opacity: '0.1',
-              background: 'rgba(0,0,0,0.2)',
+            '30%': {
+              transform: 'scale(1.25, 0.75)',
             },
-            '12%': {
-              transform: 'scale(0.7)',
-              opacity: '0.4',
-              background: 'rgba(0,0,0,0.1)',
+            '40%': {
+              transform: 'scale(0.75, 1.25)',
             },
             '50%': {
-              transform: 'scale(1)',
-              opacity: '0.6',
-              background: 'currentColor',
+              transform: 'scale(1.15, 0.85)',
             },
-            '100%': {
-              transform: 'scale(1)',
-              opacity: '1',
-              background: 'currentColor',
+            '65%': {
+              transform: 'scale(0.95, 1.05)',
+            },
+            '75%': {
+              transform: 'scale(1.05, 0.95)',
+            },
+            to: {
+              transform: 'scale(1, 1)',
             },
           },
         },
@@ -346,7 +344,7 @@ module.exports = plugin(
           'jump-in': 'jump-in .3s both',
           'jump-out': 'jump-out .3s both',
           shake: `shake 0.5s forwards`,
-          check: `check .5s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards`,
+          jelly: `jelly .6s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards`,
         },
       },
     },
