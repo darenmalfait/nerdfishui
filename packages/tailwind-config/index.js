@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = plugin(
-  ({addBase, addUtilities}) => {
+  ({addBase, addUtilities, addVariant}) => {
     addUtilities({
       ':root': {
         '--color-gray-950': '#000000',
@@ -89,6 +89,11 @@ module.exports = plugin(
           {},
       },
     })
+
+    addVariant(
+      'disabled-within',
+      `&:has(input:is(:disabled),button:is(:disabled))`,
+    )
   },
   {
     mode: 'jit',
