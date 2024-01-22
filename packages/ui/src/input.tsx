@@ -69,11 +69,7 @@ function getInputClassName(
     // Variants
     isInputField && inputVariants({size: inputSize}),
     // Basic layout
-    'relative block w-full group rounded-lg font-bold text-md text-primary bg-muted',
-    // Hide default focus styles
-    'focus:outline-none',
-    // Focus ring
-    'after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-info',
+    'relative block w-full group rounded-lg font-bold text-md text-primary bg-muted focus-outline',
     // Border
     'border border-transparent hover:border-primary/20',
     // Disabled state

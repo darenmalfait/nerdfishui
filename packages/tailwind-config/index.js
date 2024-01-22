@@ -17,6 +17,10 @@ module.exports = plugin(
         '--color-gray-100': '#f4f4f5',
         '--color-gray-50': '#f8fafc',
       },
+      '.focus-outline': {
+        '@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-info':
+          {},
+      },
       '.focus-ring': {
         '@apply focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-primary focus:ring-primary focus-within:ring-primary group-hover:ring-primary group-focus:ring-primary ring-primary ring-offset-4 ring-offset-inverted':
           {},
