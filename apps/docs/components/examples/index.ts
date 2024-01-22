@@ -44,6 +44,7 @@ import {GridDemo} from './grid/demo'
 import {HoverCardDemo} from './hover-card/demo'
 import {InputAddonDemo} from './input/addon'
 import {InputDemo} from './input/demo'
+import {InputDisabled} from './input/disabled'
 import {InputError} from './input/error'
 import {InputIcon} from './input/icon'
 import {InputSize} from './input/size'
@@ -128,6 +129,7 @@ export const examples = {
   HoverCardDemo,
   InputAddonDemo,
   InputDemo,
+  InputDisabled,
   InputError,
   InputIcon,
   InputSize,
