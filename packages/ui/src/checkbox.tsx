@@ -56,7 +56,7 @@ function RawCheckbox({
           // border
           'border-transparent group-hover:peer-[:not(:disabled)]:border-primary/20',
           // background
-          'peer-[:not(:checked)]:bg-muted',
+          'peer-[:not(:checked)]:bg-inverted/10 dark:peer-[:not(:checked)]:bg-inverted/20',
           // disabled state
           'peer-disabled:opacity-50',
           // checked state
