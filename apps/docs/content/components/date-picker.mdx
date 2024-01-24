@@ -14,14 +14,23 @@ package:
 
 ## Usage
 
-DatePicker extends the [Input](/input) component. All props from Input are
-available.
+DatePicker extends the [Calendar](/calendar) component. All props from Calendar
+are available.
+
+To show the dropdowns to pick a month and year, set the `toYear` and `fromYear`
+props.
+
+```tsx
+<DatePicker fromYear={2010} toYear={2020} />
+```
+
+````tsx
 
 ### DatePicker
 
 ```tsx
 import {DatePicker} from '@nerdfish/ui'
-```
+````
 
 ```tsx
 <DatePicker onSelect={date => console.log(date)} />
