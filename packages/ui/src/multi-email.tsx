@@ -249,6 +249,7 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
 
     return (
       <button
+        data-slot="control"
         type="button"
         role="textbox"
         className={cx(

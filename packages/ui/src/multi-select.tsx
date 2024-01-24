@@ -84,6 +84,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
         <Popover open={openSelect} onOpenChange={onSelectOpenChange}>
           <Popover.Trigger asChild>
             <button
+              data-slot="control"
               role="combobox"
               aria-controls="listbox"
               aria-expanded={openSelect}

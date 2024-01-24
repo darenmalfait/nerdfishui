@@ -90,9 +90,20 @@ function FormHelperText({className, ...props}: JSX.IntrinsicElements['div']) {
 function Label({className, htmlFor, ...props}: JSX.IntrinsicElements['label']) {
   return (
     <label
+      data-slot="label"
       htmlFor={htmlFor}
       className={cx('block text-sm font-medium text-primary', className)}
       {...props}
+    />
+  )
+}
+
+function Description({className, ...props}: JSX.IntrinsicElements['div']) {
+  return (
+    <div
+      data-slot="description"
+      {...props}
+      className={cx('text-muted text-sm', className)}
     />
   )
 }
@@ -153,6 +164,7 @@ const RawInput = React.forwardRef<
           />
         ) : null}
         <textarea
+          data-slot="control"
           {...(rawInputProps as JSX.IntrinsicElements['textarea'])}
           ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
           aria-invalid={hasError}
@@ -176,6 +188,7 @@ const RawInput = React.forwardRef<
           </Addon>
         ) : null}
         <input
+          data-slot="control"
           type={type}
           {...(rawInputProps as JSX.IntrinsicElements['input'])}
           className={cx(
@@ -212,13 +225,14 @@ function InputError({
   className,
   id,
   ...props
-}: JSX.IntrinsicElements['p'] & {id?: string}) {
+}: JSX.IntrinsicElements['div'] & {id?: string}) {
   if (!props.children) {
     return null
   }
 
   return (
-    <p
+    <div
+      data-slot="description"
       {...props}
       className={cx('mb-0 text-sm text-left text-danger', className)}
       role="alert"
@@ -260,12 +274,12 @@ const Field = React.forwardRef<
       ) : null}
       {children}
       {description ? (
-        <span className="text-muted mt-2 text-sm" id={descriptionId}>
+        <Description className="mt-3" id={descriptionId}>
           {description}
-        </span>
+        </Description>
       ) : null}
       {error ? (
-        <InputError className="mt-2" id={errorId}>
+        <InputError className="mt-3" id={errorId}>
           {error}
         </InputError>
       ) : null}
@@ -319,6 +333,7 @@ export {
   Input,
   InputError,
   Label,
+  Description,
   RawInput,
 }
 
