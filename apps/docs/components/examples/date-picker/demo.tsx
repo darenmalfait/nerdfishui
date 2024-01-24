@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import {DatePicker} from '@nerdfish/ui'
+import {addYears} from 'date-fns'
 
 export function DatePickerDemo() {
   return (
@@ -21,6 +22,8 @@ export function DatePickerDemo() {
         },
       ]}
       onSelect={date => console.info(date)}
+      fromYear={addYears(new Date(), -3).getFullYear()}
+      toYear={addYears(new Date(), 3).getFullYear()}
     />
   )
 }
