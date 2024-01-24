@@ -6,5 +6,5 @@
   "access": "public",
   "baseBranch": "main",
   "ignore": ["docs"],
-  "updateInternalDependencies": "patch",
+  "updateInternalDependencies": "patch"
 }
