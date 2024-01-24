@@ -1,5 +1,21 @@
 # @nerdfish/ui
 
+## 4.2.4
+
+### Patch Changes
+
+- change background color of Drawer component content to the primary background color
+
+- Input and the components that inherit from input now have better distinction between states
+
+- increase slider contrast
+
+- improve checkbox design and micro animations
+
+- Switch now has more neutral colors
+
+- Input element descriptions now have more spacing above.
+
 ## 4.2.3
 
 ### Patch Changes
