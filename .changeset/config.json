@@ -1,9 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.2.0/schema.json",
-  "changelog": [
-    "@changesets/changelog-github",
-    {"repo": "darenmalfait/nerdfishui"}
-  ],
+  "changelog": ["./changelog.js", {"repo": "darenmalfait/nerdfishui"}],
   "commit": false,
   "linked": [],
   "access": "public",
