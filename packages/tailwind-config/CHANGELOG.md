@@ -1,5 +1,13 @@
 # @nerdfish/tailwind-config
 
+## 2.1.2
+
+### Patch Changes
+
+- Input and the components that inherit from input now have better distinction between states
+
+- improve checkbox design and micro animations
+
 ## 2.1.1
 
 ### Patch Changes
