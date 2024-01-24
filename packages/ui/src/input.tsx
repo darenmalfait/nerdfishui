@@ -5,7 +5,9 @@ import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {AlertCircle} from 'lucide-react'
 
 const inputVariants = cva(
-  cx('placeholder:text-muted w-full rounded-lg bg-transparent outline-none'),
+  cx(
+    'placeholder:text-muted w-full rounded-lg bg-transparent outline-none text-left',
+  ),
   {
     variants: {
       size: {
@@ -69,7 +71,7 @@ function getInputClassName(
     // Variants
     isInputField && inputVariants({size: inputSize}),
     // Basic layout
-    'relative block w-full group rounded-lg font-bold text-md text-primary bg-muted focus-outline',
+    'relative block w-full group rounded-lg font-bold text-md text-primary bg-muted focus-outline text-left',
     // Border
     'border border-transparent hover:border-primary/20',
     // Disabled state

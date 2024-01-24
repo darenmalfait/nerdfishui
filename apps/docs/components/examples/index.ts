@@ -36,6 +36,7 @@ import {ContainerDemo} from './container/demo'
 import {ContainerSize} from './container/size'
 import {DateRangePickerExample} from './date-picker/date-range-picker'
 import {DatePickerDemo} from './date-picker/demo'
+import {DatePickerWithInputExample} from './date-picker/with-input'
 import {DialogDemo} from './dialog/demo'
 import {DoubleLabelLinkDemo} from './double-label-link/demo'
 import {DrawerDemo} from './drawer/demo'
@@ -121,6 +122,7 @@ export const examples = {
   ContainerDemo,
   ContainerSize,
   DatePickerDemo,
+  DatePickerWithInputExample,
   DateRangePickerExample,
   DialogDemo,
   DoubleLabelLinkDemo,
