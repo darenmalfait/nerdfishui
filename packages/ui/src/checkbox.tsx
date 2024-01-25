@@ -6,7 +6,7 @@ import {Check} from 'lucide-react'
 
 import {type InputProps} from './input'
 
-const toggleVariants = cva(
+const checkboxVariants = cva(
   'relative flex items-center justify-center rounded-full focus:scale-75',
   {
     variants: {
@@ -23,7 +23,7 @@ const toggleVariants = cva(
 )
 
 type RawCheckboxProps = JSX.IntrinsicElements['input'] &
-  VariantProps<typeof toggleVariants> & {
+  VariantProps<typeof checkboxVariants> & {
     bgClassName?: string
     textClassName?: string
     icon?: React.ElementType
@@ -41,7 +41,7 @@ function RawCheckbox({
     <label
       className={cx(
         textClassName,
-        toggleVariants({variant}),
+        checkboxVariants({variant}),
         'disabled-within:active:scale-100 active:scale-75 transition-transform',
         className,
       )}
