@@ -74,6 +74,7 @@ import {ToastDemo} from './toast/demo'
 import {ToastVariant} from './toast/variant'
 import {ToggleDemo} from './toggle/demo'
 import {ToggleDisabled} from './toggle/disabled'
+import {ToggleGroupDemo} from './toggle/group'
 import {ToggleSize} from './toggle/size'
 import {ToggleVariant} from './toggle/variant'
 import {ToggleWithText} from './toggle/with-text'
@@ -160,6 +161,7 @@ export const examples = {
   ToastVariant,
   ToggleDemo,
   ToggleDisabled,
+  ToggleGroupDemo,
   ToggleSize,
   ToggleVariant,
   ToggleWithText,

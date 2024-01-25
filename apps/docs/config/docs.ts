@@ -29,6 +29,7 @@ export const docs = {
         {title: 'Slider', href: '/slider'},
         {title: 'Switch', href: '/switch'},
         {title: 'Timepicker', href: '/timepicker'},
+        {title: 'Toggle', href: '/toggle'},
       ],
     },
     {
