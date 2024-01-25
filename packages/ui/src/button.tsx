@@ -5,22 +5,22 @@ import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {Slot} from '@radix-ui/react-slot'
 
 const buttonVariants = cva(
-  'ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded-md border text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-90 disabled:pointer-events-none',
+  'inline-flex items-center justify-center rounded-md border text-sm font-medium transition-all active:scale-95 disabled:pointer-events-none',
   {
     variants: {
       variant: {
         default:
-          'bg-inverted text-inverted active-ring hover:bg-inverted/75 disabled:bg-inverted/90 disabled:text-inverted/60 border-transparent',
+          'bg-inverted text-inverted hover:bg-inverted/80 disabled:bg-inverted/90 disabled:text-inverted/60 border-transparent',
         secondary:
-          'bg-muted active:ring-primary/20 text-primary active-ring hover:bg-inverted/20 disabled:bg-muted/50 disabled:text-muted/80 border-transparent',
+          'bg-muted text-primary hover:bg-inverted/20 disabled:bg-muted/50 disabled:text-muted/80 border-transparent',
         nerdfish:
-          'bg-nerdfish active:ring-nerdfish active-ring hover:bg-nerdfish/75 disabled:bg-nerdfish/20 disabled:text-nerdfish border-transparent text-white',
+          'bg-nerdfish hover:bg-nerdfish/75 disabled:bg-nerdfish/20 disabled:text-nerdfish border-transparent text-white',
         danger:
-          'bg-danger hover:bg-danger-muted border-danger disabled:bg-danger-muted/50 disabled:text-danger/80 active-ring text-danger active:ring-current',
+          'bg-danger hover:bg-danger-muted border-danger disabled:bg-danger-muted/50 disabled:text-danger/80 text-danger',
         success:
-          'bg-success hover:bg-success-muted border-success disabled:bg-success-muted/50 disabled:text-success/80 active-ring text-success active:ring-current',
+          'bg-success hover:bg-success-muted border-success disabled:bg-success-muted/50 disabled:text-success/80 text-success',
         outline:
-          'shadow-outline active:ring-muted/30 text-primary bg-primary active-ring hover:bg-muted disabled:text-primary/50',
+          'shadow-outline text-primary bg-primary hover:bg-muted disabled:text-primary/50',
         ghost:
           'text-primary hover:bg-muted disabled:text-primary/50 border-transparent',
         link: 'text-primary disabled:text-primary/50 border-none bg-transparent underline-offset-4 hover:underline',
