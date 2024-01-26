@@ -5,6 +5,8 @@ import * as React from 'react'
 import {cx} from '@nerdfish/utils'
 import {Drawer as DrawerPrimitive} from 'vaul'
 
+import {Button} from './button'
+
 const RawDrawer = ({
   shouldScaleBackground = true,
   ...props
@@ -31,22 +33,49 @@ DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({className, children, ...props}, ref) => (
-  <DrawerPrimitive.Portal>
-    <DrawerOverlay />
-    <DrawerPrimitive.Content
-      ref={ref}
-      className={cx(
-        'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] shadow-outline bg-primary',
-        className,
-      )}
-      {...props}
-    >
-      <div className="bg-muted mx-auto mt-4 h-2 w-[100px] rounded-full" />
-      {children}
-    </DrawerPrimitive.Content>
-  </DrawerPrimitive.Portal>
-))
+>(({className, children, ...props}, ref) => {
+  return (
+    <DrawerPrimitive.Portal>
+      <DrawerOverlay />
+      <DrawerPrimitive.Content
+        ref={ref}
+        className={cx(
+          // default
+          'group fixed z-50 flex flex-col shadow-outline bg-primary',
+          // top
+          '[&[vaul-drawer-direction=top]]:rounded-b-[10px] [&[vaul-drawer-direction=top]]:inset-x-0 [&[vaul-drawer-direction=top]]:top-0 [&[vaul-drawer-direction=top]]:mb-24',
+          // bottom
+          '[&[vaul-drawer-direction=bottom]]:rounded-t-[10px] [&[vaul-drawer-direction=bottom]]:inset-x-0 [&[vaul-drawer-direction=bottom]]:bottom-0 [&[vaul-drawer-direction=bottom]]:mt-24',
+          // left
+          '[&[vaul-drawer-direction=left]]:rounded-r-[10px] [&[vaul-drawer-direction=left]]:inset-y-0 [&[vaul-drawer-direction=left]]:left-0 [&[vaul-drawer-direction=left]]:mr-24 [&[vaul-drawer-direction=left]]:w-auto',
+          // right
+          '[&[vaul-drawer-direction=right]]:rounded-l-[10px] [&[vaul-drawer-direction=right]]:inset-y-0 [&[vaul-drawer-direction=right]]:right-0 [&[vaul-drawer-direction=right]]:ml-24 [&[vaul-drawer-direction=right]]:w-auto',
+          // other
+          className,
+        )}
+        {...props}
+      >
+        <div
+          data-role="drawer-handle"
+          className="bg-muted mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[vaul-drawer-direction=bottom]]:opacity-100"
+        />
+        <DrawerPrimitive.Close
+          asChild
+          className="absolute right-0 top-0 mr-2 mt-2"
+        >
+          <Button variant="ghost" size="iconSm" aria-label="Close">
+            <span aria-hidden>×</span>
+          </Button>
+        </DrawerPrimitive.Close>
+        {children}
+        <div
+          data-role="drawer-handle"
+          className="bg-muted mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[vaul-drawer-direction=top]]:opacity-100"
+        />
+      </DrawerPrimitive.Content>
+    </DrawerPrimitive.Portal>
+  )
+})
 DrawerContent.displayName = 'DrawerContent'
 
 const DrawerHeader = ({

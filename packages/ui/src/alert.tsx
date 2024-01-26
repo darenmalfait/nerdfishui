@@ -49,11 +49,11 @@ const Alert = React.forwardRef<
   JSX.IntrinsicElements['div'] & {
     variant?: VariantProps<typeof bgVariants>['variant']
     hideIcon?: boolean
-    title?: string
-    description?: string
+    title?: React.ReactNode
+    children?: React.ReactNode
   }
 >(function Alert(
-  {className, variant, hideIcon, title, description, ...props},
+  {className, variant, hideIcon, title, children, ...props},
   ref,
 ) {
   const Icon = variant ? IconMap[variant] : IconMap[DEFAULT_VARIANT]
@@ -75,9 +75,9 @@ const Alert = React.forwardRef<
               {title}
             </h3>
           ) : null}
-          {description ? (
+          {children ? (
             <div className={cx('text-sm', fgVariants({variant}))}>
-              {description}
+              {children}
             </div>
           ) : null}
         </div>

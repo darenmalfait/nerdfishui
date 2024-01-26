@@ -40,6 +40,7 @@ import {DatePickerWithInputExample} from './date-picker/with-input'
 import {DialogDemo} from './dialog/demo'
 import {DoubleLabelLinkDemo} from './double-label-link/demo'
 import {DrawerDemo} from './drawer/demo'
+import {DrawerDirection} from './drawer/direction'
 import {DrawerResponsiveDemo} from './drawer/responsive'
 import {DropdownMenuDemo} from './dropdown-menu/demo'
 import {GridDemo} from './grid/demo'
@@ -128,6 +129,7 @@ export const examples = {
   DialogDemo,
   DoubleLabelLinkDemo,
   DrawerDemo,
+  DrawerDirection,
   DrawerResponsiveDemo,
   DropdownMenuDemo,
   GridDemo,
