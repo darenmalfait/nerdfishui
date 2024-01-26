@@ -1,5 +1,81 @@
 # @nerdfish/ui
 
+## 4.3.0
+
+### Minor Changes
+
+- Added new `ToggleGroup` component
+
+  ```tsx
+  import { ToggleGroup } from "@nerdfish/ui";
+  ```
+
+  ```tsx
+  <ToggleGroup type="multiple">
+    <ToggleGroup.Item value="bold" aria-label="Toggle bold">
+      <Bold className="h-4 w-4" />
+    </ToggleGroup.Item>
+    <ToggleGroup.Item value="italic" aria-label="Toggle italic">
+      <Italic className="h-4 w-4" />
+    </ToggleGroup.Item>
+    <ToggleGroup.Item value="underline" aria-label="Toggle underline">
+      <Underline className="h-4 w-4" />
+    </ToggleGroup.Item>
+  </ToggleGroup>
+  ```
+
+- `Drawer` now has directional support.
+  The `direction` prop can be set to `top`, `right`, `bottom`, or `left`.
+
+  ```tsx
+  <Drawer direction="bottom">
+    <Drawer.Trigger asChild>
+      <Button variant="outline">Open</Button>
+    </Drawer.Trigger>
+    <Drawer.Content className="w-full">
+      <Drawer.Header>
+        <Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
+        <Drawer.Description>This action cannot be undone.</Drawer.Description>
+      </Drawer.Header>
+      <Drawer.Footer>
+        <Button>Submit</Button>
+        <Drawer.Close>
+          <Button variant="outline">Cancel</Button>
+        </Drawer.Close>
+      </Drawer.Footer>
+    </Drawer.Content>
+  </Drawer>
+  ```
+
+### Patch Changes
+
+- `Toggle`: adjusted focus state design to be more consistent with other button components.
+
+- `Alert`: `description` prop is now deprecated in favor of `children`.
+
+  This allows more flexibility in the content of the `Alert`. The `description` prop
+  will be removed in a future release.
+
+  ```tsx
+  <Alert variant="danger" description="Alert content" />
+  ```
+
+  Now becomes:
+
+  ```tsx
+  <Alert variant="danger">Alert content</Alert>
+  ```
+
+- `Sheet`: Deprecate in favor of `Drawer`. `Sheet` will be removed in a future release.
+
+- `Command`: Fix backspace bug.
+
+  To fix it `Command` now temporarely uses `carloslfu-cmdk-internal` until `cmdk` is released.
+
+- `Button`: replace active-ring effect to a subtle scale effect
+
+- Components that have an Overlay (`Dialog`, `AlertDialog`) now have the primary background color instead of the popover background.
+
 ## 4.2.4
 
 ### Patch Changes
