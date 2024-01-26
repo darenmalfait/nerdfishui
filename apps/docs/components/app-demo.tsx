@@ -102,9 +102,9 @@ function AppDemo() {
   return (
     <div className="mt-2 hidden rounded-md border border-muted bg-nerdfish shadow-2xl xl:block">
       <div className="p-8">
-        <div className="rounded-md bg-muted shadow-2xl transition-all">
+        <div className="overflow-hidden rounded-md bg-primary shadow-2xl transition-all">
           <div className="grid grid-cols-4 xl:grid-cols-5">
-            <aside className="bg-primary pb-12 pr-2">
+            <aside className="bg-muted pb-12 pr-2">
               <div className="mb-8 px-8 pt-6">
                 <p className="flex items-center text-2xl font-semibold tracking-tight">
                   <ChefHat className="mr-2" />
@@ -133,7 +133,7 @@ function AppDemo() {
               </div>
             </aside>
             <div className="col-span-3 border-l border-l-gray-200 dark:border-l-gray-700 xl:col-span-4">
-              <div className="h-full px-8 py-6">
+              <div className="px-8 py-6">
                 <Tabs defaultValue="recipes" className="h-full space-y-6">
                   <div className="space-between flex items-center">
                     <Tabs.List>
@@ -145,10 +145,7 @@ function AppDemo() {
                       </Tabs.Trigger>
                     </Tabs.List>
                   </div>
-                  <Tabs.Content
-                    value="recipes"
-                    className="border border-none bg-muted p-0"
-                  >
+                  <Tabs.Content value="recipes" className="shadow-none">
                     <div className="mb-2 flex items-center justify-between">
                       <div className="space-y-1">
                         <H2>Start Cooking</H2>
@@ -193,9 +190,9 @@ function AppDemo() {
                   </Tabs.Content>
                   <Tabs.Content
                     value="ingredients"
-                    className="h-full flex-col border-none p-0 data-[state=active]:flex"
+                    className="h-full min-h-0 flex-col border-none data-[state=active]:flex"
                   >
-                    <div className="mb-2 flex items-center justify-between">
+                    <div className="mb-2 flex min-h-0 items-center justify-between">
                       <div className="space-y-1">
                         <H2>Ingredients</H2>
                         <Paragraph>
@@ -203,9 +200,9 @@ function AppDemo() {
                         </Paragraph>
                       </div>
                     </div>
-                    <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed border-gray-200 dark:border-gray-700">
-                      <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
-                        <Paragraph className="mb-4 mt-2 text-sm text-gray-500 dark:text-gray-400">
+                    <div className="flex h-[450px] min-h-0 shrink-0 items-center justify-center rounded-md border border-dashed border-muted">
+                      <div className="mx-auto flex min-h-0 max-w-[420px] flex-col items-center justify-center text-center">
+                        <Paragraph className="mb-4 mt-2 text-sm text-muted">
                           You have no ingredients added. Add ingredients to
                         </Paragraph>
                         <Button>Add Ingredient</Button>
@@ -247,9 +244,7 @@ function AlbumArtwork({
       </div>
       <div className="space-y-1 text-sm">
         <H3 className="font-medium leading-none">{album.name}</H3>
-        <Paragraph className="text-xs text-gray-500 dark:text-gray-400">
-          {album.artist}
-        </Paragraph>
+        <Paragraph className="text-xs text-muted">{album.artist}</Paragraph>
       </div>
     </div>
   )
