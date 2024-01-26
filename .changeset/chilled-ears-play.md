@@ -7,11 +7,11 @@ allow for more flexibility in the content of the `Alert`. The `description` prop
 will be removed in a future release.
 
 ```tsx
-<Alert variant="outline" description="Alert content" />
+<Alert variant="danger" description="Alert content" />
 ```
 
 Now becomes:
 
 ```tsx
-<Alert variant="outline">Alert content</Alert>
+<Alert variant="danger">Alert content</Alert>
 ```
