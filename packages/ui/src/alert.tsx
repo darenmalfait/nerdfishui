@@ -51,9 +51,18 @@ const Alert = React.forwardRef<
     hideIcon?: boolean
     title?: React.ReactNode
     children?: React.ReactNode
+    description?: string // TODO: DEPRECATED, REMOVE
   }
 >(function Alert(
-  {className, variant, hideIcon, title, children, ...props},
+  {
+    className,
+    variant,
+    hideIcon,
+    title,
+    children,
+    description: descriptionDeprecated,
+    ...props
+  },
   ref,
 ) {
   const Icon = variant ? IconMap[variant] : IconMap[DEFAULT_VARIANT]
@@ -78,6 +87,11 @@ const Alert = React.forwardRef<
           {children ? (
             <div className={cx('text-sm', fgVariants({variant}))}>
               {children}
+            </div>
+          ) : null}
+          {descriptionDeprecated ? (
+            <div className={cx('text-sm', fgVariants({variant}))}>
+              {descriptionDeprecated}
             </div>
           ) : null}
         </div>
