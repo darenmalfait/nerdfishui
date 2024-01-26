@@ -3,7 +3,7 @@
 import * as React from 'react'
 import {cx} from '@nerdfish/utils'
 import {DialogProps} from '@radix-ui/react-dialog'
-import {Command as CommandPrimitive} from 'cmdk'
+import {Command as CommandPrimitive} from 'carloslfu-cmdk-internal'
 import {Search} from 'lucide-react'
 
 import {Dialog} from './dialog'

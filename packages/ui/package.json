@@ -38,6 +38,7 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "carloslfu-cmdk-internal": "^0.3.1",
     "cmdk": "^0.2.0",
     "date-fns": "^3.3.1",
     "lucide-react": "^0.314.0",
