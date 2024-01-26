@@ -5,11 +5,8 @@ import {Alert} from '@nerdfish/ui'
 
 export function AlertInfo() {
   return (
-    <Alert
-      variant="info"
-      title="example"
-      description="example description"
-      className="w-full"
-    />
+    <Alert variant="info" title="example" className="w-full">
+      Example alert
+    </Alert>
   )
 }

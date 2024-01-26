@@ -5,9 +5,11 @@ import {Button, Drawer} from '@nerdfish/ui'
 
 export function DrawerDemo() {
   return (
-    <Drawer>
-      <Drawer.Trigger>Open</Drawer.Trigger>
-      <Drawer.Content>
+    <Drawer direction="bottom">
+      <Drawer.Trigger asChild>
+        <Button variant="outline">Open</Button>
+      </Drawer.Trigger>
+      <Drawer.Content className="w-full">
         <Drawer.Header>
           <Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
           <Drawer.Description>This action cannot be undone.</Drawer.Description>
