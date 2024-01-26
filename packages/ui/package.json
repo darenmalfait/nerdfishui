@@ -1,6 +1,11 @@
 {
   "name": "@nerdfish/ui",
   "version": "4.3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darenmalfait/nerdfishui",
+    "directory": "packages/ui"
+  },
   "license": "MIT",
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,

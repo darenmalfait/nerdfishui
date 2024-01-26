@@ -1,6 +1,11 @@
 {
   "name": "@nerdfish/theme",
   "version": "2.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darenmalfait/nerdfishui",
+    "directory": "packages/theme"
+  },
   "license": "MIT",
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,
