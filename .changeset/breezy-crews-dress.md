@@ -2,4 +2,4 @@
 "@nerdfish/ui": patch
 ---
 
-updated `Toggle` component to improve focus state
+`Toggle`: adjusted focus state design to be more consistent with other button components.
