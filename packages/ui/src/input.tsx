@@ -291,7 +291,7 @@ const Input = React.forwardRef<
   HTMLInputElement | HTMLTextAreaElement,
   InputProps & RawInputProps
 >(function Input(
-  {defaultValue, error, name, label, className, description, id, ...props},
+  {defaultValue, error, name, label, description, id, ...props},
   ref,
 ) {
   const inputId = id ?? name
