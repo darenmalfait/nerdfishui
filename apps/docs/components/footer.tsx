@@ -67,7 +67,7 @@ function PageNavigation() {
   )
 }
 
-function TwitterIcon(props: JSX.IntrinsicElements['svg']) {
+function TwitterIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 20 20" aria-hidden="true" {...props}>
       <path
@@ -84,7 +84,7 @@ function SocialLink({
   children,
 }: {
   href: string
-  icon: React.ComponentType<JSX.IntrinsicElements['svg']>
+  icon: React.ComponentType<React.ComponentPropsWithoutRef<'svg'>>
   children: React.ReactNode
 }) {
   return (

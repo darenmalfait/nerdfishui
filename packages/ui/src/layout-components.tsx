@@ -19,7 +19,7 @@ const containerVariants = cva('col-span-full', {
 
 const Container = React.forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['div'] & {
+  React.ComponentPropsWithRef<'div'> & {
     as?: React.ElementType
   } & VariantProps<typeof containerVariants>
 >(function Container({className, size, as: Tag = 'div', ...props}, ref) {
@@ -35,7 +35,7 @@ Container.displayName = 'Container'
 
 const Section = React.forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['section'] & {
+  React.ComponentPropsWithRef<'section'> & {
     as?: React.ElementType
   }
 >(function Section({className, as: Tag = 'section', ...props}, ref) {

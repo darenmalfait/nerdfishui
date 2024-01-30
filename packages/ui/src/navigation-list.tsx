@@ -27,7 +27,7 @@ const navItemVariants = cva(
   },
 )
 
-type NavItemProps = JSX.IntrinsicElements['a'] & {
+type NavItemProps = React.ComponentPropsWithoutRef<'a'> & {
   isCollapsed?: boolean
   icon?: React.ElementType
   active?: boolean
@@ -159,7 +159,7 @@ function Section({
 
 const NavigationListRoot = React.forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['nav']
+  React.ComponentPropsWithRef<'nav'>
 >(function NavigationList({className, children, ...props}, ref) {
   return (
     <nav

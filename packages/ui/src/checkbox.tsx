@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {cva, cx, VariantProps} from '@nerdfish/utils'
+import {cva, cx, ExtractProps, VariantProps} from '@nerdfish/utils'
 import {Check} from 'lucide-react'
 
 import {type InputProps} from './input'
@@ -22,13 +22,6 @@ const checkboxVariants = cva(
   },
 )
 
-type RawCheckboxProps = JSX.IntrinsicElements['input'] &
-  VariantProps<typeof checkboxVariants> & {
-    bgClassName?: string
-    textClassName?: string
-    icon?: React.ElementType
-  }
-
 function RawCheckbox({
   className,
   variant = 'sm',
@@ -36,7 +29,12 @@ function RawCheckbox({
   textClassName = 'text-primary',
   icon: Icon = Check,
   ...props
-}: RawCheckboxProps) {
+}: React.ComponentPropsWithRef<'input'> &
+  VariantProps<typeof checkboxVariants> & {
+    bgClassName?: string
+    textClassName?: string
+    icon?: React.ElementType
+  }) {
   return (
     <label
       className={cx(
@@ -74,7 +72,7 @@ function RawCheckbox({
 
 const Checkbox = React.forwardRef<
   HTMLInputElement,
-  InputProps & RawCheckboxProps
+  InputProps & ExtractProps<typeof RawCheckbox>
 >(function Checkbox(
   {error, name, label, id, className, defaultValue, ...props},
   ref,
@@ -105,4 +103,3 @@ const Checkbox = React.forwardRef<
 })
 
 export {RawCheckbox, Checkbox}
-export type {RawCheckboxProps}

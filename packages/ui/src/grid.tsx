@@ -5,7 +5,7 @@ import {__DEV__, cx} from '@nerdfish/utils'
 
 const Grid = React.forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['div'] & {
+  React.ComponentPropsWithRef<'div'> & {
     as?: React.ElementType
     rowGap?: boolean
     nested?: boolean

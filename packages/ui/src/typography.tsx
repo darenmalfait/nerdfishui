@@ -5,7 +5,7 @@ import {cva, cx, ExtractProps, VariantProps} from '@nerdfish/utils'
 
 const Paragraph = React.forwardRef<
   HTMLParagraphElement,
-  JSX.IntrinsicElements['p'] & {
+  React.ComponentPropsWithRef<'p'> & {
     prose?: boolean
     as?: React.ElementType
   }
@@ -50,7 +50,7 @@ const titleVariants = cva('', {
 
 const Title = React.forwardRef<
   HTMLHeadingElement,
-  JSX.IntrinsicElements['h1'] &
+  React.ComponentPropsWithRef<'h1'> &
     VariantProps<typeof titleVariants> & {
       as?: React.ElementType
       blurredClassName?: string
@@ -101,7 +101,7 @@ const Title = React.forwardRef<
 
 const H1 = React.forwardRef<
   HTMLHeadingElement,
-  JSX.IntrinsicElements['h1'] & ExtractProps<typeof Title>
+  React.ComponentPropsWithRef<'h1'> & ExtractProps<typeof Title>
 >(function H1(props, ref) {
   return (
     <Title
@@ -117,7 +117,7 @@ const H1 = React.forwardRef<
 
 const H2 = React.forwardRef<
   HTMLHeadingElement,
-  JSX.IntrinsicElements['h2'] & ExtractProps<typeof Title>
+  React.ComponentPropsWithRef<'h2'> & ExtractProps<typeof Title>
 >(function H2(props, ref) {
   return (
     <Title
@@ -133,28 +133,28 @@ const H2 = React.forwardRef<
 
 const H3 = React.forwardRef<
   HTMLHeadingElement,
-  JSX.IntrinsicElements['h3'] & ExtractProps<typeof Title>
+  React.ComponentPropsWithRef<'h3'> & ExtractProps<typeof Title>
 >(function H3(props, ref) {
   return <Title {...props} size="h3" ref={ref} />
 })
 
 const H4 = React.forwardRef<
   HTMLHeadingElement,
-  JSX.IntrinsicElements['h4'] & ExtractProps<typeof Title>
+  React.ComponentPropsWithRef<'h3'> & ExtractProps<typeof Title>
 >(function H4(props, ref) {
   return <Title {...props} size="h4" ref={ref} />
 })
 
 const H5 = React.forwardRef<
   HTMLHeadingElement,
-  JSX.IntrinsicElements['h5'] & ExtractProps<typeof Title>
+  React.ComponentPropsWithRef<'h5'> & ExtractProps<typeof Title>
 >(function H5(props, ref) {
   return <Title {...props} size="h5" ref={ref} />
 })
 
 const H6 = React.forwardRef<
   HTMLHeadingElement,
-  JSX.IntrinsicElements['h6'] & ExtractProps<typeof Title>
+  React.ComponentPropsWithRef<'h6'> & ExtractProps<typeof Title>
 >(function H6(props, ref) {
   return <Title {...props} size="h6" ref={ref} />
 })

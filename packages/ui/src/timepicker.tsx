@@ -41,7 +41,7 @@ const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
     return (
       <div data-slot="control" className="relative shadow-sm">
         <input
-          {...(inputProps as JSX.IntrinsicElements['input'])}
+          {...(inputProps as React.ComponentPropsWithoutRef<'input'>)}
           value={value}
           ref={ref}
           type="hidden"
