@@ -81,9 +81,6 @@ importers:
       acorn:
         specifier: ^8.11.3
         version: 8.11.3
-      clsx:
-        specifier: ^2.1.0
-        version: 2.1.0
       contentlayer:
         specifier: ^0.3.4
         version: 0.3.4(esbuild@0.19.2)(markdown-wasm@1.2.0)
@@ -278,12 +275,6 @@ importers:
       '@nerdfish/utils':
         specifier: workspace:^*
         version: link:../utils
-      clsx:
-        specifier: ^2.1.0
-        version: 2.1.0
-      tailwind-merge:
-        specifier: ^2.2.1
-        version: 2.2.1
     devDependencies:
       '@nerdfish/lint':
         specifier: workspace:*
