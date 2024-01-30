@@ -375,12 +375,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.0.7
         version: 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
-      carloslfu-cmdk-internal:
-        specifier: ^0.3.1
-        version: 0.3.1(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
       cmdk:
-        specifier: ^0.2.0
-        version: 0.2.0(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.2.1
+        version: 0.2.1(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
       date-fns:
         specifier: ^3.3.1
         version: 3.3.1
@@ -6636,19 +6633,6 @@ packages:
   /caniuse-lite@1.0.30001579:
     resolution: {integrity: sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==}
 
-  /carloslfu-cmdk-internal@0.3.1(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-F1rTU92alsuTm0tu4pQadLFBsvAkoSYTUks1M+bJs4prh+mud0tLwhk+zNXqsfxRxj2Vogh7dVJ9/wlY24pOjA==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    dependencies:
-      '@radix-ui/react-dialog': 1.0.0(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - '@types/react'
-    dev: false
-
   /ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
@@ -6842,14 +6826,13 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /cmdk@0.2.0(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-JQpKvEOb86SnvMZbYaFKYhvzFntWBeSZdyii0rZPhKJj9uwJBxu4DaVYDrRN7r3mPop56oPhRw+JYWTKs66TYw==}
+  /cmdk@0.2.1(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-U6//9lQ6JvT47+6OF6Gi8BvkxYQ8SCRRSKIJkthIMsFsLZRG0cKvTtuTaefyIKMQb8rvvXy0wGdpTNq/jPtm+g==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
       '@radix-ui/react-dialog': 1.0.0(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
-      command-score: 0.1.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -6906,10 +6889,6 @@ packages:
 
   /comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
-
-  /command-score@0.1.2:
-    resolution: {integrity: sha512-VtDvQpIJBvBatnONUsPzXYFVKQQAhuf3XTNOAsdBxCNO/QCtUUd8LSgjn0GVarBkCad6aJCZfXgrjYbl/KRr7w==}
-    dev: false
 
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
