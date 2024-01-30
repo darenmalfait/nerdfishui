@@ -1,5 +1,20 @@
 # @nerdfish/theme
 
+## 2.1.2
+
+### Patch Changes
+
+- Updated dependency `lucide-react` to `^0.317.0`. ([#134](https://github.com/darenmalfait/nerdfishui/pull/134))
+
+  Updated dependency `@types/node` to `^20.11.10`.
+  Updated dependency `npm-run-all2` to `^5.0.0`.
+  Updated dependency `sonner` to `^1.4.0`.
+
+- Updated dependency `tailwind-merge` to `^2.2.1`. ([#128](https://github.com/darenmalfait/nerdfishui/pull/128))
+
+- Updated dependencies [[`2d243d4`](https://github.com/darenmalfait/nerdfishui/commit/2d243d43605121d046237b1ff80e15b75b333543)]:
+  - @nerdfish/utils@1.5.1
+
 ## 2.1.1
 
 ### Patch Changes

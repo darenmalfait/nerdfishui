@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.5.1
+
+### Patch Changes
+
+- Updated dependency `tailwind-merge` to `^2.2.1`. ([#128](https://github.com/darenmalfait/nerdfishui/pull/128))
+
 ## 1.5.0
 
 ### Minor Changes
