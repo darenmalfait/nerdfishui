@@ -52,13 +52,13 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(@types/react@18.2.48)(react@18.2.0)
       '@nerdfish/theme':
-        specifier: workspace:^2.1.1
+        specifier: workspace:^2.1.2
         version: link:../../packages/theme
       '@nerdfish/ui':
-        specifier: workspace:^4.3.0
+        specifier: workspace:^4.3.1
         version: link:../../packages/ui
       '@nerdfish/utils':
-        specifier: workspace:^1.5.0
+        specifier: workspace:^1.5.1
         version: link:../../packages/utils
       '@next/env':
         specifier: ^14.1.0
