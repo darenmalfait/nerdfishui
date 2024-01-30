@@ -1,5 +1,27 @@
 # @nerdfish/ui
 
+## 4.3.1
+
+### Patch Changes
+
+- `Input` now correctly passes on `className` to add custom styling
+
+- Updated dependency `lucide-react` to `^0.317.0`. ([#134](https://github.com/darenmalfait/nerdfishui/pull/134))
+
+  Updated dependency `@types/node` to `^20.11.10`.
+  Updated dependency `npm-run-all2` to `^5.0.0`.
+  Updated dependency `sonner` to `^1.4.0`.
+
+- Updated dependency `lucide-react` to `^0.316.0`. ([#132](https://github.com/darenmalfait/nerdfishui/pull/132))
+
+  Updated dependency `@types/node` to `^20.11.7`.
+  Updated dependency `rehype-pretty-code` to `~0.12.6`.
+
+- `Command` uses `cmdk` again. It has been updated.
+
+- Updated dependencies [[`2d243d4`](https://github.com/darenmalfait/nerdfishui/commit/2d243d43605121d046237b1ff80e15b75b333543)]:
+  - @nerdfish/utils@1.5.1
+
 ## 4.3.0
 
 ### Minor Changes
