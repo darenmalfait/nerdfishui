@@ -87,7 +87,7 @@ Button.displayName = 'Button'
 
 const ButtonGroup = React.forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['div']
+  React.ComponentPropsWithRef<'div'>
 >(function ButtonGroup({className, ...props}, ref) {
   return (
     <div

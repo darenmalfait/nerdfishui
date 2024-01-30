@@ -10,8 +10,8 @@ type ResponsiveProps = {
 
 const ProgressiveImage = React.forwardRef<
   HTMLImageElement,
-  JSX.IntrinsicElements['div'] & {
-    img: JSX.Element &
+  React.ComponentPropsWithRef<'div'> & {
+    img: React.JSX.Element &
       React.ReactElement<React.ImgHTMLAttributes<HTMLImageElement>>
     placeholder?: string
     isLoaded?: boolean

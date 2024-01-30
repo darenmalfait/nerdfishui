@@ -46,7 +46,7 @@ const IconMap: Record<
 
 const Alert = React.forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['div'] & {
+  React.ComponentPropsWithRef<'div'> & {
     variant?: VariantProps<typeof bgVariants>['variant']
     hideIcon?: boolean
     title?: React.ReactNode

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-function GithubLogo(props: JSX.IntrinsicElements['svg']) {
+function GithubLogo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       fill="none"

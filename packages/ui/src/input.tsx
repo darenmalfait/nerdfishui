@@ -48,8 +48,8 @@ type RawInputProps = {
   addOnTrailing?: React.ReactNode
   action?: () => void
 } & (
-  | ({type: 'textarea'} & JSX.IntrinsicElements['textarea'])
-  | JSX.IntrinsicElements['input']
+  | ({type: 'textarea'} & React.ComponentPropsWithRef<'textarea'>)
+  | React.ComponentPropsWithRef<'input'>
 )
 
 type InputProps = {
@@ -83,11 +83,18 @@ function getInputClassName(
   )
 }
 
-function FormHelperText({className, ...props}: JSX.IntrinsicElements['div']) {
+function FormHelperText({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<'div'>) {
   return <div className={cx('text-sm text-muted', className)} {...props} />
 }
 
-function Label({className, htmlFor, ...props}: JSX.IntrinsicElements['label']) {
+function Label({
+  className,
+  htmlFor,
+  ...props
+}: React.ComponentPropsWithoutRef<'label'>) {
   return (
     <label
       data-slot="label"
@@ -98,7 +105,10 @@ function Label({className, htmlFor, ...props}: JSX.IntrinsicElements['label']) {
   )
 }
 
-function Description({className, ...props}: JSX.IntrinsicElements['div']) {
+function Description({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<'div'>) {
   return (
     <div
       data-slot="description"
@@ -165,7 +175,7 @@ const RawInput = React.forwardRef<
         ) : null}
         <textarea
           data-slot="control"
-          {...(rawInputProps as JSX.IntrinsicElements['textarea'])}
+          {...(rawInputProps as React.ComponentPropsWithoutRef<'textarea'>)}
           ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
           aria-invalid={hasError}
           className={cx('h-36', inputVariants({size: inputSize}), {
@@ -190,7 +200,7 @@ const RawInput = React.forwardRef<
         <input
           data-slot="control"
           type={type}
-          {...(rawInputProps as JSX.IntrinsicElements['input'])}
+          {...(rawInputProps as React.ComponentPropsWithoutRef<'input'>)}
           className={cx(
             !!addOnLeading && '!pl-2',
             !!Icon && 'pr-14',
@@ -225,7 +235,7 @@ function InputError({
   className,
   id,
   ...props
-}: JSX.IntrinsicElements['div'] & {id?: string}) {
+}: React.ComponentPropsWithoutRef<'div'> & {id?: string}) {
   if (!props.children) {
     return null
   }
@@ -243,7 +253,7 @@ function InputError({
 
 const Field = React.forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['div'] & {
+  React.ComponentPropsWithRef<'div'> & {
     htmlFor: string
     label?: string
     error?: string | null

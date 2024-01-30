@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-function Logo({className, ...props}: JSX.IntrinsicElements['svg']) {
+function Logo({className, ...props}: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

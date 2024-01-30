@@ -6,7 +6,7 @@ import {NavigationList} from '@nerdfish/ui'
 import {docs} from 'config/docs'
 import {stripPreSlash} from 'lib/utils/string'
 
-export function Navigation(props: JSX.IntrinsicElements['nav']) {
+export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   const segment = useSelectedLayoutSegment() ?? '/'
 
   return (

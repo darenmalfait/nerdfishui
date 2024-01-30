@@ -9,7 +9,7 @@ import {useTheme} from '../context/theme-provider'
 function ThemeToggle({
   className,
   ...props
-}: Omit<JSX.IntrinsicElements['button'], 'onCliick'>) {
+}: Omit<React.ComponentPropsWithoutRef<'button'>, 'onClick'>) {
   const [mounted, setMounted] = React.useState(false)
   const {theme, setTheme, systemTheme} = useTheme()
 

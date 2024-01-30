@@ -41,7 +41,10 @@ const RadioGroupRoot = React.forwardRef<
 })
 RadioGroupRoot.displayName = RadioGroupPrimitive.Root.displayName
 
-function RadioField({className, ...props}: JSX.IntrinsicElements['div']) {
+function RadioField({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<'div'>) {
   return (
     <div
       data-slot="field"
