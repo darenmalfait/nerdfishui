@@ -8,7 +8,7 @@ import {MobileNavigation} from './mobile-navigation'
 
 export function MainNav() {
   return (
-    <div className="flex gap-6 md:gap-10">
+    <div className="flex items-center gap-6 md:gap-10">
       <MobileNavigation />
       <Link href="/" aria-label="Home">
         <div className="flex items-center space-x-3">

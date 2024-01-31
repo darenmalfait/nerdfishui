@@ -6,6 +6,7 @@ export const docs = {
         {title: 'Introduction', href: '/'},
         {title: 'Getting started', href: '/getting-started'},
         {title: 'Utilities', href: '/utilities'},
+        {title: 'Layout', href: '/layout'},
         {title: 'Typography', href: '/typography'},
       ],
     },
