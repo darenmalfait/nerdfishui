@@ -1,5 +1,6 @@
 'use client'
 
+// DEPRECATED: check out the layout documentation for more information
 import * as React from 'react'
 import {__DEV__, cx} from '@nerdfish/utils'
 
