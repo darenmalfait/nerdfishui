@@ -55,7 +55,7 @@ export default async function DocPage({params}: DocPageProps) {
   }
 
   return (
-    <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid">
+    <main className="relative py-6 lg:gap-10 lg:py-6 xl:grid">
       <div className="mx-auto w-full min-w-0">
         <DocsPageHeader
           github={
