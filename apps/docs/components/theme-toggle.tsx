@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {cx} from '@nerdfish/utils'
+import {Button} from '@nerdfish/ui'
 import {Moon, Sun} from 'lucide-react'
 
 import {useTheme} from '../context/theme-provider'
@@ -26,18 +26,16 @@ function ThemeToggle({
     theme === 'dark' || (theme === 'system' && systemTheme === 'dark')
 
   return (
-    <button
+    <Button
+      variant="ghost"
+      size="icon"
       type="button"
       {...props}
-      className={cx(
-        className,
-        'flex items-center justify-center rounded-full p-2 focus-ring text-primary',
-      )}
       onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}
     >
       {isDarkMode ? <Sun className="w-5" /> : <Moon className="w-5" />}
       <div className="sr-only">{isDarkMode ? `Light` : `Dark`} Mode</div>
-    </button>
+    </Button>
   )
 }
 
