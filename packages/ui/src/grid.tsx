@@ -1,10 +1,9 @@
 'use client'
 
-// DEPRECATED: check out the layout documentation for more information
 import * as React from 'react'
-import {__DEV__, cx} from '@nerdfish/utils'
+import {__DEV__, cx, deprecateComponent} from '@nerdfish/utils'
 
-const Grid = React.forwardRef<
+const DeprecatedGrid = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithRef<'div'> & {
     as?: React.ElementType
@@ -43,7 +42,13 @@ const Grid = React.forwardRef<
     </Tag>
   )
 })
-Grid.displayName = 'Grid'
+
+DeprecatedGrid.displayName = 'Grid'
+
+const Grid = deprecateComponent(
+  DeprecatedGrid,
+  'Grid is deprecated, use tailwind container class instead.',
+)
 
 /**
  * Use for development only! It renders the grid columns and gaps as page overlay

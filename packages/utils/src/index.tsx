@@ -1,6 +1,7 @@
 export * from './assertion'
 export * from './color'
 export * from './date'
+export * from './deprecate'
 export * from './email'
 export * from './hooks'
 export * from './misc'

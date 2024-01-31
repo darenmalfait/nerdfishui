@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {cva, cx, VariantProps} from '@nerdfish/utils'
+import {cva, cx, deprecateProp, VariantProps} from '@nerdfish/utils'
 import {AlertTriangle, Info, Verified, XCircle} from 'lucide-react'
 
 const DEFAULT_VARIANT = 'info'
@@ -51,7 +51,7 @@ const Alert = React.forwardRef<
     hideIcon?: boolean
     title?: React.ReactNode
     children?: React.ReactNode
-    description?: string // TODO: DEPRECATED, REMOVE
+    description?: string
   }
 >(function Alert(
   {
@@ -65,6 +65,10 @@ const Alert = React.forwardRef<
   },
   ref,
 ) {
+  deprecateProp(
+    descriptionDeprecated,
+    'Alert: description is deprecated, use children instead',
+  )
   const Icon = variant ? IconMap[variant] : IconMap[DEFAULT_VARIANT]
 
   return (
