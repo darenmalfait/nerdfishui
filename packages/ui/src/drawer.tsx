@@ -67,7 +67,7 @@ const DrawerContent = React.forwardRef<
             <span aria-hidden>×</span>
           </Button>
         </DrawerPrimitive.Close>
-        {children}
+        <div className="h-full overflow-y-auto">{children}</div>
         <div
           data-role="drawer-handle"
           className="bg-muted mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[vaul-drawer-direction=top]]:opacity-100"

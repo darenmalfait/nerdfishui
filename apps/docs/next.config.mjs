@@ -15,11 +15,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    serverComponentsExternalPackages: [
-      '@nerdfish/ui',
-      '@headlessui/react',
-      '@floating-ui/dom',
-    ],
+    serverComponentsExternalPackages: ['@nerdfish/ui', '@floating-ui/dom'],
   },
 }
 
