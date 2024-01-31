@@ -8,9 +8,12 @@ package:
   path: 'layout-components.tsx'
 ---
 
-<Alert variant="warning" title="Deprecated">
-  This component is deprecated and will be removed in a future release. Check{' '}
-  <a href="/layout">Layout documentation</a> how to move forward.
+<Alert variant="warning">
+  <Alert.Title>Deprecated</Alert.Title>
+  <Alert.Description>
+    This component is deprecated and will be removed in a future release. Check{' '}
+    <a href="/layout">Layout documentation</a> how to move forward.
+  </Alert.Description>
 </Alert>
 
 <ComponentExample src="/components/examples/section/demo.tsx">

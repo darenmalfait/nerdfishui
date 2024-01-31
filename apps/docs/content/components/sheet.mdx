@@ -9,9 +9,12 @@ package:
   path: 'sheet.tsx'
 ---
 
-<Alert variant="warning" title="Deprecated">
-  This component is deprecated and will be removed in a future release. Use{' '}
-  <a href="/drawer">Drawer</a> instead.
+<Alert variant="warning">
+  <Alert.Title>Deprecated</Alert.Title>
+  <Alert.Description>
+    This component is deprecated and will be removed in a future release. Use{' '}
+    <a href="/drawer">Drawer</a> instead.
+  </Alert.Description>
 </Alert>
 
 <ComponentExample src="/components/examples/sheet/demo.tsx">
