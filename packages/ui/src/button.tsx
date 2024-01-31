@@ -93,7 +93,7 @@ const ButtonGroup = React.forwardRef<
     <div
       ref={ref}
       className={cx(
-        'flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4',
+        'flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2',
         className,
       )}
       {...props}
