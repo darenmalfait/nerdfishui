@@ -1,8 +1,7 @@
 'use client'
 
-// DEPRECATED: check out the layout documentation for more information
 import * as React from 'react'
-import {cva, cx, VariantProps} from '@nerdfish/utils'
+import {cva, cx, deprecateComponent, VariantProps} from '@nerdfish/utils'
 
 const containerVariants = cva('col-span-full', {
   variants: {
@@ -18,7 +17,7 @@ const containerVariants = cva('col-span-full', {
   },
 })
 
-const Container = React.forwardRef<
+const DeprecatedContainer = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithRef<'div'> & {
     as?: React.ElementType
@@ -32,9 +31,14 @@ const Container = React.forwardRef<
     />
   )
 })
-Container.displayName = 'Container'
+DeprecatedContainer.displayName = 'Container'
 
-const Section = React.forwardRef<
+const Container = deprecateComponent(
+  DeprecatedContainer,
+  'Container is deprecated, use the built-in tailwind classes instead.',
+)
+
+const DeprecatedSection = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithRef<'section'> & {
     as?: React.ElementType
@@ -48,6 +52,11 @@ const Section = React.forwardRef<
     />
   )
 })
-Section.displayName = 'Section'
+DeprecatedSection.displayName = 'Section'
+
+const Section = deprecateComponent(
+  DeprecatedSection,
+  'Section is deprecated, use the built-in tailwind classes instead.',
+)
 
 export {Container, Section}
