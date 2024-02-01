@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.6.0
+
+### Minor Changes
+
+- added new `deprecateComponent` and `deprecateProp` utility functions
+
 ## 1.5.1
 
 ### Patch Changes
