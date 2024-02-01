@@ -1,5 +1,32 @@
 # @nerdfish/ui
 
+## 4.4.0
+
+### Minor Changes
+
+- `Alert` now fully uses compound component structure.
+
+  `title` and `description` props are now deprecated. Use `Alert.Title` and `Alert.Description` components instead.
+
+  ```tsx
+  <Alert title="example" className="w-full">
+    <Alert.Title>Example alert</Alert.Title>
+    <Alert.Description>Example description</Alert.Description>
+  </Alert>
+  ```
+
+### Patch Changes
+
+- Deprecate `Container`, `Grid` and `Section` in favor of built-in tailwind stuff.
+  More documentation how to move forward in (layout)[https://nerdfish.be/layout].
+
+- `ButtonGroup` now has less spacing between buttons
+
+- `Drawer` now scroll if the content overflows
+
+- Updated dependencies [[`d7bbb85`](https://github.com/darenmalfait/nerdfishui/commit/d7bbb85af9069cf507d15266dbe1082c633ab68e)]:
+  - @nerdfish/utils@1.6.0
+
 ## 4.3.1
 
 ### Patch Changes
