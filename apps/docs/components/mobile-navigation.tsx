@@ -20,7 +20,7 @@ export function MobileNavigation() {
         aria-label="Toggle navigation"
         onClick={toggle}
       >
-        <Icons.Menu className="h-4 w-4 text-primary" />
+        <Icons.Menu className="size-4 text-primary" />
       </Button>
       <Drawer
         direction="left"

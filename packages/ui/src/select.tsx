@@ -81,7 +81,7 @@ const RawSelect = React.forwardRef<HTMLInputElement, SelectProps>(
             {value
               ? options.find(item => item.value === value)?.label
               : placeholder}
-            <Icon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <Icon className="ml-2 size-4 shrink-0 opacity-50" />
           </button>
         </Popover.Trigger>
         <Popover.Content className="w-full min-w-[200px] p-0">

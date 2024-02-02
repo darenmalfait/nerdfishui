@@ -6,7 +6,7 @@ function getDomainUrl(): string | undefined {
   }
 }
 
-function getNonNull<Type extends Record<string, null | undefined | unknown>>(
+function getNonNull<Type extends Record<string, null | undefined>>(
   obj: Type,
 ): NonNullProperties<Type> {
   for (const [key, val] of Object.entries(obj)) {

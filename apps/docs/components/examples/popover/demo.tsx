@@ -9,7 +9,7 @@ export function PopoverDemo() {
     <Popover>
       <Popover.Trigger asChild>
         <Button variant="outline" className="w-10 rounded-full p-0">
-          <Cake className="h-4 w-4" />
+          <Cake className="size-4" />
           <span className="sr-only">Open popover</span>
         </Button>
       </Popover.Trigger>

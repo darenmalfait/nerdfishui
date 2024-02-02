@@ -37,7 +37,7 @@ export function DocsPageHeader({
             })}
             rel="noopener noreferrer"
           >
-            <Icons.GitHub className="mr-2 h-5 w-5" />
+            <Icons.GitHub className="mr-2 size-5" />
             View on GitHub
           </Link>
         ) : null}

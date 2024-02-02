@@ -24,9 +24,9 @@ function PageLink({
         className: 'flex space-x-2',
       })}
     >
-      {previous ? <ArrowLeft className="h-3 w-3" /> : null}
+      {previous ? <ArrowLeft className="size-3" /> : null}
       <span>{page.title}</span>
-      {!previous ? <ArrowRight className="h-3 w-3" /> : null}
+      {!previous ? <ArrowRight className="size-3" /> : null}
     </Link>
   )
 }
@@ -90,7 +90,7 @@ function SocialLink({
   return (
     <Link href={href} className="group">
       <span className="sr-only">{children}</span>
-      <Icon className="h-5 w-5 text-muted" />
+      <Icon className="size-5 text-muted" />
     </Link>
   )
 }

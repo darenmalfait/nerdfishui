@@ -17,7 +17,7 @@ const navItemVariants = cva(
         default: 'h-10 px-4 py-2',
         sm: 'h-9 rounded-md px-3',
         lg: 'h-11 rounded-md px-8',
-        icon: 'h-10 w-10',
+        icon: 'size-10',
       },
     },
     defaultVariants: {
@@ -63,7 +63,7 @@ function Item<T>({
             )}
             {...props}
           >
-            {Icon ? <Icon className="h-4 w-4" /> : null}
+            {Icon ? <Icon className="size-4" /> : null}
             <span className="sr-only">{title}</span>
           </Link>
         </Tooltip.Trigger>
@@ -85,7 +85,7 @@ function Item<T>({
       )}
       {...props}
     >
-      {Icon ? <Icon className="mr-2 h-4 w-4" /> : null}
+      {Icon ? <Icon className="mr-2 size-4" /> : null}
       <span className="min-w-0 max-w-full flex-1 truncate">{title}</span>
       {label ? <span className={cx('ml-auto')}>{label}</span> : null}
     </Link>
@@ -119,7 +119,7 @@ function Title({
               className,
             )}
           >
-            {Icon ? <Icon className="h-4 w-4" /> : null}
+            {Icon ? <Icon className="size-4" /> : null}
             <span className="sr-only">{title}</span>
           </h2>
         </Tooltip.Trigger>
@@ -140,7 +140,7 @@ function Title({
         className,
       )}
     >
-      {Icon ? <Icon className="mr-2 h-4 w-4" /> : null}
+      {Icon ? <Icon className="mr-2 size-4" /> : null}
       <span className="min-w-0 max-w-full flex-1 truncate">{title}</span>
       {label ? <span className={cx('ml-auto')}>{label}</span> : null}
     </h2>

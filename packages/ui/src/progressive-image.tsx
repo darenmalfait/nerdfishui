@@ -63,7 +63,7 @@ const ProgressiveImage = React.forwardRef<
 
   return (
     <div {...props} className={cx(className, 'w-full')}>
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative size-full overflow-hidden">
         <img
           ref={ref}
           {...img.props}

@@ -8,10 +8,10 @@ export function ToggleSize() {
   return (
     <div className="flex flex-wrap gap-3">
       <Toggle size="lg" aria-label="Toggle italic">
-        <Italic className="h-4 w-4" />
+        <Italic className="size-4" />
       </Toggle>
       <Toggle size="sm" aria-label="Toggle bold">
-        <Bold className="h-4 w-4" />
+        <Bold className="size-4" />
       </Toggle>
     </div>
   )

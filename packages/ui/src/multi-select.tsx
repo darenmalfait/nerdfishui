@@ -103,7 +103,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                   ? `${selectedValues.length} items selected`
                   : null}
               </span>
-              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              <ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
             </button>
           </Popover.Trigger>
           <Popover.Content className="w-[200px] p-0">
@@ -143,7 +143,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                         <div className="flex flex-col items-start gap-y-1">
                           <div className="flex justify-start">
                             <span
-                              className="mr-2 h-4 w-4 rounded-full"
+                              className="mr-2 size-4 rounded-full"
                               style={{backgroundColor: item.color}}
                             />
                             <span className="flex-1">{item.label}</span>
@@ -167,7 +167,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                       {...{inputValue, options}}
                     >
                       <span>
-                        <Pencil className="h-4 w-4" />
+                        <Pencil className="size-4" />
                       </span>
                       <span>{editItemsLabel ?? 'Edit labels'}</span>
                     </Command.Item>
@@ -182,7 +182,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                     className="flex w-full items-center gap-x-2 px-2 py-1"
                   >
                     <span>
-                      <Plus className="h-4 w-4" />
+                      <Plus className="size-4" />
                     </span>
                     <span>{createNewLabel ?? `Create "${inputValue}"`}</span>
                   </button>
