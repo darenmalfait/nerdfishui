@@ -16,6 +16,8 @@
     "checks:fix": "turbo lint:fix typecheck --continue --force",
     "clean": "turbo clean && rm -rf node_modules && rm -rf .turbo",
     "dev": "turbo run dev --no-cache --continue",
+    "format": "prettier . \"!./apps/**\" \"!./packages/**\" \"!./tooling/**\" --check --cache --cache-location=\"node_modules/.cache/prettiercache\"",
+    "format:fix": "prettier . \"!./apps/**\" \"!./packages/**\" \"!./tooling/**\" --write --cache --cache-location=\"node_modules/.cache/prettiercache\" --log-level=warn",
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",

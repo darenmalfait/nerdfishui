@@ -217,7 +217,7 @@ const RawInput = React.forwardRef<
         ) : null}
         {hasError ? (
           <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
-            <AlertCircle className="text-danger h-5 w-5" aria-hidden="true" />
+            <AlertCircle className="text-danger size-5" aria-hidden="true" />
           </div>
         ) : null}
         {addOnTrailing ? (

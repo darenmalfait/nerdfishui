@@ -39,9 +39,9 @@ export function CopyButton({value, className, src, ...props}: CopyButtonProps) {
     >
       <span className="sr-only">Copy</span>
       {hasCopied ? (
-        <Icons.Check className="h-4 w-4" />
+        <Icons.Check className="size-4" />
       ) : (
-        <Icons.Copy className="h-4 w-4" />
+        <Icons.Copy className="size-4" />
       )}
     </button>
   )
@@ -85,19 +85,19 @@ export function CopyWithClassNames({
         {...props}
       >
         {hasCopied ? (
-          <Icons.Check className="h-4 w-4" />
+          <Icons.Check className="size-4" />
         ) : (
-          <Icons.Copy className="h-4 w-4" />
+          <Icons.Copy className="size-4" />
         )}
         <span className="sr-only">Copy</span>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content>
         <DropdownMenu.Item onClick={() => copyToClipboard(value)}>
-          <Icons.React className="mr-2 h-4 w-4" />
+          <Icons.React className="mr-2 size-4" />
           <span>Component</span>
         </DropdownMenu.Item>
         <DropdownMenu.Item onClick={() => copyToClipboard(classNames)}>
-          <Icons.Tailwind className="mr-2 h-4 w-4" />
+          <Icons.Tailwind className="mr-2 size-4" />
           <span>Classname</span>
         </DropdownMenu.Item>
       </DropdownMenu.Content>
@@ -140,27 +140,27 @@ export function CopyNpmCommandButton({
         {...props}
       >
         {hasCopied ? (
-          <Icons.Check className="h-4 w-4" />
+          <Icons.Check className="size-4" />
         ) : (
-          <Icons.Copy className="h-4 w-4" />
+          <Icons.Copy className="size-4" />
         )}
         <span className="sr-only">Copy</span>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content>
         <DropdownMenu.Item onClick={() => copyCommand(commands.__npmCommand__)}>
-          <Icons.Npm className="mr-2 h-4 w-4 fill-[#CB3837]" />
+          <Icons.Npm className="mr-2 size-4 fill-[#CB3837]" />
           <span>npm</span>
         </DropdownMenu.Item>
         <DropdownMenu.Item
           onClick={() => copyCommand(commands.__yarnCommand__)}
         >
-          <Icons.Yarn className="mr-2 h-4 w-4 fill-[#2C8EBB]" />
+          <Icons.Yarn className="mr-2 size-4 fill-[#2C8EBB]" />
           <span>yarn</span>
         </DropdownMenu.Item>
         <DropdownMenu.Item
           onClick={() => copyCommand(commands.__pnpmCommand__)}
         >
-          <Icons.Pnpm className="mr-2 h-4 w-4 fill-[#F69220]" />
+          <Icons.Pnpm className="mr-2 size-4 fill-[#F69220]" />
           <span>pnpm</span>
         </DropdownMenu.Item>
       </DropdownMenu.Content>

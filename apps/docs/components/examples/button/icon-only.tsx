@@ -7,7 +7,7 @@ import {Mail} from 'lucide-react'
 export function ButtonIconOnly() {
   return (
     <Button size="icon">
-      <Mail className="h-4 w-4" />
+      <Mail className="size-4" />
       <span className="sr-only">Mail</span>
     </Button>
   )

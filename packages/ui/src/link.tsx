@@ -96,7 +96,7 @@ const DoubleLabelLink = React.forwardRef<
 
       {description ? <span className="ml-4 text-sm">{description}</span> : null}
       <ChevronRight
-        className="text-primary/50 ml-2 h-5 w-5"
+        className="text-primary/50 ml-2 size-5"
         aria-hidden="true"
       />
     </Tag>

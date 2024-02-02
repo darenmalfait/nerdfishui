@@ -67,7 +67,7 @@ const DialogContent = React.forwardRef<
           size="iconSm"
           className="absolute right-4 top-4"
         >
-          <X className="h-3 w-3" />
+          <X className="size-3" />
           <span className="sr-only">Close</span>
         </Button>
       </DialogPrimitive.Close>

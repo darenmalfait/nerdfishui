@@ -35,6 +35,7 @@ function cssVar(name: string, fallback?: string) {
 
 type TokenHandler = (
   keys: string[],
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   value: unknown | {reference: string},
 ) => ThemeVars
 

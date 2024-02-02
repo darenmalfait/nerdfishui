@@ -31,8 +31,8 @@ const buttonVariants = cva(
         sm: 'h-9 rounded-md px-3',
         lg: 'h-11 rounded-md px-8',
         xl: 'h-12 rounded-md px-10',
-        icon: 'flex h-10 w-10 items-center justify-center rounded-md',
-        iconSm: 'flex h-8 w-8 items-center justify-center rounded-md',
+        icon: 'flex size-10 items-center justify-center rounded-md',
+        iconSm: 'flex size-8 items-center justify-center rounded-md',
       },
     },
     defaultVariants: {

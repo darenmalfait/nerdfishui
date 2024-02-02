@@ -20,7 +20,7 @@ export function ButtonSizes() {
         Extra Large
       </Button>
       <Button variant="nerdfish" size="icon">
-        <Mail className="h-4 w-4" />
+        <Mail className="size-4" />
         <span className="sr-only">Mail</span>
       </Button>
     </div>

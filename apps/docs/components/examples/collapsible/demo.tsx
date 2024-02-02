@@ -21,7 +21,7 @@ export function CollapsibleDemo() {
             size="sm"
             className="flex w-9 justify-center p-0"
           >
-            <ChevronsUpDown className="h-4 w-4" />
+            <ChevronsUpDown className="size-4" />
             <span className="sr-only">Toggle</span>
           </Button>
         </Collapsible.Trigger>
