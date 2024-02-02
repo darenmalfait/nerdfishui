@@ -1,0 +1,42 @@
+---
+title: Indicator
+description: Indicator to indicate a status of a component.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'indicator.tsx'
+---
+
+<ComponentExample src="/components/examples/indicator/demo.tsx">
+  <IndicatorDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Indicator} from '@nerdfish/ui'
+```
+
+```tsx
+<Indicator>
+  <Indicator.Item>
+    <Badge variant="secondary" />
+  </Indicator.Item>
+  <div className="grid h-32 w-32 place-items-center bg-inverted text-inverted">
+    content
+  </div>
+</Indicator>
+```
+
+## Item
+
+<ComponentExample src="/components/examples/indicator/item.tsx">
+  <IndicatorItemDemo />
+</ComponentExample>
+
+## Positions
+
+<ComponentExample src="/components/examples/indicator/positions.tsx">
+  <IndicatorPositionsDemo />
+</ComponentExample>
