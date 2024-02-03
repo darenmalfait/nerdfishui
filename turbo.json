@@ -8,6 +8,15 @@
     "topo": {
       "dependsOn": ["^topo"]
     },
+    "format": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/prettiercache"],
+      "outputMode": "errors-only"
+    },
+    "//#format:fix": {
+      "outputs": ["node_modules/.cache/prettiercache"],
+      "outputMode": "errors-only"
+    },
     "//#lint": {
       "outputs": ["node_modules/.cache/.eslintcache"],
       "outputMode": "errors-only"
