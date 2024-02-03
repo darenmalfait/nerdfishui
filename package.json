@@ -36,8 +36,8 @@
     "@commitlint/config-conventional": "^18.6.0",
     "eslint": "^8.56.0",
     "eslint-config-daren": "^4.2.3",
-    "husky": "^9.0.7",
-    "turbo": "^1.11.3"
+    "husky": "^9.0.10",
+    "turbo": "^1.12.2"
   },
   "packageManager": "pnpm@8.15.1"
 }
