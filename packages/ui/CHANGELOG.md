@@ -6,7 +6,8 @@
 
 - `Alert` now fully uses compound component structure.
 
-  `title` and `description` props are now deprecated. Use `Alert.Title` and `Alert.Description` components instead.
+  `title` and `description` props are now deprecated. Use `Alert.Title` and
+  `Alert.Description` components instead.
 
   ```tsx
   <Alert title="example" className="w-full">
@@ -17,14 +18,16 @@
 
 ### Patch Changes
 
-- Deprecate `Container`, `Grid` and `Section` in favor of built-in tailwind stuff.
-  More documentation how to move forward in (layout)[https://nerdfish.be/layout].
+- Deprecate `Container`, `Grid` and `Section` in favor of built-in tailwind
+  stuff. More documentation how to move forward in
+  (layout)[https://nerdfish.be/layout].
 
 - `ButtonGroup` now has less spacing between buttons
 
 - `Drawer` now scroll if the content overflows
 
-- Updated dependencies [[`d7bbb85`](https://github.com/darenmalfait/nerdfishui/commit/d7bbb85af9069cf507d15266dbe1082c633ab68e)]:
+- Updated dependencies
+  [[`d7bbb85`](https://github.com/darenmalfait/nerdfishui/commit/d7bbb85af9069cf507d15266dbe1082c633ab68e)]:
   - @nerdfish/utils@1.6.0
 
 ## 4.3.1
@@ -33,20 +36,22 @@
 
 - `Input` now correctly passes on `className` to add custom styling
 
-- Updated dependency `lucide-react` to `^0.317.0`. ([#134](https://github.com/darenmalfait/nerdfishui/pull/134))
+- Updated dependency `lucide-react` to `^0.317.0`.
+  ([#134](https://github.com/darenmalfait/nerdfishui/pull/134))
 
-  Updated dependency `@types/node` to `^20.11.10`.
-  Updated dependency `npm-run-all2` to `^5.0.0`.
-  Updated dependency `sonner` to `^1.4.0`.
+  Updated dependency `@types/node` to `^20.11.10`. Updated dependency
+  `npm-run-all2` to `^5.0.0`. Updated dependency `sonner` to `^1.4.0`.
 
-- Updated dependency `lucide-react` to `^0.316.0`. ([#132](https://github.com/darenmalfait/nerdfishui/pull/132))
+- Updated dependency `lucide-react` to `^0.316.0`.
+  ([#132](https://github.com/darenmalfait/nerdfishui/pull/132))
 
-  Updated dependency `@types/node` to `^20.11.7`.
-  Updated dependency `rehype-pretty-code` to `~0.12.6`.
+  Updated dependency `@types/node` to `^20.11.7`. Updated dependency
+  `rehype-pretty-code` to `~0.12.6`.
 
 - `Command` uses `cmdk` again. It has been updated.
 
-- Updated dependencies [[`2d243d4`](https://github.com/darenmalfait/nerdfishui/commit/2d243d43605121d046237b1ff80e15b75b333543)]:
+- Updated dependencies
+  [[`2d243d4`](https://github.com/darenmalfait/nerdfishui/commit/2d243d43605121d046237b1ff80e15b75b333543)]:
   - @nerdfish/utils@1.5.1
 
 ## 4.3.0
@@ -56,7 +61,7 @@
 - Added new `ToggleGroup` component
 
   ```tsx
-  import { ToggleGroup } from "@nerdfish/ui";
+  import {ToggleGroup} from '@nerdfish/ui'
   ```
 
   ```tsx
@@ -73,8 +78,8 @@
   </ToggleGroup>
   ```
 
-- `Drawer` now has directional support.
-  The `direction` prop can be set to `top`, `right`, `bottom`, or `left`.
+- `Drawer` now has directional support. The `direction` prop can be set to
+  `top`, `right`, `bottom`, or `left`.
 
   ```tsx
   <Drawer direction="bottom">
@@ -98,12 +103,13 @@
 
 ### Patch Changes
 
-- `Toggle`: adjusted focus state design to be more consistent with other button components.
+- `Toggle`: adjusted focus state design to be more consistent with other button
+  components.
 
 - `Alert`: `description` prop is now deprecated in favor of `children`.
 
-  This allows more flexibility in the content of the `Alert`. The `description` prop
-  will be removed in a future release.
+  This allows more flexibility in the content of the `Alert`. The `description`
+  prop will be removed in a future release.
 
   ```tsx
   <Alert variant="danger" description="Alert content" />
@@ -115,23 +121,28 @@
   <Alert variant="danger">Alert content</Alert>
   ```
 
-- `Sheet`: Deprecate in favor of `Drawer`. `Sheet` will be removed in a future release.
+- `Sheet`: Deprecate in favor of `Drawer`. `Sheet` will be removed in a future
+  release.
 
 - `Command`: Fix backspace bug.
 
-  To fix it `Command` now temporarely uses `carloslfu-cmdk-internal` until `cmdk` is released.
+  To fix it `Command` now temporarely uses `carloslfu-cmdk-internal` until
+  `cmdk` is released.
 
 - `Button`: replace active-ring effect to a subtle scale effect
 
-- Components that have an Overlay (`Dialog`, `AlertDialog`) now have the primary background color instead of the popover background.
+- Components that have an Overlay (`Dialog`, `AlertDialog`) now have the primary
+  background color instead of the popover background.
 
 ## 4.2.4
 
 ### Patch Changes
 
-- change background color of Drawer component content to the primary background color
+- change background color of Drawer component content to the primary background
+  color
 
-- Input and the components that inherit from input now have better distinction between states
+- Input and the components that inherit from input now have better distinction
+  between states
 
 - increase slider contrast
 
@@ -145,483 +156,695 @@
 
 ### Patch Changes
 
-- [`0d01bdc`](https://github.com/darenmalfait/nerdfishui/commit/0d01bdcfc5bc685c0d24f4415fd9ecbe652f5fc2) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix wrong color naming
+- [`0d01bdc`](https://github.com/darenmalfait/nerdfishui/commit/0d01bdcfc5bc685c0d24f4415fd9ecbe652f5fc2)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix wrong color
+  naming
 
 ## 4.2.2
 
 ### Patch Changes
 
-- [`83ff9cf`](https://github.com/darenmalfait/nerdfishui/commit/83ff9cf2e6a65a5adac46db42b17291f824b956b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - tweak basic styling
+- [`83ff9cf`](https://github.com/darenmalfait/nerdfishui/commit/83ff9cf2e6a65a5adac46db42b17291f824b956b)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - tweak basic styling
 
-- [`83ff9cf`](https://github.com/darenmalfait/nerdfishui/commit/83ff9cf2e6a65a5adac46db42b17291f824b956b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add more basic colors
+- [`83ff9cf`](https://github.com/darenmalfait/nerdfishui/commit/83ff9cf2e6a65a5adac46db42b17291f824b956b)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add more basic
+  colors
 
-- [`9269ca1`](https://github.com/darenmalfait/nerdfishui/commit/9269ca13404cac3c90202bcace0b39db2c8a0e69) Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor styling improvements to the Switch component
+- [`9269ca1`](https://github.com/darenmalfait/nerdfishui/commit/9269ca13404cac3c90202bcace0b39db2c8a0e69)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor styling
+  improvements to the Switch component
 
-- [`aca9fab`](https://github.com/darenmalfait/nerdfishui/commit/aca9fab76ae1466abd689cd9f0b2c5d5fd1231ad) Thanks [@darenmalfait](https://github.com/darenmalfait)! - tweak popover background
+- [`aca9fab`](https://github.com/darenmalfait/nerdfishui/commit/aca9fab76ae1466abd689cd9f0b2c5d5fd1231ad)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - tweak popover
+  background
 
 ## 4.2.1
 
 ### Patch Changes
 
-- [`3998e5c`](https://github.com/darenmalfait/nerdfishui/commit/3998e5c1c50f32d7f76ac4276a54ecd9f33762a1) Thanks [@darenmalfait](https://github.com/darenmalfait)! - change slider color
+- [`3998e5c`](https://github.com/darenmalfait/nerdfishui/commit/3998e5c1c50f32d7f76ac4276a54ecd9f33762a1)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - change slider color
 
-- [`fac54cb`](https://github.com/darenmalfait/nerdfishui/commit/fac54cbeab240248325c6046d74cf8be5c314df9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update styling across components
+- [`fac54cb`](https://github.com/darenmalfait/nerdfishui/commit/fac54cbeab240248325c6046d74cf8be5c314df9)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - update styling
+  across components
 
-- [`81e6bb0`](https://github.com/darenmalfait/nerdfishui/commit/81e6bb09fdb8016aae4e6b77160735c0d328286c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase opacity of inactive steps in Steps component
+- [`81e6bb0`](https://github.com/darenmalfait/nerdfishui/commit/81e6bb09fdb8016aae4e6b77160735c0d328286c)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase opacity of
+  inactive steps in Steps component
 
-- [`288eb25`](https://github.com/darenmalfait/nerdfishui/commit/288eb25d95962e885f7c0c69e32ff83ed4cbca2e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve disabled checkbox state
+- [`288eb25`](https://github.com/darenmalfait/nerdfishui/commit/288eb25d95962e885f7c0c69e32ff83ed4cbca2e)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve disabled
+  checkbox state
 
-- [`bd0e7a2`](https://github.com/darenmalfait/nerdfishui/commit/bd0e7a209f7f9e63ab2db00d407b7c3fa14d64a6) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase Skeleton opacity
+- [`bd0e7a2`](https://github.com/darenmalfait/nerdfishui/commit/bd0e7a209f7f9e63ab2db00d407b7c3fa14d64a6)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase Skeleton
+  opacity
 
-- [`7ffa527`](https://github.com/darenmalfait/nerdfishui/commit/7ffa5273bcbb1c29c340a914242114fdf696043b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - implement missing calendar-props
+- [`7ffa527`](https://github.com/darenmalfait/nerdfishui/commit/7ffa5273bcbb1c29c340a914242114fdf696043b)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - implement missing
+  calendar-props
 
 ## 4.2.0
 
 ### Minor Changes
 
-- [`919da65`](https://github.com/darenmalfait/nerdfishui/commit/919da65a22e64fc95ae50a09bceec96503c6e730) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Input now has leading and trailing addon functionality
+- [`919da65`](https://github.com/darenmalfait/nerdfishui/commit/919da65a22e64fc95ae50a09bceec96503c6e730)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - Input now has
+  leading and trailing addon functionality
 
 ### Patch Changes
 
-- [`a03a365`](https://github.com/darenmalfait/nerdfishui/commit/a03a3656a03e7a269c93ea6d33158e45abb69866) Thanks [@darenmalfait](https://github.com/darenmalfait)! - remove padding from NavigationList
+- [`a03a365`](https://github.com/darenmalfait/nerdfishui/commit/a03a3656a03e7a269c93ea6d33158e45abb69866)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - remove padding from
+  NavigationList
 
-- Updated dependencies [[`919da65`](https://github.com/darenmalfait/nerdfishui/commit/919da65a22e64fc95ae50a09bceec96503c6e730)]:
+- Updated dependencies
+  [[`919da65`](https://github.com/darenmalfait/nerdfishui/commit/919da65a22e64fc95ae50a09bceec96503c6e730)]:
   - @nerdfish/utils@1.5.0
 
 ## 4.1.0
 
 ### Minor Changes
 
-- [`1c1403a`](https://github.com/darenmalfait/nerdfishui/commit/1c1403ac56ed411ad62105025e6872e3977fbd3e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - NavigationList.Title has the same styling options as NavigationList.Item
+- [`1c1403a`](https://github.com/darenmalfait/nerdfishui/commit/1c1403ac56ed411ad62105025e6872e3977fbd3e)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! -
+  NavigationList.Title has the same styling options as NavigationList.Item
 
-- [`1a69440`](https://github.com/darenmalfait/nerdfishui/commit/1a694400959216552b0fde592762b038413d405c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add new Steps component that cna be used as an indicator in a wizard form
+- [`1a69440`](https://github.com/darenmalfait/nerdfishui/commit/1a694400959216552b0fde592762b038413d405c)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add new Steps
+  component that cna be used as an indicator in a wizard form
 
 ### Patch Changes
 
-- [`78b60b6`](https://github.com/darenmalfait/nerdfishui/commit/78b60b6876743623e52d65e49e8abdd842c08919) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix background color for Tabs in dark mode
+- [`78b60b6`](https://github.com/darenmalfait/nerdfishui/commit/78b60b6876743623e52d65e49e8abdd842c08919)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix background
+  color for Tabs in dark mode
 
 ## 4.0.0
 
 ### Major Changes
 
-- [`f08b72c`](https://github.com/darenmalfait/nerdfishui/commit/f08b72c74a5e23313f35277af6df90968e34bc9a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - `Combobox` has been renamed to `Select`.
-  The `items` prop has been changed to `options` for `Select` and `MultiSelect` components.
+- [`f08b72c`](https://github.com/darenmalfait/nerdfishui/commit/f08b72c74a5e23313f35277af6df90968e34bc9a)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - `Combobox` has been
+  renamed to `Select`. The `items` prop has been changed to `options` for
+  `Select` and `MultiSelect` components.
 
 ### Minor Changes
 
-- [`574601b`](https://github.com/darenmalfait/nerdfishui/commit/574601b9183d8d61aa152b766885dc1189ee595d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new Field utility component for label and error display of input fields
+- [`574601b`](https://github.com/darenmalfait/nerdfishui/commit/574601b9183d8d61aa152b766885dc1189ee595d)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new Field
+  utility component for label and error display of input fields
 
 ### Patch Changes
 
-- [`fba918d`](https://github.com/darenmalfait/nerdfishui/commit/fba918d52560680934ab7b9d7de64c176ed9ca41) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add top padding to card content
+- [`fba918d`](https://github.com/darenmalfait/nerdfishui/commit/fba918d52560680934ab7b9d7de64c176ed9ca41)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add top padding to
+  card content
 
-- [`cc8e2ff`](https://github.com/darenmalfait/nerdfishui/commit/cc8e2ff0f019d2ba0b36d29757c461e78e0b0f7d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - adjust disabled input styling
+- [`cc8e2ff`](https://github.com/darenmalfait/nerdfishui/commit/cc8e2ff0f019d2ba0b36d29757c461e78e0b0f7d)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - adjust disabled
+  input styling
 
 ## 3.0.0
 
 ### Major Changes
 
-- [`2dffd36`](https://github.com/darenmalfait/nerdfishui/commit/2dffd3685001bc904924d9bb8612ce01bb1eab5c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - new DatePicker component, removed the old
+- [`2dffd36`](https://github.com/darenmalfait/nerdfishui/commit/2dffd3685001bc904924d9bb8612ce01bb1eab5c)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - new DatePicker
+  component, removed the old
 
 ### Minor Changes
 
-- [`8d3a226`](https://github.com/darenmalfait/nerdfishui/commit/8d3a226cbebea23403b4c9063bd967d18c1075f5) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve navigation-list layout
+- [`8d3a226`](https://github.com/darenmalfait/nerdfishui/commit/8d3a226cbebea23403b4c9063bd967d18c1075f5)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve
+  navigation-list layout
 
 ## 2.4.0
 
 ### Minor Changes
 
-- [`ad9dfaa`](https://github.com/darenmalfait/nerdfishui/commit/ad9dfaab13e742a06715edcbda368ff6953aca59) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update toast component to sonner
+- [`ad9dfaa`](https://github.com/darenmalfait/nerdfishui/commit/ad9dfaab13e742a06715edcbda368ff6953aca59)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - update toast
+  component to sonner
 
-- [`f3bffed`](https://github.com/darenmalfait/nerdfishui/commit/f3bffed30b1ec15a81425728ed00b80d59dccb47) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add Drawer component
+- [`f3bffed`](https://github.com/darenmalfait/nerdfishui/commit/f3bffed30b1ec15a81425728ed00b80d59dccb47)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add Drawer
+  component
 
 ### Patch Changes
 
-- Updated dependencies [[`f3bffed`](https://github.com/darenmalfait/nerdfishui/commit/f3bffed30b1ec15a81425728ed00b80d59dccb47)]:
+- Updated dependencies
+  [[`f3bffed`](https://github.com/darenmalfait/nerdfishui/commit/f3bffed30b1ec15a81425728ed00b80d59dccb47)]:
   - @nerdfish/utils@1.4.0
 
 ## 2.3.5
 
 ### Patch Changes
 
-- [`fae7e15`](https://github.com/darenmalfait/nerdfishui/commit/fae7e15fcced17ea5cf8394ca58e71e870cdfb00) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): improve shadow and colors
+- [`fae7e15`](https://github.com/darenmalfait/nerdfishui/commit/fae7e15fcced17ea5cf8394ca58e71e870cdfb00)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button):
+  improve shadow and colors
 
 ## 2.3.4
 
 ### Patch Changes
 
-- [`afa6ab4`](https://github.com/darenmalfait/nerdfishui/commit/afa6ab4eedf49a57eec631ddb5810162b2717f04) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(button): hide ghost border
+- [`afa6ab4`](https://github.com/darenmalfait/nerdfishui/commit/afa6ab4eedf49a57eec631ddb5810162b2717f04)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(button): hide
+  ghost border
 
 ## 2.3.3
 
 ### Patch Changes
 
-- [`b57bf24`](https://github.com/darenmalfait/nerdfishui/commit/b57bf24df97ca0ee3cccf4c166ec38fabf0ed66a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): add accentuate prop
+- [`b57bf24`](https://github.com/darenmalfait/nerdfishui/commit/b57bf24df97ca0ee3cccf4c166ec38fabf0ed66a)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): add
+  accentuate prop
 
 ## 2.3.2
 
 ### Patch Changes
 
-- [`1e6a3b4`](https://github.com/darenmalfait/nerdfishui/commit/1e6a3b440c2a7bd94a3d4d9687be0611b2915c18) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): adjust track color
+- [`1e6a3b4`](https://github.com/darenmalfait/nerdfishui/commit/1e6a3b440c2a7bd94a3d4d9687be0611b2915c18)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): adjust
+  track color
 
-- [`5240699`](https://github.com/darenmalfait/nerdfishui/commit/5240699eacf066f21ff235e26400e0f6ac84bd95) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button): increase contrast for disabled state
+- [`5240699`](https://github.com/darenmalfait/nerdfishui/commit/5240699eacf066f21ff235e26400e0f6ac84bd95)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(button):
+  increase contrast for disabled state
 
-- [`65cdfc5`](https://github.com/darenmalfait/nerdfishui/commit/65cdfc52d5572394c6bcaa81b450d166a6eec5ee) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): extend classname
+- [`65cdfc5`](https://github.com/darenmalfait/nerdfishui/commit/65cdfc52d5572394c6bcaa81b450d166a6eec5ee)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): extend
+  classname
 
 ## 2.3.1
 
 ### Patch Changes
 
-- [`0b700c6`](https://github.com/darenmalfait/nerdfishui/commit/0b700c6aed478078ebcdd56e70b972c6ec7c88e7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): add thumb as child
+- [`0b700c6`](https://github.com/darenmalfait/nerdfishui/commit/0b700c6aed478078ebcdd56e70b972c6ec7c88e7)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(slider): add
+  thumb as child
 
 ## 2.3.0
 
 ### Minor Changes
 
-- [`3a90668`](https://github.com/darenmalfait/nerdfishui/commit/3a906688fb07c5c7a58d29ab4a18fd74b8b47d98) Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(ui): add new slider component
+- [`3a90668`](https://github.com/darenmalfait/nerdfishui/commit/3a906688fb07c5c7a58d29ab4a18fd74b8b47d98)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(ui): add new
+  slider component
 
 ### Patch Changes
 
-- [`74299e6`](https://github.com/darenmalfait/nerdfishui/commit/74299e6ceffd14501671527d5db9cdcc1d64770c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(theme): add shadow-highlight color variant
+- [`74299e6`](https://github.com/darenmalfait/nerdfishui/commit/74299e6ceffd14501671527d5db9cdcc1d64770c)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(theme): add
+  shadow-highlight color variant
 
-- [`55b4904`](https://github.com/darenmalfait/nerdfishui/commit/55b49040576c49856d75235581ac173fa47ea823) Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(skeleton): add basic skeletons
+- [`55b4904`](https://github.com/darenmalfait/nerdfishui/commit/55b49040576c49856d75235581ac173fa47ea823)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - feat(skeleton): add
+  basic skeletons
 
-- [`ee784c2`](https://github.com/darenmalfait/nerdfishui/commit/ee784c25395d6295cc72663c6a37c9a71c8628ae) Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(title): add blurred bg color for h1 and h2
+- [`ee784c2`](https://github.com/darenmalfait/nerdfishui/commit/ee784c25395d6295cc72663c6a37c9a71c8628ae)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - style(title): add
+  blurred bg color for h1 and h2
 
 ## 2.2.13
 
 ### Patch Changes
 
-- [`d6b8334`](https://github.com/darenmalfait/nerdfishui/commit/d6b8334d0b661c8fbcd3c9c069b1bf49f378bf91) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add icon property to combobox items
+- [`d6b8334`](https://github.com/darenmalfait/nerdfishui/commit/d6b8334d0b661c8fbcd3c9c069b1bf49f378bf91)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add icon property
+  to combobox items
 
 ## 2.2.12
 
 ### Patch Changes
 
-- [`f15a473`](https://github.com/darenmalfait/nerdfishui/commit/f15a4731532f7264bccdbfb165c918d34bfa619e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add button press animation
+- [`f15a473`](https://github.com/darenmalfait/nerdfishui/commit/f15a4731532f7264bccdbfb165c918d34bfa619e)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add button press
+  animation
 
 ## 2.2.11
 
 ### Patch Changes
 
-- [`d357351`](https://github.com/darenmalfait/nerdfishui/commit/d3573518f8e355f108de0c8d9dda5744828d6f20) Thanks [@darenmalfait](https://github.com/darenmalfait)! - remove shadow from navigation list item
+- [`d357351`](https://github.com/darenmalfait/nerdfishui/commit/d3573518f8e355f108de0c8d9dda5744828d6f20)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - remove shadow from
+  navigation list item
 
 ## 2.2.10
 
 ### Patch Changes
 
-- [`05fc899`](https://github.com/darenmalfait/nerdfishui/commit/05fc89983580d09fcb9d2d33e0150162725beab8) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix card colors
+- [`05fc899`](https://github.com/darenmalfait/nerdfishui/commit/05fc89983580d09fcb9d2d33e0150162725beab8)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix card colors
 
 ## 2.2.9
 
 ### Patch Changes
 
-- [`2c4e5df`](https://github.com/darenmalfait/nerdfishui/commit/2c4e5df479a33f258289c29977cb1979c0541318) Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce overall roundness
+- [`2c4e5df`](https://github.com/darenmalfait/nerdfishui/commit/2c4e5df479a33f258289c29977cb1979c0541318)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce overall
+  roundness
 
 ## 2.2.8
 
 ### Patch Changes
 
-- [`4489e21`](https://github.com/darenmalfait/nerdfishui/commit/4489e216d83d06f7777efef9be9ea1b9c39bd2b9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor card styling tweaks
+- [`4489e21`](https://github.com/darenmalfait/nerdfishui/commit/4489e216d83d06f7777efef9be9ea1b9c39bd2b9)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor card styling
+  tweaks
 
-- [`cc8b2b5`](https://github.com/darenmalfait/nerdfishui/commit/cc8b2b5d2d08c97665bf7a857b9ac674bb8b80bf) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Minor navigation list tweaks
+- [`cc8b2b5`](https://github.com/darenmalfait/nerdfishui/commit/cc8b2b5d2d08c97665bf7a857b9ac674bb8b80bf)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - Minor navigation
+  list tweaks
 
 ## 2.2.7
 
 ### Patch Changes
 
-- [`59cc461`](https://github.com/darenmalfait/nerdfishui/commit/59cc461a1dfdcb0a883ff6cba43d0474826000f4) Thanks [@darenmalfait](https://github.com/darenmalfait)! - table: minor layout tweaks
+- [`59cc461`](https://github.com/darenmalfait/nerdfishui/commit/59cc461a1dfdcb0a883ff6cba43d0474826000f4)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - table: minor layout
+  tweaks
 
 ## 2.2.6
 
 ### Patch Changes
 
-- [`094b929`](https://github.com/darenmalfait/nerdfishui/commit/094b9298c51341e25ccaa7529f53c4b132a5d3c6) Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce toggle border radius
+- [`094b929`](https://github.com/darenmalfait/nerdfishui/commit/094b9298c51341e25ccaa7529f53c4b132a5d3c6)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce toggle
+  border radius
 
 ## 2.2.5
 
 ### Patch Changes
 
-- [`ef13c0c`](https://github.com/darenmalfait/nerdfishui/commit/ef13c0c53a5e2db8685b98dbe5c8dc9c402e62e2) Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce tab list border radius
+- [`ef13c0c`](https://github.com/darenmalfait/nerdfishui/commit/ef13c0c53a5e2db8685b98dbe5c8dc9c402e62e2)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - reduce tab list
+  border radius
 
-- [`6a4b4c7`](https://github.com/darenmalfait/nerdfishui/commit/6a4b4c7e259f5640d9a7c9e6d21d45259ff91abe) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase calendar selected day contrast
+- [`6a4b4c7`](https://github.com/darenmalfait/nerdfishui/commit/6a4b4c7e259f5640d9a7c9e6d21d45259ff91abe)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase calendar
+  selected day contrast
 
 ## 2.2.4
 
 ### Patch Changes
 
-- [`836d555`](https://github.com/darenmalfait/nerdfishui/commit/836d555ae7144213bdbf39298bae780e91eae186) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve calendar dropdown styling
+- [`836d555`](https://github.com/darenmalfait/nerdfishui/commit/836d555ae7144213bdbf39298bae780e91eae186)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve calendar
+  dropdown styling
 
-- [`836d555`](https://github.com/darenmalfait/nerdfishui/commit/836d555ae7144213bdbf39298bae780e91eae186) Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor layout tweaks
+- [`836d555`](https://github.com/darenmalfait/nerdfishui/commit/836d555ae7144213bdbf39298bae780e91eae186)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - minor layout tweaks
 
 ## 2.2.3
 
 ### Patch Changes
 
-- [`48c8b84`](https://github.com/darenmalfait/nerdfishui/commit/48c8b84ba2623d12282ea1e3298ec0468badcab4) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase button border radius
+- [`48c8b84`](https://github.com/darenmalfait/nerdfishui/commit/48c8b84ba2623d12282ea1e3298ec0468badcab4)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase button
+  border radius
 
-- [`92a0baf`](https://github.com/darenmalfait/nerdfishui/commit/92a0bafc32398b1ec55e445486e5bd8aa5695d4e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - introduce new shadow config
+- [`92a0baf`](https://github.com/darenmalfait/nerdfishui/commit/92a0bafc32398b1ec55e445486e5bd8aa5695d4e)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - introduce new
+  shadow config
 
-- [`694b743`](https://github.com/darenmalfait/nerdfishui/commit/694b743555dd30dd03e7ca0c0e9fdbdba40b5faa) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update card layout
+- [`694b743`](https://github.com/darenmalfait/nerdfishui/commit/694b743555dd30dd03e7ca0c0e9fdbdba40b5faa)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - update card layout
 
 ## 2.2.2
 
 ### Patch Changes
 
-- [`0fc29ef`](https://github.com/darenmalfait/nerdfishui/commit/0fc29ef086da08d0ea81289ed3abaaa2d4126343) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update navigation list styling
+- [`0fc29ef`](https://github.com/darenmalfait/nerdfishui/commit/0fc29ef086da08d0ea81289ed3abaaa2d4126343)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - update navigation
+  list styling
 
 ## 2.2.1
 
 ### Patch Changes
 
-- [`72165ff`](https://github.com/darenmalfait/nerdfishui/commit/72165ff58063ed346ab75331de7dc944265f4cc7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new button sizes
+- [`72165ff`](https://github.com/darenmalfait/nerdfishui/commit/72165ff58063ed346ab75331de7dc944265f4cc7)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new button
+  sizes
 
 ## 2.2.0
 
 ### Minor Changes
 
-- [`5000b38`](https://github.com/darenmalfait/nerdfishui/commit/5000b3844fda8c1f41721d172bb9d7f469bcd294) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new color utils
+- [`5000b38`](https://github.com/darenmalfait/nerdfishui/commit/5000b3844fda8c1f41721d172bb9d7f469bcd294)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new color utils
 
-- [`33eb9b4`](https://github.com/darenmalfait/nerdfishui/commit/33eb9b4ce962a0981932e308b0eb636124a8e00c) Thanks [@darenmalfait](https://github.com/darenmalfait)! - new radio-group component
+- [`33eb9b4`](https://github.com/darenmalfait/nerdfishui/commit/33eb9b4ce962a0981932e308b0eb636124a8e00c)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - new radio-group
+  component
 
-- [`1be63c7`](https://github.com/darenmalfait/nerdfishui/commit/1be63c7d30429c53db14907cd7f9fab95897e9c6) Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve multi-select
+- [`1be63c7`](https://github.com/darenmalfait/nerdfishui/commit/1be63c7d30429c53db14907cd7f9fab95897e9c6)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - improve
+  multi-select
 
 ### Patch Changes
 
-- Updated dependencies [[`5000b38`](https://github.com/darenmalfait/nerdfishui/commit/5000b3844fda8c1f41721d172bb9d7f469bcd294)]:
+- Updated dependencies
+  [[`5000b38`](https://github.com/darenmalfait/nerdfishui/commit/5000b3844fda8c1f41721d172bb9d7f469bcd294)]:
   - @nerdfish/utils@1.3.0
 
 ## 2.1.7
 
 ### Patch Changes
 
-- [`70cce8c`](https://github.com/darenmalfait/nerdfishui/commit/70cce8c53d6cef43ea8cd90a2b86dc5d7c30bde7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(popover): remove portal form popover
+- [`70cce8c`](https://github.com/darenmalfait/nerdfishui/commit/70cce8c53d6cef43ea8cd90a2b86dc5d7c30bde7)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(popover):
+  remove portal form popover
 
 ## 2.1.6
 
 ### Patch Changes
 
-- [`68ec060`](https://github.com/darenmalfait/nerdfishui/commit/68ec060afb846aeec2cf1ebdf08792e06a50f5e1) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(dropdown): improve search
+- [`68ec060`](https://github.com/darenmalfait/nerdfishui/commit/68ec060afb846aeec2cf1ebdf08792e06a50f5e1)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(dropdown):
+  improve search
 
 ## 2.1.5
 
 ### Patch Changes
 
-- [`68372e8`](https://github.com/darenmalfait/nerdfishui/commit/68372e8c2d7ad0469b42aaafa7d907a7b260d811) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-select): add scrollarea to content
+- [`68372e8`](https://github.com/darenmalfait/nerdfishui/commit/68372e8c2d7ad0469b42aaafa7d907a7b260d811)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-select):
+  add scrollarea to content
 
 ## 2.1.4
 
 ### Patch Changes
 
-- [`81c00ad`](https://github.com/darenmalfait/nerdfishui/commit/81c00ada790958d12960f5c464b661a2b3871d8a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox): add scroll area
+- [`81c00ad`](https://github.com/darenmalfait/nerdfishui/commit/81c00ada790958d12960f5c464b661a2b3871d8a)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox): add
+  scroll area
 
-- [#58](https://github.com/darenmalfait/nerdfishui/pull/58) [`078887c`](https://github.com/darenmalfait/nerdfishui/commit/078887cb73592e2c77fc2040c3cf58720185c29a) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update all dependencies
+- [#58](https://github.com/darenmalfait/nerdfishui/pull/58)
+  [`078887c`](https://github.com/darenmalfait/nerdfishui/commit/078887cb73592e2c77fc2040c3cf58720185c29a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update
+  all dependencies
 
-- Updated dependencies [[`078887c`](https://github.com/darenmalfait/nerdfishui/commit/078887cb73592e2c77fc2040c3cf58720185c29a)]:
+- Updated dependencies
+  [[`078887c`](https://github.com/darenmalfait/nerdfishui/commit/078887cb73592e2c77fc2040c3cf58720185c29a)]:
   - @nerdfish/utils@1.2.1
 
 ## 2.1.3
 
 ### Patch Changes
 
-- [`1927c92`](https://github.com/darenmalfait/nerdfishui/commit/1927c92cb9f87cbd998da96e76375a791269fb2d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-select): fix item spacing
+- [`1927c92`](https://github.com/darenmalfait/nerdfishui/commit/1927c92cb9f87cbd998da96e76375a791269fb2d)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-select):
+  fix item spacing
 
-- Updated dependencies [[`b1be040`](https://github.com/darenmalfait/nerdfishui/commit/b1be04052b5d835f610d950d78f614f00fe4e3c0)]:
+- Updated dependencies
+  [[`b1be040`](https://github.com/darenmalfait/nerdfishui/commit/b1be04052b5d835f610d950d78f614f00fe4e3c0)]:
   - @nerdfish/utils@1.2.0
 
 ## 2.1.2
 
 ### Patch Changes
 
-- [`8496112`](https://github.com/darenmalfait/nerdfishui/commit/849611225c789e9072c5d68d7b75393fc1eaf87b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(datepicker): update styling
+- [`8496112`](https://github.com/darenmalfait/nerdfishui/commit/849611225c789e9072c5d68d7b75393fc1eaf87b)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(datepicker):
+  update styling
 
 ## 2.1.1
 
 ### Patch Changes
 
-- [`1a35ea5`](https://github.com/darenmalfait/nerdfishui/commit/1a35ea5ff0e79fbd03d88f7850cd8a8683f8cb62) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix Sheet title color
+- [`1a35ea5`](https://github.com/darenmalfait/nerdfishui/commit/1a35ea5ff0e79fbd03d88f7850cd8a8683f8cb62)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix Sheet title
+  color
 
-- [`4c6fa9d`](https://github.com/darenmalfait/nerdfishui/commit/4c6fa9de6bab37b4d67d69d65590ed8c065793c7) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix multi-select text color
+- [`4c6fa9d`](https://github.com/darenmalfait/nerdfishui/commit/4c6fa9de6bab37b4d67d69d65590ed8c065793c7)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix multi-select
+  text color
 
-- [`ff2a7ec`](https://github.com/darenmalfait/nerdfishui/commit/ff2a7ecc6f26182a5d68c7d9400b371196618fb3) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix calendar outside of month text contrast
+- [`ff2a7ec`](https://github.com/darenmalfait/nerdfishui/commit/ff2a7ecc6f26182a5d68c7d9400b371196618fb3)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix calendar
+  outside of month text contrast
 
 ## 2.1.0
 
 ### Minor Changes
 
-- [`ae3bb43`](https://github.com/darenmalfait/nerdfishui/commit/ae3bb43141e35c0d0d04537f61be9a6f756170f9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add success style to button
+- [`ae3bb43`](https://github.com/darenmalfait/nerdfishui/commit/ae3bb43141e35c0d0d04537f61be9a6f756170f9)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add success style
+  to button
 
 ## 2.0.0
 
 ### Major Changes
 
-- [`184507c`](https://github.com/darenmalfait/nerdfishui/commit/184507cc7a2ea17aa94735a3924bfa10b50fde55) Thanks [@darenmalfait](https://github.com/darenmalfait)! - New button styles
+- [`184507c`](https://github.com/darenmalfait/nerdfishui/commit/184507cc7a2ea17aa94735a3924bfa10b50fde55)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - New button styles
 
 ### Patch Changes
 
-- [`1485459`](https://github.com/darenmalfait/nerdfishui/commit/14854591e491523642d51e5cdaa97770ab8a7cb4) Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase calendar inactive cells contrast
+- [`1485459`](https://github.com/darenmalfait/nerdfishui/commit/14854591e491523642d51e5cdaa97770ab8a7cb4)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - increase calendar
+  inactive cells contrast
 
-- [`fac2f0c`](https://github.com/darenmalfait/nerdfishui/commit/fac2f0c6e8e7edde8e62adb8e5ee1905bfe4475e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - set datepicker to input styling
+- [`fac2f0c`](https://github.com/darenmalfait/nerdfishui/commit/fac2f0c6e8e7edde8e62adb8e5ee1905bfe4475e)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - set datepicker to
+  input styling
 
-- [`af4477c`](https://github.com/darenmalfait/nerdfishui/commit/af4477c227e2ec90ec838a64204cce8da8adfa92) Thanks [@darenmalfait](https://github.com/darenmalfait)! - multiselect(fix): fallback to default badge color when no color provided
+- [`af4477c`](https://github.com/darenmalfait/nerdfishui/commit/af4477c227e2ec90ec838a64204cce8da8adfa92)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - multiselect(fix):
+  fallback to default badge color when no color provided
 
-- [`8467891`](https://github.com/darenmalfait/nerdfishui/commit/84678916c92aadd1f0734bd877ac25ee6fc9f729) Thanks [@darenmalfait](https://github.com/darenmalfait)! - set multi-select to input styling
+- [`8467891`](https://github.com/darenmalfait/nerdfishui/commit/84678916c92aadd1f0734bd877ac25ee6fc9f729)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - set multi-select to
+  input styling
 
 ## 1.5.0
 
 ### Minor Changes
 
-- [`f42c11c`](https://github.com/darenmalfait/nerdfishui/commit/f42c11cff80969a165a4848176c6830c754b8149) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add multi-select component
+- [`f42c11c`](https://github.com/darenmalfait/nerdfishui/commit/f42c11cff80969a165a4848176c6830c754b8149)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add multi-select
+  component
 
 ### Patch Changes
 
-- [`8746b2d`](https://github.com/darenmalfait/nerdfishui/commit/8746b2d17e6c85f65e7ad7913add8cbc83103aa9) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-email): pressing spacebar does not brake the entered text anymore
+- [`8746b2d`](https://github.com/darenmalfait/nerdfishui/commit/8746b2d17e6c85f65e7ad7913add8cbc83103aa9)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(multi-email):
+  pressing spacebar does not brake the entered text anymore
 
-- [`1f8a7f8`](https://github.com/darenmalfait/nerdfishui/commit/1f8a7f8ff35d53e92ef7288bcc66f17b0d68b893) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(switch): add background color
+- [`1f8a7f8`](https://github.com/darenmalfait/nerdfishui/commit/1f8a7f8ff35d53e92ef7288bcc66f17b0d68b893)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(switch): add
+  background color
 
-- [#49](https://github.com/darenmalfait/nerdfishui/pull/49) [`16180d0`](https://github.com/darenmalfait/nerdfishui/commit/16180d0501bd2b716fb23fc23d018fae2afe7c11) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update all dependencies
+- [#49](https://github.com/darenmalfait/nerdfishui/pull/49)
+  [`16180d0`](https://github.com/darenmalfait/nerdfishui/commit/16180d0501bd2b716fb23fc23d018fae2afe7c11)
+  Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update
+  all dependencies
 
-- Updated dependencies [[`16180d0`](https://github.com/darenmalfait/nerdfishui/commit/16180d0501bd2b716fb23fc23d018fae2afe7c11)]:
+- Updated dependencies
+  [[`16180d0`](https://github.com/darenmalfait/nerdfishui/commit/16180d0501bd2b716fb23fc23d018fae2afe7c11)]:
   - @nerdfish/utils@1.1.1
 
 ## 1.4.2
 
 ### Patch Changes
 
-- [`8173019`](https://github.com/darenmalfait/nerdfishui/commit/81730195e8e2e0610376f9437884d52ebfb2fa0e) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add missing reference on textarea
+- [`8173019`](https://github.com/darenmalfait/nerdfishui/commit/81730195e8e2e0610376f9437884d52ebfb2fa0e)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add missing
+  reference on textarea
 
 ## 1.4.1
 
 ### Patch Changes
 
-- [`731cce8`](https://github.com/darenmalfait/nerdfishui/commit/731cce8a16e2d593c556841a7811808ee890f6ea) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix dialog and sheet interference
+- [`731cce8`](https://github.com/darenmalfait/nerdfishui/commit/731cce8a16e2d593c556841a7811808ee890f6ea)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix dialog and
+  sheet interference
 
 ## 1.4.0
 
 ### Minor Changes
 
-- [`bfb353d`](https://github.com/darenmalfait/nerdfishui/commit/bfb353d6690c1fa8246eb50813e49333accbb548) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add Tooltip component
+- [`bfb353d`](https://github.com/darenmalfait/nerdfishui/commit/bfb353d6690c1fa8246eb50813e49333accbb548)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add Tooltip
+  component
 
-- [#41](https://github.com/darenmalfait/nerdfishui/pull/41) [`205ed4e`](https://github.com/darenmalfait/nerdfishui/commit/205ed4effd414fdc32965164d7ba1fc64fc02561) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add Card component
+- [#41](https://github.com/darenmalfait/nerdfishui/pull/41)
+  [`205ed4e`](https://github.com/darenmalfait/nerdfishui/commit/205ed4effd414fdc32965164d7ba1fc64fc02561)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add Card component
 
-- [`6ab9323`](https://github.com/darenmalfait/nerdfishui/commit/6ab93239717412963c7f4520f9dc0621d61ba2c0) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new table component
+- [`6ab9323`](https://github.com/darenmalfait/nerdfishui/commit/6ab93239717412963c7f4520f9dc0621d61ba2c0)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new table
+  component
 
-- [#43](https://github.com/darenmalfait/nerdfishui/pull/43) [`bd782e8`](https://github.com/darenmalfait/nerdfishui/commit/bd782e8e31c789d1f1897a5cb3e2917d268f7859) Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add Skeleton component
+- [#43](https://github.com/darenmalfait/nerdfishui/pull/43)
+  [`bd782e8`](https://github.com/darenmalfait/nerdfishui/commit/bd782e8e31c789d1f1897a5cb3e2917d268f7859)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - Add Skeleton
+  component
 
-- [`7c14315`](https://github.com/darenmalfait/nerdfishui/commit/7c14315f6624379fc6ecf772b34f595bf0b36c48) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new sheet component
+- [`7c14315`](https://github.com/darenmalfait/nerdfishui/commit/7c14315f6624379fc6ecf772b34f595bf0b36c48)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new sheet
+  component
 
 ### Patch Changes
 
-- [`5dc3345`](https://github.com/darenmalfait/nerdfishui/commit/5dc334566847adba0e2afbb1ac0b7d50c1a0ed9d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - adjust text color in multiple components
+- [`5dc3345`](https://github.com/darenmalfait/nerdfishui/commit/5dc334566847adba0e2afbb1ac0b7d50c1a0ed9d)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - adjust text color
+  in multiple components
 
 ## 1.3.1
 
 ### Patch Changes
 
-- [`a83e751`](https://github.com/darenmalfait/nerdfishui/commit/a83e751d20eb656da8ae99b49173ed7f384f665f) Thanks [@darenmalfait](https://github.com/darenmalfait)! - calendar: remove border on range selection
+- [`a83e751`](https://github.com/darenmalfait/nerdfishui/commit/a83e751d20eb656da8ae99b49173ed7f384f665f)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - calendar: remove
+  border on range selection
 
 ## 1.3.0
 
 ### Minor Changes
 
-- [`4bee241`](https://github.com/darenmalfait/nerdfishui/commit/4bee2417318c7e70006fe9bc45133c7e1240a15b) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add multi-email component and util function
+- [`4bee241`](https://github.com/darenmalfait/nerdfishui/commit/4bee2417318c7e70006fe9bc45133c7e1240a15b)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add multi-email
+  component and util function
 
 ### Patch Changes
 
-- [`ab20113`](https://github.com/darenmalfait/nerdfishui/commit/ab20113002b72ce5cb50997d628cd83d7c8992a5) Thanks [@darenmalfait](https://github.com/darenmalfait)! - calendar: change active today styling
+- [`ab20113`](https://github.com/darenmalfait/nerdfishui/commit/ab20113002b72ce5cb50997d628cd83d7c8992a5)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - calendar: change
+  active today styling
 
-- Updated dependencies [[`4bee241`](https://github.com/darenmalfait/nerdfishui/commit/4bee2417318c7e70006fe9bc45133c7e1240a15b)]:
+- Updated dependencies
+  [[`4bee241`](https://github.com/darenmalfait/nerdfishui/commit/4bee2417318c7e70006fe9bc45133c7e1240a15b)]:
   - @nerdfish/utils@1.1.0
 
 ## 1.2.6
 
 ### Patch Changes
 
-- [`5a67110`](https://github.com/darenmalfait/nerdfishui/commit/5a67110ea8bae51e7f282cb906d9fcb5e8a7397d) Thanks [@darenmalfait](https://github.com/darenmalfait)! - update calendar styling
+- [`5a67110`](https://github.com/darenmalfait/nerdfishui/commit/5a67110ea8bae51e7f282cb906d9fcb5e8a7397d)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - update calendar
+  styling
 
 ## 1.2.5
 
 ### Patch Changes
 
-- [`a4d7d65`](https://github.com/darenmalfait/nerdfishui/commit/a4d7d6544dd786a9abc671211ecb06b426fc51a8) Thanks [@darenmalfait](https://github.com/darenmalfait)! - datepicker: improve styling
+- [`a4d7d65`](https://github.com/darenmalfait/nerdfishui/commit/a4d7d6544dd786a9abc671211ecb06b426fc51a8)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - datepicker: improve
+  styling
 
 ## 1.2.4
 
 ### Patch Changes
 
-- [`f6f3532`](https://github.com/darenmalfait/nerdfishui/commit/f6f35320ec68d471cd6947f6e0f8a4d1997daa36) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix broken package
+- [`f6f3532`](https://github.com/darenmalfait/nerdfishui/commit/f6f35320ec68d471cd6947f6e0f8a4d1997daa36)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix broken package
 
 ## 1.2.3
 
 ### Patch Changes
 
-- [`6171305`](https://github.com/darenmalfait/nerdfishui/commit/6171305cb073899900965ecdb1e59d0ff5125918) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add defaultSelected prop to datepicker
+- [`6171305`](https://github.com/darenmalfait/nerdfishui/commit/6171305cb073899900965ecdb1e59d0ff5125918)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add defaultSelected
+  prop to datepicker
 
 ## 1.2.2
 
 ### Patch Changes
 
-- [`c74b935`](https://github.com/darenmalfait/nerdfishui/commit/c74b935cbb3282ac7887b19d0894142260c1ad3f) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add hidden input field for value storage
+- [`c74b935`](https://github.com/darenmalfait/nerdfishui/commit/c74b935cbb3282ac7887b19d0894142260c1ad3f)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add hidden input
+  field for value storage
 
 ## 1.2.1
 
 ### Patch Changes
 
-- [`bfbaf79`](https://github.com/darenmalfait/nerdfishui/commit/bfbaf7930803e21b52c5c2cbf4d936af2c39b5fb) Thanks [@darenmalfait](https://github.com/darenmalfait)! - clicking the datepicker should not submit the form
+- [`bfbaf79`](https://github.com/darenmalfait/nerdfishui/commit/bfbaf7930803e21b52c5c2cbf4d936af2c39b5fb)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - clicking the
+  datepicker should not submit the form
 
 ## 1.2.0
 
 ### Minor Changes
 
-- [`c92c74d`](https://github.com/darenmalfait/nerdfishui/commit/c92c74df5e7533ea56297d4f461c50f003b30630) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add datepicker component
+- [`c92c74d`](https://github.com/darenmalfait/nerdfishui/commit/c92c74df5e7533ea56297d4f461c50f003b30630)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add datepicker
+  component
 
-- [`5a4969a`](https://github.com/darenmalfait/nerdfishui/commit/5a4969a5b3b7b1052858e516e4ecc80723ede1b3) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new badge component
+- [`5a4969a`](https://github.com/darenmalfait/nerdfishui/commit/5a4969a5b3b7b1052858e516e4ecc80723ede1b3)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add new badge
+  component
 
 ### Patch Changes
 
-- [`a2b0a32`](https://github.com/darenmalfait/nerdfishui/commit/a2b0a32b70d29d97a655af4638bbbc365c96c39a) Thanks [@darenmalfait](https://github.com/darenmalfait)! - make combobox controllable
+- [`a2b0a32`](https://github.com/darenmalfait/nerdfishui/commit/a2b0a32b70d29d97a655af4638bbbc365c96c39a)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - make combobox
+  controllable
 
 ## 1.1.0
 
 ### Minor Changes
 
-- [`3d4c8ef`](https://github.com/darenmalfait/nerdfishui/commit/3d4c8ef95e497cdde332771d4e7e2bb70243e5c3) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add collapsible component
+- [`3d4c8ef`](https://github.com/darenmalfait/nerdfishui/commit/3d4c8ef95e497cdde332771d4e7e2bb70243e5c3)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add collapsible
+  component
 
 ### Patch Changes
 
-- [#23](https://github.com/darenmalfait/nerdfishui/pull/23) [`453c264`](https://github.com/darenmalfait/nerdfishui/commit/453c2640aa6b6450368bc44d3658c1a197be2937) Thanks [@renovate](https://github.com/apps/renovate)! - update dependencies
+- [#23](https://github.com/darenmalfait/nerdfishui/pull/23)
+  [`453c264`](https://github.com/darenmalfait/nerdfishui/commit/453c2640aa6b6450368bc44d3658c1a197be2937)
+  Thanks [@renovate](https://github.com/apps/renovate)! - update dependencies
 
-- [#24](https://github.com/darenmalfait/nerdfishui/pull/24) [`9c73189`](https://github.com/darenmalfait/nerdfishui/commit/9c7318959dfd3a0dc3b932e01610d0f3b48933fc) Thanks [@darenmalfait](https://github.com/darenmalfait)! - better align icon in Alert component
+- [#24](https://github.com/darenmalfait/nerdfishui/pull/24)
+  [`9c73189`](https://github.com/darenmalfait/nerdfishui/commit/9c7318959dfd3a0dc3b932e01610d0f3b48933fc)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - better align icon
+  in Alert component
 
-- Updated dependencies [[`453c264`](https://github.com/darenmalfait/nerdfishui/commit/453c2640aa6b6450368bc44d3658c1a197be2937)]:
+- Updated dependencies
+  [[`453c264`](https://github.com/darenmalfait/nerdfishui/commit/453c2640aa6b6450368bc44d3658c1a197be2937)]:
   - @nerdfish/utils@1.0.1
 
 ## 1.0.5
 
 ### Patch Changes
 
-- [`090a5d6`](https://github.com/darenmalfait/nerdfishui/commit/090a5d6cc79f8a7c9491878ba9547f657991c537) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add missing props to combobox
+- [`090a5d6`](https://github.com/darenmalfait/nerdfishui/commit/090a5d6cc79f8a7c9491878ba9547f657991c537)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add missing props
+  to combobox
 
 ## 1.0.4
 
 ### Patch Changes
 
-- [`0f86c47`](https://github.com/darenmalfait/nerdfishui/commit/0f86c47c3171276a5e3114475f04f19ac895cfc0) Thanks [@darenmalfait](https://github.com/darenmalfait)! - combobox: send correct value onChange
+- [`0f86c47`](https://github.com/darenmalfait/nerdfishui/commit/0f86c47c3171276a5e3114475f04f19ac895cfc0)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - combobox: send
+  correct value onChange
 
 ## 1.0.3
 
 ### Patch Changes
 
-- [`f8252f0`](https://github.com/darenmalfait/nerdfishui/commit/f8252f01dd65180f5d536a19d3c308272dbf4c43) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox): add onChange handler
+- [`f8252f0`](https://github.com/darenmalfait/nerdfishui/commit/f8252f01dd65180f5d536a19d3c308272dbf4c43)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox): add
+  onChange handler
 
 ## 1.0.2
 
 ### Patch Changes
 
-- [`ddfe4b0`](https://github.com/darenmalfait/nerdfishui/commit/ddfe4b0e0220add03cdb30254981ca0d9da319bd) Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox): prefer value when provided
+- [`ddfe4b0`](https://github.com/darenmalfait/nerdfishui/commit/ddfe4b0e0220add03cdb30254981ca0d9da319bd)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - fix(combobox):
+  prefer value when provided
 
 ## 1.0.1
 
 ### Patch Changes
 
-- [`44bcfad`](https://github.com/darenmalfait/nerdfishui/commit/44bcfad553be2bdbb33e24819b6fa222f5ed81a2) Thanks [@darenmalfait](https://github.com/darenmalfait)! - add default field props to combobox
+- [`44bcfad`](https://github.com/darenmalfait/nerdfishui/commit/44bcfad553be2bdbb33e24819b6fa222f5ed81a2)
+  Thanks [@darenmalfait](https://github.com/darenmalfait)! - add default field
+  props to combobox

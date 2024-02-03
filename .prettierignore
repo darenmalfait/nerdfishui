@@ -1,0 +1,14 @@
+dist
+node_modules
+.next
+.env*
+build
+.contentlayer
+.changeset
+*.log
+
+pnpm-lock.yaml
+
+!apps/**
+!packages/**
+!tooling/**
