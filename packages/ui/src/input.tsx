@@ -4,6 +4,8 @@ import * as React from 'react'
 import {cva, cx, VariantProps} from '@nerdfish/utils'
 import {AlertCircle} from 'lucide-react'
 
+import {Field} from './field'
+
 const inputVariants = cva(
   cx(
     'placeholder:text-muted w-full rounded-lg bg-transparent outline-none text-left',
@@ -119,20 +121,57 @@ function Description({
 }
 
 function Addon({
-  children,
   className,
   inputSize,
+  addOnLeading,
+  addOnTrailing,
 }: {
-  children: React.ReactNode
+  addOnLeading?: React.ReactNode
+  addOnTrailing?: React.ReactNode
   className?: string
   inputSize?: InputSize
 }) {
+  if (!addOnLeading && !addOnTrailing) return null
+
   return (
-    <div className={cx(addonVariants({size: inputSize}), className)}>
+    <div
+      className={cx(
+        addonVariants({size: inputSize}),
+        {
+          'rounded-l-lg': !!addOnLeading,
+          'rounded-r-lg': !!addOnTrailing,
+        },
+        className,
+      )}
+    >
       <div className="flex flex-col justify-center leading-7">
-        <span className="flex whitespace-nowrap">{children}</span>
+        <span className="flex whitespace-nowrap">
+          {addOnLeading ?? addOnTrailing}
+        </span>
       </div>
     </div>
+  )
+}
+
+function InputIcon({
+  icon: Icon,
+  hasError,
+}: {
+  icon?: React.ElementType
+  hasError?: boolean
+}) {
+  if (hasError) Icon = AlertCircle
+  if (!Icon) return null
+
+  return (
+    <Icon
+      width="20px"
+      height="20px"
+      className={cx(
+        'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0',
+        hasError && 'text-danger',
+      )}
+    />
   )
 }
 
@@ -163,16 +202,7 @@ const RawInput = React.forwardRef<
       <div
         className={cx(className, 'relative flex w-full items-center space-x-2')}
       >
-        {Icon ? (
-          <Icon
-            width="20px"
-            height="20px"
-            className={cx(
-              'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0',
-              hasError && 'text-danger',
-            )}
-          />
-        ) : null}
+        <InputIcon icon={Icon} hasError={hasError} />
         <textarea
           data-slot="control"
           {...(rawInputProps as React.ComponentPropsWithoutRef<'textarea'>)}
@@ -192,11 +222,7 @@ const RawInput = React.forwardRef<
       <div
         className={cx(className, 'relative flex w-full items-center shadow-sm')}
       >
-        {addOnLeading ? (
-          <Addon inputSize={inputSize} className="rounded-l-lg">
-            {addOnLeading}
-          </Addon>
-        ) : null}
+        <Addon addOnLeading={addOnLeading} inputSize={inputSize} />
         <input
           data-slot="control"
           type={type}
@@ -208,23 +234,8 @@ const RawInput = React.forwardRef<
           )}
           ref={ref as React.ForwardedRef<HTMLInputElement>}
         />
-        {Icon && !hasError ? (
-          <Icon
-            width="20px"
-            height="20px"
-            className="text-muted absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0"
-          />
-        ) : null}
-        {hasError ? (
-          <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
-            <AlertCircle className="text-danger size-5" aria-hidden="true" />
-          </div>
-        ) : null}
-        {addOnTrailing ? (
-          <Addon inputSize={inputSize} className="rounded-r-lg">
-            {addOnTrailing}
-          </Addon>
-        ) : null}
+        <InputIcon icon={Icon} hasError={hasError} />
+        <Addon addOnTrailing={addOnTrailing} inputSize={inputSize} />
       </div>
       {children ? <div className="flex shrink-0">{children}</div> : null}
     </div>
@@ -250,52 +261,6 @@ function InputError({
     />
   )
 }
-
-const Field = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithRef<'div'> & {
-    htmlFor: string
-    label?: string
-    error?: string | null
-    errorId?: string
-    description?: React.ReactNode
-    descriptionId?: string
-  }
->(function Field(
-  {
-    children,
-    className,
-    description,
-    descriptionId,
-    error,
-    errorId,
-    htmlFor,
-    label,
-    ...props
-  },
-  ref,
-) {
-  return (
-    <div className={cx('w-full', className)} {...props} ref={ref}>
-      {label ? (
-        <Label htmlFor={htmlFor} className="mb-2">
-          {label}
-        </Label>
-      ) : null}
-      {children}
-      {description ? (
-        <Description className="mt-3" id={descriptionId}>
-          {description}
-        </Description>
-      ) : null}
-      {error ? (
-        <InputError className="mt-3" id={errorId}>
-          {error}
-        </InputError>
-      ) : null}
-    </div>
-  )
-})
 
 const Input = React.forwardRef<
   HTMLInputElement | HTMLTextAreaElement,
@@ -337,7 +302,6 @@ const Input = React.forwardRef<
 })
 
 export {
-  Field,
   FormHelperText,
   getInputClassName,
   Input,

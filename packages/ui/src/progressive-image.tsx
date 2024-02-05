@@ -8,6 +8,25 @@ type ResponsiveProps = {
   size: {width: number; height?: number}
 }
 
+function ProgressiveImagePlaceholder({
+  placeholder,
+  visible,
+}: {
+  placeholder?: string
+  visible: boolean
+}) {
+  if (!placeholder) return null
+
+  return (
+    <div
+      className={cx(
+        'absolute inset-0 h-full w-full',
+        !visible && 'backdrop-blur-xl',
+      )}
+    />
+  )
+}
+
 const ProgressiveImage = React.forwardRef<
   HTMLImageElement,
   React.ComponentPropsWithRef<'div'> & {
@@ -79,14 +98,10 @@ const ProgressiveImage = React.forwardRef<
           )}
           alt={img.props.alt}
         />
-        {placeholder ? (
-          <div
-            className={cx(
-              'absolute inset-0 h-full w-full',
-              !visible && 'backdrop-blur-xl',
-            )}
-          />
-        ) : null}
+        <ProgressiveImagePlaceholder
+          placeholder={placeholder}
+          visible={visible}
+        />
         {imgElement}
         <noscript>{img}</noscript>
       </div>
