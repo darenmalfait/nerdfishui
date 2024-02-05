@@ -15,14 +15,16 @@ import {Popover} from './popover'
 type Preset = {value: string; label: string}
 
 function Presets({
-  presets,
+  presets = [],
   onChange,
   className,
 }: {
-  presets: Preset[]
+  presets?: Preset[]
   onChange?: (date: Date) => void
   className?: string
 }) {
+  if (!presets.length) return null
+
   return (
     <div className={cx('flex max-w-[250px] flex-wrap px-3', className)}>
       {presets.map(({value, label}) => (
@@ -36,6 +38,34 @@ function Presets({
         </button>
       ))}
     </div>
+  )
+}
+
+function DatePickerTrigger({
+  children,
+  selected,
+  className,
+  placeholder,
+}: {
+  children?: React.ReactNode
+  selected?: Date
+  className?: string
+  placeholder?: string
+}) {
+  if (children) return children
+
+  return (
+    <Button
+      variant="outline"
+      className={cx(
+        'w-[280px] justify-start text-left font-normal',
+        !selected && 'text-muted',
+        className,
+      )}
+    >
+      <CalendarIcon className="mr-2 size-4" />
+      <span>{selected ? format(selected, 'PPP') : placeholder}</span>
+    </Button>
   )
 }
 
@@ -66,21 +96,13 @@ function DatePicker({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        {children ? (
-          children
-        ) : (
-          <Button
-            variant="outline"
-            className={cx(
-              'w-[280px] justify-start text-left font-normal',
-              !selected && 'text-muted',
-              className,
-            )}
-          >
-            <CalendarIcon className="mr-2 size-4" />
-            {selected ? format(selected, 'PPP') : <span>{placeholder}</span>}
-          </Button>
-        )}
+        <DatePickerTrigger
+          selected={selected}
+          className={className}
+          placeholder={placeholder}
+        >
+          {children}
+        </DatePickerTrigger>
       </PopoverTrigger>
       <Popover.Content className="w-auto p-0">
         <Calendar
@@ -93,11 +115,51 @@ function DatePicker({
           toYear={toYear}
           onSelect={onSelect}
         />
-        {presets?.length ? (
-          <Presets presets={presets} className="py-3" onChange={onSelect} />
-        ) : null}
+        <Presets presets={presets} className="py-3" onChange={onSelect} />
       </Popover.Content>
     </Popover>
+  )
+}
+
+function DateRangePickerTrigger({
+  children,
+  selected,
+  className,
+  placeholder,
+}: {
+  children?: React.ReactNode
+  className?: string
+  selected?: DateRange
+  placeholder?: string
+}) {
+  if (children) return children
+
+  return (
+    <Button
+      id="date"
+      variant="outline"
+      className={cx(
+        'w-[300px] justify-start text-left font-normal',
+        !selected && 'text-muted',
+        className,
+      )}
+    >
+      <CalendarIcon className="mr-2 size-4" />
+      <span>
+        {selected?.from ? (
+          selected.to ? (
+            <>
+              {format(selected.from, 'LLL dd, y')} -{' '}
+              {format(selected.to, 'LLL dd, y')}
+            </>
+          ) : (
+            format(selected.from, 'LLL dd, y')
+          )
+        ) : (
+          placeholder
+        )}
+      </span>
+    </Button>
   )
 }
 
@@ -108,42 +170,25 @@ function DateRangePicker({
   children,
   fromYear,
   toYear,
+  placeholder,
   ...props
 }: CalendarProps & {
   selected?: DateRange
   onSelect?: (date: DateRange) => void
   children?: React.ReactNode
+  placeholder?: string
 }) {
   return (
     <div className={cx('grid gap-2', className)}>
       <Popover>
         <PopoverTrigger asChild>
-          {children ? (
-            children
-          ) : (
-            <Button
-              id="date"
-              variant="outline"
-              className={cx(
-                'w-[300px] justify-start text-left font-normal',
-                !selected && 'text-muted',
-              )}
-            >
-              <CalendarIcon className="mr-2 size-4" />
-              {selected?.from ? (
-                selected.to ? (
-                  <>
-                    {format(selected.from, 'LLL dd, y')} -{' '}
-                    {format(selected.to, 'LLL dd, y')}
-                  </>
-                ) : (
-                  format(selected.from, 'LLL dd, y')
-                )
-              ) : (
-                <span>Pick a date</span>
-              )}
-            </Button>
-          )}
+          <DateRangePickerTrigger
+            selected={selected}
+            className={className}
+            placeholder={placeholder}
+          >
+            {children}
+          </DateRangePickerTrigger>
         </PopoverTrigger>
         <Popover.Content className="w-auto p-0" align="start">
           <Calendar

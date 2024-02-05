@@ -3,7 +3,8 @@
 import * as React from 'react'
 import {cx, isEmail as isEmailFn, useControllableState} from '@nerdfish/utils'
 
-import {Field, getInputClassName, InputProps, RawInputProps} from './input'
+import {Field} from './field'
+import {getInputClassName, InputProps, RawInputProps} from './input'
 
 interface RawMultiEmailProps
   extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
@@ -17,6 +18,19 @@ interface RawMultiEmailProps
   validateEmail?: (email: string) => boolean | Promise<boolean>
   delimiter?: string
   spinner?: () => React.ReactNode
+}
+
+function MultiEmailPlaceholder({placeholder}: {placeholder?: string}) {
+  if (!placeholder) return null
+
+  return (
+    <span
+      data-placeholder
+      className="absolute left-[0.5em] top-[0.4em] hidden p-[0.4em]"
+    >
+      {placeholder}
+    </span>
+  )
 }
 
 const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
@@ -265,14 +279,7 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
         }}
       >
         {spinning ? spinner?.() : null}
-        {placeholder ? (
-          <span
-            data-placeholder
-            className="absolute left-[0.5em] top-[0.4em] hidden p-[0.4em]"
-          >
-            {placeholder}
-          </span>
-        ) : null}
+        <MultiEmailPlaceholder placeholder={placeholder} />
         <div
           style={{
             display: 'contents',

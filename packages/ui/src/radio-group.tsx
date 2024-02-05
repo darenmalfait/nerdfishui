@@ -5,7 +5,7 @@ import {cx} from '@nerdfish/utils'
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import {Circle} from 'lucide-react'
 
-import {Field} from './input'
+import {Field} from './field'
 
 const RadioGroupRoot = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,

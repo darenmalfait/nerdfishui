@@ -10,7 +10,6 @@ import {useMDXComponent} from 'next-contentlayer/hooks'
 
 import {NpmCommands} from '../lib/types/unist'
 import {AppDemo} from './app-demo'
-import {Callout} from './callout'
 import {CodeBlockWrapper} from './code-block-wrapper'
 import {ComponentExample} from './component-example'
 import {ComponentSource} from './component-source'
@@ -167,7 +166,6 @@ const components = {
     />
   ),
   Image,
-  Callout,
   ComponentExample,
   ComponentSource,
   CodeBlockWrapper: ({...props}) => (

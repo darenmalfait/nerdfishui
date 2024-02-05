@@ -4,7 +4,8 @@ import * as React from 'react'
 import {cx, roundToNearest15} from '@nerdfish/utils'
 import {AlertCircle, Clock} from 'lucide-react'
 
-import {Field, getInputClassName, InputProps, RawInputProps} from './input'
+import {Field} from './field'
+import {getInputClassName, InputProps, RawInputProps} from './input'
 
 const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
   function RawTimepicker(props, ref) {
@@ -16,6 +17,9 @@ const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
       icon: Icon = Clock,
       ...inputProps
     } = props
+
+    const ItemIcon = hasError ? AlertCircle : Clock
+
     const [value, setValue] = React.useState<string>(
       valueProp?.toString() ??
         defaultValue?.toString() ??
@@ -99,20 +103,17 @@ const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
             </div>
           </div>
         </div>
-        {hasError ? null : (
-          <Icon
-            width="20px"
-            height="20px"
-            className={cx(
-              'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0 text-muted',
-            )}
-          />
-        )}
-        {hasError ? (
-          <div className="absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0">
-            <AlertCircle className="text-danger size-5" aria-hidden="true" />
-          </div>
-        ) : null}
+
+        <ItemIcon
+          width="20px"
+          height="20px"
+          className={cx(
+            'absolute top-0 right-5 z-10 flex h-full items-center justify-center p-0 text-muted',
+            {
+              'text-danger': hasError,
+            },
+          )}
+        />
       </div>
     )
   },

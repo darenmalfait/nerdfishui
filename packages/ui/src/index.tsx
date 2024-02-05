@@ -1,5 +1,4 @@
 'use client'
-
 export * from './accordion'
 export * from './alert-dialog'
 export * from './alert'
@@ -16,6 +15,7 @@ export * from './date-picker'
 export * from './dialog'
 export * from './drawer'
 export * from './dropdown-menu'
+export * from './field'
 export * from './grid'
 export * from './hover-card'
 export * from './indicator'

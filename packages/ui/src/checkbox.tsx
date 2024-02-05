@@ -70,6 +70,16 @@ function RawCheckbox({
   )
 }
 
+function CheckboxError({error, id}: {error?: string | null; id: string}) {
+  if (!error) return null
+
+  return (
+    <p className="text-danger mt-2 text-left text-sm" id={id}>
+      {error}
+    </p>
+  )
+}
+
 const Checkbox = React.forwardRef<
   HTMLInputElement,
   InputProps & ExtractProps<typeof RawCheckbox>
@@ -93,11 +103,7 @@ const Checkbox = React.forwardRef<
         </div>
       </div>
 
-      {error ? (
-        <p className="text-danger mt-2 text-left text-sm" id={errorId}>
-          {error}
-        </p>
-      ) : null}
+      <CheckboxError error={error} id={errorId} />
     </div>
   )
 })

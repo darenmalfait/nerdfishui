@@ -36,6 +36,28 @@ type NavItemProps = React.ComponentPropsWithoutRef<'a'> & {
   as?: React.ElementType
 }
 
+function ItemIcon({
+  icon: Icon,
+  isCollapsed,
+}: {
+  icon?: React.ElementType
+  isCollapsed?: boolean
+}) {
+  if (!Icon) return null
+
+  if (isCollapsed) {
+    return <Icon className="size-4" />
+  }
+
+  return <Icon className="mr-2 size-4" />
+}
+
+function ItemLabel({label, className}: {label?: string; className?: string}) {
+  if (!label) return null
+
+  return <span className={cx('ml-auto', className)}>{label}</span>
+}
+
 function Item<T>({
   as,
   className,
@@ -63,14 +85,14 @@ function Item<T>({
             )}
             {...props}
           >
-            {Icon ? <Icon className="size-4" /> : null}
+            <ItemIcon icon={Icon} isCollapsed={isCollapsed} />
             <span className="sr-only">{title}</span>
           </Link>
         </Tooltip.Trigger>
 
         <Tooltip.Content side="right" className="flex items-center gap-4">
           {title}
-          {label ? <span className="text-muted ml-auto">{label}</span> : null}
+          <ItemLabel label={label} className="text-muted" />
         </Tooltip.Content>
       </Tooltip>
     )
@@ -85,9 +107,9 @@ function Item<T>({
       )}
       {...props}
     >
-      {Icon ? <Icon className="mr-2 size-4" /> : null}
+      <ItemIcon icon={Icon} isCollapsed={isCollapsed} />
       <span className="min-w-0 max-w-full flex-1 truncate">{title}</span>
-      {label ? <span className={cx('ml-auto')}>{label}</span> : null}
+      <ItemLabel label={label} />
     </Link>
   )
 }
@@ -119,14 +141,14 @@ function Title({
               className,
             )}
           >
-            {Icon ? <Icon className="size-4" /> : null}
+            <ItemIcon icon={Icon} isCollapsed={isCollapsed} />
             <span className="sr-only">{title}</span>
           </h2>
         </Tooltip.Trigger>
 
         <Tooltip.Content side="right" className="flex items-center gap-4">
           {title}
-          {label ? <span className="text-muted ml-auto">{label}</span> : null}
+          <ItemLabel label={label} className="text-muted" />
         </Tooltip.Content>
       </Tooltip>
     )
@@ -140,9 +162,9 @@ function Title({
         className,
       )}
     >
-      {Icon ? <Icon className="mr-2 size-4" /> : null}
+      <ItemIcon icon={Icon} isCollapsed={isCollapsed} />
       <span className="min-w-0 max-w-full flex-1 truncate">{title}</span>
-      {label ? <span className={cx('ml-auto')}>{label}</span> : null}
+      <ItemLabel label={label} />
     </h2>
   )
 }

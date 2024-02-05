@@ -58,6 +58,20 @@ const AlertDescription = React.forwardRef<
 ))
 AlertDescription.displayName = 'AlertDescription'
 
+function AlertIcon({
+  variant,
+  hideIcon,
+}: {
+  variant?: VariantProps<typeof alertVariants>['variant']
+  hideIcon?: boolean
+}) {
+  if (hideIcon) return null
+
+  const Icon = IconMap[variant ?? DEFAULT_VARIANT]
+
+  return <Icon className={cx('h-4 w-4')} />
+}
+
 const RawAlert = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithRef<'div'> & {
@@ -80,15 +94,13 @@ const RawAlert = React.forwardRef<
     'Alert: title is deprecated, use <Alert.Title /> instead',
   )
 
-  const Icon = variant ? IconMap[variant] : IconMap[DEFAULT_VARIANT]
-
   return (
     <div
       {...props}
       className={cx(alertVariants({variant}), className)}
       ref={ref}
     >
-      {hideIcon ? null : <Icon className={cx('h-4 w-4')} />}
+      <AlertIcon variant={variant} hideIcon={hideIcon} />
       {children}
       {title ? <AlertTitle>{title}</AlertTitle> : null}
       {description ? <AlertDescription>{description}</AlertDescription> : null}
