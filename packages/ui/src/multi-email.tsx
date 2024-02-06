@@ -1,8 +1,10 @@
+// https://github.com/axisj/react-multi-email/ , but with some modifications
 'use client'
 
 import * as React from 'react'
 import {cx, isEmail as isEmailFn, useControllableState} from '@nerdfish/utils'
 
+import {Badge} from './badge'
 import {Field} from './field'
 import {getInputClassName, InputProps, RawInputProps} from './input'
 
@@ -12,11 +14,17 @@ interface RawMultiEmailProps
   id?: string
   emails?: string[]
   hasError?: boolean
+  allowDisplayName?: boolean
   placeholder?: string
   onChangeInput?: (value: string) => void
   onChange?: (emails: string[]) => void
-  validateEmail?: (email: string) => boolean | Promise<boolean>
+  onBlur?: () => void
+  validateEmail?: (
+    email: string,
+    options?: {allowDisplayName?: boolean},
+  ) => boolean | Promise<boolean>
   delimiter?: string
+  disabled?: boolean
   spinner?: () => React.ReactNode
 }
 
@@ -42,15 +50,17 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
       placeholder = 'Add emails...',
       value: valueProps,
       defaultValue = '',
+      allowDisplayName = true,
       hasError,
       icon: Icon,
       inputSize,
       onChangeInput,
       onChange,
       validateEmail,
-      delimiter = '[ ,;]',
+      delimiter = `[${allowDisplayName ? '' : ' '},;]`,
       spinner,
       onKeyDown,
+      disabled,
       onBlur,
       onKeyUp,
       ...props
@@ -71,115 +81,118 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
 
     const findEmailAddress = React.useCallback(
       async (value: string, isEnter?: boolean) => {
-        async function validateEmails({
-          addEmails,
-          tempValue,
-          arr,
-          isEmail,
-        }: {
-          addEmails: (email: string) => boolean
-          tempValue: string
-          arr: string[]
-          isEmail: (email: string) => boolean | Promise<boolean>
-        }) {
-          const validateResult = isEmail(`${arr[0]}`)
-
-          if (typeof validateResult === 'boolean') {
-            // eslint-disable-next-line max-depth
-            if (validateResult) {
-              addEmails(`${arr.shift()}`)
-            } else if (arr.length === 1) {
-              tempValue = `${arr.shift()}`
-            } else {
-              arr.shift()
-            }
-          } else {
-            setSpinning(true)
-
-            if ((await validateEmail?.(value)) === true) {
-              addEmails(`${arr.shift()}`)
-              setSpinning(false)
-            } else if (arr.length === 1) {
-              tempValue = `${arr.shift()}`
-            } else {
-              arr.shift()
-            }
-          }
-
-          return tempValue
-        }
         const validEmails: string[] = []
-        let tempValue: string = ''
+        let currentInputValue = ''
         const re = new RegExp(delimiter, 'g')
         const isEmail = validateEmail ?? isEmailFn
 
-        const addEmails = (email: string) => {
+        function addEmails(email: string) {
           for (let i = 0, l = emails.length; i < l; i++) {
             if (emails[i] === email) {
               return false
             }
           }
+
           validEmails.push(email)
           return true
         }
 
         if (value !== '') {
           if (re.test(value)) {
-            const splitData = value.split(re).filter(n => {
-              return n !== ''
-            })
+            const setArr = new Set(value.split(re).filter(n => n))
 
-            const setArr = new Set(splitData)
             const arr = [...setArr]
+            const validations: (Promise<boolean> | boolean)[] = []
 
-            const validations: Promise<string>[] = []
-            do {
-              validations.push(
-                validateEmails({
-                  addEmails,
-                  tempValue,
-                  arr,
-                  isEmail,
-                }),
-              )
-            } while (arr.length)
+            while (arr.length) {
+              const validateResult = isEmail(`${arr[0]?.trim()}`)
 
-            await Promise.all(validations)
+              if (typeof validateResult === 'boolean') {
+                // eslint-disable-next-line max-depth
+                if (validateResult) {
+                  addEmails(`${arr.shift()?.trim()}`)
+                } else if (allowDisplayName) {
+                  const validateResultWithDisplayName = isEmail(
+                    `${arr[0]?.trim()}`,
+                    {allowDisplayName},
+                  )
+                  // eslint-disable-next-line max-depth
+                  if (validateResultWithDisplayName) {
+                    // Strip display name from email formatted as such "First Last <first.last@domain.com>"
+                    const email = arr.shift()?.split('<')[1]?.split('>')[0]
+                    addEmails(`${email}`)
+                  } else if (arr.length === 1) {
+                    currentInputValue = `${arr.shift()}`
+                  } else {
+                    arr.shift()
+                  }
+                } else {
+                  currentInputValue = `${arr.shift()}`
+                }
+              } else {
+                setSpinning(true)
+
+                // rewrite this, so there is no await in a loop
+                for (const email of arr) {
+                  if (!validateEmail) return
+                  validations.push(validateEmail(email))
+                }
+              }
+            }
+
+            const results = await Promise.all(validations)
+            results.forEach(result => {
+              if (!!result) {
+                addEmails(`${arr.shift()}`)
+                setSpinning(false)
+              } else if (arr.length === 1) {
+                currentInputValue = `${arr.shift()}`
+              } else {
+                arr.shift()
+              }
+            })
           } else if (isEnter) {
             const validateResult = isEmail(value)
+
             if (typeof validateResult === 'boolean') {
               if (validateResult) {
                 addEmails(value)
+              } else if (allowDisplayName) {
+                const validateResultWithDisplayName = isEmail(value, {
+                  allowDisplayName,
+                })
+                if (validateResultWithDisplayName) {
+                  // Strip display name from email formatted as such "First Last <first.last@domain.com>"
+                  const email = value.split('<')[1]?.split('>')[0]
+                  addEmails(`${email}`)
+                } else {
+                  currentInputValue = value
+                }
               } else {
-                tempValue = value
+                currentInputValue = value
               }
             } else {
-              // handle promise
               setSpinning(true)
               if ((await validateEmail?.(value)) === true) {
                 addEmails(value)
                 setSpinning(false)
               } else {
-                tempValue = value
+                currentInputValue = value
               }
             }
           } else {
-            tempValue = value
+            currentInputValue = value
           }
         }
 
         setEmails([...emails, ...validEmails])
-        setInputValue(tempValue)
+        setInputValue(currentInputValue)
 
-        if (validEmails.length) {
-          onChange?.([...emails, ...validEmails])
-        }
-
-        if (tempValue !== inputValue) {
-          onChangeInput?.(tempValue)
-        }
+        if (validEmails.length) onChange?.([...emails, ...validEmails])
+        if (inputValue !== currentInputValue) onChangeInput?.(currentInputValue)
       },
       [
+        allowDisplayName,
         delimiter,
         emails,
         inputValue,
@@ -194,21 +207,32 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
     const onChangeInputValue = React.useCallback(
       async (value: string) => {
         await findEmailAddress(value)
+        onChangeInput?.(value)
       },
-      [findEmailAddress],
+      [findEmailAddress, onChangeInput],
     )
 
     const removeEmail = React.useCallback(
-      (index: number, isDisabled?: boolean) => {
-        if (isDisabled) {
-          return
-        }
+      (index: number) => {
+        if (disabled) return
 
         const _emails = [...emails.slice(0, index), ...emails.slice(index + 1)]
         setEmails(_emails)
         onChange?.(_emails)
       },
-      [emails, onChange, setEmails],
+      [disabled, emails, onChange, setEmails],
+    )
+
+    const editEmail = React.useCallback(
+      (index: number) => {
+        const toEdit = emails[index]
+        if (disabled ?? !toEdit) return
+
+        removeEmail(index)
+
+        setInputValue(toEdit)
+      },
+      [disabled, emails, removeEmail, setInputValue],
     )
 
     const handleOnKeydown = React.useCallback(
@@ -216,21 +240,19 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
         onKeyDown?.(e)
 
         switch (e.key) {
-          case 'Enter':
-            e.preventDefault()
-            break
           case ' ':
+          case 'Enter':
             e.preventDefault()
             break
           case 'Backspace':
             if (!e.currentTarget.value) {
-              removeEmail(emails.length - 1, false)
+              editEmail(emails.length - 1)
             }
             break
           default:
         }
       },
-      [emails.length, onKeyDown, removeEmail],
+      [emails.length, onKeyDown, editEmail],
     )
 
     const handleOnKeyup = React.useCallback(
@@ -238,9 +260,8 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
         onKeyUp?.(e)
 
         switch (e.key) {
-          case 'Enter':
           case ' ':
-          case 'Backspace':
+          case 'Enter':
             await findEmailAddress(e.currentTarget.value, true)
             break
           default:
@@ -255,6 +276,15 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
       [onChangeInputValue],
     )
 
+    const handleOnBlur = React.useCallback(
+      async (e: React.SyntheticEvent<HTMLInputElement>) => {
+        await findEmailAddress(e.currentTarget.value, true)
+
+        onBlur?.()
+      },
+      [findEmailAddress, onBlur],
+    )
+
     React.useEffect(() => {
       setInputWidth(
         spanRef.current?.offsetWidth ? spanRef.current.offsetWidth + 10 : 10,
@@ -266,6 +296,7 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
         data-slot="control"
         type="button"
         role="textbox"
+        disabled={disabled}
         className={cx(
           getInputClassName(className, hasError, inputSize),
           'h-36 flex justify-start items-center content-start',
@@ -288,16 +319,27 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
           className="-mt-1"
         >
           {emails.map((email: string, index: number) => (
-            <div
+            <Badge
               data-tag
               key={index}
-              className="bg-inverted text-inverted mr-2 mt-1 inline-flex items-center space-x-2 rounded-md px-2 py-1"
+              variant="default"
+              className="mr-2 mt-1 inline-flex items-center"
             >
-              <div data-tag-item>{email}</div>
-              <button data-tag-handle onClick={() => removeEmail(index)}>
+              <button
+                type="button"
+                onClick={() => editEmail(index)}
+                data-tag-item
+              >
+                {email}
+              </button>
+              <button
+                className="hover:bg-primary/10 active:bg-primary/15 ml-2 rounded-md px-2 py-1"
+                data-tag-handle
+                onClick={() => removeEmail(index)}
+              >
                 ×
               </button>
-            </div>
+            </Badge>
           ))}
         </div>
         <span className="-z-1 invisible absolute" ref={spanRef}>
@@ -309,8 +351,10 @@ const RawMultiEmail = React.forwardRef<HTMLInputElement, RawMultiEmailProps>(
           className="mt-1 w-auto border-none bg-transparent py-1 outline-none"
           ref={inputRef}
           type="text"
+          disabled={disabled}
           value={inputValue}
           onChange={handleOnChange}
+          onBlur={handleOnBlur}
           onKeyDown={handleOnKeydown}
           onKeyUp={handleOnKeyup}
         />
