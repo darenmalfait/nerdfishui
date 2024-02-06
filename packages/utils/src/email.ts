@@ -97,7 +97,8 @@ function isFQDN(str: string, options?: IFqdnOptions) {
 export function isEmail(str: string, options?: IEmailOptions) {
   options = {...defaultEmailOptions, ...options}
 
-  if (options.requireDisplayName ?? options.allowDisplayName) {
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- false is a valid value
+  if (options.requireDisplayName || options.allowDisplayName) {
     const displayEmail = str.match(displayName)
     if (displayEmail) {
       str = displayEmail[1] ?? ''
