@@ -1,5 +1,46 @@
 # @nerdfish/ui
 
+## 4.5.0
+
+### Minor Changes
+
+- New `Indicator` component added. Indicator can add a visual status to a component.
+
+  ```tsx
+  <Indicator>
+    <Indicator.Item>
+      <div className="size-4 rounded-full bg-pink-500" />
+    </Indicator.Item>
+    <div className="grid size-32 place-items-center bg-muted">content</div>
+  </Indicator>
+  ```
+
+### Patch Changes
+
+- `Multi-Email` improvements:
+
+  - Added `onBlur` event to `MultiEmail` component
+  - Added emails are now editable by clicking on them
+  - `Backspace` key now edits the last email in the list, instead of deleting it
+  - Some minor styling improvements
+  - Allow `Name <name@domain.com>` to be added as an email. This will be clipped to only the email address when added.
+  - Allow a list of emails to be pasted into the input
+
+- Updated dependency `lucide-react` to `^0.321.0`. ([#137](https://github.com/darenmalfait/nerdfishui/pull/137))
+
+  Updated dependency `@types/node` to `^20.11.16`.
+  Updated dependency `@types/react` to `^18.2.52`.
+  Updated dependency `npm-run-all2` to `^5.0.2`.
+  Updated dependency `postcss-loader` to `^8.1.0`.
+  Updated dependency `vaul` to `^0.9.0`.
+
+- Updated dependency `prettier` to `^3.2.5`. ([#138](https://github.com/darenmalfait/nerdfishui/pull/138))
+
+  Updated dependency `eslint-config-turbo` to `^1.12.2`.
+
+- Updated dependencies [[`079c60a`](https://github.com/darenmalfait/nerdfishui/commit/079c60ada40c4e2cf9bcdae2ebb195fe23f5cc53), [`5d9f43c`](https://github.com/darenmalfait/nerdfishui/commit/5d9f43c9cf7653a0149b20ecb6462c534b941b15)]:
+  - @nerdfish/utils@1.6.1
+
 ## 4.4.0
 
 ### Minor Changes
@@ -61,7 +102,7 @@
 - Added new `ToggleGroup` component
 
   ```tsx
-  import {ToggleGroup} from '@nerdfish/ui'
+  import { ToggleGroup } from "@nerdfish/ui";
   ```
 
   ```tsx
