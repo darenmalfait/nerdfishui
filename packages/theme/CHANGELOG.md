@@ -1,5 +1,26 @@
 # @nerdfish/theme
 
+## 2.1.3
+
+### Patch Changes
+
+- Updated dependency `lucide-react` to `^0.321.0`. ([#137](https://github.com/darenmalfait/nerdfishui/pull/137))
+
+  Updated dependency `@types/node` to `^20.11.16`.
+  Updated dependency `@types/react` to `^18.2.52`.
+  Updated dependency `npm-run-all2` to `^5.0.2`.
+  Updated dependency `postcss-loader` to `^8.1.0`.
+  Updated dependency `vaul` to `^0.9.0`.
+
+- Updated dependency `prettier` to `^3.2.5`. ([#138](https://github.com/darenmalfait/nerdfishui/pull/138))
+
+  Updated dependency `eslint-config-turbo` to `^1.12.2`.
+
+- Updated dependency `npm-run-all2` to `^6.1.2`. ([#140](https://github.com/darenmalfait/nerdfishui/pull/140))
+
+- Updated dependencies [[`079c60a`](https://github.com/darenmalfait/nerdfishui/commit/079c60ada40c4e2cf9bcdae2ebb195fe23f5cc53), [`5d9f43c`](https://github.com/darenmalfait/nerdfishui/commit/5d9f43c9cf7653a0149b20ecb6462c534b941b15)]:
+  - @nerdfish/utils@1.6.1
+
 ## 2.1.2
 
 ### Patch Changes
