@@ -52,7 +52,7 @@ jobs:
 
       - name: Create Version PR or Publish to NPM
         id: changesets
-        uses: changesets/action@v1.4.5
+        uses: changesets/action@v1.4.6
         with:
           version: pnpm run changeset:version
           commit: 'chore(release): publish'
