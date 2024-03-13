@@ -22,12 +22,12 @@
     "@nerdfish/lint": "workspace:*",
     "@nerdfish/theme": "workspace:^*",
     "@nerdfish/tsconfig": "workspace:*",
-    "@types/react": "^18.2.57",
-    "@types/react-dom": "^18.2.19",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
     "eslint": "^8.56.0",
     "react": "^18.2.0",
     "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   },
   "publishConfig": {
     "access": "public"
