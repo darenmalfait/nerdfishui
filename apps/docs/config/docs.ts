@@ -25,6 +25,7 @@ export const docs = {
         {title: 'Select', href: '/select'},
         {title: 'DatePicker', href: '/date-picker'},
         {title: 'Input', href: '/input'},
+        {title: 'InputOTP', href: '/input-otp'},
         {title: 'Multi Email', href: '/multi-email'},
         {title: 'Multi Select', href: '/multi-select'},
         {title: 'Radio Group', href: '/radio-group'},

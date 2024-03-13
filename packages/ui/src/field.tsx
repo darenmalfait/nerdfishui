@@ -35,16 +35,18 @@ function FieldError({
   )
 }
 
+type FieldProps = {
+  htmlFor: string
+  label?: string
+  error?: string | null
+  errorId?: string
+  description?: React.ReactNode
+  descriptionId?: string
+}
+
 const Field = React.forwardRef<
   HTMLDivElement,
-  React.ComponentPropsWithRef<'div'> & {
-    htmlFor: string
-    label?: string
-    error?: string | null
-    errorId?: string
-    description?: React.ReactNode
-    descriptionId?: string
-  }
+  React.ComponentPropsWithRef<'div'> & FieldProps
 >(function Field(
   {
     children,
@@ -69,4 +71,4 @@ const Field = React.forwardRef<
   )
 })
 
-export {Field}
+export {Field, type FieldProps}

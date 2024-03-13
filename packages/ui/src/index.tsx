@@ -1,4 +1,5 @@
 'use client'
+
 export * from './accordion'
 export * from './alert-dialog'
 export * from './alert'
@@ -19,6 +20,7 @@ export * from './field'
 export * from './grid'
 export * from './hover-card'
 export * from './indicator'
+export * from './input-otp'
 export * from './input'
 export * from './layout-components'
 export * from './link'
