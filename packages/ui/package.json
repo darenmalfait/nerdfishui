@@ -47,6 +47,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "cmdk": "^0.2.1",
     "date-fns": "^3.3.1",
+    "input-otp": "^1.1.0",
     "lucide-react": "^0.336.0",
     "react-day-picker": "^8.10.0",
     "shiki": "^0.14.7",

@@ -48,6 +48,9 @@ import {HoverCardDemo} from './hover-card/demo'
 import {IndicatorDemo} from './indicator/demo'
 import {IndicatorItemDemo} from './indicator/item'
 import {IndicatorPositionsDemo} from './indicator/positions'
+import {InputOTPDemo} from './input-otp/demo'
+import {InputOTPFieldDemo} from './input-otp/field'
+import {InputOTPPatternsDemo} from './input-otp/patterns'
 import {InputAddonDemo} from './input/addon'
 import {InputDemo} from './input/demo'
 import {InputDisabled} from './input/disabled'
@@ -145,6 +148,9 @@ export const examples = {
   InputDisabled,
   InputError,
   InputIcon,
+  InputOTPDemo,
+  InputOTPFieldDemo,
+  InputOTPPatternsDemo,
   InputSize,
   InputTextArea,
   LinkDemo,

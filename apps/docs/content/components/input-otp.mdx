@@ -1,0 +1,52 @@
+---
+title: InputOTP
+description: InputOTP is a component that allows users to input OTP.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'input-otp.tsx'
+---
+
+<ComponentExample src="/components/examples/input-otp/demo.tsx">
+  <InputOTPDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {InputOTP} from '@nerdfish/ui'
+```
+
+```tsx
+<InputOTP
+  maxLength={6}
+  render={({slots}) => (
+    <>
+      <InputOTP.Group>
+        {slots.slice(0, 3).map((slot, index) => (
+          <InputOTP.Slot key={index} {...slot} />
+        ))}{' '}
+      </InputOTP.Group>
+      <InputOTP.Separator />
+      <InputOTP.Group>
+        {slots.slice(3).map((slot, index) => (
+          <InputOTP.Slot key={index + 3} {...slot} />
+        ))}
+      </InputOTP.Group>
+    </>
+  )}
+/>
+```
+
+## Field
+
+<ComponentExample src="/components/examples/input-otp/field.tsx">
+  <InputOTPFieldDemo />
+</ComponentExample>
+
+## Patterns
+
+<ComponentExample src="/components/examples/input-otp/patterns.tsx">
+  <InputOTPPatternsDemo />
+</ComponentExample>
