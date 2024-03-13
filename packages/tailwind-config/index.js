@@ -345,6 +345,10 @@ module.exports = plugin(
               transform: 'scale(1, 1)',
             },
           },
+          'caret-blink': {
+            '0%,70%,100%': {opacity: '1'},
+            '20%,50%': {opacity: '0'},
+          },
         },
         animation: {
           'accordion-down': 'accordion-down 0.2s ease-out',
@@ -354,6 +358,7 @@ module.exports = plugin(
           'jump-out': 'jump-out .3s both',
           shake: `shake 0.5s forwards`,
           jelly: `jelly .6s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards`,
+          'caret-blink': 'caret-blink 1.25s ease-out infinite',
         },
       },
     },
