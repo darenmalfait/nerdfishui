@@ -1,5 +1,38 @@
 # @nerdfish/tailwind-config
 
+## 2.2.0
+
+### Minor Changes
+
+- add new caret-blink animation
+
+### Patch Changes
+
+- Updated dependency `@next/env` to `^14.1.3`. ([#149](https://github.com/darenmalfait/nerdfishui/pull/149))
+
+  Updated dependency `@next/mdx` to `^14.1.3`.
+  Updated dependency `date-fns` to `^3.4.0`.
+  Updated dependency `framer-motion` to `^11.0.12`.
+  Updated dependency `lucide-react` to `^0.356.0`.
+  Updated dependency `next` to `^14.1.3`.
+  Updated dependency `typescript` to `^5.4.2`.
+  Updated dependency `@types/node` to `^20.11.26`.
+  Updated dependency `@types/react` to `^18.2.65`.
+  Updated dependency `@types/react-dom` to `^18.2.21`.
+  Updated dependency `autoprefixer` to `^10.4.18`.
+  Updated dependency `postcss-loader` to `^8.1.1`.
+  Updated dependency `postcss-nesting` to `^12.1.0`.
+  Updated dependency `sonner` to `^1.4.3`.
+
+- Updated dependency `@types/eslint` to `^8.56.5`. ([#148](https://github.com/darenmalfait/nerdfishui/pull/148))
+
+  Updated dependency `eslint` to `^8.57.0`.
+  Updated dependency `eslint-config-next` to `14.1.3`.
+  Updated dependency `eslint-config-daren` to `^5.0.4`.
+  Updated dependency `eslint-config-turbo` to `^1.12.5`.
+  Updated dependency `eslint-plugin-react` to `^7.34.0`.
+  Updated dependency `eslint-plugin-tailwindcss` to `^3.15.1`.
+
 ## 2.1.4
 
 ### Patch Changes
