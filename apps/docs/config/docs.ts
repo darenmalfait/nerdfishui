@@ -52,6 +52,7 @@ export const docs = {
         {title: 'Aspect Ratio', href: '/aspect-ratio'},
         {title: 'Avatar', href: '/avatar'},
         {title: 'Badge', href: '/badge'},
+        {title: 'Breadcrumb', href: '/breadcrumb'},
         {title: 'Calendar', href: '/calendar'},
         {title: 'Card', href: '/card'},
         {title: 'Collapsible', href: '/collapsible'},
