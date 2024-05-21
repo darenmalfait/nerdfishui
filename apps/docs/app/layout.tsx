@@ -1,12 +1,8 @@
-'use client'
-
 import * as React from 'react'
 import {Inter as fontSans} from 'next/font/google'
 
 import '@nerdfish/theme/dist/nerdfishui.css'
-import 'tailwindcss/tailwind.css'
-
-import {cx} from '@nerdfish/utils'
+import '../styles/global.css'
 
 import {Layout} from '../components/layout'
 import {AppProviders} from '../context/app-providers'
@@ -26,10 +22,7 @@ export default function RootLayout({children}: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={cx(
-          'min-h-screen bg-primary font-sans antialiased',
-          sans.variable,
-        )}
+        className={`min-h-screen bg-primary font-sans antialiased ${sans.variable}`}
       >
         <AppProviders>
           <main className={`${sans.variable} bg-primary font-sans`}>

@@ -21,7 +21,7 @@
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
-    "prepare": "husky install",
+    "prepare": "husky",
     "release": "turbo run build --filter=docs^... && changeset publish",
     "vercel-build": "turbo build"
   },
