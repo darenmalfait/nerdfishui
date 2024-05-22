@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import {cx, useControllableState} from '@nerdfish/utils'
-import {PopoverTrigger} from '@radix-ui/react-popover'
 import {addDays, format} from 'date-fns'
 import {Calendar as CalendarIcon} from 'lucide-react'
 import {DateRange} from 'react-day-picker'
@@ -95,7 +94,7 @@ function DatePicker({
 
   return (
     <Popover>
-      <PopoverTrigger asChild>
+      <Popover.Trigger>
         <DatePickerTrigger
           selected={selected}
           className={className}
@@ -103,7 +102,7 @@ function DatePicker({
         >
           {children}
         </DatePickerTrigger>
-      </PopoverTrigger>
+      </Popover.Trigger>
       <Popover.Content className="w-auto p-0">
         <Calendar
           {...props}
@@ -181,7 +180,7 @@ function DateRangePicker({
   return (
     <div className={cx('grid gap-2', className)}>
       <Popover>
-        <PopoverTrigger asChild>
+        <Popover.Trigger>
           <DateRangePickerTrigger
             selected={selected}
             className={className}
@@ -189,7 +188,7 @@ function DateRangePicker({
           >
             {children}
           </DateRangePickerTrigger>
-        </PopoverTrigger>
+        </Popover.Trigger>
         <Popover.Content className="w-auto p-0" align="start">
           <Calendar
             {...props}
