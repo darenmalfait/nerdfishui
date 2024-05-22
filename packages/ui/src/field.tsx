@@ -3,20 +3,34 @@ import {cx} from '@nerdfish/utils'
 
 import {Description, InputError, Label} from './input'
 
-function FieldLabel({htmlFor, label}: {htmlFor: string; label?: string}) {
+function FieldLabel({
+  htmlFor,
+  label,
+  className,
+}: {
+  htmlFor: string
+  label?: string
+  className?: string
+}) {
   if (!label) return null
 
   return (
-    <Label htmlFor={htmlFor} className="mb-2">
+    <Label htmlFor={htmlFor} className={className}>
       {label}
     </Label>
   )
 }
 
-function FieldDescription({description}: {description?: React.ReactNode}) {
+function FieldDescription({
+  description,
+  className,
+}: {
+  description?: React.ReactNode
+  className?: string
+}) {
   if (!description) return null
 
-  return <Description className="mt-3">{description}</Description>
+  return <Description className={className}>{description}</Description>
 }
 
 function FieldError({
@@ -63,9 +77,13 @@ const Field = React.forwardRef<
 ) {
   return (
     <div className={cx('w-full', className)} {...props} ref={ref}>
-      <FieldLabel label={label} htmlFor={htmlFor} />
+      <FieldLabel
+        label={label}
+        htmlFor={htmlFor}
+        className={!description ? 'mb-3' : undefined}
+      />
+      <FieldDescription description={description} className="mb-3" />
       {children}
-      <FieldDescription description={description} />
       <FieldError error={error} errorId={errorId} />
     </div>
   )
