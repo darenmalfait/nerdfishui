@@ -52,7 +52,7 @@ importers:
         specifier: workspace:^2.1.5
         version: link:../../packages/theme
       '@nerdfish/ui':
-        specifier: workspace:^4.6.1
+        specifier: workspace:^4.6.2
         version: link:../../packages/ui
       '@nerdfish/utils':
         specifier: workspace:^1.6.4

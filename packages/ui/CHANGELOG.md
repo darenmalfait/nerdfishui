@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 4.6.2
+
+### Patch Changes
+
+- remove `Tabs` trigger default bg color, enable it on hover
+
 ## 4.6.1
 
 ### Patch Changes
