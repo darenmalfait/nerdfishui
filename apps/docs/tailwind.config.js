@@ -18,8 +18,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        title: ['Inter var', 'Font Sans', ...defaultTheme.fontFamily.sans],
-        sans: ['Inter var', 'Font Sans', ...defaultTheme.fontFamily.sans],
+        title: ['var(--font-geist-sans)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-geist-sans)', ...defaultTheme.fontFamily.sans],
       },
     },
   },

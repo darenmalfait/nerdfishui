@@ -27,19 +27,19 @@
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@nerdfish/lint": "workspace:*",
     "@nerdfish/tsconfig": "workspace:*",
-    "@types/react": "^18.2.65",
-    "@types/react-dom": "^18.2.21",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public"
