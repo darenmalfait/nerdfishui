@@ -52,13 +52,13 @@ function RawCheckbox({
           // basic styles
           'inline-block relative h-full w-full rounded-lg border transition-all peer-[:not(:disabled)]:cursor-pointer',
           // border
-          'border-transparent group-hover:peer-[:not(:disabled)]:border-primary/20',
+          'border-transparent',
           // background
           'peer-[:not(:checked)]:bg-inverted/10 dark:peer-[:not(:checked)]:bg-inverted/20',
           // disabled state
           'peer-disabled:opacity-50',
           // checked state
-          'peer-checked:animate-jelly peer-checked:border-current peer-checked:border',
+          'peer-checked:border-current peer-checked:border',
         )}
       />
       <span className="peer-checked:animate-jelly pointer-events-none absolute inset-0 hidden rounded-md peer-checked:block">
