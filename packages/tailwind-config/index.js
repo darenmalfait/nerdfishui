@@ -17,6 +17,10 @@ module.exports = plugin(
         '--color-gray-100': '#f4f4f5',
         '--color-gray-50': '#f8fafc',
       },
+      '.outline-active': {
+        '@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-2 sm:after:ring-info':
+          {},
+      },
       '.focus-outline': {
         '@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-info':
           {},
