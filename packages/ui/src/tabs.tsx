@@ -25,7 +25,7 @@ const TabsTrigger = React.forwardRef<
 >(({className, ...props}, ref) => (
   <TabsPrimivite.Trigger
     className={cx(
-      'inline-flex focus-within:outline-none relative items-center justify-center rounded-md px-3 py-1 text-sm font-medium text-primary transition-all  disabled:pointer-events-none disabled:opacity-50 dark:data-[state=active]:bg-white/10 data-[state=active]:bg-black/10 focus-outline dark:hover:bg-white/5 bg-black/5',
+      'inline-flex focus-within:outline-none relative items-center justify-center rounded-md px-3 py-1 text-sm font-medium text-primary transition-all  disabled:pointer-events-none disabled:opacity-50 dark:data-[state=active]:bg-white/10 data-[state=active]:bg-black/10 focus-outline dark:hover:bg-white/5 hover:bg-black/5',
       className,
     )}
     {...props}
