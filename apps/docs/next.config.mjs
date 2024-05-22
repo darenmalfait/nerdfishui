@@ -10,7 +10,10 @@ const nextConfig = {
     ignoreDuringBuilds: !!process.env.CI,
   },
   images: {
-    domains: ['avatars.githubusercontent.com', 'images.unsplash.com'],
+    remotePatterns: [
+      {hostname: 'avatars.githubusercontent.com'},
+      {hostname: 'images.unsplash.com'},
+    ],
   },
   reactStrictMode: true,
   swcMinify: true,
