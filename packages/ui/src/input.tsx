@@ -73,11 +73,11 @@ function getInputClassName(
     // Variants
     isInputField && inputVariants({size: inputSize}),
     // Basic layout
-    'relative block w-full group rounded-lg font-bold text-md text-primary bg-muted focus-outline text-left',
+    'relative block w-full group rounded-lg font-bold text-md text-primary bg-black/10 dark:bg-white/10 focus-outline text-left',
     // Border
-    'border border-transparent hover:border-primary/20',
+    'border border-transparent',
     // Disabled state
-    'disabled-within:opacity-50 before:has-[[data-disabled]]:shadow-none disabled-within:hover:border-transparent',
+    'disabled-within:opacity-50 before:has-[[data-disabled]]:shadow-none',
     // Invalid state
     hasError && 'border-danger bg-danger-muted/50 text-danger',
     // Custom

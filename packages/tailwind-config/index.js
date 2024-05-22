@@ -18,11 +18,11 @@ module.exports = plugin(
         '--color-gray-50': '#f8fafc',
       },
       '.outline-active': {
-        '@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-2 sm:after:ring-info':
+        '@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-2 sm:after:ring-muted':
           {},
       },
       '.focus-outline': {
-        '@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-info':
+        '@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-muted':
           {},
       },
       '.focus-ring': {
