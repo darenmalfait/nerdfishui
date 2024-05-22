@@ -56,7 +56,10 @@ export function ComponentExample({
             codeString && <CopyButton value={codeString} />
           )}
         </div>
-        <Tabs.Content value="preview" className="p-0">
+        <Tabs.Content
+          value="preview"
+          className="!bg-primary p-0 shadow-outline"
+        >
           <div
             className={cx('flex min-h-[350px] justify-center p-10', {
               'items-center': align === 'center',
@@ -67,7 +70,7 @@ export function ComponentExample({
             {Example}
           </div>
         </Tabs.Content>
-        <Tabs.Content value="code" className="border-none p-0">
+        <Tabs.Content value="code" className="!bg-primary p-0 shadow-outline">
           <div className="flex flex-col space-y-4">
             <div className="w-full rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
               {Code}
