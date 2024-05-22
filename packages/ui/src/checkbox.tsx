@@ -40,17 +40,17 @@ function RawCheckbox({
       className={cx(
         textClassName,
         checkboxVariants({variant}),
-        'disabled-within:active:scale-100 active:scale-75 transition-transform',
+        'disabled-within:active:scale-100 active:scale-75 transition-transform group-focus-within:outline-active',
         className,
       )}
     >
       <input {...props} className="peer sr-only" type="checkbox" />
-      <span
+      <div
         className={cx(
           bgClassName,
           textClassName,
           // basic styles
-          'inline-block h-full w-full rounded-md border transition-all peer-[:not(:disabled)]:cursor-pointer peer-focus:focus-outline',
+          'inline-block relative h-full w-full rounded-lg border transition-all peer-[:not(:disabled)]:cursor-pointer',
           // border
           'border-transparent group-hover:peer-[:not(:disabled)]:border-primary/20',
           // background
