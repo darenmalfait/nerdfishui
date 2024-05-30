@@ -1,5 +1,15 @@
 # @nerdfish/utils
 
+## 1.6.5
+
+### Patch Changes
+
+- Updated dependency `@types/react` to `^18.3.3`.
+  ([#162](https://github.com/darenmalfait/nerdfishui/pull/162))
+
+  Updated dependency `react` to `>=18.3.1`. Updated dependency `react-dom` to
+  `>=18.3.1`.
+
 ## 1.6.4
 
 ### Patch Changes

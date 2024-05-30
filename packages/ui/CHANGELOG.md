@@ -1,5 +1,23 @@
 # @nerdfish/ui
 
+## 4.6.3
+
+### Patch Changes
+
+- add `react` and `react-dom` as peer dependencies to the `ui` package
+
+- add 'use client' add top of the exported file
+
+- Updated dependency `@types/react` to `^18.3.3`.
+  ([#162](https://github.com/darenmalfait/nerdfishui/pull/162))
+
+  Updated dependency `react` to `>=18.3.1`. Updated dependency `react-dom` to
+  `>=18.3.1`.
+
+- Updated dependencies
+  [[`fcce613`](https://github.com/darenmalfait/nerdfishui/commit/fcce6130e5691fc543c128d5453137e98992a574)]:
+  - @nerdfish/utils@1.6.5
+
 ## 4.6.2
 
 ### Patch Changes
