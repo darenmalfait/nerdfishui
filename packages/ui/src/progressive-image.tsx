@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {cx, useSSRLayoutEffect} from '@nerdfish/utils'
+import {cx, deprecateComponent, useSSRLayoutEffect} from '@nerdfish/utils'
 
 type ResponsiveProps = {
   maxWidth?: number
@@ -27,7 +27,7 @@ function ProgressiveImagePlaceholder({
   )
 }
 
-const ProgressiveImage = React.forwardRef<
+const DeprecatedProgressiveImage = React.forwardRef<
   HTMLImageElement,
   React.ComponentPropsWithRef<'div'> & {
     img: React.JSX.Element &
@@ -108,6 +108,11 @@ const ProgressiveImage = React.forwardRef<
     </div>
   )
 })
+
+const ProgressiveImage = deprecateComponent(
+  DeprecatedProgressiveImage,
+  'ProgressiveImage component is deprecated and will be removed in the next major version, It is not working well with SSR, a better solution is still in the works.',
+)
 
 export {ProgressiveImage}
 export type {ResponsiveProps}
