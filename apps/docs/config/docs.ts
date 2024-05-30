@@ -63,6 +63,7 @@ export const docs = {
         {title: 'HoverCard', href: '/hover-card'},
         {title: 'Indicator', href: '/indicator'},
         {title: 'NavigationList', href: '/navigation-list'},
+        {title: 'NavigationMenu', href: '/navigation-menu'},
         {title: 'Popover', href: '/popover'},
         {title: 'ProgressiveImage', href: '/progressive-image'},
         {title: 'ScrollArea', href: '/scroll-area'},
