@@ -1,5 +1,4 @@
 'use client'
-
 export * from './accordion'
 export * from './alert-dialog'
 export * from './alert'
@@ -28,6 +27,7 @@ export * from './link'
 export * from './multi-email'
 export * from './multi-select'
 export * from './navigation-list'
+export * from './navigation-menu'
 export * from './popover'
 export * from './progressive-image'
 export * from './radio-group'

@@ -63,6 +63,7 @@ import {LinkDemo} from './link/demo'
 import {MultiEmailDemo} from './multi-email/demo'
 import {MultiSelectDemo} from './multi-select/demo'
 import {NavigationListDemo} from './navigation-list/demo'
+import {NavigationMenuDemo} from './navigation-menu/demo'
 import {PopoverDemo} from './popover/demo'
 import {ProgressiveImageDemo} from './progressive-image/demo'
 import {RadioGroupDemo} from './radio-group/demo'
@@ -159,6 +160,7 @@ export const examples = {
   MultiEmailDemo,
   MultiSelectDemo,
   NavigationListDemo,
+  NavigationMenuDemo,
   PopoverDemo,
   ProgressiveImageDemo,
   RadioGroupDemo,
