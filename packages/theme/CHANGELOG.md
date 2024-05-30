@@ -1,78 +1,93 @@
 # @nerdfish/theme
 
+## 2.1.6
+
+### Patch Changes
+
+- Updated dependency `@types/react` to `^18.3.3`.
+  ([#162](https://github.com/darenmalfait/nerdfishui/pull/162))
+
+  Updated dependency `react` to `>=18.3.1`. Updated dependency `react-dom` to
+  `>=18.3.1`.
+
+- Updated dependencies
+  [[`fcce613`](https://github.com/darenmalfait/nerdfishui/commit/fcce6130e5691fc543c128d5453137e98992a574)]:
+  - @nerdfish/utils@1.6.5
+
 ## 2.1.5
 
 ### Patch Changes
 
-- Updated dependency `@next/env` to `^14.1.3`. ([#149](https://github.com/darenmalfait/nerdfishui/pull/149))
+- Updated dependency `@next/env` to `^14.1.3`.
+  ([#149](https://github.com/darenmalfait/nerdfishui/pull/149))
 
-  Updated dependency `@next/mdx` to `^14.1.3`.
-  Updated dependency `date-fns` to `^3.4.0`.
-  Updated dependency `framer-motion` to `^11.0.12`.
-  Updated dependency `lucide-react` to `^0.356.0`.
-  Updated dependency `next` to `^14.1.3`.
-  Updated dependency `typescript` to `^5.4.2`.
-  Updated dependency `@types/node` to `^20.11.26`.
-  Updated dependency `@types/react` to `^18.2.65`.
-  Updated dependency `@types/react-dom` to `^18.2.21`.
-  Updated dependency `autoprefixer` to `^10.4.18`.
-  Updated dependency `postcss-loader` to `^8.1.1`.
-  Updated dependency `postcss-nesting` to `^12.1.0`.
-  Updated dependency `sonner` to `^1.4.3`.
+  Updated dependency `@next/mdx` to `^14.1.3`. Updated dependency `date-fns` to
+  `^3.4.0`. Updated dependency `framer-motion` to `^11.0.12`. Updated dependency
+  `lucide-react` to `^0.356.0`. Updated dependency `next` to `^14.1.3`. Updated
+  dependency `typescript` to `^5.4.2`. Updated dependency `@types/node` to
+  `^20.11.26`. Updated dependency `@types/react` to `^18.2.65`. Updated
+  dependency `@types/react-dom` to `^18.2.21`. Updated dependency `autoprefixer`
+  to `^10.4.18`. Updated dependency `postcss-loader` to `^8.1.1`. Updated
+  dependency `postcss-nesting` to `^12.1.0`. Updated dependency `sonner` to
+  `^1.4.3`.
 
-- Updated dependency `@types/eslint` to `^8.56.5`. ([#148](https://github.com/darenmalfait/nerdfishui/pull/148))
+- Updated dependency `@types/eslint` to `^8.56.5`.
+  ([#148](https://github.com/darenmalfait/nerdfishui/pull/148))
 
-  Updated dependency `eslint` to `^8.57.0`.
-  Updated dependency `eslint-config-next` to `14.1.3`.
-  Updated dependency `eslint-config-daren` to `^5.0.4`.
-  Updated dependency `eslint-config-turbo` to `^1.12.5`.
-  Updated dependency `eslint-plugin-react` to `^7.34.0`.
-  Updated dependency `eslint-plugin-tailwindcss` to `^3.15.1`.
+  Updated dependency `eslint` to `^8.57.0`. Updated dependency
+  `eslint-config-next` to `14.1.3`. Updated dependency `eslint-config-daren` to
+  `^5.0.4`. Updated dependency `eslint-config-turbo` to `^1.12.5`. Updated
+  dependency `eslint-plugin-react` to `^7.34.0`. Updated dependency
+  `eslint-plugin-tailwindcss` to `^3.15.1`.
 
-- Updated dependencies [[`66c080e`](https://github.com/darenmalfait/nerdfishui/commit/66c080e89dc3f9de3b59979f003e38558dacb106), [`7cfb4e0`](https://github.com/darenmalfait/nerdfishui/commit/7cfb4e06a9d24b3ddd3e30bf414dc5a9193d5d8e)]:
+- Updated dependencies
+  [[`66c080e`](https://github.com/darenmalfait/nerdfishui/commit/66c080e89dc3f9de3b59979f003e38558dacb106),
+  [`7cfb4e0`](https://github.com/darenmalfait/nerdfishui/commit/7cfb4e06a9d24b3ddd3e30bf414dc5a9193d5d8e)]:
   - @nerdfish/utils@1.6.3
 
 ## 2.1.4
 
 ### Patch Changes
 
-- Updated dependency `@mdx-js/loader` to `^3.0.1`. ([#141](https://github.com/darenmalfait/nerdfishui/pull/141))
+- Updated dependency `@mdx-js/loader` to `^3.0.1`.
+  ([#141](https://github.com/darenmalfait/nerdfishui/pull/141))
 
-  Updated dependency `@mdx-js/react` to `^3.0.1`.
-  Updated dependency `framer-motion` to `^11.0.5`.
-  Updated dependency `lucide-react` to `^0.336.0`.
-  Updated dependency `match-sorter` to `^6.3.4`.
-  Updated dependency `@types/node` to `^20.11.20`.
-  Updated dependency `@types/react` to `^18.2.57`.
-  Updated dependency `@types/react-dom` to `^18.2.19`.
-  Updated dependency `postcss` to `^8.4.35`.
-  Updated dependency `postcss-import` to `^16.0.1`.
-  Updated dependency `postcss-nesting` to `^12.0.3`.
-  Updated dependency `rehype-pretty-code` to `~0.13.0`.
-  Updated dependency `tsup` to `^8.0.2`.
+  Updated dependency `@mdx-js/react` to `^3.0.1`. Updated dependency
+  `framer-motion` to `^11.0.5`. Updated dependency `lucide-react` to `^0.336.0`.
+  Updated dependency `match-sorter` to `^6.3.4`. Updated dependency
+  `@types/node` to `^20.11.20`. Updated dependency `@types/react` to `^18.2.57`.
+  Updated dependency `@types/react-dom` to `^18.2.19`. Updated dependency
+  `postcss` to `^8.4.35`. Updated dependency `postcss-import` to `^16.0.1`.
+  Updated dependency `postcss-nesting` to `^12.0.3`. Updated dependency
+  `rehype-pretty-code` to `~0.13.0`. Updated dependency `tsup` to `^8.0.2`.
 
-- Updated dependencies [[`1eebcab`](https://github.com/darenmalfait/nerdfishui/commit/1eebcabeb1a6c650d9ac92a9d29f03569febaa37)]:
+- Updated dependencies
+  [[`1eebcab`](https://github.com/darenmalfait/nerdfishui/commit/1eebcabeb1a6c650d9ac92a9d29f03569febaa37)]:
   - @nerdfish/utils@1.6.2
 
 ## 2.1.3
 
 ### Patch Changes
 
-- Updated dependency `lucide-react` to `^0.321.0`. ([#137](https://github.com/darenmalfait/nerdfishui/pull/137))
+- Updated dependency `lucide-react` to `^0.321.0`.
+  ([#137](https://github.com/darenmalfait/nerdfishui/pull/137))
 
-  Updated dependency `@types/node` to `^20.11.16`.
-  Updated dependency `@types/react` to `^18.2.52`.
-  Updated dependency `npm-run-all2` to `^5.0.2`.
-  Updated dependency `postcss-loader` to `^8.1.0`.
-  Updated dependency `vaul` to `^0.9.0`.
+  Updated dependency `@types/node` to `^20.11.16`. Updated dependency
+  `@types/react` to `^18.2.52`. Updated dependency `npm-run-all2` to `^5.0.2`.
+  Updated dependency `postcss-loader` to `^8.1.0`. Updated dependency `vaul` to
+  `^0.9.0`.
 
-- Updated dependency `prettier` to `^3.2.5`. ([#138](https://github.com/darenmalfait/nerdfishui/pull/138))
+- Updated dependency `prettier` to `^3.2.5`.
+  ([#138](https://github.com/darenmalfait/nerdfishui/pull/138))
 
   Updated dependency `eslint-config-turbo` to `^1.12.2`.
 
-- Updated dependency `npm-run-all2` to `^6.1.2`. ([#140](https://github.com/darenmalfait/nerdfishui/pull/140))
+- Updated dependency `npm-run-all2` to `^6.1.2`.
+  ([#140](https://github.com/darenmalfait/nerdfishui/pull/140))
 
-- Updated dependencies [[`079c60a`](https://github.com/darenmalfait/nerdfishui/commit/079c60ada40c4e2cf9bcdae2ebb195fe23f5cc53), [`5d9f43c`](https://github.com/darenmalfait/nerdfishui/commit/5d9f43c9cf7653a0149b20ecb6462c534b941b15)]:
+- Updated dependencies
+  [[`079c60a`](https://github.com/darenmalfait/nerdfishui/commit/079c60ada40c4e2cf9bcdae2ebb195fe23f5cc53),
+  [`5d9f43c`](https://github.com/darenmalfait/nerdfishui/commit/5d9f43c9cf7653a0149b20ecb6462c534b941b15)]:
   - @nerdfish/utils@1.6.1
 
 ## 2.1.2
