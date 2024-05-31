@@ -1,5 +1,16 @@
 # @nerdfish/ui
 
+## 4.7.0
+
+### Minor Changes
+
+- add `NavigationMenu` component
+
+### Patch Changes
+
+- deprecate `ProgressiveImage` component. The component is not working well with
+  SSR. It's probably worth looking into better solutions.
+
 ## 4.6.3
 
 ### Patch Changes
