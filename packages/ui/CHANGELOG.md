@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 4.7.1
+
+### Patch Changes
+
+- replace border in `NavigationMenu` Content with outline
+
 ## 4.7.0
 
 ### Minor Changes
