@@ -1,4 +1,8 @@
 name: 'Deploy'
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 
 on:
   release:
@@ -19,7 +23,6 @@ jobs:
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
           node-version-file: '.nvmrc'
-          registry-url: https://registry.npmjs.org/
 
       - name: 'Deploy to Vercel'
         run: |
@@ -28,8 +31,4 @@ jobs:
             prodRun="--prod"
           fi
 
-          npx vercel --token ${VERCEL_TOKEN} $prodRun
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          npx vercel deploy --token ${VERCEL_TOKEN} $prodRun
