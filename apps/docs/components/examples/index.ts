@@ -33,8 +33,6 @@ import {CheckboxWithText} from './checkbox/with-text'
 import {CollapsibleDemo} from './collapsible/demo'
 import {CommandDemo} from './command/demo'
 import {CommandDialog} from './command/dialog'
-import {ContainerDemo} from './container/demo'
-import {ContainerSize} from './container/size'
 import {DateRangePickerExample} from './date-picker/date-range-picker'
 import {DatePickerDemo} from './date-picker/demo'
 import {DatePickerWithInputExample} from './date-picker/with-input'
@@ -44,7 +42,6 @@ import {DrawerDemo} from './drawer/demo'
 import {DrawerDirection} from './drawer/direction'
 import {DrawerResponsiveDemo} from './drawer/responsive'
 import {DropdownMenuDemo} from './dropdown-menu/demo'
-import {GridDemo} from './grid/demo'
 import {HoverCardDemo} from './hover-card/demo'
 import {IndicatorDemo} from './indicator/demo'
 import {IndicatorItemDemo} from './indicator/item'
@@ -65,12 +62,9 @@ import {MultiSelectDemo} from './multi-select/demo'
 import {NavigationListDemo} from './navigation-list/demo'
 import {NavigationMenuDemo} from './navigation-menu/demo'
 import {PopoverDemo} from './popover/demo'
-import {ProgressiveImageDemo} from './progressive-image/demo'
 import {RadioGroupDemo} from './radio-group/demo'
 import {ScrollAreaDemo} from './scroll-area/demo'
-import {SectionDemo} from './section/demo'
 import {SelectDemo} from './select/demo'
-import {SheetDemo} from './sheet/demo'
 import {SkeletonDemo} from './skeleton/demo'
 import {SliderDemo} from './slider/demo'
 import {StepsDemo} from './steps/demo'
@@ -130,8 +124,6 @@ export const examples = {
   SelectDemo,
   CommandDemo,
   CommandDialog,
-  ContainerDemo,
-  ContainerSize,
   DatePickerDemo,
   DatePickerWithInputExample,
   DateRangePickerExample,
@@ -141,7 +133,6 @@ export const examples = {
   DrawerDirection,
   DrawerResponsiveDemo,
   DropdownMenuDemo,
-  GridDemo,
   HoverCardDemo,
   IndicatorDemo,
   IndicatorItemDemo,
@@ -162,11 +153,8 @@ export const examples = {
   NavigationListDemo,
   NavigationMenuDemo,
   PopoverDemo,
-  ProgressiveImageDemo,
   RadioGroupDemo,
   ScrollAreaDemo,
-  SectionDemo,
-  SheetDemo,
   SkeletonDemo,
   SliderDemo,
   StepsDemo,
