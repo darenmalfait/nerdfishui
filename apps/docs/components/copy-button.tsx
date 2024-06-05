@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 import {DropdownMenu} from '@nerdfish/ui'
-import {cx, ExtractProps} from '@nerdfish/utils'
+import {cx, type ExtractProps} from '@nerdfish/utils'
 
-import {NpmCommands} from '../lib/types/unist'
+import {type NpmCommands} from '../lib/types/unist'
 import {Icons} from './icons'
 
 interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {

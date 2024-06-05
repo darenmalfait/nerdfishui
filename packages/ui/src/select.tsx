@@ -9,9 +9,9 @@ import {Command} from './command'
 import {
   getInputClassName,
   InputError,
-  InputProps,
   Label,
-  RawInputProps,
+  type InputProps,
+  type RawInputProps,
 } from './input'
 import {Popover} from './popover'
 import {ScrollArea} from './scroll-area'

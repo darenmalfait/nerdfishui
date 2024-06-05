@@ -4,11 +4,11 @@ import * as React from 'react'
 import {cx, useControllableState} from '@nerdfish/utils'
 import {addDays, format} from 'date-fns'
 import {Calendar as CalendarIcon} from 'lucide-react'
-import {DateRange} from 'react-day-picker'
+import {type DateRange} from 'react-day-picker'
 
 import {Badge} from './badge'
 import {Button} from './button'
-import {Calendar, CalendarProps} from './calendar'
+import {Calendar, type CalendarProps} from './calendar'
 import {Popover} from './popover'
 
 type Preset = {value: string; label: string}

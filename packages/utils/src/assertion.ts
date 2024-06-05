@@ -1,4 +1,4 @@
-import {Dict} from './types'
+import {type Dict} from './types'
 
 // Array assertions
 function isArray<T>(value: any): value is Array<T> {
