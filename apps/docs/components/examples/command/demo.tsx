@@ -15,8 +15,8 @@ export function CommandDemo() {
   return (
     <Command className="rounded-lg border shadow-soft-sm shadow-outline">
       <Command.Input placeholder="Type a command or search..." />
+      <Command.Empty>No results found.</Command.Empty>
       <Command.List>
-        <Command.Empty>No results found.</Command.Empty>
         <Command.Group heading="Suggestions">
           <Command.Item>
             <Calendar className="mr-2 size-4" />

@@ -124,56 +124,58 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
                 onValueChange={setInputValue}
               />
               <ScrollArea className="h-32 w-full">
-                <Command.Group>
-                  {options.map(item => {
-                    const isActive = selectedValues.includes(item)
+                <Command.List>
+                  <Command.Group>
+                    {options.map(item => {
+                      const isActive = selectedValues.includes(item)
 
-                    return (
-                      <Command.Item
-                        key={item.value}
-                        value={item.value}
-                        onSelect={() => toggleItem(item)}
-                        className="items-start"
-                      >
-                        <Check
-                          className={cx(
-                            'mr-2 h-4 w-4 pt-1',
-                            isActive ? 'opacity-100' : 'opacity-0',
-                          )}
-                        />
-                        <div className="flex flex-col items-start gap-y-1">
-                          <div className="flex justify-start">
-                            <span
-                              className="mr-2 size-4 rounded-full"
-                              style={{backgroundColor: item.color}}
-                            />
-                            <span className="flex-1">{item.label}</span>
+                      return (
+                        <Command.Item
+                          key={item.value}
+                          value={item.value}
+                          onSelect={() => toggleItem(item)}
+                          className="items-start"
+                        >
+                          <Check
+                            className={cx(
+                              'mr-2 h-4 w-4 pt-1',
+                              isActive ? 'opacity-100' : 'opacity-0',
+                            )}
+                          />
+                          <div className="flex flex-col items-start gap-y-1">
+                            <div className="flex justify-start">
+                              <span
+                                className="mr-2 size-4 rounded-full"
+                                style={{backgroundColor: item.color}}
+                              />
+                              <span className="flex-1">{item.label}</span>
+                            </div>
+                            {item.description ? (
+                              <span className="text-muted text-[10px]">
+                                {item.description}
+                              </span>
+                            ) : null}
                           </div>
-                          {item.description ? (
-                            <span className="text-muted text-[10px]">
-                              {item.description}
-                            </span>
-                          ) : null}
-                        </div>
+                        </Command.Item>
+                      )
+                    })}
+                    {onEditItemsClicked && inputValue.length === 0 ? (
+                      <Command.Item
+                        onSelect={() => {
+                          setOpenSelect(false)
+                          onEditItemsClicked()
+                        }}
+                        className="flex gap-x-2"
+                        {...{inputValue, options}}
+                      >
+                        <span>
+                          <Pencil className="size-4" />
+                        </span>
+                        <span>{editItemsLabel ?? 'Edit labels'}</span>
                       </Command.Item>
-                    )
-                  })}
-                  {onEditItemsClicked && inputValue.length === 0 ? (
-                    <Command.Item
-                      onSelect={() => {
-                        setOpenSelect(false)
-                        onEditItemsClicked()
-                      }}
-                      className="flex gap-x-2"
-                      {...{inputValue, options}}
-                    >
-                      <span>
-                        <Pencil className="size-4" />
-                      </span>
-                      <span>{editItemsLabel ?? 'Edit labels'}</span>
-                    </Command.Item>
-                  ) : null}
-                </Command.Group>
+                    ) : null}
+                  </Command.Group>
+                </Command.List>
                 {onCreateItemsClicked && inputValue.length > 0 ? (
                   <button
                     onSelect={() => {

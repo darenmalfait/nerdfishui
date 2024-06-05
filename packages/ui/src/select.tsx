@@ -99,24 +99,26 @@ const RawSelect = React.forwardRef<HTMLInputElement, SelectProps>(
                 <Command.Empty>{emptyString}</Command.Empty>
               </>
             ) : null}
-            <Command.Group>
-              <ScrollArea className="h-32 w-full">
-                {options.map(item => {
-                  const ItemIcon =
-                    value === item.value ? Check : item.icon ?? 'div'
+            <Command.List>
+              <Command.Group>
+                <ScrollArea className="h-32 w-full">
+                  {options.map(item => {
+                    const ItemIcon =
+                      value === item.value ? Check : item.icon ?? 'div'
 
-                  return (
-                    <Command.Item
-                      key={item.value}
-                      onSelect={() => handleChange(item.value)}
-                    >
-                      <ItemIcon className={cx('mr-2 h-4 w-4')} />
-                      {item.label}
-                    </Command.Item>
-                  )
-                })}
-              </ScrollArea>
-            </Command.Group>
+                    return (
+                      <Command.Item
+                        key={item.value}
+                        onSelect={() => handleChange(item.value)}
+                      >
+                        <ItemIcon className={cx('mr-2 h-4 w-4')} />
+                        {item.label}
+                      </Command.Item>
+                    )
+                  })}
+                </ScrollArea>
+              </Command.Group>
+            </Command.List>
           </Command>
         </Popover.Content>
       </Popover>
