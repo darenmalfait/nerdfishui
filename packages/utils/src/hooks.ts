@@ -1,7 +1,7 @@
 'use state'
 
 import * as React from 'react'
-import {Dispatch, SetStateAction, useState} from 'react'
+import {useState, type Dispatch, type SetStateAction} from 'react'
 
 export function useControllableState<T>(
   propValue: T | undefined,

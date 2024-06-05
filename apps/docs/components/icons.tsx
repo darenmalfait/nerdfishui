@@ -14,7 +14,6 @@ import {
   Image,
   Laptop,
   Loader2,
-  LucideProps,
   Menu,
   Moon,
   MoreVertical,
@@ -27,6 +26,7 @@ import {
   User,
   X,
   type LucideIcon,
+  type LucideProps,
 } from 'lucide-react'
 
 export type Icon = LucideIcon
