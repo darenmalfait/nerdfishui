@@ -8,7 +8,7 @@ import * as uiComponents from '@nerdfish/ui'
 import {cx} from '@nerdfish/utils'
 import {useMDXComponent} from 'next-contentlayer/hooks'
 
-import {NpmCommands} from '../lib/types/unist'
+import {type NpmCommands} from '../lib/types/unist'
 import {AppDemo} from './app-demo'
 import {CodeBlockWrapper} from './code-block-wrapper'
 import {ComponentExample} from './component-example'

@@ -1,4 +1,4 @@
-import {defineConfig, Options} from 'tsup'
+import {defineConfig, type Options} from 'tsup'
 
 const cfg: Options = {
   clean: false,

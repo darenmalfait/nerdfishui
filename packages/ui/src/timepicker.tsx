@@ -5,7 +5,7 @@ import {cx, roundToNearest15} from '@nerdfish/utils'
 import {AlertCircle, Clock} from 'lucide-react'
 
 import {Field} from './field'
-import {getInputClassName, InputProps, RawInputProps} from './input'
+import {getInputClassName, type InputProps, type RawInputProps} from './input'
 
 const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
   function RawTimepicker(props, ref) {

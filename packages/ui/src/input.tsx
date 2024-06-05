@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {cva, cx, VariantProps} from '@nerdfish/utils'
+import {cva, cx, type VariantProps} from '@nerdfish/utils'
 import {AlertCircle} from 'lucide-react'
 
 import {Field} from './field'

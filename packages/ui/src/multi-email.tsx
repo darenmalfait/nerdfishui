@@ -6,7 +6,7 @@ import {cx, isEmail as isEmailFn, useControllableState} from '@nerdfish/utils'
 
 import {Badge} from './badge'
 import {Field} from './field'
-import {getInputClassName, InputProps, RawInputProps} from './input'
+import {getInputClassName, type InputProps, type RawInputProps} from './input'
 
 interface RawMultiEmailProps
   extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,

@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {cva, cx, VariantProps} from '@nerdfish/utils'
+import {cva, cx, type VariantProps} from '@nerdfish/utils'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
 import {X} from 'lucide-react'
 

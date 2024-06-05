@@ -7,7 +7,7 @@ import {Check, ChevronsUpDown, Pencil, Plus} from 'lucide-react'
 import {Badge} from './badge'
 import {Command} from './command'
 import {Field} from './field'
-import {getInputClassName, InputProps, RawInputProps} from './input'
+import {getInputClassName, type InputProps, type RawInputProps} from './input'
 import {Popover} from './popover'
 import {ScrollArea} from './scroll-area'
 

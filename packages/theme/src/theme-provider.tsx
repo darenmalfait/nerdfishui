@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Dict, WithCSSVar} from '@nerdfish/utils'
+import {type Dict, type WithCSSVar} from '@nerdfish/utils'
 
 import {dark as darkTheme, light as lightTheme} from './colors'
 import {toCSSVar} from './to-css-var'

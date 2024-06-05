@@ -1,4 +1,4 @@
-import {Colors} from './types'
+import {type Colors} from './types'
 
 export const light: Colors = {
   nerdfish: '17.85 64.75% 52.16%',

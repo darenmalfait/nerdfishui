@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {DateRange, DateRangePicker} from '@nerdfish/ui'
+import {DateRangePicker, type DateRange} from '@nerdfish/ui'
 import {addDays, addYears} from 'date-fns'
 
 export function DateRangePickerExample() {
