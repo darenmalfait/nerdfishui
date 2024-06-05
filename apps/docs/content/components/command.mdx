@@ -16,15 +16,15 @@ package:
 ## Usage
 
 ```tsx
-import {Command} from '@nerdfish/ui'
 import Image from 'next/image'
+import {Command} from '@nerdfish/ui'
 ```
 
 ```tsx
 <Command>
   <Command.Input placeholder="Type a command or search..." />
+  <Command.Empty>No results found.</Command.Empty>
   <Command.List>
-    <Command.Empty>No results found.</Command.Empty>
     <Command.Group heading="Suggestions">
       <Command.Item>Calendar</Command.Item>
       <Command.Item>Search Emoji</Command.Item>
