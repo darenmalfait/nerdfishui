@@ -42,6 +42,7 @@ import {DrawerDemo} from './drawer/demo'
 import {DrawerDirection} from './drawer/direction'
 import {DrawerResponsiveDemo} from './drawer/responsive'
 import {DropdownMenuDemo} from './dropdown-menu/demo'
+import {GridDemo} from './grid/demo'
 import {HoverCardDemo} from './hover-card/demo'
 import {IndicatorDemo} from './indicator/demo'
 import {IndicatorItemDemo} from './indicator/item'
@@ -121,7 +122,6 @@ export const examples = {
   CheckboxIcon,
   CheckboxWithText,
   CollapsibleDemo,
-  SelectDemo,
   CommandDemo,
   CommandDialog,
   DatePickerDemo,
@@ -133,6 +133,7 @@ export const examples = {
   DrawerDirection,
   DrawerResponsiveDemo,
   DropdownMenuDemo,
+  GridDemo,
   HoverCardDemo,
   IndicatorDemo,
   IndicatorItemDemo,
@@ -155,6 +156,7 @@ export const examples = {
   PopoverDemo,
   RadioGroupDemo,
   ScrollAreaDemo,
+  SelectDemo,
   SkeletonDemo,
   SliderDemo,
   StepsDemo,
