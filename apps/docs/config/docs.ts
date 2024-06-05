@@ -12,11 +12,7 @@ export const docs = {
     },
     {
       title: 'Layout',
-      links: [
-        {title: 'Container', href: '/container'},
-        {title: 'Grid', href: '/grid'},
-        {title: 'Section', href: '/section'},
-      ],
+      links: [{title: 'Grid', href: '/grid'}],
     },
     {
       title: 'Form Elements',

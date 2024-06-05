@@ -1,0 +1,30 @@
+---
+title: Grid
+description: Grid is a component that can be used to create a grid of items.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'grid.tsx'
+---
+
+<ComponentExample src="/components/examples/grid/demo.tsx">
+  <GridDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {Grid} from '@nerdfish/ui'
+```
+
+```tsx
+<Grid className="lg:grid-rows-3">
+  <Grid.Card className="lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3">
+    Content
+  </Grid.Card>
+  <Grid.Card className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3">
+    Content
+  </Grid.Card>
+</Grid>
+```
