@@ -1,5 +1,22 @@
 # @nerdfish/utils
 
+## 1.6.6
+
+### Patch Changes
+
+- Updated dependency `framer-motion` to `^11.2.10`.
+  ([#169](https://github.com/darenmalfait/nerdfishui/pull/169))
+
+  Updated dependency `lucide-react` to `^0.383.0`. Updated dependency
+  `@types/node` to `^20.14.2`. Updated dependency `tsup` to `^8.1.0`.
+
+- Updated dependency `prettier` to `^3.3.0`.
+  ([#170](https://github.com/darenmalfait/nerdfishui/pull/170))
+
+  Updated dependency `eslint-config-daren` to `^5.1.0`. Updated dependency
+  `eslint-config-turbo` to `^1.13.4`. Updated dependency `eslint-plugin-react`
+  to `^7.34.2`.
+
 ## 1.6.5
 
 ### Patch Changes

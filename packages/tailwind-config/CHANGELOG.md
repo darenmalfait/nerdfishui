@@ -1,5 +1,15 @@
 # @nerdfish/tailwind-config
 
+## 2.2.3
+
+### Patch Changes
+
+- Updated dependency `framer-motion` to `^11.2.10`.
+  ([#169](https://github.com/darenmalfait/nerdfishui/pull/169))
+
+  Updated dependency `lucide-react` to `^0.383.0`. Updated dependency
+  `@types/node` to `^20.14.2`. Updated dependency `tsup` to `^8.1.0`.
+
 ## 2.2.2
 
 ### Patch Changes
