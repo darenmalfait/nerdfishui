@@ -1,5 +1,40 @@
 # @nerdfish/ui
 
+## 5.0.0
+
+### Major Changes
+
+- remove Deprecated components `Section`, `Container`, `Sheet` and
+  `ProgressiveImage`
+
+### Minor Changes
+
+- introduce new `Grid` component
+
+### Patch Changes
+
+- use the primary background as overlay color in `Drawer`
+
+- Updated dependency `framer-motion` to `^11.2.10`.
+  ([#169](https://github.com/darenmalfait/nerdfishui/pull/169))
+
+  Updated dependency `lucide-react` to `^0.383.0`. Updated dependency
+  `@types/node` to `^20.14.2`. Updated dependency `tsup` to `^8.1.0`.
+
+- Updated dependency `prettier` to `^3.3.0`.
+  ([#170](https://github.com/darenmalfait/nerdfishui/pull/170))
+
+  Updated dependency `eslint-config-daren` to `^5.1.0`. Updated dependency
+  `eslint-config-turbo` to `^1.13.4`. Updated dependency `eslint-plugin-react`
+  to `^7.34.2`.
+
+- Increase opacity of the `Drawer` handle
+
+- Updated dependencies
+  [[`91c3720`](https://github.com/darenmalfait/nerdfishui/commit/91c3720c1372c1a9b96916165960581c7fe62821),
+  [`f1da18d`](https://github.com/darenmalfait/nerdfishui/commit/f1da18de168530afadba5c2753f33378ce6cf7f9)]:
+  - @nerdfish/utils@1.6.6
+
 ## 4.7.1
 
 ### Patch Changes
