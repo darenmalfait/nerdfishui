@@ -22,7 +22,7 @@
     "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "prepare": "husky",
-    "release": "turbo run build --filter=docs^... && changeset publish",
+    "release": "turbo run build --ignore=docs^... && changeset publish",
     "vercel-build": "turbo build"
   },
   "dependencies": {
@@ -37,7 +37,7 @@
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "prettier": "^3.3.0",
-    "turbo": "^1.13.4"
+    "turbo": "^2.0.4"
   },
-  "packageManager": "pnpm@9.1.4"
+  "packageManager": "pnpm@9.2.0"
 }

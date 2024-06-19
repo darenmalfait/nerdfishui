@@ -173,5 +173,5 @@ When you push your code to GitHub, the
 script defined in the root `package.json`:
 
 ```bash
-turbo run build --filter=docs^... && changeset publish
+turbo run build --ignore=docs^... && changeset publish
 ```
