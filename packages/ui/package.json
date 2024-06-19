@@ -49,10 +49,10 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "input-otp": "^1.2.4",
-    "lucide-react": "^0.383.0",
+    "lucide-react": "^0.394.0",
     "react-day-picker": "^8.10.1",
     "shiki": "^0.14.7",
-    "sonner": "^1.4.41",
+    "sonner": "^1.5.0",
     "vaul": "^0.9.1"
   },
   "devDependencies": {
