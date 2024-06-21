@@ -1,5 +1,15 @@
 # @nerdfish/ui
 
+## 5.0.1
+
+### Patch Changes
+
+- add popover background to dialogs
+
+- `Command` items are not always disabled
+
+- improve `Calendar` color contrasts
+
 ## 5.0.0
 
 ### Major Changes
