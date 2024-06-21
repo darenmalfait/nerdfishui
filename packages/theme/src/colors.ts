@@ -4,7 +4,7 @@ export const light: Colors = {
   nerdfish: '17.85 64.75% 52.16%',
   background: {
     primary: '0 0% 100%',
-    muted: '240 4.8% 95.9%',
+    muted: '0 0% 97%',
     inverted: '0 0% 0%',
   },
   foreground: {
@@ -13,8 +13,8 @@ export const light: Colors = {
     inverted: '0 0% 98%',
   },
   border: {
-    primary: '240 3.7% 15.9%',
-    muted: '240 3.7% 85.9%',
+    primary: '0 0% 97%',
+    muted: '240 4% 85.9%',
   },
   info: {
     100: '208 100% 97%',
@@ -43,17 +43,17 @@ export const dark: typeof light = {
   primary: '0 0% 0%',
   background: {
     primary: '0 0% 0%',
-    muted: '240 3.7% 15.9%',
+    muted: '240 4% 16%',
     inverted: '0 0% 100%',
   },
   foreground: {
     primary: '0 0% 98%',
-    muted: '240 5% 64.9%',
+    muted: '240 5% 65%',
     inverted: '0 0% 2%',
   },
   border: {
-    primary: '240 3.7% 85.9%',
-    muted: '240 3.7% 15.9%',
+    primary: '240 4% 16%',
+    muted: '240 5% 65%',
   },
   info: {
     100: '215 100% 6%',
