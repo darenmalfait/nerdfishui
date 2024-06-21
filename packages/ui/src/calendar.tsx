@@ -48,8 +48,9 @@ function Calendar({
         ),
         day_range_end: 'day-range-end',
         day_selected:
-          'bg-inverted/10 rounded-full text-primary hover:bg-inverted/10',
-        day_today: 'bg-nerdfish text-white',
+          'bg-inverted rounded-full !text-inverted hover:!bg-inverted/90',
+        day_today:
+          'bg-nerdfish text-white hover:!bg-inverted/90 hover:!text-inverted',
         day_outside:
           'day-outside text-muted opacity-50 aria-selected:bg-muted aria-selected:text-muted aria-selected:opacity-80',
         day_disabled: 'text-muted opacity-50',
