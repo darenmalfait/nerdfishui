@@ -29,7 +29,7 @@ const CommandDialog = ({children, ...props}: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <Dialog.Content className="overflow-hidden p-0 shadow-2xl [&_[dialog-overlay]]:bg-red-100">
-        <CommandRoot className="[&_[cmdk-group-heading]]:text-muted [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
+        <CommandRoot className="[&_[cmdk-group-heading]]:text-primary [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
           {children}
         </CommandRoot>
       </Dialog.Content>
@@ -79,7 +79,7 @@ const CommandEmpty = React.forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="text-muted py-6 text-center text-sm"
+    className="text-primary py-6 text-center text-sm"
     {...props}
   />
 ))
@@ -93,7 +93,7 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cx(
-      'overflow-hidden py-3 px-2 text-muted [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:pb-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-gray-900 [&_[cmdk-group-heading]]:dark:text-gray-300',
+      'overflow-hidden py-3 px-2 text-primary [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:pb-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-primary',
       className,
     )}
     {...props}
@@ -121,7 +121,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cx(
-      'relative flex cursor-pointer select-none items-center rounded-md py-1.5 px-2 text-sm font-medium outline-none aria-selected:bg-muted data-[disabled]:pointer-events-none data-[disabled]:text-muted text-primary',
+      'relative flex cursor-pointer select-none items-center rounded-md py-1.5 px-2 text-sm font-medium outline-none aria-selected:bg-muted data-[disabled=true]:pointer-events-none data-[disabled=true]:text-muted text-primary',
       className,
     )}
     {...props}
