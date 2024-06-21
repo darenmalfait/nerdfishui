@@ -21,8 +21,8 @@
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@nerdfish/theme": "workspace:^2.1.7",
-    "@nerdfish/ui": "workspace:^5.0.0",
+    "@nerdfish/theme": "workspace:^2.1.8",
+    "@nerdfish/ui": "workspace:^5.0.1",
     "@nerdfish/utils": "workspace:^1.6.6",
     "@next/env": "^14.2.4",
     "@next/mdx": "^14.2.4",
