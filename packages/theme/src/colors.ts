@@ -9,7 +9,7 @@ export const light: Colors = {
   },
   foreground: {
     primary: '240 10% 3.9%',
-    muted: '240 3.8% 46.1%',
+    muted: '227 8% 35.29%',
     inverted: '0 0% 98%',
   },
   border: {
