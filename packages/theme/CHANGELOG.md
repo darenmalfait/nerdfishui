@@ -1,5 +1,13 @@
 # @nerdfish/theme
 
+## 2.1.8
+
+### Patch Changes
+
+- adjust muted background colors
+
+- increase muted foreground color contrast
+
 ## 2.1.7
 
 ### Patch Changes

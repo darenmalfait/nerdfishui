@@ -1,5 +1,14 @@
 # @nerdfish/tailwind-config
 
+## 2.2.4
+
+### Patch Changes
+
+- Updated dependency `tailwindcss` to `^3.4.4`.
+  ([#172](https://github.com/darenmalfait/nerdfishui/pull/172))
+
+- tweak bg-popover
+
 ## 2.2.3
 
 ### Patch Changes
