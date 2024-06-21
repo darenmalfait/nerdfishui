@@ -62,7 +62,6 @@ export const docs = {
         {title: 'NavigationMenu', href: '/navigation-menu'},
         {title: 'Popover', href: '/popover'},
         {title: 'ScrollArea', href: '/scroll-area'},
-        {title: 'Sheet', href: '/sheet'},
         {title: 'Skeleton', href: '/skeleton'},
         {title: 'Steps', href: '/steps'},
         {title: 'Table', href: '/table'},
