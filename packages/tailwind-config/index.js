@@ -89,11 +89,11 @@ module.exports = plugin(
         '@apply mt-6 first:mt-0': {},
       },
       '.bg-popover': {
-        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] bg-primary/70 dark:bg-primary/40':
+        '@apply backdrop-saturate-[200%] backdrop-blur-[14px] bg-primary/75 dark:bg-primary/40':
           {},
       },
       '.bg-popover-inverted': {
-        '@apply backdrop-saturate-[200%] backdrop-blur-[30px] bg-inverted/40 dark:bg-inverted/70':
+        '@apply backdrop-saturate-[200%] backdrop-blur-[14px] bg-inverted/40 dark:bg-inverted/75':
           {},
       },
     })
