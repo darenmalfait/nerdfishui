@@ -1,7 +1,6 @@
 'use client'
 
 import { Breadcrumb, DropdownMenu } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function BreadcrumbDemo() {
 	return (

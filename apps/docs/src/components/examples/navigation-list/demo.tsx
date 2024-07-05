@@ -1,7 +1,6 @@
 'use client'
 
 import { NavigationList } from '@nerdfish/ui'
-import * as React from 'react'
 import { Icons } from '~/components/icons'
 
 export function NavigationListDemo() {

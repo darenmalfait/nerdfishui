@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { MainNav } from './main-nav'
 import { ThemeToggle } from './theme-toggle'
 

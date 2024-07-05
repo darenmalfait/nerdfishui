@@ -1,5 +1,4 @@
 import { Description, Label, RadioGroup } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function RadioGroupDemo() {
 	return (

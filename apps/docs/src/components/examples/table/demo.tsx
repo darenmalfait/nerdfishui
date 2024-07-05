@@ -1,5 +1,4 @@
 import { Table } from '@nerdfish/ui'
-import * as React from 'react'
 
 const invoices = [
 	{

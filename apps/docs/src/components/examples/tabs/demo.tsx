@@ -1,7 +1,6 @@
 'use client'
 
 import { Tabs } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function TabsDemo() {
 	return (

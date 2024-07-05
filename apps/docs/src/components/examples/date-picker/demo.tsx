@@ -2,7 +2,6 @@
 
 import { DatePicker } from '@nerdfish/ui'
 import { addYears } from 'date-fns'
-import * as React from 'react'
 
 export function DatePickerDemo() {
 	return (

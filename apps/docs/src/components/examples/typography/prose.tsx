@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client'
 
-import * as React from 'react'
-
 export function TypographyProse() {
 	return (
 		<div className="prose dark:prose-invert">

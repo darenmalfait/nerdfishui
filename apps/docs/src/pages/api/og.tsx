@@ -3,7 +3,6 @@
 import { cx } from '@nerdfish/utils'
 import { ImageResponse } from '@vercel/og'
 import { type NextRequest } from 'next/server'
-import * as React from 'react'
 
 import { ogImageSchema } from '../../lib/types/og'
 

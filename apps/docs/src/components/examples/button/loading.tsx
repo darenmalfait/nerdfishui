@@ -2,7 +2,6 @@
 
 import { Button } from '@nerdfish/ui'
 import { Loader2 } from 'lucide-react'
-import * as React from 'react'
 
 export function ButtonLoading() {
 	return (

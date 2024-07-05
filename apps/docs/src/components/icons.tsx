@@ -27,7 +27,6 @@ import {
 	type LucideIcon,
 	type LucideProps,
 } from 'lucide-react'
-import * as React from 'react'
 
 export type Icon = LucideIcon
 

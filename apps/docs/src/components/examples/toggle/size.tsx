@@ -2,7 +2,6 @@
 
 import { Toggle } from '@nerdfish/ui'
 import { Bold, Italic } from 'lucide-react'
-import * as React from 'react'
 
 export function ToggleSize() {
 	return (

@@ -2,7 +2,6 @@
 
 import { Button, Input, Label, Popover } from '@nerdfish/ui'
 import { Cake } from 'lucide-react'
-import * as React from 'react'
 
 export function PopoverDemo() {
 	return (

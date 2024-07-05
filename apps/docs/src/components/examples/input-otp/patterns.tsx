@@ -1,5 +1,4 @@
 import { InputOTP, inputOTPPatterns } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function InputOTPPatternsDemo() {
 	return (

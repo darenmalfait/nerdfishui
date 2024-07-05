@@ -1,7 +1,6 @@
 'use client'
 
 import { Button, toast } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function ToastAction() {
 	return (

@@ -1,7 +1,6 @@
 'use client'
 
 import { Button, Drawer } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function DrawerDirection() {
 	return (

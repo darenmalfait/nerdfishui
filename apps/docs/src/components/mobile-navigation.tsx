@@ -1,7 +1,6 @@
 'use client'
 
 import { Button, Drawer } from '@nerdfish/ui'
-import * as React from 'react'
 
 import { useMobileNav } from '../context/mobile-nav-provider'
 import { Icons } from './icons'

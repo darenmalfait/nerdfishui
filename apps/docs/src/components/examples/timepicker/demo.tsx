@@ -1,7 +1,6 @@
 'use client'
 
 import { Timepicker } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function TimepickerDemo() {
 	return (

@@ -1,7 +1,6 @@
 'use client'
 
 import { Badge, Indicator } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function IndicatorPositionsDemo() {
 	return (

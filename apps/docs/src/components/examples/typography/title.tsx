@@ -1,7 +1,6 @@
 'use client'
 
 import { H2 } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function TypographyTitle() {
 	return (

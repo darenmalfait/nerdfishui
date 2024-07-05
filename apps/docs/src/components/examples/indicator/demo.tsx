@@ -1,7 +1,6 @@
 'use client'
 
 import { Indicator } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function IndicatorDemo() {
 	return (

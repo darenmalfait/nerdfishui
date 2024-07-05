@@ -2,7 +2,6 @@
 
 import { ToggleGroup } from '@nerdfish/ui'
 import { Bold, Italic, Underline } from 'lucide-react'
-import * as React from 'react'
 
 export function ToggleGroupDemo() {
 	return (

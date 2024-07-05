@@ -2,7 +2,6 @@
 
 import { Checkbox } from '@nerdfish/ui'
 import { Cross } from 'lucide-react'
-import * as React from 'react'
 
 export function CheckboxIcon() {
 	return (

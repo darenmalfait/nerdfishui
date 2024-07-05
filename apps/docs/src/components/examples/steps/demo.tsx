@@ -1,7 +1,6 @@
 'use client'
 
 import { Steps } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function StepsDemo() {
 	return (

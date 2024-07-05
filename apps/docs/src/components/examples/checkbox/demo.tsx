@@ -1,7 +1,6 @@
 'use client'
 
 import { Checkbox } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function CheckboxDemo() {
 	return (

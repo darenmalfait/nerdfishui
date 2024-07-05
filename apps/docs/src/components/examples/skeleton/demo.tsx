@@ -1,5 +1,4 @@
 import { Skeleton } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function SkeletonDemo() {
 	return (

@@ -1,7 +1,6 @@
 'use client'
 
 import { Link } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function LinkDemo() {
 	return (

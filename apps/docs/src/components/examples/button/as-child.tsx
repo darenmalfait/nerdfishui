@@ -2,7 +2,6 @@
 
 import { Button } from '@nerdfish/ui'
 import Link from 'next/link'
-import * as React from 'react'
 
 export function ButtonAsChild() {
 	return (

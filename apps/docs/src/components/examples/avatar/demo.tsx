@@ -1,7 +1,6 @@
 'use client'
 
 import { Avatar } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function AvatarDemo() {
 	return (

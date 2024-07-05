@@ -1,7 +1,6 @@
 'use client'
 
 import { Accordion } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function AccordionDemo() {
 	return (

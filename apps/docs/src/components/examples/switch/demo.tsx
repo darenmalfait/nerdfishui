@@ -1,7 +1,6 @@
 'use client'
 
 import { Label, Switch } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function SwitchDemo() {
 	return (

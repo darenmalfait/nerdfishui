@@ -2,7 +2,6 @@
 
 import { Input } from '@nerdfish/ui'
 import { CheckCircle } from 'lucide-react'
-import * as React from 'react'
 
 export function InputIcon() {
 	return (

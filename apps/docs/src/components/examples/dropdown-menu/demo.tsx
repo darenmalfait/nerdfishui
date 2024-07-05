@@ -17,7 +17,6 @@ import {
 	UserPlus,
 	Users,
 } from 'lucide-react'
-import * as React from 'react'
 
 export function DropdownMenuDemo() {
 	return (

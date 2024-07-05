@@ -1,6 +1,5 @@
 import { Button, Tooltip, TooltipProvider } from '@nerdfish/ui'
 import { Plus } from 'lucide-react'
-import * as React from 'react'
 
 export function TooltipDemo() {
 	return (

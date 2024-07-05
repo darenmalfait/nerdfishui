@@ -1,7 +1,6 @@
 'use client'
 
 import { Button, Dialog, Input, Label } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function DialogDemo() {
 	return (

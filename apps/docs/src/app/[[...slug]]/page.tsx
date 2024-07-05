@@ -1,6 +1,5 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import * as React from 'react'
 
 import { DocsPageHeader } from '../../components/docs-page-header'
 import { Mdx } from '../../components/mdx'

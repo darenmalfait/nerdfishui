@@ -1,7 +1,7 @@
 'use client'
 
 import { Select } from '@nerdfish/ui'
-import * as React from 'react'
+
 import { Icons } from '~/components/icons'
 
 export function SelectDemo() {

@@ -1,5 +1,4 @@
 import { Field, InputOTP } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function InputOTPFieldDemo() {
 	return (

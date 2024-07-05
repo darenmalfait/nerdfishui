@@ -2,7 +2,6 @@
 'use client'
 
 import { H1, H2, H3, H4, H5, Paragraph } from '@nerdfish/ui'
-import * as React from 'react'
 
 export function TypographyDemo() {
 	return (
