@@ -1,8 +1,11 @@
 {
-  "extends": ["//"],
-  "tasks": {
-    "start": {
-      "cache": false
-    }
-  }
+	"extends": ["//"],
+	"tasks": {
+		"start": {
+			"cache": false
+		},
+		"lint": {
+			"env": ["ANALYZE"]
+		}
+	}
 }

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply text-primary max-w-full overflow-x-hidden overscroll-none font-sans;
+	}
+}

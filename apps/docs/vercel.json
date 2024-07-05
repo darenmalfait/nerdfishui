@@ -1,10 +1,10 @@
 {
-  "ignoreCommand": "npx turbo-ignore",
-  "framework": "nextjs",
-  "buildCommand": "turbo build",
-  "git": {
-    "deploymentEnabled": {
-      "main": false
-    }
-  }
+	"ignoreCommand": "npx turbo-ignore",
+	"framework": "nextjs",
+	"buildCommand": "turbo build",
+	"git": {
+		"deploymentEnabled": {
+			"main": false
+		}
+	}
 }

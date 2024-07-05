@@ -9,6 +9,7 @@
   "license": "MIT",
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -56,12 +57,10 @@
     "vaul": "^0.9.1"
   },
   "devDependencies": {
-    "@nerdfish/lint": "workspace:*",
     "@nerdfish/tailwind-config": "workspace:*",
-    "@nerdfish/tsconfig": "workspace:*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.4.0",
     "prettier": "^3.3.2",
     "react": "^18.3.1",
     "tsup": "^8.1.0",

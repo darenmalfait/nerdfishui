@@ -9,7 +9,7 @@ const getDependencyReleaseLine = async (changesets, dependenciesUpdated) => {
     await Promise.all(
       changesets.map(async cs => {
         if (cs.commit) {
-          let {links} = await getInfo({
+          const {links} = await getInfo({
             repo,
             commit: cs.commit,
           })
@@ -29,12 +29,12 @@ const getDependencyReleaseLine = async (changesets, dependenciesUpdated) => {
 }
 
 const getReleaseLine = async (changeset, type, options) => {
-  let prFromSummary
-  let commitFromSummary
+  let prFromSummary,
+   commitFromSummary
 
   const replacedChangelog = changeset.summary
     .replace(/^\s*(?:pr|pull|pull\s+request):\s*#?(\d+)/im, (_, pr) => {
-      let num = Number(pr)
+      const num = Number(pr)
       if (!isNaN(num)) prFromSummary = num
       return ''
     })
@@ -64,7 +64,7 @@ const getReleaseLine = async (changeset, type, options) => {
     }
     const commitToFetchFrom = commitFromSummary || changeset.commit
     if (commitToFetchFrom) {
-      let {links} = await getInfo({
+      const {links} = await getInfo({
         repo,
         commit: commitToFetchFrom,
       })

@@ -1,27 +1,26 @@
 {
-  "extends": "@nerdfish/tsconfig/nextjs.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["src/*"]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "verbatimModuleSyntax": false,
-    "strictNullChecks": true
-  },
-  "include": [
-    "next-env.d.ts",
-    "./**/*.js",
-    "./**/*.ts",
-    "./**/*.tsx",
-    ".next/types/**/*.ts",
-    "next.config.js",
-    "next.config.mjs",
-    "postcss.config.cjs"
-  ],
-  "exclude": ["node_modules", ".next", "public"]
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["src/*"],
+			"~/content/*": ["content/*"]
+		},
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
+	},
+	"include": [
+		"./**/*.js",
+		"./**/*.jsx",
+		"./**/*.ts",
+		"./**/*.tsx",
+		".next/types/**/*.ts",
+		"next-env.d.ts",
+		"next.config.mjs",
+		"postcss.config.cjs"
+	],
+	"exclude": ["node_modules", ".next", "public"]
 }
