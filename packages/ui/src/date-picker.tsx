@@ -1,6 +1,6 @@
 'use client'
 
-import { cx, useControllableState } from '@nerdfish/utils'
+import { cx } from '@nerdfish/utils'
 import { addDays, format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import * as React from 'react'
@@ -70,8 +70,8 @@ function DatePickerTrigger({
 
 function DatePicker({
 	className,
-	selected: selectedProp,
-	onSelect: onSelectProp,
+	selected,
+	onSelect,
 	presets,
 	placeholder = 'Pick a date',
 	children,
@@ -81,17 +81,11 @@ function DatePicker({
 }: CalendarProps & {
 	className?: string
 	selected?: Date
-	onSelect?: React.Dispatch<React.SetStateAction<Date>>
+	onSelect?: React.Dispatch<React.SetStateAction<Date | undefined>>
 	presets?: Preset[]
 	placeholder?: string
 	children?: React.ReactNode
 }) {
-	const [selected, onSelect] = useControllableState(
-		selectedProp,
-		selectedProp,
-		onSelectProp,
-	)
-
 	return (
 		<Popover>
 			<Popover.Trigger>
