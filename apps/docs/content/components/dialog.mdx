@@ -10,27 +10,27 @@ package:
   path: 'dialog.tsx'
 ---
 
-<ComponentExample src="/components/examples/dialog/demo.tsx">
-  <DialogDemo />
+<ComponentExample src="/src/components/examples/dialog/demo.tsx">
+	<DialogDemo />
 </ComponentExample>
 
 ## Usage
 
 ```tsx
-import {Dialog} from '@nerdfish/ui'
+import { Dialog } from '@nerdfish/ui'
 ```
 
 ```tsx
 <Dialog>
-  <Dialog.Trigger>Remove order</Dialog.Trigger>
-  <Dialog.Content>
-    <Dialog.Header>
-      <Dialog.Title>Are you sure absolutely sure?</Dialog.Title>
-      <Dialog.Description>
-        This action cannot be undone. This will permanently delete your cake
-        order and remove your dessert from our kitchen.
-      </Dialog.Description>
-    </Dialog.Header>
-  </Dialog.Content>
+	<Dialog.Trigger>Remove order</Dialog.Trigger>
+	<Dialog.Content>
+		<Dialog.Header>
+			<Dialog.Title>Are you sure absolutely sure?</Dialog.Title>
+			<Dialog.Description>
+				This action cannot be undone. This will permanently delete your cake
+				order and remove your dessert from our kitchen.
+			</Dialog.Description>
+		</Dialog.Header>
+	</Dialog.Content>
 </Dialog>
 ```

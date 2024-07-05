@@ -8,8 +8,8 @@ package:
   path: 'select.tsx'
 ---
 
-<ComponentExample src="/components/examples/select/demo.tsx">
-  <SelectDemo />
+<ComponentExample src="/src/components/examples/select/demo.tsx">
+	<SelectDemo />
 </ComponentExample>
 
 ## Usage
@@ -18,26 +18,26 @@ Comboxbox extends the [Input](/input) component. All props from Input are
 available.
 
 ```tsx
-import {Select} from '@nerdfish/ui'
+import { Select } from '@nerdfish/ui'
 import Image from 'next/image'
 ```
 
 ```tsx
 <Select
-  name="framework"
-  label="Framework"
-  emptyString="No frameworks found"
-  placeholder="Select a framework"
-  options={[
-    {value: 'next.js', label: 'Next.js'},
-    {value: 'sveltekit', label: 'SvelteKit'},
-    {value: 'nuxt.js', label: 'Nuxt.js'},
-    {value: 'remix', label: 'Remix'},
-    {value: 'astro', label: 'Astro'},
-    {value: 'vite', label: 'Vite'},
-    {value: 'snowpack', label: 'Snowpack'},
-    {value: 'sapper', label: 'Sapper'},
-    {value: 'gatsby', label: 'Gatsby'},
-  ]}
+	name="framework"
+	label="Framework"
+	emptyString="No frameworks found"
+	placeholder="Select a framework"
+	options={[
+		{ value: 'next.js', label: 'Next.js' },
+		{ value: 'sveltekit', label: 'SvelteKit' },
+		{ value: 'nuxt.js', label: 'Nuxt.js' },
+		{ value: 'remix', label: 'Remix' },
+		{ value: 'astro', label: 'Astro' },
+		{ value: 'vite', label: 'Vite' },
+		{ value: 'snowpack', label: 'Snowpack' },
+		{ value: 'sapper', label: 'Sapper' },
+		{ value: 'gatsby', label: 'Gatsby' },
+	]}
 />
 ```

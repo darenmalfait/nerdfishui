@@ -10,25 +10,25 @@ package:
   path: 'navigation-menu.tsx'
 ---
 
-<ComponentExample src="/components/examples/navigation-menu/demo.tsx">
-  <NavigationMenuDemo />
+<ComponentExample src="/src/components/examples/navigation-menu/demo.tsx">
+	<NavigationMenuDemo />
 </ComponentExample>
 
 ## Usage
 
 ```tsx
-import {NavigationMenu} from '@nerdfish/ui'
+import { NavigationMenu } from '@nerdfish/ui'
 ```
 
 ```tsx
 <NavigationMenu>
-  <NavigationMenu.List>
-    <NavigationMenu.Item>
-      <NavigationMenu.Trigger>Item One</NavigationMenu.Trigger>
-      <NavigationMenu.Content>
-        <NavigationMenu.Link>Link</NavigationMenu.Link>
-      </NavigationMenu.Content>
-    </NavigationMenu.Item>
-  </NavigationMenu.List>
+	<NavigationMenu.List>
+		<NavigationMenu.Item>
+			<NavigationMenu.Trigger>Item One</NavigationMenu.Trigger>
+			<NavigationMenu.Content>
+				<NavigationMenu.Link>Link</NavigationMenu.Link>
+			</NavigationMenu.Content>
+		</NavigationMenu.Item>
+	</NavigationMenu.List>
 </NavigationMenu>
 ```

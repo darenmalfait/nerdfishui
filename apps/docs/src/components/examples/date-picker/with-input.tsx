@@ -6,7 +6,7 @@ import { Calendar } from 'lucide-react'
 import * as React from 'react'
 
 export function DatePickerWithInputExample() {
-	const [date, setDate] = React.useState<Date>(new Date())
+	const [date, setDate] = React.useState<Date | undefined>(new Date())
 
 	return (
 		<div className="flex w-full gap-2">
@@ -22,7 +22,7 @@ export function DatePickerWithInputExample() {
 					label="Date"
 					placeholder="Date"
 					icon={Calendar}
-					value={format(date, 'yyyy-MM-dd')}
+					value={date ? format(date, 'yyyy-MM-dd') : ''}
 					onChange={(e) => setDate(new Date(e.target.value))}
 					description="Your date of birth"
 				/>

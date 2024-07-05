@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import { addDays, format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import * as React from 'react'
-import { type DateRange } from 'react-day-picker'
+import { type SelectRangeEventHandler, type DateRange } from 'react-day-picker'
 
 import { Badge } from './badge'
 import { Button } from './button'
@@ -19,23 +19,25 @@ function Presets({
 	className,
 }: {
 	presets?: Preset[]
-	onChange?: (date: Date) => void
+	onChange?: (value: Date | undefined) => void
 	className?: string
 }) {
 	if (!presets.length) return null
 
 	return (
 		<div className={cx('flex max-w-[250px] flex-wrap px-3', className)}>
-			{presets.map(({ value, label }) => (
-				<button
-					key={value}
-					type="button"
-					className="text-primary/50 hover:text-primary/70 m-1 inline-flex text-sm"
-					onClick={() => onChange?.(addDays(new Date(), parseInt(value, 10)))}
-				>
-					<Badge>{label}</Badge>
-				</button>
-			))}
+			{presets.map(({ value, label }) => {
+				return (
+					<button
+						key={value}
+						type="button"
+						className="text-primary/50 hover:text-primary/70 m-1 inline-flex text-sm"
+						onClick={() => onChange?.(addDays(new Date(), parseInt(value, 10)))}
+					>
+						<Badge>{label}</Badge>
+					</button>
+				)
+			})}
 		</div>
 	)
 }
@@ -81,7 +83,7 @@ function DatePicker({
 }: CalendarProps & {
 	className?: string
 	selected?: Date
-	onSelect?: React.Dispatch<React.SetStateAction<Date | undefined>>
+	onSelect?: (value: Date | undefined) => void
 	presets?: Preset[]
 	placeholder?: string
 	children?: React.ReactNode
@@ -167,7 +169,7 @@ function DateRangePicker({
 	...props
 }: CalendarProps & {
 	selected?: DateRange
-	onSelect?: React.Dispatch<React.SetStateAction<DateRange | undefined>>
+	onSelect?: SelectRangeEventHandler
 	children?: React.ReactNode
 	placeholder?: string
 }) {

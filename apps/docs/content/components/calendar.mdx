@@ -8,25 +8,25 @@ package:
   path: 'calendar.tsx'
 ---
 
-<ComponentExample src="/components/examples/calendar/demo.tsx">
-  <CalendarDemo />
+<ComponentExample src="/src/components/examples/calendar/demo.tsx">
+	<CalendarDemo />
 </ComponentExample>
 
 ## Usage
 
 ```tsx
-import {Calendar} from '@nerdfish/ui'
+import { Calendar } from '@nerdfish/ui'
 ```
 
 ```tsx
 const [date, setDate] = React.useState<Date | undefined>(new Date())
 
 return (
-  <Calendar
-    mode="single"
-    selected={date}
-    onSelect={setDate}
-    className="rounded-md border"
-  />
+	<Calendar
+		mode="single"
+		selected={date}
+		onSelect={setDate}
+		className="rounded-md border"
+	/>
 )
 ```
