@@ -9,6 +9,7 @@
   "license": "MIT",
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -17,7 +18,7 @@
   ],
   "scripts": {
     "build:provider": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "build:css": "tsup src/create-global-css.ts --format esm,cjs --dts --onSuccess \"node dist/create-global-css.mjs\"",
+    "build:css": "tsup src/create-global-css.ts --format esm,cjs --dts --onSuccess \"node dist/create-global-css.js\"",
     "build": "run-s build:*",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "clean": "rm -rf node_modules .turbo",
@@ -31,11 +32,9 @@
     "@nerdfish/utils": "workspace:^*"
   },
   "devDependencies": {
-    "@nerdfish/lint": "workspace:*",
-    "@nerdfish/tsconfig": "workspace:*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.4.0",
     "npm-run-all2": "^6.2.0",
     "prettier": "^3.3.2",
     "react": "^18.3.1",

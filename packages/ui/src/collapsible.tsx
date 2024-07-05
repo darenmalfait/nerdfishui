@@ -7,8 +7,8 @@ const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
 const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
 
 const Collapsible = Object.assign(CollapsiblePrimitive.Root, {
-  Trigger: CollapsibleTrigger,
-  Content: CollapsibleContent,
+	Trigger: CollapsibleTrigger,
+	Content: CollapsibleContent,
 })
 
-export {Collapsible}
+export { Collapsible }

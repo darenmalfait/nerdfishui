@@ -9,6 +9,7 @@
   "license": "MIT",
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -16,9 +17,9 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build": "tsup --config tsup.config.ts",
     "clean": "rm -rf node_modules .turbo",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "dev": "tsup --watch --config tsup.config.ts",
     "format": "prettier . --check --cache --cache-location=\"node_modules/.cache/prettiercache\"",
     "format:fix": "prettier . --write --cache --cache-location=\"node_modules/.cache/prettiercache\" --log-level=warn",
     "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
@@ -56,12 +57,10 @@
     "vaul": "^0.9.1"
   },
   "devDependencies": {
-    "@nerdfish/lint": "workspace:*",
     "@nerdfish/tailwind-config": "workspace:*",
-    "@nerdfish/tsconfig": "workspace:*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.4.0",
     "prettier": "^3.3.2",
     "react": "^18.3.1",
     "tsup": "^8.1.0",

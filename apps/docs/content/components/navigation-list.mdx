@@ -1,7 +1,6 @@
 ---
 title: NavigationList
-description:
-  NavigationList is a component that renders a list of items with a
+description: NavigationList is a component that renders a list of items with a
   navigation-like style.
 component: true
 type: Doc
@@ -10,30 +9,30 @@ package:
   path: 'navigation-list.tsx'
 ---
 
-<ComponentExample src="/components/examples/navigation-list/demo.tsx">
-  <NavigationListDemo />
+<ComponentExample src="/src/components/examples/navigation-list/demo.tsx">
+	<NavigationListDemo />
 </ComponentExample>
 
 ## Usage
 
 ```tsx
-import {NavigationList} from '@nerdfish/ui'
+import { NavigationList } from '@nerdfish/ui'
 ```
 
 ```tsx
 <NavigationList>
-  <NavigationList.Item href="https://www.nerdfish.be" title="Chocolate Cake" />
-  <NavigationList.Item
-    as="button"
-    onClick={() => console.info('click')}
-    title="Strawberry Shortcake"
-  />
-  <NavigationList.Item title="Carrot Cake" />
+	<NavigationList.Item href="https://www.nerdfish.be" title="Chocolate Cake" />
+	<NavigationList.Item
+		as="button"
+		onClick={() => console.info('click')}
+		title="Strawberry Shortcake"
+	/>
+	<NavigationList.Item title="Carrot Cake" />
 
-  <NavigationList.Section>
-    <NavigationList.Item title="Red Velvet Cake" />
-    <NavigationList.Item title="Vanilla Cake" />
-    <NavigationList.Item title="Lemon Cake" />
-  </NavigationList.Section>
+	<NavigationList.Section>
+		<NavigationList.Item title="Red Velvet Cake" />
+		<NavigationList.Item title="Vanilla Cake" />
+		<NavigationList.Item title="Lemon Cake" />
+	</NavigationList.Section>
 </NavigationList>
 ```

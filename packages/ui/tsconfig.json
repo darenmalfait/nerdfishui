@@ -1,9 +1,3 @@
 {
-  "extends": "@nerdfish/tsconfig/react-library.json",
-  "compilerOptions": {
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "incremental": true
-  },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+	"extends": "../../tsconfig.json"
 }
