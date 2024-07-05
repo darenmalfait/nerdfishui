@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build:provider": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "build:css": "tsup src/create-global-css.ts --format esm,cjs --dts --onSuccess \"node dist/create-global-css.mjs\"",
+    "build:css": "tsup src/create-global-css.ts --format esm,cjs --dts --onSuccess \"node dist/create-global-css.js\"",
     "build": "run-s build:*",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "clean": "rm -rf node_modules .turbo",
