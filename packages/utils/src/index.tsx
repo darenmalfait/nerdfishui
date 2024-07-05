@@ -10,5 +10,5 @@ export * from './slugify'
 export * from './types'
 export * from './walk-object'
 
-export {cx, cva} from './class'
-export type {VariantProps} from './class'
+export { cx, cva } from './class'
+export type { VariantProps } from './class'

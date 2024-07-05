@@ -1,0 +1,6 @@
+[data-rehype-pretty-code-fragment] {
+	@apply relative;
+}
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+	@apply relative;
+}

@@ -10,8 +10,8 @@ package:
   path: 'multi-select.tsx'
 ---
 
-<ComponentExample src="/components/examples/multi-select/demo.tsx">
-  <MultiSelectDemo />
+<ComponentExample src="/src/components/examples/multi-select/demo.tsx">
+	<MultiSelectDemo />
 </ComponentExample>
 
 ## Usage
@@ -20,21 +20,21 @@ Comboxbox extends the [Input](/input) component. All props from Input are
 available.
 
 ```tsx
-import {MultiSelect} from '@nerdfish/ui'
+import { MultiSelect } from '@nerdfish/ui'
 import Image from 'next/image'
 ```
 
 ```tsx
 <MultiSelect
-  name="framework"
-  label="Framework"
-  placeholder="Select a framework"
-  options={[
-    {value: 'next.js', label: 'Next.js'},
-    {value: 'sveltekit', label: 'SvelteKit'},
-    {value: 'nuxt.js', label: 'Nuxt.js'},
-    {value: 'remix', label: 'Remix'},
-    {value: 'astro', label: 'Astro'},
-  ]}
+	name="framework"
+	label="Framework"
+	placeholder="Select a framework"
+	options={[
+		{ value: 'next.js', label: 'Next.js' },
+		{ value: 'sveltekit', label: 'SvelteKit' },
+		{ value: 'nuxt.js', label: 'Nuxt.js' },
+		{ value: 'remix', label: 'Remix' },
+		{ value: 'astro', label: 'Astro' },
+	]}
 />
 ```

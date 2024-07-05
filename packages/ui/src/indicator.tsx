@@ -1,57 +1,57 @@
+import { cx } from '@nerdfish/utils'
+import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
-import {cx} from '@nerdfish/utils'
-import {Slot} from '@radix-ui/react-slot'
 
 const RawIndicator = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithRef<'div'>
+	HTMLDivElement,
+	React.ComponentPropsWithRef<'div'>
 >(function RawIndicator(props, ref) {
-  return (
-    <div
-      ref={ref}
-      {...props}
-      className={cx('relative inline-flex w-max', props.className)}
-    />
-  )
+	return (
+		<div
+			ref={ref}
+			{...props}
+			className={cx('relative inline-flex w-max', props.className)}
+		/>
+	)
 })
 
 const IndicatorItem = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithRef<'div'> & {
-    asChild?: boolean
-    top?: boolean
-    left?: boolean
-    center?: boolean // horizontal
-    right?: boolean
-    middle?: boolean
-    bottom?: boolean // vertical
-  }
+	HTMLDivElement,
+	React.ComponentPropsWithRef<'div'> & {
+		asChild?: boolean
+		top?: boolean
+		left?: boolean
+		center?: boolean // horizontal
+		right?: boolean
+		middle?: boolean
+		bottom?: boolean // vertical
+	}
 >(function IndicatorItem(
-  {asChild, className, top, right, left, center, middle, bottom, ...props},
-  ref,
+	{ asChild, className, top, right, left, center, middle, bottom, ...props },
+	ref,
 ) {
-  const Comp = asChild ? Slot : 'div'
+	const Comp = asChild ? Slot : 'div'
 
-  return (
-    <Comp
-      ref={ref}
-      {...props}
-      className={cx(
-        'z-10 absolute inline-block transform whitespace-nowrap bottom-auto top-0 -translate-y-1/2 end-0 start-auto translate-x-1/2 rtl:-translate-x-1/2',
-        {
-          'end-auto start-0 -translate-x-1/2 rtl:translate-x-1/2': left,
-          'end-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2': center,
-          'end-0 start-auto translate-x-1/2 rtl:-translate-x-1/2': right,
-          'bottom-0 top-auto translate-y-1/2': bottom,
-          'bottom-1/2 top-1/2 !-translate-y-1/2': middle,
-          'bottom-auto top-0 -translate-y-1/2': top,
-        },
-        className,
-      )}
-    />
-  )
+	return (
+		<Comp
+			ref={ref}
+			{...props}
+			className={cx(
+				'absolute bottom-auto end-0 start-auto top-0 z-10 inline-block -translate-y-1/2 translate-x-1/2 transform whitespace-nowrap rtl:-translate-x-1/2',
+				{
+					'end-auto start-0 -translate-x-1/2 rtl:translate-x-1/2': left,
+					'end-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2': center,
+					'end-0 start-auto translate-x-1/2 rtl:-translate-x-1/2': right,
+					'bottom-0 top-auto translate-y-1/2': bottom,
+					'bottom-1/2 top-1/2 !-translate-y-1/2': middle,
+					'bottom-auto top-0 -translate-y-1/2': top,
+				},
+				className,
+			)}
+		/>
+	)
 })
 
-const Indicator = Object.assign(RawIndicator, {Item: IndicatorItem})
+const Indicator = Object.assign(RawIndicator, { Item: IndicatorItem })
 
-export {Indicator}
+export { Indicator }

@@ -1,0 +1,11 @@
+{
+	"extends": "@nerdfish/config/typescript",
+	"include": [
+		"@nerdfish/config/reset.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"**/*.jsx"
+	],
+	"exclude": ["node_modules", "apps"]
+}

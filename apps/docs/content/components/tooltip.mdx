@@ -8,23 +8,23 @@ package:
   path: 'tooltip.tsx'
 ---
 
-<ComponentExample src="/components/examples/tooltip/demo.tsx">
-  <TooltipDemo />
+<ComponentExample src="/src/components/examples/tooltip/demo.tsx">
+	<TooltipDemo />
 </ComponentExample>
 
 ## Usage
 
 ```tsx
-import {Tooltip, TooltipProvider} from '@nerdfish/ui'
+import { Tooltip, TooltipProvider } from '@nerdfish/ui'
 ```
 
 ```tsx
 <TooltipProvider>
-  <Tooltip>
-    <TooltipTrigger>Hover</TooltipTrigger>
-    <TooltipContent>
-      <p>Add to library</p>
-    </TooltipContent>
-  </Tooltip>
+	<Tooltip>
+		<TooltipTrigger>Hover</TooltipTrigger>
+		<TooltipContent>
+			<p>Add to library</p>
+		</TooltipContent>
+	</Tooltip>
 </TooltipProvider>
 ```

@@ -10,38 +10,38 @@ package:
   path: 'drawer.tsx'
 ---
 
-<ComponentExample src="/components/examples/drawer/demo.tsx">
-  <DrawerDemo />
+<ComponentExample src="/src/components/examples/drawer/demo.tsx">
+	<DrawerDemo />
 </ComponentExample>
 
 ## Usage
 
 ```tsx
-import {Drawer, Button} from '@nerdfish/ui'
+import { Drawer, Button } from '@nerdfish/ui'
 ```
 
 ```tsx
 <Drawer>
-  <Drawer.Trigger>Open</Drawer.Trigger>
-  <Drawer.Content>
-    <Drawer.Header>
-      <Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-      <Drawer.Description>This action cannot be undone.</Drawer.Description>
-    </Drawer.Header>
-    <Drawer.Footer>
-      <Button>Submit</Button>
-      <Drawer.Close>
-        <Button variant="outline">Cancel</Button>
-      </Drawer.Close>
-    </Drawer.Footer>
-  </Drawer.Content>
+	<Drawer.Trigger>Open</Drawer.Trigger>
+	<Drawer.Content>
+		<Drawer.Header>
+			<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
+			<Drawer.Description>This action cannot be undone.</Drawer.Description>
+		</Drawer.Header>
+		<Drawer.Footer>
+			<Button>Submit</Button>
+			<Drawer.Close>
+				<Button variant="outline">Cancel</Button>
+			</Drawer.Close>
+		</Drawer.Footer>
+	</Drawer.Content>
 </Drawer>
 ```
 
 ## Direction
 
-<ComponentExample src="/components/examples/drawer/direction.tsx">
-  <DrawerDirection />
+<ComponentExample src="/src/components/examples/drawer/direction.tsx">
+	<DrawerDirection />
 </ComponentExample>
 
 ## Responsive
@@ -49,6 +49,6 @@ import {Drawer, Button} from '@nerdfish/ui'
 You can combine the `Dialog` and `Drawer` components to create a responsive
 dialog. This renders a `Dialog` component on desktop and a `Drawer` on mobile.
 
-<ComponentExample src="/components/examples/drawer/responsive.tsx">
-  <DrawerResponsiveDemo />
+<ComponentExample src="/src/components/examples/drawer/responsive.tsx">
+	<DrawerResponsiveDemo />
 </ComponentExample>

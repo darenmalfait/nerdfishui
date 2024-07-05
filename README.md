@@ -68,29 +68,29 @@ to install the tailwindcss-animate plugin.
 ```js
 // tailwind.config.js
 module.exports = {
-  mode: 'jit',
-  content: [
-    // ... paths that use tailwind
-    './node_modules/@nerdfish/**/*.{js,ts,jsx,tsx}', // path to nerdfishui
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [
-    require('tailwindcss-animate'),
-    require('@tailwindcss/typography'),
-    require('@nerdfish/tailwind-config'),
-  ],
+	mode: 'jit',
+	content: [
+		// ... paths that use tailwind
+		'./node_modules/@nerdfish/**/*.{js,ts,jsx,tsx}', // path to nerdfishui
+	],
+	theme: {
+		extend: {},
+	},
+	plugins: [
+		require('tailwindcss-animate'),
+		require('@tailwindcss/typography'),
+		require('@nerdfish/tailwind-config'),
+	],
 }
 ```
 
 ```js
 // postcss.config.js
 module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
+	plugins: {
+		tailwindcss: {},
+		autoprefixer: {},
+	},
 }
 ```
 
@@ -106,16 +106,16 @@ Then you need a global css file which you import at the root of the project
 
 ```js
 import * as React from 'react'
-import {H1, ThemeProvider} from '@nerdfish/ui'
+import { H1, ThemeProvider } from '@nerdfish/ui'
 
 import '@nerdfish/theme/dist/nerdfishui.css'
 
 function App() {
-  return (
-    <ThemeProvider>
-      <H1>Hello Nerdfish</H1>
-    </ThemeProvider>
-  )
+	return (
+		<ThemeProvider>
+			<H1>Hello Nerdfish</H1>
+		</ThemeProvider>
+	)
 }
 ```
 
