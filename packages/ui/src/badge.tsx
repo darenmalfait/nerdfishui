@@ -1,3 +1,5 @@
+'use client'
+
 import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import * as React from 'react'
 
