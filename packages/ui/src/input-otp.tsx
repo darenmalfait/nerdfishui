@@ -1,3 +1,4 @@
+'use client'
 // based on https://input-otp.rodz.dev/
 
 import { cx } from '@nerdfish/utils'
