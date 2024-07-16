@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 5.0.2
+
+### Patch Changes
+
+- add use client to multiple components
+
 ## 5.0.1
 
 ### Patch Changes
@@ -170,10 +176,10 @@
 
   ```tsx
   <Indicator>
-    <Indicator.Item>
-      <div className="size-4 rounded-full bg-pink-500" />
-    </Indicator.Item>
-    <div className="grid size-32 place-items-center bg-muted">content</div>
+  	<Indicator.Item>
+  		<div className="size-4 rounded-full bg-pink-500" />
+  	</Indicator.Item>
+  	<div className="bg-muted grid size-32 place-items-center">content</div>
   </Indicator>
   ```
 
@@ -218,8 +224,8 @@
 
   ```tsx
   <Alert title="example" className="w-full">
-    <Alert.Title>Example alert</Alert.Title>
-    <Alert.Description>Example description</Alert.Description>
+  	<Alert.Title>Example alert</Alert.Title>
+  	<Alert.Description>Example description</Alert.Description>
   </Alert>
   ```
 
@@ -268,20 +274,20 @@
 - Added new `ToggleGroup` component
 
   ```tsx
-  import {ToggleGroup} from '@nerdfish/ui'
+  import { ToggleGroup } from '@nerdfish/ui'
   ```
 
   ```tsx
   <ToggleGroup type="multiple">
-    <ToggleGroup.Item value="bold" aria-label="Toggle bold">
-      <Bold className="h-4 w-4" />
-    </ToggleGroup.Item>
-    <ToggleGroup.Item value="italic" aria-label="Toggle italic">
-      <Italic className="h-4 w-4" />
-    </ToggleGroup.Item>
-    <ToggleGroup.Item value="underline" aria-label="Toggle underline">
-      <Underline className="h-4 w-4" />
-    </ToggleGroup.Item>
+  	<ToggleGroup.Item value="bold" aria-label="Toggle bold">
+  		<Bold className="h-4 w-4" />
+  	</ToggleGroup.Item>
+  	<ToggleGroup.Item value="italic" aria-label="Toggle italic">
+  		<Italic className="h-4 w-4" />
+  	</ToggleGroup.Item>
+  	<ToggleGroup.Item value="underline" aria-label="Toggle underline">
+  		<Underline className="h-4 w-4" />
+  	</ToggleGroup.Item>
   </ToggleGroup>
   ```
 
@@ -290,21 +296,21 @@
 
   ```tsx
   <Drawer direction="bottom">
-    <Drawer.Trigger asChild>
-      <Button variant="outline">Open</Button>
-    </Drawer.Trigger>
-    <Drawer.Content className="w-full">
-      <Drawer.Header>
-        <Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-        <Drawer.Description>This action cannot be undone.</Drawer.Description>
-      </Drawer.Header>
-      <Drawer.Footer>
-        <Button>Submit</Button>
-        <Drawer.Close>
-          <Button variant="outline">Cancel</Button>
-        </Drawer.Close>
-      </Drawer.Footer>
-    </Drawer.Content>
+  	<Drawer.Trigger asChild>
+  		<Button variant="outline">Open</Button>
+  	</Drawer.Trigger>
+  	<Drawer.Content className="w-full">
+  		<Drawer.Header>
+  			<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
+  			<Drawer.Description>This action cannot be undone.</Drawer.Description>
+  		</Drawer.Header>
+  		<Drawer.Footer>
+  			<Button>Submit</Button>
+  			<Drawer.Close>
+  				<Button variant="outline">Cancel</Button>
+  			</Drawer.Close>
+  		</Drawer.Footer>
+  	</Drawer.Content>
   </Drawer>
   ```
 
