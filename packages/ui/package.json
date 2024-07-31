@@ -50,7 +50,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "input-otp": "^1.2.4",
-    "lucide-react": "^0.403.0",
+    "lucide-react": "^0.414.0",
     "react-day-picker": "^8.10.1",
     "shiki": "^0.14.7",
     "sonner": "^1.5.0",
@@ -63,8 +63,8 @@
     "eslint": "^9.6.0",
     "prettier": "^3.3.2",
     "react": "^18.3.1",
-    "tsup": "^8.1.0",
-    "typescript": "^5.5.3"
+    "tsup": "^8.2.2",
+    "typescript": "^5.5.4"
   },
   "peerDependencies": {
     "react": ">=18.3.1",
