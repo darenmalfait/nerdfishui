@@ -28,8 +28,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@nerdfish/config':
-        specifier: ^1.0.2
-        version: 1.0.2(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.2))(eslint@9.6.0)(prettier@3.3.2)(typescript@5.5.4)
+        specifier: ^1.0.4
+        version: 1.0.4(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.2))(eslint@9.6.0)(prettier@3.3.2)(typescript@5.5.4)
       eslint:
         specifier: ^9.6.0
         version: 9.6.0
@@ -1533,6 +1533,10 @@ packages:
     resolution: {integrity: sha512-Cu96Sd2By9mCNTx2iyKOmq10v22jUVQv0lQnlGNy16oE9589yE+QADPbrMGCkA51cKZSg3Pu/aTJVTGfL/qjUA==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
+  '@eslint/compat@1.1.1':
+    resolution: {integrity: sha512-lpHyRyplhGPL5mGEh6M9O5nnKk0Gz4bFI+Zu6tKlPpDUN7XshWvH9C/px4UVm87IAANE0W81CEsNGbS1KlzXpA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
   '@eslint/config-array@0.17.0':
     resolution: {integrity: sha512-A68TBu6/1mHHuc5YJL0U0VVeGNiklLAL6rRmhTCP2B5XjWLMnrX+HkO+IAXyHvks5cyyY1jjK5ITPQ1HGS2EVA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -1647,8 +1651,8 @@ packages:
       '@types/react': '>=16'
       react: '>=16'
 
-  '@nerdfish/config@1.0.2':
-    resolution: {integrity: sha512-tx4a+Bh6utX+TFZIa/Lfha2W5eZSpLbohFkvRxf0zJrmGUbKaLsixIlDYR4Ia6bIv2/YggSuszrMWl81aodmuw==}
+  '@nerdfish/config@1.0.4':
+    resolution: {integrity: sha512-ckQbIInS6FoEoMtGRVHEFsO0SIoSxo6Qd8fcxtwgwU0lfocaAf7IBJiXezgP3igUUKDHOnA6M2WY0TCPJENzRw==}
 
   '@next/env@14.2.5':
     resolution: {integrity: sha512-/zZGkrTOsraVfYjGP8uM0p6r0BDT6xWpkjdVbcz66PJVSpwXX3yNiRycxAuDfBKGWBrZBXRuK/YVlkNgxHGwmA==}
@@ -10274,6 +10278,8 @@ snapshots:
 
   '@eslint-community/regexpp@4.10.0': {}
 
+  '@eslint/compat@1.1.1': {}
+
   '@eslint/config-array@0.17.0':
     dependencies:
       '@eslint/object-schema': 2.1.4
@@ -10469,8 +10475,9 @@ snapshots:
       '@types/react': 18.3.3
       react: 18.3.1
 
-  '@nerdfish/config@1.0.2(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.2))(eslint@9.6.0)(prettier@3.3.2)(typescript@5.5.4)':
+  '@nerdfish/config@1.0.4(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.2))(eslint@9.6.0)(prettier@3.3.2)(typescript@5.5.4)':
     dependencies:
+      '@eslint/compat': 1.1.1
       '@total-typescript/ts-reset': 0.5.1
       eslint-plugin-import-x: 0.5.3(eslint@9.6.0)(typescript@5.5.4)
       eslint-plugin-jest-dom: 5.4.0(eslint@9.6.0)
@@ -13939,7 +13946,7 @@ snapshots:
   eslint-plugin-import-x@0.5.3(eslint@9.6.0)(typescript@5.5.4):
     dependencies:
       '@typescript-eslint/utils': 7.7.1(eslint@9.6.0)(typescript@5.5.4)
-      debug: 4.3.4
+      debug: 4.3.6
       doctrine: 3.0.0
       eslint: 9.6.0
       eslint-import-resolver-node: 0.3.9
