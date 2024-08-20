@@ -29,7 +29,7 @@
     "@next/mdx": "^14.2.5",
     "@sindresorhus/slugify": "^2.2.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.13",
+    "@tailwindcss/typography": "^0.5.14",
     "@vercel/og": "^0.6.2",
     "acorn": "^8.12.1",
     "contentlayer": "^0.3.4",
@@ -80,7 +80,7 @@
     "remark-code-import": "^1.2.0",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.14.7",
-    "tailwindcss": "^3.4.7",
+    "tailwindcss": "^3.4.9",
     "typescript": "^5.5.4",
     "unist-builder": "^4.0.0",
     "unist-util-visit": "^5.0.0"

@@ -17,7 +17,7 @@
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0"
   },
   "dependencies": {
-    "tailwindcss": "3.4.7"
+    "tailwindcss": "3.4.9"
   },
   "devDependencies": {
     "@nerdfish/theme": "workspace:^*",
