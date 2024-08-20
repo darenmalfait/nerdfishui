@@ -29,7 +29,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.4.0"
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
