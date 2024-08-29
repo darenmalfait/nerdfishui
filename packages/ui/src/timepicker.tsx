@@ -57,7 +57,7 @@ const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
 							<select
 								name="hours"
 								onChange={onHourChange}
-								className="z-10 cursor-pointer appearance-none bg-transparent text-center text-xl outline-none"
+								className="focus:outline-muted z-10 cursor-pointer appearance-none rounded-md bg-transparent text-center text-xl outline-none"
 								defaultValue={new Date(value).getHours().toString()}
 							>
 								<option value="0">00</option>
@@ -91,7 +91,7 @@ const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
 							<div className="shadow-soft-xl absolute -inset-1 hidden rounded-md group-hover:block group-hover:bg-black/10 dark:group-hover:bg-white/5" />
 							<select
 								name="minutes"
-								className="z-10 cursor-pointer appearance-none bg-transparent text-center text-xl outline-none"
+								className="focus:outline-muted z-10 cursor-pointer appearance-none rounded-md bg-transparent text-center text-xl outline-none"
 								onChange={onMinuteChange}
 								defaultValue={new Date(value).getMinutes().toString()}
 							>
