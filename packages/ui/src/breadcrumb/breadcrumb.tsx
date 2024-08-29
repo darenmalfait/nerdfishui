@@ -5,15 +5,15 @@ import { Slot } from '@radix-ui/react-slot'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
 import * as React from 'react'
 
-const BaseBreadcrumb = React.forwardRef<
+export const BreadcrumbRoot = React.forwardRef<
 	HTMLElement,
 	React.ComponentPropsWithoutRef<'nav'> & {
 		separator?: React.ReactNode
 	}
 >(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />)
-BaseBreadcrumb.displayName = 'Breadcrumb'
+BreadcrumbRoot.displayName = 'BreadcrumbRoot'
 
-const BreadcrumbList = React.forwardRef<
+export const BreadcrumbList = React.forwardRef<
 	HTMLOListElement,
 	React.ComponentPropsWithoutRef<'ol'>
 >(({ className, ...props }, ref) => (
@@ -28,7 +28,7 @@ const BreadcrumbList = React.forwardRef<
 ))
 BreadcrumbList.displayName = 'BreadcrumbList'
 
-const BreadcrumbItem = React.forwardRef<
+export const BreadcrumbItem = React.forwardRef<
 	HTMLLIElement,
 	React.ComponentPropsWithoutRef<'li'>
 >(({ className, ...props }, ref) => (
@@ -40,7 +40,7 @@ const BreadcrumbItem = React.forwardRef<
 ))
 BreadcrumbItem.displayName = 'BreadcrumbItem'
 
-const BreadcrumbLink = React.forwardRef<
+export const BreadcrumbLink = React.forwardRef<
 	HTMLAnchorElement,
 	React.ComponentPropsWithoutRef<'a'> & {
 		asChild?: boolean
@@ -58,7 +58,7 @@ const BreadcrumbLink = React.forwardRef<
 })
 BreadcrumbLink.displayName = 'BreadcrumbLink'
 
-const BreadcrumbPage = React.forwardRef<
+export const BreadcrumbPage = React.forwardRef<
 	HTMLSpanElement,
 	React.ComponentPropsWithoutRef<'span'>
 >(({ className, ...props }, ref) => (
@@ -73,7 +73,7 @@ const BreadcrumbPage = React.forwardRef<
 ))
 BreadcrumbPage.displayName = 'BreadcrumbPage'
 
-const BreadcrumbSeparator = ({
+export const BreadcrumbSeparator = ({
 	children,
 	className,
 	...props
@@ -89,7 +89,7 @@ const BreadcrumbSeparator = ({
 )
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator'
 
-const BreadcrumbEllipsis = ({
+export const BreadcrumbEllipsis = ({
 	className,
 	label = 'More',
 	...props
@@ -108,13 +108,24 @@ const BreadcrumbEllipsis = ({
 )
 BreadcrumbEllipsis.displayName = 'BreadcrumbElipssis'
 
-const Breadcrumb = Object.assign(BaseBreadcrumb, {
-	List: BreadcrumbList,
-	Item: BreadcrumbItem,
-	Link: BreadcrumbLink,
-	Page: BreadcrumbPage,
-	Separator: BreadcrumbSeparator,
-	Ellipsis: BreadcrumbEllipsis,
-})
-
-export { Breadcrumb }
+export type BreadcrumbRootProps = React.ComponentPropsWithoutRef<
+	typeof BreadcrumbRoot
+>
+export type BreadcrumbListProps = React.ComponentPropsWithoutRef<
+	typeof BreadcrumbList
+>
+export type BreadcrumbItemProps = React.ComponentPropsWithoutRef<
+	typeof BreadcrumbItem
+>
+export type BreadcrumbLinkProps = React.ComponentPropsWithoutRef<
+	typeof BreadcrumbLink
+>
+export type BreadcrumbPageProps = React.ComponentPropsWithoutRef<
+	typeof BreadcrumbPage
+>
+export type BreadcrumbSeparatorProps = React.ComponentPropsWithoutRef<
+	typeof BreadcrumbSeparator
+>
+export type BreadcrumbEllipsisProps = React.ComponentPropsWithoutRef<
+	typeof BreadcrumbEllipsis
+>

@@ -17,7 +17,7 @@ export function CodeBlockWrapper({
 	const [isOpened, setIsOpened] = React.useState(false)
 
 	return (
-		<Collapsible open={isOpened} onOpenChange={setIsOpened}>
+		<Collapsible.Root open={isOpened} onOpenChange={setIsOpened}>
 			<div className={cx('relative overflow-hidden', className)} {...props}>
 				<Collapsible.Content
 					forceMount
@@ -45,6 +45,6 @@ export function CodeBlockWrapper({
 					</Collapsible.Trigger>
 				</div>
 			</div>
-		</Collapsible>
+		</Collapsible.Root>
 	)
 }

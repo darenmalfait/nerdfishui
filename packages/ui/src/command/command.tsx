@@ -6,9 +6,9 @@ import { Command as CommandPrimitive } from 'cmdk'
 import { Search } from 'lucide-react'
 import * as React from 'react'
 
-import { Dialog } from './dialog'
+import { Dialog } from '../dialog'
 
-const CommandRoot = React.forwardRef<
+export const CommandRoot = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...props }, ref) => (
@@ -23,9 +23,7 @@ const CommandRoot = React.forwardRef<
 ))
 CommandRoot.displayName = CommandPrimitive.displayName
 
-type CommandDialogProps = DialogProps
-
-const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
+export const CommandDialog = ({ children, ...props }: DialogProps) => {
 	return (
 		<Dialog {...props}>
 			<Dialog.Content className="overflow-hidden p-0 shadow-2xl [&_[dialog-overlay]]:bg-red-100">
@@ -37,7 +35,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
 	)
 }
 
-const CommandInput = React.forwardRef<
+export const CommandInput = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive.Input>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
@@ -60,7 +58,7 @@ const CommandInput = React.forwardRef<
 
 CommandInput.displayName = CommandPrimitive.Input.displayName
 
-const CommandList = React.forwardRef<
+export const CommandList = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive.List>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
 >(({ className, ...props }, ref) => (
@@ -73,7 +71,7 @@ const CommandList = React.forwardRef<
 
 CommandList.displayName = CommandPrimitive.List.displayName
 
-const CommandEmpty = React.forwardRef<
+export const CommandEmpty = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive.Empty>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 >((props, ref) => (
@@ -86,7 +84,7 @@ const CommandEmpty = React.forwardRef<
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName
 
-const CommandGroup = React.forwardRef<
+export const CommandGroup = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive.Group>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
 >(({ className, ...props }, ref) => (
@@ -102,7 +100,7 @@ const CommandGroup = React.forwardRef<
 
 CommandGroup.displayName = CommandPrimitive.Group.displayName
 
-const CommandSeparator = React.forwardRef<
+export const CommandSeparator = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive.Separator>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 >(({ className, ...props }, ref) => (
@@ -114,7 +112,7 @@ const CommandSeparator = React.forwardRef<
 ))
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName
 
-const CommandItem = React.forwardRef<
+export const CommandItem = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive.Item>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
 >(({ className, ...props }, ref) => (
@@ -130,7 +128,7 @@ const CommandItem = React.forwardRef<
 
 CommandItem.displayName = CommandPrimitive.Item.displayName
 
-const CommandShortcut = ({
+export const CommandShortcut = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLSpanElement>) => {
@@ -146,15 +144,30 @@ const CommandShortcut = ({
 }
 CommandShortcut.displayName = 'CommandShortcut'
 
-const Command = Object.assign(CommandRoot, {
-	Dialog: CommandDialog,
-	Input: CommandInput,
-	List: CommandList,
-	Empty: CommandEmpty,
-	Group: CommandGroup,
-	Item: CommandItem,
-	Shortcut: CommandShortcut,
-	Separator: CommandSeparator,
-})
-
-export { Command }
+export type CommandRootProps = React.ComponentPropsWithoutRef<
+	typeof CommandRoot
+>
+export type CommandDialogProps = React.ComponentPropsWithoutRef<
+	typeof CommandDialog
+>
+export type CommandInputProps = React.ComponentPropsWithoutRef<
+	typeof CommandInput
+>
+export type CommandListProps = React.ComponentPropsWithoutRef<
+	typeof CommandList
+>
+export type CommandEmptyProps = React.ComponentPropsWithoutRef<
+	typeof CommandEmpty
+>
+export type CommandGroupProps = React.ComponentPropsWithoutRef<
+	typeof CommandGroup
+>
+export type CommandSeparatorProps = React.ComponentPropsWithoutRef<
+	typeof CommandSeparator
+>
+export type CommandItemProps = React.ComponentPropsWithoutRef<
+	typeof CommandItem
+>
+export type CommandShortcutProps = React.ComponentPropsWithoutRef<
+	typeof CommandShortcut
+>

@@ -18,11 +18,9 @@ const notifications = [
 	},
 ]
 
-type CardProps = React.ComponentProps<typeof Card>
-
-export function CardDemo({ className, ...props }: CardProps) {
+export function CardDemo({ className, ...props }: Card.RootProps) {
 	return (
-		<Card className={cx('w-[380px]', className)} {...props}>
+		<Card.Root className={cx('w-[380px]', className)} {...props}>
 			<Card.Header>
 				<Card.Title>Cake Notifications</Card.Title>
 				<Card.Description>You have 3 unread cake messages.</Card.Description>
@@ -60,6 +58,6 @@ export function CardDemo({ className, ...props }: CardProps) {
 					<Check className="mr-2 size-4" /> Mark all as read
 				</Button>
 			</Card.Footer>
-		</Card>
+		</Card.Root>
 	)
 }

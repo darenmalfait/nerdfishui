@@ -12,7 +12,7 @@ import {
 
 export function CommandDemo() {
 	return (
-		<Command className="shadow-soft-sm shadow-outline rounded-lg border">
+		<Command.Root className="shadow-soft-sm shadow-outline rounded-lg border">
 			<Command.Input placeholder="Type a command or search..." />
 			<Command.Empty>No results found.</Command.Empty>
 			<Command.List>
@@ -49,6 +49,6 @@ export function CommandDemo() {
 					</Command.Item>
 				</Command.Group>
 			</Command.List>
-		</Command>
+		</Command.Root>
 	)
 }

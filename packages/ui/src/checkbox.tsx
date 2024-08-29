@@ -6,7 +6,7 @@ import * as React from 'react'
 
 import { type InputProps } from './input'
 
-const checkboxVariants = cva(
+export const checkboxVariants = cva(
 	'relative flex items-center justify-center rounded-full focus:scale-75',
 	{
 		variants: {
@@ -80,7 +80,7 @@ function CheckboxError({ error, id }: { error?: string | null; id: string }) {
 	)
 }
 
-const Checkbox = React.forwardRef<
+export const Checkbox = React.forwardRef<
 	HTMLInputElement,
 	InputProps & ExtractProps<typeof RawCheckbox>
 >(function Checkbox(
@@ -108,4 +108,4 @@ const Checkbox = React.forwardRef<
 	)
 })
 
-export { RawCheckbox, Checkbox }
+export type CheckboxProps = React.ComponentPropsWithoutRef<typeof Checkbox>

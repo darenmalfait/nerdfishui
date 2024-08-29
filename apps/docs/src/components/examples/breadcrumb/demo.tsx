@@ -4,7 +4,7 @@ import { Breadcrumb, DropdownMenu } from '@nerdfish/ui'
 
 export function BreadcrumbDemo() {
 	return (
-		<Breadcrumb>
+		<Breadcrumb.Root>
 			<Breadcrumb.List>
 				<Breadcrumb.Item>
 					<Breadcrumb.Link href="/">Home</Breadcrumb.Link>
@@ -32,6 +32,6 @@ export function BreadcrumbDemo() {
 					<Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
 				</Breadcrumb.Item>
 			</Breadcrumb.List>
-		</Breadcrumb>
+		</Breadcrumb.Root>
 	)
 }

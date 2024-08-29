@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import * as React from 'react'
 
-const AvatarRoot = React.forwardRef<
+export const AvatarRoot = React.forwardRef<
 	React.ElementRef<typeof AvatarPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 >(({ className, ...props }, ref) => (
@@ -19,7 +19,7 @@ const AvatarRoot = React.forwardRef<
 ))
 AvatarRoot.displayName = AvatarPrimitive.Root.displayName
 
-const AvatarImage = React.forwardRef<
+export const AvatarImage = React.forwardRef<
 	React.ElementRef<typeof AvatarPrimitive.Image>,
 	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, ref) => (
@@ -31,7 +31,7 @@ const AvatarImage = React.forwardRef<
 ))
 AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
-const AvatarFallback = React.forwardRef<
+export const AvatarFallback = React.forwardRef<
 	React.ElementRef<typeof AvatarPrimitive.Fallback>,
 	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, ref) => (
@@ -46,9 +46,10 @@ const AvatarFallback = React.forwardRef<
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-const Avatar = Object.assign(AvatarRoot, {
-	Image: AvatarImage,
-	Fallback: AvatarFallback,
-})
-
-export { Avatar }
+export type AvatarRootProps = React.ComponentPropsWithoutRef<typeof AvatarRoot>
+export type AvatarImageProps = React.ComponentPropsWithoutRef<
+	typeof AvatarImage
+>
+export type AvatarFallbackProps = React.ComponentPropsWithoutRef<
+	typeof AvatarFallback
+>

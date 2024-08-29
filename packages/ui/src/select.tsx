@@ -84,7 +84,7 @@ const RawSelect = React.forwardRef<HTMLInputElement, SelectProps>(
 					</button>
 				</Popover.Trigger>
 				<Popover.Content className="w-full min-w-[200px] p-0">
-					<Command
+					<Command.Root
 						filter={(val, search) => {
 							const item = options.find(({ value: v }) => v === val)?.label
 
@@ -118,7 +118,7 @@ const RawSelect = React.forwardRef<HTMLInputElement, SelectProps>(
 								</ScrollArea>
 							</Command.Group>
 						</Command.List>
-					</Command>
+					</Command.Root>
 				</Popover.Content>
 			</Popover>
 		)

@@ -6,8 +6,8 @@ import * as React from 'react'
 
 const DEFAULT_VARIANT = 'info'
 
-const alertVariants = cva(
-	'relative w-full rounded-lg border p-4 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-current [&>svg~*]:pl-7',
+export const alertVariants = cva(
+	'relative w-full rounded-lg border p-4 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-current [&>svg~]*]:pl-7',
 	{
 		variants: {
 			variant: {
@@ -33,7 +33,7 @@ const IconMap: Record<
 	info: Info,
 }
 
-const AlertTitle = React.forwardRef<
+export const AlertTitle = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
@@ -45,7 +45,7 @@ const AlertTitle = React.forwardRef<
 ))
 AlertTitle.displayName = 'AlertTitle'
 
-const AlertDescription = React.forwardRef<
+export const AlertDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -71,7 +71,7 @@ function AlertIcon({
 	return <Icon className={cx('h-4 w-4')} />
 }
 
-const RawAlert = React.forwardRef<
+export const AlertRoot = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'div'> & {
 		variant?: VariantProps<typeof alertVariants>['variant']
@@ -80,7 +80,7 @@ const RawAlert = React.forwardRef<
 		children?: React.ReactNode
 		description?: string
 	}
->(function Alert(
+>(function AlertRoot(
 	{ className, variant, hideIcon, title, children, description, ...props },
 	ref,
 ) {
@@ -106,11 +106,10 @@ const RawAlert = React.forwardRef<
 		</div>
 	)
 })
-RawAlert.displayName = 'Alert'
+AlertRoot.displayName = 'Alert'
 
-const Alert = Object.assign(RawAlert, {
-	Title: AlertTitle,
-	Description: AlertDescription,
-})
-
-export { Alert }
+export type AlertRootProps = React.ComponentPropsWithoutRef<typeof AlertRoot>
+export type AlertTitleProps = React.ComponentPropsWithoutRef<typeof AlertTitle>
+export type AlertDescriptionProps = React.ComponentPropsWithoutRef<
+	typeof AlertDescription
+>

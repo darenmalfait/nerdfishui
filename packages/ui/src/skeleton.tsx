@@ -19,7 +19,7 @@ export function Skeleton({
 
 export function CardSkeleton({ className }: { className?: string }) {
 	return (
-		<Card className={className}>
+		<Card.Root className={className}>
 			<Card.Header className="flex flex-col gap-2">
 				<Skeleton className="h-5 w-1/5" />
 				<Skeleton className="h-4 w-4/5" />
@@ -28,7 +28,7 @@ export function CardSkeleton({ className }: { className?: string }) {
 			<Card.Footer>
 				<Skeleton className="h-8 w-[120px]" />
 			</Card.Footer>
-		</Card>
+		</Card.Root>
 	)
 }
 

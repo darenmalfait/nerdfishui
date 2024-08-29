@@ -108,7 +108,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 						</button>
 					</Popover.Trigger>
 					<Popover.Content className="w-[200px] p-0">
-						<Command
+						<Command.Root
 							filter={(value, search) => {
 								const item = options.find(({ value: v }) => v === value)?.label
 
@@ -191,7 +191,7 @@ const RawMultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 									</button>
 								) : null}
 							</ScrollArea>
-						</Command>
+						</Command.Root>
 					</Popover.Content>
 				</Popover>
 
