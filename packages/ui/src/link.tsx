@@ -1,7 +1,6 @@
 'use client'
 
 import { cx } from '@nerdfish/utils'
-import { ChevronRight } from 'lucide-react'
 import * as React from 'react'
 
 type LinkProps = React.DetailedHTMLProps<
@@ -51,56 +50,4 @@ const Link = React.forwardRef<HTMLElement, LinkProps>(
 	},
 )
 
-const DoubleLabelLink = React.forwardRef<
-	HTMLElement,
-	LinkProps & {
-		description?: string
-	}
->(function DoubleLabelLink(props, ref) {
-	const {
-		disabled,
-		external,
-		onClick,
-		className,
-		as: Tag = 'a',
-		to,
-		href = to,
-		children,
-		description,
-		...rest
-	} = props
-	const externalProps = external
-		? { target: '_blank', rel: 'noopener noreferrer' }
-		: null
-
-	return (
-		<Tag
-			ref={ref}
-			className={cx(
-				className,
-				'bg-muted text-primary hover:bg-muted group inline-flex items-center rounded-full p-1 pr-2 transition-colors sm:text-base lg:text-sm xl:text-base',
-			)}
-			to={href}
-			href={href}
-			tabIndex={disabled ? -1 : undefined}
-			aria-disabled={disabled}
-			onClick={disabled ? (event: any) => event.preventDefault() : onClick}
-			{...externalProps}
-			{...rest}
-		>
-			{children ? (
-				<span className="text-inverted bg-inverted rounded-full px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide transition-colors">
-					{children}
-				</span>
-			) : null}
-
-			{description ? <span className="ml-4 text-sm">{description}</span> : null}
-			<ChevronRight
-				className="text-primary/50 ml-2 size-5"
-				aria-hidden="true"
-			/>
-		</Tag>
-	)
-})
-
-export { Link, DoubleLabelLink, type LinkProps }
+export { Link, type LinkProps }
