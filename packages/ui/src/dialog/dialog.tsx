@@ -5,13 +5,12 @@ import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import * as React from 'react'
 
-import { Button } from './button'
+import { Button } from '../button'
 
-const DialogRoot = DialogPrimitive.Root
+export const DialogRoot = DialogPrimitive.Root
+export const DialogTrigger = DialogPrimitive.Trigger
 
-const DialogTrigger = DialogPrimitive.Trigger
-
-const DialogPortal = ({
+export const DialogPortal = ({
 	className,
 	children,
 	...props
@@ -31,7 +30,7 @@ const DialogPortal = ({
 )
 DialogPortal.displayName = DialogPrimitive.Portal.displayName
 
-const DialogOverlay = React.forwardRef<
+export const DialogOverlay = React.forwardRef<
 	React.ElementRef<typeof DialogPrimitive.Overlay>,
 	React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
@@ -46,7 +45,7 @@ const DialogOverlay = React.forwardRef<
 ))
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
-const DialogContent = React.forwardRef<
+export const DialogContent = React.forwardRef<
 	React.ElementRef<typeof DialogPrimitive.Content>,
 	React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
@@ -76,7 +75,7 @@ const DialogContent = React.forwardRef<
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
-const DialogHeader = ({
+export const DialogHeader = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
@@ -90,7 +89,7 @@ const DialogHeader = ({
 )
 DialogHeader.displayName = 'DialogHeader'
 
-const DialogFooter = ({
+export const DialogFooter = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
@@ -104,7 +103,7 @@ const DialogFooter = ({
 )
 DialogFooter.displayName = 'DialogFooter'
 
-const DialogTitle = React.forwardRef<
+export const DialogTitle = React.forwardRef<
 	React.ElementRef<typeof DialogPrimitive.Title>,
 	React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(({ className, ...props }, ref) => (
@@ -119,7 +118,7 @@ const DialogTitle = React.forwardRef<
 ))
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 
-const DialogDescription = React.forwardRef<
+export const DialogDescription = React.forwardRef<
 	React.ElementRef<typeof DialogPrimitive.Description>,
 	React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(({ className, ...props }, ref) => (
@@ -131,13 +130,22 @@ const DialogDescription = React.forwardRef<
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 
-const Dialog = Object.assign(DialogRoot, {
-	Trigger: DialogTrigger,
-	Content: DialogContent,
-	Header: DialogHeader,
-	Footer: DialogFooter,
-	Title: DialogTitle,
-	Description: DialogDescription,
-})
-
-export { Dialog }
+export type DialogRootProps = React.ComponentPropsWithoutRef<typeof DialogRoot>
+export type DialogTriggerProps = React.ComponentPropsWithoutRef<
+	typeof DialogTrigger
+>
+export type DialogContentProps = React.ComponentPropsWithoutRef<
+	typeof DialogContent
+>
+export type DialogHeaderProps = React.ComponentPropsWithoutRef<
+	typeof DialogHeader
+>
+export type DialogFooterProps = React.ComponentPropsWithoutRef<
+	typeof DialogFooter
+>
+export type DialogTitleProps = React.ComponentPropsWithoutRef<
+	typeof DialogTitle
+>
+export type DialogDescriptionProps = React.ComponentPropsWithoutRef<
+	typeof DialogDescription
+>

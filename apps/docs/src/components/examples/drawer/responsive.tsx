@@ -10,7 +10,7 @@ export function DrawerResponsiveDemo() {
 
 	if (isDesktop) {
 		return (
-			<Dialog open={open} onOpenChange={setOpen}>
+			<Dialog.Root open={open} onOpenChange={setOpen}>
 				<Dialog.Trigger asChild>
 					<Button variant="outline">Edit Profile</Button>
 				</Dialog.Trigger>
@@ -24,7 +24,7 @@ export function DrawerResponsiveDemo() {
 					</Dialog.Header>
 					<ProfileForm />
 				</Dialog.Content>
-			</Dialog>
+			</Dialog.Root>
 		)
 	}
 

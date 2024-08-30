@@ -4,7 +4,7 @@ import { Button, Dialog, Input, Label } from '@nerdfish/ui'
 
 export function DialogDemo() {
 	return (
-		<Dialog>
+		<Dialog.Root>
 			<Dialog.Trigger asChild>
 				<Button variant="outline">Decorate Cake</Button>
 			</Dialog.Trigger>
@@ -38,6 +38,6 @@ export function DialogDemo() {
 					<Button type="submit">Save decorations</Button>
 				</Dialog.Footer>
 			</Dialog.Content>
-		</Dialog>
+		</Dialog.Root>
 	)
 }
