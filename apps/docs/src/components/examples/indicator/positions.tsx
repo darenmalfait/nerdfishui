@@ -4,7 +4,7 @@ import { Badge, Indicator } from '@nerdfish/ui'
 
 export function IndicatorPositionsDemo() {
 	return (
-		<Indicator>
+		<Indicator.Root>
 			<Indicator.Item top left>
 				<Badge>top left</Badge>
 			</Indicator.Item>
@@ -33,6 +33,6 @@ export function IndicatorPositionsDemo() {
 				<Badge>bottom right</Badge>
 			</Indicator.Item>
 			<div className="bg-muted grid size-64 place-items-center">content</div>
-		</Indicator>
+		</Indicator.Root>
 	)
 }

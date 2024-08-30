@@ -4,10 +4,10 @@ import { cx } from '@nerdfish/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
-const RawIndicator = React.forwardRef<
+export const IndicatorRoot = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'div'>
->(function RawIndicator(props, ref) {
+>(function IndicatorRoot(props, ref) {
 	return (
 		<div
 			ref={ref}
@@ -16,8 +16,9 @@ const RawIndicator = React.forwardRef<
 		/>
 	)
 })
+IndicatorRoot.displayName = 'IndicatorRoot'
 
-const IndicatorItem = React.forwardRef<
+export const IndicatorItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'div'> & {
 		asChild?: boolean
@@ -53,7 +54,11 @@ const IndicatorItem = React.forwardRef<
 		/>
 	)
 })
+IndicatorItem.displayName = 'IndicatorItem'
 
-const Indicator = Object.assign(RawIndicator, { Item: IndicatorItem })
-
-export { Indicator }
+export type IndicatorRootProps = React.ComponentPropsWithoutRef<
+	typeof IndicatorRoot
+>
+export type IndicatorItemProps = React.ComponentPropsWithoutRef<
+	typeof IndicatorItem
+>
