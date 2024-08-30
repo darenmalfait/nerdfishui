@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react'
 export function TooltipDemo() {
 	return (
 		<TooltipProvider>
-			<Tooltip>
+			<Tooltip.Root>
 				<Tooltip.Trigger asChild>
 					<Button
 						variant="outline"
@@ -17,7 +17,7 @@ export function TooltipDemo() {
 				<Tooltip.Content>
 					<p>Add to library</p>
 				</Tooltip.Content>
-			</Tooltip>
+			</Tooltip.Root>
 		</TooltipProvider>
 	)
 }

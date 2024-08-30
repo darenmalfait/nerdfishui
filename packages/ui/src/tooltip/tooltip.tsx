@@ -4,13 +4,12 @@ import { cx } from '@nerdfish/utils'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import * as React from 'react'
 
-const TooltipProvider = TooltipPrimitive.Provider
+export const TooltipProvider = TooltipPrimitive.Provider
 
-const RawTooltip = TooltipPrimitive.Root
+export const TooltipRoot = TooltipPrimitive.Root
+export const TooltipTrigger = TooltipPrimitive.Trigger
 
-const TooltipTrigger = TooltipPrimitive.Trigger
-
-const TooltipContent = React.forwardRef<
+export const TooltipContent = React.forwardRef<
 	React.ElementRef<typeof TooltipPrimitive.Content>,
 	React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
 >(({ className, sideOffset = 4, ...props }, ref) => (
@@ -26,9 +25,7 @@ const TooltipContent = React.forwardRef<
 ))
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
-const Tooltip = Object.assign(RawTooltip, {
-	Trigger: TooltipTrigger,
-	Content: TooltipContent,
-})
-
-export { Tooltip, TooltipProvider }
+export type TooltipRootProps = React.ComponentProps<typeof TooltipRoot>
+export type TooltipTriggerProps = React.ComponentProps<typeof TooltipTrigger>
+export type TooltipContentProps = React.ComponentProps<typeof TooltipContent>
+export type TooltipProviderProps = React.ComponentProps<typeof TooltipProvider>

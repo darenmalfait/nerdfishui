@@ -78,7 +78,7 @@ export function NavigationListItem<T>({
 
 	if (isCollapsed) {
 		return (
-			<Tooltip delayDuration={0}>
+			<Tooltip.Root delayDuration={0}>
 				<Tooltip.Trigger asChild>
 					<Link
 						className={cx(
@@ -100,7 +100,7 @@ export function NavigationListItem<T>({
 					{title}
 					<ItemLabel label={label} className="text-muted" />
 				</Tooltip.Content>
-			</Tooltip>
+			</Tooltip.Root>
 		)
 	}
 
@@ -138,7 +138,7 @@ export function NavigationListTitle({
 }) {
 	if (isCollapsed) {
 		return (
-			<Tooltip delayDuration={0}>
+			<Tooltip.Root delayDuration={0}>
 				<Tooltip.Trigger asChild>
 					<h2
 						className={cx(
@@ -159,7 +159,7 @@ export function NavigationListTitle({
 					{title}
 					<ItemLabel label={label} className="text-muted" />
 				</Tooltip.Content>
-			</Tooltip>
+			</Tooltip.Root>
 		)
 	}
 

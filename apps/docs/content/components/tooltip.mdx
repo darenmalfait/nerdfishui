@@ -20,11 +20,11 @@ import { Tooltip, TooltipProvider } from '@nerdfish/ui'
 
 ```tsx
 <TooltipProvider>
-	<Tooltip>
-		<TooltipTrigger>Hover</TooltipTrigger>
-		<TooltipContent>
+	<Tooltip.Root>
+		<Tooltip.Trigger>Hover</Tooltip.Trigger>
+		<Tooltip.Content>
 			<p>Add to library</p>
-		</TooltipContent>
-	</Tooltip>
+		</Tooltip.Content>
+	</Tooltip.Root>
 </TooltipProvider>
 ```
