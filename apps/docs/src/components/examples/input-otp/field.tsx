@@ -7,7 +7,7 @@ export function InputOTPFieldDemo() {
 			htmlFor="otp"
 			description="Enter the 6-digit code sent to your phone"
 		>
-			<InputOTP
+			<InputOTP.Root
 				name="otp"
 				maxLength={6}
 				render={({ slots }) => (

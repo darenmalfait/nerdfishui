@@ -12,9 +12,9 @@ import {
 import { Dot } from 'lucide-react'
 import * as React from 'react'
 
-import { getInputClassName } from './input'
+import { getInputClassName } from '../input'
 
-const RawInputOTP = React.forwardRef<
+export const InputOTPRoot = React.forwardRef<
 	React.ElementRef<typeof OTPInput>,
 	React.ComponentPropsWithoutRef<typeof OTPInput>
 >(({ className, ...props }, ref) => (
@@ -24,9 +24,9 @@ const RawInputOTP = React.forwardRef<
 		{...props}
 	/>
 ))
-RawInputOTP.displayName = 'InputOTP'
+InputOTPRoot.displayName = 'InputOTP'
 
-const InputOTPGroup = React.forwardRef<
+export const InputOTPGroup = React.forwardRef<
 	React.ElementRef<'div'>,
 	React.ComponentPropsWithoutRef<'div'>
 >(({ className, ...props }, ref) => (
@@ -38,7 +38,7 @@ const InputOTPGroup = React.forwardRef<
 ))
 InputOTPGroup.displayName = 'InputOTPGroup'
 
-const InputOTPSlot = React.forwardRef<
+export const InputOTPSlot = React.forwardRef<
 	React.ElementRef<'div'>,
 	SlotProps & React.ComponentPropsWithoutRef<'div'>
 >(({ char, hasFakeCaret, isActive, className, ...props }, ref) => {
@@ -64,7 +64,7 @@ const InputOTPSlot = React.forwardRef<
 })
 InputOTPSlot.displayName = 'InputOTPSlot'
 
-const InputOTPSeparator = React.forwardRef<
+export const InputOTPSeparator = React.forwardRef<
 	React.ElementRef<'div'>,
 	React.ComponentPropsWithoutRef<'div'>
 >(({ ...props }, ref) => (
@@ -74,16 +74,21 @@ const InputOTPSeparator = React.forwardRef<
 ))
 InputOTPSeparator.displayName = 'InputOTPSeparator'
 
-const InputOTP = Object.assign(RawInputOTP, {
-	Group: InputOTPGroup,
-	Slot: InputOTPSlot,
-	Separator: InputOTPSeparator,
-})
-
-const inputOTPPatterns = {
+export const inputOTPPatterns = {
 	digits: REGEXP_ONLY_DIGITS,
 	chars: REGEXP_ONLY_CHARS,
 	digitsAndChars: REGEXP_ONLY_DIGITS_AND_CHARS,
 }
 
-export { InputOTP, inputOTPPatterns }
+export type InputOTPRootProps = React.ComponentPropsWithoutRef<
+	typeof InputOTPRoot
+>
+export type InputOTPGroupProps = React.ComponentPropsWithoutRef<
+	typeof InputOTPGroup
+>
+export type InputOTPSlotProps = React.ComponentPropsWithoutRef<
+	typeof InputOTPSlot
+>
+export type InputOTPSeparatorProps = React.ComponentPropsWithoutRef<
+	typeof InputOTPSeparator
+>

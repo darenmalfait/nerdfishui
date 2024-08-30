@@ -2,7 +2,7 @@ import { InputOTP } from '@nerdfish/ui'
 
 export function InputOTPDemo() {
 	return (
-		<InputOTP
+		<InputOTP.Root
 			maxLength={6}
 			render={({ slots }) => (
 				<>
