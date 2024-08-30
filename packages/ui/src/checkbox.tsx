@@ -22,7 +22,7 @@ export const checkboxVariants = cva(
 	},
 )
 
-function RawCheckbox({
+export function CheckboxRoot({
 	className,
 	variant = 'sm',
 	bgClassName = 'bg-primary',
@@ -82,7 +82,7 @@ function CheckboxError({ error, id }: { error?: string | null; id: string }) {
 
 export const Checkbox = React.forwardRef<
 	HTMLInputElement,
-	InputProps & ExtractProps<typeof RawCheckbox>
+	InputProps & ExtractProps<typeof CheckboxRoot>
 >(function Checkbox(
 	{ error, name, label, id, className, defaultValue, ...props },
 	ref,
@@ -94,7 +94,7 @@ export const Checkbox = React.forwardRef<
 		<div className={cx(className, 'group w-full')}>
 			<div className="relative flex items-center">
 				<div className="flex h-5 items-center">
-					<RawCheckbox ref={ref} id={inputId} name={name} {...props} />
+					<CheckboxRoot ref={ref} id={inputId} name={name} {...props} />
 				</div>
 				<div className="ml-3 text-base">
 					<label htmlFor={inputId} className="text-primary">
@@ -108,4 +108,7 @@ export const Checkbox = React.forwardRef<
 	)
 })
 
+export type CheckboxRootProps = React.ComponentPropsWithoutRef<
+	typeof CheckboxRoot
+>
 export type CheckboxProps = React.ComponentPropsWithoutRef<typeof Checkbox>
