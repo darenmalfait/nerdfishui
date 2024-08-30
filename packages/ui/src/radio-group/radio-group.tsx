@@ -5,9 +5,9 @@ import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import { Circle } from 'lucide-react'
 import * as React from 'react'
 
-import { Field } from './field'
+import { Field } from '../field'
 
-const RadioGroupRoot = React.forwardRef<
+export const RadioGroupRoot = React.forwardRef<
 	React.ElementRef<typeof RadioGroupPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> & {
 		name: string
@@ -41,7 +41,7 @@ const RadioGroupRoot = React.forwardRef<
 })
 RadioGroupRoot.displayName = RadioGroupPrimitive.Root.displayName
 
-function RadioField({
+export function RadioGroupField({
 	className,
 	...props
 }: React.ComponentPropsWithoutRef<'div'>) {
@@ -71,7 +71,7 @@ function RadioField({
 	)
 }
 
-const RadioGroupItem = React.forwardRef<
+export const RadioGroupItem = React.forwardRef<
 	React.ElementRef<typeof RadioGroupPrimitive.Item> & {
 		label?: React.ReactNode
 		description?: React.ReactNode
@@ -96,9 +96,14 @@ const RadioGroupItem = React.forwardRef<
 })
 RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 
-const RadioGroup = Object.assign(RadioGroupRoot, {
-	Item: RadioGroupItem,
-	Field: RadioField,
-})
+export type RadioGroupRootProps = React.ComponentPropsWithoutRef<
+	typeof RadioGroupPrimitive.Root
+>
 
-export { RadioGroup }
+export type RadioGroupItemProps = React.ComponentPropsWithoutRef<
+	typeof RadioGroupPrimitive.Item
+>
+
+export type RadioGroupFieldProps = React.ComponentPropsWithoutRef<
+	typeof RadioGroupField
+>

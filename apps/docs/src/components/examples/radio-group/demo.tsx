@@ -2,7 +2,11 @@ import { FieldDescription, FieldLabel, RadioGroup } from '@nerdfish/ui'
 
 export function RadioGroupDemo() {
 	return (
-		<RadioGroup name="radio-demo" defaultValue="comfortable" label="Spacing">
+		<RadioGroup.Root
+			name="radio-demo"
+			defaultValue="comfortable"
+			label="Spacing"
+		>
 			<RadioGroup.Field>
 				<RadioGroup.Item value="default" id="r1" />
 				<FieldLabel htmlFor="r1">Default</FieldLabel>
@@ -19,6 +23,6 @@ export function RadioGroupDemo() {
 				<RadioGroup.Item value="compact" id="r3" />
 				<FieldLabel htmlFor="r3">Compact</FieldLabel>
 			</div>
-		</RadioGroup>
+		</RadioGroup.Root>
 	)
 }
