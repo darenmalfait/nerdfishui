@@ -61,7 +61,7 @@ const SelectRoot = React.forwardRef<HTMLInputElement, SelectProps>(
 		)
 
 		return (
-			<Popover open={open} onOpenChange={setOpen}>
+			<Popover.Root open={open} onOpenChange={setOpen}>
 				<Popover.Trigger asChild>
 					<button
 						role="combobox"
@@ -119,7 +119,7 @@ const SelectRoot = React.forwardRef<HTMLInputElement, SelectProps>(
 						</Command.List>
 					</Command.Root>
 				</Popover.Content>
-			</Popover>
+			</Popover.Root>
 		)
 	},
 )

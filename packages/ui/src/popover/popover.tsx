@@ -4,7 +4,10 @@ import { cx } from '@nerdfish/utils'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 import * as React from 'react'
 
-const PopoverContent = React.forwardRef<
+export const PopoverRoot = PopoverPrimitive.Root
+export const PopoverTrigger = PopoverPrimitive.Trigger
+
+export const PopoverContent = React.forwardRef<
 	React.ElementRef<typeof PopoverPrimitive.Content>,
 	React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
 >(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
@@ -21,9 +24,12 @@ const PopoverContent = React.forwardRef<
 ))
 PopoverContent.displayName = PopoverPrimitive.Content.displayName
 
-const Popover = Object.assign(PopoverPrimitive.Root, {
-	Content: PopoverContent,
-	Trigger: PopoverPrimitive.Trigger,
-})
-
-export { Popover }
+export type PopoverRootProps = React.ComponentPropsWithoutRef<
+	typeof PopoverPrimitive.Root
+>
+export type PopoverTriggerProps = React.ComponentPropsWithoutRef<
+	typeof PopoverPrimitive.Trigger
+>
+export type PopoverContentProps = React.ComponentPropsWithoutRef<
+	typeof PopoverPrimitive.Content
+>

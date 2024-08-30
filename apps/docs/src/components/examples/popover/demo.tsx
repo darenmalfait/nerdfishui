@@ -5,7 +5,7 @@ import { Cake } from 'lucide-react'
 
 export function PopoverDemo() {
 	return (
-		<Popover>
+		<Popover.Root>
 			<Popover.Trigger asChild>
 				<Button variant="outline" className="w-10 rounded-full p-0">
 					<Cake className="size-4" />
@@ -60,6 +60,6 @@ export function PopoverDemo() {
 					</div>
 				</div>
 			</Popover.Content>
-		</Popover>
+		</Popover.Root>
 	)
 }

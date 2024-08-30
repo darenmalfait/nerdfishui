@@ -90,7 +90,7 @@ export const MultiSelectRoot = React.forwardRef<
 
 	return (
 		<div>
-			<Popover open={openSelect} onOpenChange={onSelectOpenChange}>
+			<Popover.Root open={openSelect} onOpenChange={onSelectOpenChange}>
 				<Popover.Trigger asChild>
 					<button
 						data-slot="control"
@@ -201,7 +201,7 @@ export const MultiSelectRoot = React.forwardRef<
 						</ScrollArea>
 					</Command.Root>
 				</Popover.Content>
-			</Popover>
+			</Popover.Root>
 
 			<div className="relative mt-3 overflow-y-auto">
 				{selectedValues.map(({ label, value, color }) => (

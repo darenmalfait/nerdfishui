@@ -90,7 +90,7 @@ export function DatePicker({
 	children?: React.ReactNode
 }) {
 	return (
-		<Popover>
+		<Popover.Root>
 			<Popover.Trigger>
 				<DatePickerTrigger
 					selected={selected}
@@ -113,7 +113,7 @@ export function DatePicker({
 				/>
 				<Presets presets={presets} className="py-3" onChange={onSelect} />
 			</Popover.Content>
-		</Popover>
+		</Popover.Root>
 	)
 }
 
@@ -176,7 +176,7 @@ export function DateRangePicker({
 }) {
 	return (
 		<div className={cx('grid gap-2', className)}>
-			<Popover>
+			<Popover.Root>
 				<Popover.Trigger>
 					<DateRangePickerTrigger
 						selected={selected}
@@ -199,7 +199,7 @@ export function DateRangePicker({
 						toYear={toYear}
 					/>
 				</Popover.Content>
-			</Popover>
+			</Popover.Root>
 		</div>
 	)
 }
