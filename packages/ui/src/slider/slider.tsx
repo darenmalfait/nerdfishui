@@ -4,7 +4,10 @@ import { cx } from '@nerdfish/utils'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import * as React from 'react'
 
-const RawSlider = React.forwardRef<
+export const SliderTrack = SliderPrimitive.Track
+export const SliderRange = SliderPrimitive.Range
+
+export const SliderRoot = React.forwardRef<
 	React.ElementRef<typeof SliderPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
@@ -22,9 +25,9 @@ const RawSlider = React.forwardRef<
 		{children}
 	</SliderPrimitive.Root>
 ))
-RawSlider.displayName = SliderPrimitive.Root.displayName
+SliderRoot.displayName = SliderPrimitive.Root.displayName
 
-const Thumb = React.forwardRef<
+export const SliderThumb = React.forwardRef<
 	React.ElementRef<typeof SliderPrimitive.Thumb>,
 	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Thumb>
 >((props, ref) => (
@@ -37,12 +40,15 @@ const Thumb = React.forwardRef<
 		)}
 	/>
 ))
-Thumb.displayName = SliderPrimitive.Thumb.displayName
+SliderThumb.displayName = SliderPrimitive.Thumb.displayName
 
-const Slider = Object.assign(RawSlider, {
-	Thumb,
-	Track: SliderPrimitive.Track,
-	Range: SliderPrimitive.Range,
-})
-
-export { Slider }
+export type SliderRootProps = React.ComponentPropsWithoutRef<typeof SliderRoot>
+export type SliderThumbProps = React.ComponentPropsWithoutRef<
+	typeof SliderThumb
+>
+export type SliderTrackProps = React.ComponentPropsWithoutRef<
+	typeof SliderTrack
+>
+export type SliderRangeProps = React.ComponentPropsWithoutRef<
+	typeof SliderRange
+>
