@@ -11,14 +11,15 @@ import { Button } from './button'
 import { Calendar, type CalendarProps } from './calendar'
 import { Popover } from './popover'
 
-type Preset = { value: string; label: string }
+export type DatepickerPreset = { value: string; label: string }
+export type { DateRange }
 
 function Presets({
 	presets = [],
 	onChange,
 	className,
 }: {
-	presets?: Preset[]
+	presets?: DatepickerPreset[]
 	onChange?: (value: Date | undefined) => void
 	className?: string
 }) {
@@ -70,7 +71,7 @@ function DatePickerTrigger({
 	)
 }
 
-function DatePicker({
+export function DatePicker({
 	className,
 	selected,
 	onSelect,
@@ -84,7 +85,7 @@ function DatePicker({
 	className?: string
 	selected?: Date
 	onSelect?: (value: Date | undefined) => void
-	presets?: Preset[]
+	presets?: DatepickerPreset[]
 	placeholder?: string
 	children?: React.ReactNode
 }) {
@@ -116,7 +117,7 @@ function DatePicker({
 	)
 }
 
-function DateRangePickerTrigger({
+export function DateRangePickerTrigger({
 	children,
 	selected,
 	className,
@@ -158,7 +159,7 @@ function DateRangePickerTrigger({
 	)
 }
 
-function DateRangePicker({
+export function DateRangePicker({
 	className,
 	selected,
 	onSelect,
@@ -203,5 +204,7 @@ function DateRangePicker({
 	)
 }
 
-export { DatePicker, DateRangePicker }
-export type { DateRange, Preset }
+export type DatepickerProps = React.ComponentPropsWithoutRef<typeof DatePicker>
+export type DateRangePickerProps = React.ComponentPropsWithoutRef<
+	typeof DateRangePicker
+>
