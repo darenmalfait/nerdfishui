@@ -6,6 +6,7 @@ import * as React from 'react'
 
 export const PopoverRoot = PopoverPrimitive.Root
 export const PopoverTrigger = PopoverPrimitive.Trigger
+export const PopoverClose = PopoverPrimitive.Close
 
 export const PopoverContent = React.forwardRef<
 	React.ElementRef<typeof PopoverPrimitive.Content>,
@@ -32,4 +33,8 @@ export type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 >
 export type PopoverContentProps = React.ComponentPropsWithoutRef<
 	typeof PopoverPrimitive.Content
+>
+
+export type PopoverCloseProps = React.ComponentPropsWithoutRef<
+	typeof PopoverPrimitive.Close
 >
