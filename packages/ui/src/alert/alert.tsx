@@ -96,7 +96,11 @@ export const AlertRoot = React.forwardRef<
 	return (
 		<div
 			{...props}
-			className={cx(alertVariants({ variant }), className)}
+			className={cx(
+				alertVariants({ variant }),
+				!hideIcon && 'pl-12',
+				className,
+			)}
 			ref={ref}
 		>
 			<AlertIcon variant={variant} hideIcon={hideIcon} />
