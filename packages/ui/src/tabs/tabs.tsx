@@ -4,7 +4,9 @@ import { cx } from '@nerdfish/utils'
 import * as TabsPrimivite from '@radix-ui/react-tabs'
 import * as React from 'react'
 
-const TabsList = React.forwardRef<
+export const TabsRoot = TabsPrimivite.Root
+
+export const TabsList = React.forwardRef<
 	React.ElementRef<typeof TabsPrimivite.List>,
 	React.ComponentPropsWithoutRef<typeof TabsPrimivite.List>
 >(({ className, ...props }, ref) => (
@@ -19,7 +21,7 @@ const TabsList = React.forwardRef<
 ))
 TabsList.displayName = TabsPrimivite.List.displayName
 
-const TabsTrigger = React.forwardRef<
+export const TabsTrigger = React.forwardRef<
 	React.ElementRef<typeof TabsPrimivite.Trigger>,
 	React.ComponentPropsWithoutRef<typeof TabsPrimivite.Trigger>
 >(({ className, ...props }, ref) => (
@@ -34,7 +36,7 @@ const TabsTrigger = React.forwardRef<
 ))
 TabsTrigger.displayName = TabsPrimivite.Trigger.displayName
 
-const TabsContent = React.forwardRef<
+export const TabsContent = React.forwardRef<
 	React.ElementRef<typeof TabsPrimivite.Content>,
 	React.ComponentPropsWithoutRef<typeof TabsPrimivite.Content>
 >(({ className, ...props }, ref) => (
@@ -49,10 +51,11 @@ const TabsContent = React.forwardRef<
 ))
 TabsContent.displayName = TabsPrimivite.Content.displayName
 
-const Tabs = Object.assign(TabsPrimivite.Root, {
-	List: TabsList,
-	Trigger: TabsTrigger,
-	Content: TabsContent,
-})
-
-export { Tabs }
+export type TabsRootProps = React.ComponentPropsWithoutRef<typeof TabsRoot>
+export type TabsListProps = React.ComponentPropsWithoutRef<typeof TabsList>
+export type TabsTriggerProps = React.ComponentPropsWithoutRef<
+	typeof TabsTrigger
+>
+export type TabsContentProps = React.ComponentPropsWithoutRef<
+	typeof TabsContent
+>

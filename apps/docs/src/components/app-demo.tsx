@@ -140,7 +140,7 @@ function AppDemo() {
 						</aside>
 						<div className="col-span-3 border-l border-l-gray-200 xl:col-span-4 dark:border-l-gray-700">
 							<div className="px-8 py-6">
-								<Tabs defaultValue="recipes" className="h-full space-y-6">
+								<Tabs.Root defaultValue="recipes" className="h-full space-y-6">
 									<div className="space-between flex items-center">
 										<Tabs.List>
 											<Tabs.Trigger value="recipes" className="relative">
@@ -215,7 +215,7 @@ function AppDemo() {
 											</div>
 										</div>
 									</Tabs.Content>
-								</Tabs>
+								</Tabs.Root>
 							</div>
 						</div>
 					</div>

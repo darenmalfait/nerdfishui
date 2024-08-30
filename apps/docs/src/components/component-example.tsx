@@ -40,7 +40,7 @@ export function ComponentExample({
 			className={cx('relative my-4 flex flex-col space-y-2', className)}
 			{...props}
 		>
-			<Tabs defaultValue="preview" className="mr-auto w-full">
+			<Tabs.Root defaultValue="preview" className="mr-auto w-full">
 				<div className="flex items-center justify-between">
 					<Tabs.List>
 						<Tabs.Trigger value="preview">Preview</Tabs.Trigger>
@@ -82,7 +82,7 @@ export function ComponentExample({
 						) : null}
 					</div>
 				</Tabs.Content>
-			</Tabs>
+			</Tabs.Root>
 		</div>
 	)
 }
