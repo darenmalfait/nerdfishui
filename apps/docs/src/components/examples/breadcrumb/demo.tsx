@@ -11,7 +11,7 @@ export function BreadcrumbDemo() {
 				</Breadcrumb.Item>
 				<Breadcrumb.Separator />
 				<Breadcrumb.Item>
-					<DropdownMenu>
+					<DropdownMenu.Root>
 						<DropdownMenu.Trigger className="flex items-center gap-1">
 							<Breadcrumb.Ellipsis className="size-4" />
 							<span className="sr-only">Toggle menu</span>
@@ -21,7 +21,7 @@ export function BreadcrumbDemo() {
 							<DropdownMenu.Item>Themes</DropdownMenu.Item>
 							<DropdownMenu.Item>GitHub</DropdownMenu.Item>
 						</DropdownMenu.Content>
-					</DropdownMenu>
+					</DropdownMenu.Root>
 				</Breadcrumb.Item>
 				<Breadcrumb.Separator />
 				<Breadcrumb.Item>
