@@ -3,51 +3,67 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-import { Description, InputError, Label } from './input'
-
-function FieldLabel({
+export function FieldLabel({
 	htmlFor,
-	label,
+	children,
 	className,
 }: {
 	htmlFor: string
-	label?: string
+	children?: React.ReactNode
 	className?: string
 }) {
-	if (!label) return null
+	if (!children) return null
 
 	return (
-		<Label htmlFor={htmlFor} className={className}>
-			{label}
-		</Label>
+		<label
+			data-slot="label"
+			htmlFor={htmlFor}
+			className={cx('text-primary block text-sm font-medium', className)}
+		>
+			{children}
+		</label>
 	)
 }
 
-function FieldDescription({
-	description,
+export function FieldDescription({
+	children,
 	className,
 }: {
-	description?: React.ReactNode
+	children?: React.ReactNode
 	className?: string
 }) {
-	if (!description) return null
-
-	return <Description className={className}>{description}</Description>
-}
-
-function FieldError({
-	error,
-	errorId,
-}: {
-	error?: string | null
-	errorId?: string
-}) {
-	if (!error) return null
+	if (!children) return null
 
 	return (
-		<InputError className="mt-3" id={errorId}>
-			{error}
-		</InputError>
+		<div
+			data-slot="description"
+			className={cx('text-muted text-sm', className)}
+		>
+			{children}
+		</div>
+	)
+}
+
+export function FieldError({
+	children,
+	errorId,
+	className,
+}: {
+	children?: React.ReactNode
+	errorId?: string
+	className?: string
+}) {
+	if (!children) return null
+
+	return (
+		<div
+			id={errorId}
+			data-slot="description"
+			className={cx('text-danger mb-0 mt-3 text-left text-sm', className)}
+			role="alert"
+		>
+			{children}
+		</div>
 	)
 }
 
@@ -60,7 +76,7 @@ type FieldProps = {
 	descriptionId?: string
 }
 
-const Field = React.forwardRef<
+export const Field = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'div'> & FieldProps
 >(function Field(
@@ -80,15 +96,16 @@ const Field = React.forwardRef<
 	return (
 		<div className={cx('w-full', className)} {...props} ref={ref}>
 			<FieldLabel
-				label={label}
 				htmlFor={htmlFor}
 				className={!description ? 'mb-3' : undefined}
-			/>
-			<FieldDescription description={description} className="mb-3" />
+			>
+				{label}
+			</FieldLabel>
+			<FieldDescription className="mb-3">{description}</FieldDescription>
 			{children}
-			<FieldError error={error} errorId={errorId} />
+			<FieldError errorId={errorId}>{error}</FieldError>
 		</div>
 	)
 })
 
-export { Field, type FieldProps }
+export type { FieldProps }

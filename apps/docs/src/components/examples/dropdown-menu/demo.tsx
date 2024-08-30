@@ -20,7 +20,7 @@ import {
 
 export function DropdownMenuDemo() {
 	return (
-		<DropdownMenu>
+		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild>
 				<Button variant="outline">Open</Button>
 			</DropdownMenu.Trigger>
@@ -104,6 +104,6 @@ export function DropdownMenuDemo() {
 					<DropdownMenu.Shortcut>⇧⌘Q</DropdownMenu.Shortcut>
 				</DropdownMenu.Item>
 			</DropdownMenu.Content>
-		</DropdownMenu>
+		</DropdownMenu.Root>
 	)
 }

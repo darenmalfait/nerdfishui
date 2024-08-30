@@ -6,7 +6,7 @@ import * as React from 'react'
 
 import { type InputProps } from './input'
 
-const checkboxVariants = cva(
+export const checkboxVariants = cva(
 	'relative flex items-center justify-center rounded-full focus:scale-75',
 	{
 		variants: {
@@ -22,7 +22,7 @@ const checkboxVariants = cva(
 	},
 )
 
-function RawCheckbox({
+export function CheckboxRoot({
 	className,
 	variant = 'sm',
 	bgClassName = 'bg-primary',
@@ -80,9 +80,9 @@ function CheckboxError({ error, id }: { error?: string | null; id: string }) {
 	)
 }
 
-const Checkbox = React.forwardRef<
+export const Checkbox = React.forwardRef<
 	HTMLInputElement,
-	InputProps & ExtractProps<typeof RawCheckbox>
+	InputProps & ExtractProps<typeof CheckboxRoot>
 >(function Checkbox(
 	{ error, name, label, id, className, defaultValue, ...props },
 	ref,
@@ -94,7 +94,7 @@ const Checkbox = React.forwardRef<
 		<div className={cx(className, 'group w-full')}>
 			<div className="relative flex items-center">
 				<div className="flex h-5 items-center">
-					<RawCheckbox ref={ref} id={inputId} name={name} {...props} />
+					<CheckboxRoot ref={ref} id={inputId} name={name} {...props} />
 				</div>
 				<div className="ml-3 text-base">
 					<label htmlFor={inputId} className="text-primary">
@@ -108,4 +108,7 @@ const Checkbox = React.forwardRef<
 	)
 })
 
-export { RawCheckbox, Checkbox }
+export type CheckboxRootProps = React.ComponentPropsWithoutRef<
+	typeof CheckboxRoot
+>
+export type CheckboxProps = React.ComponentPropsWithoutRef<typeof Checkbox>

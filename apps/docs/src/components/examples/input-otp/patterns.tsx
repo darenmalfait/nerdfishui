@@ -2,7 +2,7 @@ import { InputOTP, inputOTPPatterns } from '@nerdfish/ui'
 
 export function InputOTPPatternsDemo() {
 	return (
-		<InputOTP
+		<InputOTP.Root
 			maxLength={6}
 			pattern={inputOTPPatterns.digits}
 			render={({ slots }) => (

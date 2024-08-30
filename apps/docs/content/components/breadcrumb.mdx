@@ -21,14 +21,14 @@ import { Breadcrumb, DropdownMenu } from '@nerdfish/ui'
 ```
 
 ```tsx
-<Breadcrumb>
+<Breadcrumb.Root>
 	<Breadcrumb.List>
 		<Breadcrumb.Item>
 			<Breadcrumb.Link href="/">Home</Breadcrumb.Link>
 		</Breadcrumb.Item>
 		<Breadcrumb.Separator />
 		<Breadcrumb.Item>
-			<DropdownMenu>
+			<DropdownMenu.Root>
 				<DropdownMenu.Trigger className="flex items-center gap-1">
 					<Breadcrumb.Ellipsis className="size-4" />
 					<span className="sr-only">Toggle menu</span>
@@ -38,7 +38,7 @@ import { Breadcrumb, DropdownMenu } from '@nerdfish/ui'
 					<DropdownMenu.Item>Themes</DropdownMenu.Item>
 					<DropdownMenu.Item>GitHub</DropdownMenu.Item>
 				</DropdownMenu.Content>
-			</DropdownMenu>
+			</DropdownMenu.Root>
 		</Breadcrumb.Item>
 		<Breadcrumb.Separator />
 		<Breadcrumb.Item>
@@ -49,5 +49,5 @@ import { Breadcrumb, DropdownMenu } from '@nerdfish/ui'
 			<Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
 		</Breadcrumb.Item>
 	</Breadcrumb.List>
-</Breadcrumb>
+</Breadcrumb.Root>
 ```

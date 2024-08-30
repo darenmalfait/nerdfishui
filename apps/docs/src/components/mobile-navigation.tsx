@@ -21,7 +21,7 @@ export function MobileNavigation() {
 			>
 				<Icons.Menu className="text-primary size-4" />
 			</Button>
-			<Drawer
+			<Drawer.Root
 				direction="left"
 				open={isOpen}
 				onOpenChange={(open) => {
@@ -32,7 +32,7 @@ export function MobileNavigation() {
 				<Drawer.Content className="!w-full max-w-[300px] px-4">
 					<Navigation />
 				</Drawer.Content>
-			</Drawer>
+			</Drawer.Root>
 		</>
 	)
 }

@@ -4,7 +4,7 @@ import { Button, Drawer } from '@nerdfish/ui'
 
 export function DrawerDemo() {
 	return (
-		<Drawer direction="bottom">
+		<Drawer.Root direction="bottom">
 			<Drawer.Trigger asChild>
 				<Button variant="outline">Open</Button>
 			</Drawer.Trigger>
@@ -20,6 +20,6 @@ export function DrawerDemo() {
 					</Drawer.Close>
 				</Drawer.Footer>
 			</Drawer.Content>
-		</Drawer>
+		</Drawer.Root>
 	)
 }

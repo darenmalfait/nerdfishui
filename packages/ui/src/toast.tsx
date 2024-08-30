@@ -5,9 +5,9 @@ import { Toaster as Sonner, toast } from 'sonner'
 
 import { getButtonClassName } from './button'
 
-type ToasterProps = React.ComponentProps<typeof Sonner>
+export type ToasterProps = React.ComponentProps<typeof Sonner>
 
-function Toaster(props: ToasterProps) {
+export function Toaster(props: ToasterProps) {
 	return (
 		<Sonner
 			className="toaster group"
@@ -32,4 +32,4 @@ function Toaster(props: ToasterProps) {
 	)
 }
 
-export { Toaster, toast }
+export { toast }

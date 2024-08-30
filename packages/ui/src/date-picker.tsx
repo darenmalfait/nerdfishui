@@ -11,14 +11,15 @@ import { Button } from './button'
 import { Calendar, type CalendarProps } from './calendar'
 import { Popover } from './popover'
 
-type Preset = { value: string; label: string }
+export type DatepickerPreset = { value: string; label: string }
+export type { DateRange }
 
 function Presets({
 	presets = [],
 	onChange,
 	className,
 }: {
-	presets?: Preset[]
+	presets?: DatepickerPreset[]
 	onChange?: (value: Date | undefined) => void
 	className?: string
 }) {
@@ -70,7 +71,7 @@ function DatePickerTrigger({
 	)
 }
 
-function DatePicker({
+export function DatePicker({
 	className,
 	selected,
 	onSelect,
@@ -84,12 +85,12 @@ function DatePicker({
 	className?: string
 	selected?: Date
 	onSelect?: (value: Date | undefined) => void
-	presets?: Preset[]
+	presets?: DatepickerPreset[]
 	placeholder?: string
 	children?: React.ReactNode
 }) {
 	return (
-		<Popover>
+		<Popover.Root>
 			<Popover.Trigger>
 				<DatePickerTrigger
 					selected={selected}
@@ -112,11 +113,11 @@ function DatePicker({
 				/>
 				<Presets presets={presets} className="py-3" onChange={onSelect} />
 			</Popover.Content>
-		</Popover>
+		</Popover.Root>
 	)
 }
 
-function DateRangePickerTrigger({
+export function DateRangePickerTrigger({
 	children,
 	selected,
 	className,
@@ -158,7 +159,7 @@ function DateRangePickerTrigger({
 	)
 }
 
-function DateRangePicker({
+export function DateRangePicker({
 	className,
 	selected,
 	onSelect,
@@ -175,7 +176,7 @@ function DateRangePicker({
 }) {
 	return (
 		<div className={cx('grid gap-2', className)}>
-			<Popover>
+			<Popover.Root>
 				<Popover.Trigger>
 					<DateRangePickerTrigger
 						selected={selected}
@@ -198,10 +199,12 @@ function DateRangePicker({
 						toYear={toYear}
 					/>
 				</Popover.Content>
-			</Popover>
+			</Popover.Root>
 		</div>
 	)
 }
 
-export { DatePicker, DateRangePicker }
-export type { DateRange, Preset }
+export type DatepickerProps = React.ComponentPropsWithoutRef<typeof DatePicker>
+export type DateRangePickerProps = React.ComponentPropsWithoutRef<
+	typeof DateRangePicker
+>

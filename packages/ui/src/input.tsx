@@ -6,7 +6,7 @@ import * as React from 'react'
 
 import { Field } from './field'
 
-const inputVariants = cva(
+export const inputVariants = cva(
 	cx(
 		'placeholder:text-muted w-full rounded-lg bg-transparent text-left outline-none',
 	),
@@ -24,7 +24,7 @@ const inputVariants = cva(
 	},
 )
 
-const addonVariants = cva(
+export const inputAddonVariants = cva(
 	'bg-popover inline-flex w-auto font-normal shadow-none',
 	{
 		variants: {
@@ -40,9 +40,9 @@ const addonVariants = cva(
 	},
 )
 
-type InputSize = VariantProps<typeof inputVariants>['size']
+export type InputSize = VariantProps<typeof inputVariants>['size']
 
-type RawInputProps = {
+export type InputRootProps = {
 	hasError?: boolean
 	icon?: React.ElementType
 	inputSize?: InputSize
@@ -54,7 +54,7 @@ type RawInputProps = {
 	| React.ComponentPropsWithRef<'input'>
 )
 
-type InputProps = {
+export type InputProps = {
 	defaultValue?: string | null
 	name: string
 	label?: string
@@ -63,7 +63,7 @@ type InputProps = {
 	description?: React.ReactNode
 }
 
-function getInputClassName(
+export function getInputClassName(
 	className?: string,
 	hasError?: boolean,
 	inputSize: InputSize = 'md',
@@ -85,39 +85,11 @@ function getInputClassName(
 	)
 }
 
-function FormHelperText({
+export function FormHelperText({
 	className,
 	...props
 }: React.ComponentPropsWithoutRef<'div'>) {
 	return <div className={cx('text-muted text-sm', className)} {...props} />
-}
-
-function Label({
-	className,
-	htmlFor,
-	...props
-}: React.ComponentPropsWithoutRef<'label'>) {
-	return (
-		<label
-			data-slot="label"
-			htmlFor={htmlFor}
-			className={cx('text-primary block text-sm font-medium', className)}
-			{...props}
-		/>
-	)
-}
-
-function Description({
-	className,
-	...props
-}: React.ComponentPropsWithoutRef<'div'>) {
-	return (
-		<div
-			data-slot="description"
-			{...props}
-			className={cx('text-muted text-sm', className)}
-		/>
-	)
 }
 
 function Addon({
@@ -136,7 +108,7 @@ function Addon({
 	return (
 		<div
 			className={cx(
-				addonVariants({ size: inputSize }),
+				inputAddonVariants({ size: inputSize }),
 				{
 					'rounded-l-lg': !!addOnLeading,
 					'rounded-r-lg': !!addOnTrailing,
@@ -175,10 +147,10 @@ function InputIcon({
 	)
 }
 
-const RawInput = React.forwardRef<
+export const InputRoot = React.forwardRef<
 	HTMLInputElement | HTMLTextAreaElement,
-	RawInputProps
->(function RawInput(props, ref) {
+	InputRootProps
+>(function InputRoot(props, ref) {
 	const {
 		type,
 		hasError,
@@ -187,7 +159,7 @@ const RawInput = React.forwardRef<
 		children,
 		inputSize,
 		icon: Icon,
-		...rawInputProps
+		...InputRootProps
 	} = props
 
 	const className = getInputClassName(
@@ -205,7 +177,7 @@ const RawInput = React.forwardRef<
 				<InputIcon icon={Icon} hasError={hasError} />
 				<textarea
 					data-slot="control"
-					{...(rawInputProps as React.ComponentPropsWithoutRef<'textarea'>)}
+					{...(InputRootProps as React.ComponentPropsWithoutRef<'textarea'>)}
 					ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
 					aria-invalid={hasError}
 					className={cx('h-36', inputVariants({ size: inputSize }), {
@@ -226,7 +198,7 @@ const RawInput = React.forwardRef<
 				<input
 					data-slot="control"
 					type={type}
-					{...(rawInputProps as React.ComponentPropsWithoutRef<'input'>)}
+					{...(InputRootProps as React.ComponentPropsWithoutRef<'input'>)}
 					className={cx(
 						!!addOnLeading && '!pl-2',
 						!!Icon && 'pr-14',
@@ -242,29 +214,9 @@ const RawInput = React.forwardRef<
 	)
 })
 
-function InputError({
-	className,
-	id,
-	...props
-}: React.ComponentPropsWithoutRef<'div'> & { id?: string }) {
-	if (!props.children) {
-		return null
-	}
-
-	return (
-		<div
-			data-slot="description"
-			{...props}
-			className={cx('text-danger mb-0 text-left text-sm', className)}
-			role="alert"
-			id={id}
-		/>
-	)
-}
-
-const Input = React.forwardRef<
+export const Input = React.forwardRef<
 	HTMLInputElement | HTMLTextAreaElement,
-	InputProps & RawInputProps
+	InputProps & InputRootProps
 >(function Input(
 	{ defaultValue, error, name, label, description, id, ...props },
 	ref,
@@ -284,9 +236,9 @@ const Input = React.forwardRef<
 				label,
 			}}
 		>
-			<RawInput
+			<InputRoot
 				hasError={!!error}
-				{...(props as RawInputProps)}
+				{...(props as InputRootProps)}
 				ref={ref}
 				name={name}
 				id={inputId}
@@ -300,15 +252,3 @@ const Input = React.forwardRef<
 		</Field>
 	)
 })
-
-export {
-	FormHelperText,
-	getInputClassName,
-	Input,
-	InputError,
-	Label,
-	Description,
-	RawInput,
-}
-
-export type { RawInputProps, InputProps, InputSize }

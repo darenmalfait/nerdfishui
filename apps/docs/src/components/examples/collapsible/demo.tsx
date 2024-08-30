@@ -8,7 +8,7 @@ export function CollapsibleDemo() {
 	const [isOpen, setIsOpen] = React.useState(false)
 
 	return (
-		<Collapsible
+		<Collapsible.Root
 			open={isOpen}
 			onOpenChange={setIsOpen}
 			className="w-[350px] space-y-2"
@@ -37,6 +37,6 @@ export function CollapsibleDemo() {
 					Non tempora provident.
 				</div>
 			</Collapsible.Content>
-		</Collapsible>
+		</Collapsible.Root>
 	)
 }

@@ -81,7 +81,7 @@ export function CopyWithClassNames({
 	}, [])
 
 	return (
-		<DropdownMenu>
+		<DropdownMenu.Root>
 			<DropdownMenu.Trigger
 				className={cx(
 					'text-primary hover:bg-muted hover:text-muted relative z-20 inline-flex h-8 items-center justify-center rounded-md p-2 text-sm font-medium transition-all focus:outline-none',
@@ -106,7 +106,7 @@ export function CopyWithClassNames({
 					<span>Classname</span>
 				</DropdownMenu.Item>
 			</DropdownMenu.Content>
-		</DropdownMenu>
+		</DropdownMenu.Root>
 	)
 }
 
@@ -136,7 +136,7 @@ export function CopyNpmCommandButton({
 	}, [])
 
 	return (
-		<DropdownMenu>
+		<DropdownMenu.Root>
 			<DropdownMenu.Trigger
 				className={cx(
 					'text-primary hover:bg-muted relative z-20 inline-flex h-8 items-center justify-center rounded-md p-2 text-sm font-medium transition-all focus:outline-none',
@@ -169,6 +169,6 @@ export function CopyNpmCommandButton({
 					<span>pnpm</span>
 				</DropdownMenu.Item>
 			</DropdownMenu.Content>
-		</DropdownMenu>
+		</DropdownMenu.Root>
 	)
 }

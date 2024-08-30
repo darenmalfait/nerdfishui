@@ -37,7 +37,6 @@ import { DateRangePickerExample } from './date-picker/date-range-picker'
 import { DatePickerDemo } from './date-picker/demo'
 import { DatePickerWithInputExample } from './date-picker/with-input'
 import { DialogDemo } from './dialog/demo'
-import { DoubleLabelLinkDemo } from './double-label-link/demo'
 import { DrawerDemo } from './drawer/demo'
 import { DrawerDirection } from './drawer/direction'
 import { DrawerResponsiveDemo } from './drawer/responsive'
@@ -128,7 +127,6 @@ export const examples = {
 	DatePickerWithInputExample,
 	DateRangePickerExample,
 	DialogDemo,
-	DoubleLabelLinkDemo,
 	DrawerDemo,
 	DrawerDirection,
 	DrawerResponsiveDemo,
