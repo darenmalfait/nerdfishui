@@ -5,7 +5,7 @@ import { Button, Drawer } from '@nerdfish/ui'
 export function DrawerDirection() {
 	return (
 		<div className="flex flex-col space-y-4">
-			<Drawer direction="left">
+			<Drawer.Root direction="left">
 				<Drawer.Trigger asChild>
 					<Button variant="outline">Left</Button>
 				</Drawer.Trigger>
@@ -23,8 +23,8 @@ export function DrawerDirection() {
 						</Drawer.Close>
 					</Drawer.Footer>
 				</Drawer.Content>
-			</Drawer>
-			<Drawer direction="right">
+			</Drawer.Root>
+			<Drawer.Root direction="right">
 				<Drawer.Trigger asChild>
 					<Button variant="outline">Right</Button>
 				</Drawer.Trigger>
@@ -42,8 +42,8 @@ export function DrawerDirection() {
 						</Drawer.Close>
 					</Drawer.Footer>
 				</Drawer.Content>
-			</Drawer>
-			<Drawer direction="bottom">
+			</Drawer.Root>
+			<Drawer.Root direction="bottom">
 				<Drawer.Trigger asChild>
 					<Button variant="outline">Bottom</Button>
 				</Drawer.Trigger>
@@ -61,8 +61,8 @@ export function DrawerDirection() {
 						</Drawer.Close>
 					</Drawer.Footer>
 				</Drawer.Content>
-			</Drawer>
-			<Drawer direction="top">
+			</Drawer.Root>
+			<Drawer.Root direction="top">
 				<Drawer.Trigger asChild>
 					<Button variant="outline">Top</Button>
 				</Drawer.Trigger>
@@ -80,7 +80,7 @@ export function DrawerDirection() {
 						</Drawer.Close>
 					</Drawer.Footer>
 				</Drawer.Content>
-			</Drawer>
+			</Drawer.Root>
 		</div>
 	)
 }

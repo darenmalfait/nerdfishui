@@ -4,7 +4,7 @@ import { Accordion } from '@nerdfish/ui'
 
 export function AccordionDemo() {
 	return (
-		<Accordion type="single" collapsible className="w-[450px]">
+		<Accordion.Root type="single" collapsible className="w-[450px]">
 			<Accordion.Item value="item-1">
 				<Accordion.Trigger>Fish</Accordion.Trigger>
 				<Accordion.Content>
@@ -26,6 +26,6 @@ export function AccordionDemo() {
 					natural ingredients. With the Goodness of 100% Natural Ingredients
 				</Accordion.Content>
 			</Accordion.Item>
-		</Accordion>
+		</Accordion.Root>
 	)
 }

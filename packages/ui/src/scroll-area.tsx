@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import * as React from 'react'
 
-const ScrollBar = React.forwardRef<
+export const ScrollBar = React.forwardRef<
 	React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
 	React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
 >(({ className, orientation = 'vertical', ...props }, ref) => {
@@ -28,7 +28,7 @@ const ScrollBar = React.forwardRef<
 })
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
 
-const ScrollArea = React.forwardRef<
+export const ScrollArea = React.forwardRef<
 	React.ElementRef<typeof ScrollAreaPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
 >(({ className, children, ...props }, ref) => {
@@ -48,4 +48,5 @@ const ScrollArea = React.forwardRef<
 })
 ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
 
-export { ScrollArea, ScrollBar }
+export type ScrollAreaProps = React.ComponentPropsWithoutRef<typeof ScrollArea>
+export type ScrollBarProps = React.ComponentPropsWithoutRef<typeof ScrollBar>

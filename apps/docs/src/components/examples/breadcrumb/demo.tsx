@@ -4,14 +4,14 @@ import { Breadcrumb, DropdownMenu } from '@nerdfish/ui'
 
 export function BreadcrumbDemo() {
 	return (
-		<Breadcrumb>
+		<Breadcrumb.Root>
 			<Breadcrumb.List>
 				<Breadcrumb.Item>
 					<Breadcrumb.Link href="/">Home</Breadcrumb.Link>
 				</Breadcrumb.Item>
 				<Breadcrumb.Separator />
 				<Breadcrumb.Item>
-					<DropdownMenu>
+					<DropdownMenu.Root>
 						<DropdownMenu.Trigger className="flex items-center gap-1">
 							<Breadcrumb.Ellipsis className="size-4" />
 							<span className="sr-only">Toggle menu</span>
@@ -21,7 +21,7 @@ export function BreadcrumbDemo() {
 							<DropdownMenu.Item>Themes</DropdownMenu.Item>
 							<DropdownMenu.Item>GitHub</DropdownMenu.Item>
 						</DropdownMenu.Content>
-					</DropdownMenu>
+					</DropdownMenu.Root>
 				</Breadcrumb.Item>
 				<Breadcrumb.Separator />
 				<Breadcrumb.Item>
@@ -32,6 +32,6 @@ export function BreadcrumbDemo() {
 					<Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
 				</Breadcrumb.Item>
 			</Breadcrumb.List>
-		</Breadcrumb>
+		</Breadcrumb.Root>
 	)
 }

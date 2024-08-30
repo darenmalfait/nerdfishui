@@ -3,7 +3,7 @@
 import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import * as React from 'react'
 
-const badgeVariants = cva(
+export const badgeVariants = cva(
 	'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors',
 	{
 		variants: {
@@ -23,14 +23,18 @@ const badgeVariants = cva(
 	},
 )
 
-export interface BadgeProps
-	extends React.HTMLAttributes<HTMLDivElement>,
-		VariantProps<typeof badgeVariants> {}
-
-function Badge({ className, variant, ...props }: BadgeProps) {
+export const Badge = React.forwardRef<
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof badgeVariants>
+>(({ className, variant, ...props }, ref) => {
 	return (
-		<div className={cx(badgeVariants({ variant }), className)} {...props} />
+		<div
+			ref={ref}
+			className={cx(badgeVariants({ variant }), className)}
+			{...props}
+		/>
 	)
-}
+})
+Badge.displayName = 'Badge'
 
-export { Badge, badgeVariants }
+export type BadgeProps = React.ComponentPropsWithoutRef<typeof Badge>

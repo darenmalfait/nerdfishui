@@ -1,9 +1,9 @@
 'use client'
 
-import { cva, cx, type ExtractProps, type VariantProps } from '@nerdfish/utils'
+import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import * as React from 'react'
 
-const Paragraph = React.forwardRef<
+export const Paragraph = React.forwardRef<
 	HTMLParagraphElement,
 	React.ComponentPropsWithRef<'p'> & {
 		prose?: boolean
@@ -27,9 +27,11 @@ const Paragraph = React.forwardRef<
 })
 Paragraph.displayName = 'Paragraph'
 
+export type ParagraphProps = React.ComponentPropsWithRef<typeof Paragraph>
+
 const DEFAULT_TITLE_SIZE = 'h2'
 
-const titleVariants = cva('', {
+export const titleVariants = cva('', {
 	variants: {
 		size: {
 			// Keep this the same to the prose styles in styles.css
@@ -102,9 +104,11 @@ const Title = React.forwardRef<
 	)
 })
 
-const H1 = React.forwardRef<
+export type TitleProps = React.ComponentPropsWithRef<typeof Title>
+
+export const H1 = React.forwardRef<
 	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h1'> & ExtractProps<typeof Title>
+	React.ComponentPropsWithRef<'h1'> & TitleProps
 >(function H1(props, ref) {
 	return (
 		<Title
@@ -118,9 +122,9 @@ const H1 = React.forwardRef<
 	)
 })
 
-const H2 = React.forwardRef<
+export const H2 = React.forwardRef<
 	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h2'> & ExtractProps<typeof Title>
+	React.ComponentPropsWithRef<'h2'> & TitleProps
 >(function H2(props, ref) {
 	return (
 		<Title
@@ -134,32 +138,30 @@ const H2 = React.forwardRef<
 	)
 })
 
-const H3 = React.forwardRef<
+export const H3 = React.forwardRef<
 	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h3'> & ExtractProps<typeof Title>
+	React.ComponentPropsWithRef<'h3'> & TitleProps
 >(function H3(props, ref) {
 	return <Title {...props} size="h3" ref={ref} />
 })
 
-const H4 = React.forwardRef<
+export const H4 = React.forwardRef<
 	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h3'> & ExtractProps<typeof Title>
+	React.ComponentPropsWithRef<'h3'> & TitleProps
 >(function H4(props, ref) {
 	return <Title {...props} size="h4" ref={ref} />
 })
 
-const H5 = React.forwardRef<
+export const H5 = React.forwardRef<
 	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h5'> & ExtractProps<typeof Title>
+	React.ComponentPropsWithRef<'h5'> & TitleProps
 >(function H5(props, ref) {
 	return <Title {...props} size="h5" ref={ref} />
 })
 
-const H6 = React.forwardRef<
+export const H6 = React.forwardRef<
 	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h6'> & ExtractProps<typeof Title>
+	React.ComponentPropsWithRef<'h6'> & TitleProps
 >(function H6(props, ref) {
 	return <Title {...props} size="h6" ref={ref} />
 })
-
-export { H1, H2, H3, H4, H5, H6, Paragraph }

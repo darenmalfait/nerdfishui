@@ -4,7 +4,7 @@ import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
 	'inline-flex items-center justify-center rounded-md border text-sm font-medium transition-all active:scale-95 disabled:pointer-events-none',
 	{
 		variants: {
@@ -42,7 +42,7 @@ const buttonVariants = cva(
 	},
 )
 
-function getButtonClassName({
+export function getButtonClassName({
 	variant = 'default',
 	size = 'default',
 	accentuate,
@@ -58,34 +58,32 @@ function getButtonClassName({
 	)
 }
 
-export interface ButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-		VariantProps<typeof buttonVariants> {
-	asChild?: boolean
-	accentuate?: boolean
-}
+export const Button = React.forwardRef<
+	HTMLButtonElement,
+	React.ButtonHTMLAttributes<HTMLButtonElement> &
+		VariantProps<typeof buttonVariants> & {
+			asChild?: boolean
+			accentuate?: boolean
+		}
+>(({ variant, asChild, size, className, accentuate, ...props }, ref) => {
+	const Comp = asChild ? Slot : 'button'
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ variant, asChild, size, className, accentuate, ...props }, ref) => {
-		const Comp = asChild ? Slot : 'button'
-
-		return (
-			<Comp
-				className={getButtonClassName({
-					variant,
-					size,
-					accentuate,
-					className,
-				})}
-				ref={ref}
-				{...props}
-			/>
-		)
-	},
-)
+	return (
+		<Comp
+			className={getButtonClassName({
+				variant,
+				size,
+				accentuate,
+				className,
+			})}
+			ref={ref}
+			{...props}
+		/>
+	)
+})
 Button.displayName = 'Button'
 
-const ButtonGroup = React.forwardRef<
+export const ButtonGroup = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'div'>
 >(function ButtonGroup({ className, ...props }, ref) {
@@ -102,4 +100,4 @@ const ButtonGroup = React.forwardRef<
 })
 ButtonGroup.displayName = 'ButtonGroup'
 
-export { Button, ButtonGroup, getButtonClassName, buttonVariants }
+export type ButtonProps = React.ComponentPropsWithoutRef<typeof Button>

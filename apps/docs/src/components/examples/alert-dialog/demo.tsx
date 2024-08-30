@@ -4,7 +4,7 @@ import { AlertDialog, Button } from '@nerdfish/ui'
 
 export function AlertDialogDemo() {
 	return (
-		<AlertDialog>
+		<AlertDialog.Root>
 			<AlertDialog.Trigger asChild>
 				<Button variant="outline">Open</Button>
 			</AlertDialog.Trigger>
@@ -21,6 +21,6 @@ export function AlertDialogDemo() {
 					<AlertDialog.Action>Continue</AlertDialog.Action>
 				</AlertDialog.Footer>
 			</AlertDialog.Content>
-		</AlertDialog>
+		</AlertDialog.Root>
 	)
 }

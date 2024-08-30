@@ -71,7 +71,7 @@ ListItem.displayName = 'ListItem'
 
 export function NavigationMenuDemo() {
 	return (
-		<NavigationMenu>
+		<NavigationMenu.Root>
 			<NavigationMenu.List>
 				<NavigationMenu.Item>
 					<NavigationMenu.Trigger>Getting started</NavigationMenu.Trigger>
@@ -113,6 +113,6 @@ export function NavigationMenuDemo() {
 					</Link>
 				</NavigationMenu.Item>
 			</NavigationMenu.List>
-		</NavigationMenu>
+		</NavigationMenu.Root>
 	)
 }

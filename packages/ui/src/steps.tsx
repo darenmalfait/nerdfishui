@@ -3,7 +3,7 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-const Steps = React.forwardRef<
+export const Steps = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement> & {
 		maxSteps: number
@@ -63,4 +63,4 @@ const Steps = React.forwardRef<
 
 Steps.displayName = 'Steps'
 
-export { Steps }
+export type StepsProps = React.ComponentPropsWithoutRef<typeof Steps>

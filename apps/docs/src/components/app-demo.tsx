@@ -119,7 +119,7 @@ function AppDemo() {
 							</div>
 							<div className="space-y-4">
 								<div className="px-3">
-									<NavigationList className="space-y-1">
+									<NavigationList.Root className="space-y-1">
 										<NavigationList.Title title="Discover" />
 										<NavigationList.Item
 											icon={Utensils}
@@ -127,20 +127,20 @@ function AppDemo() {
 											active
 										/>
 										<NavigationList.Item icon={GridIcon} title="Browse" />
-									</NavigationList>
+									</NavigationList.Root>
 								</div>
 								<div className="px-3 py-2">
-									<NavigationList>
+									<NavigationList.Root>
 										<NavigationList.Title title="Library" />
 										<NavigationList.Item icon={History} title="History" />
 										<NavigationList.Item icon={User} title="Your uploads" />
-									</NavigationList>
+									</NavigationList.Root>
 								</div>
 							</div>
 						</aside>
 						<div className="col-span-3 border-l border-l-gray-200 xl:col-span-4 dark:border-l-gray-700">
 							<div className="px-8 py-6">
-								<Tabs defaultValue="recipes" className="h-full space-y-6">
+								<Tabs.Root defaultValue="recipes" className="h-full space-y-6">
 									<div className="space-between flex items-center">
 										<Tabs.List>
 											<Tabs.Trigger value="recipes" className="relative">
@@ -215,7 +215,7 @@ function AppDemo() {
 											</div>
 										</div>
 									</Tabs.Content>
-								</Tabs>
+								</Tabs.Root>
 							</div>
 						</div>
 					</div>

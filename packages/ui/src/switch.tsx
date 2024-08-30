@@ -6,7 +6,7 @@ import * as React from 'react'
 
 import { getInputClassName } from './input'
 
-const Switch = React.forwardRef<
+export const Switch = React.forwardRef<
 	React.ElementRef<typeof SwitchPrimitives.Root>,
 	React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(({ className, ...props }, ref) => (
@@ -33,4 +33,4 @@ const Switch = React.forwardRef<
 ))
 Switch.displayName = SwitchPrimitives.Root.displayName
 
-export { Switch }
+export type SwitchProps = React.ComponentPropsWithoutRef<typeof Switch>

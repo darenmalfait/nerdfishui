@@ -4,7 +4,7 @@ import { HoverCard } from '@nerdfish/ui'
 
 export function HoverCardDemo() {
 	return (
-		<HoverCard>
+		<HoverCard.Root>
 			<HoverCard.Trigger>Hover over the cake</HoverCard.Trigger>
 			<HoverCard.Content>
 				<div className="space-y-2">
@@ -15,6 +15,6 @@ export function HoverCardDemo() {
 					</p>
 				</div>
 			</HoverCard.Content>
-		</HoverCard>
+		</HoverCard.Root>
 	)
 }

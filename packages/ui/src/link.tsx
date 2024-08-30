@@ -1,72 +1,30 @@
 'use client'
 
 import { cx } from '@nerdfish/utils'
-import { ChevronRight } from 'lucide-react'
 import * as React from 'react'
 
-type LinkProps = React.DetailedHTMLProps<
-	React.AnchorHTMLAttributes<HTMLAnchorElement>,
-	HTMLAnchorElement
-> & {
-	disabled?: boolean
-	external?: boolean
-	as?: React.ElementType
-	onClick?: React.MouseEventHandler<HTMLAnchorElement>
-	to?: string
-	children?: React.ReactNode
-}
-
-const Link = React.forwardRef<HTMLElement, LinkProps>(
-	function Link(props, ref) {
-		const {
-			disabled,
-			external,
-			onClick,
-			to,
-			href = to,
-			className,
-			as: Tag = 'a',
-			...rest
-		} = props
-		const externalProps = external
-			? { target: '_blank', rel: 'noopener noreferrer' }
-			: null
-
-		return (
-			<Tag
-				ref={ref}
-				className={cx(
-					'text-primary inline-flex space-x-2 bg-transparent hover:bg-transparent dark:hover:bg-transparent',
-					className,
-				)}
-				tabIndex={disabled ? -1 : undefined}
-				to={href}
-				href={href}
-				aria-disabled={disabled}
-				onClick={disabled ? (event: any) => event.preventDefault() : onClick}
-				{...externalProps}
-				{...rest}
-			/>
-		)
-	},
-)
-
-const DoubleLabelLink = React.forwardRef<
+export const Link = React.forwardRef<
 	HTMLElement,
-	LinkProps & {
-		description?: string
+	React.DetailedHTMLProps<
+		React.AnchorHTMLAttributes<HTMLAnchorElement>,
+		HTMLAnchorElement
+	> & {
+		disabled?: boolean
+		external?: boolean
+		as?: React.ElementType
+		onClick?: React.MouseEventHandler<HTMLAnchorElement>
+		to?: string
+		children?: React.ReactNode
 	}
->(function DoubleLabelLink(props, ref) {
+>(function Link(props, ref) {
 	const {
 		disabled,
 		external,
 		onClick,
-		className,
-		as: Tag = 'a',
 		to,
 		href = to,
-		children,
-		description,
+		className,
+		as: Tag = 'a',
 		...rest
 	} = props
 	const externalProps = external
@@ -77,30 +35,18 @@ const DoubleLabelLink = React.forwardRef<
 		<Tag
 			ref={ref}
 			className={cx(
+				'text-primary inline-flex space-x-2 bg-transparent hover:bg-transparent dark:hover:bg-transparent',
 				className,
-				'bg-muted text-primary hover:bg-muted group inline-flex items-center rounded-full p-1 pr-2 transition-colors sm:text-base lg:text-sm xl:text-base',
 			)}
+			tabIndex={disabled ? -1 : undefined}
 			to={href}
 			href={href}
-			tabIndex={disabled ? -1 : undefined}
 			aria-disabled={disabled}
 			onClick={disabled ? (event: any) => event.preventDefault() : onClick}
 			{...externalProps}
 			{...rest}
-		>
-			{children ? (
-				<span className="text-inverted bg-inverted rounded-full px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide transition-colors">
-					{children}
-				</span>
-			) : null}
-
-			{description ? <span className="ml-4 text-sm">{description}</span> : null}
-			<ChevronRight
-				className="text-primary/50 ml-2 size-5"
-				aria-hidden="true"
-			/>
-		</Tag>
+		/>
 	)
 })
 
-export { Link, DoubleLabelLink, type LinkProps }
+export type LinkProps = React.ComponentPropsWithoutRef<typeof Link>

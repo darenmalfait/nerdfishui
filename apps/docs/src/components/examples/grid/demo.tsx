@@ -127,13 +127,13 @@ const features: (ExtractProps<typeof CardContent> & {
 export function GridDemo() {
 	return (
 		<div className="flex items-center">
-			<Grid className="lg:grid-rows-3">
+			<Grid.Root className="lg:grid-rows-3">
 				{features.map(({ className, ...feature }) => (
 					<Grid.Card key={feature.name} className={className}>
 						<CardContent {...feature} />
 					</Grid.Card>
 				))}
-			</Grid>
+			</Grid.Root>
 		</div>
 	)
 }

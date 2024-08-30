@@ -10,7 +10,7 @@ export function DrawerResponsiveDemo() {
 
 	if (isDesktop) {
 		return (
-			<Dialog open={open} onOpenChange={setOpen}>
+			<Dialog.Root open={open} onOpenChange={setOpen}>
 				<Dialog.Trigger asChild>
 					<Button variant="outline">Edit Profile</Button>
 				</Dialog.Trigger>
@@ -24,12 +24,12 @@ export function DrawerResponsiveDemo() {
 					</Dialog.Header>
 					<ProfileForm />
 				</Dialog.Content>
-			</Dialog>
+			</Dialog.Root>
 		)
 	}
 
 	return (
-		<Drawer open={open} onOpenChange={setOpen}>
+		<Drawer.Root open={open} onOpenChange={setOpen}>
 			<Drawer.Trigger asChild>
 				<Button variant="outline">Edit Profile</Button>
 			</Drawer.Trigger>
@@ -47,7 +47,7 @@ export function DrawerResponsiveDemo() {
 					</Drawer.Close>
 				</Drawer.Footer>
 			</Drawer.Content>
-		</Drawer>
+		</Drawer.Root>
 	)
 }
 
