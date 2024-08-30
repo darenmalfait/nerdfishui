@@ -47,7 +47,7 @@ const invoices = [
 
 export function TableDemo() {
 	return (
-		<Table>
+		<Table.Root>
 			<Table.Caption>A list of your recent invoices.</Table.Caption>
 			<Table.Header>
 				<Table.Row>
@@ -69,6 +69,6 @@ export function TableDemo() {
 					</Table.Row>
 				))}
 			</Table.Body>
-		</Table>
+		</Table.Root>
 	)
 }
