@@ -14,7 +14,7 @@ import {
 import { Popover } from './popover'
 import { ScrollArea } from './scroll-area'
 
-interface SelectProps
+export interface SelectRootProps
 	extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
 		Pick<InputRootProps, 'hasError' | 'icon' | 'inputSize'> {
 	id?: string
@@ -30,7 +30,7 @@ interface SelectProps
 	onChange?: (value: string) => void
 }
 
-const SelectRoot = React.forwardRef<HTMLInputElement, SelectProps>(
+export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 	function SelectRoot(
 		{
 			value: valueProp,
@@ -127,7 +127,7 @@ SelectRoot.displayName = 'SelectRoot'
 
 export const Select = React.forwardRef<
 	HTMLInputElement,
-	SelectProps & InputProps
+	SelectRootProps & InputProps
 >(function Select(
 	{ defaultValue, error, name, label, className, description, id, ...props },
 	ref,
@@ -168,3 +168,5 @@ export const Select = React.forwardRef<
 	)
 })
 Select.displayName = 'Select'
+
+export type SelectProps = React.ComponentPropsWithoutRef<typeof Select>
