@@ -60,7 +60,7 @@ type FieldProps = {
 	descriptionId?: string
 }
 
-const Field = React.forwardRef<
+export const Field = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'div'> & FieldProps
 >(function Field(
@@ -91,4 +91,4 @@ const Field = React.forwardRef<
 	)
 })
 
-export { Field, type FieldProps }
+export type { FieldProps }
