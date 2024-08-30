@@ -3,9 +3,9 @@
 import { cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-import { Tooltip } from './tooltip'
+import { Tooltip } from '../tooltip'
 
-const navItemVariants = cva(
+export const navigationListItemVariants = cva(
 	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
 	{
 		variants: {
@@ -64,7 +64,7 @@ function ItemLabel({
 	return <span className={cx('ml-auto', className)}>{label}</span>
 }
 
-function Item<T>({
+export function NavigationListItem<T>({
 	as,
 	className,
 	icon: Icon,
@@ -82,7 +82,7 @@ function Item<T>({
 				<Tooltip.Trigger asChild>
 					<Link
 						className={cx(
-							navItemVariants({
+							navigationListItemVariants({
 								variant: active ? 'default' : 'ghost',
 								size: 'icon',
 							}),
@@ -107,7 +107,10 @@ function Item<T>({
 	return (
 		<Link
 			className={cx(
-				navItemVariants({ variant: active ? 'default' : 'ghost', size: 'sm' }),
+				navigationListItemVariants({
+					variant: active ? 'default' : 'ghost',
+					size: 'sm',
+				}),
 				'justify-start',
 				className,
 			)}
@@ -120,7 +123,7 @@ function Item<T>({
 	)
 }
 
-function Title({
+export function NavigationListTitle({
 	title,
 	className,
 	icon: Icon,
@@ -139,7 +142,7 @@ function Title({
 				<Tooltip.Trigger asChild>
 					<h2
 						className={cx(
-							navItemVariants({
+							navigationListItemVariants({
 								variant: 'ghost',
 								size: 'icon',
 							}),
@@ -163,7 +166,7 @@ function Title({
 	return (
 		<h2
 			className={cx(
-				navItemVariants({ variant: 'ghost', size: 'sm' }),
+				navigationListItemVariants({ variant: 'ghost', size: 'sm' }),
 				'justify-start text-lg font-semibold tracking-tight hover:bg-transparent',
 				className,
 			)}
@@ -175,7 +178,7 @@ function Title({
 	)
 }
 
-function Section({
+export function NavigationListSection({
 	children,
 	className,
 }: {
@@ -185,7 +188,7 @@ function Section({
 	return <div className={cx('grid gap-1 pb-4', className)}>{children}</div>
 }
 
-const NavigationListRoot = React.forwardRef<
+export const NavigationListRoot = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'nav'>
 >(function NavigationList({ className, children, ...props }, ref) {
@@ -210,10 +213,18 @@ const NavigationListRoot = React.forwardRef<
 	)
 })
 
-const NavigationList = Object.assign(NavigationListRoot, {
-	Item,
-	Title,
-	Section,
-})
+export type NavigationListRootProps = React.ComponentPropsWithRef<
+	typeof NavigationListRoot
+>
 
-export { NavigationList }
+export type NavigationListItemProps = React.ComponentPropsWithoutRef<
+	typeof NavigationListItem
+>
+
+export type NavigationListTitleProps = React.ComponentPropsWithoutRef<
+	typeof NavigationListTitle
+>
+
+export type NavigationListSectionProps = React.ComponentPropsWithoutRef<
+	typeof NavigationListSection
+>

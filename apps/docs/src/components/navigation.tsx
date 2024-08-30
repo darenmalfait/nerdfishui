@@ -11,7 +11,7 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 
 	return (
 		<nav {...props}>
-			<NavigationList>
+			<NavigationList.Root>
 				{docs.navigation.map((item) => (
 					<NavigationList.Section key={item.title}>
 						<NavigationList.Title
@@ -32,7 +32,7 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
 							})}
 					</NavigationList.Section>
 				))}
-			</NavigationList>
+			</NavigationList.Root>
 		</nav>
 	)
 }

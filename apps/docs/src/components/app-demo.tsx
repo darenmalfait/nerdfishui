@@ -119,7 +119,7 @@ function AppDemo() {
 							</div>
 							<div className="space-y-4">
 								<div className="px-3">
-									<NavigationList className="space-y-1">
+									<NavigationList.Root className="space-y-1">
 										<NavigationList.Title title="Discover" />
 										<NavigationList.Item
 											icon={Utensils}
@@ -127,14 +127,14 @@ function AppDemo() {
 											active
 										/>
 										<NavigationList.Item icon={GridIcon} title="Browse" />
-									</NavigationList>
+									</NavigationList.Root>
 								</div>
 								<div className="px-3 py-2">
-									<NavigationList>
+									<NavigationList.Root>
 										<NavigationList.Title title="Library" />
 										<NavigationList.Item icon={History} title="History" />
 										<NavigationList.Item icon={User} title="Your uploads" />
-									</NavigationList>
+									</NavigationList.Root>
 								</div>
 							</div>
 						</aside>

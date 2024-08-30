@@ -5,7 +5,7 @@ import { Icons } from '~/components/icons'
 
 export function NavigationListDemo() {
 	return (
-		<NavigationList>
+		<NavigationList.Root>
 			<NavigationList.Section>
 				<NavigationList.Title title="Cakes" />
 				<NavigationList.Item
@@ -28,6 +28,6 @@ export function NavigationListDemo() {
 			</NavigationList.Section>
 			<NavigationList.Item title="Vanilla Cake" />
 			<NavigationList.Item title="Lemon Cake" />
-		</NavigationList>
+		</NavigationList.Root>
 	)
 }
