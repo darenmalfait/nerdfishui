@@ -4,7 +4,10 @@ import { cx } from '@nerdfish/utils'
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
 import * as React from 'react'
 
-const HoverCardContent = React.forwardRef<
+export const HoverCardRoot = HoverCardPrimitive.Root
+export const HoverCardTrigger = HoverCardPrimitive.Trigger
+
+export const HoverCardContent = React.forwardRef<
 	React.ElementRef<typeof HoverCardPrimitive.Content>,
 	React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
 >(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
@@ -21,9 +24,12 @@ const HoverCardContent = React.forwardRef<
 ))
 HoverCardContent.displayName = HoverCardPrimitive.Content.displayName
 
-const HoverCard = Object.assign(HoverCardPrimitive.Root, {
-	Content: HoverCardContent,
-	Trigger: HoverCardPrimitive.Trigger,
-})
-
-export { HoverCard }
+export type HoverCardRootProps = React.ComponentPropsWithoutRef<
+	typeof HoverCardPrimitive.Root
+>
+export type HoverCardTriggerProps = React.ComponentPropsWithoutRef<
+	typeof HoverCardPrimitive.Trigger
+>
+export type HoverCardContentProps = React.ComponentPropsWithoutRef<
+	typeof HoverCardPrimitive.Content
+>
