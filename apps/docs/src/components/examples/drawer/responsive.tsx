@@ -29,7 +29,7 @@ export function DrawerResponsiveDemo() {
 	}
 
 	return (
-		<Drawer open={open} onOpenChange={setOpen}>
+		<Drawer.Root open={open} onOpenChange={setOpen}>
 			<Drawer.Trigger asChild>
 				<Button variant="outline">Edit Profile</Button>
 			</Drawer.Trigger>
@@ -47,7 +47,7 @@ export function DrawerResponsiveDemo() {
 					</Drawer.Close>
 				</Drawer.Footer>
 			</Drawer.Content>
-		</Drawer>
+		</Drawer.Root>
 	)
 }
 
