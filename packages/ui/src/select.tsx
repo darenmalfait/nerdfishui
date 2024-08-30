@@ -5,19 +5,18 @@ import { Check, ChevronsUpDown } from 'lucide-react'
 import * as React from 'react'
 
 import { Command } from './command'
+import { FieldError, FieldLabel } from './field'
 import {
 	getInputClassName,
-	InputError,
-	Label,
 	type InputProps,
-	type RawInputProps,
+	type InputRootProps,
 } from './input'
 import { Popover } from './popover'
 import { ScrollArea } from './scroll-area'
 
 interface SelectProps
 	extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
-		Pick<RawInputProps, 'hasError' | 'icon' | 'inputSize'> {
+		Pick<InputRootProps, 'hasError' | 'icon' | 'inputSize'> {
 	id?: string
 	options?: {
 		value: string
@@ -31,8 +30,8 @@ interface SelectProps
 	onChange?: (value: string) => void
 }
 
-const RawSelect = React.forwardRef<HTMLInputElement, SelectProps>(
-	function RawSelect(
+const SelectRoot = React.forwardRef<HTMLInputElement, SelectProps>(
+	function SelectRoot(
 		{
 			value: valueProp,
 			className,
@@ -124,55 +123,48 @@ const RawSelect = React.forwardRef<HTMLInputElement, SelectProps>(
 		)
 	},
 )
-RawSelect.displayName = 'RawSelect'
+SelectRoot.displayName = 'SelectRoot'
 
-const Select = React.forwardRef<HTMLInputElement, SelectProps & InputProps>(
-	function Select(
-		{ defaultValue, error, name, label, className, description, id, ...props },
-		ref,
-	) {
-		const inputId = id ?? name
-		const errorId = `${inputId}-error`
-		const descriptionId = `${inputId}-description`
+export const Select = React.forwardRef<
+	HTMLInputElement,
+	SelectProps & InputProps
+>(function Select(
+	{ defaultValue, error, name, label, className, description, id, ...props },
+	ref,
+) {
+	const inputId = id ?? name
+	const errorId = `${inputId}-error`
+	const descriptionId = `${inputId}-description`
 
-		return (
-			<div className="w-full">
-				{label ? (
-					<div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
-						<Label htmlFor={inputId} className="mb-2">
-							{label}
-						</Label>
-						{description ? (
-							<span className="text-muted text-sm" id={descriptionId}>
-								{description}
-							</span>
-						) : null}
-					</div>
-				) : null}
+	return (
+		<div className="w-full">
+			{label ? (
+				<div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
+					<FieldLabel htmlFor={inputId}>{label}</FieldLabel>
+					{description ? (
+						<span className="text-muted text-sm" id={descriptionId}>
+							{description}
+						</span>
+					) : null}
+				</div>
+			) : null}
 
-				<RawSelect
-					ref={ref}
-					{...props}
-					name={name}
-					id={inputId}
-					autoComplete={name}
-					required
-					defaultValue={defaultValue}
-					aria-describedby={
-						error ? errorId : description ? descriptionId : undefined
-					}
-					hasError={!!error}
-				/>
+			<SelectRoot
+				ref={ref}
+				{...props}
+				name={name}
+				id={inputId}
+				autoComplete={name}
+				required
+				defaultValue={defaultValue}
+				aria-describedby={
+					error ? errorId : description ? descriptionId : undefined
+				}
+				hasError={!!error}
+			/>
 
-				{error ? (
-					<InputError className="mt-2" id={errorId}>
-						{error}
-					</InputError>
-				) : null}
-			</div>
-		)
-	},
-)
+			<FieldError errorId={errorId}>{error}</FieldError>
+		</div>
+	)
+})
 Select.displayName = 'Select'
-
-export { Select }

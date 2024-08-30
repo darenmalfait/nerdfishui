@@ -5,9 +5,13 @@ import { AlertCircle, Clock } from 'lucide-react'
 import * as React from 'react'
 
 import { Field } from './field'
-import { getInputClassName, type InputProps, type RawInputProps } from './input'
+import {
+	getInputClassName,
+	type InputProps,
+	type InputRootProps,
+} from './input'
 
-const RawTimepicker = React.forwardRef<HTMLInputElement, RawInputProps>(
+const RawTimepicker = React.forwardRef<HTMLInputElement, InputRootProps>(
 	function RawTimepicker(props, ref) {
 		const {
 			value: valueProp,
@@ -146,7 +150,7 @@ const Timepicker = React.forwardRef<
 		>
 			<RawTimepicker
 				hasError={!!error}
-				{...(props as RawInputProps)}
+				{...(props as InputRootProps)}
 				ref={ref}
 				name={name}
 				id={inputId}

@@ -7,7 +7,11 @@ import * as React from 'react'
 import { Badge } from './badge'
 import { Command } from './command'
 import { Field } from './field'
-import { getInputClassName, type InputProps, type RawInputProps } from './input'
+import {
+	getInputClassName,
+	type InputProps,
+	type InputRootProps,
+} from './input'
 import { Popover } from './popover'
 import { ScrollArea } from './scroll-area'
 
@@ -28,7 +32,7 @@ type MultiSelectProps = Omit<
 	React.ComponentPropsWithoutRef<'input'>,
 	'onChange' | 'value' | 'defaultValue'
 > &
-	Pick<RawInputProps, 'hasError' | 'icon' | 'inputSize'> & {
+	Pick<InputRootProps, 'hasError' | 'icon' | 'inputSize'> & {
 		options?: Item[]
 		placeholder?: string
 		onChange?: React.Dispatch<React.SetStateAction<Item[] | undefined>>

@@ -15,22 +15,22 @@ package:
 ## Usage
 
 ```tsx
-import { RadioGroup } from '@nerdfish/ui'
+import { RadioGroup, FieldLabel } from '@nerdfish/ui'
 ```
 
 ```tsx
 <RadioGroup defaultValue="comfortable" label="Spacing">
 	<div className="flex items-center space-x-2">
 		<RadioGroup.Item value="default" id="r1" />
-		<Label htmlFor="r1">Default</Label>
+		<FieldLabel htmlFor="r1">Default</FieldLabel>
 	</div>
 	<div className="flex items-center space-x-2">
 		<RadioGroup.Item value="comfortable" id="r2" />
-		<Label htmlFor="r2">Comfortable</Label>
+		<FieldLabel htmlFor="r2">Comfortable</FieldLabel>
 	</div>
 	<div className="flex items-center space-x-2">
 		<RadioGroup.Item value="compact" id="r3" />
-		<Label htmlFor="r3">Compact</Label>
+		<FieldLabel htmlFor="r3">Compact</FieldLabel>
 	</div>
 </RadioGroup>
 ```
