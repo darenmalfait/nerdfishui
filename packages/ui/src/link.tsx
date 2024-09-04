@@ -35,7 +35,7 @@ export const Link = React.forwardRef<
 		<Tag
 			ref={ref}
 			className={cx(
-				'text-primary inline-flex space-x-2 bg-transparent hover:bg-transparent dark:hover:bg-transparent',
+				'text-primary focus-outline relative inline-flex space-x-2 bg-transparent outline-none hover:bg-transparent dark:hover:bg-transparent',
 				className,
 			)}
 			tabIndex={disabled ? -1 : undefined}
