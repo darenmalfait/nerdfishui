@@ -35,7 +35,7 @@ export const SliderThumb = React.forwardRef<
 		ref={ref}
 		{...props}
 		className={cx(
-			'border-muted bg-primary focus-visible:ring-ring dark:ring-offset-inverted block h-4 w-4 rounded-full border-2 ring-offset-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+			'border-muted bg-primary focus-outline dark:ring-offset-inverted block h-4 w-4 rounded-full border-2 ring-offset-gray-100 transition-colors disabled:pointer-events-none disabled:opacity-50',
 			props.className,
 		)}
 	/>
