@@ -55,6 +55,7 @@ export const docs = {
 				{ title: 'Dialog', href: '/dialog' },
 				{ title: 'Drawer', href: '/drawer' },
 				{ title: 'DropdownMenu', href: '/dropdown-menu' },
+				{ title: 'Flags', href: '/flags' },
 				{ title: 'HoverCard', href: '/hover-card' },
 				{ title: 'Indicator', href: '/indicator' },
 				{ title: 'NavigationList', href: '/navigation-list' },
