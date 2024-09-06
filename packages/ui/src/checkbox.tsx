@@ -7,7 +7,7 @@ import * as React from 'react'
 import { type InputProps } from './input'
 
 export const checkboxVariants = cva(
-	'relative flex items-center justify-center rounded-full focus:scale-75',
+	'relative flex items-center justify-center rounded-full',
 	{
 		variants: {
 			variant: {
@@ -40,7 +40,7 @@ export function CheckboxRoot({
 			className={cx(
 				textClassName,
 				checkboxVariants({ variant }),
-				'disabled-within:active:scale-100 group-focus-within:outline-active transition-transform active:scale-75',
+				'group-focus-within:outline-active transition-transform',
 				className,
 			)}
 		>
@@ -61,7 +61,7 @@ export function CheckboxRoot({
 					'peer-checked:border peer-checked:border-current',
 				)}
 			/>
-			<span className="peer-checked:animate-jelly pointer-events-none absolute inset-0 hidden rounded-md peer-checked:block">
+			<span className="peer-checked:animate-pop pointer-events-none absolute inset-0 hidden rounded-md peer-checked:block">
 				<Icon
 					className={cx(textClassName, 'pointer-events-none h-full w-full p-1')}
 				/>
