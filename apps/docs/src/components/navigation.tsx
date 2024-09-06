@@ -1,38 +1,59 @@
 'use client'
 
-import { NavigationList } from '@nerdfish/ui'
+import { NavigationList, ScrollArea, Sidebar } from '@nerdfish/ui'
+import { cx } from '@nerdfish/utils'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import * as React from 'react'
 import { docs } from '~/config/docs'
 import { stripPreSlash } from '~/lib/utils/string'
 
-export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+export const Navigation = React.forwardRef<
+	React.ElementRef<typeof Sidebar.Root>,
+	React.ComponentPropsWithoutRef<typeof Sidebar.Root>
+>(function Navigation({ className, ...props }, ref) {
 	const segment = useSelectedLayoutSegment() ?? '/'
 
+	const globalItems = docs.navigation.find((item) => item.title === 'Global')
+	const others = docs.navigation.filter((item) => item.title !== 'Global')
+
 	return (
-		<nav {...props}>
-			<NavigationList.Root>
-				{docs.navigation.map((item) => (
-					<NavigationList.Section key={item.title}>
-						<NavigationList.Title
-							key={item.title}
-							{...item}
-							className="hover:!bg-transparent"
-						/>
-						{docs.navigation
-							.find((group) => group.title === item.title)
-							?.links.map((link) => {
-								return (
-									<NavigationList.Item
-										key={link.title}
-										active={segment === stripPreSlash(link.href)}
-										{...link}
-									/>
-								)
-							})}
-					</NavigationList.Section>
-				))}
-			</NavigationList.Root>
-		</nav>
+		<Sidebar.Root
+			{...props}
+			className={cx(
+				'sticky top-[60px] h-[calc(100vh-60px)] overscroll-contain',
+			)}
+			ref={ref}
+		>
+			<div className="flex h-full flex-col">
+				<Sidebar.Section className="px-0">
+					<NavigationList.Root>
+						{globalItems?.links.map((item) => (
+							<NavigationList.Item key={item.title} {...item} />
+						))}
+					</NavigationList.Root>
+				</Sidebar.Section>
+				<Sidebar.Divider />
+				<ScrollArea>
+					<Sidebar.Section className="flex-1 px-0">
+						<NavigationList.Root>
+							{others.map((item) => (
+								<NavigationList.Section key={item.title}>
+									<NavigationList.Title key={item.title} {...item} />
+									{item.links.map((link) => (
+										<NavigationList.Item
+											key={link.title}
+											{...link}
+											active={segment === stripPreSlash(link.href)}
+										/>
+									))}
+								</NavigationList.Section>
+							))}
+						</NavigationList.Root>
+					</Sidebar.Section>
+				</ScrollArea>
+			</div>
+		</Sidebar.Root>
 	)
-}
+})
+
+Navigation.displayName = 'Navigation'
