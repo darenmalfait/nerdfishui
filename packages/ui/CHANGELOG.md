@@ -1,5 +1,21 @@
 # @nerdfish/ui
 
+## 6.1.0
+
+### Minor Changes
+
+- Added new `Flags` component
+
+- Add new `EmptyState` component
+
+### Patch Changes
+
+- unify focus state styling across multiple components
+
+- Swap `jelly` with `pop` animation in `Checkbox`
+
+- improved shake animation and used on error state in `Input`
+
 ## 6.0.0
 
 ### Major Changes
