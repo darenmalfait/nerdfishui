@@ -1,5 +1,21 @@
 # @nerdfish/tailwind-config
 
+## 3.0.0
+
+### Major Changes
+
+- removed unused animations: `jump` and its variants, and `jelly`
+
+### Minor Changes
+
+- Add new `pop` animation
+
+### Patch Changes
+
+- unify focus state styling across multiple components
+
+- improved shake animation and used on error state in `Input`
+
 ## 2.2.4
 
 ### Patch Changes
