@@ -41,6 +41,7 @@ import { DrawerDemo } from './drawer/demo'
 import { DrawerDirection } from './drawer/direction'
 import { DrawerResponsiveDemo } from './drawer/responsive'
 import { DropdownMenuDemo } from './dropdown-menu/demo'
+import { EmptyStateDemo } from './empty-state/demo'
 import { GridDemo } from './grid/demo'
 import { HoverCardDemo } from './hover-card/demo'
 import { IndicatorDemo } from './indicator/demo'
@@ -131,6 +132,7 @@ export const examples = {
 	DrawerDirection,
 	DrawerResponsiveDemo,
 	DropdownMenuDemo,
+	EmptyStateDemo,
 	GridDemo,
 	HoverCardDemo,
 	IndicatorDemo,

@@ -1,0 +1,33 @@
+---
+title: EmptyState
+description: EmptyState is a component that can be used to display a message there is no data to display.
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'empty-state/empty-state.tsx'
+---
+
+<ComponentExample src="/src/components/examples/empty-state/demo.tsx">
+	<EmptyStateDemo />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import { EmptyState, Button } from '@nerdfish/ui'
+import { TriangleAlertIcon } from 'lucide-react'
+```
+
+```tsx
+<EmptyState.Root>
+	<EmptyState.Icon>
+		<TriangleAlertIcon />
+	</EmptyState.Icon>
+	<EmptyState.Title>No data</EmptyState.Title>
+	<EmptyState.Description>No data to display</EmptyState.Description>
+	<EmptyState.Actions>
+		<Button>Add data</Button>
+	</EmptyState.Actions>
+</EmptyState.Root>
+```

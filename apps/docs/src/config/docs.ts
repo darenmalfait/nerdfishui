@@ -39,6 +39,10 @@ export const docs = {
 			],
 		},
 		{
+			title: 'Data Display',
+			links: [{ title: 'EmptyState', href: '/empty-state' }],
+		},
+		{
 			title: 'Other',
 			links: [
 				{ title: 'Accordion', href: '/accordion' },
