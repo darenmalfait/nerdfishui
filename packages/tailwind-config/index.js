@@ -316,14 +316,26 @@ module.exports = plugin(
 						},
 					},
 					shake: {
-						'0%, 100%': {
-							transform: `translateX(0)`,
+						'0%': {
+							transform: 'translateX(0px)',
 						},
-						'20%, 60%': {
-							transform: `translateX(-10px)`,
+						'15%': {
+							transform: 'translateX(-3px)',
 						},
-						'40%, 80%': {
-							transform: `translateX(10px)`,
+						'25%': {
+							transform: 'translateX(3px)',
+						},
+						'45%': {
+							transform: 'translateX(-2px)',
+						},
+						'65%': {
+							transform: 'translateX(3px)',
+						},
+						'85%': {
+							transform: 'translateX(-2px)',
+						},
+						'100%': {
+							transform: 'translateX(0px)',
 						},
 					},
 					jelly: {
@@ -377,7 +389,7 @@ module.exports = plugin(
 					jump: 'jump .3s both',
 					'jump-in': 'jump-in .3s both',
 					'jump-out': 'jump-out .3s both',
-					shake: `shake 0.5s`,
+					shake: `shake 0.5s  cubic-bezier(0.4, 0, 1, 1)`,
 					jelly: `jelly .6s cubic-bezier(0.895, 0.030, 0.685, 0.220)`,
 					pop: 'pop .3s cubic-bezier(0.4, 0, 1, 1)',
 					'caret-blink': 'caret-blink 1.25s ease-out infinite',

@@ -79,7 +79,7 @@ export function getInputClassName(
 		// Disabled state
 		'disabled-within:opacity-50 before:has-[[data-disabled]]:shadow-none',
 		// Invalid state
-		hasError && 'border-danger bg-danger-muted/50 text-danger',
+		hasError && 'animate-shake border-danger bg-danger-muted/50 text-danger',
 		// Custom
 		className,
 	)
