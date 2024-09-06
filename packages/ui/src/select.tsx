@@ -102,7 +102,7 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 								<ScrollArea className="h-32 w-full">
 									{options.map((item) => {
 										const ItemIcon =
-											value === item.value ? Check : item.icon ?? 'div'
+											value === item.value ? Check : (item.icon ?? 'div')
 
 										return (
 											<Command.Item
