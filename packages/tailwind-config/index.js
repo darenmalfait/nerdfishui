@@ -349,6 +349,23 @@ module.exports = plugin(
 							transform: 'scale(1, 1)',
 						},
 					},
+					pop: {
+						'0%': {
+							transform: 'scaleX(1) scaleY(1)',
+						},
+						'20%, 45%': {
+							transform: 'scaleX(1.35) scaleY(0.1)',
+						},
+						'65%': {
+							transform: 'scaleX(0.8) scaleY(1.7)',
+						},
+						'80%': {
+							transform: 'scaleX(0.6) scaleY(0.85)',
+						},
+						'100%': {
+							transform: 'scaleX(1) scaleY(1)',
+						},
+					},
 					'caret-blink': {
 						'0%,70%,100%': { opacity: '1' },
 						'20%,50%': { opacity: '0' },
@@ -360,8 +377,9 @@ module.exports = plugin(
 					jump: 'jump .3s both',
 					'jump-in': 'jump-in .3s both',
 					'jump-out': 'jump-out .3s both',
-					shake: `shake 0.5s forwards`,
-					jelly: `jelly .6s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards`,
+					shake: `shake 0.5s`,
+					jelly: `jelly .6s cubic-bezier(0.895, 0.030, 0.685, 0.220)`,
+					pop: 'pop .3s cubic-bezier(0.4, 0, 1, 1)',
 					'caret-blink': 'caret-blink 1.25s ease-out infinite',
 				},
 			},
