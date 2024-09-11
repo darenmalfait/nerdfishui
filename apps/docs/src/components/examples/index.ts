@@ -58,6 +58,7 @@ import { InputOTPDemo } from './input-otp/demo'
 import { InputOTPFieldDemo } from './input-otp/field'
 import { InputOTPPatternsDemo } from './input-otp/patterns'
 import { LinkDemo } from './link/demo'
+import { MockupDemo } from './mockup/demo'
 import { MultiEmailDemo } from './multi-email/demo'
 import { MultiSelectDemo } from './multi-select/demo'
 import { NavigationListDemo } from './navigation-list/demo'
@@ -149,6 +150,7 @@ export const examples = {
 	InputSize,
 	InputTextArea,
 	LinkDemo,
+	MockupDemo,
 	MultiEmailDemo,
 	MultiSelectDemo,
 	NavigationListDemo,
