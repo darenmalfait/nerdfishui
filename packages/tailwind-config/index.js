@@ -45,10 +45,6 @@ module.exports = plugin(
 			html: {
 				'@apply text-primary antialiased font-sans': {},
 			},
-			code: {
-				'@apply text-primary shadow-outline bg-transparent rounded-lg px-2 py-1 !text-2xs':
-					{},
-			},
 			// keep these styles in sync with the ones in packages/ui/src/typography
 			// not .not-prose prose
 
@@ -130,12 +126,6 @@ module.exports = plugin(
 									marginTop: theme('spacing.0'),
 									marginBottom: theme('spacing.0'),
 								},
-								'code::before': {
-									content: '',
-								},
-								'code::after': {
-									content: '',
-								},
 								img: {
 									// images are wrapped in <p>, which already has margin
 									marginTop: 0,
@@ -161,8 +151,6 @@ module.exports = plugin(
 									h2: { color: theme('colors.gray[100]') },
 									h3: { color: theme('colors.gray[100]') },
 									h4: { color: theme('colors.gray[100]') },
-									code: { color: theme('colors.gray[100]') },
-									'a code': { color: theme('colors.gray[100]') },
 									pre: {
 										color: theme('colors.gray[200]'),
 										backgroundColor: theme('colors.gray[800]'),
