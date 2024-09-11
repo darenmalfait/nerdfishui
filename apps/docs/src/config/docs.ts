@@ -62,6 +62,7 @@ export const docs = {
 				{ title: 'Flags', href: '/flags' },
 				{ title: 'HoverCard', href: '/hover-card' },
 				{ title: 'Indicator', href: '/indicator' },
+				{ title: 'Mockup', href: '/mockup' },
 				{ title: 'NavigationList', href: '/navigation-list' },
 				{ title: 'NavigationMenu', href: '/navigation-menu' },
 				{ title: 'Popover', href: '/popover' },
