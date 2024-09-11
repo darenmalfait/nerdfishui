@@ -52,7 +52,7 @@
     "input-otp": "^1.2.4",
     "lucide-react": "^0.438.0",
     "react-day-picker": "^8.10.1",
-    "shiki": "^0.14.7",
+    "shiki": "^1.16.2",
     "sonner": "^1.5.0",
     "vaul": "^0.9.1"
   },
