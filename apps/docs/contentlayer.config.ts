@@ -4,13 +4,12 @@ import {
 	makeSource,
 } from 'contentlayer/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypePrettyCode from 'rehype-pretty-code'
-import rehypeSlug from 'rehype-slug'
 import { codeImport } from 'remark-code-import'
 import remarkGfm from 'remark-gfm'
-import { getHighlighter } from 'shiki'
 import { visit } from 'unist-util-visit'
 
+// no alias paths, because it breaks the content layer build
+import { rehypeMdxCodeMeta } from './src/lib/rehype-code-meta'
 import { rehypeComponent } from './src/lib/rehype-component'
 import { rehypeNpmCommand } from './src/lib/rehype-npm-command'
 
@@ -76,69 +75,21 @@ export default makeSource({
 	contentDirPath: './content',
 	documentTypes: [Doc],
 	mdx: {
-		remarkPlugins: [remarkGfm, codeImport as any],
 		rehypePlugins: [
-			rehypeSlug,
 			rehypeComponent,
 			() => (tree) => {
 				visit(tree, (node) => {
 					if (node.type === 'element' && node.tagName === 'pre') {
 						const [codeEl] = node.children
-						if (codeEl.tagName !== 'code') {
-							return
-						}
 
-						node.__rawString__ = codeEl.children[0].value
-						node.__src__ = node.properties.__src__
-					}
-				})
-			},
-			[
-				rehypePrettyCode as any,
-				{
-					getHighlighter: async () => {
-						return getHighlighter({
-							theme: 'github-dark-dimmed',
-						})
-					},
-					onVisitLine(node: any) {
-						// Prevent lines from collapsing in `display: grid` mode, and allow empty
-						// lines to be copy/pasted
-						if (node.children.length === 0) {
-							node.children = [{ type: 'text', value: ' ' }]
-						}
-					},
-					onVisitHighlightedLine(node: any) {
-						node.properties.className.push('line--highlighted')
-					},
-					onVisitHighlightedWord(node: any) {
-						node.properties.className = ['word--highlighted']
-					},
-				},
-			],
-			() => (tree) => {
-				visit(tree, (node) => {
-					if (node.type === 'element' && node.tagName === 'div') {
-						if (!('data-rehype-pretty-code-fragment' in node.properties)) {
-							return
-						}
+						if (codeEl.tagName !== 'code') return
 
-						const preElement = node.children.at(-1)
-						if (preElement.tagName !== 'pre') {
-							return
-						}
-
-						preElement.properties.__withMeta__ =
-							node.children.at(0).tagName === 'div'
-						preElement.properties.__rawString__ = node.__rawString__
-
-						if (node.__src__) {
-							preElement.properties.__src__ = node.__src__
-						}
+						node.properties.__rawString__ = codeEl.children[0].value
 					}
 				})
 			},
 			rehypeNpmCommand,
+			rehypeMdxCodeMeta,
 			[
 				rehypeAutolinkHeadings,
 				{
@@ -149,5 +100,6 @@ export default makeSource({
 				},
 			],
 		],
+		remarkPlugins: [remarkGfm, codeImport as any],
 	},
 })

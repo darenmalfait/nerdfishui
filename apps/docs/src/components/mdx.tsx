@@ -8,15 +8,15 @@ import * as React from 'react'
 
 import { type NpmCommands } from '../lib/types/unist'
 import { AppDemo } from './app-demo'
-import { CodeBlockWrapper } from './code-block-wrapper'
+import { CodeBlock } from './codeblock/codeblock'
 import { ComponentExample } from './component-example'
-import { ComponentSource } from './component-source'
 import { CopyButton, CopyNpmCommandButton } from './copy-button'
 import { examples } from './examples'
 
 import '../styles/mdx.css'
 
-const { Accordion, H1, H2, H3, H4, H5, H6, Paragraph } = uiComponents
+const { Accordion, H1, H2, H3, H4, H5, H6, Paragraph, TooltipProvider } =
+	uiComponents
 
 const components = {
 	...uiComponents,
@@ -119,59 +119,35 @@ const components = {
 		__withMeta__?: boolean
 		__src__?: string
 	} & NpmCommands) => {
+		if (typeof props.children === 'string') return <pre {...props} />
+
 		return (
-			<>
-				<pre
-					className={cx(
-						'shadow-outline bg-muted mb-4 mt-6 overflow-x-auto rounded-lg px-2 py-4',
-						className,
-					)}
-					{...props}
-				/>
-				{__rawString__ && !__npmCommand__ ? (
-					<CopyButton
-						value={__rawString__}
-						src={__src__}
-						className={cx(
-							'absolute right-4 top-4 border-none text-gray-300 opacity-50 hover:bg-transparent hover:opacity-100',
-							__withMeta__ && 'top-20',
-						)}
-					/>
-				) : null}
-				{__npmCommand__ && __yarnCommand__ && __pnpmCommand__ ? (
-					<CopyNpmCommandButton
-						commands={{
-							__npmCommand__,
-							__pnpmCommand__,
-							__yarnCommand__,
-						}}
-						className={cx(
-							'absolute right-4 top-4 border-none text-gray-300 opacity-50 hover:bg-transparent hover:opacity-100',
-							__withMeta__ && 'top-20',
-						)}
-					/>
-				) : null}
-			</>
+			<div className="dark relative my-4">
+				<TooltipProvider>
+					<CodeBlock {...props}>{props.children}</CodeBlock>
+					{__rawString__ && !__npmCommand__ ? (
+						<CopyButton
+							code={__rawString__}
+							className={cx('top-4', __withMeta__ && 'top-20')}
+						/>
+					) : null}
+					{__npmCommand__ && __yarnCommand__ && __pnpmCommand__ ? (
+						<CopyNpmCommandButton
+							commands={{
+								__npmCommand__,
+								__pnpmCommand__,
+								__yarnCommand__,
+							}}
+							className={cx(__withMeta__ && 'top-20')}
+						/>
+					) : null}
+				</TooltipProvider>
+			</div>
 		)
 	},
-	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-		<code
-			className={cx(
-				'rounded bg-transparent py-[0.2rem] font-mono text-sm font-semibold text-gray-900 ring-0 dark:text-gray-400',
-				className,
-			)}
-			{...props}
-		/>
-	),
+	code: (props: React.HTMLAttributes<HTMLElement>) => <code {...props} />,
 	Image,
 	ComponentExample,
-	ComponentSource,
-	CodeBlockWrapper: ({ ...props }) => (
-		<CodeBlockWrapper
-			className="rounded-md border border-gray-100"
-			{...props}
-		/>
-	),
 	...examples,
 }
 

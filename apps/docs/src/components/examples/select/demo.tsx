@@ -1,8 +1,7 @@
 'use client'
 
 import { Select } from '@nerdfish/ui'
-
-import { Icons } from '~/components/icons'
+import { ArrowRightIcon } from 'lucide-react'
 
 export function SelectDemo() {
 	return (
@@ -12,7 +11,7 @@ export function SelectDemo() {
 			emptyString="No frameworks found"
 			placeholder="Select a framework"
 			options={[
-				{ value: 'next.js', label: 'Next.js', icon: Icons.ArrowRight },
+				{ value: 'next.js', label: 'Next.js', icon: ArrowRightIcon },
 				{ value: 'sveltekit', label: 'SvelteKit' },
 				{ value: 'nuxt.js', label: 'Nuxt.js' },
 				{ value: 'remix', label: 'Remix' },
