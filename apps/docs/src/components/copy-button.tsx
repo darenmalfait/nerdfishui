@@ -1,117 +1,47 @@
-'use client'
-
-import { DropdownMenu } from '@nerdfish/ui'
-import { cx, type ExtractProps } from '@nerdfish/utils'
-import * as React from 'react'
-
-import { type NpmCommands } from '../lib/types/unist'
+import { Button, type ButtonProps, DropdownMenu, Tooltip } from '@nerdfish/ui'
+import { cx, useCopyToClipboard } from '@nerdfish/utils'
+import React from 'react'
 import { Icons } from './icons'
+import { type NpmCommands } from '~/lib/types/unist'
 
-interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-	value: string
-	src?: string
-}
-
-async function copyToClipboardWithMeta(value: string) {
-	await navigator.clipboard.writeText(value)
-}
+const COPY_TIMOUT = 3000
 
 export function CopyButton({
-	value,
-	className,
-	src,
-	...props
-}: CopyButtonProps) {
-	const [hasCopied, setHasCopied] = React.useState(false)
-
-	React.useEffect(() => {
-		setTimeout(() => {
-			setHasCopied(false)
-		}, 2000)
-	}, [hasCopied])
-
-	return (
-		<button
-			className={cx(
-				'hover:bg-muted relative z-20 inline-flex h-8 items-center justify-center rounded-md border-gray-200 p-2 text-sm font-medium text-gray-900 transition-all focus:outline-none',
-				className,
-			)}
-			onClick={async () => {
-				await copyToClipboardWithMeta(value)
-				setHasCopied(true)
-			}}
-			{...props}
-		>
-			<span className="sr-only">Copy</span>
-			{hasCopied ? (
-				<Icons.Check className="size-4" />
-			) : (
-				<Icons.Copy className="size-4" />
-			)}
-		</button>
-	)
-}
-
-//
-
-interface CopyWithClassNamesProps
-	extends ExtractProps<typeof DropdownMenu.Trigger> {
-	value: string
-	classNames: string
-	className: string
-}
-
-export function CopyWithClassNames({
-	value,
-	classNames,
+	code,
 	className,
 	...props
-}: CopyWithClassNamesProps) {
-	const [hasCopied, setHasCopied] = React.useState(false)
+}: ButtonProps & {
+	code: string
+}) {
+	const { handleCopy, copiedText } = useCopyToClipboard()
 
-	React.useEffect(() => {
-		setTimeout(() => {
-			setHasCopied(false)
-		}, 2000)
-	}, [hasCopied])
-
-	const copyToClipboard = React.useCallback(async (toCopy: string) => {
-		await copyToClipboardWithMeta(toCopy)
-		setHasCopied(true)
-	}, [])
+	const label = copiedText ? 'Copied' : 'Copy'
 
 	return (
-		<DropdownMenu.Root>
-			<DropdownMenu.Trigger
-				className={cx(
-					'text-primary hover:bg-muted hover:text-muted relative z-20 inline-flex h-8 items-center justify-center rounded-md p-2 text-sm font-medium transition-all focus:outline-none',
-					className,
-				)}
-				{...props}
-			>
-				{hasCopied ? (
-					<Icons.Check className="size-4" />
-				) : (
-					<Icons.Copy className="size-4" />
-				)}
-				<span className="sr-only">Copy</span>
-			</DropdownMenu.Trigger>
-			<DropdownMenu.Content>
-				<DropdownMenu.Item onClick={() => copyToClipboard(value)}>
-					<Icons.React className="mr-2 size-4" />
-					<span>Component</span>
-				</DropdownMenu.Item>
-				<DropdownMenu.Item onClick={() => copyToClipboard(classNames)}>
-					<Icons.Tailwind className="mr-2 size-4" />
-					<span>Classname</span>
-				</DropdownMenu.Item>
-			</DropdownMenu.Content>
-		</DropdownMenu.Root>
+		<Tooltip.Root>
+			<Tooltip.Trigger asChild>
+				<Button
+					size="iconSm"
+					{...props}
+					className={cx('absolute right-2 top-2', className)}
+					variant={copiedText ? 'success' : 'ghost'}
+					aria-label="copy"
+					onClick={() => handleCopy(code, COPY_TIMOUT)}
+				>
+					{copiedText ? (
+						<Icons.Check className="size-4" />
+					) : (
+						<Icons.Copy className="size-4" />
+					)}
+				</Button>
+			</Tooltip.Trigger>
+			<Tooltip.Content>{label}</Tooltip.Content>
+		</Tooltip.Root>
 	)
 }
 
 interface CopyNpmCommandButtonProps
-	extends ExtractProps<typeof DropdownMenu.Trigger> {
+	extends React.ComponentPropsWithoutRef<typeof DropdownMenu.Trigger> {
 	commands: Required<NpmCommands>
 }
 
@@ -122,48 +52,40 @@ export function CopyNpmCommandButton({
 }: CopyNpmCommandButtonProps & {
 	className?: string
 }) {
-	const [hasCopied, setHasCopied] = React.useState(false)
-
-	React.useEffect(() => {
-		setTimeout(() => {
-			setHasCopied(false)
-		}, 2000)
-	}, [hasCopied])
-
-	const copyCommand = React.useCallback(async (toCopy: string) => {
-		await copyToClipboardWithMeta(toCopy)
-		setHasCopied(true)
-	}, [])
+	const { handleCopy, copiedText } = useCopyToClipboard()
 
 	return (
 		<DropdownMenu.Root>
-			<DropdownMenu.Trigger
-				className={cx(
-					'text-primary hover:bg-muted relative z-20 inline-flex h-8 items-center justify-center rounded-md p-2 text-sm font-medium transition-all focus:outline-none',
-					className,
-				)}
-				{...props}
-			>
-				{hasCopied ? (
-					<Icons.Check className="size-4" />
-				) : (
-					<Icons.Copy className="size-4" />
-				)}
-				<span className="sr-only">Copy</span>
+			<DropdownMenu.Trigger asChild>
+				<Button
+					size="iconSm"
+					className={cx('absolute right-2 top-2', className)}
+					variant={copiedText ? 'success' : 'ghost'}
+					aria-label="copy"
+					{...props}
+				>
+					{copiedText ? (
+						<Icons.Check className="size-4" />
+					) : (
+						<Icons.Copy className="size-4" />
+					)}
+				</Button>
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content>
-				<DropdownMenu.Item onClick={() => copyCommand(commands.__npmCommand__)}>
+				<DropdownMenu.Item
+					onClick={() => handleCopy(commands.__npmCommand__, COPY_TIMOUT)}
+				>
 					<Icons.Npm className="mr-2 size-4 fill-[#CB3837]" />
 					<span>npm</span>
 				</DropdownMenu.Item>
 				<DropdownMenu.Item
-					onClick={() => copyCommand(commands.__yarnCommand__)}
+					onClick={() => handleCopy(commands.__yarnCommand__, COPY_TIMOUT)}
 				>
 					<Icons.Yarn className="mr-2 size-4 fill-[#2C8EBB]" />
 					<span>yarn</span>
 				</DropdownMenu.Item>
 				<DropdownMenu.Item
-					onClick={() => copyCommand(commands.__pnpmCommand__)}
+					onClick={() => handleCopy(commands.__pnpmCommand__, COPY_TIMOUT)}
 				>
 					<Icons.Pnpm className="mr-2 size-4 fill-[#F69220]" />
 					<span>pnpm</span>

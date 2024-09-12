@@ -10,6 +10,7 @@ export function rehypeNpmCommand() {
 			}
 
 			// We'll only deal with the npm install command for now.
+
 			if (node.properties?.__rawString__?.startsWith('npm install')) {
 				const npmCommand = node.properties.__rawString__
 				node.properties.__npmCommand__ = npmCommand
