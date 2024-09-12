@@ -65,6 +65,7 @@ import { NavigationListDemo } from './navigation-list/demo'
 import { NavigationMenuDemo } from './navigation-menu/demo'
 import { PopoverDemo } from './popover/demo'
 import { RadioGroupDemo } from './radio-group/demo'
+import { ResizableDemo } from './resizable/demo'
 import { ScrollAreaDemo } from './scroll-area/demo'
 import { SelectDemo } from './select/demo'
 import { SkeletonDemo } from './skeleton/demo'
@@ -157,6 +158,7 @@ export const examples = {
 	NavigationMenuDemo,
 	PopoverDemo,
 	RadioGroupDemo,
+	ResizableDemo,
 	ScrollAreaDemo,
 	SelectDemo,
 	SkeletonDemo,
