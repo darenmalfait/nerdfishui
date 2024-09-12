@@ -10,7 +10,7 @@ export const ResizableRoot = ({
 }: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => (
 	<ResizablePrimitive.PanelGroup
 		className={cx(
-			'flex h-full w-full gap-3 data-[panel-group-direction=vertical]:flex-col',
+			'flex h-full w-full gap-3 !overflow-visible data-[panel-group-direction=vertical]:flex-col',
 			className,
 		)}
 		{...props}

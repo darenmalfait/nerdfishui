@@ -1,8 +1,23 @@
 'use client'
 
-import { Tabs } from '@nerdfish/ui'
+import { Resizable } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
+
+function Preview({ children }: { children: React.ReactNode }) {
+	return (
+		<Resizable.Root direction="horizontal">
+			<Resizable.Panel
+				className="shadow-outline min-h-[350px] p-4"
+				defaultSize={100}
+			>
+				{children}
+			</Resizable.Panel>
+			<Resizable.Handle />
+			<Resizable.Panel className="min-h-[350px]" defaultSize={0} />
+		</Resizable.Root>
+	)
+}
 
 export function ComponentExample({
 	children,
@@ -14,39 +29,25 @@ export function ComponentExample({
 	) as React.ReactElement[]
 
 	return (
-		<div
-			className={cx('relative my-4 flex flex-col space-y-2', className)}
-			{...props}
-		>
-			<Tabs.Root defaultValue="preview" className="mr-auto w-full">
-				<div className="flex items-center justify-between">
-					<Tabs.List>
-						<Tabs.Trigger value="preview">Preview</Tabs.Trigger>
-						<Tabs.Trigger value="code">Code</Tabs.Trigger>
-					</Tabs.List>
-				</div>
-				<Tabs.Content
-					value="preview"
-					className="!bg-primary shadow-outline p-0"
-				>
-					<div className="flex min-h-[350px] items-center justify-center p-10">
-						{Example}
+		<div {...props} className={cx('flex flex-col gap-4', className)}>
+			<div className="!bg-primary p-0">
+				<Preview>
+					<div className="dark">{Example}</div>
+				</Preview>
+			</div>
+			<div className="!bg-primary -my-2 p-0">
+				<div className="flex flex-col space-y-4">
+					<div className="relative w-full rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+						{Code}
 					</div>
-				</Tabs.Content>
-				<Tabs.Content value="code" className="!bg-primary -my-2 p-0">
-					<div className="flex flex-col space-y-4">
-						<div className="relative w-full rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-							{Code}
-						</div>
 
-						{Children.length ? (
-							<div className="rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-								{Children}
-							</div>
-						) : null}
-					</div>
-				</Tabs.Content>
-			</Tabs.Root>
+					{Children.length ? (
+						<div className="rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+							{Children}
+						</div>
+					) : null}
+				</div>
+			</div>
 		</div>
 	)
 }
