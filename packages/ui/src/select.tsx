@@ -5,7 +5,7 @@ import { Check, ChevronsUpDown } from 'lucide-react'
 import * as React from 'react'
 
 import { Command } from './command'
-import { FieldError, FieldLabel } from './field'
+import { Field } from './field'
 import {
 	getInputClassName,
 	type InputProps,
@@ -137,18 +137,16 @@ export const Select = React.forwardRef<
 	const descriptionId = `${inputId}-description`
 
 	return (
-		<div className="w-full">
-			{label ? (
-				<div className="flex flex-col justify-between gap-y-1 md:flex-row md:gap-x-1 md:gap-y-0">
-					<FieldLabel htmlFor={inputId}>{label}</FieldLabel>
-					{description ? (
-						<span className="text-muted text-sm" id={descriptionId}>
-							{description}
-						</span>
-					) : null}
-				</div>
-			) : null}
-
+		<Field
+			{...{
+				description,
+				descriptionId,
+				error,
+				errorId,
+				htmlFor: inputId,
+				label,
+			}}
+		>
 			<SelectRoot
 				ref={ref}
 				{...props}
@@ -162,9 +160,7 @@ export const Select = React.forwardRef<
 				}
 				hasError={!!error}
 			/>
-
-			<FieldError errorId={errorId}>{error}</FieldError>
-		</div>
+		</Field>
 	)
 })
 Select.displayName = 'Select'
