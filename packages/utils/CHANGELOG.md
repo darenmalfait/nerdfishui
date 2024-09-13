@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 1.7.0
+
+### Minor Changes
+
+- add `useCopyToClipboard` hook to utils
+
 ## 1.6.6
 
 ### Patch Changes
