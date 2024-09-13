@@ -1,10 +1,10 @@
 export const docs = {
 	navigation: [
 		{
-			title: 'Global',
+			title: 'Getting Started',
 			links: [
 				{ title: 'Introduction', href: '/' },
-				{ title: 'Getting started', href: '/getting-started' },
+				{ title: 'Installation', href: '/installation' },
 				{ title: 'Utilities', href: '/utilities' },
 				{ title: 'Layout', href: '/layout' },
 				{ title: 'Typography', href: '/typography' },

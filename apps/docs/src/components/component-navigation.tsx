@@ -13,8 +13,12 @@ export const ComponentNavigation = React.forwardRef<
 >(function ComponentNavigation({ className, ...props }, ref) {
 	const segment = useSelectedLayoutSegment() ?? '/'
 
-	const globalItems = docs.navigation.find((item) => item.title === 'Global')
-	const others = docs.navigation.filter((item) => item.title !== 'Global')
+	const globalItems = docs.navigation.find(
+		(item) => item.title === 'Getting Started',
+	)
+	const others = docs.navigation.filter(
+		(item) => item.title !== 'Getting Started',
+	)
 
 	return (
 		<Sidebar.Root
@@ -27,6 +31,7 @@ export const ComponentNavigation = React.forwardRef<
 			<div className="flex h-full flex-col">
 				<Sidebar.Section className="px-0 pr-4">
 					<NavigationList.Root>
+						<NavigationList.Title title="Getting Started" />
 						{globalItems?.links.map((item) => (
 							<NavigationList.Item key={item.title} {...item} />
 						))}
@@ -36,9 +41,14 @@ export const ComponentNavigation = React.forwardRef<
 				<ScrollArea>
 					<Sidebar.Section className="flex-1 px-0 pr-4">
 						<NavigationList.Root>
+							<NavigationList.Title title="Components" />
 							{others.map((item) => (
 								<NavigationList.Section key={item.title}>
-									<NavigationList.Title key={item.title} {...item} />
+									<NavigationList.Title
+										key={item.title}
+										className="text-base font-bold"
+										{...item}
+									/>
 									{item.links.map((link) => (
 										<NavigationList.Item
 											key={link.title}
