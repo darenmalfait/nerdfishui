@@ -7,10 +7,10 @@ import * as React from 'react'
 import { docs } from '~/config/docs'
 import { stripPreSlash } from '~/lib/utils/string'
 
-export const Navigation = React.forwardRef<
+export const ComponentNavigation = React.forwardRef<
 	React.ElementRef<typeof Sidebar.Root>,
 	React.ComponentPropsWithoutRef<typeof Sidebar.Root>
->(function Navigation({ className, ...props }, ref) {
+>(function ComponentNavigation({ className, ...props }, ref) {
 	const segment = useSelectedLayoutSegment() ?? '/'
 
 	const globalItems = docs.navigation.find((item) => item.title === 'Global')
@@ -56,4 +56,4 @@ export const Navigation = React.forwardRef<
 	)
 })
 
-Navigation.displayName = 'Navigation'
+ComponentNavigation.displayName = 'ComponentNavigation'

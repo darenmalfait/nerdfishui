@@ -5,7 +5,7 @@ import { siteConfig } from '../config/site'
 import { Logo } from './logo'
 import { MobileNavigation } from './mobile-navigation'
 
-export function MainNav() {
+export function MainNavigation() {
 	return (
 		<div className="flex items-center gap-6 md:gap-10">
 			<MobileNavigation />
