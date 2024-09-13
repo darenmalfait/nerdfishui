@@ -3,6 +3,7 @@
 import { Resizable } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
+import { CopyButton } from './copy-button'
 
 function Preview({ children }: { children: React.ReactNode }) {
 	return (
@@ -37,7 +38,8 @@ export function ComponentExample({
 			</div>
 			<div className="!bg-primary -my-2 p-0">
 				<div className="flex flex-col space-y-4">
-					<div className="relative w-full rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+					<div className="dark relative w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+						<CopyButton className="top-4" code={Code?.toString() ?? ''} />
 						{Code}
 					</div>
 

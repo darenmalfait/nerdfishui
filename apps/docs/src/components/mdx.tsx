@@ -15,8 +15,7 @@ import { examples } from './examples'
 
 import '../styles/mdx.css'
 
-const { Accordion, H1, H2, H3, H4, H5, H6, Paragraph, TooltipProvider } =
-	uiComponents
+const { Accordion, H1, H2, H3, H4, H5, H6, Paragraph } = uiComponents
 
 const components = {
 	...uiComponents,
@@ -123,25 +122,23 @@ const components = {
 
 		return (
 			<div className="dark relative my-4">
-				<TooltipProvider>
-					<CodeBlock {...props}>{props.children}</CodeBlock>
-					{__rawString__ && !__npmCommand__ ? (
-						<CopyButton
-							code={__rawString__}
-							className={cx('top-4', __withMeta__ && 'top-20')}
-						/>
-					) : null}
-					{__npmCommand__ && __yarnCommand__ && __pnpmCommand__ ? (
-						<CopyNpmCommandButton
-							commands={{
-								__npmCommand__,
-								__pnpmCommand__,
-								__yarnCommand__,
-							}}
-							className={cx(__withMeta__ && 'top-20')}
-						/>
-					) : null}
-				</TooltipProvider>
+				<CodeBlock {...props}>{props.children}</CodeBlock>
+				{__rawString__ && !__npmCommand__ ? (
+					<CopyButton
+						code={__rawString__}
+						className={cx('top-4', __withMeta__ && 'top-20')}
+					/>
+				) : null}
+				{__npmCommand__ && __yarnCommand__ && __pnpmCommand__ ? (
+					<CopyNpmCommandButton
+						commands={{
+							__npmCommand__,
+							__pnpmCommand__,
+							__yarnCommand__,
+						}}
+						className={cx(__withMeta__ && 'top-20')}
+					/>
+				) : null}
 			</div>
 		)
 	},
