@@ -1,4 +1,10 @@
-import { Button, type ButtonProps, DropdownMenu, Tooltip } from '@nerdfish/ui'
+import {
+	Button,
+	type ButtonProps,
+	DropdownMenu,
+	Tooltip,
+	TooltipProvider,
+} from '@nerdfish/ui'
 import { cx, useCopyToClipboard } from '@nerdfish/utils'
 import React from 'react'
 import { Icons } from './icons'
@@ -18,25 +24,27 @@ export function CopyButton({
 	const label = copiedText ? 'Copied' : 'Copy'
 
 	return (
-		<Tooltip.Root>
-			<Tooltip.Trigger asChild>
-				<Button
-					size="iconSm"
-					{...props}
-					className={cx('absolute right-2 top-2', className)}
-					variant={copiedText ? 'success' : 'ghost'}
-					aria-label="copy"
-					onClick={() => handleCopy(code, COPY_TIMOUT)}
-				>
-					{copiedText ? (
-						<Icons.Check className="size-4" />
-					) : (
-						<Icons.Copy className="size-4" />
-					)}
-				</Button>
-			</Tooltip.Trigger>
-			<Tooltip.Content>{label}</Tooltip.Content>
-		</Tooltip.Root>
+		<TooltipProvider>
+			<Tooltip.Root>
+				<Tooltip.Trigger asChild>
+					<Button
+						size="iconSm"
+						{...props}
+						className={cx('absolute right-2 top-2', className)}
+						variant={copiedText ? 'success' : 'ghost'}
+						aria-label="copy"
+						onClick={() => handleCopy(code, COPY_TIMOUT)}
+					>
+						{copiedText ? (
+							<Icons.Check className="size-4" />
+						) : (
+							<Icons.Copy className="size-4" />
+						)}
+					</Button>
+				</Tooltip.Trigger>
+				<Tooltip.Content>{label}</Tooltip.Content>
+			</Tooltip.Root>
+		</TooltipProvider>
 	)
 }
 
