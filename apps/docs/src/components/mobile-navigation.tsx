@@ -3,8 +3,8 @@
 import { Button, Drawer } from '@nerdfish/ui'
 
 import { useMobileNav } from '../context/mobile-nav-provider'
+import { ComponentNavigation } from './component-navigation'
 import { Icons } from './icons'
-import { Navigation } from './navigation'
 
 export function MobileNavigation() {
 	const { isOpen, toggle, close } = useMobileNav()
@@ -30,7 +30,7 @@ export function MobileNavigation() {
 			>
 				<Drawer.Overlay />
 				<Drawer.Content className="!w-full max-w-[300px] px-4">
-					<Navigation />
+					<ComponentNavigation />
 				</Drawer.Content>
 			</Drawer.Root>
 		</>
