@@ -40,7 +40,7 @@ export const docs = {
 		},
 		{
 			title: 'Data Display',
-			links: [{ title: 'EmptyState', href: '/docs/empty-state' }],
+			links: [{ title: 'EmptyState', href: '/docs/empty-state', isNew: true }],
 		},
 		{
 			title: 'Other',
@@ -62,11 +62,11 @@ export const docs = {
 				{ title: 'Flags', href: '/docs/flags' },
 				{ title: 'HoverCard', href: '/docs/hover-card' },
 				{ title: 'Indicator', href: '/docs/indicator' },
-				{ title: 'Mockup', href: '/docs/mockup' },
+				{ title: 'Mockup', href: '/docs/mockup', isNew: true },
 				{ title: 'NavigationList', href: '/docs/navigation-list' },
 				{ title: 'NavigationMenu', href: '/docs/navigation-menu' },
 				{ title: 'Popover', href: '/docs/popover' },
-				{ title: 'Resizable', href: '/docs/resizable' },
+				{ title: 'Resizable', href: '/docs/resizable', isNew: true },
 				{ title: 'ScrollArea', href: '/docs/scroll-area' },
 				{ title: 'Skeleton', href: '/docs/skeleton' },
 				{ title: 'Steps', href: '/docs/steps' },

@@ -1,6 +1,6 @@
 'use client'
 
-import { NavigationList, ScrollArea, Sidebar } from '@nerdfish/ui'
+import { Badge, NavigationList, ScrollArea, Sidebar } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import * as React from 'react'
@@ -51,8 +51,16 @@ export const ComponentNavigation = React.forwardRef<
 									/>
 									{item.links.map((link) => (
 										<NavigationList.Item
-											key={link.title}
 											{...link}
+											key={link.title}
+											title={
+												<span className="flex justify-between gap-2">
+													{link.title}
+													{link.isNew ? (
+														<Badge variant="info">New</Badge>
+													) : null}
+												</span>
+											}
 											active={segment === stripPreSlash(link.href)}
 										/>
 									))}

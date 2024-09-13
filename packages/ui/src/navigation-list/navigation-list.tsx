@@ -27,11 +27,12 @@ export const navigationListItemVariants = cva(
 	},
 )
 
-type NavItemProps = React.ComponentPropsWithoutRef<'a'> & {
+type NavItemProps = Omit<React.ComponentPropsWithoutRef<'a'>, 'title'> & {
 	isCollapsed?: boolean
 	icon?: React.ElementType
 	active?: boolean
 	label?: string
+	// TODO: do not override base html title
 	title?: React.ReactNode
 	as?: React.ElementType
 }
