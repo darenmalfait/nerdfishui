@@ -1,5 +1,29 @@
 # @nerdfish/ui
 
+## 6.2.0
+
+### Minor Changes
+
+- add `Resizable` component
+
+- Add new `Mockup` component
+  ([#211](https://github.com/darenmalfait/nerdfishui/pull/211))
+
+- Add `Separator` component
+
+- add `Sidebar` component
+
+### Patch Changes
+
+- make `Select` be in line with other input components when it comes to
+  description and error messages
+
+- Improve code presentation in the docs
+
+- Updated dependencies
+  [[`9388c60`](https://github.com/darenmalfait/nerdfishui/commit/9388c60658afebd8c7a09be5369cd7d375f8da46)]:
+  - @nerdfish/utils@1.7.0
+
 ## 6.1.0
 
 ### Minor Changes
