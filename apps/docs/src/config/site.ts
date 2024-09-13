@@ -22,6 +22,10 @@ const siteConfig: SiteConfig = {
 			title: 'Docs',
 			href: '/docs',
 		},
+		{
+			title: 'Examples',
+			href: '/examples/forms',
+		},
 	],
 }
 
