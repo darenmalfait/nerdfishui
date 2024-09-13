@@ -68,6 +68,7 @@ import { RadioGroupDemo } from './radio-group/demo'
 import { ResizableDemo } from './resizable/demo'
 import { ScrollAreaDemo } from './scroll-area/demo'
 import { SelectDemo } from './select/demo'
+import { SeparatorDemo } from './separator/demo'
 import { SkeletonDemo } from './skeleton/demo'
 import { SliderDemo } from './slider/demo'
 import { StepsDemo } from './steps/demo'
@@ -161,6 +162,7 @@ export const examples = {
 	ResizableDemo,
 	ScrollAreaDemo,
 	SelectDemo,
+	SeparatorDemo,
 	SkeletonDemo,
 	SliderDemo,
 	StepsDemo,
