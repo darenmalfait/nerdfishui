@@ -1,3 +1,6 @@
+import { Button } from '@nerdfish/ui'
+import Link from 'next/link'
+import { Icons } from './icons'
 import { MainNavigation } from './main-navigation'
 import { ThemeToggle } from './theme-toggle'
 
@@ -9,6 +12,15 @@ export function SiteHeader() {
 				<div className="flex flex-1 items-center justify-end space-x-4">
 					<nav className="flex items-center space-x-1">
 						<ThemeToggle />
+						<Button variant="ghost" size="icon" asChild>
+							<Link
+								href="https://github.com/darenmalfait/nerdfishui"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								<Icons.GitHub className="size-4" />
+							</Link>
+						</Button>
 					</nav>
 				</div>
 			</div>
