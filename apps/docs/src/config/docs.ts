@@ -69,7 +69,7 @@ export const docs = {
 				{ title: 'Resizable', href: '/docs/resizable', isNew: true },
 				{ title: 'ScrollArea', href: '/docs/scroll-area' },
 				{ title: 'Skeleton', href: '/docs/skeleton' },
-				{ title: 'Separator', href: '/docs/separator' },
+				{ title: 'Separator', href: '/docs/separator', isNew: true },
 				{ title: 'Steps', href: '/docs/steps' },
 				{ title: 'Table', href: '/docs/table' },
 				{ title: 'Tabs', href: '/docs/tabs' },
