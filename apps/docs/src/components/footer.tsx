@@ -1,11 +1,12 @@
-import { getButtonClassName } from '@nerdfish/ui'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import * as React from 'react'
 
 import { docs } from '../config/docs'
+import { Icons } from './icons'
 import { GithubLogo } from './icons/github-logo'
+import { stripTrailingSlash } from '~/lib/utils/string'
 
 function PageLink({
 	label,
@@ -18,23 +19,42 @@ function PageLink({
 }) {
 	return (
 		<Link
+			className={cx('focus-visible:outline-active group w-full outline-none', {
+				'text-right': !previous,
+			})}
 			href={page.href}
 			aria-label={`${label}: ${page.title}`}
-			className={getButtonClassName({
-				className: 'flex space-x-2',
-			})}
 		>
-			{previous ? <ArrowLeft className="size-3" /> : null}
-			<span>{page.title}</span>
-			{!previous ? <ArrowRight className="size-3" /> : null}
+			{previous ? (
+				<>
+					<span className="text-sm">Previous</span>
+					<span className="text-nerdfish flex items-center gap-2 text-lg font-bold">
+						<Icons.ChevronLeft className="size-3" />
+						{page.title}
+					</span>
+				</>
+			) : (
+				<>
+					<span className="text-sm">Next</span>
+					<span className="text-nerdfish flex items-center justify-end gap-2 text-right text-lg font-bold">
+						{page.title}
+						<Icons.ChevronRight className="size-3" />
+					</span>
+				</>
+			)}
 		</Link>
 	)
 }
 
 function PageNavigation() {
 	const pathname = usePathname()
+
+	const currentPagePath = stripTrailingSlash(pathname ?? '')
+
 	const allPages = docs.navigation.flatMap((group) => group.links)
-	const currentPageIndex = allPages.findIndex((page) => page.href === pathname)
+	const currentPageIndex = allPages.findIndex(
+		(page) => page.href === currentPagePath,
+	)
 
 	if (currentPageIndex === -1) {
 		return null
@@ -54,12 +74,12 @@ function PageNavigation() {
 	return (
 		<div className="flex">
 			{previousPage ? (
-				<div className="flex flex-col items-start gap-3">
+				<div className="flex w-full flex-col items-start gap-3">
 					<PageLink label="Previous" page={previousPage} previous />
 				</div>
 			) : null}
 			{nextPage ? (
-				<div className="ml-auto flex flex-col items-end gap-3">
+				<div className="ml-auto flex w-full flex-col items-end gap-3 text-right">
 					<PageLink label="Next" page={nextPage} />
 				</div>
 			) : null}
