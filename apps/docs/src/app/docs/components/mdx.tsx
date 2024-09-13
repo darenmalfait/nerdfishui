@@ -3,6 +3,7 @@
 import * as uiComponents from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import * as React from 'react'
 import { examples } from '../../../examples'
@@ -10,7 +11,9 @@ import { type NpmCommands } from '../../../lib/types/unist'
 import { CodeBlock } from './codeblock/codeblock'
 import { ComponentExample } from './component-example'
 import { CopyButton, CopyNpmCommandButton } from './copy-button'
+import { Icons } from '~/app/components/icons'
 import { AppDemo } from '~/app/examples/components/app-demo'
+import { stripPreSlash } from '~/lib/utils/string'
 
 import './mdx.css'
 
@@ -26,15 +29,32 @@ const components = {
 	h4: H4,
 	h5: H5,
 	h6: H6,
-	a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
-		<a
-			className={cx(
-				'text-primary font-medium underline underline-offset-4',
-				className,
-			)}
-			{...props}
-		/>
-	),
+	a: ({
+		className,
+		children,
+		href,
+		...props
+	}: React.ComponentPropsWithoutRef<'a'>) => {
+		const isExternal = href?.startsWith('http')
+		const slug = isExternal ? href : `/${stripPreSlash(href ?? '')}`
+
+		if (!slug) return null
+
+		return (
+			<Link
+				{...props}
+				className={cx(
+					'border-nerdfish hover:text-nerdfish inline-flex items-center border-b-2 font-normal text-inherit no-underline transition-colors',
+					className,
+				)}
+				href={slug}
+				target={isExternal ? '_blank' : undefined}
+			>
+				{children}
+				{isExternal ? <Icons.ExternalLink className="ml-1 h-4 w-4" /> : null}
+			</Link>
+		)
+	},
 	p: Paragraph,
 	ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
 		<ul className={cx('my-6 ml-6 list-disc', className)} {...props} />
