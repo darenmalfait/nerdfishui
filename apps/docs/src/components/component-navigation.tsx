@@ -25,7 +25,7 @@ export const ComponentNavigation = React.forwardRef<
 			ref={ref}
 		>
 			<div className="flex h-full flex-col">
-				<Sidebar.Section className="px-0">
+				<Sidebar.Section className="px-0 pr-4">
 					<NavigationList.Root>
 						{globalItems?.links.map((item) => (
 							<NavigationList.Item key={item.title} {...item} />
@@ -34,7 +34,7 @@ export const ComponentNavigation = React.forwardRef<
 				</Sidebar.Section>
 				<Sidebar.Divider />
 				<ScrollArea>
-					<Sidebar.Section className="flex-1 px-0">
+					<Sidebar.Section className="flex-1 px-0 pr-4">
 						<NavigationList.Root>
 							{others.map((item) => (
 								<NavigationList.Section key={item.title}>
