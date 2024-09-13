@@ -1,11 +1,12 @@
+'use client'
+
 import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import * as React from 'react'
-
-import { docs } from '../config/docs'
 import { Icons } from './icons'
 import { GithubLogo } from './icons/github-logo'
+import { docs } from '~/config/docs'
 import { stripTrailingSlash } from '~/lib/utils/string'
 
 function PageLink({

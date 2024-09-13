@@ -3,8 +3,7 @@
 import { Button } from '@nerdfish/ui'
 import { Moon, Sun } from 'lucide-react'
 import * as React from 'react'
-
-import { useTheme } from '../context/theme-provider'
+import { useTheme } from '../theme-provider'
 
 function ThemeToggle({
 	className,

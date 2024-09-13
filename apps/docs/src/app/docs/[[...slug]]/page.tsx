@@ -1,9 +1,9 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { DocsPageHeader } from '../../components/docs-page-header'
-import { Mdx } from '../../components/mdx'
-import { getMetaData } from '../../lib/utils/seo'
+import { getMetaData } from '../../../lib/utils/seo'
+import { DocsPageHeader } from '../components/docs-page-header'
+import { Mdx } from '../components/mdx'
 import { allDocs } from '.contentlayer/generated'
 import { generateOGImageUrl } from '~/lib/utils/social'
 

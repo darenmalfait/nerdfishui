@@ -1,8 +1,7 @@
 'use client'
 
 import { Button, Drawer } from '@nerdfish/ui'
-
-import { useMobileNav } from '../context/mobile-nav-provider'
+import { useMobileNav } from '../mobile-nav-provider'
 import { ComponentNavigation } from './component-navigation'
 import { Icons } from './icons'
 

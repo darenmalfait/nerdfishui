@@ -5,15 +5,14 @@ import { cx } from '@nerdfish/utils'
 import Image from 'next/image'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import * as React from 'react'
-
-import { type NpmCommands } from '../lib/types/unist'
-import { AppDemo } from './app-demo'
+import { examples } from '../../../examples'
+import { type NpmCommands } from '../../../lib/types/unist'
 import { CodeBlock } from './codeblock/codeblock'
 import { ComponentExample } from './component-example'
 import { CopyButton, CopyNpmCommandButton } from './copy-button'
-import { examples } from './examples'
+import { AppDemo } from '~/app/examples/components/app-demo'
 
-import '../styles/mdx.css'
+import './mdx.css'
 
 const { Accordion, H1, H2, H3, H4, H5, H6, Paragraph } = uiComponents
 

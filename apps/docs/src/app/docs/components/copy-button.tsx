@@ -7,7 +7,7 @@ import {
 } from '@nerdfish/ui'
 import { cx, useCopyToClipboard } from '@nerdfish/utils'
 import React from 'react'
-import { Icons } from './icons'
+import { Icons } from '~/app/components/icons'
 import { type NpmCommands } from '~/lib/types/unist'
 
 const COPY_TIMOUT = 3000
