@@ -12,7 +12,6 @@ import { CodeBlock } from './codeblock/codeblock'
 import { ComponentExample } from './component-example'
 import { CopyButton, CopyNpmCommandButton } from './copy-button'
 import { Icons } from '~/app/components/icons'
-import { AppDemo } from '~/app/examples/components/app-demo'
 import { stripPreSlash } from '~/lib/utils/string'
 
 import './mdx.css'
@@ -22,7 +21,6 @@ const { Accordion, H1, H2, H3, H4, H5, H6, Paragraph } = uiComponents
 const components = {
 	...uiComponents,
 	Accordion,
-	AppDemo,
 	h1: H1,
 	h2: H2,
 	h3: H3,

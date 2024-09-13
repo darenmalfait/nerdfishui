@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	AspectRatio,
 	Button,
@@ -106,7 +108,7 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
 	return (
-		<div className="border-muted bg-nerdfish mt-2 hidden rounded-md border shadow-2xl xl:block">
+		<div className="bg-nerdfish hidden rounded-md xl:block">
 			<div className="p-8">
 				<div className="bg-primary overflow-hidden rounded-md shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
