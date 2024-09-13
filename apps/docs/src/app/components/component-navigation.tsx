@@ -32,8 +32,17 @@ export const ComponentNavigation = React.forwardRef<
 				<Sidebar.Section className="px-0 pr-4">
 					<NavigationList.Root>
 						<NavigationList.Title title="Getting Started" />
-						{globalItems?.links.map((item) => (
-							<NavigationList.Item key={item.title} {...item} />
+						{globalItems?.links.map(({ isNew, title, ...item }) => (
+							<NavigationList.Item
+								key={title}
+								{...item}
+								title={
+									<span className="flex justify-between gap-2">
+										{title}
+										{isNew ? <Badge variant="info">New</Badge> : null}
+									</span>
+								}
+							/>
 						))}
 					</NavigationList.Root>
 				</Sidebar.Section>
@@ -49,16 +58,14 @@ export const ComponentNavigation = React.forwardRef<
 										className="text-base font-bold"
 										{...item}
 									/>
-									{item.links.map((link) => (
+									{item.links.map(({ isNew, title, ...link }) => (
 										<NavigationList.Item
 											{...link}
-											key={link.title}
+											key={title}
 											title={
 												<span className="flex justify-between gap-2">
-													{link.title}
-													{link.isNew ? (
-														<Badge variant="info">New</Badge>
-													) : null}
+													{title}
+													{isNew ? <Badge variant="info">New</Badge> : null}
 												</span>
 											}
 											active={segment === stripPreSlash(link.href)}
