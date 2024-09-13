@@ -12,7 +12,7 @@ export function Prose({
 }) {
 	return (
 		<Component
-			className={cx(className, 'mx-auto max-w-screen-lg')}
+			className={cx('mx-auto max-w-screen-lg', className)}
 			{...props}
 		/>
 	)
