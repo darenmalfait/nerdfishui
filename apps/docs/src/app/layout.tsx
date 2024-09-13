@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 					<MobileNavProvider>
 						<main className={`${GeistSans.variable} bg-primary font-sans`}>
 							<SiteHeader />
-							<div className="container mx-auto w-full max-w-screen-2xl px-4">
+							<div className="container mx-auto w-full max-w-screen-2xl px-4 pt-2">
 								{children}
 							</div>
 						</main>
