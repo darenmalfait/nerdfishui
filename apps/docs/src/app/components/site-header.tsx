@@ -3,7 +3,7 @@ import { ThemeToggle } from './theme-toggle'
 
 export function SiteHeader() {
 	return (
-		<header className="shadow-outline bg-primary sticky top-0 z-40 w-full">
+		<header className="shadow-outline bg-popover sticky top-0 z-40 w-full">
 			<div className="container mx-auto flex h-16 max-w-screen-2xl items-center space-x-4 px-4 sm:justify-between sm:space-x-0">
 				<MainNavigation />
 				<div className="flex flex-1 items-center justify-end space-x-4">

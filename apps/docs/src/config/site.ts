@@ -18,6 +18,10 @@ const siteConfig: SiteConfig = {
 			title: 'Home',
 			href: '/',
 		},
+		{
+			title: 'Docs',
+			href: '/docs',
+		},
 	],
 }
 

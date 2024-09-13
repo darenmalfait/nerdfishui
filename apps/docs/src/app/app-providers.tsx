@@ -3,7 +3,6 @@
 import { ThemeProvider as NerdfishThemeProvider } from '@nerdfish/theme'
 import * as React from 'react'
 
-import { MobileNavProvider } from './mobile-nav-provider'
 import { ThemeProvider } from './theme-provider'
 
 type AppProvidersProps = {
@@ -13,9 +12,7 @@ type AppProvidersProps = {
 function AppProviders({ children }: AppProvidersProps) {
 	return (
 		<ThemeProvider>
-			<NerdfishThemeProvider>
-				<MobileNavProvider>{children}</MobileNavProvider>
-			</NerdfishThemeProvider>
+			<NerdfishThemeProvider>{children}</NerdfishThemeProvider>
 		</ThemeProvider>
 	)
 }

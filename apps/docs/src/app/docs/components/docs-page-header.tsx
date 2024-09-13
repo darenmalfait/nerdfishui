@@ -4,8 +4,7 @@ import { getButtonClassName, H1, Paragraph } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
 import * as React from 'react'
-
-import { Icons } from './icons'
+import { Icons } from '~/app/components/icons'
 
 interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 	heading: string
