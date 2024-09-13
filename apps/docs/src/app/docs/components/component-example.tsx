@@ -32,9 +32,7 @@ export function ComponentExample({
 	return (
 		<div {...props} className={cx('flex flex-col gap-4', className)}>
 			<div className="!bg-primary p-0">
-				<Preview>
-					<div className="dark">{Example}</div>
-				</Preview>
+				<Preview>{Example}</Preview>
 			</div>
 			<div className="!bg-primary -my-2 p-0">
 				<div className="flex flex-col space-y-4">
