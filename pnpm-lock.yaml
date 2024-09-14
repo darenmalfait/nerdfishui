@@ -28,7 +28,7 @@ importers:
         specifier: ^19.4.1
         version: 19.4.1
       '@nerdfish/config':
-        specifier: ^1.0.5
+        specifier: ^1.0.6
         version: 1.0.6(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.3))(eslint@9.10.0(jiti@1.21.0))(prettier@3.3.3)(typescript@5.5.4)
       eslint:
         specifier: ^9.10.0
@@ -13291,7 +13291,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.5.4)
       eslint: 9.10.0(jiti@1.21.0)
       eslint-scope: 5.1.1
-      semver: 7.6.0
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -13305,7 +13305,7 @@ snapshots:
       '@typescript-eslint/types': 7.7.1
       '@typescript-eslint/typescript-estree': 7.7.1(typescript@5.5.4)
       eslint: 9.10.0(jiti@1.21.0)
-      semver: 7.6.0
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -19975,7 +19975,7 @@ snapshots:
       git-hooks-list: 3.1.0
       globby: 13.1.3
       is-plain-obj: 4.1.0
-      semver: 7.6.0
+      semver: 7.6.3
       sort-object-keys: 1.1.3
 
   source-map-js@1.2.0: {}
