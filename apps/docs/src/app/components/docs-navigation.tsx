@@ -58,7 +58,7 @@ export const ComponentNavigation = React.forwardRef<
 						className="text-base font-bold"
 						{...item}
 					/>
-					{item.links.map(({ isNew, title, ...link }) => (
+					{item.links.map(({ isNew, isDeprecated, title, ...link }) => (
 						<NavigationList.Item
 							{...link}
 							key={title}
@@ -66,6 +66,9 @@ export const ComponentNavigation = React.forwardRef<
 								<span className="flex justify-between gap-2">
 									{title}
 									{isNew ? <Badge variant="info">New</Badge> : null}
+									{isDeprecated ? (
+										<Badge variant="outline">Deprecated</Badge>
+									) : null}
 								</span>
 							}
 							active={segment === stripPreSlash(link.href)}

@@ -55,8 +55,8 @@ export function Highlight({
 							const lineProps = getLineProps({ line, key: i })
 							return (
 								<div
-									key={i}
 									{...lineProps}
+									key={i}
 									className={cx(
 										shouldHighlightLine(i) ? 'bg-inverted/15' : undefined,
 										lineProps.className,
@@ -66,7 +66,7 @@ export function Highlight({
 										<span className="mr-6 text-xs opacity-30">{i + 1}</span>
 									) : null}
 									{line.map((token, key) => (
-										<span key={key} {...getTokenProps({ token, key })} />
+										<span {...getTokenProps({ token, key })} key={key} />
 									))}
 								</div>
 							)

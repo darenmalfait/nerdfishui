@@ -19,7 +19,7 @@ export const ComponentNavigation = React.forwardRef<
 	return (
 		<NavigationList.Root {...props} ref={ref}>
 			<NavigationList.Title title="Components" />
-			{globalItems?.links.map(({ isNew, title, ...item }) => (
+			{globalItems?.links.map(({ isNew, isDeprecated, title, ...item }) => (
 				<NavigationList.Item
 					key={title}
 					{...item}
@@ -28,6 +28,9 @@ export const ComponentNavigation = React.forwardRef<
 						<span className="flex justify-between gap-2">
 							{title}
 							{isNew ? <Badge variant="info">New</Badge> : null}
+							{isDeprecated ? (
+								<Badge variant="outline">Deprecated</Badge>
+							) : null}
 						</span>
 					}
 				/>

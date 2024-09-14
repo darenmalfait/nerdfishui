@@ -1,6 +1,6 @@
 'use client'
 
-import { cx, roundToNearest15 } from '@nerdfish/utils'
+import { cx, deprecateComponent, roundToNearest15 } from '@nerdfish/utils'
 import { AlertCircle, Clock } from 'lucide-react'
 import * as React from 'react'
 
@@ -124,47 +124,50 @@ export const TimepickerRoot = React.forwardRef<
 	)
 })
 
-export const Timepicker = React.forwardRef<
-	HTMLInputElement,
-	InputProps & {
-		id?: string
-	}
->(function Timepicker(
-	{ error, name, label, description, id, className, defaultValue, ...props },
-	ref,
-) {
-	const inputId = id ?? name
-	const errorId = `${inputId}-error`
-	const descriptionId = `${inputId}-description`
+export const Timepicker = deprecateComponent(
+	React.forwardRef<
+		HTMLInputElement,
+		InputProps & {
+			id?: string
+		}
+	>(function Timepicker(
+		{ error, name, label, description, id, className, defaultValue, ...props },
+		ref,
+	) {
+		const inputId = id ?? name
+		const errorId = `${inputId}-error`
+		const descriptionId = `${inputId}-description`
 
-	return (
-		<Field
-			{...{
-				description,
-				descriptionId,
-				error,
-				errorId,
-				htmlFor: inputId,
-				label,
-				className,
-			}}
-		>
-			<TimepickerRoot
-				hasError={!!error}
-				{...(props as InputRootProps)}
-				ref={ref}
-				name={name}
-				id={inputId}
-				defaultValue={
-					defaultValue ?? roundToNearest15(new Date()).toISOString()
-				}
-				aria-describedby={
-					error ? errorId : description ? descriptionId : undefined
-				}
-			/>
-		</Field>
-	)
-})
+		return (
+			<Field
+				{...{
+					description,
+					descriptionId,
+					error,
+					errorId,
+					htmlFor: inputId,
+					label,
+					className,
+				}}
+			>
+				<TimepickerRoot
+					hasError={!!error}
+					{...(props as InputRootProps)}
+					ref={ref}
+					name={name}
+					id={inputId}
+					defaultValue={
+						defaultValue ?? roundToNearest15(new Date()).toISOString()
+					}
+					aria-describedby={
+						error ? errorId : description ? descriptionId : undefined
+					}
+				/>
+			</Field>
+		)
+	}),
+	'Timepicker is deprecated. Use TimeField instead.',
+)
 
 export type TimepickerRootProps = React.ComponentPropsWithoutRef<
 	typeof TimepickerRoot

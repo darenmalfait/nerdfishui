@@ -8,7 +8,7 @@ export function FieldLabel({
 	children,
 	className,
 }: {
-	htmlFor: string
+	htmlFor?: string
 	children?: React.ReactNode
 	className?: string
 }) {
@@ -68,7 +68,7 @@ export function FieldError({
 }
 
 type FieldProps = {
-	htmlFor: string
+	htmlFor?: string
 	label?: string
 	error?: string | null
 	errorId?: string

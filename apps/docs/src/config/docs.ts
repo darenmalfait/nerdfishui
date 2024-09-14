@@ -1,4 +1,16 @@
-export const docs = {
+type NavigationItem = {
+	title: string
+	href: string
+	isNew?: boolean
+	isDeprecated?: boolean
+}
+
+type NavigationGroup = {
+	title: string
+	links: NavigationItem[]
+}
+
+export const docs: { navigation: NavigationGroup[] } = {
 	navigation: [
 		{
 			title: 'Getting Started',
@@ -27,7 +39,8 @@ export const docs = {
 				{ title: 'Radio Group', href: '/docs/radio-group' },
 				{ title: 'Slider', href: '/docs/slider' },
 				{ title: 'Switch', href: '/docs/switch' },
-				{ title: 'Timepicker', href: '/docs/timepicker' },
+				{ title: 'Timepicker', href: '/docs/timepicker', isDeprecated: true },
+				{ title: 'TimeField', href: '/docs/time-field' },
 				{ title: 'Toggle', href: '/docs/toggle' },
 			],
 		},

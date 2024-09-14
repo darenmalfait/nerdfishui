@@ -159,7 +159,7 @@ export const InputRoot = React.forwardRef<
 		children,
 		inputSize,
 		icon: Icon,
-		...InputRootProps
+		...inputRootProps
 	} = props
 
 	const className = getInputClassName(
@@ -177,7 +177,7 @@ export const InputRoot = React.forwardRef<
 				<InputIcon icon={Icon} hasError={hasError} />
 				<textarea
 					data-slot="control"
-					{...(InputRootProps as React.ComponentPropsWithoutRef<'textarea'>)}
+					{...(inputRootProps as React.ComponentPropsWithoutRef<'textarea'>)}
 					ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
 					aria-invalid={hasError}
 					className={cx('h-36', inputVariants({ size: inputSize }), {
@@ -198,7 +198,7 @@ export const InputRoot = React.forwardRef<
 				<input
 					data-slot="control"
 					type={type}
-					{...(InputRootProps as React.ComponentPropsWithoutRef<'input'>)}
+					{...(inputRootProps as React.ComponentPropsWithoutRef<'input'>)}
 					className={cx(
 						!!addOnLeading && '!pl-2',
 						!!Icon && 'pr-14',
@@ -243,7 +243,6 @@ export const Input = React.forwardRef<
 				name={name}
 				id={inputId}
 				autoComplete={name}
-				required
 				defaultValue={defaultValue}
 				aria-describedby={
 					error ? errorId : description ? descriptionId : undefined
