@@ -44,7 +44,7 @@ export function MobileNavigation() {
 								))
 							: null}
 					</NavigationList.Root>
-					{stripTrailingSlash(pathname ?? '') === '/docs' ? (
+					{stripTrailingSlash(pathname ?? '').includes('/docs') ? (
 						<ComponentNavigation />
 					) : null}
 				</Drawer.Content>
