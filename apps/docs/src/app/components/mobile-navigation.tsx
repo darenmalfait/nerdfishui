@@ -3,7 +3,10 @@
 import { Button, Drawer, NavigationList } from '@nerdfish/ui'
 import { usePathname } from 'next/navigation'
 import { useMobileNav } from '../mobile-nav-provider'
-import { ComponentNavigation } from './component-navigation'
+import {
+	ComponentNavigation,
+	GettingStartedNavigation,
+} from './docs-navigation'
 import { Icons } from './icons'
 import { siteConfig } from '~/config/site'
 import { stripTrailingSlash } from '~/lib/utils/string'
@@ -45,7 +48,10 @@ export function MobileNavigation() {
 							: null}
 					</NavigationList.Root>
 					{stripTrailingSlash(pathname ?? '').includes('/docs') ? (
-						<ComponentNavigation />
+						<div className="flex flex-col gap-4">
+							<GettingStartedNavigation />
+							<ComponentNavigation />
+						</div>
 					) : null}
 				</Drawer.Content>
 			</Drawer.Root>
