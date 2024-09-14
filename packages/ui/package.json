@@ -52,8 +52,10 @@
     "date-fns": "^3.6.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.438.0",
+    "react-aria": "^3.34.3",
     "react-day-picker": "^8.10.1",
     "react-resizable-panels": "^2.1.2",
+    "react-stately": "^3.32.2",
     "sonner": "^1.5.0",
     "vaul": "^0.9.1"
   },

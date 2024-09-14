@@ -1,0 +1,36 @@
+---
+title: TimeField
+description: Pick a time
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'date-time/time-field.tsx'
+---
+
+<ComponentExample src="/src/examples/time-field/demo.tsx">
+	<TimeFieldDemo />
+</ComponentExample>
+
+## Usage
+
+TimeField extends the [Input](/input) component. All props from Input are
+available.
+
+```tsx
+import { TimeField } from '@nerdfish/ui'
+```
+
+```tsx
+<TimeField
+	label="time-field label"
+	description="time-field description"
+	name="time-field-field-basic"
+/>
+```
+
+## Hour Cycle
+
+<ComponentExample src="/src/examples/time-field/hour-cycle.tsx">
+	<TimeFieldHourCycleDemo />
+</ComponentExample>
