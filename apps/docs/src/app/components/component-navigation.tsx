@@ -25,6 +25,7 @@ export const ComponentNavigation = React.forwardRef<
 			{...props}
 			className={cx(
 				'sticky top-[75px] h-[calc(100vh-80px)] overscroll-contain',
+				className,
 			)}
 			ref={ref}
 		>

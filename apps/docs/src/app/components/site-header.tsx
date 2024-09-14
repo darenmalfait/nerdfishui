@@ -2,6 +2,7 @@ import { Button } from '@nerdfish/ui'
 import Link from 'next/link'
 import { Icons } from './icons'
 import { MainNavigation } from './main-navigation'
+import { MobileNavigation } from './mobile-navigation'
 import { ThemeToggle } from './theme-toggle'
 
 export function SiteHeader() {
@@ -21,6 +22,7 @@ export function SiteHeader() {
 								<Icons.GitHub className="size-4" />
 							</Link>
 						</Button>
+						<MobileNavigation />
 					</nav>
 				</div>
 			</div>

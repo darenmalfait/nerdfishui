@@ -1,13 +1,11 @@
 import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
 import { Logo } from './icons/logo'
-import { MobileNavigation } from './mobile-navigation'
 import { siteConfig } from '~/config/site'
 
 export function MainNavigation() {
 	return (
 		<div className="flex items-center gap-6 md:gap-10">
-			<MobileNavigation />
 			<Link href="/" aria-label="Home">
 				<div className="flex items-center space-x-3">
 					<Logo className="h-6" />
