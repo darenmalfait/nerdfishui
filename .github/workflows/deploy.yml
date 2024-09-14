@@ -1,8 +1,4 @@
 name: 'Deploy'
-env:
-  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 
 on:
   release:
@@ -15,9 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Deploy Docs'
 
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+        if: github.ref == 'refs/heads/main'
 
       - name: Deploy to Production ...
         uses: amondnet/vercel-action@v25
