@@ -2,6 +2,7 @@
 'use client'
 
 import { cx } from '@nerdfish/utils'
+import { XIcon } from 'lucide-react'
 import * as React from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
 
@@ -63,8 +64,8 @@ export const DrawerContent = React.forwardRef<
 					asChild
 					className="absolute right-0 top-0 mr-2 mt-2"
 				>
-					<Button variant="ghost" size="iconSm" aria-label="Close">
-						<span aria-hidden>×</span>
+					<Button variant="ghost" size="icon" aria-label="Close">
+						<XIcon aria-hidden className="size-4" />
 					</Button>
 				</DrawerPrimitive.Close>
 				<div className="h-full overflow-y-auto">{children}</div>
