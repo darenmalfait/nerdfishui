@@ -5,7 +5,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDown } from 'lucide-react'
 import * as React from 'react'
 
-export const AccordionRoot = AccordionPrimitive.Root
+export const Accordion = AccordionPrimitive.Root
 
 export const AccordionItem = React.forwardRef<
 	React.ElementRef<typeof AccordionPrimitive.Item>,
@@ -59,9 +59,7 @@ export const AccordionContent = React.forwardRef<
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
-export type AccordionRootProps = React.ComponentPropsWithoutRef<
-	typeof AccordionRoot
->
+export type AccordionProps = React.ComponentPropsWithoutRef<typeof Accordion>
 export type AccordionItemProps = React.ComponentPropsWithoutRef<
 	typeof AccordionItem
 >
