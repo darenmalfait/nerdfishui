@@ -5,41 +5,19 @@ import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import { Circle } from 'lucide-react'
 import * as React from 'react'
 
-import { Field } from '../field'
-
-export const RadioGroupRoot = React.forwardRef<
+export const RadioGroup = React.forwardRef<
 	React.ElementRef<typeof RadioGroupPrimitive.Root>,
-	React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> & {
-		name: string
-		label?: string
-		description?: string
-		error?: string
-	}
->(({ className, label, description, id, name, error, ...props }, ref) => {
-	const inputId = id ?? name
-	const errorId = `${inputId}-error`
-	const descriptionId = `${inputId}-description`
-
+	React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
+>(({ className, ...props }, ref) => {
 	return (
-		<Field
-			{...{
-				description,
-				descriptionId,
-				error,
-				errorId,
-				htmlFor: inputId,
-				label,
-			}}
-		>
-			<RadioGroupPrimitive.Root
-				className={cx('grid gap-2', className)}
-				{...props}
-				ref={ref}
-			/>
-		</Field>
+		<RadioGroupPrimitive.Root
+			className={cx('grid gap-2', className)}
+			{...props}
+			ref={ref}
+		/>
 	)
 })
-RadioGroupRoot.displayName = RadioGroupPrimitive.Root.displayName
+RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 
 export function RadioGroupField({
 	className,
@@ -72,12 +50,9 @@ export function RadioGroupField({
 }
 
 export const RadioGroupItem = React.forwardRef<
-	React.ElementRef<typeof RadioGroupPrimitive.Item> & {
-		label?: React.ReactNode
-		description?: React.ReactNode
-	},
+	React.ElementRef<typeof RadioGroupPrimitive.Item>,
 	React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
->(({ className, children, ...props }, ref) => {
+>(({ className, ...props }, ref) => {
 	return (
 		<RadioGroupPrimitive.Item
 			data-slot="control"
@@ -96,7 +71,7 @@ export const RadioGroupItem = React.forwardRef<
 })
 RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 
-export type RadioGroupRootProps = React.ComponentPropsWithoutRef<
+export type RadioGroupProps = React.ComponentPropsWithoutRef<
 	typeof RadioGroupPrimitive.Root
 >
 

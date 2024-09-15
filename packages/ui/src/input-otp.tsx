@@ -12,9 +12,9 @@ import {
 import { Dot } from 'lucide-react'
 import * as React from 'react'
 
-import { getInputClassName } from '../input'
+import { inputVariants } from './input'
 
-export const InputOTPRoot = React.forwardRef<
+export const InputOTP = React.forwardRef<
 	React.ElementRef<typeof OTPInput>,
 	React.ComponentPropsWithoutRef<typeof OTPInput>
 >(({ className, ...props }, ref) => (
@@ -24,7 +24,7 @@ export const InputOTPRoot = React.forwardRef<
 		{...props}
 	/>
 ))
-InputOTPRoot.displayName = 'InputOTP'
+InputOTP.displayName = 'InputOTP'
 
 export const InputOTPGroup = React.forwardRef<
 	React.ElementRef<'div'>,
@@ -53,7 +53,7 @@ export const InputOTPSlot = React.forwardRef<
 			<div
 				ref={ref}
 				className={cx(
-					getInputClassName(),
+					inputVariants(),
 					'relative flex h-10 w-10 items-center justify-center',
 					isActive &&
 						cx(
@@ -92,9 +92,7 @@ export const inputOTPPatterns = {
 	digitsAndChars: REGEXP_ONLY_DIGITS_AND_CHARS,
 }
 
-export type InputOTPRootProps = React.ComponentPropsWithoutRef<
-	typeof InputOTPRoot
->
+export type InputOTPProps = React.ComponentPropsWithoutRef<typeof InputOTP>
 export type InputOTPGroupProps = React.ComponentPropsWithoutRef<
 	typeof InputOTPGroup
 >

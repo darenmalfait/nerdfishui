@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as SwitchPrimitives from '@radix-ui/react-switch'
 import * as React from 'react'
 
-import { getInputClassName } from './input'
+import { inputVariants } from './input'
 
 export const Switch = React.forwardRef<
 	React.ElementRef<typeof SwitchPrimitives.Root>,
@@ -12,7 +12,7 @@ export const Switch = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<SwitchPrimitives.Root
 		className={cx(
-			getInputClassName(),
+			inputVariants(),
 			// basic styles
 			'peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full p-0 transition-colors',
 			// checked state

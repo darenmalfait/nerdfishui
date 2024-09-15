@@ -1,28 +1,34 @@
-import { Field, InputOTP } from '@nerdfish/ui'
+import {
+	Description,
+	Field,
+	InputOTP,
+	InputOTPGroup,
+	InputOTPSeparator,
+	InputOTPSlot,
+	Label,
+} from '@nerdfish/ui'
 
 export function InputOTPFieldDemo() {
 	return (
-		<Field
-			label="OTP"
-			htmlFor="otp"
-			description="Enter the 6-digit code sent to your phone"
-		>
-			<InputOTP.Root
+		<Field>
+			<Label htmlFor="otp">OTP</Label>
+			<Description>Enter the 6-digit code sent to your phone</Description>
+			<InputOTP
 				name="otp"
 				maxLength={6}
 				render={({ slots }) => (
 					<>
-						<InputOTP.Group>
+						<InputOTPGroup>
 							{slots.slice(0, 3).map((slot, index) => (
-								<InputOTP.Slot key={index} {...slot} />
+								<InputOTPSlot key={index} {...slot} />
 							))}{' '}
-						</InputOTP.Group>
-						<InputOTP.Separator />
-						<InputOTP.Group>
+						</InputOTPGroup>
+						<InputOTPSeparator />
+						<InputOTPGroup>
 							{slots.slice(3).map((slot, index) => (
-								<InputOTP.Slot key={index + 3} {...slot} />
+								<InputOTPSlot key={index + 3} {...slot} />
 							))}
-						</InputOTP.Group>
+						</InputOTPGroup>
 					</>
 				)}
 			/>

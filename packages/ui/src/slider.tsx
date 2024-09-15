@@ -7,7 +7,7 @@ import * as React from 'react'
 export const SliderTrack = SliderPrimitive.Track
 export const SliderRange = SliderPrimitive.Range
 
-export const SliderRoot = React.forwardRef<
+export const Slider = React.forwardRef<
 	React.ElementRef<typeof SliderPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
@@ -25,7 +25,7 @@ export const SliderRoot = React.forwardRef<
 		{children}
 	</SliderPrimitive.Root>
 ))
-SliderRoot.displayName = SliderPrimitive.Root.displayName
+Slider.displayName = SliderPrimitive.Root.displayName
 
 export const SliderThumb = React.forwardRef<
 	React.ElementRef<typeof SliderPrimitive.Thumb>,
@@ -42,7 +42,7 @@ export const SliderThumb = React.forwardRef<
 ))
 SliderThumb.displayName = SliderPrimitive.Thumb.displayName
 
-export type SliderRootProps = React.ComponentPropsWithoutRef<typeof SliderRoot>
+export type SliderProps = React.ComponentPropsWithoutRef<typeof Slider>
 export type SliderThumbProps = React.ComponentPropsWithoutRef<
 	typeof SliderThumb
 >

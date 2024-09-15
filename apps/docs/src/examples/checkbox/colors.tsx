@@ -9,7 +9,6 @@ export function CheckboxColors() {
 				bgClassName="bg-danger"
 				textClassName="text-danger"
 				name="newsletters4"
-				label="Subscribe to our newsletter"
 				defaultChecked
 			/>
 		</div>

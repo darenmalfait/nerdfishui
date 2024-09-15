@@ -34,7 +34,7 @@ module.exports = plugin(
 					{},
 			},
 			'.shadow-outline': {
-				'@apply ring-1 ring-muted/30 dark:ring-muted/10 border-transparent': {},
+				'@apply ring-1 ring-muted/30 border-transparent': {},
 			},
 			'.empty-content': {
 				content: "''",

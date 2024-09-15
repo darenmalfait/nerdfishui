@@ -44,7 +44,8 @@ export function Calendar({
 					buttonVariants({ variant: 'ghost' }),
 					'h-9 w-9 p-0 font-normal aria-selected:opacity-100',
 				),
-				day_range_end: 'day-range-end',
+				day_range_start: 'scale-110 z-10',
+				day_range_end: 'scale-110 z-10',
 				day_selected:
 					'bg-inverted rounded-full !text-inverted hover:!bg-inverted/90',
 				day_today:
@@ -52,7 +53,8 @@ export function Calendar({
 				day_outside:
 					'day-outside text-muted opacity-50 aria-selected:bg-muted aria-selected:text-muted aria-selected:opacity-80',
 				day_disabled: 'text-muted opacity-50',
-				day_range_middle: 'aria-selected:bg-muted aria-selected:text-primary',
+				day_range_middle:
+					'z-0 aria-selected:bg-nerdfish/10 aria-selected:!text-primary hover:aria-selected:!text-inverted rounded-none',
 				day_hidden: 'invisible',
 				...classNames,
 			}}

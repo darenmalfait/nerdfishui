@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Dialog, Drawer, Input } from '@nerdfish/ui'
+import { Button, Dialog, Drawer, Field, Input, Label } from '@nerdfish/ui'
 import { cx, useMediaQuery } from '@nerdfish/utils'
 import * as React from 'react'
 
@@ -55,21 +55,21 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
 	return (
 		<form className={cx('grid items-start gap-4', className)}>
 			<div className="grid gap-2">
-				<Input
-					name="email"
-					label="email"
-					type="email"
-					id="email"
-					defaultValue="nerdfish@example.com"
-				/>
+				<Field>
+					<Label htmlFor="email">Email</Label>
+					<Input
+						name="email"
+						type="email"
+						id="email"
+						defaultValue="nerdfish@example.com"
+					/>
+				</Field>
 			</div>
 			<div className="grid gap-2">
-				<Input
-					name="username"
-					label="username"
-					id="username"
-					defaultValue="@nerdfish"
-				/>
+				<Field>
+					<Label htmlFor="username">Username</Label>
+					<Input name="username" id="username" defaultValue="@nerdfish" />
+				</Field>
 			</div>
 			<Button type="submit">Save changes</Button>
 		</form>

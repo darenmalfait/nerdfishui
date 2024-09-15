@@ -6,7 +6,6 @@ export function MultiSelectDemo() {
 	return (
 		<MultiSelect
 			name="framework"
-			label="Framework"
 			placeholder="Select a framework"
 			onCreateItemsClicked={(value: string) => {
 				console.info(`Create item "${value}"`)

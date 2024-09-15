@@ -12,17 +12,15 @@ export function InputAddonDemo() {
 			<div className="flex flex-col gap-4 md:flex-row">
 				<Input
 					name="slug"
-					label="URL"
 					type="text"
 					addOnLeading="ui.nerdfish.be/"
 					value={value}
-					error="This is an error"
+					variant="error"
 					onChange={(e) => setValue(slugify(e.target.value, true))}
 					autoComplete="off"
 				/>
 				<Input
 					name="slug"
-					label="URL"
 					type="text"
 					value={value}
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -32,7 +30,6 @@ export function InputAddonDemo() {
 			<div className="flex flex-col gap-4 md:flex-row">
 				<Input
 					name="slug"
-					label="URL"
 					type="text"
 					addOnLeading="ui.nerdfish.be/"
 					inputSize="sm"
@@ -42,7 +39,6 @@ export function InputAddonDemo() {
 				/>
 				<Input
 					name="slug"
-					label="URL"
 					type="text"
 					value={value}
 					inputSize="sm"
@@ -53,7 +49,6 @@ export function InputAddonDemo() {
 			<div className="flex flex-col gap-4 md:flex-row">
 				<Input
 					name="slug"
-					label="URL"
 					type="text"
 					addOnLeading="ui.nerdfish.be/"
 					inputSize="lg"
@@ -63,7 +58,6 @@ export function InputAddonDemo() {
 				/>
 				<Input
 					name="slug"
-					label="URL"
 					type="text"
 					value={value}
 					inputSize="lg"
@@ -73,7 +67,6 @@ export function InputAddonDemo() {
 			</div>
 			<Input
 				name="slug"
-				label="URL"
 				type="text"
 				addOnTrailing="/admin"
 				value={value}

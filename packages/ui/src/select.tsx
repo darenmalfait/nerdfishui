@@ -3,35 +3,24 @@
 import { cx, useControllableState } from '@nerdfish/utils'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import * as React from 'react'
-
 import { Command } from './command'
-import { Field } from './field'
-import {
-	getInputClassName,
-	type InputProps,
-	type InputRootProps,
-} from './input'
+import { inputVariants, type InputProps } from './input'
 import { Popover } from './popover'
 import { ScrollArea } from './scroll-area'
 
-export interface SelectRootProps
-	extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
-		Pick<InputRootProps, 'hasError' | 'icon' | 'inputSize'> {
-	id?: string
+export interface SelectProps extends Omit<InputProps, 'onChange'> {
 	options?: {
 		value: string
 		label: string
 		icon?: React.ElementType
 	}[]
-	hasError?: boolean
-	placeholder?: string
 	emptyString?: string
 	searchDisabled?: boolean
 	onChange?: (value: string) => void
 }
 
-export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
-	function SelectRoot(
+export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
+	function Select(
 		{
 			value: valueProp,
 			className,
@@ -39,9 +28,9 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 			emptyString = 'No items found.',
 			options = [],
 			defaultValue = '',
-			hasError,
-			icon: Icon = ChevronsUpDown,
+			variant,
 			inputSize,
+			icon: Icon = ChevronsUpDown,
 			searchDisabled,
 			onChange,
 			...props
@@ -69,7 +58,7 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 						aria-controls="listbox"
 						aria-expanded={open}
 						className={cx(
-							getInputClassName(className, hasError, inputSize),
+							inputVariants({ inputSize, variant }),
 							'flex items-center justify-between',
 							className,
 						)}
@@ -123,46 +112,5 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 		)
 	},
 )
-SelectRoot.displayName = 'SelectRoot'
 
-export const Select = React.forwardRef<
-	HTMLInputElement,
-	SelectRootProps & InputProps
->(function Select(
-	{ defaultValue, error, name, label, className, description, id, ...props },
-	ref,
-) {
-	const inputId = id ?? name
-	const errorId = `${inputId}-error`
-	const descriptionId = `${inputId}-description`
-
-	return (
-		<Field
-			{...{
-				description,
-				descriptionId,
-				error,
-				errorId,
-				htmlFor: inputId,
-				label,
-			}}
-		>
-			<SelectRoot
-				ref={ref}
-				{...props}
-				name={name}
-				id={inputId}
-				autoComplete={name}
-				required
-				defaultValue={defaultValue}
-				aria-describedby={
-					error ? errorId : description ? descriptionId : undefined
-				}
-				hasError={!!error}
-			/>
-		</Field>
-	)
-})
 Select.displayName = 'Select'
-
-export type SelectProps = React.ComponentPropsWithoutRef<typeof Select>

@@ -27,7 +27,6 @@ import { CardDemo } from './card/demo'
 import { CheckboxColors } from './checkbox/colors'
 import { CheckboxDemo } from './checkbox/demo'
 import { CheckboxDisabled } from './checkbox/disabled'
-import { CheckboxError } from './checkbox/error'
 import { CheckboxIcon } from './checkbox/icon'
 import { CheckboxWithText } from './checkbox/with-text'
 import { CollapsibleDemo } from './collapsible/demo'
@@ -50,10 +49,9 @@ import { IndicatorPositionsDemo } from './indicator/positions'
 import { InputAddonDemo } from './input/addon'
 import { InputDemo } from './input/demo'
 import { InputDisabled } from './input/disabled'
-import { InputError } from './input/error'
 import { InputIcon } from './input/icon'
 import { InputSize } from './input/size'
-import { InputTextArea } from './input/textarea'
+import { InputVariantsDemo } from './input/variant'
 import { InputOTPDemo } from './input-otp/demo'
 import { InputOTPFieldDemo } from './input-otp/field'
 import { InputOTPPatternsDemo } from './input-otp/patterns'
@@ -77,7 +75,6 @@ import { TableDemo } from './table/demo'
 import { TabsDemo } from './tabs/demo'
 import { TimeFieldDemo } from './time-field/demo'
 import { TimeFieldHourCycleDemo } from './time-field/hour-cycle'
-import { TimepickerDemo } from './timepicker/demo'
 import { ToastAction } from './toast/action'
 import { ToastDemo } from './toast/demo'
 import { ToastVariant } from './toast/variant'
@@ -123,7 +120,6 @@ export const examples = {
 	CheckboxColors,
 	CheckboxDemo,
 	CheckboxDisabled,
-	CheckboxError,
 	CheckboxIcon,
 	CheckboxWithText,
 	CollapsibleDemo,
@@ -146,13 +142,12 @@ export const examples = {
 	InputAddonDemo,
 	InputDemo,
 	InputDisabled,
-	InputError,
+	InputVariantsDemo,
 	InputIcon,
 	InputOTPDemo,
 	InputOTPFieldDemo,
 	InputOTPPatternsDemo,
 	InputSize,
-	InputTextArea,
 	LinkDemo,
 	MockupDemo,
 	MultiEmailDemo,
@@ -173,7 +168,6 @@ export const examples = {
 	TabsDemo,
 	TimeFieldDemo,
 	TimeFieldHourCycleDemo,
-	TimepickerDemo,
 	ToastAction,
 	ToastDemo,
 	ToastVariant,

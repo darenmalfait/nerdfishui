@@ -39,7 +39,6 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Radio Group', href: '/docs/radio-group' },
 				{ title: 'Slider', href: '/docs/slider' },
 				{ title: 'Switch', href: '/docs/switch' },
-				{ title: 'Timepicker', href: '/docs/timepicker', isDeprecated: true },
 				{ title: 'TimeField', href: '/docs/time-field' },
 				{ title: 'Toggle', href: '/docs/toggle' },
 			],

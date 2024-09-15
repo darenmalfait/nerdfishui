@@ -1,6 +1,6 @@
 'use client'
 
-import { cva, cx, type ExtractProps, type VariantProps } from '@nerdfish/utils'
+import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import { Check } from 'lucide-react'
 import * as React from 'react'
 
@@ -10,26 +10,26 @@ export const checkboxVariants = cva(
 	'relative flex items-center justify-center rounded-full',
 	{
 		variants: {
-			variant: {
+			inputSize: {
 				sm: 'size-6',
 				md: 'size-8',
 				lg: 'size-10',
 			},
 		},
 		defaultVariants: {
-			variant: 'sm',
+			inputSize: 'sm',
 		},
 	},
 )
 
-export function CheckboxRoot({
+export function Checkbox({
 	className,
-	variant = 'sm',
+	inputSize = 'sm',
 	bgClassName = 'bg-primary',
 	textClassName = 'text-primary',
 	icon: Icon = Check,
 	...props
-}: React.ComponentPropsWithRef<'input'> &
+}: Omit<InputProps, 'inputSize' | 'variant'> &
 	VariantProps<typeof checkboxVariants> & {
 		bgClassName?: string
 		textClassName?: string
@@ -39,7 +39,7 @@ export function CheckboxRoot({
 		<label
 			className={cx(
 				textClassName,
-				checkboxVariants({ variant }),
+				checkboxVariants({ inputSize }),
 				'group-focus-within:outline-active transition-transform',
 				className,
 			)}
@@ -70,45 +70,4 @@ export function CheckboxRoot({
 	)
 }
 
-function CheckboxError({ error, id }: { error?: string | null; id: string }) {
-	if (!error) return null
-
-	return (
-		<p className="text-danger mt-2 text-left text-sm" id={id}>
-			{error}
-		</p>
-	)
-}
-
-export const Checkbox = React.forwardRef<
-	HTMLInputElement,
-	InputProps & ExtractProps<typeof CheckboxRoot>
->(function Checkbox(
-	{ error, name, label, id, className, defaultValue, ...props },
-	ref,
-) {
-	const inputId = id ?? name
-	const errorId = `${inputId}-error`
-
-	return (
-		<div className={cx(className, 'group w-full')}>
-			<div className="relative flex items-center">
-				<div className="flex h-5 items-center">
-					<CheckboxRoot ref={ref} id={inputId} name={name} {...props} />
-				</div>
-				<div className="ml-3 text-base">
-					<label htmlFor={inputId} className="text-primary">
-						{label}
-					</label>
-				</div>
-			</div>
-
-			<CheckboxError error={error} id={errorId} />
-		</div>
-	)
-})
-
-export type CheckboxRootProps = React.ComponentPropsWithoutRef<
-	typeof CheckboxRoot
->
 export type CheckboxProps = React.ComponentPropsWithoutRef<typeof Checkbox>

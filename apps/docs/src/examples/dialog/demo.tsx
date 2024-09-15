@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Dialog, Input, FieldLabel } from '@nerdfish/ui'
+import { Button, Dialog, Input, Label } from '@nerdfish/ui'
 
 export function DialogDemo() {
 	return (
@@ -18,17 +18,17 @@ export function DialogDemo() {
 				</Dialog.Header>
 				<div className="grid gap-4 py-4">
 					<div className="grid grid-cols-4 items-center gap-4">
-						<FieldLabel htmlFor="name" className="text-right">
+						<Label htmlFor="name" className="text-right">
 							Cake Type
-						</FieldLabel>
+						</Label>
 						<div className="col-span-3">
 							<Input name="name" value="Chocolate Cake" />
 						</div>
 					</div>
 					<div className="grid grid-cols-4 items-center gap-4">
-						<FieldLabel htmlFor="username" className="text-right">
+						<Label htmlFor="username" className="text-right">
 							Cake Topper
-						</FieldLabel>
+						</Label>
 						<div className="col-span-3">
 							<Input name="name" value="Happy Birthday" />
 						</div>

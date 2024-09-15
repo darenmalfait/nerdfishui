@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Input, FieldLabel, Popover } from '@nerdfish/ui'
+import { Button, Input, Label, Popover } from '@nerdfish/ui'
 import { Cake } from 'lucide-react'
 
 export function PopoverDemo() {
@@ -22,7 +22,7 @@ export function PopoverDemo() {
 					</div>
 					<div className="grid gap-4">
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="width">Diameter</FieldLabel>
+							<Label htmlFor="width">Diameter</Label>
 							<Input
 								name="width"
 								id="width"
@@ -31,7 +31,7 @@ export function PopoverDemo() {
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="maxWidth">Max. Layers</FieldLabel>
+							<Label htmlFor="maxWidth">Max. Layers</Label>
 							<Input
 								name="maxWidth"
 								id="maxWidth"
@@ -40,7 +40,7 @@ export function PopoverDemo() {
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="height">Height</FieldLabel>
+							<Label htmlFor="height">Height</Label>
 							<Input
 								name="height"
 								id="height"
@@ -49,7 +49,7 @@ export function PopoverDemo() {
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="maxHeight">Max. Toppings</FieldLabel>
+							<Label htmlFor="maxHeight">Max. Toppings</Label>
 							<Input
 								name="maxHeight"
 								id="maxHeight"
