@@ -41,7 +41,7 @@ export const DropdownMenuSubContent = React.forwardRef<
 	<DropdownMenuPrimitive.SubContent
 		ref={ref}
 		className={cx(
-			'animate-in slide-in-from-left-1 shadow-outline bg-muted text-inverted/700 shadow-soft-xl z-50 min-w-[8rem] overflow-hidden rounded-md p-1',
+			'animate-in slide-in-from-left-1 shadow-outline bg-muted text-inverted/700 shadow-soft-xl z-50 min-w-[8rem] overflow-hidden rounded-lg p-1',
 			className,
 		)}
 		{...props}
@@ -59,7 +59,7 @@ export const DropdownMenuContent = React.forwardRef<
 			ref={ref}
 			sideOffset={sideOffset}
 			className={cx(
-				'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 bg-primary text-primary shadow-soft-xl shadow-outline z-50 min-w-[8rem] overflow-hidden rounded-md p-1',
+				'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 bg-primary text-primary shadow-soft-xl shadow-outline z-50 min-w-[8rem] overflow-hidden rounded-lg p-1',
 				className,
 			)}
 			{...props}

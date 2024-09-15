@@ -73,6 +73,7 @@ import { StepsDemo } from './steps/demo'
 import { SwitchDemo } from './switch/demo'
 import { TableDemo } from './table/demo'
 import { TabsDemo } from './tabs/demo'
+import { TextareaDemo } from './textarea/demo'
 import { TimeFieldDemo } from './time-field/demo'
 import { TimeFieldHourCycleDemo } from './time-field/hour-cycle'
 import { ToastAction } from './toast/action'
@@ -166,6 +167,7 @@ export const examples = {
 	SwitchDemo,
 	TableDemo,
 	TabsDemo,
+	TextareaDemo,
 	TimeFieldDemo,
 	TimeFieldHourCycleDemo,
 	ToastAction,

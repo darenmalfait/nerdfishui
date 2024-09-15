@@ -11,7 +11,7 @@ export function Skeleton({
 }: React.HTMLAttributes<HTMLDivElement>) {
 	return (
 		<div
-			className={cx('bg-inverted/10 animate-pulse rounded-md', className)}
+			className={cx('bg-inverted/10 animate-pulse rounded-lg', className)}
 			{...props}
 		/>
 	)

@@ -12,6 +12,7 @@ import {
 	FormMessage,
 	Input,
 	Select,
+	Textarea,
 	toast,
 } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
@@ -69,7 +70,7 @@ export function ProfileForm() {
 		toast.success(
 			<div>
 				<span className="font=bold">You submitted the following values:</span>
-				<pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+				<pre className="mt-2 w-[340px] rounded-lg bg-slate-950 p-4">
 					<code className="text-white">{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			</div>,
@@ -139,7 +140,7 @@ export function ProfileForm() {
 								Tell us a little bit about yourself.
 							</FormDescription>
 							<FormControl>
-								<Input type="text" {...field} />
+								<Textarea {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

@@ -33,6 +33,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Select', href: '/docs/select' },
 				{ title: 'DatePicker', href: '/docs/date-picker' },
 				{ title: 'Input', href: '/docs/input' },
+				{ title: 'Textarea', href: '/docs/textarea' },
 				{ title: 'InputOTP', href: '/docs/input-otp' },
 				{ title: 'Multi Email', href: '/docs/multi-email' },
 				{ title: 'Multi Select', href: '/docs/multi-select' },

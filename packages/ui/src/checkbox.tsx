@@ -61,7 +61,7 @@ export function Checkbox({
 					'peer-checked:border peer-checked:border-current',
 				)}
 			/>
-			<span className="peer-checked:animate-pop pointer-events-none absolute inset-0 hidden rounded-md peer-checked:block">
+			<span className="peer-checked:animate-pop pointer-events-none absolute inset-0 hidden rounded-lg peer-checked:block">
 				<Icon
 					className={cx(textClassName, 'pointer-events-none h-full w-full p-1')}
 				/>

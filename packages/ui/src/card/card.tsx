@@ -10,7 +10,7 @@ export const CardRoot = React.forwardRef<
 	<div
 		ref={ref}
 		className={cx(
-			'bg-primary shadow-outline relative mb-6 flex min-w-0 flex-col break-words rounded-md border-0',
+			'bg-primary shadow-outline relative mb-6 flex min-w-0 flex-col break-words rounded-lg border-0',
 			className,
 		)}
 		{...props}
