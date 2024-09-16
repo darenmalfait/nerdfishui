@@ -1,0 +1,32 @@
+---
+title: TimePicker
+description: Pick a time
+component: true
+type: Doc
+package:
+  name: 'ui'
+  path: 'date-time/time-picker.tsx'
+---
+
+<ComponentExample src="/src/examples/time-picker/demo.tsx">
+	<TimePickerDemo />
+</ComponentExample>
+
+## Usage
+
+TimePicker extends the [Input](/input) component. All props from Input are
+available.
+
+```tsx
+import { TimePicker } from '@nerdfish/ui'
+```
+
+```tsx
+<TimePicker name="time-picker-field-basic" />
+```
+
+## Hour Cycle
+
+<ComponentExample src="/src/examples/time-picker/hour-cycle.tsx">
+	<TimePickerHourCycleDemo />
+</ComponentExample>
