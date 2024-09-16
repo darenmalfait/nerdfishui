@@ -3,7 +3,7 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const CardRoot = React.forwardRef<
+export const Card = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -16,7 +16,7 @@ export const CardRoot = React.forwardRef<
 		{...props}
 	/>
 ))
-CardRoot.displayName = 'CardRoot'
+Card.displayName = 'Card'
 
 export const CardHeader = React.forwardRef<
 	HTMLDivElement,
@@ -78,7 +78,7 @@ export const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = 'CardFooter'
 
-export type CardRootProps = React.ComponentProps<typeof CardRoot>
+export type CardProps = React.ComponentProps<typeof Card>
 export type CardHeaderProps = React.ComponentProps<typeof CardHeader>
 export type CardTitleProps = React.ComponentProps<typeof CardTitle>
 export type CardDescriptionProps = React.ComponentProps<typeof CardDescription>

@@ -5,7 +5,7 @@ import {
 	Button,
 	CardContent,
 	CardHeader,
-	CardRoot,
+	Card,
 	CardTitle,
 	Form,
 	FormControl,
@@ -36,7 +36,7 @@ export function InputDemo() {
 	}
 
 	return (
-		<CardRoot>
+		<Card>
 			<CardHeader>
 				<CardTitle>Submit your email</CardTitle>
 			</CardHeader>
@@ -70,6 +70,6 @@ export function InputDemo() {
 					</form>
 				</Form>
 			</CardContent>
-		</CardRoot>
+		</Card>
 	)
 }
