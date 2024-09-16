@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
-export const GridRoot = React.forwardRef<
+export const Grid = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<'div'> & {
 		asChild?: boolean
@@ -24,7 +24,7 @@ export const GridRoot = React.forwardRef<
 	)
 })
 
-GridRoot.displayName = 'GridRoot'
+Grid.displayName = 'Grid'
 
 export const GridCard = React.forwardRef<
 	HTMLDivElement,
@@ -53,5 +53,5 @@ export const GridCard = React.forwardRef<
 })
 GridCard.displayName = 'GridCard'
 
-export type GridRootProps = React.ComponentPropsWithoutRef<typeof GridRoot>
+export type GridProps = React.ComponentPropsWithoutRef<typeof Grid>
 export type GridCardProps = React.ComponentPropsWithoutRef<typeof GridCard>

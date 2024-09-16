@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Grid } from '@nerdfish/ui'
+import { Button, Grid, GridCard } from '@nerdfish/ui'
 import { cx, type ExtractProps } from '@nerdfish/utils'
 import {
 	ArrowRightIcon,
@@ -127,13 +127,13 @@ const features: (ExtractProps<typeof CardContent> & {
 export function GridDemo() {
 	return (
 		<div className="flex items-center">
-			<Grid.Root className="lg:grid-rows-3">
+			<Grid className="lg:grid-rows-3">
 				{features.map(({ className, ...feature }) => (
-					<Grid.Card key={feature.name} className={className}>
+					<GridCard key={feature.name} className={className}>
 						<CardContent {...feature} />
-					</Grid.Card>
+					</GridCard>
 				))}
-			</Grid.Root>
+			</Grid>
 		</div>
 	)
 }
