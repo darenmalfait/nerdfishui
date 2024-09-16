@@ -1,10 +1,15 @@
 'use client'
 
-import { getButtonClassName, H1, Paragraph } from '@nerdfish/ui'
-import { cx } from '@nerdfish/utils'
+import { getButtonClassName } from '@nerdfish/ui'
 import Link from 'next/link'
 import * as React from 'react'
 import { Icons } from '~/app/components/icons'
+import {
+	PageActions,
+	PageHeader,
+	PageHeaderDescription,
+	PageHeaderHeading,
+} from '~/app/components/page-header'
 
 interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 	heading: string
@@ -21,12 +26,14 @@ export function DocsPageHeader({
 	...props
 }: DocsPageHeaderProps) {
 	return (
-		<>
-			<div className={cx('mb-12 space-y-4', className)} {...props}>
-				<H1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-					{heading}
-				</H1>
-				{text ? <Paragraph className="max-w-[95%]">{text}</Paragraph> : null}
+		<PageHeader className={className} {...props}>
+			<PageHeaderHeading>{heading}</PageHeaderHeading>
+			{text ? (
+				<PageHeaderDescription className="max-w-[95%]">
+					{text}
+				</PageHeaderDescription>
+			) : null}
+			<PageActions>
 				{github ? (
 					<Link
 						target="_blank"
@@ -40,9 +47,8 @@ export function DocsPageHeader({
 						View on GitHub
 					</Link>
 				) : null}
-			</div>
-
+			</PageActions>
 			{children}
-		</>
+		</PageHeader>
 	)
 }
