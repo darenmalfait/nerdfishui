@@ -5,13 +5,13 @@ import { Slot } from '@radix-ui/react-slot'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
 import * as React from 'react'
 
-export const BreadcrumbRoot = React.forwardRef<
+export const Breadcrumb = React.forwardRef<
 	HTMLElement,
 	React.ComponentPropsWithoutRef<'nav'> & {
 		separator?: React.ReactNode
 	}
 >(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />)
-BreadcrumbRoot.displayName = 'BreadcrumbRoot'
+Breadcrumb.displayName = 'Breadcrumb'
 
 export const BreadcrumbList = React.forwardRef<
 	HTMLOListElement,
@@ -108,9 +108,7 @@ export const BreadcrumbEllipsis = ({
 )
 BreadcrumbEllipsis.displayName = 'BreadcrumbElipssis'
 
-export type BreadcrumbRootProps = React.ComponentPropsWithoutRef<
-	typeof BreadcrumbRoot
->
+export type BreadcrumbProps = React.ComponentPropsWithoutRef<typeof Breadcrumb>
 export type BreadcrumbListProps = React.ComponentPropsWithoutRef<
 	typeof BreadcrumbList
 >
