@@ -1,10 +1,10 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const MockupRoot = React.forwardRef<
+export const Mockup = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
->(function MockupRoot({ children, className, ...props }, ref) {
+>(function Mockup({ children, className, ...props }, ref) {
 	return (
 		<div
 			className={cx(
@@ -22,7 +22,7 @@ export const MockupRoot = React.forwardRef<
 		</div>
 	)
 })
-MockupRoot.displayName = 'MockupRoot'
+Mockup.displayName = 'Mockup'
 
 export const MockupWindow = React.forwardRef<
 	HTMLDivElement,
@@ -44,7 +44,7 @@ export const MockupWindow = React.forwardRef<
 })
 MockupWindow.displayName = 'MockupWindow'
 
-export type MockupRootProps = React.ComponentPropsWithoutRef<typeof MockupRoot>
+export type MockupProps = React.ComponentPropsWithoutRef<typeof Mockup>
 export type MockupWindowProps = React.ComponentPropsWithoutRef<
 	typeof MockupWindow
 >
