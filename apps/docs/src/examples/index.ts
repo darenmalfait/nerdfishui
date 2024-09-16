@@ -32,6 +32,7 @@ import { CheckboxWithText } from './checkbox/with-text'
 import { CollapsibleDemo } from './collapsible/demo'
 import { CommandDemo } from './command/demo'
 import { CommandDialogDemo } from './command/dialog'
+import { DateFieldDemo } from './date-field/demo'
 import { DateRangePickerExample } from './date-picker/date-range-picker'
 import { DatePickerDemo } from './date-picker/demo'
 import { DatePickerWithInputExample } from './date-picker/with-input'
@@ -74,8 +75,8 @@ import { SwitchDemo } from './switch/demo'
 import { TableDemo } from './table/demo'
 import { TabsDemo } from './tabs/demo'
 import { TextareaDemo } from './textarea/demo'
-import { TimeFieldDemo } from './time-field/demo'
-import { TimeFieldHourCycleDemo } from './time-field/hour-cycle'
+import { TimePickerDemo } from './time-picker/demo'
+import { TimePickerHourCycleDemo } from './time-picker/hour-cycle'
 import { ToastAction } from './toast/action'
 import { ToastDemo } from './toast/demo'
 import { ToastVariant } from './toast/variant'
@@ -126,6 +127,7 @@ export const examples = {
 	CollapsibleDemo,
 	CommandDemo,
 	CommandDialogDemo,
+	DateFieldDemo,
 	DatePickerDemo,
 	DatePickerWithInputExample,
 	DateRangePickerExample,
@@ -168,8 +170,8 @@ export const examples = {
 	TableDemo,
 	TabsDemo,
 	TextareaDemo,
-	TimeFieldDemo,
-	TimeFieldHourCycleDemo,
+	TimePickerDemo,
+	TimePickerHourCycleDemo,
 	ToastAction,
 	ToastDemo,
 	ToastVariant,

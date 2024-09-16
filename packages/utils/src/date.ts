@@ -1,6 +1,6 @@
-export { Time } from '@internationalized/date'
+import { CalendarDateTime } from '@internationalized/date'
 
-function roundToNearest15(date = new Date()) {
+export function roundToNearest15(date = new Date()) {
 	const minutes = 15
 	const ms = 1000 * 60 * minutes
 
@@ -8,4 +8,17 @@ function roundToNearest15(date = new Date()) {
 	return new Date(Math.round(date.getTime() / ms) * ms)
 }
 
-export { roundToNearest15 }
+export function dateToCalendarDateTime(date: Date): CalendarDateTime {
+	return new CalendarDateTime(
+		date.getFullYear(),
+		date.getMonth() + 1, // JavaScript months are 0-based
+		date.getDate(),
+		date.getHours(),
+		date.getMinutes(),
+		date.getSeconds(),
+		date.getMilliseconds(),
+	)
+}
+
+export { CalendarDateTime } from '@internationalized/date'
+export { Time } from '@internationalized/date'

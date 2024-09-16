@@ -41,7 +41,7 @@ export const inputAddonVariants: typeof inputVariants = cva(
 				md: 'm-1 px-3 py-1 text-base',
 				lg: 'mx-2 my-1 p-3 text-lg',
 			},
-			state: {
+			variant: {
 				error: 'text-danger',
 				success: 'text-success',
 				default: 'text-primary',
@@ -49,19 +49,21 @@ export const inputAddonVariants: typeof inputVariants = cva(
 		},
 		defaultVariants: {
 			inputSize: 'md',
-			state: 'default',
+			variant: 'default',
 		},
 	},
 )
 
 export type InputSize = VariantProps<typeof inputVariants>['inputSize']
+export type InputVariant = VariantProps<typeof inputVariants>['variant']
+export type InputVariants = VariantProps<typeof inputVariants>
 
 export type InputProps = {
 	icon?: React.ElementType
 	addOnLeading?: React.ReactNode
 	addOnTrailing?: React.ReactNode
 	action?: () => void
-} & VariantProps<typeof inputVariants> &
+} & InputVariants &
 	React.ComponentPropsWithRef<'input'>
 
 function Addon({
@@ -70,7 +72,7 @@ function Addon({
 	variant,
 	addOnLeading,
 	addOnTrailing,
-}: VariantProps<typeof inputAddonVariants> &
+}: InputVariants &
 	Pick<InputProps, 'className' | 'addOnLeading' | 'addOnTrailing'>) {
 	if (!addOnLeading && !addOnTrailing) return null
 
@@ -99,7 +101,7 @@ function InputIcon({
 	variant,
 }: {
 	icon?: React.ElementType
-	variant: VariantProps<typeof inputVariants>['variant']
+	variant: InputVariant
 }) {
 	if (variant === 'error') Icon = AlertCircle
 	if (!Icon) return null

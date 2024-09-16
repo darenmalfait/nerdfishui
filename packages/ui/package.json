@@ -59,6 +59,7 @@
     "react-resizable-panels": "^2.1.2",
     "react-stately": "^3.32.2",
     "sonner": "^1.5.0",
+    "timescape": "^0.5.1",
     "vaul": "^0.9.1"
   },
   "devDependencies": {
