@@ -3,7 +3,7 @@
 import { cx, type VariantProps } from '@nerdfish/utils'
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
 import * as React from 'react'
-import { toggleVariants } from '../toggle'
+import { toggleVariants } from './toggle'
 
 const ToggleGroupContext = React.createContext<
 	VariantProps<typeof toggleVariants>
@@ -12,7 +12,7 @@ const ToggleGroupContext = React.createContext<
 	variant: 'default',
 })
 
-export const ToggleGroupRoot = React.forwardRef<
+export const ToggleGroup = React.forwardRef<
 	React.ElementRef<typeof ToggleGroupPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> &
 		VariantProps<typeof toggleVariants>
@@ -28,7 +28,7 @@ export const ToggleGroupRoot = React.forwardRef<
 	</ToggleGroupPrimitive.Root>
 ))
 
-ToggleGroupRoot.displayName = ToggleGroupPrimitive.Root.displayName
+ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
 
 export const ToggleGroupItem = React.forwardRef<
 	React.ElementRef<typeof ToggleGroupPrimitive.Item>,
@@ -56,5 +56,5 @@ export const ToggleGroupItem = React.forwardRef<
 
 ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName
 
-export type ToggleGroupRootProps = React.ComponentProps<typeof ToggleGroupRoot>
+export type ToggleGroupProps = React.ComponentProps<typeof ToggleGroup>
 export type ToggleGroupItemProps = React.ComponentProps<typeof ToggleGroupItem>
