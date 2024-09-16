@@ -1,6 +1,6 @@
 import {
 	NavigationListItem,
-	NavigationListRoot,
+	NavigationList,
 	Separator,
 	SidebarRoot,
 	SidebarSection,
@@ -38,7 +38,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
 				<aside className="-m-4 lg:w-1/5">
 					<SidebarRoot className="p-0">
 						<SidebarSection>
-							<NavigationListRoot>
+							<NavigationList>
 								{sidebarNavItems.map((item) => (
 									<NavigationListItem
 										key={item.href}
@@ -46,7 +46,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
 										href={item.href}
 									/>
 								))}
-							</NavigationListRoot>
+							</NavigationList>
 						</SidebarSection>
 					</SidebarRoot>
 				</aside>

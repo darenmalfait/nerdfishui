@@ -16,23 +16,27 @@ package:
 ## Usage
 
 ```tsx
-import { NavigationList } from '@nerdfish/ui'
+import {
+	NavigationList,
+	NavigationListItem,
+	NavigationListSection,
+} from '@nerdfish/ui'
 ```
 
 ```tsx
-<NavigationList.Root>
-	<NavigationList.Item href="https://www.nerdfish.be" title="Chocolate Cake" />
-	<NavigationList.Item
+<NavigationList>
+	<NavigationListItem href="https://www.nerdfish.be" title="Chocolate Cake" />
+	<NavigationListItem
 		as="button"
 		onClick={() => console.info('click')}
 		title="Strawberry Shortcake"
 	/>
-	<NavigationList.Item title="Carrot Cake" />
+	<NavigationListItem title="Carrot Cake" />
 
-	<NavigationList.Section>
-		<NavigationList.Item title="Red Velvet Cake" />
-		<NavigationList.Item title="Vanilla Cake" />
-		<NavigationList.Item title="Lemon Cake" />
-	</NavigationList.Section>
-</NavigationList.Root>
+	<NavigationListSection>
+		<NavigationListItem title="Red Velvet Cake" />
+		<NavigationListItem title="Vanilla Cake" />
+		<NavigationListItem title="Lemon Cake" />
+	</NavigationListSection>
+</NavigationList>
 ```

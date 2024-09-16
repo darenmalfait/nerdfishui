@@ -6,6 +6,8 @@ import {
 	H2,
 	H3,
 	NavigationList,
+	NavigationListItem,
+	NavigationListTitle,
 	Paragraph,
 	ScrollArea,
 	ScrollBar,
@@ -121,22 +123,22 @@ function AppDemo() {
 							</div>
 							<div className="space-y-4">
 								<div className="px-3">
-									<NavigationList.Root className="space-y-1">
-										<NavigationList.Title title="Discover" />
-										<NavigationList.Item
+									<NavigationList className="space-y-1">
+										<NavigationListTitle title="Discover" />
+										<NavigationListItem
 											icon={Utensils}
 											title="Start Cooking"
 											active
 										/>
-										<NavigationList.Item icon={GridIcon} title="Browse" />
-									</NavigationList.Root>
+										<NavigationListItem icon={GridIcon} title="Browse" />
+									</NavigationList>
 								</div>
 								<div className="px-3 py-2">
-									<NavigationList.Root>
-										<NavigationList.Title title="Library" />
-										<NavigationList.Item icon={History} title="History" />
-										<NavigationList.Item icon={User} title="Your uploads" />
-									</NavigationList.Root>
+									<NavigationList>
+										<NavigationListTitle title="Library" />
+										<NavigationListItem icon={History} title="History" />
+										<NavigationListItem icon={User} title="Your uploads" />
+									</NavigationList>
 								</div>
 							</div>
 						</aside>

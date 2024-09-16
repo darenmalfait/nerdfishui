@@ -1,14 +1,20 @@
 'use client'
 
-import { Badge, NavigationList } from '@nerdfish/ui'
+import {
+	Badge,
+	NavigationList,
+	NavigationListTitle,
+	NavigationListItem,
+	NavigationListSection,
+} from '@nerdfish/ui'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import * as React from 'react'
 import { docs } from '~/config/docs'
 import { stripPreSlash } from '~/lib/utils/string'
 
 export const GettingStartedNavigation = React.forwardRef<
-	React.ElementRef<typeof NavigationList.Root>,
-	React.ComponentPropsWithoutRef<typeof NavigationList.Root>
+	React.ElementRef<typeof NavigationList>,
+	React.ComponentPropsWithoutRef<typeof NavigationList>
 >(function GettingStartedNavigation({ ...props }, ref) {
 	const segment = useSelectedLayoutSegment() ?? '/'
 
@@ -17,10 +23,10 @@ export const GettingStartedNavigation = React.forwardRef<
 	)
 
 	return (
-		<NavigationList.Root {...props} ref={ref}>
-			<NavigationList.Title title="Getting Started" />
+		<NavigationList {...props} ref={ref}>
+			<NavigationListTitle title="Getting Started" />
 			{globalItems?.links.map(({ isNew, title, ...item }) => (
-				<NavigationList.Item
+				<NavigationListItem
 					key={title}
 					{...item}
 					active={segment === stripPreSlash(item.href)}
@@ -32,15 +38,15 @@ export const GettingStartedNavigation = React.forwardRef<
 					}
 				/>
 			))}
-		</NavigationList.Root>
+		</NavigationList>
 	)
 })
 
 GettingStartedNavigation.displayName = 'GettingStartedNavigation'
 
 export const ComponentNavigation = React.forwardRef<
-	React.ElementRef<typeof NavigationList.Root>,
-	React.ComponentPropsWithoutRef<typeof NavigationList.Root>
+	React.ElementRef<typeof NavigationList>,
+	React.ComponentPropsWithoutRef<typeof NavigationList>
 >(function ComponentNavigation({ ...props }, ref) {
 	const segment = useSelectedLayoutSegment() ?? '/'
 
@@ -49,17 +55,17 @@ export const ComponentNavigation = React.forwardRef<
 	)
 
 	return (
-		<NavigationList.Root {...props} ref={ref}>
-			<NavigationList.Title title="Components" />
+		<NavigationList {...props} ref={ref}>
+			<NavigationListTitle title="Components" />
 			{sections.map((item) => (
-				<NavigationList.Section key={item.title}>
-					<NavigationList.Title
+				<NavigationListSection key={item.title}>
+					<NavigationListTitle
 						key={item.title}
 						className="text-base font-bold"
 						{...item}
 					/>
 					{item.links.map(({ isNew, isDeprecated, title, ...link }) => (
-						<NavigationList.Item
+						<NavigationListItem
 							{...link}
 							key={title}
 							title={
@@ -74,9 +80,9 @@ export const ComponentNavigation = React.forwardRef<
 							active={segment === stripPreSlash(link.href)}
 						/>
 					))}
-				</NavigationList.Section>
+				</NavigationListSection>
 			))}
-		</NavigationList.Root>
+		</NavigationList>
 	)
 })
 

@@ -3,9 +3,10 @@
 import {
 	Button,
 	Drawer,
-	NavigationList,
-	DrawerOverlay,
 	DrawerContent,
+	DrawerOverlay,
+	NavigationList,
+	NavigationListItem,
 } from '@nerdfish/ui'
 import { usePathname } from 'next/navigation'
 import { useMobileNav } from '../mobile-nav-provider'
@@ -42,17 +43,17 @@ export function MobileNavigation() {
 			>
 				<DrawerOverlay />
 				<DrawerContent className="!w-full max-w-[300px] px-4">
-					<NavigationList.Root>
+					<NavigationList>
 						{siteConfig.mainNav.length
 							? siteConfig.mainNav.map((item) => (
-									<NavigationList.Item
+									<NavigationListItem
 										key={item.title}
 										href={item.href}
 										title={item.title}
 									/>
 								))
 							: null}
-					</NavigationList.Root>
+					</NavigationList>
 					{stripTrailingSlash(pathname ?? '').includes('/docs') ? (
 						<div className="flex flex-col gap-4">
 							<GettingStartedNavigation />

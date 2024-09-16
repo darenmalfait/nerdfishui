@@ -3,7 +3,7 @@
 import { cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-import { Tooltip } from '../tooltip'
+import { Tooltip } from './tooltip'
 
 export const navigationListItemVariants = cva(
 	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
@@ -189,7 +189,7 @@ export function NavigationListSection({
 	return <div className={cx('grid gap-1 pb-4', className)}>{children}</div>
 }
 
-export const NavigationListRoot = React.forwardRef<
+export const NavigationList = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'nav'>
 >(function NavigationList({ className, children, ...props }, ref) {
@@ -214,8 +214,8 @@ export const NavigationListRoot = React.forwardRef<
 	)
 })
 
-export type NavigationListRootProps = React.ComponentPropsWithRef<
-	typeof NavigationListRoot
+export type NavigationListProps = React.ComponentPropsWithRef<
+	typeof NavigationList
 >
 
 export type NavigationListItemProps = React.ComponentPropsWithoutRef<
