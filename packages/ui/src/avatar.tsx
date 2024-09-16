@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import * as React from 'react'
 
-export const AvatarRoot = React.forwardRef<
+export const Avatar = React.forwardRef<
 	React.ElementRef<typeof AvatarPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 >(({ className, ...props }, ref) => (
@@ -17,7 +17,7 @@ export const AvatarRoot = React.forwardRef<
 		{...props}
 	/>
 ))
-AvatarRoot.displayName = AvatarPrimitive.Root.displayName
+Avatar.displayName = AvatarPrimitive.Root.displayName
 
 export const AvatarImage = React.forwardRef<
 	React.ElementRef<typeof AvatarPrimitive.Image>,
@@ -46,7 +46,7 @@ export const AvatarFallback = React.forwardRef<
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-export type AvatarRootProps = React.ComponentPropsWithoutRef<typeof AvatarRoot>
+export type AvatarProps = React.ComponentPropsWithoutRef<typeof Avatar>
 export type AvatarImageProps = React.ComponentPropsWithoutRef<
 	typeof AvatarImage
 >
