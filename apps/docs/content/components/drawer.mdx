@@ -7,7 +7,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'drawer/drawer.tsx'
+  path: 'drawer.tsx'
 ---
 
 <ComponentExample src="/src/examples/drawer/demo.tsx">
@@ -17,25 +17,34 @@ package:
 ## Usage
 
 ```tsx
-import { Drawer, Button } from '@nerdfish/ui'
+import {
+	Drawer,
+	Button,
+	DrawerTrigger,
+	DrawerContent,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerDescription,
+	DrawerFooter,
+} from '@nerdfish/ui'
 ```
 
 ```tsx
-<Drawer.Root>
-	<Drawer.Trigger>Open</Drawer.Trigger>
-	<Drawer.Content>
-		<Drawer.Header>
-			<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-			<Drawer.Description>This action cannot be undone.</Drawer.Description>
-		</Drawer.Header>
-		<Drawer.Footer>
+<Drawer>
+	<DrawerTrigger>Open</DrawerTrigger>
+	<DrawerContent>
+		<DrawerHeader>
+			<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+			<DrawerDescription>This action cannot be undone.</DrawerDescription>
+		</DrawerHeader>
+		<DrawerFooter>
 			<Button>Submit</Button>
-			<Drawer.Close>
+			<DrawerClose>
 				<Button variant="outline">Cancel</Button>
-			</Drawer.Close>
-		</Drawer.Footer>
-	</Drawer.Content>
-</Drawer.Root>
+			</DrawerClose>
+		</DrawerFooter>
+	</DrawerContent>
+</Drawer>
 ```
 
 ## Direction

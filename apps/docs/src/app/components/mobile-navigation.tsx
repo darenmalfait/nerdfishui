@@ -1,6 +1,12 @@
 'use client'
 
-import { Button, Drawer, NavigationList } from '@nerdfish/ui'
+import {
+	Button,
+	Drawer,
+	NavigationList,
+	DrawerOverlay,
+	DrawerContent,
+} from '@nerdfish/ui'
 import { usePathname } from 'next/navigation'
 import { useMobileNav } from '../mobile-nav-provider'
 import {
@@ -27,15 +33,15 @@ export function MobileNavigation() {
 			>
 				<Icons.Menu className="text-primary size-4" />
 			</Button>
-			<Drawer.Root
+			<Drawer
 				direction="right"
 				open={isOpen}
 				onOpenChange={(open) => {
 					if (!open) close()
 				}}
 			>
-				<Drawer.Overlay />
-				<Drawer.Content className="!w-full max-w-[300px] px-4">
+				<DrawerOverlay />
+				<DrawerContent className="!w-full max-w-[300px] px-4">
 					<NavigationList.Root>
 						{siteConfig.mainNav.length
 							? siteConfig.mainNav.map((item) => (
@@ -53,8 +59,8 @@ export function MobileNavigation() {
 							<ComponentNavigation />
 						</div>
 					) : null}
-				</Drawer.Content>
-			</Drawer.Root>
+				</DrawerContent>
+			</Drawer>
 		</>
 	)
 }

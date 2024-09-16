@@ -6,9 +6,9 @@ import { XIcon } from 'lucide-react'
 import * as React from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
 
-import { Button } from '../button'
+import { Button } from './button'
 
-export const DrawerRoot = ({
+export const Drawer = ({
 	shouldScaleBackground = true,
 	...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>) => (
@@ -17,7 +17,7 @@ export const DrawerRoot = ({
 		{...props}
 	/>
 )
-DrawerRoot.displayName = 'DrawerRoot'
+Drawer.displayName = 'Drawer'
 
 export const DrawerOverlay = React.forwardRef<
 	React.ElementRef<typeof DrawerPrimitive.Overlay>,
@@ -132,7 +132,7 @@ export const DrawerTrigger = DrawerPrimitive.Trigger
 export const DrawerPortal = DrawerPrimitive.Portal
 export const DrawerClose = DrawerPrimitive.Close
 
-export type DrawerRootProps = React.ComponentProps<typeof DrawerRoot>
+export type DrawerProps = React.ComponentProps<typeof Drawer>
 export type DrawerOverlayProps = React.ComponentProps<typeof DrawerOverlay>
 export type DrawerContentProps = React.ComponentProps<typeof DrawerContent>
 export type DrawerHeaderProps = React.ComponentProps<typeof DrawerHeader>

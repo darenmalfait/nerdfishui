@@ -12,6 +12,13 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogDescription,
+	DrawerTrigger,
+	DrawerContent,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerDescription,
+	DrawerFooter,
+	DrawerClose,
 } from '@nerdfish/ui'
 import { cx, useMediaQuery } from '@nerdfish/utils'
 import * as React from 'react'
@@ -41,25 +48,25 @@ export function DrawerResponsiveDemo() {
 	}
 
 	return (
-		<Drawer.Root open={open} onOpenChange={setOpen}>
-			<Drawer.Trigger asChild>
+		<Drawer open={open} onOpenChange={setOpen}>
+			<DrawerTrigger asChild>
 				<Button variant="outline">Edit Profile</Button>
-			</Drawer.Trigger>
-			<Drawer.Content>
-				<Drawer.Header className="text-left">
-					<Drawer.Title>Edit profile</Drawer.Title>
-					<Drawer.Description>
+			</DrawerTrigger>
+			<DrawerContent>
+				<DrawerHeader className="text-left">
+					<DrawerTitle>Edit profile</DrawerTitle>
+					<DrawerDescription>
 						Make changes to your profile here. Click save when you&apos;re done.
-					</Drawer.Description>
-				</Drawer.Header>
+					</DrawerDescription>
+				</DrawerHeader>
 				<ProfileForm className="px-4" />
-				<Drawer.Footer className="pt-2">
-					<Drawer.Close asChild>
+				<DrawerFooter className="pt-2">
+					<DrawerClose asChild>
 						<Button variant="outline">Cancel</Button>
-					</Drawer.Close>
-				</Drawer.Footer>
-			</Drawer.Content>
-		</Drawer.Root>
+					</DrawerClose>
+				</DrawerFooter>
+			</DrawerContent>
+		</Drawer>
 	)
 }
 

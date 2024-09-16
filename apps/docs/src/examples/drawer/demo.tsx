@@ -1,25 +1,35 @@
 'use client'
 
-import { Button, Drawer } from '@nerdfish/ui'
+import {
+	Button,
+	Drawer,
+	DrawerTrigger,
+	DrawerContent,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerDescription,
+	DrawerFooter,
+	DrawerClose,
+} from '@nerdfish/ui'
 
 export function DrawerDemo() {
 	return (
-		<Drawer.Root direction="bottom">
-			<Drawer.Trigger asChild>
+		<Drawer direction="bottom">
+			<DrawerTrigger asChild>
 				<Button variant="outline">Open</Button>
-			</Drawer.Trigger>
-			<Drawer.Content className="w-full">
-				<Drawer.Header>
-					<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-					<Drawer.Description>This action cannot be undone.</Drawer.Description>
-				</Drawer.Header>
-				<Drawer.Footer>
+			</DrawerTrigger>
+			<DrawerContent className="w-full">
+				<DrawerHeader>
+					<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+					<DrawerDescription>This action cannot be undone.</DrawerDescription>
+				</DrawerHeader>
+				<DrawerFooter>
 					<Button>Submit</Button>
-					<Drawer.Close>
+					<DrawerClose>
 						<Button variant="outline">Cancel</Button>
-					</Drawer.Close>
-				</Drawer.Footer>
-			</Drawer.Content>
-		</Drawer.Root>
+					</DrawerClose>
+				</DrawerFooter>
+			</DrawerContent>
+		</Drawer>
 	)
 }
