@@ -6,9 +6,9 @@ import { Command as CommandPrimitive } from 'cmdk'
 import { Search } from 'lucide-react'
 import * as React from 'react'
 
-import { Dialog } from '../dialog'
+import { Dialog } from './dialog'
 
-export const CommandRoot = React.forwardRef<
+export const Command = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive>,
 	React.ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...props }, ref) => (
@@ -21,15 +21,15 @@ export const CommandRoot = React.forwardRef<
 		{...props}
 	/>
 ))
-CommandRoot.displayName = CommandPrimitive.displayName
+Command.displayName = CommandPrimitive.displayName
 
 export const CommandDialog = ({ children, ...props }: DialogProps) => {
 	return (
 		<Dialog.Root {...props}>
 			<Dialog.Content className="overflow-hidden p-0 shadow-2xl [&_[dialog-overlay]]:bg-red-100">
-				<CommandRoot className="[&_[cmdk-group-heading]]:text-primary [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
+				<Command className="[&_[cmdk-group-heading]]:text-primary [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
 					{children}
-				</CommandRoot>
+				</Command>
 			</Dialog.Content>
 		</Dialog.Root>
 	)
@@ -144,9 +144,7 @@ export const CommandShortcut = ({
 }
 CommandShortcut.displayName = 'CommandShortcut'
 
-export type CommandRootProps = React.ComponentPropsWithoutRef<
-	typeof CommandRoot
->
+export type CommandProps = React.ComponentPropsWithoutRef<typeof Command>
 export type CommandDialogProps = React.ComponentPropsWithoutRef<
 	typeof CommandDialog
 >

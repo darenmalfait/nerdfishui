@@ -4,7 +4,13 @@ import { cx, getContrastColor, useControllableState } from '@nerdfish/utils'
 import { Check, ChevronsUpDown, Pencil, Plus } from 'lucide-react'
 import * as React from 'react'
 import { Badge } from './badge'
-import { Command } from './command'
+import {
+	Command,
+	CommandInput,
+	CommandList,
+	CommandGroup,
+	CommandItem,
+} from './command'
 import { inputVariants, type InputProps } from './input'
 import { Popover } from './popover'
 import { ScrollArea } from './scroll-area'
@@ -106,7 +112,7 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 						</button>
 					</Popover.Trigger>
 					<Popover.Content className="w-[200px] p-0">
-						<Command.Root
+						<Command
 							filter={(value, search) => {
 								const item = options.find(({ value: v }) => v === value)?.label
 
@@ -115,20 +121,20 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 							}}
 							loop
 						>
-							<Command.Input
+							<CommandInput
 								ref={inputRef}
 								placeholder="Search items..."
 								value={inputValue}
 								onValueChange={setInputValue}
 							/>
 							<ScrollArea className="h-32 w-full">
-								<Command.List>
-									<Command.Group>
+								<CommandList>
+									<CommandGroup>
 										{options.map((item) => {
 											const isActive = selectedValues.includes(item)
 
 											return (
-												<Command.Item
+												<CommandItem
 													key={item.value}
 													value={item.value}
 													onSelect={() => toggleItem(item)}
@@ -154,11 +160,11 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 															</span>
 														) : null}
 													</div>
-												</Command.Item>
+												</CommandItem>
 											)
 										})}
 										{onEditItemsClicked && inputValue.length === 0 ? (
-											<Command.Item
+											<CommandItem
 												onSelect={() => {
 													setOpenSelect(false)
 													onEditItemsClicked()
@@ -170,10 +176,10 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 													<Pencil className="size-4" />
 												</span>
 												<span>{editItemsLabel ?? 'Edit labels'}</span>
-											</Command.Item>
+											</CommandItem>
 										) : null}
-									</Command.Group>
-								</Command.List>
+									</CommandGroup>
+								</CommandList>
 								{onCreateItemsClicked && inputValue.length > 0 ? (
 									<button
 										onSelect={() => {
@@ -189,7 +195,7 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 									</button>
 								) : null}
 							</ScrollArea>
-						</Command.Root>
+						</Command>
 					</Popover.Content>
 				</Popover.Root>
 

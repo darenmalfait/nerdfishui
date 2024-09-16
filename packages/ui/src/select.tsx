@@ -3,7 +3,14 @@
 import { cx, useControllableState } from '@nerdfish/utils'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import * as React from 'react'
-import { Command } from './command'
+import {
+	Command,
+	CommandInput,
+	CommandList,
+	CommandGroup,
+	CommandItem,
+	CommandEmpty,
+} from './command'
 import { inputVariants, type InputProps } from './input'
 import { Popover } from './popover'
 import { ScrollArea } from './scroll-area'
@@ -72,7 +79,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					</button>
 				</Popover.Trigger>
 				<Popover.Content className="w-full min-w-[200px] p-0">
-					<Command.Root
+					<Command
 						filter={(val, search) => {
 							const item = options.find(({ value: v }) => v === val)?.label
 
@@ -82,31 +89,31 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					>
 						{!searchDisabled ? (
 							<>
-								<Command.Input placeholder={placeholder} />
-								<Command.Empty>{emptyString}</Command.Empty>
+								<CommandInput placeholder={placeholder} />
+								<CommandEmpty>{emptyString}</CommandEmpty>
 							</>
 						) : null}
-						<Command.List>
-							<Command.Group>
+						<CommandList>
+							<CommandGroup>
 								<ScrollArea className="h-32 w-full">
 									{options.map((item) => {
 										const ItemIcon =
 											value === item.value ? Check : (item.icon ?? 'div')
 
 										return (
-											<Command.Item
+											<CommandItem
 												key={item.value}
 												onSelect={() => handleChange(item.value)}
 											>
 												<ItemIcon className={cx('mr-2 h-4 w-4')} />
 												{item.label}
-											</Command.Item>
+											</CommandItem>
 										)
 									})}
 								</ScrollArea>
-							</Command.Group>
-						</Command.List>
-					</Command.Root>
+							</CommandGroup>
+						</CommandList>
+					</Command>
 				</Popover.Content>
 			</Popover.Root>
 		)
