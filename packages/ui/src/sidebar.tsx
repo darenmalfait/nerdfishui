@@ -29,7 +29,7 @@ export const sidebarContentVariants: typeof sidebarVariants = cva(
 	},
 )
 
-export const SidebarRoot = React.forwardRef<
+export const Sidebar = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<'nav'> &
 		VariantProps<typeof sidebarVariants> & {
@@ -48,7 +48,7 @@ export const SidebarRoot = React.forwardRef<
 		</Comp>
 	)
 })
-SidebarRoot.displayName = 'SidebarRoot'
+Sidebar.displayName = 'Sidebar'
 
 export const SidebarSection = React.forwardRef<
 	HTMLDivElement,
@@ -79,9 +79,7 @@ export const SidebarDivider = React.forwardRef<
 })
 SidebarDivider.displayName = 'SidebarDivider'
 
-export type SidebarRootProps = React.ComponentPropsWithoutRef<
-	typeof SidebarRoot
->
+export type SidebarProps = React.ComponentPropsWithoutRef<typeof Sidebar>
 
 export type SidebarSectionProps = React.ComponentPropsWithoutRef<
 	typeof SidebarSection

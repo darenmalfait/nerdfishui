@@ -1,7 +1,7 @@
 import {
 	ScrollArea,
 	SidebarDivider,
-	SidebarRoot,
+	Sidebar,
 	SidebarSection,
 } from '@nerdfish/ui'
 import * as React from 'react'
@@ -19,7 +19,7 @@ interface DocsLayoutProps {
 export default function DocsLayout({ children }: DocsLayoutProps) {
 	return (
 		<div className="flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-			<SidebarRoot className="sticky top-[75px] hidden h-[calc(100vh-80px)] overscroll-contain md:block">
+			<Sidebar className="sticky top-[75px] hidden h-[calc(100vh-80px)] overscroll-contain md:block">
 				<div className="flex h-full flex-col">
 					<SidebarSection className="px-0 pr-4">
 						<GettingStartedNavigation />
@@ -31,7 +31,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
 						</SidebarSection>
 					</ScrollArea>
 				</div>
-			</SidebarRoot>
+			</Sidebar>
 
 			<div className="mr-auto w-full">
 				<Prose as="article" className="max-w-none">
