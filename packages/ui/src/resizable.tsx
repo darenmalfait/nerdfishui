@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 import * as ResizablePrimitive from 'react-resizable-panels'
 
-export const ResizableRoot = ({
+export const Resizable = ({
 	className,
 	...props
 }: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => (
@@ -53,6 +53,6 @@ export const ResizableHandle = ({
 	/>
 )
 
-export type ResizableRootProps = React.ComponentProps<typeof ResizableRoot>
+export type ResizableProps = React.ComponentProps<typeof Resizable>
 export type ResizablePanelProps = React.ComponentProps<typeof ResizablePanel>
 export type ResizableHandleProps = React.ComponentProps<typeof ResizableHandle>

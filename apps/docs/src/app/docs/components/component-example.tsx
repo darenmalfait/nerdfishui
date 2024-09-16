@@ -1,22 +1,22 @@
 'use client'
 
-import { Resizable } from '@nerdfish/ui'
+import { Resizable, ResizablePanel, ResizableHandle } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 import { CopyButton } from './copy-button'
 
 function Preview({ children }: { children: React.ReactNode }) {
 	return (
-		<Resizable.Root direction="horizontal">
-			<Resizable.Panel
+		<Resizable direction="horizontal">
+			<ResizablePanel
 				className="shadow-outline min-h-[350px] p-4"
 				defaultSize={100}
 			>
 				{children}
-			</Resizable.Panel>
-			<Resizable.Handle />
-			<Resizable.Panel className="min-h-[350px]" defaultSize={0} />
-		</Resizable.Root>
+			</ResizablePanel>
+			<ResizableHandle />
+			<ResizablePanel className="min-h-[350px]" defaultSize={0} />
+		</Resizable>
 	)
 }
 
