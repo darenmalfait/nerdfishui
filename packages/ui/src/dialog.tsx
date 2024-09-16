@@ -5,9 +5,9 @@ import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import * as React from 'react'
 
-import { Button } from '../button'
+import { Button } from './button'
 
-export const DialogRoot = DialogPrimitive.Root
+export const Dialog = DialogPrimitive.Root
 export const DialogTrigger = DialogPrimitive.Trigger
 
 export const DialogPortal = ({
@@ -130,7 +130,7 @@ export const DialogDescription = React.forwardRef<
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 
-export type DialogRootProps = React.ComponentPropsWithoutRef<typeof DialogRoot>
+export type DialogProps = React.ComponentPropsWithoutRef<typeof Dialog>
 export type DialogTriggerProps = React.ComponentPropsWithoutRef<
 	typeof DialogTrigger
 >

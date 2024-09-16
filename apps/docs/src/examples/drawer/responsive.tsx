@@ -1,6 +1,18 @@
 'use client'
 
-import { Button, Dialog, Drawer, Field, Input, Label } from '@nerdfish/ui'
+import {
+	Button,
+	Dialog,
+	Drawer,
+	Field,
+	Input,
+	Label,
+	DialogTrigger,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+	DialogDescription,
+} from '@nerdfish/ui'
 import { cx, useMediaQuery } from '@nerdfish/utils'
 import * as React from 'react'
 
@@ -10,21 +22,21 @@ export function DrawerResponsiveDemo() {
 
 	if (isDesktop) {
 		return (
-			<Dialog.Root open={open} onOpenChange={setOpen}>
-				<Dialog.Trigger asChild>
+			<Dialog open={open} onOpenChange={setOpen}>
+				<DialogTrigger asChild>
 					<Button variant="outline">Edit Profile</Button>
-				</Dialog.Trigger>
-				<Dialog.Content className="sm:max-w-[425px]">
-					<Dialog.Header>
-						<Dialog.Title>Edit profile</Dialog.Title>
-						<Dialog.Description>
+				</DialogTrigger>
+				<DialogContent className="sm:max-w-[425px]">
+					<DialogHeader>
+						<DialogTitle>Edit profile</DialogTitle>
+						<DialogDescription>
 							Make changes to your profile here. Click save when you&apos;re
 							done.
-						</Dialog.Description>
-					</Dialog.Header>
+						</DialogDescription>
+					</DialogHeader>
 					<ProfileForm />
-				</Dialog.Content>
-			</Dialog.Root>
+				</DialogContent>
+			</Dialog>
 		)
 	}
 

@@ -1,21 +1,32 @@
 'use client'
 
-import { Button, Dialog, Input, Label } from '@nerdfish/ui'
+import {
+	Button,
+	Dialog,
+	Input,
+	Label,
+	DialogTrigger,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+	DialogDescription,
+	DialogFooter,
+} from '@nerdfish/ui'
 
 export function DialogDemo() {
 	return (
-		<Dialog.Root>
-			<Dialog.Trigger asChild>
+		<Dialog>
+			<DialogTrigger asChild>
 				<Button variant="outline">Decorate Cake</Button>
-			</Dialog.Trigger>
-			<Dialog.Content className="sm:max-w-[425px]">
-				<Dialog.Header>
-					<Dialog.Title>Decorate your cake</Dialog.Title>
-					<Dialog.Description>
+			</DialogTrigger>
+			<DialogContent className="sm:max-w-[425px]">
+				<DialogHeader>
+					<DialogTitle>Decorate your cake</DialogTitle>
+					<DialogDescription>
 						Make changes to your cake decorations here. Click save when
 						you&apos;re done.
-					</Dialog.Description>
-				</Dialog.Header>
+					</DialogDescription>
+				</DialogHeader>
 				<div className="grid gap-4 py-4">
 					<div className="grid grid-cols-4 items-center gap-4">
 						<Label htmlFor="name" className="text-right">
@@ -34,10 +45,10 @@ export function DialogDemo() {
 						</div>
 					</div>
 				</div>
-				<Dialog.Footer>
+				<DialogFooter>
 					<Button type="submit">Save decorations</Button>
-				</Dialog.Footer>
-			</Dialog.Content>
-		</Dialog.Root>
+				</DialogFooter>
+			</DialogContent>
+		</Dialog>
 	)
 }
