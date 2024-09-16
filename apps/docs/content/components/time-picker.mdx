@@ -14,15 +14,20 @@ package:
 
 ## Usage
 
-TimePicker extends the [Input](/input) component. All props from Input are
-available.
-
 ```tsx
-import { TimePicker } from '@nerdfish/ui'
+import {
+	TimePicker,
+	TimePickerSegment,
+	TimePickerSeparator,
+} from '@nerdfish/ui'
 ```
 
 ```tsx
-<TimePicker name="time-picker-field-basic" />
+<TimePicker defaultValue={new Date()}>
+	<TimePickerSegment segment="hours" />
+	<TimePickerSeparator>:</TimePickerSeparator>
+	<TimePickerSegment segment="minutes" />
+</TimePicker>
 ```
 
 ## Hour Cycle
