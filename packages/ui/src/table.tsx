@@ -3,7 +3,7 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const TableRoot = React.forwardRef<
+export const Table = React.forwardRef<
 	HTMLTableElement,
 	React.HTMLAttributes<HTMLTableElement>
 >(({ className, ...props }, ref) => (
@@ -18,7 +18,7 @@ export const TableRoot = React.forwardRef<
 		/>
 	</div>
 ))
-TableRoot.displayName = 'Table'
+Table.displayName = 'Table'
 
 export const TableHeader = React.forwardRef<
 	HTMLTableSectionElement,
@@ -112,7 +112,7 @@ export const TableCaption = React.forwardRef<
 ))
 TableCaption.displayName = 'TableCaption'
 
-export type TableRootProps = React.ComponentPropsWithoutRef<typeof TableRoot>
+export type TableProps = React.ComponentPropsWithoutRef<typeof Table>
 export type TableHeaderProps = React.ComponentPropsWithoutRef<
 	typeof TableHeader
 >
