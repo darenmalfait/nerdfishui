@@ -9,7 +9,7 @@ import { type SelectRangeEventHandler, type DateRange } from 'react-day-picker'
 import { Badge } from './badge'
 import { Button } from './button'
 import { Calendar, type CalendarProps } from './calendar'
-import { Popover } from './popover'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 export type DatepickerPreset = { value: string; label: string }
 export type { DateRange }
@@ -90,8 +90,8 @@ export function DatePicker({
 	children?: React.ReactNode
 }) {
 	return (
-		<Popover.Root>
-			<Popover.Trigger>
+		<Popover>
+			<PopoverTrigger>
 				<DatePickerTrigger
 					selected={selected}
 					className={className}
@@ -99,8 +99,8 @@ export function DatePicker({
 				>
 					{children}
 				</DatePickerTrigger>
-			</Popover.Trigger>
-			<Popover.Content className="w-auto p-0">
+			</PopoverTrigger>
+			<PopoverContent className="w-auto p-0">
 				<Calendar
 					{...props}
 					mode="single"
@@ -112,8 +112,8 @@ export function DatePicker({
 					onSelect={onSelect}
 				/>
 				<Presets presets={presets} className="py-3" onChange={onSelect} />
-			</Popover.Content>
-		</Popover.Root>
+			</PopoverContent>
+		</Popover>
 	)
 }
 
@@ -176,8 +176,8 @@ export function DateRangePicker({
 }) {
 	return (
 		<div className={cx('grid gap-2', className)}>
-			<Popover.Root>
-				<Popover.Trigger>
+			<Popover>
+				<PopoverTrigger>
 					<DateRangePickerTrigger
 						selected={selected}
 						className={className}
@@ -185,8 +185,8 @@ export function DateRangePicker({
 					>
 						{children}
 					</DateRangePickerTrigger>
-				</Popover.Trigger>
-				<Popover.Content className="w-auto p-0" align="start">
+				</PopoverTrigger>
+				<PopoverContent className="w-auto p-0" align="start">
 					<Calendar
 						{...props}
 						initialFocus
@@ -198,8 +198,8 @@ export function DateRangePicker({
 						fromYear={fromYear}
 						toYear={toYear}
 					/>
-				</Popover.Content>
-			</Popover.Root>
+				</PopoverContent>
+			</Popover>
 		</div>
 	)
 }

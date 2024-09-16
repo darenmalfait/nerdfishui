@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 import * as React from 'react'
 
-export const PopoverRoot = PopoverPrimitive.Root
+export const Popover = PopoverPrimitive.Root
 export const PopoverTrigger = PopoverPrimitive.Trigger
 export const PopoverClose = PopoverPrimitive.Close
 
@@ -25,7 +25,7 @@ export const PopoverContent = React.forwardRef<
 ))
 PopoverContent.displayName = PopoverPrimitive.Content.displayName
 
-export type PopoverRootProps = React.ComponentPropsWithoutRef<
+export type PopoverProps = React.ComponentPropsWithoutRef<
 	typeof PopoverPrimitive.Root
 >
 export type PopoverTriggerProps = React.ComponentPropsWithoutRef<

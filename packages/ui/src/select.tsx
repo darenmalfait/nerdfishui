@@ -12,7 +12,7 @@ import {
 	CommandEmpty,
 } from './command'
 import { inputVariants, type InputProps } from './input'
-import { Popover } from './popover'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { ScrollArea } from './scroll-area'
 
 export interface SelectProps extends Omit<InputProps, 'onChange'> {
@@ -57,8 +57,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 		)
 
 		return (
-			<Popover.Root open={open} onOpenChange={setOpen}>
-				<Popover.Trigger asChild>
+			<Popover open={open} onOpenChange={setOpen}>
+				<PopoverTrigger asChild>
 					<button
 						role="combobox"
 						aria-haspopup="listbox"
@@ -77,8 +77,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 							: placeholder}
 						<Icon className="ml-2 size-4 shrink-0 opacity-50" />
 					</button>
-				</Popover.Trigger>
-				<Popover.Content className="w-full min-w-[200px] p-0">
+				</PopoverTrigger>
+				<PopoverContent className="w-full min-w-[200px] p-0">
 					<Command
 						filter={(val, search) => {
 							const item = options.find(({ value: v }) => v === val)?.label
@@ -114,8 +114,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 							</CommandGroup>
 						</CommandList>
 					</Command>
-				</Popover.Content>
-			</Popover.Root>
+				</PopoverContent>
+			</Popover>
 		)
 	},
 )

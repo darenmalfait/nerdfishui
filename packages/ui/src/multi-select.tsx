@@ -12,7 +12,7 @@ import {
 	CommandItem,
 } from './command'
 import { inputVariants, type InputProps } from './input'
-import { Popover } from './popover'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { ScrollArea } from './scroll-area'
 
 export type MultiSelectItem = {
@@ -85,8 +85,8 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 
 		return (
 			<div>
-				<Popover.Root open={openSelect} onOpenChange={onSelectOpenChange}>
-					<Popover.Trigger asChild>
+				<Popover open={openSelect} onOpenChange={onSelectOpenChange}>
+					<PopoverTrigger asChild>
 						<button
 							data-slot="control"
 							role="combobox"
@@ -110,8 +110,8 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 							</span>
 							<ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
 						</button>
-					</Popover.Trigger>
-					<Popover.Content className="w-[200px] p-0">
+					</PopoverTrigger>
+					<PopoverContent className="w-[200px] p-0">
 						<Command
 							filter={(value, search) => {
 								const item = options.find(({ value: v }) => v === value)?.label
@@ -196,8 +196,8 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 								) : null}
 							</ScrollArea>
 						</Command>
-					</Popover.Content>
-				</Popover.Root>
+					</PopoverContent>
+				</Popover>
 
 				<div className="relative mt-3 overflow-y-auto">
 					{selectedValues.map(({ label, value, color }) => (

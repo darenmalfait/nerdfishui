@@ -1,18 +1,25 @@
 'use client'
 
-import { Button, Input, Label, Popover } from '@nerdfish/ui'
+import {
+	Button,
+	Input,
+	Label,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from '@nerdfish/ui'
 import { Cake } from 'lucide-react'
 
 export function PopoverDemo() {
 	return (
-		<Popover.Root>
-			<Popover.Trigger asChild>
+		<Popover>
+			<PopoverTrigger asChild>
 				<Button variant="outline" className="w-10 rounded-full p-0">
 					<Cake className="size-4" />
 					<span className="sr-only">Open popover</span>
 				</Button>
-			</Popover.Trigger>
-			<Popover.Content className="w-80">
+			</PopoverTrigger>
+			<PopoverContent className="w-80">
 				<div className="grid gap-4">
 					<div className="space-y-2">
 						<h4 className="font-medium leading-none">Cake Dimensions</h4>
@@ -59,7 +66,7 @@ export function PopoverDemo() {
 						</div>
 					</div>
 				</div>
-			</Popover.Content>
-		</Popover.Root>
+			</PopoverContent>
+		</Popover>
 	)
 }
