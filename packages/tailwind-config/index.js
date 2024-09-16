@@ -18,11 +18,11 @@ module.exports = plugin(
 				'--color-gray-50': '#f8fafc',
 			},
 			'.outline-active': {
-				'@apply relative after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-2 sm:after:ring-nerdfish':
+				'@apply relative after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-2 sm:after:ring-accent':
 					{},
 			},
 			'.focus-outline': {
-				'@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg outline-none after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-nerdfish':
+				'@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-lg outline-none after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-accent':
 					{},
 			},
 			'.focus-ring': {
@@ -34,7 +34,7 @@ module.exports = plugin(
 					{},
 			},
 			'.shadow-outline': {
-				'@apply ring-1 ring-muted/30 dark:ring-muted/10 border-transparent': {},
+				'@apply ring-1 ring-muted/30 border-transparent': {},
 			},
 			'.empty-content': {
 				content: "''",
@@ -169,6 +169,7 @@ module.exports = plugin(
 					transparent: 'transparent',
 					current: 'currentColor',
 					nerdfish: 'hsl(var(--colors-nerdfish) / <alpha-value>)',
+					accent: 'hsl(var(--colors-accent) / <alpha-value>)',
 					primary: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
 					muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
 					inverted: 'hsl(var(--colors-foreground-inverted) / <alpha-value>)',

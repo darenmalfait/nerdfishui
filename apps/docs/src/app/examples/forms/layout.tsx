@@ -1,8 +1,8 @@
 import {
 	NavigationListItem,
-	NavigationListRoot,
+	NavigationList,
 	Separator,
-	SidebarRoot,
+	Sidebar,
 	SidebarSection,
 } from '@nerdfish/ui'
 import { type Metadata } from 'next'
@@ -36,9 +36,9 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
 			<Separator />
 			<div className="flex flex-col lg:flex-row lg:space-x-12 lg:space-y-0">
 				<aside className="-m-4 lg:w-1/5">
-					<SidebarRoot className="p-0">
+					<Sidebar className="p-0">
 						<SidebarSection>
-							<NavigationListRoot>
+							<NavigationList>
 								{sidebarNavItems.map((item) => (
 									<NavigationListItem
 										key={item.href}
@@ -46,9 +46,9 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
 										href={item.href}
 									/>
 								))}
-							</NavigationListRoot>
+							</NavigationList>
 						</SidebarSection>
-					</SidebarRoot>
+					</Sidebar>
 				</aside>
 				<div className="flex-1 lg:max-w-2xl">{children}</div>
 			</div>

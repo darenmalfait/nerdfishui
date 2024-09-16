@@ -1,4 +1,14 @@
-import { Button, Card, Switch } from '@nerdfish/ui'
+import {
+	Button,
+	Card,
+	Switch,
+	CardHeader,
+	CardTitle,
+	CardDescription,
+	CardContent,
+	CardFooter,
+	type CardProps,
+} from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import { BellRing, Check } from 'lucide-react'
 import * as React from 'react'
@@ -18,15 +28,15 @@ const notifications = [
 	},
 ]
 
-export function CardDemo({ className, ...props }: Card.RootProps) {
+export function CardDemo({ className, ...props }: CardProps) {
 	return (
-		<Card.Root className={cx('w-[380px]', className)} {...props}>
-			<Card.Header>
-				<Card.Title>Cake Notifications</Card.Title>
-				<Card.Description>You have 3 unread cake messages.</Card.Description>
-			</Card.Header>
-			<Card.Content className="grid gap-4">
-				<div className="flex items-center space-x-4 rounded-md border p-4">
+		<Card className={cx('w-[380px]', className)} {...props}>
+			<CardHeader>
+				<CardTitle>Cake Notifications</CardTitle>
+				<CardDescription>You have 3 unread cake messages.</CardDescription>
+			</CardHeader>
+			<CardContent className="grid gap-4">
+				<div className="flex items-center space-x-4 rounded-lg border p-4">
 					<BellRing />
 					<div className="flex-1 space-y-1">
 						<p className="text-sm font-medium leading-none">
@@ -52,12 +62,12 @@ export function CardDemo({ className, ...props }: Card.RootProps) {
 						</div>
 					))}
 				</div>
-			</Card.Content>
-			<Card.Footer>
+			</CardContent>
+			<CardFooter>
 				<Button className="w-full">
 					<Check className="mr-2 size-4" /> Mark all as read
 				</Button>
-			</Card.Footer>
-		</Card.Root>
+			</CardFooter>
+		</Card>
 	)
 }

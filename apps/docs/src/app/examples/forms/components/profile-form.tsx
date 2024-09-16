@@ -1,7 +1,21 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Button, Input, Select, toast } from '@nerdfish/ui'
+import {
+	Button,
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+	Input,
+	Select,
+	Textarea,
+	toast,
+} from '@nerdfish/ui'
+import { cx } from '@nerdfish/utils'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -41,13 +55,7 @@ const defaultValues: Partial<ProfileFormData> = {
 }
 
 export function ProfileForm() {
-	const {
-		handleSubmit,
-		register,
-		control,
-		setValue,
-		formState: { errors },
-	} = useForm<ProfileFormData>({
+	const form = useForm<ProfileFormData>({
 		resolver: zodResolver(profileFormSchema),
 		defaultValues,
 		mode: 'onChange',
@@ -55,14 +63,14 @@ export function ProfileForm() {
 
 	const { fields, append } = useFieldArray({
 		name: 'urls',
-		control,
+		control: form.control,
 	})
 
 	function onSubmit(data: ProfileFormData) {
 		toast.success(
 			<div>
 				<span className="font=bold">You submitted the following values:</span>
-				<pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+				<pre className="mt-2 w-[340px] rounded-lg bg-slate-950 p-4">
 					<code className="text-white">{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			</div>,
@@ -70,62 +78,109 @@ export function ProfileForm() {
 	}
 
 	return (
-		<form noValidate onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-			<Input
-				label="Username"
-				description="This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days."
-				placeholder="nerdfish"
-				{...register('username')}
-				error={errors.username?.message}
-			/>
+		<Form {...form}>
+			<form
+				noValidate
+				onSubmit={form.handleSubmit(onSubmit)}
+				className="space-y-8"
+			>
+				<FormField
+					control={form.control}
+					name="username"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Username</FormLabel>
+							<FormDescription>
+								This is your public display name. It can be your real name or a
+								pseudonym. You can only change this once every 30 days.
+							</FormDescription>
+							<FormControl>
+								<Input placeholder="nerdfish" {...field} />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
 
-			<Select
-				options={[
-					{ value: 'm@example.com', label: 'm@example.com' },
-					{ value: 'm@google.com', label: 'm@google.com' },
-					{ value: 'm@support.com', label: 'm@support.com' },
-				]}
-				{...register('email')}
-				onChange={(value) => {
-					setValue('email', value)
-				}}
-				label="Email"
-				description="This is your email address. You can only change this once every 30 days."
-				placeholder="Select a verified email to display"
-				error={errors.email?.message}
-			/>
+				<FormField
+					control={form.control}
+					name="email"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Email</FormLabel>
+							<FormDescription>
+								This is your email address. You can only change this once every
+								30 days.
+							</FormDescription>
+							<FormControl>
+								<Select
+									options={[
+										{ value: 'm@example.com', label: 'm@example.com' },
+										{ value: 'm@google.com', label: 'm@google.com' },
+										{ value: 'm@support.com', label: 'm@support.com' },
+									]}
+									onChange={(value) => {
+										field.onChange(value)
+									}}
+									placeholder="Select a verified email to display"
+								/>
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
 
-			<Input
-				type="textarea"
-				{...register('bio')}
-				description="Tell us a little bit about yourself"
-				label="Bio"
-				error={errors.bio?.message}
-			/>
+				<FormField
+					control={form.control}
+					name="bio"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Bio</FormLabel>
+							<FormDescription>
+								Tell us a little bit about yourself.
+							</FormDescription>
+							<FormControl>
+								<Textarea {...field} />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
 
-			<div className="flex flex-col gap-4">
-				{fields.map((field, index) => (
-					<Input
-						key={field.id}
-						{...field}
-						{...register(`urls.${index}.value`)}
-						label="URL"
-						description="Add links to your website, blog, or social media profiles."
-						error={errors.urls?.[index]?.value?.message}
-					/>
-				))}
+				<div>
+					{fields.map((urlField, index) => (
+						<FormField
+							control={form.control}
+							key={urlField.id}
+							name={`urls.${index}.value`}
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel className={cx(index !== 0 && 'sr-only')}>
+										URLs
+									</FormLabel>
+									<FormDescription className={cx(index !== 0 && 'sr-only')}>
+										Add links to your website, blog, or social media profiles.
+									</FormDescription>
+									<FormControl>
+										<Input {...field} />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+					))}
+					<Button
+						type="button"
+						variant="outline"
+						className="mt-2"
+						onClick={() => append({ value: '' })}
+					>
+						Add URL
+					</Button>
+				</div>
 
-				<Button
-					type="button"
-					variant="outline"
-					size="sm"
-					className="mt-2"
-					onClick={() => append({ value: '' })}
-				>
-					Add URL
-				</Button>
-			</div>
-			<Button type="submit">Update profile</Button>
-		</form>
+				<Button type="submit">Update profile</Button>
+			</form>
+		</Form>
 	)
 }

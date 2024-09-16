@@ -1,12 +1,17 @@
 'use client'
 
-import { FieldLabel, Switch } from '@nerdfish/ui'
+import { Label, Switch } from '@nerdfish/ui'
 
 export function SwitchDemo() {
 	return (
-		<div className="flex items-center space-x-2">
-			<Switch id="sugar-on-cake" />
-			<FieldLabel htmlFor="sugar-on-cake">Sugar on cake</FieldLabel>
+		<div className="max-w-screen-xsm mx-auto w-full">
+			<Label
+				htmlFor="sugar-on-cake"
+				className="flex w-full items-center justify-between gap-4"
+			>
+				<span>Sugar on cake</span>
+				<Switch id="sugar-on-cake" />
+			</Label>
 		</div>
 	)
 }

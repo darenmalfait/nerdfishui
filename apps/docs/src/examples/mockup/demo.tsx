@@ -1,11 +1,11 @@
 'use client'
 
-import { Mockup } from '@nerdfish/ui'
+import { Mockup, MockupWindow } from '@nerdfish/ui'
 
 export function MockupDemo() {
 	return (
-		<Mockup.Root>
-			<Mockup.Window>
+		<Mockup>
+			<MockupWindow>
 				<pre data-prefix="1">
 					<code>npm i @nerdfish/ui</code>
 				</pre>
@@ -20,7 +20,7 @@ export function MockupDemo() {
 						Something went wrong, aborting mission.
 					</code>
 				</pre>
-			</Mockup.Window>
-		</Mockup.Root>
+			</MockupWindow>
+		</Mockup>
 	)
 }

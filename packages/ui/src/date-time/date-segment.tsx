@@ -25,7 +25,7 @@ export function DateSegment({ segment, state }: DateSegmentProps) {
 			{...segmentProps}
 			ref={ref}
 			className={cx(
-				'focus:bg-inverted/10 focus:rounded-md focus:outline-none',
+				'focus:bg-inverted/10 focus:rounded-lg focus:outline-none',
 				segment.type !== 'literal' ? 'px-[1px]' : '',
 				segment.isPlaceholder ? 'text-muted/50' : '',
 			)}

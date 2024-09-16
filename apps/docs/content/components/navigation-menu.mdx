@@ -17,18 +17,25 @@ package:
 ## Usage
 
 ```tsx
-import { NavigationMenu } from '@nerdfish/ui'
+import {
+	NavigationMenu,
+	NavigationMenuList,
+	NavigationMenuItem,
+	NavigationMenuTrigger,
+	NavigationMenuContent,
+	NavigationMenuLink,
+} from '@nerdfish/ui'
 ```
 
 ```tsx
-<NavigationMenu.Root>
-	<NavigationMenu.List>
-		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Item One</NavigationMenu.Trigger>
-			<NavigationMenu.Content>
-				<NavigationMenu.Link>Link</NavigationMenu.Link>
-			</NavigationMenu.Content>
-		</NavigationMenu.Item>
-	</NavigationMenu.List>
-</NavigationMenu.Root>
+<NavigationMenu>
+	<NavigationMenuList>
+		<NavigationMenuItem>
+			<NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+			<NavigationMenuContent>
+				<NavigationMenuLink>Link</NavigationMenuLink>
+			</NavigationMenuContent>
+		</NavigationMenuItem>
+	</NavigationMenuList>
+</NavigationMenu>
 ```

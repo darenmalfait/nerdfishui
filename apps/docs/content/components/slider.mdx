@@ -5,7 +5,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'slider/slider.tsx'
+  path: 'slider.tsx'
 ---
 
 <ComponentExample src="/src/examples/slider/demo.tsx">
@@ -15,11 +15,11 @@ package:
 ## Usage
 
 ```tsx
-import { Slider } from '@nerdfish/ui'
+import { Slider, SliderThumb } from '@nerdfish/ui'
 ```
 
 ```tsx
-<Slider.Root defaultValue={[1, 100]} max={100} step={1}>
-	<Slider.Thumb />
-</Slider.Root>
+<Slider defaultValue={[1, 100]} max={100} step={1}>
+	<SliderThumb />
+</Slider>
 ```

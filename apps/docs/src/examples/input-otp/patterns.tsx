@@ -1,23 +1,29 @@
-import { InputOTP, inputOTPPatterns } from '@nerdfish/ui'
+import {
+	InputOTP,
+	InputOTPGroup,
+	inputOTPPatterns,
+	InputOTPSeparator,
+	InputOTPSlot,
+} from '@nerdfish/ui'
 
 export function InputOTPPatternsDemo() {
 	return (
-		<InputOTP.Root
+		<InputOTP
 			maxLength={6}
 			pattern={inputOTPPatterns.digits}
 			render={({ slots }) => (
 				<>
-					<InputOTP.Group>
+					<InputOTPGroup>
 						{slots.slice(0, 3).map((slot, index) => (
-							<InputOTP.Slot key={index} {...slot} />
+							<InputOTPSlot key={index} {...slot} />
 						))}{' '}
-					</InputOTP.Group>
-					<InputOTP.Separator />
-					<InputOTP.Group>
+					</InputOTPGroup>
+					<InputOTPSeparator />
+					<InputOTPGroup>
 						{slots.slice(3).map((slot, index) => (
-							<InputOTP.Slot key={index + 3} {...slot} />
+							<InputOTPSlot key={index + 3} {...slot} />
 						))}
-					</InputOTP.Group>
+					</InputOTPGroup>
 				</>
 			)}
 		/>

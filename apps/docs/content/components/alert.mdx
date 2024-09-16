@@ -5,7 +5,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'alert/alert.tsx'
+  path: 'alert.tsx'
 ---
 
 <ComponentExample src="/src/examples/alert/demo.tsx">
@@ -15,14 +15,14 @@ package:
 ## Usage
 
 ```tsx
-import { Alert } from '@nerdfish/ui'
+import { Alert, AlertTitle, AlertDescription } from '@nerdfish/ui'
 ```
 
 ```tsx
-<Alert.Root variant="danger">
-	<Alert.Title>Example alert</Alert.Title>
-	<Alert.Description>Example description</Alert.Description>
-</Alert.Root>
+<Alert variant="danger">
+	<AlertTitle>Example alert</AlertTitle>
+	<AlertDescription>Example description</AlertDescription>
+</Alert>
 ```
 
 ## Examples

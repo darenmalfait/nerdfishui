@@ -1,11 +1,11 @@
 ---
 title: Popover
-description: Popover is a component that displays a list of items in a popover.
+description: Popover is a component that displays a list of items in a popover
 component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'popover/popover.tsx'
+  path: 'popovertsx'
 ---
 
 <ComponentExample src="/src/examples/popover/demo.tsx">
@@ -15,12 +15,12 @@ package:
 ## Usage
 
 ```tsx
-import { Popover } from '@nerdfish/ui'
+import { Popover, PopoverTrigger, PopoverContent } from '@nerdfish/ui'
 ```
 
 ```tsx
-<Popover.Root>
-	<Popover.Trigger>Open</Popover.Trigger>
-	<Popover.Content>Popover content</Popover.Content>
-</Popover.Root>
+<Popover>
+	<PopoverTrigger>Open</PopoverTrigger>
+	<PopoverContent>Popover content</PopoverContent>
+</Popover>
 ```

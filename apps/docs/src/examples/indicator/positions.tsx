@@ -1,38 +1,38 @@
 'use client'
 
-import { Badge, Indicator } from '@nerdfish/ui'
+import { Badge, Indicator, IndicatorItem } from '@nerdfish/ui'
 
 export function IndicatorPositionsDemo() {
 	return (
-		<Indicator.Root>
-			<Indicator.Item top left>
+		<Indicator>
+			<IndicatorItem top left>
 				<Badge>top left</Badge>
-			</Indicator.Item>
-			<Indicator.Item top center>
+			</IndicatorItem>
+			<IndicatorItem top center>
 				<Badge>top center</Badge>
-			</Indicator.Item>
-			<Indicator.Item top right>
+			</IndicatorItem>
+			<IndicatorItem top right>
 				<Badge>top right</Badge>
-			</Indicator.Item>
-			<Indicator.Item middle left>
+			</IndicatorItem>
+			<IndicatorItem middle left>
 				<Badge>middle left</Badge>
-			</Indicator.Item>
-			<Indicator.Item middle center>
+			</IndicatorItem>
+			<IndicatorItem middle center>
 				<Badge>middle center</Badge>
-			</Indicator.Item>
-			<Indicator.Item middle right>
+			</IndicatorItem>
+			<IndicatorItem middle right>
 				<Badge>middle right</Badge>
-			</Indicator.Item>
-			<Indicator.Item bottom left>
+			</IndicatorItem>
+			<IndicatorItem bottom left>
 				<Badge>bottom left</Badge>
-			</Indicator.Item>
-			<Indicator.Item bottom center>
+			</IndicatorItem>
+			<IndicatorItem bottom center>
 				<Badge>bottom center</Badge>
-			</Indicator.Item>
-			<Indicator.Item bottom right>
+			</IndicatorItem>
+			<IndicatorItem bottom right>
 				<Badge>bottom right</Badge>
-			</Indicator.Item>
+			</IndicatorItem>
 			<div className="bg-muted grid size-64 place-items-center">content</div>
-		</Indicator.Root>
+		</Indicator>
 	)
 }

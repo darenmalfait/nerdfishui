@@ -9,14 +9,13 @@ import {
 	useTimeField,
 } from 'react-aria'
 import { useTimeFieldState } from 'react-stately'
-import { Field, type FieldProps } from '../field'
-import { getInputClassName, type InputRootProps } from '../input'
+import { inputVariants, type InputProps } from '../input'
 import { DateSegment } from './date-segment'
 
-export const TimeFieldRoot = React.forwardRef<
+export const TimeField = React.forwardRef<
 	HTMLDivElement,
-	InputRootProps & AriaTimeFieldProps<TimeValue>
->(({ hasError, isDisabled, inputSize, hourCycle = 24, ...props }, ref) => {
+	InputProps & AriaTimeFieldProps<TimeValue>
+>(({ isDisabled, variant, inputSize, hourCycle = 24, ...props }, ref) => {
 	const innerRef = React.useRef<HTMLDivElement>(null)
 	React.useImperativeHandle(ref, () => innerRef.current as HTMLDivElement)
 
@@ -35,7 +34,7 @@ export const TimeFieldRoot = React.forwardRef<
 			{...fieldProps}
 			ref={innerRef}
 			className={cx(
-				getInputClassName('', hasError, inputSize),
+				inputVariants({ inputSize, variant }),
 				'flex w-full flex-1 flex-row',
 			)}
 		>
@@ -45,43 +44,6 @@ export const TimeFieldRoot = React.forwardRef<
 		</div>
 	)
 })
-
-TimeFieldRoot.displayName = 'TimeFieldRoot'
-
-export const TimeField = React.forwardRef<
-	HTMLDivElement,
-	TimeFieldRootProps & FieldProps
->(({ label, error, id, name, description, htmlFor, ...props }, ref) => {
-	const inputId = id ?? name
-	const errorId = `${inputId}-error`
-	const descriptionId = `${inputId}-description`
-
-	return (
-		<Field
-			{...{
-				description,
-				descriptionId,
-				error,
-				errorId,
-				htmlFor: inputId,
-				label,
-			}}
-		>
-			<TimeFieldRoot
-				name={name}
-				id={inputId}
-				{...props}
-				ref={ref}
-				aria-describedby={
-					error ? errorId : description ? descriptionId : undefined
-				}
-			/>
-		</Field>
-	)
-})
-
 TimeField.displayName = 'TimeField'
 
-export type TimeFieldRootProps = React.ComponentPropsWithoutRef<
-	typeof TimeFieldRoot
->
+export type TimeFieldProps = React.ComponentPropsWithoutRef<typeof TimeField>

@@ -1,13 +1,13 @@
 'use client'
 
-import { MultiEmail } from '@nerdfish/ui'
+import { Description, Field, Label, MultiEmail } from '@nerdfish/ui'
 
 export function MultiEmailDemo() {
 	return (
-		<MultiEmail
-			label="multi email example"
-			description="description"
-			name="multi-email-demo"
-		/>
+		<Field className="w-full">
+			<Label>Emails</Label>
+			<Description>Press enter to confirm an email address</Description>
+			<MultiEmail />
+		</Field>
 	)
 }

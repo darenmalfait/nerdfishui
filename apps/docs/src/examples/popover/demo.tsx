@@ -1,18 +1,25 @@
 'use client'
 
-import { Button, Input, FieldLabel, Popover } from '@nerdfish/ui'
+import {
+	Button,
+	Input,
+	Label,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from '@nerdfish/ui'
 import { Cake } from 'lucide-react'
 
 export function PopoverDemo() {
 	return (
-		<Popover.Root>
-			<Popover.Trigger asChild>
+		<Popover>
+			<PopoverTrigger asChild>
 				<Button variant="outline" className="w-10 rounded-full p-0">
 					<Cake className="size-4" />
 					<span className="sr-only">Open popover</span>
 				</Button>
-			</Popover.Trigger>
-			<Popover.Content className="w-80">
+			</PopoverTrigger>
+			<PopoverContent className="w-80">
 				<div className="grid gap-4">
 					<div className="space-y-2">
 						<h4 className="font-medium leading-none">Cake Dimensions</h4>
@@ -22,7 +29,7 @@ export function PopoverDemo() {
 					</div>
 					<div className="grid gap-4">
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="width">Diameter</FieldLabel>
+							<Label htmlFor="width">Diameter</Label>
 							<Input
 								name="width"
 								id="width"
@@ -31,7 +38,7 @@ export function PopoverDemo() {
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="maxWidth">Max. Layers</FieldLabel>
+							<Label htmlFor="maxWidth">Max. Layers</Label>
 							<Input
 								name="maxWidth"
 								id="maxWidth"
@@ -40,7 +47,7 @@ export function PopoverDemo() {
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="height">Height</FieldLabel>
+							<Label htmlFor="height">Height</Label>
 							<Input
 								name="height"
 								id="height"
@@ -49,7 +56,7 @@ export function PopoverDemo() {
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
-							<FieldLabel htmlFor="maxHeight">Max. Toppings</FieldLabel>
+							<Label htmlFor="maxHeight">Max. Toppings</Label>
 							<Input
 								name="maxHeight"
 								id="maxHeight"
@@ -59,7 +66,7 @@ export function PopoverDemo() {
 						</div>
 					</div>
 				</div>
-			</Popover.Content>
-		</Popover.Root>
+			</PopoverContent>
+		</Popover>
 	)
 }

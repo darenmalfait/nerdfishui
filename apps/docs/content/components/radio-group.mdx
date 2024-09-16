@@ -5,7 +5,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'radio-group/radio-group.tsx'
+  path: 'radio-group.tsx'
 ---
 
 <ComponentExample src="/src/examples/radio-group/demo.tsx">
@@ -15,22 +15,29 @@ package:
 ## Usage
 
 ```tsx
-import { RadioGroup, FieldLabel } from '@nerdfish/ui'
+import { RadioGroup, RadioGroupItem, Label } from '@nerdfish/ui'
 ```
 
 ```tsx
-<RadioGroup.Root defaultValue="comfortable" label="Spacing">
-	<div className="flex items-center space-x-2">
-		<RadioGroup.Item value="default" id="r1" />
-		<FieldLabel htmlFor="r1">Default</FieldLabel>
+<RadioGroup name="radio-demo" defaultValue="comfortable">
+	<RadioGroupField>
+		<RadioGroupItem value="default" id="r1" />
+		<div>
+			<Label htmlFor="r1">Default</Label>
+			<Description className="w-full">
+				This is a description for the Radio Group. It could be a very long
+				description that can contain <strong>html</strong> elements.
+			</Description>
+		</div>
+	</RadioGroupField>
+
+	<div className="flex items-center space-x-4">
+		<RadioGroupItem value="comfortable" id="r2" />
+		<Label htmlFor="r2">Comfortable</Label>
 	</div>
-	<div className="flex items-center space-x-2">
-		<RadioGroup.Item value="comfortable" id="r2" />
-		<FieldLabel htmlFor="r2">Comfortable</FieldLabel>
+	<div className="flex items-center space-x-4">
+		<RadioGroupItem value="compact" id="r3" />
+		<Label htmlFor="r3">Compact</Label>
 	</div>
-	<div className="flex items-center space-x-2">
-		<RadioGroup.Item value="compact" id="r3" />
-		<FieldLabel htmlFor="r3">Compact</FieldLabel>
-	</div>
-</RadioGroup.Root>
+</RadioGroup>
 ```

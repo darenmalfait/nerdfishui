@@ -1,4 +1,4 @@
-import { Mockup } from '@nerdfish/ui'
+import { Mockup, MockupWindow } from '@nerdfish/ui'
 import React from 'react'
 
 export function CodeContainer({
@@ -6,8 +6,8 @@ export function CodeContainer({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) {
 	return (
-		<Mockup.Root {...props}>
-			<Mockup.Window>{children}</Mockup.Window>
-		</Mockup.Root>
+		<Mockup {...props}>
+			<MockupWindow>{children}</MockupWindow>
+		</Mockup>
 	)
 }

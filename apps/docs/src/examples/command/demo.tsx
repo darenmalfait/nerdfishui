@@ -1,6 +1,15 @@
 'use client'
 
-import { Command } from '@nerdfish/ui'
+import {
+	Command,
+	CommandInput,
+	CommandEmpty,
+	CommandList,
+	CommandGroup,
+	CommandItem,
+	CommandSeparator,
+	CommandShortcut,
+} from '@nerdfish/ui'
 import {
 	Calculator,
 	Calendar,
@@ -12,43 +21,43 @@ import {
 
 export function CommandDemo() {
 	return (
-		<Command.Root className="shadow-soft-sm shadow-outline rounded-lg border">
-			<Command.Input placeholder="Type a command or search..." />
-			<Command.Empty>No results found.</Command.Empty>
-			<Command.List>
-				<Command.Group heading="Suggestions">
-					<Command.Item>
+		<Command className="shadow-soft-sm shadow-outline rounded-lg border">
+			<CommandInput placeholder="Type a command or search..." />
+			<CommandEmpty>No results found.</CommandEmpty>
+			<CommandList>
+				<CommandGroup heading="Suggestions">
+					<CommandItem>
 						<Calendar className="mr-2 size-4" />
 						<span>Calendar</span>
-					</Command.Item>
-					<Command.Item>
+					</CommandItem>
+					<CommandItem>
 						<Smile className="mr-2 size-4" />
 						<span>Search Emoji</span>
-					</Command.Item>
-					<Command.Item>
+					</CommandItem>
+					<CommandItem>
 						<Calculator className="mr-2 size-4" />
 						<span>Calculator</span>
-					</Command.Item>
-				</Command.Group>
-				<Command.Separator />
-				<Command.Group heading="Settings">
-					<Command.Item>
+					</CommandItem>
+				</CommandGroup>
+				<CommandSeparator />
+				<CommandGroup heading="Settings">
+					<CommandItem>
 						<User className="mr-2 size-4" />
 						<span>Profile</span>
-						<Command.Shortcut>⌘P</Command.Shortcut>
-					</Command.Item>
-					<Command.Item>
+						<CommandShortcut>⌘P</CommandShortcut>
+					</CommandItem>
+					<CommandItem>
 						<CreditCard className="mr-2 size-4" />
 						<span>Billing</span>
-						<Command.Shortcut>⌘B</Command.Shortcut>
-					</Command.Item>
-					<Command.Item>
+						<CommandShortcut>⌘B</CommandShortcut>
+					</CommandItem>
+					<CommandItem>
 						<Settings className="mr-2 size-4" />
 						<span>Settings</span>
-						<Command.Shortcut>⌘S</Command.Shortcut>
-					</Command.Item>
-				</Command.Group>
-			</Command.List>
-		</Command.Root>
+						<CommandShortcut>⌘S</CommandShortcut>
+					</CommandItem>
+				</CommandGroup>
+			</CommandList>
+		</Command>
 	)
 }

@@ -5,7 +5,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'grid/grid.tsx'
+  path: 'grid.tsx'
 ---
 
 <ComponentExample src="/src/examples/grid/demo.tsx">
@@ -15,16 +15,16 @@ package:
 ## Usage
 
 ```tsx
-import { Grid } from '@nerdfish/ui'
+import { Grid, GridCard } from '@nerdfish/ui'
 ```
 
 ```tsx
-<Grid.Root className="lg:grid-rows-3">
-	<Grid.Card className="lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-4">
+<Grid className="lg:grid-rows-3">
+	<GridCard className="lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-4">
 		Content
-	</Grid.Card>
-	<Grid.Card className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3">
+	</GridCard>
+	<GridCard className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3">
 		Content
-	</Grid.Card>
-</Grid.Root>
+	</GridCard>
+</Grid>
 ```

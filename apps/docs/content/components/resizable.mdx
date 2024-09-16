@@ -5,7 +5,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'resizable/resizable.tsx'
+  path: 'resizable.tsx'
 ---
 
 <ComponentExample src="/src/examples/resizable/demo.tsx">
@@ -15,34 +15,34 @@ package:
 ## Usage
 
 ```tsx
-import { Resizable } from '@nerdfish/ui'
+import { Resizable, ResizablePanel, ResizableHandle } from '@nerdfish/ui'
 ```
 
 ```tsx
-<Resizable.Root
+<Resizable
 	direction="horizontal"
 	className="max-w-md rounded-lg border md:min-w-[450px]"
 >
-	<Resizable.Panel defaultSize={50}>
+	<ResizablePanel defaultSize={50}>
 		<div className="flex h-[200px] items-center justify-center p-6">
 			<span className="font-semibold">One</span>
 		</div>
-	</Resizable.Panel>
-	<Resizable.Handle />
-	<Resizable.Panel defaultSize={50}>
-		<Resizable.Root direction="vertical">
-			<Resizable.Panel defaultSize={25}>
+	</ResizablePanel>
+	<ResizableHandle />
+	<ResizablePanel defaultSize={50}>
+		<Resizable direction="vertical">
+			<ResizablePanel defaultSize={25}>
 				<div className="flex h-full items-center justify-center p-6">
 					<span className="font-semibold">Two</span>
 				</div>
-			</Resizable.Panel>
-			<Resizable.Handle />
-			<Resizable.Panel defaultSize={75}>
+			</ResizablePanel>
+			<ResizableHandle />
+			<ResizablePanel defaultSize={75}>
 				<div className="flex h-full items-center justify-center p-6">
 					<span className="font-semibold">Three</span>
 				</div>
-			</Resizable.Panel>
-		</Resizable.Root>
-	</Resizable.Panel>
-</Resizable.Root>
+			</ResizablePanel>
+		</Resizable>
+	</ResizablePanel>
+</Resizable>
 ```
