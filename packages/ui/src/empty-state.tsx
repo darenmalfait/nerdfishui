@@ -1,13 +1,13 @@
 import { cx } from '@nerdfish/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
-import { ButtonGroup } from '../button'
-import { H3, Paragraph } from '../typography'
+import { ButtonGroup } from './button'
+import { H3, Paragraph } from './typography'
 
-export const EmptyStateRoot = React.forwardRef<
+export const EmptyState = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<'div'>
->(function EmptyStateRoot({ className, ...props }, ref) {
+>(function EmptyState({ className, ...props }, ref) {
 	return (
 		<div
 			className={cx(
@@ -19,7 +19,7 @@ export const EmptyStateRoot = React.forwardRef<
 		/>
 	)
 })
-EmptyStateRoot.displayName = 'EmptyStateRoot'
+EmptyState.displayName = 'EmptyState'
 
 export const EmptyStateTitle = React.forwardRef<
 	React.ElementRef<typeof H3>,
@@ -77,9 +77,7 @@ export const EmptyStateActions = React.forwardRef<
 })
 EmptyStateActions.displayName = 'EmptyStateActions'
 
-export type EmptyStateRootProps = React.ComponentPropsWithoutRef<
-	typeof EmptyStateRoot
->
+export type EmptyStateProps = React.ComponentPropsWithoutRef<typeof EmptyState>
 
 export type EmptyStateIconProps = React.ComponentPropsWithoutRef<
 	typeof EmptyStateIcon

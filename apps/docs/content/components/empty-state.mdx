@@ -15,19 +15,26 @@ package:
 ## Usage
 
 ```tsx
-import { EmptyState, Button } from '@nerdfish/ui'
+import {
+	EmptyState,
+	Button,
+	EmptyStateIcon,
+	EmptyStateTitle,
+	EmptyStateDescription,
+	EmptyStateActions,
+} from '@nerdfish/ui'
 import { TriangleAlertIcon } from 'lucide-react'
 ```
 
 ```tsx
-<EmptyState.Root>
-	<EmptyState.Icon>
+<EmptyState>
+	<EmptyStateIcon>
 		<TriangleAlertIcon />
-	</EmptyState.Icon>
-	<EmptyState.Title>No data</EmptyState.Title>
-	<EmptyState.Description>No data to display</EmptyState.Description>
-	<EmptyState.Actions>
+	</EmptyStateIcon>
+	<EmptyStateTitle>No data</EmptyStateTitle>
+	<EmptyStateDescription>No data to display</EmptyStateDescription>
+	<EmptyStateActions>
 		<Button>Add data</Button>
-	</EmptyState.Actions>
-</EmptyState.Root>
+	</EmptyStateActions>
+</EmptyState>
 ```
