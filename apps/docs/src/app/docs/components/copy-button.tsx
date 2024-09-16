@@ -7,6 +7,8 @@ import {
 	DropdownMenuTrigger,
 	Tooltip,
 	TooltipProvider,
+	TooltipTrigger,
+	TooltipContent,
 } from '@nerdfish/ui'
 import { cx, useCopyToClipboard } from '@nerdfish/utils'
 import React from 'react'
@@ -28,8 +30,8 @@ export function CopyButton({
 
 	return (
 		<TooltipProvider>
-			<Tooltip.Root>
-				<Tooltip.Trigger asChild>
+			<Tooltip>
+				<TooltipTrigger asChild>
 					<Button
 						size="iconSm"
 						{...props}
@@ -44,9 +46,9 @@ export function CopyButton({
 							<Icons.Copy className="size-4" />
 						)}
 					</Button>
-				</Tooltip.Trigger>
-				<Tooltip.Content>{label}</Tooltip.Content>
-			</Tooltip.Root>
+				</TooltipTrigger>
+				<TooltipContent>{label}</TooltipContent>
+			</Tooltip>
 		</TooltipProvider>
 	)
 }

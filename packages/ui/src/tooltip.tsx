@@ -6,7 +6,7 @@ import * as React from 'react'
 
 export const TooltipProvider = TooltipPrimitive.Provider
 
-export const TooltipRoot = TooltipPrimitive.Root
+export const Tooltip = TooltipPrimitive.Root
 export const TooltipTrigger = TooltipPrimitive.Trigger
 
 export const TooltipContent = React.forwardRef<
@@ -25,7 +25,7 @@ export const TooltipContent = React.forwardRef<
 ))
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
-export type TooltipRootProps = React.ComponentProps<typeof TooltipRoot>
+export type TooltipProps = React.ComponentProps<typeof Tooltip>
 export type TooltipTriggerProps = React.ComponentProps<typeof TooltipTrigger>
 export type TooltipContentProps = React.ComponentProps<typeof TooltipContent>
 export type TooltipProviderProps = React.ComponentProps<typeof TooltipProvider>

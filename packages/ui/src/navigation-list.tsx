@@ -3,7 +3,7 @@
 import { cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-import { Tooltip } from './tooltip'
+import { Tooltip, TooltipTrigger, TooltipContent } from './tooltip'
 
 export const navigationListItemVariants = cva(
 	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
@@ -79,8 +79,8 @@ export function NavigationListItem<T>({
 
 	if (isCollapsed) {
 		return (
-			<Tooltip.Root delayDuration={0}>
-				<Tooltip.Trigger asChild>
+			<Tooltip delayDuration={0}>
+				<TooltipTrigger asChild>
 					<Link
 						className={cx(
 							navigationListItemVariants({
@@ -95,13 +95,13 @@ export function NavigationListItem<T>({
 						<ItemIcon icon={Icon} isCollapsed={isCollapsed} />
 						<span className="sr-only">{title}</span>
 					</Link>
-				</Tooltip.Trigger>
+				</TooltipTrigger>
 
-				<Tooltip.Content side="right" className="flex items-center gap-4">
+				<TooltipContent side="right" className="flex items-center gap-4">
 					{title}
 					<ItemLabel label={label} className="text-muted" />
-				</Tooltip.Content>
-			</Tooltip.Root>
+				</TooltipContent>
+			</Tooltip>
 		)
 	}
 
@@ -139,8 +139,8 @@ export function NavigationListTitle({
 }) {
 	if (isCollapsed) {
 		return (
-			<Tooltip.Root delayDuration={0}>
-				<Tooltip.Trigger asChild>
+			<Tooltip delayDuration={0}>
+				<TooltipTrigger asChild>
 					<h2
 						className={cx(
 							navigationListItemVariants({
@@ -154,13 +154,13 @@ export function NavigationListTitle({
 						<ItemIcon icon={Icon} isCollapsed={isCollapsed} />
 						<span className="sr-only">{title}</span>
 					</h2>
-				</Tooltip.Trigger>
+				</TooltipTrigger>
 
-				<Tooltip.Content side="right" className="flex items-center gap-4">
+				<TooltipContent side="right" className="flex items-center gap-4">
 					{title}
 					<ItemLabel label={label} className="text-muted" />
-				</Tooltip.Content>
-			</Tooltip.Root>
+				</TooltipContent>
+			</Tooltip>
 		)
 	}
 
