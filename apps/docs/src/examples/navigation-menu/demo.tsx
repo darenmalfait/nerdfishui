@@ -1,6 +1,14 @@
 'use client'
 
-import { getNavigationMenuTriggerStyle, NavigationMenu } from '@nerdfish/ui'
+import {
+	getNavigationMenuTriggerStyle,
+	NavigationMenu,
+	NavigationMenuList,
+	NavigationMenuItem,
+	NavigationMenuTrigger,
+	NavigationMenuContent,
+	NavigationMenuLink,
+} from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
 import * as React from 'react'
@@ -49,7 +57,7 @@ const ListItem = React.forwardRef<
 >(({ className, title, children, ...props }, ref) => {
 	return (
 		<li>
-			<NavigationMenu.Link asChild>
+			<NavigationMenuLink asChild>
 				<a
 					ref={ref}
 					className={cx(
@@ -63,7 +71,7 @@ const ListItem = React.forwardRef<
 						{children}
 					</p>
 				</a>
-			</NavigationMenu.Link>
+			</NavigationMenuLink>
 		</li>
 	)
 })
@@ -71,11 +79,11 @@ ListItem.displayName = 'ListItem'
 
 export function NavigationMenuDemo() {
 	return (
-		<NavigationMenu.Root>
-			<NavigationMenu.List>
-				<NavigationMenu.Item>
-					<NavigationMenu.Trigger>Getting started</NavigationMenu.Trigger>
-					<NavigationMenu.Content>
+		<NavigationMenu>
+			<NavigationMenuList>
+				<NavigationMenuItem>
+					<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+					<NavigationMenuContent>
 						<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px]">
 							<ListItem href="/recipes" title="Introduction">
 								Discover a variety of delicious recipes to try at home.
@@ -87,11 +95,11 @@ export function NavigationMenuDemo() {
 								Essential tips and tricks for improving your cooking skills.
 							</ListItem>
 						</ul>
-					</NavigationMenu.Content>
-				</NavigationMenu.Item>
-				<NavigationMenu.Item>
-					<NavigationMenu.Trigger>Recipes</NavigationMenu.Trigger>
-					<NavigationMenu.Content>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuTrigger>Recipes</NavigationMenuTrigger>
+					<NavigationMenuContent>
 						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
 							{recipes.map((recipe) => (
 								<ListItem
@@ -103,16 +111,16 @@ export function NavigationMenuDemo() {
 								</ListItem>
 							))}
 						</ul>
-					</NavigationMenu.Content>
-				</NavigationMenu.Item>
-				<NavigationMenu.Item>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
 					<Link href="/recipes" legacyBehavior passHref>
-						<NavigationMenu.Link className={getNavigationMenuTriggerStyle()}>
+						<NavigationMenuLink className={getNavigationMenuTriggerStyle()}>
 							All Recipes
-						</NavigationMenu.Link>
+						</NavigationMenuLink>
 					</Link>
-				</NavigationMenu.Item>
-			</NavigationMenu.List>
-		</NavigationMenu.Root>
+				</NavigationMenuItem>
+			</NavigationMenuList>
+		</NavigationMenu>
 	)
 }

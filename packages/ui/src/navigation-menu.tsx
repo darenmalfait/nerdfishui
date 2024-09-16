@@ -23,7 +23,7 @@ const NavigationMenuViewport = React.forwardRef<
 NavigationMenuViewport.displayName =
 	NavigationMenuPrimitive.Viewport.displayName
 
-export const NavigationMenuRoot = React.forwardRef<
+export const NavigationMenu = React.forwardRef<
 	React.ElementRef<typeof NavigationMenuPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
@@ -39,7 +39,7 @@ export const NavigationMenuRoot = React.forwardRef<
 		<NavigationMenuViewport />
 	</NavigationMenuPrimitive.Root>
 ))
-NavigationMenuRoot.displayName = NavigationMenuPrimitive.Root.displayName
+NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
 
 export const NavigationMenuList = React.forwardRef<
 	React.ElementRef<typeof NavigationMenuPrimitive.List>,
@@ -115,7 +115,7 @@ export const NavigationMenuIndicator = React.forwardRef<
 NavigationMenuIndicator.displayName =
 	NavigationMenuPrimitive.Indicator.displayName
 
-export type NavigationMenuRootProps = React.ComponentPropsWithoutRef<
+export type NavigationMenuProps = React.ComponentPropsWithoutRef<
 	typeof NavigationMenuPrimitive.Root
 >
 export type NavigationMenuListProps = React.ComponentPropsWithoutRef<
