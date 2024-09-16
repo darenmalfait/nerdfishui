@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as TabsPrimivite from '@radix-ui/react-tabs'
 import * as React from 'react'
 
-export const TabsRoot = TabsPrimivite.Root
+export const Tabs = TabsPrimivite.Root
 
 export const TabsList = React.forwardRef<
 	React.ElementRef<typeof TabsPrimivite.List>,
@@ -51,7 +51,7 @@ export const TabsContent = React.forwardRef<
 ))
 TabsContent.displayName = TabsPrimivite.Content.displayName
 
-export type TabsRootProps = React.ComponentPropsWithoutRef<typeof TabsRoot>
+export type TabsProps = React.ComponentPropsWithoutRef<typeof Tabs>
 export type TabsListProps = React.ComponentPropsWithoutRef<typeof TabsList>
 export type TabsTriggerProps = React.ComponentPropsWithoutRef<
 	typeof TabsTrigger

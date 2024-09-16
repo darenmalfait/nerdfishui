@@ -12,6 +12,9 @@ import {
 	ScrollArea,
 	ScrollBar,
 	Tabs,
+	TabsContent,
+	TabsList,
+	TabsTrigger,
 } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import {
@@ -144,18 +147,16 @@ function AppDemo() {
 						</aside>
 						<div className="col-span-3 border-l border-l-gray-200 xl:col-span-4 dark:border-l-gray-700">
 							<div className="px-8 py-6">
-								<Tabs.Root defaultValue="recipes" className="h-full space-y-6">
+								<Tabs defaultValue="recipes" className="h-full space-y-6">
 									<div className="space-between flex items-center">
-										<Tabs.List>
-											<Tabs.Trigger value="recipes" className="relative">
+										<TabsList>
+											<TabsTrigger value="recipes" className="relative">
 												Recipes
-											</Tabs.Trigger>
-											<Tabs.Trigger value="ingredients">
-												Ingredients
-											</Tabs.Trigger>
-										</Tabs.List>
+											</TabsTrigger>
+											<TabsTrigger value="ingredients">Ingredients</TabsTrigger>
+										</TabsList>
 									</div>
-									<Tabs.Content value="recipes" className="shadow-none">
+									<TabsContent value="recipes" className="shadow-none">
 										<div className="mb-2 flex items-center justify-between">
 											<div className="space-y-1">
 												<H2>Start Cooking</H2>
@@ -197,8 +198,8 @@ function AppDemo() {
 												<ScrollBar orientation="horizontal" />
 											</ScrollArea>
 										</div>
-									</Tabs.Content>
-									<Tabs.Content
+									</TabsContent>
+									<TabsContent
 										value="ingredients"
 										className="h-full min-h-0 flex-col border-none data-[state=active]:flex"
 									>
@@ -218,8 +219,8 @@ function AppDemo() {
 												<Button>Add Ingredient</Button>
 											</div>
 										</div>
-									</Tabs.Content>
-								</Tabs.Root>
+									</TabsContent>
+								</Tabs>
 							</div>
 						</div>
 					</div>

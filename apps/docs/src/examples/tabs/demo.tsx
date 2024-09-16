@@ -1,20 +1,20 @@
 'use client'
 
-import { Tabs } from '@nerdfish/ui'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@nerdfish/ui'
 
 export function TabsDemo() {
 	return (
-		<Tabs.Root defaultValue="general" className="w-[400px]">
-			<Tabs.List>
-				<Tabs.Trigger value="general">General</Tabs.Trigger>
-				<Tabs.Trigger value="privacy">Privacy</Tabs.Trigger>
-			</Tabs.List>
-			<Tabs.Content value="general">
+		<Tabs defaultValue="general" className="w-[400px]">
+			<TabsList>
+				<TabsTrigger value="general">General</TabsTrigger>
+				<TabsTrigger value="privacy">Privacy</TabsTrigger>
+			</TabsList>
+			<TabsContent value="general">
 				<p className="text-primary text-sm">General settings tab</p>
-			</Tabs.Content>
-			<Tabs.Content value="privacy">
+			</TabsContent>
+			<TabsContent value="privacy">
 				<p className="text-primary text-sm">Privacy settings tab</p>
-			</Tabs.Content>
-		</Tabs.Root>
+			</TabsContent>
+		</Tabs>
 	)
 }
