@@ -71,7 +71,7 @@ function AlertIcon({
 	return <Icon className={cx('h-4 w-4')} />
 }
 
-export const AlertRoot = React.forwardRef<
+export const Alert = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithRef<'div'> & {
 		variant?: VariantProps<typeof alertVariants>['variant']
@@ -80,18 +80,15 @@ export const AlertRoot = React.forwardRef<
 		children?: React.ReactNode
 		description?: string
 	}
->(function AlertRoot(
+>(function Alert(
 	{ className, variant, hideIcon, title, children, description, ...props },
 	ref,
 ) {
 	deprecateProp(
 		description,
-		'Alert: description is deprecated, use <Alert.Description /> instead',
+		'Alert: description is deprecated, use <AlertDescription /> instead',
 	)
-	deprecateProp(
-		title,
-		'Alert: title is deprecated, use <Alert.Title /> instead',
-	)
+	deprecateProp(title, 'Alert: title is deprecated, use <AlertTitle /> instead')
 
 	return (
 		<div
@@ -110,9 +107,9 @@ export const AlertRoot = React.forwardRef<
 		</div>
 	)
 })
-AlertRoot.displayName = 'Alert'
+Alert.displayName = 'Alert'
 
-export type AlertRootProps = React.ComponentPropsWithoutRef<typeof AlertRoot>
+export type AlertProps = React.ComponentPropsWithoutRef<typeof Alert>
 export type AlertTitleProps = React.ComponentPropsWithoutRef<typeof AlertTitle>
 export type AlertDescriptionProps = React.ComponentPropsWithoutRef<
 	typeof AlertDescription
