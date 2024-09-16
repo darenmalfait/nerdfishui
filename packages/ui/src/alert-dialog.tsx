@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import * as React from 'react'
 
-export const AlertDialogRoot = AlertDialogPrimitive.Root
+export const AlertDialog = AlertDialogPrimitive.Root
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 
 export const AlertDialogPortal = ({
@@ -143,8 +143,8 @@ export const AlertDialogCancel = React.forwardRef<
 ))
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
 
-export type AlertDialogRootProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogRoot
+export type AlertDialogProps = React.ComponentPropsWithoutRef<
+	typeof AlertDialog
 >
 export type AlertDialogPortalProps = React.ComponentPropsWithoutRef<
 	typeof AlertDialogPortal
