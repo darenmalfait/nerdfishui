@@ -5,7 +5,7 @@ import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { Check, ChevronRight, Circle } from 'lucide-react'
 import * as React from 'react'
 
-export const DropdownMenuRoot = DropdownMenuPrimitive.Root
+export const DropdownMenu = DropdownMenuPrimitive.Root
 export const DropdownMenuGroup = DropdownMenuPrimitive.Group
 export const DropdownMenuPortal = DropdownMenuPrimitive.Portal
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
@@ -202,8 +202,8 @@ export type DropdownMenuRadioGroupProps = React.ComponentPropsWithoutRef<
 export type DropdownMenuRadioItemProps = React.ComponentPropsWithoutRef<
 	typeof DropdownMenuRadioItem
 >
-export type DropdownMenuRootProps = React.ComponentPropsWithoutRef<
-	typeof DropdownMenuRoot
+export type DropdownMenuProps = React.ComponentPropsWithoutRef<
+	typeof DropdownMenu
 >
 export type DropdownMenuSeparatorProps = React.ComponentPropsWithoutRef<
 	typeof DropdownMenuSeparator

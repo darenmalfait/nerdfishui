@@ -15,19 +15,26 @@ package:
 ## Usage
 
 ```tsx
-import { DropdownMenu } from '@nerdfish/ui'
+import {
+	DropdownMenu,
+	DropdownMenuTrigger,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+} from '@nerdfish/ui'
 ```
 
 ```tsx
-<DropdownMenu.Root>
-	<DropdownMenu.Trigger>Open</DropdownMenu.Trigger>
-	<DropdownMenu.Content>
-		<DropdownMenu.Label>Cake Flavors</DropdownMenu.Label>
-		<DropdownMenu.Separator />
-		<DropdownMenu.Item>Chocolate</DropdownMenu.Item>
-		<DropdownMenu.Item>Vanilla</DropdownMenu.Item>
-		<DropdownMenu.Item>Strawberry</DropdownMenu.Item>
-		<DropdownMenu.Item>Red Velvet</DropdownMenu.Item>
-	</DropdownMenu.Content>
-</DropdownMenu.Root>
+<DropdownMenu>
+	<DropdownMenuTrigger>Open</DropdownMenuTrigger>
+	<DropdownMenuContent>
+		<DropdownMenuLabel>Cake Flavors</DropdownMenuLabel>
+		<DropdownMenuSeparator />
+		<DropdownMenuItem>Chocolate</DropdownMenuItem>
+		<DropdownMenuItem>Vanilla</DropdownMenuItem>
+		<DropdownMenuItem>Strawberry</DropdownMenuItem>
+		<DropdownMenuItem>Red Velvet</DropdownMenuItem>
+	</DropdownMenuContent>
+</DropdownMenu>
 ```

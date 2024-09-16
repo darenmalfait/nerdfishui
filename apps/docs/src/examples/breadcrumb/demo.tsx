@@ -2,13 +2,16 @@
 
 import {
 	Breadcrumb,
-	DropdownMenu,
 	BreadcrumbLink,
 	BreadcrumbItem,
 	BreadcrumbSeparator,
 	BreadcrumbEllipsis,
 	BreadcrumbList,
 	BreadcrumbPage,
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
 } from '@nerdfish/ui'
 
 export function BreadcrumbDemo() {
@@ -20,17 +23,17 @@ export function BreadcrumbDemo() {
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					<DropdownMenu.Root>
-						<DropdownMenu.Trigger className="flex items-center gap-1">
+					<DropdownMenu>
+						<DropdownMenuTrigger className="flex items-center gap-1">
 							<BreadcrumbEllipsis className="size-4" />
 							<span className="sr-only">Toggle menu</span>
-						</DropdownMenu.Trigger>
-						<DropdownMenu.Content align="start">
-							<DropdownMenu.Item>Documentation</DropdownMenu.Item>
-							<DropdownMenu.Item>Themes</DropdownMenu.Item>
-							<DropdownMenu.Item>GitHub</DropdownMenu.Item>
-						</DropdownMenu.Content>
-					</DropdownMenu.Root>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent align="start">
+							<DropdownMenuItem>Documentation</DropdownMenuItem>
+							<DropdownMenuItem>Themes</DropdownMenuItem>
+							<DropdownMenuItem>GitHub</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>

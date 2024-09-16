@@ -2,6 +2,9 @@ import {
 	Button,
 	type ButtonProps,
 	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
 	Tooltip,
 	TooltipProvider,
 } from '@nerdfish/ui'
@@ -49,7 +52,7 @@ export function CopyButton({
 }
 
 interface CopyNpmCommandButtonProps
-	extends React.ComponentPropsWithoutRef<typeof DropdownMenu.Trigger> {
+	extends React.ComponentPropsWithoutRef<typeof DropdownMenuTrigger> {
 	commands: Required<NpmCommands>
 }
 
@@ -63,8 +66,8 @@ export function CopyNpmCommandButton({
 	const { handleCopy, copiedText } = useCopyToClipboard()
 
 	return (
-		<DropdownMenu.Root>
-			<DropdownMenu.Trigger asChild>
+		<DropdownMenu>
+			<DropdownMenuTrigger asChild>
 				<Button
 					size="iconSm"
 					className={cx('absolute right-2 top-2', className)}
@@ -78,27 +81,27 @@ export function CopyNpmCommandButton({
 						<Icons.Copy className="size-4" />
 					)}
 				</Button>
-			</DropdownMenu.Trigger>
-			<DropdownMenu.Content>
-				<DropdownMenu.Item
+			</DropdownMenuTrigger>
+			<DropdownMenuContent>
+				<DropdownMenuItem
 					onClick={() => handleCopy(commands.__npmCommand__, COPY_TIMOUT)}
 				>
 					<Icons.Npm className="mr-2 size-4 fill-[#CB3837]" />
 					<span>npm</span>
-				</DropdownMenu.Item>
-				<DropdownMenu.Item
+				</DropdownMenuItem>
+				<DropdownMenuItem
 					onClick={() => handleCopy(commands.__yarnCommand__, COPY_TIMOUT)}
 				>
 					<Icons.Yarn className="mr-2 size-4 fill-[#2C8EBB]" />
 					<span>yarn</span>
-				</DropdownMenu.Item>
-				<DropdownMenu.Item
+				</DropdownMenuItem>
+				<DropdownMenuItem
 					onClick={() => handleCopy(commands.__pnpmCommand__, COPY_TIMOUT)}
 				>
 					<Icons.Pnpm className="mr-2 size-4 fill-[#F69220]" />
 					<span>pnpm</span>
-				</DropdownMenu.Item>
-			</DropdownMenu.Content>
-		</DropdownMenu.Root>
+				</DropdownMenuItem>
+			</DropdownMenuContent>
+		</DropdownMenu>
 	)
 }
