@@ -14,7 +14,8 @@ import { DateSegment } from './date-segment'
 
 export const TimeField = React.forwardRef<
 	HTMLDivElement,
-	InputProps & AriaTimeFieldProps<TimeValue>
+	Omit<InputProps, 'value' | 'defaultValue' | 'onChange'> &
+		AriaTimeFieldProps<TimeValue>
 >(({ isDisabled, variant, inputSize, hourCycle = 24, ...props }, ref) => {
 	const innerRef = React.useRef<HTMLDivElement>(null)
 	React.useImperativeHandle(ref, () => innerRef.current as HTMLDivElement)
