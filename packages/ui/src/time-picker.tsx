@@ -150,7 +150,7 @@ export const TimePicker = forwardRef<
 					{...props}
 					className={cx(
 						inputVariants({ inputSize, variant }),
-						'flex gap-0',
+						'flex gap-1',
 						className,
 					)}
 				>
@@ -163,10 +163,7 @@ export const TimePicker = forwardRef<
 						</>
 					))}
 					{options?.hour12 ? (
-						<>
-							<TimePickerSeparator />
-							<TimePickerSegment segment="am/pm" defaultValue="am" />
-						</>
+						<TimePickerSegment segment="am/pm" defaultValue="am" />
 					) : null}
 				</div>
 			</TimePickerContext.Provider>
