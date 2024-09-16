@@ -111,8 +111,6 @@ export const TimePicker = forwardRef<
 		onChange?: (date?: Date) => void
 		children?: ReactNode
 		options?: Omit<Options, 'date' | 'onChangeDate'>
-		fields?: TimeDateType[]
-		separator?: ReactNode
 	} & InputVariants
 >(
 	(
@@ -124,8 +122,7 @@ export const TimePicker = forwardRef<
 			className,
 			inputSize,
 			variant,
-			fields = ['hours', 'minutes'],
-			separator = ':',
+			children,
 			...props
 		},
 		ref,
@@ -154,17 +151,7 @@ export const TimePicker = forwardRef<
 						className,
 					)}
 				>
-					{fields.map((field, i) => (
-						<>
-							{i !== 0 ? (
-								<TimePickerSeparator>{separator}</TimePickerSeparator>
-							) : null}
-							<TimePickerSegment segment={field} />
-						</>
-					))}
-					{options?.hour12 ? (
-						<TimePickerSegment segment="am/pm" defaultValue="am" />
-					) : null}
+					{children}
 				</div>
 			</TimePickerContext.Provider>
 		)
