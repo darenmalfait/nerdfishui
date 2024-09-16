@@ -5,7 +5,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'command/command.tsx'
+  path: 'command.tsx'
 ---
 
 <ComponentExample src="/src/examples/command/demo.tsx">
@@ -16,31 +16,39 @@ package:
 
 ```tsx
 import Image from 'next/image'
-import { Command } from '@nerdfish/ui'
+import {
+	Command,
+	CommandInput,
+	CommandList,
+	CommandGroup,
+	CommandItem,
+	CommandEmpty,
+	CommandSeparator,
+} from '@nerdfish/ui'
 ```
 
 ```tsx
-<Command.Root>
-	<Command.Input placeholder="Type a command or search..." />
-	<Command.Empty>No results found.</Command.Empty>
-	<Command.List>
-		<Command.Group heading="Suggestions">
-			<Command.Item>Calendar</Command.Item>
-			<Command.Item>Search Emoji</Command.Item>
-			<Command.Item>Calculator</Command.Item>
-		</Command.Group>
+<Command>
+	<CommandInput placeholder="Type a command or search..." />
+	<CommandEmpty>No results found.</CommandEmpty>
+	<CommandList>
+		<CommandGroup heading="Suggestions">
+			<CommandItem>Calendar</CommandItem>
+			<CommandItem>Search Emoji</CommandItem>
+			<CommandItem>Calculator</CommandItem>
+		</CommandGroup>
 		<CommandSeparator />
-		<Command.Group heading="Settings">
-			<Command.Item>Profile</Command.Item>
-			<Command.Item>Billing</Command.Item>
-			<Command.Item>Settings</Command.Item>
-		</Command.Group>
-	</Command.List>
-</Command.Root>
+		<CommandGroup heading="Settings">
+			<CommandItem>Profile</CommandItem>
+			<CommandItem>Billing</CommandItem>
+			<CommandItem>Settings</CommandItem>
+		</CommandGroup>
+	</CommandList>
+</Command>
 ```
 
 ## Dialog
 
 <ComponentExample src="/src/examples/command/dialog.tsx">
-	<CommandDialog />
+	<CommandDialogDemo />
 </ComponentExample>

@@ -78,7 +78,7 @@ const components = {
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		<img
-			className={cx('rounded-md border border-gray-200', className)}
+			className={cx('rounded-lg border border-gray-200', className)}
 			alt={alt}
 			{...props}
 		/>

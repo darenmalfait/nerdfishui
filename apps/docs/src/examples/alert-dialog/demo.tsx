@@ -1,26 +1,37 @@
 'use client'
 
-import { AlertDialog, Button } from '@nerdfish/ui'
+import {
+	AlertDialog,
+	AlertDialogTrigger,
+	Button,
+	AlertDialogContent,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogCancel,
+	AlertDialogAction,
+} from '@nerdfish/ui'
 
 export function AlertDialogDemo() {
 	return (
-		<AlertDialog.Root>
-			<AlertDialog.Trigger asChild>
+		<AlertDialog>
+			<AlertDialogTrigger asChild>
 				<Button variant="outline">Open</Button>
-			</AlertDialog.Trigger>
-			<AlertDialog.Content>
-				<AlertDialog.Header>
-					<AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
-					<AlertDialog.Description>
+			</AlertDialogTrigger>
+			<AlertDialogContent>
+				<AlertDialogHeader>
+					<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+					<AlertDialogDescription>
 						This action cannot be undone. This will permanently delete your
 						account and remove your data from our servers.
-					</AlertDialog.Description>
-				</AlertDialog.Header>
-				<AlertDialog.Footer>
-					<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
-					<AlertDialog.Action>Continue</AlertDialog.Action>
-				</AlertDialog.Footer>
-			</AlertDialog.Content>
-		</AlertDialog.Root>
+					</AlertDialogDescription>
+				</AlertDialogHeader>
+				<AlertDialogFooter>
+					<AlertDialogCancel>Cancel</AlertDialogCancel>
+					<AlertDialogAction>Continue</AlertDialogAction>
+				</AlertDialogFooter>
+			</AlertDialogContent>
+		</AlertDialog>
 	)
 }

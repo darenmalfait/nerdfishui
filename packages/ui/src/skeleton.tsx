@@ -3,7 +3,7 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-import { Card } from './card'
+import { Card, CardHeader, CardContent, CardFooter } from './card'
 
 export function Skeleton({
 	className,
@@ -11,7 +11,7 @@ export function Skeleton({
 }: React.HTMLAttributes<HTMLDivElement>) {
 	return (
 		<div
-			className={cx('bg-inverted/10 animate-pulse rounded-md', className)}
+			className={cx('bg-inverted/10 animate-pulse rounded-lg', className)}
 			{...props}
 		/>
 	)
@@ -19,16 +19,16 @@ export function Skeleton({
 
 export function CardSkeleton({ className }: { className?: string }) {
 	return (
-		<Card.Root className={className}>
-			<Card.Header className="flex flex-col gap-2">
+		<Card className={className}>
+			<CardHeader className="flex flex-col gap-2">
 				<Skeleton className="h-5 w-1/5" />
 				<Skeleton className="h-4 w-4/5" />
-			</Card.Header>
-			<Card.Content className="h-10" />
-			<Card.Footer>
+			</CardHeader>
+			<CardContent className="h-10" />
+			<CardFooter>
 				<Skeleton className="h-8 w-[120px]" />
-			</Card.Footer>
-		</Card.Root>
+			</CardFooter>
+		</Card>
 	)
 }
 

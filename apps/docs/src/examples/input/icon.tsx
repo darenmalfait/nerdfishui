@@ -9,7 +9,6 @@ export function InputIcon() {
 			<Input
 				name="input-icon"
 				icon={CheckCircle}
-				label="email"
 				type="email"
 				placeholder="Email"
 			/>

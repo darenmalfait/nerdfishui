@@ -8,7 +8,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'card/card.tsx'
+  path: 'card.tsx'
 ---
 
 <ComponentExample src="/src/examples/card/demo.tsx">
@@ -18,20 +18,27 @@ package:
 ## Usage
 
 ```tsx
-import { Card } from '@nerdfish/ui'
+import {
+	Card,
+	CardHeader,
+	CardTitle,
+	CardDescription,
+	CardContent,
+	CardFooter,
+} from '@nerdfish/ui'
 ```
 
 ```tsx
-<Card.Root>
-	<Card.Header>
-		<Card.Title>Card Title</Card.Title>
-		<Card.Description>Card Description</Card.Description>
-	</Card.Header>
-	<Card.Content>
+<Card>
+	<CardHeader>
+		<CardTitle>Card Title</CardTitle>
+		<CardDescription>Card Description</CardDescription>
+	</CardHeader>
+	<CardContent>
 		<p>Card Content</p>
-	</Card.Content>
-	<Card.Footer>
+	</CardContent>
+	<CardFooter>
 		<p>Card Footer</p>
-	</Card.Footer>
-</Card.Root>
+	</CardFooter>
+</Card>
 ```

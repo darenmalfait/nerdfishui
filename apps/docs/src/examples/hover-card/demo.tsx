@@ -1,12 +1,12 @@
 'use client'
 
-import { HoverCard } from '@nerdfish/ui'
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@nerdfish/ui'
 
 export function HoverCardDemo() {
 	return (
-		<HoverCard.Root>
-			<HoverCard.Trigger>Hover over the cake</HoverCard.Trigger>
-			<HoverCard.Content>
+		<HoverCard>
+			<HoverCardTrigger>Hover over the cake</HoverCardTrigger>
+			<HoverCardContent>
 				<div className="space-y-2">
 					<h4 className="text-sm font-semibold">@darenmalfait</h4>
 					<p className="text-sm">
@@ -14,7 +14,7 @@ export function HoverCardDemo() {
 						@darenmalfait.
 					</p>
 				</div>
-			</HoverCard.Content>
-		</HoverCard.Root>
+			</HoverCardContent>
+		</HoverCard>
 	)
 }

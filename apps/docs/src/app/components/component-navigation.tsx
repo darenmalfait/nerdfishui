@@ -1,14 +1,19 @@
 'use client'
 
-import { Badge, NavigationList } from '@nerdfish/ui'
+import {
+	Badge,
+	NavigationList,
+	NavigationListItem,
+	NavigationListTitle,
+} from '@nerdfish/ui'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import * as React from 'react'
 import { docs } from '~/config/docs'
 import { stripPreSlash } from '~/lib/utils/string'
 
 export const ComponentNavigation = React.forwardRef<
-	React.ElementRef<typeof NavigationList.Root>,
-	React.ComponentPropsWithoutRef<typeof NavigationList.Root>
+	React.ElementRef<typeof NavigationList>,
+	React.ComponentPropsWithoutRef<typeof NavigationList>
 >(function ComponentNavigation({ ...props }, ref) {
 	const segment = useSelectedLayoutSegment() ?? '/'
 
@@ -17,10 +22,10 @@ export const ComponentNavigation = React.forwardRef<
 	)
 
 	return (
-		<NavigationList.Root {...props} ref={ref}>
-			<NavigationList.Title title="Components" />
+		<NavigationList {...props} ref={ref}>
+			<NavigationListTitle title="Components" />
 			{globalItems?.links.map(({ isNew, isDeprecated, title, ...item }) => (
-				<NavigationList.Item
+				<NavigationListItem
 					key={title}
 					{...item}
 					active={segment === stripPreSlash(item.href)}
@@ -35,7 +40,7 @@ export const ComponentNavigation = React.forwardRef<
 					}
 				/>
 			))}
-		</NavigationList.Root>
+		</NavigationList>
 	)
 })
 

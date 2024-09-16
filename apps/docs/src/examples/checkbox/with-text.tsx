@@ -1,14 +1,20 @@
 'use client'
 
-import { Checkbox } from '@nerdfish/ui'
+import { Checkbox, Description, Field, Label } from '@nerdfish/ui'
 
 export function CheckboxWithText() {
 	return (
 		<div className="items-top flex flex-col space-y-2">
-			<Checkbox name="newsletters3" label="Subscribe to our newsletter" />
-			<p className="text-muted mt-2 text-sm">
-				We&apos;ll send you the latest news and updates.
-			</p>
+			<Field>
+				<Label className="flex items-center gap-2">
+					<Checkbox name="newsletter" />
+					Subscribe to our newsletter
+				</Label>
+
+				<Description>
+					We&apos;ll send you the latest news and updates.
+				</Description>
+			</Field>
 		</div>
 	)
 }

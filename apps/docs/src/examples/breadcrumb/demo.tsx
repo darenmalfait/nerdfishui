@@ -1,37 +1,49 @@
 'use client'
 
-import { Breadcrumb, DropdownMenu } from '@nerdfish/ui'
+import {
+	Breadcrumb,
+	BreadcrumbLink,
+	BreadcrumbItem,
+	BreadcrumbSeparator,
+	BreadcrumbEllipsis,
+	BreadcrumbList,
+	BreadcrumbPage,
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from '@nerdfish/ui'
 
 export function BreadcrumbDemo() {
 	return (
-		<Breadcrumb.Root>
-			<Breadcrumb.List>
-				<Breadcrumb.Item>
-					<Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-				</Breadcrumb.Item>
-				<Breadcrumb.Separator />
-				<Breadcrumb.Item>
-					<DropdownMenu.Root>
-						<DropdownMenu.Trigger className="flex items-center gap-1">
-							<Breadcrumb.Ellipsis className="size-4" />
+		<Breadcrumb>
+			<BreadcrumbList>
+				<BreadcrumbItem>
+					<BreadcrumbLink href="/">Home</BreadcrumbLink>
+				</BreadcrumbItem>
+				<BreadcrumbSeparator />
+				<BreadcrumbItem>
+					<DropdownMenu>
+						<DropdownMenuTrigger className="flex items-center gap-1">
+							<BreadcrumbEllipsis className="size-4" />
 							<span className="sr-only">Toggle menu</span>
-						</DropdownMenu.Trigger>
-						<DropdownMenu.Content align="start">
-							<DropdownMenu.Item>Documentation</DropdownMenu.Item>
-							<DropdownMenu.Item>Themes</DropdownMenu.Item>
-							<DropdownMenu.Item>GitHub</DropdownMenu.Item>
-						</DropdownMenu.Content>
-					</DropdownMenu.Root>
-				</Breadcrumb.Item>
-				<Breadcrumb.Separator />
-				<Breadcrumb.Item>
-					<Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
-				</Breadcrumb.Item>
-				<Breadcrumb.Separator />
-				<Breadcrumb.Item>
-					<Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
-				</Breadcrumb.Item>
-			</Breadcrumb.List>
-		</Breadcrumb.Root>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent align="start">
+							<DropdownMenuItem>Documentation</DropdownMenuItem>
+							<DropdownMenuItem>Themes</DropdownMenuItem>
+							<DropdownMenuItem>GitHub</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
+				</BreadcrumbItem>
+				<BreadcrumbSeparator />
+				<BreadcrumbItem>
+					<BreadcrumbLink href="/docs/components">Components</BreadcrumbLink>
+				</BreadcrumbItem>
+				<BreadcrumbSeparator />
+				<BreadcrumbItem>
+					<BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+				</BreadcrumbItem>
+			</BreadcrumbList>
+		</Breadcrumb>
 	)
 }

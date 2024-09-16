@@ -1,86 +1,88 @@
 'use client'
 
-import { Button, Drawer } from '@nerdfish/ui'
+import {
+	Button,
+	Drawer,
+	DrawerContent,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerTrigger,
+	DrawerFooter,
+	DrawerClose,
+	DrawerDescription,
+} from '@nerdfish/ui'
 
 export function DrawerDirection() {
 	return (
 		<div className="flex flex-col space-y-4">
-			<Drawer.Root direction="left">
-				<Drawer.Trigger asChild>
+			<Drawer direction="left">
+				<DrawerTrigger asChild>
 					<Button variant="outline">Left</Button>
-				</Drawer.Trigger>
-				<Drawer.Content className="w-full">
-					<Drawer.Header>
-						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-						<Drawer.Description>
-							This action cannot be undone.
-						</Drawer.Description>
-					</Drawer.Header>
-					<Drawer.Footer>
+				</DrawerTrigger>
+				<DrawerContent className="w-full">
+					<DrawerHeader>
+						<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+						<DrawerDescription>This action cannot be undone.</DrawerDescription>
+					</DrawerHeader>
+					<DrawerFooter>
 						<Button>Submit</Button>
-						<Drawer.Close>
+						<DrawerClose>
 							<Button variant="outline">Cancel</Button>
-						</Drawer.Close>
-					</Drawer.Footer>
-				</Drawer.Content>
-			</Drawer.Root>
-			<Drawer.Root direction="right">
-				<Drawer.Trigger asChild>
+						</DrawerClose>
+					</DrawerFooter>
+				</DrawerContent>
+			</Drawer>
+			<Drawer direction="right">
+				<DrawerTrigger asChild>
 					<Button variant="outline">Right</Button>
-				</Drawer.Trigger>
-				<Drawer.Content className="w-full">
-					<Drawer.Header>
-						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-						<Drawer.Description>
-							This action cannot be undone.
-						</Drawer.Description>
-					</Drawer.Header>
-					<Drawer.Footer>
+				</DrawerTrigger>
+				<DrawerContent className="w-full">
+					<DrawerHeader>
+						<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+						<DrawerDescription>This action cannot be undone.</DrawerDescription>
+					</DrawerHeader>
+					<DrawerFooter>
 						<Button>Submit</Button>
-						<Drawer.Close>
+						<DrawerClose>
 							<Button variant="outline">Cancel</Button>
-						</Drawer.Close>
-					</Drawer.Footer>
-				</Drawer.Content>
-			</Drawer.Root>
-			<Drawer.Root direction="bottom">
-				<Drawer.Trigger asChild>
+						</DrawerClose>
+					</DrawerFooter>
+				</DrawerContent>
+			</Drawer>
+			<Drawer direction="bottom">
+				<DrawerTrigger asChild>
 					<Button variant="outline">Bottom</Button>
-				</Drawer.Trigger>
-				<Drawer.Content className="w-full">
-					<Drawer.Header>
-						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-						<Drawer.Description>
-							This action cannot be undone.
-						</Drawer.Description>
-					</Drawer.Header>
-					<Drawer.Footer>
+				</DrawerTrigger>
+				<DrawerContent className="w-full">
+					<DrawerHeader>
+						<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+						<DrawerDescription>This action cannot be undone.</DrawerDescription>
+					</DrawerHeader>
+					<DrawerFooter>
 						<Button>Submit</Button>
-						<Drawer.Close>
+						<DrawerClose>
 							<Button variant="outline">Cancel</Button>
-						</Drawer.Close>
-					</Drawer.Footer>
-				</Drawer.Content>
-			</Drawer.Root>
-			<Drawer.Root direction="top">
-				<Drawer.Trigger asChild>
+						</DrawerClose>
+					</DrawerFooter>
+				</DrawerContent>
+			</Drawer>
+			<Drawer direction="top">
+				<DrawerTrigger asChild>
 					<Button variant="outline">Top</Button>
-				</Drawer.Trigger>
-				<Drawer.Content className="w-full">
-					<Drawer.Header>
-						<Drawer.Title>Are you sure absolutely sure?</Drawer.Title>
-						<Drawer.Description>
-							This action cannot be undone.
-						</Drawer.Description>
-					</Drawer.Header>
-					<Drawer.Footer>
+				</DrawerTrigger>
+				<DrawerContent className="w-full">
+					<DrawerHeader>
+						<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+						<DrawerDescription>This action cannot be undone.</DrawerDescription>
+					</DrawerHeader>
+					<DrawerFooter>
 						<Button>Submit</Button>
-						<Drawer.Close>
+						<DrawerClose>
 							<Button variant="outline">Cancel</Button>
-						</Drawer.Close>
-					</Drawer.Footer>
-				</Drawer.Content>
-			</Drawer.Root>
+						</DrawerClose>
+					</DrawerFooter>
+				</DrawerContent>
+			</Drawer>
 		</div>
 	)
 }

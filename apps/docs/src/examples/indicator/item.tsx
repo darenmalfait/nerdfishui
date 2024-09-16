@@ -1,14 +1,14 @@
 'use client'
 
-import { Badge, Indicator } from '@nerdfish/ui'
+import { Badge, Indicator, IndicatorItem } from '@nerdfish/ui'
 
 export function IndicatorItemDemo() {
 	return (
-		<Indicator.Root>
-			<Indicator.Item>
+		<Indicator>
+			<IndicatorItem>
 				<Badge>99+</Badge>
-			</Indicator.Item>
+			</IndicatorItem>
 			<div className="bg-muted grid size-32 place-items-center">content</div>
-		</Indicator.Root>
+		</Indicator>
 	)
 }

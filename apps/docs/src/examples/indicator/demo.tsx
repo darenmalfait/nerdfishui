@@ -1,14 +1,14 @@
 'use client'
 
-import { Indicator } from '@nerdfish/ui'
+import { Indicator, IndicatorItem } from '@nerdfish/ui'
 
 export function IndicatorDemo() {
 	return (
-		<Indicator.Root>
-			<Indicator.Item>
+		<Indicator>
+			<IndicatorItem>
 				<div className="size-4 rounded-full bg-pink-500" />
-			</Indicator.Item>
+			</IndicatorItem>
 			<div className="bg-muted grid size-32 place-items-center">content</div>
-		</Indicator.Root>
+		</Indicator>
 	)
 }

@@ -1,6 +1,25 @@
 'use client'
 
-import { Button, Dialog, Drawer, Input } from '@nerdfish/ui'
+import {
+	Button,
+	Dialog,
+	Drawer,
+	Field,
+	Input,
+	Label,
+	DialogTrigger,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+	DialogDescription,
+	DrawerTrigger,
+	DrawerContent,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerDescription,
+	DrawerFooter,
+	DrawerClose,
+} from '@nerdfish/ui'
 import { cx, useMediaQuery } from '@nerdfish/utils'
 import * as React from 'react'
 
@@ -10,44 +29,44 @@ export function DrawerResponsiveDemo() {
 
 	if (isDesktop) {
 		return (
-			<Dialog.Root open={open} onOpenChange={setOpen}>
-				<Dialog.Trigger asChild>
+			<Dialog open={open} onOpenChange={setOpen}>
+				<DialogTrigger asChild>
 					<Button variant="outline">Edit Profile</Button>
-				</Dialog.Trigger>
-				<Dialog.Content className="sm:max-w-[425px]">
-					<Dialog.Header>
-						<Dialog.Title>Edit profile</Dialog.Title>
-						<Dialog.Description>
+				</DialogTrigger>
+				<DialogContent className="sm:max-w-[425px]">
+					<DialogHeader>
+						<DialogTitle>Edit profile</DialogTitle>
+						<DialogDescription>
 							Make changes to your profile here. Click save when you&apos;re
 							done.
-						</Dialog.Description>
-					</Dialog.Header>
+						</DialogDescription>
+					</DialogHeader>
 					<ProfileForm />
-				</Dialog.Content>
-			</Dialog.Root>
+				</DialogContent>
+			</Dialog>
 		)
 	}
 
 	return (
-		<Drawer.Root open={open} onOpenChange={setOpen}>
-			<Drawer.Trigger asChild>
+		<Drawer open={open} onOpenChange={setOpen}>
+			<DrawerTrigger asChild>
 				<Button variant="outline">Edit Profile</Button>
-			</Drawer.Trigger>
-			<Drawer.Content>
-				<Drawer.Header className="text-left">
-					<Drawer.Title>Edit profile</Drawer.Title>
-					<Drawer.Description>
+			</DrawerTrigger>
+			<DrawerContent>
+				<DrawerHeader className="text-left">
+					<DrawerTitle>Edit profile</DrawerTitle>
+					<DrawerDescription>
 						Make changes to your profile here. Click save when you&apos;re done.
-					</Drawer.Description>
-				</Drawer.Header>
+					</DrawerDescription>
+				</DrawerHeader>
 				<ProfileForm className="px-4" />
-				<Drawer.Footer className="pt-2">
-					<Drawer.Close asChild>
+				<DrawerFooter className="pt-2">
+					<DrawerClose asChild>
 						<Button variant="outline">Cancel</Button>
-					</Drawer.Close>
-				</Drawer.Footer>
-			</Drawer.Content>
-		</Drawer.Root>
+					</DrawerClose>
+				</DrawerFooter>
+			</DrawerContent>
+		</Drawer>
 	)
 }
 
@@ -55,21 +74,21 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
 	return (
 		<form className={cx('grid items-start gap-4', className)}>
 			<div className="grid gap-2">
-				<Input
-					name="email"
-					label="email"
-					type="email"
-					id="email"
-					defaultValue="nerdfish@example.com"
-				/>
+				<Field>
+					<Label htmlFor="email">Email</Label>
+					<Input
+						name="email"
+						type="email"
+						id="email"
+						defaultValue="nerdfish@example.com"
+					/>
+				</Field>
 			</div>
 			<div className="grid gap-2">
-				<Input
-					name="username"
-					label="username"
-					id="username"
-					defaultValue="@nerdfish"
-				/>
+				<Field>
+					<Label htmlFor="username">Username</Label>
+					<Input name="username" id="username" defaultValue="@nerdfish" />
+				</Field>
 			</div>
 			<Button type="submit">Save changes</Button>
 		</form>

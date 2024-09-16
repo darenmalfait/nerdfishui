@@ -7,7 +7,6 @@ export function SelectDemo() {
 	return (
 		<Select
 			name="framework"
-			label="Framework"
 			emptyString="No frameworks found"
 			placeholder="Select a framework"
 			options={[

@@ -4,111 +4,80 @@ import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import { AlertCircle } from 'lucide-react'
 import * as React from 'react'
 
-import { Field } from './field'
-
 export const inputVariants = cva(
 	cx(
-		'placeholder:text-muted w-full rounded-lg bg-transparent text-left outline-none',
+		'text-md text-primary bg-muted focus-outline group relative block w-full rounded-lg text-left font-bold outline-none',
+		// placeholder
+		'placeholder:text-muted',
+		// disabled
+		'disabled-within:opacity-50 before:has-[[data-disabled]]:shadow-none',
 	),
 	{
 		variants: {
-			size: {
+			inputSize: {
 				sm: 'p-2 text-sm',
 				md: 'px-4 py-3 text-base',
 				lg: 'px-8 py-5 text-lg',
 			},
+			variant: {
+				error: 'animate-shake border-danger bg-danger-muted/50 text-danger',
+				success: 'border-success bg-success-muted/50 text-success',
+				default: 'border border-transparent',
+			},
 		},
 		defaultVariants: {
-			size: 'md',
+			inputSize: 'md',
+			variant: 'default',
 		},
 	},
 )
 
-export const inputAddonVariants = cva(
+export const inputAddonVariants: typeof inputVariants = cva(
 	'bg-popover inline-flex w-auto font-normal shadow-none',
 	{
 		variants: {
-			size: {
+			inputSize: {
 				sm: 'm-1 px-3 py-0 text-xs',
 				md: 'm-1 px-3 py-1 text-base',
 				lg: 'mx-2 my-1 p-3 text-lg',
 			},
+			state: {
+				error: 'text-danger',
+				success: 'text-success',
+				default: 'text-primary',
+			},
 		},
 		defaultVariants: {
-			size: 'md',
+			inputSize: 'md',
+			state: 'default',
 		},
 	},
 )
 
-export type InputSize = VariantProps<typeof inputVariants>['size']
+export type InputSize = VariantProps<typeof inputVariants>['inputSize']
 
-export type InputRootProps = {
-	hasError?: boolean
+export type InputProps = {
 	icon?: React.ElementType
-	inputSize?: InputSize
 	addOnLeading?: React.ReactNode
 	addOnTrailing?: React.ReactNode
 	action?: () => void
-} & (
-	| ({ type: 'textarea' } & React.ComponentPropsWithRef<'textarea'>)
-	| React.ComponentPropsWithRef<'input'>
-)
-
-export type InputProps = {
-	defaultValue?: string | null
-	name: string
-	label?: string
-	className?: string
-	error?: string | null
-	description?: React.ReactNode
-}
-
-export function getInputClassName(
-	className?: string,
-	hasError?: boolean,
-	inputSize: InputSize = 'md',
-	isInputField: boolean = true,
-) {
-	return cx(
-		// Variants
-		isInputField && inputVariants({ size: inputSize }),
-		// Basic layout
-		'text-md text-primary bg-muted focus-outline group relative block w-full rounded-lg text-left font-bold',
-		// Border
-		'border border-transparent',
-		// Disabled state
-		'disabled-within:opacity-50 before:has-[[data-disabled]]:shadow-none',
-		// Invalid state
-		hasError && 'animate-shake border-danger bg-danger-muted/50 text-danger',
-		// Custom
-		className,
-	)
-}
-
-export function FormHelperText({
-	className,
-	...props
-}: React.ComponentPropsWithoutRef<'div'>) {
-	return <div className={cx('text-muted text-sm', className)} {...props} />
-}
+} & VariantProps<typeof inputVariants> &
+	React.ComponentPropsWithRef<'input'>
 
 function Addon({
 	className,
 	inputSize,
+	variant,
 	addOnLeading,
 	addOnTrailing,
-}: {
-	addOnLeading?: React.ReactNode
-	addOnTrailing?: React.ReactNode
-	className?: string
-	inputSize?: InputSize
-}) {
+}: VariantProps<typeof inputAddonVariants> &
+	Pick<InputProps, 'className' | 'addOnLeading' | 'addOnTrailing'>) {
 	if (!addOnLeading && !addOnTrailing) return null
 
 	return (
 		<div
 			className={cx(
-				inputAddonVariants({ size: inputSize }),
+				inputAddonVariants({ inputSize, variant }),
 				{
 					'rounded-l-lg': !!addOnLeading,
 					'rounded-r-lg': !!addOnTrailing,
@@ -127,12 +96,12 @@ function Addon({
 
 function InputIcon({
 	icon: Icon,
-	hasError,
+	variant,
 }: {
 	icon?: React.ElementType
-	hasError?: boolean
+	variant: VariantProps<typeof inputVariants>['variant']
 }) {
-	if (hasError) Icon = AlertCircle
+	if (variant === 'error') Icon = AlertCircle
 	if (!Icon) return null
 
 	return (
@@ -141,113 +110,56 @@ function InputIcon({
 			height="20px"
 			className={cx(
 				'absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0',
-				hasError && 'text-danger',
+				variant === 'error' && 'text-danger',
 			)}
 		/>
 	)
 }
 
-export const InputRoot = React.forwardRef<
+export const Input = React.forwardRef<
 	HTMLInputElement | HTMLTextAreaElement,
-	InputRootProps
->(function InputRoot(props, ref) {
-	const {
+	InputProps
+>(function Input(
+	{
 		type,
-		hasError,
+		className,
+		inputSize,
+		variant,
+		icon: Icon,
+		children,
 		addOnLeading,
 		addOnTrailing,
-		children,
-		inputSize,
-		icon: Icon,
-		...inputRootProps
-	} = props
-
-	const className = getInputClassName(
-		props.className,
-		hasError,
-		inputSize,
-		false,
-	)
-
-	if (type === 'textarea') {
-		return (
-			<div
-				className={cx(className, 'relative flex w-full items-center space-x-2')}
-			>
-				<InputIcon icon={Icon} hasError={hasError} />
-				<textarea
-					data-slot="control"
-					{...(inputRootProps as React.ComponentPropsWithoutRef<'textarea'>)}
-					ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
-					aria-invalid={hasError}
-					className={cx('h-36', inputVariants({ size: inputSize }), {
-						'pr-14': !!Icon,
-					})}
-				/>
-				{children ? <div className="flex shrink-0">{children}</div> : null}
-			</div>
-		)
-	}
+		...inputProps
+	},
+	ref,
+) {
+	const baseClassName = inputVariants({ inputSize, variant })
 
 	return (
 		<div className="flex flex-nowrap items-center space-x-2">
 			<div
-				className={cx(className, 'relative flex w-full items-center shadow-sm')}
+				className={cx(
+					baseClassName,
+					className,
+					'relative m-0 flex w-full items-center p-0 shadow-sm',
+				)}
 			>
 				<Addon addOnLeading={addOnLeading} inputSize={inputSize} />
 				<input
 					data-slot="control"
 					type={type}
-					{...(inputRootProps as React.ComponentPropsWithoutRef<'input'>)}
+					{...(inputProps as React.ComponentPropsWithoutRef<'input'>)}
 					className={cx(
+						baseClassName,
 						!!addOnLeading && '!pl-2',
 						!!Icon && 'pr-14',
-						inputVariants({ size: inputSize }),
 					)}
 					ref={ref as React.ForwardedRef<HTMLInputElement>}
 				/>
-				<InputIcon icon={Icon} hasError={hasError} />
+				<InputIcon icon={Icon} variant={variant} />
 				<Addon addOnTrailing={addOnTrailing} inputSize={inputSize} />
 			</div>
 			{children ? <div className="flex shrink-0">{children}</div> : null}
 		</div>
-	)
-})
-
-export const Input = React.forwardRef<
-	HTMLInputElement | HTMLTextAreaElement,
-	InputProps & InputRootProps
->(function Input(
-	{ defaultValue, error, name, label, description, id, ...props },
-	ref,
-) {
-	const inputId = id ?? name
-	const errorId = `${inputId}-error`
-	const descriptionId = `${inputId}-description`
-
-	return (
-		<Field
-			{...{
-				description,
-				descriptionId,
-				error,
-				errorId,
-				htmlFor: inputId,
-				label,
-			}}
-		>
-			<InputRoot
-				hasError={!!error}
-				{...(props as InputRootProps)}
-				ref={ref}
-				name={name}
-				id={inputId}
-				autoComplete={name}
-				defaultValue={defaultValue}
-				aria-describedby={
-					error ? errorId : description ? descriptionId : undefined
-				}
-			/>
-		</Field>
 	)
 })

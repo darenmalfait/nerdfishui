@@ -1,11 +1,17 @@
-import { Button, Tooltip, TooltipProvider } from '@nerdfish/ui'
+import {
+	Button,
+	Tooltip,
+	TooltipProvider,
+	TooltipTrigger,
+	TooltipContent,
+} from '@nerdfish/ui'
 import { Plus } from 'lucide-react'
 
 export function TooltipDemo() {
 	return (
 		<TooltipProvider>
-			<Tooltip.Root>
-				<Tooltip.Trigger asChild>
+			<Tooltip>
+				<TooltipTrigger asChild>
 					<Button
 						variant="outline"
 						className="flex w-10 items-center justify-center rounded-full p-0"
@@ -13,11 +19,11 @@ export function TooltipDemo() {
 						<Plus className="size-4" />
 						<span className="sr-only">Add</span>
 					</Button>
-				</Tooltip.Trigger>
-				<Tooltip.Content>
+				</TooltipTrigger>
+				<TooltipContent>
 					<p>Add to library</p>
-				</Tooltip.Content>
-			</Tooltip.Root>
+				</TooltipContent>
+			</Tooltip>
 		</TooltipProvider>
 	)
 }

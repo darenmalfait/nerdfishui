@@ -3,35 +3,31 @@
 import { cx, useControllableState } from '@nerdfish/utils'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import * as React from 'react'
-
-import { Command } from './command'
-import { Field } from './field'
 import {
-	getInputClassName,
-	type InputProps,
-	type InputRootProps,
-} from './input'
-import { Popover } from './popover'
+	Command,
+	CommandInput,
+	CommandList,
+	CommandGroup,
+	CommandItem,
+	CommandEmpty,
+} from './command'
+import { inputVariants, type InputProps } from './input'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { ScrollArea } from './scroll-area'
 
-export interface SelectRootProps
-	extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'>,
-		Pick<InputRootProps, 'hasError' | 'icon' | 'inputSize'> {
-	id?: string
+export interface SelectProps extends Omit<InputProps, 'onChange'> {
 	options?: {
 		value: string
 		label: string
 		icon?: React.ElementType
 	}[]
-	hasError?: boolean
-	placeholder?: string
 	emptyString?: string
 	searchDisabled?: boolean
 	onChange?: (value: string) => void
 }
 
-export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
-	function SelectRoot(
+export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
+	function Select(
 		{
 			value: valueProp,
 			className,
@@ -39,9 +35,9 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 			emptyString = 'No items found.',
 			options = [],
 			defaultValue = '',
-			hasError,
-			icon: Icon = ChevronsUpDown,
+			variant,
 			inputSize,
+			icon: Icon = ChevronsUpDown,
 			searchDisabled,
 			onChange,
 			...props
@@ -61,15 +57,15 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 		)
 
 		return (
-			<Popover.Root open={open} onOpenChange={setOpen}>
-				<Popover.Trigger asChild>
+			<Popover open={open} onOpenChange={setOpen}>
+				<PopoverTrigger asChild>
 					<button
 						role="combobox"
 						aria-haspopup="listbox"
 						aria-controls="listbox"
 						aria-expanded={open}
 						className={cx(
-							getInputClassName(className, hasError, inputSize),
+							inputVariants({ inputSize, variant }),
 							'flex items-center justify-between',
 							className,
 						)}
@@ -81,9 +77,9 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 							: placeholder}
 						<Icon className="ml-2 size-4 shrink-0 opacity-50" />
 					</button>
-				</Popover.Trigger>
-				<Popover.Content className="w-full min-w-[200px] p-0">
-					<Command.Root
+				</PopoverTrigger>
+				<PopoverContent className="w-full min-w-[200px] p-0">
+					<Command
 						filter={(val, search) => {
 							const item = options.find(({ value: v }) => v === val)?.label
 
@@ -93,76 +89,35 @@ export const SelectRoot = React.forwardRef<HTMLInputElement, SelectRootProps>(
 					>
 						{!searchDisabled ? (
 							<>
-								<Command.Input placeholder={placeholder} />
-								<Command.Empty>{emptyString}</Command.Empty>
+								<CommandInput placeholder={placeholder} />
+								<CommandEmpty>{emptyString}</CommandEmpty>
 							</>
 						) : null}
-						<Command.List>
-							<Command.Group>
+						<CommandList>
+							<CommandGroup>
 								<ScrollArea className="h-32 w-full">
 									{options.map((item) => {
 										const ItemIcon =
 											value === item.value ? Check : (item.icon ?? 'div')
 
 										return (
-											<Command.Item
+											<CommandItem
 												key={item.value}
 												onSelect={() => handleChange(item.value)}
 											>
 												<ItemIcon className={cx('mr-2 h-4 w-4')} />
 												{item.label}
-											</Command.Item>
+											</CommandItem>
 										)
 									})}
 								</ScrollArea>
-							</Command.Group>
-						</Command.List>
-					</Command.Root>
-				</Popover.Content>
-			</Popover.Root>
+							</CommandGroup>
+						</CommandList>
+					</Command>
+				</PopoverContent>
+			</Popover>
 		)
 	},
 )
-SelectRoot.displayName = 'SelectRoot'
 
-export const Select = React.forwardRef<
-	HTMLInputElement,
-	SelectRootProps & InputProps
->(function Select(
-	{ defaultValue, error, name, label, className, description, id, ...props },
-	ref,
-) {
-	const inputId = id ?? name
-	const errorId = `${inputId}-error`
-	const descriptionId = `${inputId}-description`
-
-	return (
-		<Field
-			{...{
-				description,
-				descriptionId,
-				error,
-				errorId,
-				htmlFor: inputId,
-				label,
-			}}
-		>
-			<SelectRoot
-				ref={ref}
-				{...props}
-				name={name}
-				id={inputId}
-				autoComplete={name}
-				required
-				defaultValue={defaultValue}
-				aria-describedby={
-					error ? errorId : description ? descriptionId : undefined
-				}
-				hasError={!!error}
-			/>
-		</Field>
-	)
-})
 Select.displayName = 'Select'
-
-export type SelectProps = React.ComponentPropsWithoutRef<typeof Select>

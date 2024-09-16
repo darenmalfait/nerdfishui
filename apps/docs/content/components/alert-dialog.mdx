@@ -7,7 +7,7 @@ component: true
 type: Doc
 package:
   name: 'ui'
-  path: 'alert-dialog/alert-dialog.tsx'
+  path: 'alert-dialog.tsx'
 ---
 
 <ComponentExample src="/src/examples/alert-dialog/demo.tsx">
@@ -17,24 +17,34 @@ package:
 ## Usage
 
 ```tsx
-import { AlertDialog } from '@nerdfishui/ui'
+import {
+	AlertDialog,
+	AlertDialogTrigger,
+	AlertDialogContent,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogCancel,
+	AlertDialogAction,
+} from '@nerdfishui/ui'
 ```
 
 ```tsx
-<AlertDialog.Root>
-	<AlertDialog.Trigger>Open</AlertDialog.Trigger>
-	<AlertDialog.Content>
-		<AlertDialog.Header>
-			<AlertDialog.Title>Are you sure absolutely sure?</AlertDialog.Title>
-			<AlertDialog.Description>
+<AlertDialog>
+	<AlertDialogTrigger>Open</AlertDialogTrigger>
+	<AlertDialogContent>
+		<AlertDialogHeader>
+			<AlertDialogTitle>Are you sure absolutely sure?</AlertDialogTitle>
+			<AlertDialogDescription>
 				This action cannot be undone. This will permanently delete your account
 				and remove your data from our servers.
-			</AlertDialog.Description>
-		</AlertDialog.Header>
-		<AlertDialog.Footer>
-			<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
-			<AlertDialog.Action>Continue</AlertDialog.Action>
-		</AlertDialog.Footer>
-	</AlertDialog.Content>
-</AlertDialog.Root>
+			</AlertDialogDescription>
+		</AlertDialogHeader>
+		<AlertDialogFooter>
+			<AlertDialogCancel>Cancel</AlertDialogCancel>
+			<AlertDialogAction>Continue</AlertDialogAction>
+		</AlertDialogFooter>
+	</AlertDialogContent>
+</AlertDialog>
 ```

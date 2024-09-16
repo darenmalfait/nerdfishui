@@ -27,12 +27,11 @@ import { CardDemo } from './card/demo'
 import { CheckboxColors } from './checkbox/colors'
 import { CheckboxDemo } from './checkbox/demo'
 import { CheckboxDisabled } from './checkbox/disabled'
-import { CheckboxError } from './checkbox/error'
 import { CheckboxIcon } from './checkbox/icon'
 import { CheckboxWithText } from './checkbox/with-text'
 import { CollapsibleDemo } from './collapsible/demo'
 import { CommandDemo } from './command/demo'
-import { CommandDialog } from './command/dialog'
+import { CommandDialogDemo } from './command/dialog'
 import { DateRangePickerExample } from './date-picker/date-range-picker'
 import { DatePickerDemo } from './date-picker/demo'
 import { DatePickerWithInputExample } from './date-picker/with-input'
@@ -50,10 +49,9 @@ import { IndicatorPositionsDemo } from './indicator/positions'
 import { InputAddonDemo } from './input/addon'
 import { InputDemo } from './input/demo'
 import { InputDisabled } from './input/disabled'
-import { InputError } from './input/error'
 import { InputIcon } from './input/icon'
 import { InputSize } from './input/size'
-import { InputTextArea } from './input/textarea'
+import { InputVariantsDemo } from './input/variant'
 import { InputOTPDemo } from './input-otp/demo'
 import { InputOTPFieldDemo } from './input-otp/field'
 import { InputOTPPatternsDemo } from './input-otp/patterns'
@@ -75,9 +73,9 @@ import { StepsDemo } from './steps/demo'
 import { SwitchDemo } from './switch/demo'
 import { TableDemo } from './table/demo'
 import { TabsDemo } from './tabs/demo'
+import { TextareaDemo } from './textarea/demo'
 import { TimeFieldDemo } from './time-field/demo'
 import { TimeFieldHourCycleDemo } from './time-field/hour-cycle'
-import { TimepickerDemo } from './timepicker/demo'
 import { ToastAction } from './toast/action'
 import { ToastDemo } from './toast/demo'
 import { ToastVariant } from './toast/variant'
@@ -123,12 +121,11 @@ export const examples = {
 	CheckboxColors,
 	CheckboxDemo,
 	CheckboxDisabled,
-	CheckboxError,
 	CheckboxIcon,
 	CheckboxWithText,
 	CollapsibleDemo,
 	CommandDemo,
-	CommandDialog,
+	CommandDialogDemo,
 	DatePickerDemo,
 	DatePickerWithInputExample,
 	DateRangePickerExample,
@@ -146,13 +143,12 @@ export const examples = {
 	InputAddonDemo,
 	InputDemo,
 	InputDisabled,
-	InputError,
+	InputVariantsDemo,
 	InputIcon,
 	InputOTPDemo,
 	InputOTPFieldDemo,
 	InputOTPPatternsDemo,
 	InputSize,
-	InputTextArea,
 	LinkDemo,
 	MockupDemo,
 	MultiEmailDemo,
@@ -171,9 +167,9 @@ export const examples = {
 	SwitchDemo,
 	TableDemo,
 	TabsDemo,
+	TextareaDemo,
 	TimeFieldDemo,
 	TimeFieldHourCycleDemo,
-	TimepickerDemo,
 	ToastAction,
 	ToastDemo,
 	ToastVariant,

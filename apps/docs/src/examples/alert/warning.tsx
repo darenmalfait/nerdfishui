@@ -1,12 +1,12 @@
 'use client'
 
-import { Alert } from '@nerdfish/ui'
+import { Alert, AlertTitle, AlertDescription } from '@nerdfish/ui'
 
 export function AlertWarning() {
 	return (
-		<Alert.Root variant="warning" className="w-full">
-			<Alert.Title>Example alert</Alert.Title>
-			<Alert.Description>Example description</Alert.Description>
-		</Alert.Root>
+		<Alert variant="warning" className="w-full">
+			<AlertTitle>Example alert</AlertTitle>
+			<AlertDescription>Example description</AlertDescription>
+		</Alert>
 	)
 }

@@ -1,6 +1,13 @@
 'use client'
 
-import { Button, Drawer, NavigationList } from '@nerdfish/ui'
+import {
+	Button,
+	Drawer,
+	DrawerContent,
+	DrawerOverlay,
+	NavigationList,
+	NavigationListItem,
+} from '@nerdfish/ui'
 import { usePathname } from 'next/navigation'
 import { useMobileNav } from '../mobile-nav-provider'
 import {
@@ -27,34 +34,34 @@ export function MobileNavigation() {
 			>
 				<Icons.Menu className="text-primary size-4" />
 			</Button>
-			<Drawer.Root
+			<Drawer
 				direction="right"
 				open={isOpen}
 				onOpenChange={(open) => {
 					if (!open) close()
 				}}
 			>
-				<Drawer.Overlay />
-				<Drawer.Content className="!w-full max-w-[300px] px-4">
-					<NavigationList.Root>
+				<DrawerOverlay />
+				<DrawerContent className="!w-full max-w-[300px] px-4">
+					<NavigationList>
 						{siteConfig.mainNav.length
 							? siteConfig.mainNav.map((item) => (
-									<NavigationList.Item
+									<NavigationListItem
 										key={item.title}
 										href={item.href}
 										title={item.title}
 									/>
 								))
 							: null}
-					</NavigationList.Root>
+					</NavigationList>
 					{stripTrailingSlash(pathname ?? '').includes('/docs') ? (
 						<div className="flex flex-col gap-4">
 							<GettingStartedNavigation />
 							<ComponentNavigation />
 						</div>
 					) : null}
-				</Drawer.Content>
-			</Drawer.Root>
+				</DrawerContent>
+			</Drawer>
 		</>
 	)
 }
