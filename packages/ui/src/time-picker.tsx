@@ -10,7 +10,7 @@ import {
 } from 'react'
 import { type Options } from 'timescape'
 import { type DateType, useTimescape } from 'timescape/react'
-import { inputVariants, type InputVariants } from './input'
+import { InputIcon, type InputProps, inputVariants } from './input'
 
 type TimePickerContextValue = ReturnType<typeof useTimescape>
 const TimePickerContext = createContext<TimePickerContextValue | null>(null)
@@ -105,13 +105,14 @@ const DEFAULT_OPTIONS: Options = {
 
 export const TimePicker = forwardRef<
 	React.ElementRef<'div'>,
-	Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> & {
-		value?: Date
-		defaultValue?: Date
-		onChange?: (date?: Date) => void
-		children?: ReactNode
-		options?: Omit<Options, 'date' | 'onChangeDate'>
-	} & InputVariants
+	Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> &
+		Omit<InputProps, 'value' | 'onChange' | 'defaultValue'> & {
+			value?: Date
+			defaultValue?: Date
+			onChange?: (date?: Date) => void
+			children?: ReactNode
+			options?: Omit<Options, 'date' | 'onChangeDate'>
+		}
 >(
 	(
 		{
@@ -123,6 +124,9 @@ export const TimePicker = forwardRef<
 			inputSize,
 			variant,
 			children,
+			addOnLeading,
+			addOnTrailing,
+			icon,
 			...props
 		},
 		ref,
@@ -151,7 +155,12 @@ export const TimePicker = forwardRef<
 						className,
 					)}
 				>
-					{children}
+					{addOnLeading}
+					<span className="flex flex-1 items-center justify-start">
+						{children}
+					</span>
+					<InputIcon icon={icon} variant={variant} />
+					{addOnTrailing}
 				</div>
 			</TimePickerContext.Provider>
 		)

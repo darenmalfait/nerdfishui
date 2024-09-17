@@ -153,7 +153,7 @@ export const Input = React.forwardRef<
 					'relative m-0 flex w-full items-center p-0 shadow-sm',
 				)}
 			>
-				<InputAddon addOnLeading={addOnLeading} inputSize={inputSize} />
+				{addOnLeading}
 				<input
 					data-slot="control"
 					type={type}
@@ -167,7 +167,7 @@ export const Input = React.forwardRef<
 				/>
 				<InputIcon icon={Icon} variant={variant} />
 				{children ? <div className="flex shrink-0">{children}</div> : null}
-				<InputAddon addOnTrailing={addOnTrailing} inputSize={inputSize} />
+				{addOnTrailing}
 			</div>
 		</div>
 	)
