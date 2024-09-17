@@ -32,7 +32,6 @@ import { CheckboxWithText } from './checkbox/with-text'
 import { CollapsibleDemo } from './collapsible/demo'
 import { CommandDemo } from './command/demo'
 import { CommandDialogDemo } from './command/dialog'
-import { DateFieldDemo } from './date-field/demo'
 import { DateRangePickerExample } from './date-picker/date-range-picker'
 import { DatePickerDemo } from './date-picker/demo'
 import { DatePickerWithInputExample } from './date-picker/with-input'
@@ -128,7 +127,6 @@ export const examples = {
 	CollapsibleDemo,
 	CommandDemo,
 	CommandDialogDemo,
-	DateFieldDemo,
 	DatePickerDemo,
 	DatePickerWithInputExample,
 	DateRangePickerExample,
