@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@nerdfish/ui'
+import { Input, InputAddon } from '@nerdfish/ui'
 import { slugify } from '@nerdfish/utils'
 import * as React from 'react'
 
@@ -13,7 +13,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading="ui.nerdfish.be/"
+					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
 					value={value}
 					variant="error"
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -21,6 +21,7 @@ export function InputAddonDemo() {
 				/>
 				<Input
 					name="slug"
+					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
 					type="text"
 					value={value}
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -31,7 +32,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading="ui.nerdfish.be/"
+					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
 					inputSize="sm"
 					value={value}
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -40,6 +41,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
+					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
 					value={value}
 					inputSize="sm"
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -50,7 +52,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading="ui.nerdfish.be/"
+					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
 					inputSize="lg"
 					value={value}
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -59,6 +61,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
+					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
 					value={value}
 					inputSize="lg"
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -68,7 +71,7 @@ export function InputAddonDemo() {
 			<Input
 				name="slug"
 				type="text"
-				addOnTrailing="/admin"
+				addOnTrailing={<InputAddon addOnTrailing="/admin" />}
 				value={value}
 				onChange={(e) => setValue(slugify(e.target.value, true))}
 				autoComplete="off"

@@ -75,6 +75,7 @@ import { SwitchDemo } from './switch/demo'
 import { TableDemo } from './table/demo'
 import { TabsDemo } from './tabs/demo'
 import { TextareaDemo } from './textarea/demo'
+import { TimePickerAddonsDemo } from './time-picker/addons'
 import { TimePickerDemo } from './time-picker/demo'
 import { TimePickerHourCycleDemo } from './time-picker/hour-cycle'
 import { ToastAction } from './toast/action'
@@ -170,6 +171,7 @@ export const examples = {
 	TableDemo,
 	TabsDemo,
 	TextareaDemo,
+	TimePickerAddonsDemo,
 	TimePickerDemo,
 	TimePickerHourCycleDemo,
 	ToastAction,
