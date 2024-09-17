@@ -13,8 +13,8 @@ export const buttonVariants = cva(
 					'bg-inverted text-inverted hover:bg-inverted/80 disabled:bg-inverted/90 disabled:text-inverted/60 border-transparent',
 				secondary:
 					'bg-muted text-primary hover:bg-inverted/20 disabled:bg-muted/50 disabled:text-muted/80 border-transparent',
-				nerdfish:
-					'bg-nerdfish hover:bg-nerdfish/75 disabled:bg-nerdfish/20 disabled:text-nerdfish border-transparent text-white',
+				accent:
+					'bg-accent hover:bg-accent/75 disabled:bg-accent/20 disabled:text-accent border-transparent text-white',
 				danger:
 					'bg-danger hover:bg-danger-muted border-danger disabled:bg-danger-muted/50 disabled:text-danger/80 text-danger',
 				success:

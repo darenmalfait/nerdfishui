@@ -8,7 +8,7 @@ export function ButtonAccentuate() {
 			<Button variant="default" accentuate>
 				Default
 			</Button>
-			<Button variant="nerdfish" accentuate>
+			<Button variant="accent" accentuate>
 				Nerdfish
 			</Button>
 			<Button variant="secondary" accentuate>

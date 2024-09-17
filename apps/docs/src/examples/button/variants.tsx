@@ -6,7 +6,7 @@ export function ButtonVariants() {
 	return (
 		<div className="flex space-x-2">
 			<Button variant="default">Default</Button>
-			<Button variant="nerdfish">Nerdfish</Button>
+			<Button variant="accent">Nerdfish</Button>
 			<Button variant="secondary">Secondary</Button>
 			<Button variant="danger" onClick={() => {}}>
 				Danger

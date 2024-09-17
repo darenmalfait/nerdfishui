@@ -42,7 +42,7 @@ const components = {
 			<Link
 				{...props}
 				className={cx(
-					'border-nerdfish hover:text-nerdfish inline-flex items-center border-b-2 font-normal text-inherit no-underline transition-colors',
+					'border-accent hover:text-accent inline-flex items-center border-b-2 font-normal text-inherit no-underline transition-colors',
 					className,
 				)}
 				href={slug}

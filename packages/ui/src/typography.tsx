@@ -45,7 +45,7 @@ export const titleVariants = cva('', {
 		variant: {
 			primary: 'text-primary',
 			secondary: 'text-muted',
-			nerdfish: 'text-nerdfish',
+			accent: 'text-accent',
 		},
 	},
 	defaultVariants: {
@@ -66,7 +66,7 @@ const Title = React.forwardRef<
 		as,
 		size,
 		blurredClassName,
-		variant = size === 'h1' || size === 'h2' ? 'nerdfish' : 'primary',
+		variant = size === 'h1' || size === 'h2' ? 'accent' : 'primary',
 		...props
 	},
 	ref,
@@ -82,7 +82,7 @@ const Title = React.forwardRef<
 					size,
 					variant,
 				}),
-				variant === 'nerdfish',
+				variant === 'accent',
 				className,
 			)}
 		>
@@ -91,7 +91,7 @@ const Title = React.forwardRef<
 					className={cx(
 						'absolute -left-8 z-10 h-12 w-32 rounded-full opacity-50 blur-3xl',
 						{
-							'bg-nerdfish': variant === 'nerdfish' && !blurredClassName,
+							'bg-accent': variant === 'accent' && !blurredClassName,
 							'bg-inverted': variant === 'primary' && !blurredClassName,
 							'bg-inverted/80': variant === 'secondary' && !blurredClassName,
 							blurredClassName,

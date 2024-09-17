@@ -2,7 +2,7 @@ import { type Colors } from './types'
 
 export const light: Colors = {
 	nerdfish: '17.85 64.75% 52.16%',
-	accent: '178.5 64.75% 52.16%',
+	accent: '17.85 64.75% 52.16%',
 	background: {
 		primary: '0 0% 100%',
 		muted: '0 0% 97%',

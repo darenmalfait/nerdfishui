@@ -113,7 +113,7 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
 	return (
-		<div className="bg-nerdfish hidden rounded-lg xl:block">
+		<div className="bg-accent hidden rounded-lg xl:block">
 			<div className="p-8">
 				<div className="bg-primary overflow-hidden rounded-lg shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
