@@ -49,12 +49,12 @@ export function Calendar({
 				day_selected:
 					'bg-inverted rounded-full !text-inverted hover:!bg-inverted/90',
 				day_today:
-					'bg-nerdfish text-white hover:!bg-inverted/90 hover:!text-inverted',
+					'bg-accent text-white hover:!bg-inverted/90 hover:!text-inverted',
 				day_outside:
 					'day-outside text-muted opacity-50 aria-selected:bg-muted aria-selected:text-muted aria-selected:opacity-80',
 				day_disabled: 'text-muted opacity-50',
 				day_range_middle:
-					'z-0 aria-selected:bg-nerdfish/10 aria-selected:!text-primary hover:aria-selected:!text-inverted rounded-none',
+					'z-0 aria-selected:bg-accent/10 aria-selected:!text-primary hover:aria-selected:!text-inverted rounded-none',
 				day_hidden: 'invisible',
 				...classNames,
 			}}

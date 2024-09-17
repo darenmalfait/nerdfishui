@@ -29,7 +29,7 @@ function PageLink({
 			{previous ? (
 				<>
 					<span className="text-sm">Previous</span>
-					<span className="text-nerdfish flex items-center gap-2 text-lg font-bold">
+					<span className="text-accent flex items-center gap-2 text-lg font-bold">
 						<Icons.ChevronLeft className="size-3" />
 						{page.title}
 					</span>
@@ -37,7 +37,7 @@ function PageLink({
 			) : (
 				<>
 					<span className="text-sm">Next</span>
-					<span className="text-nerdfish flex items-center justify-end gap-2 text-right text-lg font-bold">
+					<span className="text-accent flex items-center justify-end gap-2 text-right text-lg font-bold">
 						{page.title}
 						<Icons.ChevronRight className="size-3" />
 					</span>
