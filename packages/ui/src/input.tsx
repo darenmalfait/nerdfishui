@@ -32,28 +32,6 @@ export const inputVariants = cva(
 	},
 )
 
-export const inputAddonVariants: typeof inputVariants = cva(
-	'bg-popover inline-flex w-auto font-normal shadow-none',
-	{
-		variants: {
-			inputSize: {
-				sm: 'm-1 px-3 py-0 text-xs',
-				md: 'm-1 px-3 py-1 text-base',
-				lg: 'mx-2 my-1 p-3 text-lg',
-			},
-			variant: {
-				error: 'text-danger',
-				success: 'text-success',
-				default: 'text-primary',
-			},
-		},
-		defaultVariants: {
-			inputSize: 'md',
-			variant: 'default',
-		},
-	},
-)
-
 export type InputSize = VariantProps<typeof inputVariants>['inputSize']
 export type InputVariant = VariantProps<typeof inputVariants>['variant']
 export type InputVariants = VariantProps<typeof inputVariants>
@@ -65,40 +43,6 @@ export type InputProps = {
 	action?: () => void
 } & InputVariants &
 	React.ComponentPropsWithRef<'input'>
-
-export const InputAddon = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithRef<'div'> &
-		InputVariants &
-		Pick<InputProps, 'className' | 'addOnLeading' | 'addOnTrailing'>
->(function InputAddon(
-	{ className, inputSize, variant, addOnLeading, addOnTrailing },
-	ref,
-) {
-	if (!addOnLeading && !addOnTrailing) return null
-
-	return (
-		<div
-			ref={ref}
-			className={cx(
-				inputAddonVariants({ inputSize, variant }),
-				{
-					'rounded-l-lg': !!addOnLeading,
-					'rounded-r-lg': !!addOnTrailing,
-				},
-				className,
-			)}
-		>
-			<div className="flex flex-col justify-center leading-7">
-				<span className="flex whitespace-nowrap">
-					{addOnLeading ?? addOnTrailing}
-				</span>
-			</div>
-		</div>
-	)
-})
-
-export type InputAddonProps = React.ComponentPropsWithoutRef<typeof InputAddon>
 
 export const InputIcon = React.forwardRef<
 	HTMLDivElement,

@@ -1,8 +1,27 @@
 'use client'
 
-import { Input, InputAddon } from '@nerdfish/ui'
-import { slugify } from '@nerdfish/utils'
+import { Input, type InputSize, inputVariants } from '@nerdfish/ui'
+import { cx, slugify } from '@nerdfish/utils'
 import * as React from 'react'
+
+function InputAddon({
+	children,
+	inputSize = 'md',
+}: {
+	children: React.ReactNode
+	inputSize?: InputSize
+}) {
+	return (
+		<div
+			className={cx(
+				inputVariants({ inputSize }),
+				'bg-popover inline-flex w-auto rounded-lg font-normal shadow-none',
+			)}
+		>
+			{children}
+		</div>
+	)
+}
 
 export function InputAddonDemo() {
 	const [value, setValue] = React.useState<string>('')
@@ -13,7 +32,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
+					addOnLeading={<InputAddon inputSize="md">ui.nerdfish.be/</InputAddon>}
 					value={value}
 					variant="error"
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -21,7 +40,7 @@ export function InputAddonDemo() {
 				/>
 				<Input
 					name="slug"
-					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
+					addOnLeading={<InputAddon>ui.nerdfish.be/</InputAddon>}
 					type="text"
 					value={value}
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -32,7 +51,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
+					addOnLeading={<InputAddon>ui.nerdfish.be/</InputAddon>}
 					inputSize="sm"
 					value={value}
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -41,7 +60,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
+					addOnLeading={<InputAddon>ui.nerdfish.be/</InputAddon>}
 					value={value}
 					inputSize="sm"
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -52,7 +71,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
+					addOnLeading={<InputAddon inputSize="lg">ui.nerdfish.be/</InputAddon>}
 					inputSize="lg"
 					value={value}
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -61,7 +80,7 @@ export function InputAddonDemo() {
 				<Input
 					name="slug"
 					type="text"
-					addOnLeading={<InputAddon addOnLeading="ui.nerdfish.be/" />}
+					addOnLeading={<InputAddon inputSize="lg">ui.nerdfish.be/</InputAddon>}
 					value={value}
 					inputSize="lg"
 					onChange={(e) => setValue(slugify(e.target.value, true))}
@@ -71,7 +90,7 @@ export function InputAddonDemo() {
 			<Input
 				name="slug"
 				type="text"
-				addOnTrailing={<InputAddon addOnTrailing="/admin" />}
+				addOnTrailing={<InputAddon>/admin</InputAddon>}
 				value={value}
 				onChange={(e) => setValue(slugify(e.target.value, true))}
 				autoComplete="off"
