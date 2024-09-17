@@ -1,4 +1,5 @@
-//time-picker.tsx
+'use client'
+
 import { cx, useControllableState } from '@nerdfish/utils'
 import * as React from 'react'
 import {
