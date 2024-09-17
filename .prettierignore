@@ -2,7 +2,6 @@ dist
 node_modules
 .next
 .env*
-build
 .contentlayer
 .changeset
 *.log
