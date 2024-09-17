@@ -1,9 +1,9 @@
 // https://github.com/axisj/react-multi-email/ , but with some modifications
 'use client'
 
-import { cx, isEmail as isEmailFn, useControllableState } from '@nerdfish/utils'
+import { cx, isEmail as isEmailFn } from '@nerdfish/utils'
 import * as React from 'react'
-
+import { useControllableState } from '../hooks'
 import { Badge } from './badge'
 import { inputVariants, type InputProps } from './input'
 

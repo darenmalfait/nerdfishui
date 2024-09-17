@@ -1,8 +1,9 @@
 'use client'
 
-import { cx, useControllableState } from '@nerdfish/utils'
+import { cx } from '@nerdfish/utils'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import * as React from 'react'
+import { useControllableState } from '../hooks'
 import {
 	Command,
 	CommandInput,

@@ -1,8 +1,9 @@
 'use client'
 
-import { cx, getContrastColor, useControllableState } from '@nerdfish/utils'
+import { cx, getContrastColor } from '@nerdfish/utils'
 import { Check, ChevronsUpDown, Pencil, Plus } from 'lucide-react'
 import * as React from 'react'
+import { useControllableState } from '../hooks'
 import { Badge } from './badge'
 import {
 	Command,

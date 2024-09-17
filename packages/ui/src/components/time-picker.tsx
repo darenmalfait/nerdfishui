@@ -1,6 +1,6 @@
 'use client'
 
-import { cx, useControllableState } from '@nerdfish/utils'
+import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 import {
 	createContext,
@@ -11,6 +11,7 @@ import {
 } from 'react'
 import { type Options } from 'timescape'
 import { type DateType, useTimescape } from 'timescape/react'
+import { useControllableState } from '../hooks'
 import { InputIcon, type InputProps, inputVariants } from './input'
 
 type TimePickerContextValue = ReturnType<typeof useTimescape>
