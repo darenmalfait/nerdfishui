@@ -66,18 +66,20 @@ export type InputProps = {
 } & InputVariants &
 	React.ComponentPropsWithRef<'input'>
 
-function Addon({
-	className,
-	inputSize,
-	variant,
-	addOnLeading,
-	addOnTrailing,
-}: InputVariants &
-	Pick<InputProps, 'className' | 'addOnLeading' | 'addOnTrailing'>) {
+export const InputAddon = React.forwardRef<
+	HTMLDivElement,
+	React.ComponentPropsWithRef<'div'> &
+		InputVariants &
+		Pick<InputProps, 'className' | 'addOnLeading' | 'addOnTrailing'>
+>(function InputAddon(
+	{ className, inputSize, variant, addOnLeading, addOnTrailing },
+	ref,
+) {
 	if (!addOnLeading && !addOnTrailing) return null
 
 	return (
 		<div
+			ref={ref}
 			className={cx(
 				inputAddonVariants({ inputSize, variant }),
 				{
@@ -94,20 +96,23 @@ function Addon({
 			</div>
 		</div>
 	)
-}
+})
 
-function InputIcon({
-	icon: Icon,
-	variant,
-}: {
-	icon?: React.ElementType
-	variant: InputVariant
-}) {
+export type InputAddonProps = React.ComponentPropsWithoutRef<typeof InputAddon>
+
+export const InputIcon = React.forwardRef<
+	HTMLDivElement,
+	React.ComponentPropsWithRef<'div'> & {
+		icon?: React.ElementType
+		variant: InputVariant
+	}
+>(function InputIcon({ icon: Icon, variant }, ref) {
 	if (variant === 'error') Icon = AlertCircle
 	if (!Icon) return null
 
 	return (
 		<Icon
+			ref={ref}
 			width="20px"
 			height="20px"
 			className={cx(
@@ -116,7 +121,9 @@ function InputIcon({
 			)}
 		/>
 	)
-}
+})
+
+export type InputIconProps = React.ComponentPropsWithoutRef<typeof InputIcon>
 
 export const Input = React.forwardRef<
 	HTMLInputElement | HTMLTextAreaElement,
@@ -146,7 +153,7 @@ export const Input = React.forwardRef<
 					'relative m-0 flex w-full items-center p-0 shadow-sm',
 				)}
 			>
-				<Addon addOnLeading={addOnLeading} inputSize={inputSize} />
+				<InputAddon addOnLeading={addOnLeading} inputSize={inputSize} />
 				<input
 					data-slot="control"
 					type={type}
@@ -159,9 +166,9 @@ export const Input = React.forwardRef<
 					ref={ref as React.ForwardedRef<HTMLInputElement>}
 				/>
 				<InputIcon icon={Icon} variant={variant} />
-				<Addon addOnTrailing={addOnTrailing} inputSize={inputSize} />
+				{children ? <div className="flex shrink-0">{children}</div> : null}
+				<InputAddon addOnTrailing={addOnTrailing} inputSize={inputSize} />
 			</div>
-			{children ? <div className="flex shrink-0">{children}</div> : null}
 		</div>
 	)
 })
