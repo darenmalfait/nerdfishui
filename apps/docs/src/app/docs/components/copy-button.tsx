@@ -9,8 +9,9 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 	TooltipContent,
+	useCopyToClipboard,
 } from '@nerdfish/ui'
-import { cx, useCopyToClipboard } from '@nerdfish/utils'
+import { cx } from '@nerdfish/utils'
 import React from 'react'
 import { Icons } from '~/app/components/icons'
 import { type NpmCommands } from '~/lib/types/unist'

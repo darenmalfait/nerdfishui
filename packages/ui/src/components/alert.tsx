@@ -1,8 +1,9 @@
 'use client'
 
-import { cva, cx, deprecateProp, type VariantProps } from '@nerdfish/utils'
+import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import { AlertTriangle, Info, Verified, XCircle } from 'lucide-react'
 import * as React from 'react'
+import { deprecateProp } from '../deprecate'
 
 const DEFAULT_VARIANT = 'info'
 

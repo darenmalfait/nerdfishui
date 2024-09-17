@@ -19,8 +19,9 @@ import {
 	DrawerDescription,
 	DrawerFooter,
 	DrawerClose,
+	useMediaQuery,
 } from '@nerdfish/ui'
-import { cx, useMediaQuery } from '@nerdfish/utils'
+import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
 export function DrawerResponsiveDemo() {
