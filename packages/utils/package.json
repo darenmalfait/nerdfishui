@@ -28,7 +28,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@internationalized/date": "^3.5.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.2"
