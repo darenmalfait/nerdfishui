@@ -19,7 +19,7 @@ function deprecateComponent<P, T>(
 ): typeof Component {
 	const Deprecated = React.forwardRef<T, P>((props, ref) => {
 		warnOnce(message)
-		return <Component ref={ref} {...(props as React.PropsWithoutRef<P>)} />
+		return <Component ref={ref} {...props} />
 	})
 
 	Deprecated.displayName = `deprecated(${Component.displayName})`
