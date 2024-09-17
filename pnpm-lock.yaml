@@ -448,9 +448,6 @@ importers:
 
   packages/utils:
     dependencies:
-      '@internationalized/date':
-        specifier: ^3.5.5
-        version: 3.5.5
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
