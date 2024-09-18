@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata | undefined> {
 	})
 }
 
-export default async function DocPage() {
+export default function HomePage() {
 	return (
 		<main className="relative py-6 lg:gap-10 lg:py-6 xl:grid">
 			<div className="mx-auto w-full min-w-0">
