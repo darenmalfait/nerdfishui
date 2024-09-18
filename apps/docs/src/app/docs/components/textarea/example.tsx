@@ -1,3 +1,5 @@
+'use client'
+
 import { Textarea } from '@nerdfish/ui'
 
 export function TextareaExample() {

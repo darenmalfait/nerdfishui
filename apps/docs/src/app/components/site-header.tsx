@@ -16,7 +16,7 @@ export function SiteHeader() {
 						<Button variant="ghost" size="icon" asChild>
 							<Link
 								href="https://github.com/darenmalfait/nerdfishui"
-								rel="noopener noreferrer"
+								// rel="noopener noreferrer"
 								target="_blank"
 							>
 								<Icons.GitHub className="size-4" />

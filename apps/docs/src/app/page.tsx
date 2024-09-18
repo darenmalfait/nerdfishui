@@ -1,6 +1,7 @@
 import { Button, ButtonGroup, H1, Paragraph } from '@nerdfish/ui'
 import { type Metadata } from 'next'
 import Link from 'next/link'
+import * as React from 'react'
 import { getMetaData } from '../lib/utils/seo'
 import { generateOGImageUrl } from '~/lib/utils/social'
 
@@ -18,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata | undefined> {
 	})
 }
 
-export default function HomePage() {
+export default async function HomePage() {
 	return (
 		<main className="relative py-6 lg:gap-10 lg:py-6 xl:grid">
 			<div className="mx-auto w-full min-w-0">
