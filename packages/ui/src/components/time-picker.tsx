@@ -107,7 +107,10 @@ const DEFAULT_OPTIONS: Options = {
 
 export const TimePicker = forwardRef<
 	React.ElementRef<'div'>,
-	Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> &
+	Omit<
+		React.ComponentPropsWithoutRef<'div'>,
+		'defaultValue' | 'value' | 'onChange'
+	> &
 		Omit<InputProps, 'value' | 'onChange' | 'defaultValue'> & {
 			value?: Date
 			defaultValue?: Date
