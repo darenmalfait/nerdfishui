@@ -52,7 +52,7 @@ export const DateTimePicker = forwardRef<
 				ref={ref}
 				addOnTrailing={
 					<DatePicker className="p-3" selected={date} onSelect={setDate}>
-						<Button size="iconSm">
+						<Button size="iconSm" variant="accent">
 							<CalendarIcon className="size-4" />
 						</Button>
 					</DatePicker>
