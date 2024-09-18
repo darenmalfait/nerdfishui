@@ -1,5 +1,6 @@
 'use client'
 
+import { cx } from '@nerdfish/utils'
 import { CalendarIcon } from 'lucide-react'
 import * as React from 'react'
 import { forwardRef } from 'react'
@@ -12,6 +13,7 @@ import {
 	DateTimeSeparator,
 	type DateType,
 } from './date-time-field'
+import { inputVariants } from './input'
 
 type DATE_FIELDS = Exclude<DateType, 'hours' | 'minutes' | 'seconds' | 'am/pm'>
 type TIME_FIELDS = Exclude<DateType, 'years' | 'months' | 'days'>
@@ -51,7 +53,36 @@ export const DateTimePicker = forwardRef<
 				onChange={setDate}
 				ref={ref}
 				addOnTrailing={
-					<DatePicker className="p-3" selected={date} onSelect={setDate}>
+					<DatePicker
+						className="p-3"
+						selected={date}
+						onSelect={setDate}
+						footer={
+							withTime ? (
+								<div className="flex justify-center">
+									<DateTimeField
+										value={date}
+										defaultValue={defaultValue}
+										onChange={setDate}
+										ref={ref}
+										className={cx(
+											inputVariants({ inputSize: 'sm' }),
+											'mx-auto mt-2 inline-flex w-auto items-center gap-1',
+										)}
+									>
+										{timeFormat.map((field, i) => (
+											<>
+												{i > 0 ? (
+													<DateTimeSeparator>:</DateTimeSeparator>
+												) : null}
+												<DateTimeSegment key={field} segment={field} />
+											</>
+										))}
+									</DateTimeField>
+								</div>
+							) : null
+						}
+					>
 						<Button size="iconSm" variant="accent">
 							<CalendarIcon className="size-4" />
 						</Button>
