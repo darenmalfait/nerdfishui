@@ -5,7 +5,6 @@ import { cx } from '@nerdfish/utils'
 import { XIcon } from 'lucide-react'
 import * as React from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
-
 import { Button } from './button'
 
 export const Drawer = ({
@@ -38,19 +37,20 @@ export const DrawerContent = React.forwardRef<
 	return (
 		<DrawerPrimitive.Portal>
 			<DrawerOverlay className="bg-primary/80" />
+
 			<DrawerPrimitive.Content
 				ref={ref}
 				className={cx(
 					// default
 					'shadow-outline bg-popover group fixed z-50 flex flex-col',
 					// top
-					'[&[vaul-drawer-direction=top]]:inset-x-0 [&[vaul-drawer-direction=top]]:top-0 [&[vaul-drawer-direction=top]]:mb-24 [&[vaul-drawer-direction=top]]:rounded-b-[10px]',
+					'[&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0 [&[data-vaul-drawer-direction=top]]:mb-24 [&[data-vaul-drawer-direction=top]]:rounded-b-[10px]',
 					// bottom
-					'[&[vaul-drawer-direction=bottom]]:inset-x-0 [&[vaul-drawer-direction=bottom]]:bottom-0 [&[vaul-drawer-direction=bottom]]:mt-24 [&[vaul-drawer-direction=bottom]]:rounded-t-[10px]',
+					'[&[data-vaul-drawer-direction=bottom]]:inset-x-0 [&[data-vaul-drawer-direction=bottom]]:bottom-0 [&[data-vaul-drawer-direction=bottom]]:mt-24 [&[data-vaul-drawer-direction=bottom]]:rounded-t-[10px]',
 					// left
-					'[&[vaul-drawer-direction=left]]:inset-y-0 [&[vaul-drawer-direction=left]]:left-0 [&[vaul-drawer-direction=left]]:mr-24 [&[vaul-drawer-direction=left]]:w-auto [&[vaul-drawer-direction=left]]:rounded-r-[10px]',
+					'[&[data-vaul-drawer-direction=left]]:inset-y-0 [&[data-vaul-drawer-direction=left]]:left-0 [&[data-vaul-drawer-direction=left]]:mr-24 [&[data-vaul-drawer-direction=left]]:w-auto [&[data-vaul-drawer-direction=left]]:rounded-r-[10px]',
 					// right
-					'[&[vaul-drawer-direction=right]]:inset-y-0 [&[vaul-drawer-direction=right]]:right-0 [&[vaul-drawer-direction=right]]:ml-24 [&[vaul-drawer-direction=right]]:w-auto [&[vaul-drawer-direction=right]]:rounded-l-[10px]',
+					'[&[data-vaul-drawer-direction=right]]:inset-y-0 [&[data-vaul-drawer-direction=right]]:right-0 [&[data-vaul-drawer-direction=right]]:ml-24 [&[data-vaul-drawer-direction=right]]:w-auto [&[data-vaul-drawer-direction=right]]:rounded-l-[10px]',
 					// other
 					className,
 				)}
@@ -58,7 +58,7 @@ export const DrawerContent = React.forwardRef<
 			>
 				<div
 					data-role="drawer-handle"
-					className="bg-inverted/10 mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[vaul-drawer-direction=bottom]]:opacity-100"
+					className="bg-inverted/10 mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
 				/>
 				<DrawerPrimitive.Close
 					asChild
@@ -71,7 +71,7 @@ export const DrawerContent = React.forwardRef<
 				<div className="h-full overflow-y-auto">{children}</div>
 				<div
 					data-role="drawer-handle"
-					className="bg-muted mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[vaul-drawer-direction=top]]:opacity-100"
+					className="bg-muted mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:opacity-100"
 				/>
 			</DrawerPrimitive.Content>
 		</DrawerPrimitive.Portal>
