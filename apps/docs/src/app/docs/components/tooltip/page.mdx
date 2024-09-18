@@ -1,0 +1,34 @@
+<DocsPageHeader
+	title="Tooltip"
+	description="A tooltip is a small popover that displays information when you hover over or tap an element."
+	githubPath={{
+		package: 'ui',
+		path: 'tooltip.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/tooltip/example.tsx">
+	<TooltipExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {
+	Tooltip,
+	TooltipProvider,
+	TooltipTrigger,
+	TooltipContent,
+} from '@nerdfish/ui'
+```
+
+```tsx
+<TooltipProvider>
+	<Tooltip>
+		<TooltipTrigger>Hover</TooltipTrigger>
+		<TooltipContent>
+			<p>Add to library</p>
+		</TooltipContent>
+	</Tooltip>
+</TooltipProvider>
+```

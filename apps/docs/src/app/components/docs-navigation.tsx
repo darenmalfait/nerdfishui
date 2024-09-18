@@ -38,6 +38,9 @@ export const GettingStartedNavigation = React.forwardRef<
 								<Badge variant="outline">Deprecated</Badge>
 							) : null}
 							{status === 'beta' ? <Badge variant="outline">Beta</Badge> : null}
+							{status === 'needs-update' ? (
+								<Badge variant="outline">Needs update</Badge>
+							) : null}
 						</span>
 					}
 				/>
@@ -83,6 +86,9 @@ export const ComponentNavigation = React.forwardRef<
 									) : null}
 									{status === 'beta' ? (
 										<Badge variant="outline">Beta</Badge>
+									) : null}
+									{status === 'needs-update' ? (
+										<Badge variant="outline">Needs update</Badge>
 									) : null}
 								</span>
 							}

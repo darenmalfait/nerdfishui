@@ -1,0 +1,30 @@
+<DocsPageHeader
+	title="TimePicker"
+	description="A time picker component to pick a time."
+	githubPath={{
+		package: 'ui',
+		path: 'time-picker.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/time-picker/example.tsx">
+	<TimePickerExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {
+	TimePicker,
+	TimePickerSegment,
+	TimePickerSeparator,
+} from '@nerdfish/ui'
+```
+
+```tsx
+<TimePicker defaultValue={new Date()}>
+	<TimePickerSegment segment="hours" />
+	<TimePickerSeparator>:</TimePickerSeparator>
+	<TimePickerSegment segment="minutes" />
+</TimePicker>
+```

@@ -22,7 +22,6 @@ packages/**/yarn.lock
 styles.output.css
 .turbo
 tsconfig.tsbuildinfo
-.contentlayer
 
 # Yarn
 .pnp.*

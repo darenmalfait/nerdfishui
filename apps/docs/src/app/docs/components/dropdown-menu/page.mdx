@@ -1,0 +1,39 @@
+<DocsPageHeader
+	title="DropdownMenu"
+	description="A dropdown menu. It can be used to display a list of actions or links."
+	githubPath={{
+		package: 'ui',
+		path: 'dropdown-menu/dropdown-menu.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/dropdown-menu/example.tsx">
+	<DropdownMenuExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {
+	DropdownMenu,
+	DropdownMenuTrigger,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+} from '@nerdfish/ui'
+```
+
+```tsx
+<DropdownMenu>
+	<DropdownMenuTrigger>Open</DropdownMenuTrigger>
+	<DropdownMenuContent>
+		<DropdownMenuLabel>Cake Flavors</DropdownMenuLabel>
+		<DropdownMenuSeparator />
+		<DropdownMenuItem>Chocolate</DropdownMenuItem>
+		<DropdownMenuItem>Vanilla</DropdownMenuItem>
+		<DropdownMenuItem>Strawberry</DropdownMenuItem>
+		<DropdownMenuItem>Red Velvet</DropdownMenuItem>
+	</DropdownMenuContent>
+</DropdownMenu>
+```

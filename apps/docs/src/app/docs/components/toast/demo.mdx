@@ -1,0 +1,48 @@
+<DocsPageHeader
+	title="Toast"
+	description="A toast is a small popover that displays information somewhere in the viewport."
+	githubPath={{
+		package: 'ui',
+		path: 'toast.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/toast/example/index.ts">
+	<ToastExample />
+</ComponentExample>
+
+## Usage
+
+### Toaster
+
+This needs to be placed in the root component of your application.
+
+```tsx
+import { Toaster } from '@nerdfish/ui'
+```
+
+```tsx
+<Toaster />
+```
+
+### Toast
+
+```tsx
+import { Button, toast } from '@nerdfish/ui'
+```
+
+```tsx
+<Button onClick={() => toast.message('Toast message')}>Show toast</Toast>
+```
+
+## Variant
+
+<ComponentExample src="/src/app/docs/components/toast/example/variant.tsx">
+	<ToastVariantExample />
+</ComponentExample>
+
+## Actions
+
+<ComponentExample src="/src/app/docs/components/toast/example/action.tsx">
+	<ToastActionExample />
+</ComponentExample>

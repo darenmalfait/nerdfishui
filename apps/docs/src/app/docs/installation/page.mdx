@@ -1,0 +1,73 @@
+<DocsPageHeader
+	title="Installation"
+	description="A custom component library built with React and TailwindCSS to help streamline proof of concept development and provide visually pleasing and functional components."
+/>
+
+## Install
+
+To install the component-library run the following within your project
+directory.
+
+```bash
+npm install @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui @nerdfish/utils postcss tailwindcss @tailwindcss/typography @heroicons/react
+```
+
+## Configuration
+
+The theme of this library depends on the @tailwindcss/typography plugin. To use
+it, follow the steps on the plugin source page.
+https://github.com/tailwindlabs/tailwindcss-typography
+
+```js
+//tailwind.config.js
+module.exports = {
+	mode: 'jit',
+	content: [
+		// ... paths that use tailwind
+		'./node_modules/@nerdfish/**/*.{js,ts,jsx,tsx}', // path to nerdfishui
+	],
+	theme: {
+		extend: {},
+	},
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('@nerdfish/tailwind-config'),
+	],
+}
+```
+
+```js
+//postcss.config.js
+module.exports = {
+	plugins: {
+		tailwindcss: {},
+		autoprefixer: {},
+	},
+}
+```
+
+Then you need a global css file which you import at the root of the project
+
+```css
+//styles.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Usage
+
+```jsx
+//AppProviders.js
+import { ThemeProvider, H1 } from '@nerdfish/ui'
+import * as React from 'react'
+import '@nerdfish/theme/dist/nerdfishui.css'
+
+function App() {
+	return (
+		<ThemeProvider>
+			<H1>Hello {`<°))>{`}</H1>
+		</ThemeProvider>
+	)
+}
+```

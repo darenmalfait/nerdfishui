@@ -1,0 +1,65 @@
+<DocsPageHeader
+	title="Alert"
+	description="Alert or Callout is a component that is used to display a message to the user."
+	githubPath={{
+		package: 'ui',
+		path: 'alert.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/alert/examples/default.tsx">
+	<AlertExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import { Alert, AlertTitle, AlertDescription } from '@nerdfish/ui'
+```
+
+```tsx
+<Alert variant="danger">
+	<AlertTitle>Example alert</AlertTitle>
+	<AlertDescription>Example description</AlertDescription>
+</Alert>
+```
+
+## Examples
+
+### Default
+
+<ComponentExample src="/src/app/docs/components/alert/examples/default.tsx">
+	<AlertExample />
+</ComponentExample>
+
+---
+
+### Danger
+
+<ComponentExample src="/src/app/docs/components/alert/examples/danger.tsx">
+	<AlertDangerExample />
+</ComponentExample>
+
+---
+
+### Info
+
+<ComponentExample src="/src/app/docs/components/alert/examples/info.tsx">
+	<AlertInfoExample />
+</ComponentExample>
+
+---
+
+### Success
+
+<ComponentExample src="/src/app/docs/components/alert/examples/success.tsx">
+	<AlertSuccessExample />
+</ComponentExample>
+
+---
+
+### Warning
+
+<ComponentExample src="/src/app/docs/components/alert/examples/warning.tsx">
+	<AlertWarningExample />
+</ComponentExample>

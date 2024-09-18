@@ -1,0 +1,35 @@
+<DocsPageHeader
+	title="MultiSelect"
+	description="MultiSelect is a component that allows you to select multiple items from a list."
+	githubPath={{
+		package: 'ui',
+		path: 'multi-select.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/multi-select/example.tsx">
+	<MultiSelectExample />
+</ComponentExample>
+
+## Usage
+
+Comboxbox extends the [Input](/input) component. All props from Input are
+available.
+
+```tsx
+import { MultiSelect } from '@nerdfish/ui'
+import Image from 'next/image'
+```
+
+```tsx
+<MultiSelect
+	placeholder="Select a framework"
+	options={[
+		{ value: 'next.js', label: 'Next.js' },
+		{ value: 'sveltekit', label: 'SvelteKit' },
+		{ value: 'nuxt.js', label: 'Nuxt.js' },
+		{ value: 'remix', label: 'Remix' },
+		{ value: 'astro', label: 'Astro' },
+	]}
+/>
+```

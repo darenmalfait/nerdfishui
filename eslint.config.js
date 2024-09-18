@@ -9,7 +9,6 @@ export default [
 			'**/.turbo**',
 			'**/.next**',
 			'**/.changeset**',
-			'**/.contentlayer/**',
 			'**/dist/**',
 			'**/next/**',
 			'**/next-env.d.ts',

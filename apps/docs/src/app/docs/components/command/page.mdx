@@ -1,0 +1,53 @@
+<DocsPageHeader
+	title="Command"
+	description="Command is a popup menu that can be used to display a list of actions."
+	githubPath={{
+		package: 'ui',
+		path: 'command.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/command/example/default.tsx">
+	<CommandExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import Image from 'next/image'
+import {
+	Command,
+	CommandInput,
+	CommandList,
+	CommandGroup,
+	CommandItem,
+	CommandEmpty,
+	CommandSeparator,
+} from '@nerdfish/ui'
+```
+
+```tsx
+<Command>
+	<CommandInput placeholder="Type a command or search..." />
+	<CommandEmpty>No results found.</CommandEmpty>
+	<CommandList>
+		<CommandGroup heading="Suggestions">
+			<CommandItem>Calendar</CommandItem>
+			<CommandItem>Search Emoji</CommandItem>
+			<CommandItem>Calculator</CommandItem>
+		</CommandGroup>
+		<CommandSeparator />
+		<CommandGroup heading="Settings">
+			<CommandItem>Profile</CommandItem>
+			<CommandItem>Billing</CommandItem>
+			<CommandItem>Settings</CommandItem>
+		</CommandGroup>
+	</CommandList>
+</Command>
+```
+
+## Dialog
+
+<ComponentExample src="/src/app/docs/components/command/example/dialog.tsx">
+	<CommandDialogExample />
+</ComponentExample>

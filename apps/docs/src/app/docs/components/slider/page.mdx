@@ -1,0 +1,24 @@
+<DocsPageHeader
+	title="Slider"
+	description="Slider is a component that allows users to select a value from a range of values."
+	githubPath={{
+		package: 'ui',
+		path: 'slider.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/slider/example.tsx">
+	<SliderExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import { Slider, SliderThumb } from '@nerdfish/ui'
+```
+
+```tsx
+<Slider defaultValue={[1, 100]} max={100} step={1}>
+	<SliderThumb />
+</Slider>
+```

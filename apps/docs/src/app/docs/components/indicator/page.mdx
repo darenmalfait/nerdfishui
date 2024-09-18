@@ -1,0 +1,41 @@
+<DocsPageHeader
+	title="Indicator"
+	description="Indicator to indicate a status of a component."
+	githubPath={{
+		package: 'ui',
+		path: 'indicator.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/indicator/example/default.tsx">
+	<IndicatorExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import { Indicator, IndicatorItem, Badge } from '@nerdfish/ui'
+```
+
+```tsx
+<Indicator>
+	<IndicatorItem>
+		<Badge variant="secondary" />
+	</IndicatorItem>
+	<div className="bg-inverted text-inverted grid h-32 w-32 place-items-center">
+		content
+	</div>
+</Indicator>
+```
+
+## Item
+
+<ComponentExample src="/src/app/docs/components/indicator/example/item.tsx">
+	<IndicatorItemExample />
+</ComponentExample>
+
+## Positions
+
+<ComponentExample src="/src/app/docs/components/indicator/example/positions.tsx">
+	<IndicatorPositionsExample />
+</ComponentExample>

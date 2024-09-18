@@ -1,0 +1,34 @@
+<DocsPageHeader
+	title="Mockup"
+	description="Mockup is a component that allows you to create a mockup of an application"
+	githubPath={{
+		package: 'ui',
+		path: 'mockup.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/mockup/example.tsx">
+	<MockupExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import { Mockup, MockupWindow } from '@nerdfish/ui'
+```
+
+```tsx
+<Mockup>
+	<MockupWindow>
+		<pre data-prefix="1">
+			<code>npm i @nerdfish/ui</code>
+		</pre>
+		<pre data-prefix="2">
+			<code>installing...</code>
+		</pre>
+		<pre data-prefix="3" className="bg-warning text-warning">
+			<code>Error!</code>
+		</pre>
+	</MockupWindow>
+</Mockup>
+```
