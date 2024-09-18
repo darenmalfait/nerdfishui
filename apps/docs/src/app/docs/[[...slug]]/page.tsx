@@ -45,7 +45,7 @@ export async function generateMetadata({
 	})
 }
 
-export default async function DocPage({ params }: DocPageProps) {
+export default function DocPage({ params }: DocPageProps) {
 	const slug = params?.slug?.join('/') ?? ''
 	const doc = allDocs.find((d) => d.slugAsParams === slug)
 
