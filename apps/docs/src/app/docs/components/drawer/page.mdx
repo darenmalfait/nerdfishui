@@ -1,0 +1,60 @@
+<DocsPageHeader
+	title="Drawer"
+	description="A drawer is a panel that slides in from the side of the screen. It is used for navigation, dialogs, and other small containers of content."
+	githubPath={{
+		package: 'ui',
+		path: 'drawer.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/drawer/example/default.tsx">
+	<DrawerExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import {
+	Drawer,
+	Button,
+	DrawerTrigger,
+	DrawerContent,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerDescription,
+	DrawerFooter,
+} from '@nerdfish/ui'
+```
+
+```tsx
+<Drawer>
+	<DrawerTrigger>Open</DrawerTrigger>
+	<DrawerContent>
+		<DrawerHeader>
+			<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+			<DrawerDescription>This action cannot be undone.</DrawerDescription>
+		</DrawerHeader>
+		<DrawerFooter>
+			<Button>Submit</Button>
+			<DrawerClose>
+				<Button variant="outline">Cancel</Button>
+			</DrawerClose>
+		</DrawerFooter>
+	</DrawerContent>
+</Drawer>
+```
+
+## Direction
+
+<ComponentExample src="/src/app/docs/components/drawer/example/direction.tsx">
+	<DrawerDirectionExample />
+</ComponentExample>
+
+## Responsive
+
+You can combine the `Dialog` and `Drawer` components to create a responsive
+dialog. This renders a `Dialog` component on desktop and a `Drawer` on mobile.
+
+<ComponentExample src="/src/app/docs/components/drawer/example/responsive.tsx">
+	<DrawerResponsiveExample />
+</ComponentExample>

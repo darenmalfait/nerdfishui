@@ -1,0 +1,31 @@
+<DocsPageHeader
+	title="Calendar"
+	description="Calendar is a component that allows users to pick a date."
+	githubPath={{
+		package: 'ui',
+		path: 'calendar.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/calendar/example.tsx">
+	<CalendarExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import { Calendar } from '@nerdfish/ui'
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+return (
+	<Calendar
+		mode="single"
+		selected={date}
+		onSelect={setDate}
+		className="rounded-lg border"
+	/>
+)
+```

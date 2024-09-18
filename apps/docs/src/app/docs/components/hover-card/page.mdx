@@ -1,0 +1,33 @@
+<DocsPageHeader
+	title="HoverCard"
+	description="A hovercard is a small overlay that appears when you hover over a link or other element. HoverCards are used to provide additional information about an element without having to navigate to a new page."
+	githubPath={{
+		package: 'ui',
+		path: 'hover-card/hover-card.tsx',
+	}}
+/>
+
+<ComponentExample src="/src/app/docs/components/hover-card/example.tsx">
+	<HoverCardExample />
+</ComponentExample>
+
+## Usage
+
+```tsx
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@nerdfish/ui'
+```
+
+```tsx
+<HoverCard>
+	<HoverCardTrigger>Hover over the cake</HoverCardTrigger>
+	<HoverCardContent>
+		<div className="space-y-2">
+			<h4 className="text-sm font-semibold">@darenmalfait</h4>
+			<p className="text-sm">
+				The ultimate cake making guide – created and maintained by
+				@darenmalfait.
+			</p>
+		</div>
+	</HoverCardContent>
+</HoverCard>
+```
