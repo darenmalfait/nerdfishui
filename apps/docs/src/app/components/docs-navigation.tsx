@@ -25,7 +25,7 @@ export const GettingStartedNavigation = React.forwardRef<
 	return (
 		<NavigationList {...props} ref={ref}>
 			<NavigationListTitle title="Getting Started" />
-			{globalItems?.links.map(({ isNew, title, ...item }) => (
+			{globalItems?.links.map(({ status, title, ...item }) => (
 				<NavigationListItem
 					key={title}
 					{...item}
@@ -33,7 +33,11 @@ export const GettingStartedNavigation = React.forwardRef<
 					title={
 						<span className="flex justify-between gap-2">
 							{title}
-							{isNew ? <Badge variant="info">New</Badge> : null}
+							{status === 'new' ? <Badge variant="success">New</Badge> : null}
+							{status === 'deprecated' ? (
+								<Badge variant="outline">Deprecated</Badge>
+							) : null}
+							{status === 'beta' ? <Badge variant="outline">Beta</Badge> : null}
 						</span>
 					}
 				/>
@@ -64,16 +68,21 @@ export const ComponentNavigation = React.forwardRef<
 						className="text-base font-bold"
 						{...item}
 					/>
-					{item.links.map(({ isNew, isDeprecated, title, ...link }) => (
+					{item.links.map(({ status, title, ...link }) => (
 						<NavigationListItem
 							{...link}
 							key={title}
 							title={
 								<span className="flex justify-between gap-2">
 									{title}
-									{isNew ? <Badge variant="info">New</Badge> : null}
-									{isDeprecated ? (
+									{status === 'new' ? (
+										<Badge variant="success">New</Badge>
+									) : null}
+									{status === 'deprecated' ? (
 										<Badge variant="outline">Deprecated</Badge>
+									) : null}
+									{status === 'beta' ? (
+										<Badge variant="outline">Beta</Badge>
 									) : null}
 								</span>
 							}

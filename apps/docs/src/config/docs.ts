@@ -1,8 +1,7 @@
 type NavigationItem = {
 	title: string
 	href: string
-	isNew?: boolean
-	isDeprecated?: boolean
+	status?: 'new' | 'beta' | 'stable' | 'deprecated'
 }
 
 type NavigationGroup = {
@@ -27,7 +26,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 			links: [
 				{ title: 'Card', href: '/docs/card' },
 				{ title: 'Grid', href: '/docs/grid' },
-				{ title: 'Resizable', href: '/docs/resizable', isNew: true },
+				{ title: 'Resizable', href: '/docs/resizable', status: 'new' },
 				{ title: 'ScrollArea', href: '/docs/scroll-area' },
 			],
 		},
@@ -38,7 +37,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Select', href: '/docs/select' },
 				{ title: 'DatePicker', href: '/docs/date-picker' },
 				{ title: 'Input', href: '/docs/input' },
-				{ title: 'Textarea', href: '/docs/textarea', isNew: true },
+				{ title: 'Textarea', href: '/docs/textarea', status: 'new' },
 				{ title: 'InputOTP', href: '/docs/input-otp' },
 				{ title: 'Multi Email', href: '/docs/multi-email' },
 				{ title: 'Multi Select', href: '/docs/multi-select' },
@@ -46,7 +45,11 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Slider', href: '/docs/slider' },
 				{ title: 'Switch', href: '/docs/switch' },
 				{ title: 'TimePicker', href: '/docs/time-picker' },
-				{ title: 'DateTimePicker', href: '/docs/date-time-picker' },
+				{
+					title: 'DateTimePicker',
+					href: '/docs/date-time-picker',
+					status: 'beta',
+				},
 				{ title: 'DatePicker', href: '/docs/date-picker' },
 				{ title: 'Toggle', href: '/docs/toggle' },
 				{ title: 'Calendar', href: '/docs/calendar' },
@@ -76,9 +79,9 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Command', href: '/docs/command' },
 				{ title: 'Dialog', href: '/docs/dialog' },
 				{ title: 'Drawer', href: '/docs/drawer' },
-				{ title: 'EmptyState', href: '/docs/empty-state', isNew: true },
+				{ title: 'EmptyState', href: '/docs/empty-state', status: 'new' },
 				{ title: 'HoverCard', href: '/docs/hover-card' },
-				{ title: 'Mockup', href: '/docs/mockup', isNew: true },
+				{ title: 'Mockup', href: '/docs/mockup', status: 'new' },
 				{ title: 'Popover', href: '/docs/popover' },
 				{ title: 'Steps', href: '/docs/steps' },
 				{ title: 'Table', href: '/docs/table' },
@@ -91,7 +94,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Aspect Ratio', href: '/docs/aspect-ratio' },
 				{ title: 'Flags', href: '/docs/flags' },
 				{ title: 'Indicator', href: '/docs/indicator' },
-				{ title: 'Separator', href: '/docs/separator', isNew: true },
+				{ title: 'Separator', href: '/docs/separator', status: 'new' },
 				{ title: 'Skeleton', href: '/docs/skeleton' },
 				{ title: 'Toast', href: '/docs/toast' },
 			],
