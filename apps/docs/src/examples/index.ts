@@ -35,6 +35,7 @@ import { CommandDialogDemo } from './command/dialog'
 import { DateRangePickerExample } from './date-picker/date-range-picker'
 import { DatePickerDemo } from './date-picker/demo'
 import { DatePickerWithInputExample } from './date-picker/with-input'
+import { DateTimePickerDemo } from './date-time-picker/demo'
 import { DialogDemo } from './dialog/demo'
 import { DrawerDemo } from './drawer/demo'
 import { DrawerDirection } from './drawer/direction'
@@ -130,6 +131,7 @@ export const examples = {
 	DatePickerDemo,
 	DatePickerWithInputExample,
 	DateRangePickerExample,
+	DateTimePickerDemo,
 	DialogDemo,
 	DrawerDemo,
 	DrawerDirection,

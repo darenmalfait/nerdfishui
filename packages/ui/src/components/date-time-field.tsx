@@ -14,34 +14,37 @@ import { type DateType, useTimescape } from 'timescape/react'
 import { useControllableState } from '../hooks'
 import { InputIcon, type InputProps, inputVariants } from './input'
 
-type TimePickerContextValue = ReturnType<typeof useTimescape>
-const TimePickerContext = createContext<TimePickerContextValue | null>(null)
+type DateTimeContextValue = ReturnType<typeof useTimescape>
+const DateTimeContext = createContext<DateTimeContextValue | null>(null)
 
-const useTimepickerContext = (): TimePickerContextValue => {
-	const context = useContext(TimePickerContext)
+const useTimepickerContext = (): DateTimeContextValue => {
+	const context = useContext(DateTimeContext)
 	if (!context) {
 		throw new Error(
-			'Unable to access TimePickerContext. This component should be wrapped by a TimePicker component',
+			'Unable to access DateTimeContext. This component should be wrapped by a DateTime component',
 		)
 	}
 	return context
 }
 
-export type TimeDateType = Exclude<DateType, 'days' | 'months' | 'years'>
+export type { DateType } from 'timescape'
 
-export const TIME_SEGMENT_PLACEHOLDER: {
-	[key in TimeDateType]: string
+export const DATE_TIME_SEGMENT_PLACEHOLDER: {
+	[key in DateType]: string
 } = {
-	hours: '00',
-	minutes: '00',
-	seconds: '00',
-	'am/pm': 'AM',
+	hours: '--',
+	minutes: '--',
+	seconds: '--',
+	'am/pm': '--',
+	days: '--',
+	months: '--',
+	years: '----',
 }
 
-export const TimePickerSegment = forwardRef<
+export const DateTimeSegment = forwardRef<
 	React.ElementRef<'input'>,
 	Omit<HTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> & {
-		segment: TimeDateType
+		segment: DateType
 		inputClassName?: string
 	}
 >(({ segment, inputClassName, className, ...props }, ref) => {
@@ -50,9 +53,7 @@ export const TimePickerSegment = forwardRef<
 
 	return (
 		<div
-			className={cx(
-				'focus-within:bg-inverted/10 text-primary rounded-lg px-2 py-1',
-			)}
+			className={cx('focus-within:bg-inverted/10 text-primary rounded-lg p-1')}
 		>
 			<input
 				{...getInputProps(segment)}
@@ -62,13 +63,14 @@ export const TimePickerSegment = forwardRef<
 					} else if (ref) ref.current = node
 					timePickerInputRef(node)
 				}}
-				placeholder={TIME_SEGMENT_PLACEHOLDER[segment]}
+				placeholder={DATE_TIME_SEGMENT_PLACEHOLDER[segment]}
 				{...props}
 				className={cx(
 					'tabular-nums caret-transparent',
 					'border-transparent bg-transparent outline-none ring-0 ring-offset-0 focus-visible:border-transparent focus-visible:ring-0',
 					{
-						'w-[2ch]': segment === 'hours' || segment === 'minutes',
+						'w-[2ch]': segment !== 'years',
+						'w-[4ch]': segment === 'years',
 					},
 					inputClassName,
 				)}
@@ -76,13 +78,13 @@ export const TimePickerSegment = forwardRef<
 		</div>
 	)
 })
-TimePickerSegment.displayName = 'TimePickerSegment'
+DateTimeSegment.displayName = 'DateTimeSegment'
 
-export type TimePickerSegmentProps = React.ComponentPropsWithoutRef<
-	typeof TimePickerSegment
+export type DateTimeSegmentProps = React.ComponentPropsWithoutRef<
+	typeof DateTimeSegment
 >
 
-export const TimePickerSeparator = forwardRef<
+export const DateTimeSeparator = forwardRef<
 	React.ElementRef<'span'>,
 	HTMLAttributes<HTMLSpanElement>
 >(({ className, ...props }, ref) => {
@@ -90,14 +92,17 @@ export const TimePickerSeparator = forwardRef<
 		<span
 			ref={ref}
 			{...props}
-			className={cx('time-primary py-1 text-sm', className)}
+			className={cx(
+				'text-muted align-top align-middle tabular-nums',
+				className,
+			)}
 		/>
 	)
 })
-TimePickerSeparator.displayName = 'TimePickerSeparator'
+DateTimeSeparator.displayName = 'DateTimeSeparator'
 
-export type TimePickerSeparatorProps = React.ComponentPropsWithoutRef<
-	typeof TimePickerSeparator
+export type DateTimeSeparatorProps = React.ComponentPropsWithoutRef<
+	typeof DateTimeSeparator
 >
 
 const DEFAULT_OPTIONS: Options = {
@@ -105,9 +110,9 @@ const DEFAULT_OPTIONS: Options = {
 	digits: '2-digit',
 }
 
-export const TimePicker = forwardRef<
+export const DateTimeField = forwardRef<
 	React.ElementRef<'div'>,
-	Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> &
+	Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue' | 'onChange'> &
 		Omit<InputProps, 'value' | 'onChange' | 'defaultValue'> & {
 			value?: Date
 			defaultValue?: Date
@@ -146,8 +151,18 @@ export const TimePicker = forwardRef<
 			...options,
 		})
 
+		// Keep the date in sync in case it's controlled from somewhere else (ie. DatePicker)
+		React.useEffect(() => {
+			if (value !== timePickerContext.options.date) {
+				timePickerContext.update((state) => ({
+					...state,
+					date: value,
+				}))
+			}
+		}, [timePickerContext, value])
+
 		return (
-			<TimePickerContext.Provider value={timePickerContext}>
+			<DateTimeContext.Provider value={timePickerContext}>
 				<div
 					ref={ref}
 					{...props}
@@ -158,16 +173,18 @@ export const TimePicker = forwardRef<
 					)}
 				>
 					{addOnLeading}
-					<span className="flex flex-1 items-center justify-start">
+					<span className="flex flex-1 items-center justify-start gap-1">
 						{children}
 					</span>
 					<InputIcon icon={icon} variant={variant} />
 					{addOnTrailing}
 				</div>
-			</TimePickerContext.Provider>
+			</DateTimeContext.Provider>
 		)
 	},
 )
-TimePicker.displayName = 'TimePicker'
+DateTimeField.displayName = 'DateTimeField'
 
-export type TimePickerProps = React.ComponentPropsWithoutRef<typeof TimePicker>
+export type DateTimeFieldProps = React.ComponentPropsWithoutRef<
+	typeof DateTimeField
+>

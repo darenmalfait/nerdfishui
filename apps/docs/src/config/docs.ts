@@ -46,6 +46,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Slider', href: '/docs/slider' },
 				{ title: 'Switch', href: '/docs/switch' },
 				{ title: 'TimePicker', href: '/docs/time-picker' },
+				{ title: 'DateTimePicker', href: '/docs/date-time-picker' },
 				{ title: 'DatePicker', href: '/docs/date-picker' },
 				{ title: 'Toggle', href: '/docs/toggle' },
 				{ title: 'Calendar', href: '/docs/calendar' },

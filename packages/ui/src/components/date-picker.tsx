@@ -7,7 +7,7 @@ import * as React from 'react'
 import { type SelectRangeEventHandler, type DateRange } from 'react-day-picker'
 
 import { Badge } from './badge'
-import { Button } from './button'
+import { Button, buttonVariants } from './button'
 import { Calendar, type CalendarProps } from './calendar'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
@@ -43,23 +43,21 @@ function Presets({
 	)
 }
 
-function DatePickerTrigger({
-	children,
-	selected,
-	className,
-	placeholder,
-}: {
-	children?: React.ReactNode
-	selected?: Date
-	className?: string
-	placeholder?: string
-}) {
-	if (children) return children
+const DatePickerTrigger = React.forwardRef<
+	React.ElementRef<typeof PopoverTrigger>,
+	React.ComponentPropsWithoutRef<typeof PopoverTrigger> & {
+		selected?: Date
+		placeholder?: string
+	}
+>(({ children, selected, className, placeholder, ...props }, ref) => {
+	if (children) return <PopoverTrigger asChild>{children}</PopoverTrigger>
 
 	return (
-		<Button
-			variant="outline"
+		<PopoverTrigger
+			{...props}
+			ref={ref}
 			className={cx(
+				buttonVariants({ variant: 'outline' }),
 				'w-[280px] justify-start text-left font-normal',
 				!selected && 'text-muted',
 				className,
@@ -67,9 +65,10 @@ function DatePickerTrigger({
 		>
 			<CalendarIcon className="mr-2 size-4" />
 			<span>{selected ? format(selected, 'PPP') : placeholder}</span>
-		</Button>
+		</PopoverTrigger>
 	)
-}
+})
+DatePickerTrigger.displayName = 'DatePickerTrigger'
 
 export function DatePicker({
 	className,
@@ -91,15 +90,13 @@ export function DatePicker({
 }) {
 	return (
 		<Popover>
-			<PopoverTrigger>
-				<DatePickerTrigger
-					selected={selected}
-					className={className}
-					placeholder={placeholder}
-				>
-					{children}
-				</DatePickerTrigger>
-			</PopoverTrigger>
+			<DatePickerTrigger
+				selected={selected}
+				className={className}
+				placeholder={placeholder}
+			>
+				{children}
+			</DatePickerTrigger>
 			<PopoverContent className="w-auto p-0">
 				<Calendar
 					{...props}
