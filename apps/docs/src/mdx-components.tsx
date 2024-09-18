@@ -4,7 +4,7 @@ import { type MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
-import * as examples from './component-examples'
+import * as examples from './component-examples.ts'
 import { CodeBlock } from './lib/components/codeblock/codeblock'
 import { ComponentExample } from './lib/components/component-example'
 import { CopyButton, CopyNpmCommandButton } from './lib/components/copy-button'
@@ -21,7 +21,6 @@ export function useMDXComponents(components: MDXComponents) {
 		...uiComponents,
 		DocsPageHeader,
 		code: (props: React.HTMLAttributes<HTMLElement>) => <code {...props} />,
-
 		h1: H1,
 		h2: H2,
 		h3: H3,
