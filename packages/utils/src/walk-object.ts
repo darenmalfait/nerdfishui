@@ -1,11 +1,7 @@
-import {
-	isArray,
-	isObject,
-	type MappedLeavesObject,
-	type WalkObjectPredicate,
-} from './'
+import { isArray, isObject } from './assertion'
+import { type MappedLeavesObject, type WalkObjectPredicate } from './types'
 
-function walkObject<Target, LeafType>(
+export function walkObject<Target, LeafType>(
 	target: Target,
 	predicate: WalkObjectPredicate<LeafType>,
 ): MappedLeavesObject<Target, ReturnType<WalkObjectPredicate<LeafType>>> {
@@ -28,5 +24,3 @@ function walkObject<Target, LeafType>(
 
 	return inner(target)
 }
-
-export { walkObject }
