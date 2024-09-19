@@ -1,3 +1,5 @@
+'use client'
+
 import { Separator } from '@nerdfish/ui'
 
 export function SeparatorExample() {
