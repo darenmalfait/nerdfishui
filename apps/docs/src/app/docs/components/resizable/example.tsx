@@ -1,3 +1,5 @@
+'use client'
+
 import { Resizable, ResizablePanel, ResizableHandle } from '@nerdfish/ui'
 
 export function ResizableExample() {

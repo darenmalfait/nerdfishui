@@ -1,6 +1,4 @@
-'use client'
-
-import { Resizable, ResizablePanel, ResizableHandle } from '@nerdfish/ui'
+import { Resizable, ResizableHandle, ResizablePanel } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 import { CopyButton } from './copy-button'
@@ -23,29 +21,20 @@ function Preview({ children }: { children: React.ReactNode }) {
 export function ComponentExample({
 	children,
 	className,
-	...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-	const [Example, Code, ...Children] = React.Children.toArray(
-		children,
-	) as React.ReactElement[]
-
+	component: Component,
+}: React.HTMLAttributes<HTMLDivElement> & {
+	children: React.ReactNode[]
+	component?: React.ReactNode
+}) {
 	return (
-		<div {...props} className={cx('flex flex-col gap-4', className)}>
-			<div className="!bg-primary p-0">
-				<Preview>{Example}</Preview>
-			</div>
+		<div className={cx('flex flex-col gap-4', className)}>
+			{Component ? <Preview>{Component}</Preview> : null}
 			<div className="!bg-primary -my-2 p-0">
 				<div className="flex flex-col space-y-4">
 					<div className="dark relative w-full rounded-lg [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-						<CopyButton className="top-4" code={Code?.toString() ?? ''} />
-						{Code}
+						<CopyButton className="top-4" code={children.toString()} />
+						{children}
 					</div>
-
-					{Children.length ? (
-						<div className="rounded-lg [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-							{Children}
-						</div>
-					) : null}
 				</div>
 			</div>
 		</div>

@@ -1,3 +1,5 @@
+'use client'
+
 import { Skeleton } from '@nerdfish/ui'
 
 export function SkeletonExample() {
