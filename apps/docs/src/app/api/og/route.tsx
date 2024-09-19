@@ -2,23 +2,19 @@
 
 import { cx } from '@nerdfish/utils'
 import { ImageResponse } from '@vercel/og'
-import { type NextRequest } from 'next/server'
+import { ogImageSchema } from '~/lib/types/og'
 
-import { ogImageSchema } from '../../lib/types/og'
-
-export const config = {
-	runtime: 'edge',
-}
+export const runtime = 'edge'
 
 const interRegular = fetch(
-	new URL('../../assets/fonts/Inter-Regular.ttf', import.meta.url),
+	new URL('../../../assets/fonts/Inter-Regular.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer())
 
 const interBold = fetch(
-	new URL('../../assets/fonts/Inter-Bold.ttf', import.meta.url),
+	new URL('../../../assets/fonts/Inter-Bold.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer())
 
-export default async function handler(req: NextRequest) {
+export async function GET(req: Request) {
 	try {
 		const fontRegular = await interRegular
 		const fontBold = await interBold
