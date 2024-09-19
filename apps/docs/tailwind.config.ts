@@ -1,8 +1,6 @@
-const { fontFamily } =
-	// eslint-disable-next-line
-	require('tailwindcss/defaultTheme') as typeof import('tailwindcss/defaultTheme')
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
-module.exports = {
+export default {
 	content: [
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 		'src/**/*.{ts,tsx}',
