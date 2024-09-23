@@ -28,7 +28,7 @@ const nextConfig = {
 		],
 	},
 	experimental: {
-		serverComponentsExternalPackages: ['@floating-ui/dom'],
+		optimizePackageImports: ['@nerdfish/ui'],
 	},
 }
 
