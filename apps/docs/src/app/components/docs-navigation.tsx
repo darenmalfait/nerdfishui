@@ -1,7 +1,6 @@
 'use client'
 
 import {
-	Badge,
 	NavigationList,
 	NavigationListTitle,
 	NavigationListItem,
@@ -10,6 +9,7 @@ import {
 import { docs } from 'docs.config'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import * as React from 'react'
+import { StatusBadge } from './status-badge'
 import { stripPreSlash } from '~/lib/utils/string'
 
 export const GettingStartedNavigation = React.forwardRef<
@@ -33,14 +33,7 @@ export const GettingStartedNavigation = React.forwardRef<
 					title={
 						<span className="flex justify-between gap-2">
 							{title}
-							{status === 'new' ? <Badge variant="success">New</Badge> : null}
-							{status === 'deprecated' ? (
-								<Badge variant="outline">Deprecated</Badge>
-							) : null}
-							{status === 'beta' ? <Badge variant="outline">Beta</Badge> : null}
-							{status === 'needs-update' ? (
-								<Badge variant="outline">Needs update</Badge>
-							) : null}
+							<StatusBadge status={status} />
 						</span>
 					}
 				/>
@@ -76,20 +69,9 @@ export const ComponentNavigation = React.forwardRef<
 							{...link}
 							key={title}
 							title={
-								<span className="flex justify-between gap-2">
+								<span className="flex gap-2">
 									{title}
-									{status === 'new' ? (
-										<Badge variant="success">New</Badge>
-									) : null}
-									{status === 'deprecated' ? (
-										<Badge variant="outline">Deprecated</Badge>
-									) : null}
-									{status === 'beta' ? (
-										<Badge variant="outline">Beta</Badge>
-									) : null}
-									{status === 'needs-update' ? (
-										<Badge variant="outline">Needs update</Badge>
-									) : null}
+									<StatusBadge status={status} />
 								</span>
 							}
 							active={segment === stripPreSlash(link.href)}
