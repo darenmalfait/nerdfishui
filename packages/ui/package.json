@@ -51,7 +51,7 @@
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "cmdk": "^1.0.0",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.0.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.439.0",
     "react-aria": "^3.34.3",
