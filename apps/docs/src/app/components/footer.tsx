@@ -1,12 +1,12 @@
 'use client'
 
 import { cx } from '@nerdfish/utils'
+import { docs } from 'docs.config'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import { Icons } from './icons'
 import { GithubLogo } from './icons/github-logo'
-import { docs } from '~/config/docs'
 import { stripTrailingSlash } from '~/lib/utils/string'
 
 function PageLink({
@@ -50,7 +50,7 @@ function PageLink({
 function PageNavigation() {
 	const pathname = usePathname()
 
-	const currentPagePath = stripTrailingSlash(pathname ?? '')
+	const currentPagePath = stripTrailingSlash(pathname)
 
 	const allPages = docs.navigation.flatMap((group) => group.links)
 	const currentPageIndex = allPages.findIndex(

@@ -6,9 +6,9 @@ import {
 	NavigationListItem,
 	NavigationListTitle,
 } from '@nerdfish/ui'
+import { docs } from 'docs.config'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import * as React from 'react'
-import { docs } from '~/config/docs'
 import { stripPreSlash } from '~/lib/utils/string'
 
 export const ComponentNavigation = React.forwardRef<
