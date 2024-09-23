@@ -13,7 +13,7 @@ export const TabsList = React.forwardRef<
 	<TabsPrimivite.List
 		ref={ref}
 		className={cx(
-			'inline-flex items-center justify-center gap-1 rounded-lg focus-within:outline-none',
+			'inline-flex items-center justify-center gap-1 rounded-3xl focus-within:outline-none',
 			className,
 		)}
 		{...props}
@@ -27,7 +27,7 @@ export const TabsTrigger = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<TabsPrimivite.Trigger
 		className={cx(
-			'text-primary focus-outline relative inline-flex items-center justify-center rounded-lg px-3 py-1 text-sm font-medium transition-all focus-within:outline-none hover:bg-black/5 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black/10 dark:hover:bg-white/5 dark:data-[state=active]:bg-white/10',
+			'text-primary focus-outline relative inline-flex items-center justify-center rounded-3xl px-3 py-1 text-sm font-medium transition-all focus-within:outline-none hover:bg-black/5 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black/10 dark:hover:bg-white/5 dark:data-[state=active]:bg-white/10',
 			className,
 		)}
 		{...props}
@@ -42,7 +42,7 @@ export const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<TabsPrimivite.Content
 		className={cx(
-			'mt-3 rounded-lg bg-black/10 p-6 focus-within:outline-none dark:bg-white/10',
+			'mt-3 rounded-3xl bg-black/10 p-6 focus-within:outline-none dark:bg-white/10',
 			className,
 		)}
 		{...props}

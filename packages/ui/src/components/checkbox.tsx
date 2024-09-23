@@ -40,7 +40,7 @@ export function Checkbox({
 			className={cx(
 				textClassName,
 				checkboxVariants({ inputSize }),
-				'group-focus-within:outline-active transition-transform',
+				'focus-within:outline-active rounded-md transition-transform',
 				className,
 			)}
 		>
@@ -50,7 +50,7 @@ export function Checkbox({
 					bgClassName,
 					textClassName,
 					// basic styles
-					'relative inline-block h-full w-full rounded-lg border transition-all peer-[:not(:disabled)]:cursor-pointer',
+					'relative inline-block h-full w-full rounded-md border transition-all peer-[:not(:disabled)]:cursor-pointer',
 					// border
 					'border-transparent',
 					// background
@@ -61,7 +61,7 @@ export function Checkbox({
 					'peer-checked:border peer-checked:border-current',
 				)}
 			/>
-			<span className="peer-checked:animate-pop pointer-events-none absolute inset-0 hidden rounded-lg peer-checked:block">
+			<span className="peer-checked:animate-pop pointer-events-none absolute inset-0 hidden rounded-md peer-checked:block">
 				<Icon
 					className={cx(textClassName, 'pointer-events-none h-full w-full p-1')}
 				/>

@@ -15,7 +15,7 @@ function InputAddon({
 		<div
 			className={cx(
 				inputVariants({ inputSize }),
-				'bg-popover inline-flex w-auto rounded-lg font-normal shadow-none',
+				'bg-popover inline-flex w-auto rounded-3xl font-normal shadow-none',
 			)}
 		>
 			{children}

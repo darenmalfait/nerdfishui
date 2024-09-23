@@ -70,8 +70,8 @@ export function ProfileForm() {
 		toast.success(
 			<div>
 				<span className="font=bold">You submitted the following values:</span>
-				<pre className="mt-2 w-[340px] rounded-lg bg-slate-950 p-4">
-					<code className="text-white">{JSON.stringify(data, null, 2)}</code>
+				<pre className="bg-inverted mt-2 w-[340px] rounded-3xl p-4">
+					<code className="text-inverted">{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			</div>,
 		)

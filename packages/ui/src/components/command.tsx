@@ -15,7 +15,7 @@ export const Command = React.forwardRef<
 	<CommandPrimitive
 		ref={ref}
 		className={cx(
-			'bg-popover flex h-full w-full flex-col overflow-hidden rounded-lg',
+			'bg-popover flex h-full w-full flex-col overflow-hidden rounded-3xl',
 			className,
 		)}
 		{...props}

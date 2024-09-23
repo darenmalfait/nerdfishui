@@ -2,7 +2,7 @@ import { cx } from '@nerdfish/utils'
 
 const variantStyles = {
 	small: '',
-	medium: 'rounded-lg px-1.5 ring-1 ring-inset',
+	medium: 'rounded-3xl px-1.5 ring-1 ring-inset',
 }
 
 const colorStyles = {
@@ -45,7 +45,7 @@ export function Tag({
 	return (
 		<span
 			className={cx(
-				'font-mono text-[0.625rem] font-semibold leading-6',
+				'rounded font-mono text-[0.625rem] font-semibold leading-6',
 				variantStyles[variant],
 				colorStyles[color][variant],
 			)}
