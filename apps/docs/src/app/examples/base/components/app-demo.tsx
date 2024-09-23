@@ -249,7 +249,7 @@ function AlbumArtwork({
 						src={album.cover}
 						alt={album.name}
 						fill
-						className="focus-ring object-cover transition-all"
+						className="focus-ring rounded-3xl object-cover transition-all"
 					/>
 				</AspectRatio>
 			</div>
