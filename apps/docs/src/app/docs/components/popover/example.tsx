@@ -34,7 +34,8 @@ export function PopoverExample() {
 								name="width"
 								id="width"
 								defaultValue="10 inches"
-								className="col-span-2 h-8"
+								className="col-span-2"
+								inputSize="sm"
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
@@ -43,7 +44,8 @@ export function PopoverExample() {
 								name="maxWidth"
 								id="maxWidth"
 								defaultValue="3"
-								className="col-span-2 h-8"
+								className="col-span-2"
+								inputSize="sm"
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
@@ -52,7 +54,8 @@ export function PopoverExample() {
 								name="height"
 								id="height"
 								defaultValue="4 inches"
-								className="col-span-2 h-8"
+								className="col-span-2"
+								inputSize="sm"
 							/>
 						</div>
 						<div className="grid grid-cols-2 items-center gap-4">
@@ -61,7 +64,8 @@ export function PopoverExample() {
 								name="maxHeight"
 								id="maxHeight"
 								defaultValue="Unlimited"
-								className="col-span-2 h-8"
+								className="col-span-2"
+								inputSize="sm"
 							/>
 						</div>
 					</div>
