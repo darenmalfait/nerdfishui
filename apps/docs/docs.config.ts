@@ -1,7 +1,7 @@
-type NavigationItem = {
+export type NavigationItem = {
 	title: string
 	href: string
-	status?: 'new' | 'beta' | 'stable' | 'deprecated' | 'needs-update'
+	status?: 'new' | 'experimental' | 'stable' | 'deprecated' | 'needs-update'
 }
 
 type NavigationGroup = {
@@ -52,7 +52,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{
 					title: 'DateTimePicker',
 					href: '/docs/components/date-time-picker',
-					status: 'beta',
+					status: 'experimental',
 				},
 				{ title: 'DatePicker', href: '/docs/components/date-picker' },
 				{ title: 'Toggle', href: '/docs/components/toggle' },
