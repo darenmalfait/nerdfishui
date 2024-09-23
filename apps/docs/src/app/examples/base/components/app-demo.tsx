@@ -113,9 +113,9 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
 	return (
-		<div className="bg-accent hidden rounded-lg xl:block">
+		<div className="bg-accent hidden rounded-3xl xl:block">
 			<div className="p-8">
-				<div className="bg-primary overflow-hidden rounded-lg shadow-2xl transition-all">
+				<div className="bg-primary overflow-hidden rounded-3xl shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
 						<aside className="bg-muted pb-12 pr-2">
 							<div className="mb-8 px-8 pt-6">
@@ -211,7 +211,7 @@ function AppDemo() {
 												</Paragraph>
 											</div>
 										</div>
-										<div className="border-muted flex h-[450px] min-h-0 shrink-0 items-center justify-center rounded-lg border border-dashed">
+										<div className="border-muted flex h-[450px] min-h-0 shrink-0 items-center justify-center rounded-3xl border border-dashed">
 											<div className="mx-auto flex min-h-0 max-w-[420px] flex-col items-center justify-center text-center">
 												<Paragraph className="text-muted mb-4 mt-2 text-sm">
 													You have no ingredients added. Add ingredients to
@@ -243,7 +243,7 @@ function AlbumArtwork({
 }: AlbumArtworkProps) {
 	return (
 		<div className={cx('group space-y-3', className)} {...props}>
-			<div className="rounded-lg object-cover">
+			<div className="rounded-3xl object-cover">
 				<AspectRatio ratio={aspectRatio === 'square' ? 1 : 3 / 4}>
 					<Image
 						src={album.cover}

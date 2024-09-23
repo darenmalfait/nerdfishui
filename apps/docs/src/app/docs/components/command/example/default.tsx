@@ -21,7 +21,7 @@ import {
 
 export function CommandExample() {
 	return (
-		<Command className="shadow-soft-sm shadow-outline rounded-lg border">
+		<Command className="shadow-soft-sm shadow-outline rounded-3xl border">
 			<CommandInput placeholder="Type a command or search..." />
 			<CommandEmpty>No results found.</CommandEmpty>
 			<CommandList>
