@@ -1,7 +1,7 @@
 import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
+import { siteConfig } from 'site.config'
 import { Logo } from './icons/logo'
-import { siteConfig } from '~/config/site'
 
 export function MainNavigation() {
 	return (

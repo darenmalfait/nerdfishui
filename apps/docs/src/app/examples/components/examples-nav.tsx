@@ -35,7 +35,7 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
 							key={example.href}
 							className={cx(
 								'hover:text-primary flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors',
-								pathname?.startsWith(example.href) ||
+								pathname.startsWith(example.href) ||
 									(index === 0 && pathname === '/')
 									? 'bg-muted text-primary font-medium'
 									: 'text-muted-foreground',
