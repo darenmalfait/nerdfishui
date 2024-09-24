@@ -16,7 +16,7 @@ export const Switch = React.forwardRef<
 			// basic styles
 			'peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full p-0 transition-colors',
 			// checked state
-			'data-[state=checked]:bg-inverted dark:data-[state=checked]:bg-inverted/50 data-[state=checked]:border-transparent',
+			'data-[state=checked]:bg-accent bg-inverted/10 data-[state=checked]:border-transparent',
 			// disabled state
 			'disabled-within:opacity-50 disabled-within:cursor-not-allowed disabled-within:shadow-none disabled-within:hover:border-transparent',
 			className,
