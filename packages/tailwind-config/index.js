@@ -196,18 +196,22 @@ module.exports = plugin(
 					success: {
 						DEFAULT: 'hsl(var(--colors-success-300) / <alpha-value>)',
 						muted: 'hsl(var(--colors-success-100) / <alpha-value>)',
+						accent: 'hsl(var(--colors-success-500) / <alpha-value>)',
 					},
 					danger: {
 						DEFAULT: 'hsl(var(--colors-danger-300) / <alpha-value>)',
 						muted: 'hsl(var(--colors-danger-100) / <alpha-value>)',
+						accent: 'hsl(var(--colors-danger-500) / <alpha-value>)',
 					},
 					warning: {
 						DEFAULT: 'hsl(var(--colors-warning-300) / <alpha-value>)',
 						muted: 'hsl(var(--colors-warning-100) / <alpha-value>)',
+						accent: 'hsl(var(--colors-warning-500) / <alpha-value>)',
 					},
 					info: {
 						DEFAULT: 'hsl(var(--colors-info-300) / <alpha-value>)',
 						muted: 'hsl(var(--colors-info-100) / <alpha-value>)',
+						accent: 'hsl(var(--colors-info-500) / <alpha-value>)',
 					},
 				},
 				textColor: {
@@ -222,10 +226,26 @@ module.exports = plugin(
 				borderColor: {
 					primary: 'hsl(var(--colors-border-primary) / <alpha-value>)',
 					muted: 'hsl(var(--colors-border-muted) / <alpha-value>)',
-					success: 'hsl(var(--colors-success-300) / <alpha-value>)',
-					danger: 'hsl(var(--colors-danger-300) / <alpha-value>)',
-					warning: 'hsl(var(--colors-warning-300) / <alpha-value>)',
-					info: 'hsl(var(--colors-info-300) / <alpha-value>)',
+					success: {
+						DEFAULT: 'hsl(var(--colors-success-300) / <alpha-value>)',
+						accent: 'hsl(var(--colors-success-500) / <alpha-value>)',
+						muted: 'hsl(var(--colors-success-100) / <alpha-value>)',
+					},
+					danger: {
+						DEFAULT: 'hsl(var(--colors-danger-300) / <alpha-value>)',
+						accent: 'hsl(var(--colors-danger-500) / <alpha-value>)',
+						muted: 'hsl(var(--colors-danger-100) / <alpha-value>)',
+					},
+					warning: {
+						DEFAULT: 'hsl(var(--colors-warning-300) / <alpha-value>)',
+						accent: 'hsl(var(--colors-warning-500) / <alpha-value>)',
+						muted: 'hsl(var(--colors-warning-100) / <alpha-value>)',
+					},
+					info: {
+						DEFAULT: 'hsl(var(--colors-info-300) / <alpha-value>)',
+						accent: 'hsl(var(--colors-info-500) / <alpha-value>)',
+						muted: 'hsl(var(--colors-info-100) / <alpha-value>)',
+					},
 				},
 				boxShadow: {
 					highlight: '0 0 1rem -0.15rem hsl(var(--colors-nerdfish))',
