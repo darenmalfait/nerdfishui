@@ -23,8 +23,8 @@ export function SwitchVariantsExample() {
 				htmlFor="sugar-on-cake"
 				className="flex w-full items-center justify-between gap-4"
 			>
-				<span>Error</span>
-				<Switch variant="error" id="sugar-on-cake" />
+				<span>Danger</span>
+				<Switch variant="danger" id="sugar-on-cake" />
 			</Label>
 			<Label
 				htmlFor="sugar-on-cake"

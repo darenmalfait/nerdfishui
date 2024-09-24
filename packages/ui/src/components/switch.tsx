@@ -13,13 +13,13 @@ const switchVariants = cva(
 			variant: {
 				accent:
 					'data-[state=checked]:bg-accent data-[state=checked]:border-accent',
-				error:
-					'data-[state=checked]:bg-danger data-[state=checked]:border-danger',
+				danger:
+					'data-[state=checked]:bg-danger-accent data-[state=checked]:border-danger-accent',
 				success:
-					'data-[state=checked]:bg-success data-[state=checked]:border-success',
+					'data-[state=checked]:bg-success-accent data-[state=checked]:border-success-accent',
 				warning:
-					'data-[state=checked]:bg-warning data-[state=checked]:border-warning',
-				info: 'data-[state=checked]:bg-info data-[state=checked]:border-info',
+					'data-[state=checked]:bg-warning-accent data-[state=checked]:border-warning-accent',
+				info: 'data-[state=checked]:bg-info-accent data-[state=checked]:border-info-accent',
 			},
 		},
 		defaultVariants: {
