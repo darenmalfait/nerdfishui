@@ -8,6 +8,7 @@ export const Label = React.forwardRef<
 >(({ className, ...props }, ref) => {
 	return (
 		<label
+			data-slot="label"
 			ref={ref}
 			className={cx('text-primary block text-sm font-bold', className)}
 			{...props}
