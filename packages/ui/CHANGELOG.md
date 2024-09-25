@@ -1,5 +1,106 @@
 # @nerdfish/ui
 
+## 7.0.0
+
+### Major Changes
+
+- Removing namespacing from the ui components
+  ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+  ## What does this mean?
+
+  I've discovered that bundlers, particularly Webpack as used in Next.js, have
+  limitations in tree-shaking components when using dot notation (namespace)
+  syntax. This revelation contradicts our initial assumptions about bundling
+  efficiency. As a result, I made changes to improve bundle size optimization
+  and ensure better performance in production builds by removing namespacing.
+
+  As a result, all component with subcomponent are not accessible via the dot
+  notation anymore.
+
+  For example, `Drawer.Root` will be accessible as `Drawer`, and
+  `Drawer.Trigger` will be accessible as `DrawerTrigger`.
+
+  While this is a breaking change, it should be straightforward to update
+  imports in your project.
+
+- Replaced `nerdfish` variants with `accent`, using the new `accent` color
+
+  ## What does this mean?
+
+  Components that have `nerdfish` as a variant, now have `accent` as a variant.
+
+  For example
+
+  ```
+  <Button variant='nerdfish'>This is a button</Button> // old
+  <Button variant='accent'>This is a button</Button> // new
+  ```
+
+- fully revamped the `Select` component
+
+- Input components do not have built-in FieldProps anymore.
+
+  ## What does this mean?
+
+  You used to be able to provide a `label`, `description` and `error` to the
+  input component. This was used to generate the `FieldProps` for you.
+
+  Now `input` components are just inputs. You can add a `label`, `description`
+  and `error` via the `Field`, `Label` and `Description` components.
+
+  There are also new form components that work well with `react-hook-form`, to
+  dynamically set the correct aria attributes.
+
+- Completely overhaul of the `TimePicker` component.
+
+### Minor Changes
+
+- Add variants to `Switch` component
+
+- More roundness overall except for input elements
+
+- Move hooks to ui
+
+  ## What does this mean?
+
+  All hooks that were previously in `@nerdfish/utils` are now in `@nerdfish/ui`.
+
+  This is a breaking change for any code that imports hooks from
+  `@nerdfish/utils`.
+
+  `useControllableState`, `useCopyToClipboard`, `useMediaQuery` are some
+  examples of hooks that were previously in `@nerdfish/utils`.
+
+  If you are using these hooks in your code, you will need to update your
+  imports to point to `@nerdfish/ui` instead of `@nerdfish/utils`.
+
+- Introduce new `DateTimePicker` component.
+
+- Add new `Timeline` component
+
+- Add new `Textarea` component
+  ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+- Add new `Autocomplete` component
+
+### Patch Changes
+
+- adjust `Switch` background color
+
+- improve `Skeleton`component to match line height of parent
+
+- adjust x close icon in `Drawer`
+
+- change focus color to accent
+  ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+- Adjusted styling for `Tabs`
+
+- Updated dependencies
+  [[`15ed259`](https://github.com/darenmalfait/nerdfishui/commit/15ed2595df35cb083c9f09834d01a51c5711338a)]:
+  - @nerdfish/utils@2.0.0
+
 ## 6.2.0
 
 ### Minor Changes

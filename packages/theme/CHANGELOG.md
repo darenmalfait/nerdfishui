@@ -1,5 +1,31 @@
 # @nerdfish/theme
 
+## 2.1.9
+
+### Patch Changes
+
+- improve styling ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+- Replaced `nerdfish` variants with `accent`, using the new `accent` color
+
+  ## What does this mean?
+
+  Components that have `nerdfish` as a variant, now have `accent` as a variant.
+
+  For example
+
+  ```
+  <Button variant='nerdfish'>This is a button</Button> // old
+  <Button variant='accent'>This is a button</Button> // new
+  ```
+
+- change focus color to accent
+  ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+- Updated dependencies
+  [[`15ed259`](https://github.com/darenmalfait/nerdfishui/commit/15ed2595df35cb083c9f09834d01a51c5711338a)]:
+  - @nerdfish/utils@2.0.0
+
 ## 2.1.8
 
 ### Patch Changes
