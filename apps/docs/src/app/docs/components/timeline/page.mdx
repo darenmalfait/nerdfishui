@@ -1,0 +1,51 @@
+<DocsPageHeader
+	title="Timeline"
+	description="Timeline is a component that allows you to create a timeline to another page or resource."
+	githubPath={{
+		package: 'ui',
+		path: 'timeline.tsx',
+	}}
+/>
+
+<ComponentExample
+	component={<TimelineExample />}
+	src="/src/app/docs/components/timeline/example/default.tsx"
+/>
+
+## Usage
+
+```tsx
+import { Timeline } from '@nerdfish/ui'
+```
+
+```tsx
+<Timeline>
+	<TimelineItem>
+		<TimelineSeparator>
+			<TimelineTrack />
+			<TimelineIcon />
+		</TimelineSeparator>
+	</TimelineItem>
+</Timeline>
+```
+
+## Colors
+
+<ComponentExample
+	component={<TimelineColorsExample />}
+	src="/src/app/docs/components/timeline/example/colors.tsx"
+/>
+
+## Variants
+
+<ComponentExample
+	component={<TimelineVariantsExample />}
+	src="/src/app/docs/components/timeline/example/variants.tsx"
+/>
+
+## Custom Icons
+
+<ComponentExample
+	component={<TimelineCustomIconsExample />}
+	src="/src/app/docs/components/timeline/example/custom-icons.tsx"
+/>
