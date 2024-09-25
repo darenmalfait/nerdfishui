@@ -41,6 +41,11 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Select', href: '/docs/components/select' },
 				{ title: 'DatePicker', href: '/docs/components/date-picker' },
 				{ title: 'Input', href: '/docs/components/input' },
+				{
+					title: 'Autocomplete',
+					href: '/docs/components/autocomplete',
+					status: 'experimental',
+				},
 				{ title: 'Textarea', href: '/docs/components/textarea', status: 'new' },
 				{ title: 'InputOTP', href: '/docs/components/input-otp' },
 				{ title: 'Multi Email', href: '/docs/components/multi-email' },
