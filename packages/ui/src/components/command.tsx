@@ -8,7 +8,10 @@ import * as React from 'react'
 import { Dialog, DialogContent } from './dialog'
 import { inputVariants, type InputProps } from './input'
 
-export const Command = CommandPrimitive
+export const Command = React.forwardRef<
+	React.ElementRef<typeof CommandPrimitive>,
+	React.ComponentPropsWithoutRef<typeof CommandPrimitive>
+>(({ ...props }, ref) => <CommandPrimitive ref={ref} {...props} />)
 Command.displayName = CommandPrimitive.displayName
 
 export const CommandLoading = CommandPrimitive.Loading
