@@ -39,7 +39,6 @@ export const docs: { navigation: NavigationGroup[] } = {
 			links: [
 				{ title: 'Checkbox', href: '/docs/components/checkbox' },
 				{ title: 'Select', href: '/docs/components/select' },
-				{ title: 'DatePicker', href: '/docs/components/date-picker' },
 				{ title: 'Input', href: '/docs/components/input' },
 				{
 					title: 'Autocomplete',
