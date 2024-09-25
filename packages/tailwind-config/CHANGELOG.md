@@ -1,5 +1,26 @@
 # @nerdfish/tailwind-config
 
+## 3.1.0
+
+### Minor Changes
+
+- add accent color for background colors
+
+- More roundness overall except for input elements
+
+### Patch Changes
+
+- improve styling ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+- change focus color to accent
+  ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+- unify roundness across components
+  ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
+- Add new `Textarea` component
+  ([#217](https://github.com/darenmalfait/nerdfishui/pull/217))
+
 ## 3.0.0
 
 ### Major Changes
