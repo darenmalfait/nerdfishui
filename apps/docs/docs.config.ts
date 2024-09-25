@@ -97,6 +97,11 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Popover', href: '/docs/components/popover' },
 				{ title: 'Steps', href: '/docs/components/steps' },
 				{ title: 'Table', href: '/docs/components/table' },
+				{
+					title: 'Timeline',
+					href: '/docs/components/timeline',
+					status: 'experimental',
+				},
 				{ title: 'Tooltip', href: '/docs/components/tooltip' },
 			],
 		},
