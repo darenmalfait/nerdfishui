@@ -52,8 +52,11 @@ export function InputExample() {
 							name="email"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Email</FormLabel>
-									<FormDescription>Your email address</FormDescription>
+									<FormLabel>
+										Email
+										<FormDescription>Your email address</FormDescription>
+									</FormLabel>
+
 									<FormControl>
 										<Input
 											{...field}

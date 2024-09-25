@@ -43,7 +43,7 @@ export function RadioGroupField({
 				'[&>[data-slot=description]]:col-start-2 [&>[data-slot=description]]:row-start-2',
 
 				// With description
-				'[&_[data-slot=label]]:has-[[data-slot=description]]:font-medium',
+				'[&_[data-slot=description]]:font-normal',
 			)}
 		/>
 	)

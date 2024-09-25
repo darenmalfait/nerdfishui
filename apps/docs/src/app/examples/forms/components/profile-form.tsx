@@ -12,6 +12,10 @@ import {
 	FormMessage,
 	Input,
 	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
 	Textarea,
 	toast,
 } from '@nerdfish/ui'
@@ -89,11 +93,14 @@ export function ProfileForm() {
 					name="username"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Username</FormLabel>
-							<FormDescription>
-								This is your public display name. It can be your real name or a
-								pseudonym. You can only change this once every 30 days.
-							</FormDescription>
+							<FormLabel>
+								Username
+								<FormDescription>
+									This is your public display name. It can be your real name or
+									a pseudonym. You can only change this once every 30 days.
+								</FormDescription>
+							</FormLabel>
+
 							<FormControl>
 								<Input placeholder="nerdfish" {...field} />
 							</FormControl>
@@ -107,23 +114,30 @@ export function ProfileForm() {
 					name="email"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Email</FormLabel>
-							<FormDescription>
-								This is your email address. You can only change this once every
-								30 days.
-							</FormDescription>
+							<FormLabel>
+								Email
+								<FormDescription>
+									This is your email address. You can only change this once
+									every 30 days.
+								</FormDescription>
+							</FormLabel>
+
 							<FormControl>
 								<Select
-									options={[
-										{ value: 'm@example.com', label: 'm@example.com' },
-										{ value: 'm@google.com', label: 'm@google.com' },
-										{ value: 'm@support.com', label: 'm@support.com' },
-									]}
-									onChange={(value) => {
-										field.onChange(value)
-									}}
-									placeholder="Select a verified email to display"
-								/>
+									onValueChange={field.onChange}
+									defaultValue={field.value}
+								>
+									<FormControl>
+										<SelectTrigger>
+											<SelectValue placeholder="Select a verified email to display" />
+										</SelectTrigger>
+									</FormControl>
+									<SelectContent>
+										<SelectItem value="m@example.com">m@example.com</SelectItem>
+										<SelectItem value="m@google.com">m@google.com</SelectItem>
+										<SelectItem value="m@support.com">m@support.com</SelectItem>
+									</SelectContent>
+								</Select>
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -135,10 +149,13 @@ export function ProfileForm() {
 					name="bio"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Bio</FormLabel>
-							<FormDescription>
-								Tell us a little bit about yourself.
-							</FormDescription>
+							<FormLabel>
+								Bio
+								<FormDescription>
+									Tell us a little bit about yourself.
+								</FormDescription>
+							</FormLabel>
+
 							<FormControl>
 								<Textarea {...field} />
 							</FormControl>
@@ -157,10 +174,11 @@ export function ProfileForm() {
 								<FormItem>
 									<FormLabel className={cx(index !== 0 && 'sr-only')}>
 										URLs
+										<FormDescription className={cx(index !== 0 && 'sr-only')}>
+											Add links to your website, blog, or social media profiles.
+										</FormDescription>
 									</FormLabel>
-									<FormDescription className={cx(index !== 0 && 'sr-only')}>
-										Add links to your website, blog, or social media profiles.
-									</FormDescription>
+
 									<FormControl>
 										<Input {...field} />
 									</FormControl>

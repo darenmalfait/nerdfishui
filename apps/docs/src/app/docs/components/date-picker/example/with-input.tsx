@@ -11,8 +11,11 @@ export function DatePickerWithInputExample() {
 	return (
 		<div className="flex w-full gap-2">
 			<Field>
-				<Label>Date</Label>
-				<Description>Your date of birth</Description>
+				<Label>
+					Date
+					<Description>Your date of birth</Description>
+				</Label>
+
 				<DatePicker
 					className="p-3"
 					selected={date}

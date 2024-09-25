@@ -6,7 +6,12 @@ export const Description = React.forwardRef<
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => {
 	return (
-		<p ref={ref} className={cx('text-muted text-sm', className)} {...props} />
+		<p
+			ref={ref}
+			data-slot="description"
+			className={cx('text-muted text-sm', className)}
+			{...props}
+		/>
 	)
 })
 
