@@ -22,7 +22,13 @@ import {
 export function CommandExample() {
 	return (
 		<Command className="shadow-soft-sm shadow-outline rounded-3xl border">
-			<CommandInput placeholder="Type a command or search..." />
+			<div className="border-primary border-b">
+				<CommandInput
+					placeholder="Type a command or search..."
+					className="rounded-3xl bg-transparent"
+				/>
+			</div>
+
 			<CommandEmpty>No results found.</CommandEmpty>
 			<CommandList>
 				<CommandGroup heading="Suggestions">
