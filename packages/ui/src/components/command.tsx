@@ -3,25 +3,18 @@
 import { cx } from '@nerdfish/utils'
 import { type DialogProps } from '@radix-ui/react-dialog'
 import { Command as CommandPrimitive } from 'cmdk'
-import { Search } from 'lucide-react'
 import * as React from 'react'
 
 import { Dialog, DialogContent } from './dialog'
+import { inputVariants, type InputProps } from './input'
 
-export const Command = React.forwardRef<
-	React.ElementRef<typeof CommandPrimitive>,
-	React.ComponentPropsWithoutRef<typeof CommandPrimitive>
->(({ className, ...props }, ref) => (
-	<CommandPrimitive
-		ref={ref}
-		className={cx(
-			'bg-popover flex h-full w-full flex-col overflow-hidden rounded-3xl',
-			className,
-		)}
-		{...props}
-	/>
-))
+export const Command = CommandPrimitive
 Command.displayName = CommandPrimitive.displayName
+
+export const CommandLoading = CommandPrimitive.Loading
+export type CommandLoadingProps = React.ComponentPropsWithoutRef<
+	typeof CommandLoading
+>
 
 export const CommandDialog = ({ children, ...props }: DialogProps) => {
 	return (
@@ -37,20 +30,20 @@ export const CommandDialog = ({ children, ...props }: DialogProps) => {
 
 export const CommandInput = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive.Input>,
-	React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
->(({ className, ...props }, ref) => (
+	InputProps & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
+>(({ className, icon: Icon, inputSize, variant, ...props }, ref) => (
 	<div
-		className="flex items-center border-b border-b-gray-100 px-4 dark:border-b-gray-700"
+		className={cx(inputVariants({ inputSize, variant }), className)}
 		// eslint-disable-next-line react/no-unknown-property
 		cmdk-input-wrapper=""
 	>
-		<Search className="text-primary mr-2 size-4 shrink-0 opacity-50" />
+		{Icon ? (
+			<Icon className="text-primary mr-2 size-4 shrink-0 opacity-50" />
+		) : null}
+
 		<CommandPrimitive.Input
+			className="bg-transparent outline-none"
 			ref={ref}
-			className={cx(
-				'text-primary placeholder:text-muted flex h-11 w-full rounded-lg bg-transparent py-3 text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50',
-				className,
-			)}
 			{...props}
 		/>
 	</div>
