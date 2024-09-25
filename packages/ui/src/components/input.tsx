@@ -6,7 +6,7 @@ import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'text-md text-primary bg-muted focus-outline group relative block w-full rounded-xl text-left font-bold outline-none',
+		'text-md text-primary focus-outline bg-muted group relative block w-full rounded-xl text-left font-bold outline-none',
 		// placeholder
 		'placeholder:text-muted',
 		// disabled
@@ -93,8 +93,8 @@ export const Input = React.forwardRef<
 			<div
 				className={cx(
 					baseClassName,
-					className,
 					'relative m-0 flex w-full items-center p-0 shadow-sm',
+					className,
 				)}
 			>
 				{addOnLeading}
@@ -104,6 +104,7 @@ export const Input = React.forwardRef<
 					{...(inputProps as React.ComponentPropsWithoutRef<'input'>)}
 					className={cx(
 						baseClassName,
+						'bg-transparent',
 						!!addOnLeading && '!pl-2',
 						!!Icon && 'pr-14',
 					)}
