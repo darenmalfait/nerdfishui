@@ -13,9 +13,13 @@ import {
 export function InputOTPFieldExample() {
 	return (
 		<Field>
-			<Label htmlFor="otp">OTP</Label>
-			<Description>Enter the 6-digit code sent to your phone</Description>
+			<Label htmlFor="otp">
+				OTP
+				<Description>Enter the 6-digit code sent to your phone</Description>
+			</Label>
+
 			<InputOTP
+				id="otp"
 				name="otp"
 				maxLength={6}
 				render={({ slots }) => (

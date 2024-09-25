@@ -16,7 +16,7 @@ export function RadioGroupExample() {
 					<RadioGroupItem value="default" id="r1" />
 					<Label htmlFor="r1">
 						Default
-						<Description className="w-full font-normal">
+						<Description className="w-full">
 							This is a description for the Radio Group. It could be a very long
 							description that can contain <strong>html</strong> elements.
 						</Description>
