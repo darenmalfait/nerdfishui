@@ -19,11 +19,9 @@ jobs:
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
-        if: github.ref == 'refs/heads/main'
 
       - name: Deploy to Production ...
         uses: amondnet/vercel-action@v25
-        if: github.ref == 'refs/heads/main'
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
