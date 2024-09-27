@@ -42,7 +42,7 @@ export const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<TabsPrimivite.Content
 		className={cx(
-			'rounded-semi mt-3 bg-black/10 p-6 focus-within:outline-none dark:bg-white/10',
+			'rounded-semi bg-muted mt-3 p-4 focus-within:outline-none',
 			className,
 		)}
 		{...props}

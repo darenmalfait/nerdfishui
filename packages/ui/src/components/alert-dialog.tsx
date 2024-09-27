@@ -51,7 +51,7 @@ export const AlertDialogContent = React.forwardRef<
 		<AlertDialogPrimitive.Content
 			ref={ref}
 			className={cx(
-				'animate-in fade-in-90 shadow-outline slide-in-from-bottom-10 sm:zoom-in-90 sm:slide-in-from-bottom-0 bg-popover sm:rounded-semi fixed z-50 grid w-full max-w-lg scale-100 gap-4 p-6 opacity-100 md:w-full',
+				'animate-in fade-in-90 shadow-outline slide-in-from-bottom-10 sm:zoom-in-90 sm:slide-in-from-bottom-0 bg-popover sm:rounded-semi fixed z-50 grid w-full max-w-lg scale-100 gap-4 p-4 opacity-100 md:w-full',
 				className,
 			)}
 			{...props}
