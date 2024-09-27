@@ -14,6 +14,7 @@ export function ButtonVariantsExample() {
 			<Button variant="success">Success</Button>
 			<Button variant="ghost">Ghost</Button>
 			<Button variant="outline">Outline</Button>
+			<Button variant="accentuate">Accentuate</Button>
 			<Button variant="link">Link</Button>
 		</div>
 	)
