@@ -23,6 +23,8 @@ export const buttonVariants = cva(
 					'shadow-outline text-primary bg-primary hover:bg-muted disabled:text-primary/50',
 				ghost:
 					'text-primary hover:bg-muted disabled:text-primary/50 border-transparent',
+				accentuate:
+					'text-primary hover:bg-[linear-gradient(hsl(var(--colors-background-muted)),hsl(var(--colors-background-muted))),linear-gradient(to_right,hsl(var(--colors-info-500)),hsl(var(--colors-accent)))] bg-[linear-gradient(hsl(var(--colors-background-primary)),hsl(var(--colors-background-primary))),linear-gradient(to_right,hsl(var(--colors-info-500)),hsl(var(--colors-accent)))] border-2 border-transparent bg-origin-border [background-clip:padding-box,_border-box]',
 				link: 'text-primary disabled:text-primary/50 border-none bg-transparent underline-offset-4 hover:underline',
 			},
 			size: {
@@ -34,15 +36,10 @@ export const buttonVariants = cva(
 				icon: 'flex size-10 items-center justify-center',
 				iconSm: 'flex size-8 items-center justify-center',
 			},
-			accentuate: {
-				default: false,
-				true: 'rounded-full select-none shadow-[0px_16px_6px_-16px_#ff4,4px_2px_4px_-2px_#f4f,-4px_2px_4px_-2px_#4f4] hover:shadow-[0px_16px_6px_-12px_#ff4,4px_6px_6px_-2px_#f4f,-4px_6px_6px_-2px_#4f4] active:translate-y-0 active:shadow-[0px_10px_3px_-16px_#ff4,8px_0px_2px_-2px_#f4f,-8px_0px_2px_-2px_#4f4]',
-			},
 		},
 		defaultVariants: {
 			variant: 'default',
 			size: 'default',
-			accentuate: false,
 		},
 	},
 )
@@ -50,13 +47,11 @@ export const buttonVariants = cva(
 export function getButtonClassName({
 	variant = 'default',
 	size = 'default',
-	accentuate,
 	className,
 }: VariantProps<typeof buttonVariants> & {
 	className?: string
-	accentuate?: boolean
 }) {
-	return cx(buttonVariants({ variant, size, className, accentuate }))
+	return cx(buttonVariants({ variant, size, className }))
 }
 
 export const Button = React.forwardRef<
@@ -64,9 +59,8 @@ export const Button = React.forwardRef<
 	React.ButtonHTMLAttributes<HTMLButtonElement> &
 		VariantProps<typeof buttonVariants> & {
 			asChild?: boolean
-			accentuate?: boolean
 		}
->(({ variant, asChild, size, className, accentuate, ...props }, ref) => {
+>(({ variant, asChild, size, className, ...props }, ref) => {
 	const Comp = asChild ? Slot : 'button'
 
 	return (
@@ -74,7 +68,6 @@ export const Button = React.forwardRef<
 			className={getButtonClassName({
 				variant,
 				size,
-				accentuate,
 				className,
 			})}
 			ref={ref}

@@ -45,7 +45,7 @@ export default async function HomePage() {
 								and provide visually pleasing and functional components.
 							</Paragraph>
 							<ButtonGroup className="mt-8 justify-center">
-								<Button accentuate asChild>
+								<Button variant="accentuate" asChild>
 									<Link href="/docs">Get started</Link>
 								</Button>
 							</ButtonGroup>

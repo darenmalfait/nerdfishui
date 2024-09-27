@@ -1,4 +1,3 @@
-export * from './accentuate'
 export * from './as-child'
 export * from './default'
 export * from './disabled'
