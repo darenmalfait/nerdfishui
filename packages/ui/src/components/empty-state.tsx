@@ -1,7 +1,6 @@
 import { cx } from '@nerdfish/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
-import { ButtonGroup } from './button'
 import { H3, Paragraph } from './typography'
 
 export const EmptyState = React.forwardRef<
@@ -70,10 +69,12 @@ export const EmptyStateDescription = React.forwardRef<
 EmptyStateDescription.displayName = 'EmptyStateDescription'
 
 export const EmptyStateActions = React.forwardRef<
-	React.ElementRef<typeof ButtonGroup>,
-	React.ComponentPropsWithoutRef<typeof ButtonGroup>
+	HTMLDivElement,
+	React.ComponentPropsWithoutRef<'div'>
 >(function EmptyStateActions({ className, ...props }, ref) {
-	return <ButtonGroup className={cx('mt-4', className)} ref={ref} {...props} />
+	return (
+		<div className={cx('mt-4 flex gap-2', className)} ref={ref} {...props} />
+	)
 })
 EmptyStateActions.displayName = 'EmptyStateActions'
 
