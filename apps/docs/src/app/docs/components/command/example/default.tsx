@@ -21,11 +21,11 @@ import {
 
 export function CommandExample() {
 	return (
-		<Command className="shadow-soft-sm shadow-outline rounded-3xl border">
+		<Command className="shadow-soft-sm shadow-outline rounded-semi border">
 			<div className="border-primary border-b">
 				<CommandInput
 					placeholder="Type a command or search..."
-					className="rounded-3xl bg-transparent"
+					className="rounded-semi bg-transparent"
 				/>
 			</div>
 

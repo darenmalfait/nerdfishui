@@ -17,7 +17,7 @@ export const TooltipContent = React.forwardRef<
 		ref={ref}
 		sideOffset={sideOffset}
 		className={cx(
-			'shadow-outline bg-muted text-primary shadow-soft-xl animate-in fade-in-50 data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1 z-50 overflow-hidden rounded-3xl px-3 py-1.5 text-sm',
+			'shadow-outline bg-muted text-primary shadow-soft-xl animate-in fade-in-50 data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1 rounded-semi z-50 overflow-hidden px-3 py-1.5 text-sm',
 			className,
 		)}
 		{...props}

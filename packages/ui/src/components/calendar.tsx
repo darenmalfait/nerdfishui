@@ -37,9 +37,9 @@ export function Calendar({
 				nav_button_next: 'absolute right-1',
 				table: 'w-full border-collapse space-y-1',
 				head_row: 'flex',
-				head_cell: 'text-muted rounded-3xl w-9 font-normal text-[0.8rem] ',
+				head_cell: 'text-muted rounded-semi w-9 font-normal text-[0.8rem] ',
 				row: 'flex w-full mt-2',
-				cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-outside)]:bg-muted [&:has([aria-selected])]:bg-muted focus-within:relative focus-within:z-20 [&:has([aria-selected].day-range-end)]:rounded-r-3xl [&:has([aria-selected].day-range-start)]:rounded-l-3xl [&:has([aria-selected].day-range-middle)]:!rounded-none ',
+				cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-outside)]:bg-muted [&:has([aria-selected])]:bg-muted focus-within:relative focus-within:z-20 [&:has([aria-selected].day-range-end)]:rounded-r-semi [&:has([aria-selected].day-range-start)]:rounded-l-semi [&:has([aria-selected].day-range-middle)]:!rounded-none ',
 				day: cx(
 					buttonVariants({ variant: 'ghost' }),
 					'h-9 w-9 p-0 font-normal aria-selected:opacity-100',

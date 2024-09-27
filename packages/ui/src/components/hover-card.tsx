@@ -16,7 +16,7 @@ export const HoverCardContent = React.forwardRef<
 		align={align}
 		sideOffset={sideOffset}
 		className={cx(
-			'shadow-outline bg-muted shadow-soft-xl animate-in zoom-in-90 z-50 w-64 rounded-3xl p-4 outline-none',
+			'shadow-outline bg-muted shadow-soft-xl animate-in zoom-in-90 rounded-semi z-50 w-64 p-4 outline-none',
 			className,
 		)}
 		{...props}
