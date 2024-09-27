@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.2.0
+
+### Minor Changes
+
+- add rounded-semi as most used one
+
 ## 3.1.0
 
 ### Minor Changes
