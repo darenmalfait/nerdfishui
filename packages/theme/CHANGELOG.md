@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.2.0
+
+### Minor Changes
+
+- adjust muted background colors
+
 ## 2.1.9
 
 ### Patch Changes
