@@ -5,7 +5,7 @@ export const light: Colors = {
 	accent: '17.85 64.75% 52.16%',
 	background: {
 		primary: '0 0% 100%',
-		muted: '0 0% 97%',
+		muted: '240 4.76% 95.88%',
 		inverted: '0 0% 0%',
 	},
 	foreground: {
@@ -44,7 +44,7 @@ export const dark: typeof light = {
 	primary: '0 0% 0%',
 	background: {
 		primary: '0 0% 0%',
-		muted: '240 4% 16%',
+		muted: '240 3.7% 15.88%',
 		inverted: '0 0% 100%',
 	},
 	foreground: {
