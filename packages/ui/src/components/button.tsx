@@ -77,21 +77,4 @@ export const Button = React.forwardRef<
 })
 Button.displayName = 'Button'
 
-export const ButtonGroup = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithRef<'div'>
->(function ButtonGroup({ className, ...props }, ref) {
-	return (
-		<div
-			ref={ref}
-			className={cx(
-				'flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0',
-				className,
-			)}
-			{...props}
-		/>
-	)
-})
-ButtonGroup.displayName = 'ButtonGroup'
-
 export type ButtonProps = React.ComponentPropsWithoutRef<typeof Button>

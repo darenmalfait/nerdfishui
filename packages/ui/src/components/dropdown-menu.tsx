@@ -21,7 +21,7 @@ export const DropdownMenuSubTrigger = React.forwardRef<
 	<DropdownMenuPrimitive.SubTrigger
 		ref={ref}
 		className={cx(
-			'focus:bg-muted data-[state=open]:bg-muted text-primary flex cursor-default select-none items-center rounded-lg px-2 py-1.5 text-sm font-medium outline-none',
+			'focus:bg-muted data-[state=open]:bg-muted text-primary rounded-semi flex cursor-default select-none items-center px-2 py-1.5 text-sm font-medium outline-none',
 			inset && 'pl-8',
 			className,
 		)}
@@ -41,7 +41,7 @@ export const DropdownMenuSubContent = React.forwardRef<
 	<DropdownMenuPrimitive.SubContent
 		ref={ref}
 		className={cx(
-			'animate-in slide-in-from-left-1 shadow-outline bg-muted text-inverted/700 shadow-soft-xl rounded-semi z-50 min-w-[8rem] overflow-hidden p-1',
+			'animate-in slide-in-from-left-1 shadow-outline bg-muted text-inverted/700 shadow-soft-xl rounded-semi z-50 min-w-[8rem] overflow-hidden p-3',
 			className,
 		)}
 		{...props}
@@ -59,7 +59,7 @@ export const DropdownMenuContent = React.forwardRef<
 			ref={ref}
 			sideOffset={sideOffset}
 			className={cx(
-				'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 bg-primary text-primary shadow-soft-xl shadow-outline rounded-semi z-50 min-w-[8rem] overflow-hidden p-1',
+				'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 bg-primary text-primary shadow-soft-xl shadow-outline rounded-semi z-50 min-w-[8rem] overflow-hidden p-3',
 				className,
 			)}
 			{...props}
@@ -77,7 +77,7 @@ export const DropdownMenuItem = React.forwardRef<
 	<DropdownMenuPrimitive.Item
 		ref={ref}
 		className={cx(
-			'focus:bg-muted text-primary relative flex cursor-default select-none items-center rounded-lg px-2 py-1.5 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'focus:bg-muted text-primary rounded-semi relative flex cursor-default select-none items-center px-3 py-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			inset && 'pl-8',
 			className,
 		)}
@@ -93,7 +93,7 @@ export const DropdownMenuCheckboxItem = React.forwardRef<
 	<DropdownMenuPrimitive.CheckboxItem
 		ref={ref}
 		className={cx(
-			'focus:bg-muted relative flex cursor-default select-none items-center rounded-lg py-1.5 pl-8 pr-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'focus:bg-muted rounded-semi relative flex cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			className,
 		)}
 		checked={checked}
@@ -117,7 +117,7 @@ export const DropdownMenuRadioItem = React.forwardRef<
 	<DropdownMenuPrimitive.RadioItem
 		ref={ref}
 		className={cx(
-			'focus:bg-muted relative flex cursor-default select-none items-center rounded-lg py-1.5 pl-8 pr-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'focus:bg-muted rounded-semi relative flex cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			className,
 		)}
 		{...props}

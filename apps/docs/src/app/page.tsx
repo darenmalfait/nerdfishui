@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, H1, Paragraph } from '@nerdfish/ui'
+import { Button, H1, Paragraph } from '@nerdfish/ui'
 import { type Metadata } from 'next'
 import Link from 'next/link'
 import * as React from 'react'
@@ -44,11 +44,11 @@ export default async function HomePage() {
 								and TailwindCSS to help streamline proof of concept development
 								and provide visually pleasing and functional components.
 							</Paragraph>
-							<ButtonGroup className="mt-8 justify-center">
+							<div className="mt-8 justify-center">
 								<Button variant="accentuate" asChild>
 									<Link href="/docs">Get started</Link>
 								</Button>
-							</ButtonGroup>
+							</div>
 						</div>
 					</div>
 					<div
