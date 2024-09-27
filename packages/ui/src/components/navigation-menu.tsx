@@ -12,7 +12,7 @@ const NavigationMenuViewport = React.forwardRef<
 	<div className={cx('absolute left-0 top-full flex justify-center')}>
 		<NavigationMenuPrimitive.Viewport
 			className={cx(
-				'origin-top-center shadow-outline bg-popover text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-lg shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
+				'origin-top-center shadow-outline bg-popover text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 rounded-semi relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
 				className,
 			)}
 			ref={ref}
@@ -59,7 +59,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 export const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 export const getNavigationMenuTriggerStyle = cva(
-	'bg-primary hover:bg-muted focus:bg-muted data-[active]:bg-muted data-[state=open]:bg-muted group relative inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50',
+	'bg-primary hover:bg-muted rounded-semi focus:bg-muted data-[active]:bg-muted data-[state=open]:bg-muted group relative inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50',
 )
 
 export const NavigationMenuTrigger = React.forwardRef<
