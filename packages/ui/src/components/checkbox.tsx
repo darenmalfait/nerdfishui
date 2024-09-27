@@ -40,7 +40,7 @@ export function Checkbox({
 			className={cx(
 				textClassName,
 				checkboxVariants({ inputSize }),
-				'focus-within:outline-active rounded-md transition-transform',
+				'focus-within:outline-active rounded-lg transition-transform',
 				className,
 			)}
 		>
@@ -50,7 +50,7 @@ export function Checkbox({
 					bgClassName,
 					textClassName,
 					// basic styles
-					'relative inline-block h-full w-full rounded-md border transition-all peer-[:not(:disabled)]:cursor-pointer',
+					'relative inline-block h-full w-full rounded-lg border transition-all peer-[:not(:disabled)]:cursor-pointer',
 					// border
 					'border-transparent',
 					// background
