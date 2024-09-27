@@ -61,7 +61,7 @@ const ListItem = React.forwardRef<
 				<a
 					ref={ref}
 					className={cx(
-						'hover:bg-muted focus:bg-muted block select-none space-y-1 p-3 leading-none no-underline outline-none transition-colors',
+						'hover:bg-muted rounded-semi focus:bg-muted block select-none space-y-1 p-3 leading-none no-underline outline-none transition-colors',
 						className,
 					)}
 					{...props}
