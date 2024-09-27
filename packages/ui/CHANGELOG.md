@@ -1,5 +1,17 @@
 # @nerdfish/ui
 
+## 7.2.0
+
+### Minor Changes
+
+- improve `button-group`
+
+### Patch Changes
+
+- make `NavigationMenu` consistent with the rest of the ui
+
+- decrease overall padding in panels
+
 ## 7.1.1
 
 ### Patch Changes
