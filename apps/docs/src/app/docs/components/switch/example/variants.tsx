@@ -5,40 +5,25 @@ import { Label, Switch } from '@nerdfish/ui'
 export function SwitchVariantsExample() {
 	return (
 		<div className="max-w-screen-xsm mx-auto flex w-full flex-col gap-4">
-			<Label
-				htmlFor="sugar-on-cake"
-				className="flex w-full items-center justify-between gap-4"
-			>
+			<Label className="hover:bg-muted rounded-semi flex w-full cursor-pointer items-center justify-between gap-4 p-4">
 				<span>Info</span>
-				<Switch variant="info" id="sugar-on-cake" />
+				<Switch variant="info" />
 			</Label>
-			<Label
-				htmlFor="sugar-on-cake"
-				className="flex w-full items-center justify-between gap-4"
-			>
+			<Label className="hover:bg-muted rounded-semi flex w-full cursor-pointer items-center justify-between gap-4 p-4">
 				<span>Accent</span>
-				<Switch variant="accent" id="sugar-on-cake" />
+				<Switch variant="accent" />
 			</Label>
-			<Label
-				htmlFor="sugar-on-cake"
-				className="flex w-full items-center justify-between gap-4"
-			>
+			<Label className="hover:bg-muted rounded-semi flex w-full cursor-pointer items-center justify-between gap-4 p-4">
 				<span>Danger</span>
-				<Switch variant="danger" id="sugar-on-cake" />
+				<Switch variant="danger" />
 			</Label>
-			<Label
-				htmlFor="sugar-on-cake"
-				className="flex w-full items-center justify-between gap-4"
-			>
+			<Label className="hover:bg-muted rounded-semi flex w-full cursor-pointer items-center justify-between gap-4 p-4">
 				<span>Success</span>
-				<Switch variant="success" id="sugar-on-cake" />
+				<Switch variant="success" />
 			</Label>
-			<Label
-				htmlFor="sugar-on-cake"
-				className="flex w-full items-center justify-between gap-4"
-			>
+			<Label className="hover:bg-muted rounded-semi flex w-full cursor-pointer items-center justify-between gap-4 p-4">
 				<span>Warning</span>
-				<Switch variant="warning" id="sugar-on-cake" />
+				<Switch variant="warning" />
 			</Label>
 		</div>
 	)
