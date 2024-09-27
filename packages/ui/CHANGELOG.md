@@ -1,5 +1,17 @@
 # @nerdfish/ui
 
+## 7.1.0
+
+### Minor Changes
+
+- add rounded-semi as most used one
+
+### Patch Changes
+
+- increase the size of navigationitems a bit
+
+- tweak navigationlist items styling
+
 ## 7.0.0
 
 ### Major Changes
