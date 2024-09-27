@@ -84,7 +84,7 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px]">
+						<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
 							<ListItem href="/recipes" title="Introduction">
 								Discover a variety of delicious recipes to try at home.
 							</ListItem>
