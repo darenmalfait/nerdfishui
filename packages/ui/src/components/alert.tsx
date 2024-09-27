@@ -8,7 +8,7 @@ import { deprecateProp } from '../deprecate'
 const DEFAULT_VARIANT = 'info'
 
 export const alertVariants = cva(
-	'relative w-full rounded-3xl border p-4 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-current [&>svg~]*]:pl-7',
+	'relative w-full rounded-semi border p-4 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-current [&>svg~]*]:pl-7',
 	{
 		variants: {
 			variant: {

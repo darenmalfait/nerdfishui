@@ -5,7 +5,7 @@ import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
 export const buttonVariants = cva(
-	'inline-flex items-center relative focus-outline justify-center rounded-3xl border text-sm font-medium transition-all active:scale-95 disabled:pointer-events-none',
+	'inline-flex items-center relative focus-outline justify-center rounded-semi border text-sm font-medium transition-all active:scale-95 disabled:pointer-events-none',
 	{
 		variants: {
 			variant: {
@@ -27,17 +27,22 @@ export const buttonVariants = cva(
 			},
 			size: {
 				default: 'h-10 px-4 py-2',
-				xs: 'h-6 rounded-3xl px-2',
-				sm: 'h-9 rounded-3xl px-3',
-				lg: 'h-11 rounded-3xl px-8',
-				xl: 'h-12 rounded-3xl px-10',
-				icon: 'flex size-10 items-center justify-center rounded-3xl',
-				iconSm: 'flex size-8 items-center justify-center rounded-3xl',
+				xs: 'h-6 px-2',
+				sm: 'h-9 px-3',
+				lg: 'h-11 px-8',
+				xl: 'h-12 px-10',
+				icon: 'flex size-10 items-center justify-center',
+				iconSm: 'flex size-8 items-center justify-center',
+			},
+			accentuate: {
+				default: false,
+				true: 'rounded-full select-none shadow-[0px_16px_6px_-16px_#ff4,4px_2px_4px_-2px_#f4f,-4px_2px_4px_-2px_#4f4] hover:shadow-[0px_16px_6px_-12px_#ff4,4px_6px_6px_-2px_#f4f,-4px_6px_6px_-2px_#4f4] active:translate-y-0 active:shadow-[0px_10px_3px_-16px_#ff4,8px_0px_2px_-2px_#f4f,-8px_0px_2px_-2px_#4f4]',
 			},
 		},
 		defaultVariants: {
 			variant: 'default',
 			size: 'default',
+			accentuate: false,
 		},
 	},
 )
@@ -51,11 +56,7 @@ export function getButtonClassName({
 	className?: string
 	accentuate?: boolean
 }) {
-	return cx(
-		buttonVariants({ variant, size, className }),
-		accentuate &&
-			'select-none rounded-full shadow-[0px_16px_6px_-16px_#ff4,4px_2px_4px_-2px_#f4f,-4px_2px_4px_-2px_#4f4] hover:shadow-[0px_16px_6px_-12px_#ff4,4px_6px_6px_-2px_#f4f,-4px_6px_6px_-2px_#4f4] active:translate-y-0 active:shadow-[0px_10px_3px_-16px_#ff4,8px_0px_2px_-2px_#f4f,-8px_0px_2px_-2px_#4f4]',
-	)
+	return cx(buttonVariants({ variant, size, className, accentuate }))
 }
 
 export const Button = React.forwardRef<

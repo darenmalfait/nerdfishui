@@ -36,7 +36,7 @@ export const titleVariants = cva('', {
 		size: {
 			// Keep this the same to the prose styles in styles.css
 			h1: 'font-title scroll-m-20 text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]',
-			h2: 'font-title mt-10 scroll-m-20 text-3xl font-extrabold tracking-tight first:mt-0 lg:text-4xl',
+			h2: 'font-title mt-10 scroll-m-20 text-semi font-extrabold tracking-tight first:mt-0 lg:text-4xl',
 			h3: 'mt-8 scroll-m-20 text-2xl font-semibold tracking-tight first:mt-0',
 			h4: 'mt-8 scroll-m-20 text-xl font-semibold tracking-tight first:mt-0',
 			h5: 'mt-8 text-lg font-bold first:mt-0 md:text-xl',
