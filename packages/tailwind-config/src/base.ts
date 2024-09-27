@@ -10,7 +10,7 @@ export const base = {
 			{},
 	},
 	'.prose h2:not(:where([class~="not-prose"] *))': {
-		'@apply mt-10 first:mt-0 scroll-m-20 font-title text-semi !leading-normal':
+		'@apply mt-10 first:mt-0 scroll-m-20 font-title text-3xl !leading-normal':
 			{},
 	},
 	'.prose h3:not(:where([class~="not-prose"] *))': {
