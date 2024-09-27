@@ -1,12 +1,12 @@
 'use client'
 
-import { cva, cx } from '@nerdfish/utils'
+import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import * as React from 'react'
 
 import { Tooltip, TooltipTrigger, TooltipContent } from './tooltip'
 
 export const navigationListItemVariants = cva(
-	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-semi text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
 	{
 		variants: {
 			variant: {
@@ -14,10 +14,10 @@ export const navigationListItemVariants = cva(
 				ghost: 'hover:bg-muted hover:text-primary',
 			},
 			size: {
-				default: 'h-10 px-4 py-2',
-				sm: 'h-9 rounded-lg px-3',
-				lg: 'h-11 rounded-lg px-8',
-				icon: 'size-10',
+				default: 'h-10 px-4 py-2 min-h-10',
+				sm: 'h-9 px-3 min-h-9',
+				lg: 'h-11 px-8 min-h-11',
+				icon: 'size-10 min-h-10',
 			},
 		},
 		defaultVariants: {
@@ -35,7 +35,7 @@ type NavItemProps = Omit<React.ComponentPropsWithoutRef<'a'>, 'title'> & {
 	// TODO: do not override base html title
 	title?: React.ReactNode
 	as?: React.ElementType
-}
+} & VariantProps<typeof navigationListItemVariants>
 
 function ItemIcon({
 	icon: Icon,
@@ -73,6 +73,8 @@ export function NavigationListItem<T>({
 	active,
 	title,
 	label,
+	size,
+	variant,
 	...props
 }: NavItemProps & T) {
 	const Link = as ?? 'a'
@@ -109,8 +111,8 @@ export function NavigationListItem<T>({
 		<Link
 			className={cx(
 				navigationListItemVariants({
-					variant: active ? 'default' : 'ghost',
-					size: 'sm',
+					variant: variant ? variant : active ? 'default' : 'ghost',
+					size,
 				}),
 				'justify-start',
 				className,

@@ -7,7 +7,7 @@ import {
 	NavigationListSection,
 } from '@nerdfish/ui'
 import { docs } from 'docs.config'
-import { useSelectedLayoutSegment } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import { StatusBadge } from './status-badge'
 import { stripPreSlash } from '~/lib/utils/string'
@@ -16,7 +16,7 @@ export const GettingStartedNavigation = React.forwardRef<
 	React.ElementRef<typeof NavigationList>,
 	React.ComponentPropsWithoutRef<typeof NavigationList>
 >(function GettingStartedNavigation({ ...props }, ref) {
-	const segment = useSelectedLayoutSegment() ?? '/'
+	const pathname = usePathname()
 
 	const globalItems = docs.navigation.find(
 		(item) => item.title === 'Getting Started',
@@ -29,7 +29,7 @@ export const GettingStartedNavigation = React.forwardRef<
 				<NavigationListItem
 					key={title}
 					{...item}
-					active={segment === stripPreSlash(item.href)}
+					active={stripPreSlash(pathname) === stripPreSlash(item.href)}
 					title={
 						<span className="flex justify-between gap-2">
 							{title}
@@ -48,7 +48,7 @@ export const ComponentNavigation = React.forwardRef<
 	React.ElementRef<typeof NavigationList>,
 	React.ComponentPropsWithoutRef<typeof NavigationList>
 >(function ComponentNavigation({ ...props }, ref) {
-	const segment = useSelectedLayoutSegment() ?? '/'
+	const pathname = usePathname()
 
 	const sections = docs.navigation.filter(
 		(item) => item.title !== 'Getting Started',
@@ -64,19 +64,21 @@ export const ComponentNavigation = React.forwardRef<
 						className="text-base font-bold"
 						{...item}
 					/>
-					{item.links.map(({ status, title, ...link }) => (
-						<NavigationListItem
-							{...link}
-							key={title}
-							title={
-								<span className="flex gap-2">
-									{title}
-									<StatusBadge status={status} />
-								</span>
-							}
-							active={segment === stripPreSlash(link.href)}
-						/>
-					))}
+					{item.links.map(({ status, title, ...link }) => {
+						return (
+							<NavigationListItem
+								{...link}
+								key={title}
+								title={
+									<span className="flex gap-2">
+										{title}
+										<StatusBadge status={status} />
+									</span>
+								}
+								active={stripPreSlash(pathname) === stripPreSlash(link.href)}
+							/>
+						)
+					})}
 				</NavigationListSection>
 			))}
 		</NavigationList>
