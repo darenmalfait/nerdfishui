@@ -100,6 +100,11 @@ export const docs: { navigation: NavigationGroup[] } = {
 					href: '/docs/components/empty-state/',
 					status: 'new',
 				},
+				{
+					title: 'Gauge',
+					href: '/docs/components/gauge/',
+					status: 'experimental',
+				},
 				{ title: 'HoverCard', href: '/docs/components/hover-card/' },
 				{
 					title: 'Mockup',
