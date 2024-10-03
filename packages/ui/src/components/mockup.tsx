@@ -32,7 +32,7 @@ export const MockupWindow = React.forwardRef<
 		<div
 			className={cx(
 				'rounded-semi flex flex-col',
-				'w-3 before:mb-4 before:aspect-square before:h-3 before:shrink-0 before:self-start before:rounded-full before:opacity-30 before:shadow-[1.4em_0,2.8em_0,4.2em_0] before:rtl:self-end',
+				'before:mb-4 before:aspect-square before:h-3 before:w-3 before:shrink-0 before:self-start before:rounded-full before:opacity-30 before:shadow-[1.4em_0,2.8em_0,4.2em_0] before:rtl:self-end',
 				className,
 			)}
 			ref={ref}
