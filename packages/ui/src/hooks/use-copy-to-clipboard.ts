@@ -4,7 +4,7 @@ export function useCopyToClipboard({
 	onError,
 }: {
 	onError?: (error: Error) => void
-}) {
+} = {}) {
 	const [copiedText, setCopiedText] = React.useState<string | null>(null)
 	const copyTimeoutRef = React.useRef<
 		ReturnType<typeof setTimeout> | undefined
