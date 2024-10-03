@@ -1,6 +1,10 @@
 import * as React from 'react'
 
-export function useCopyToClipboard() {
+export function useCopyToClipboard({
+	onError,
+}: {
+	onError?: (error: Error) => void
+}) {
 	const [copiedText, setCopiedText] = React.useState<string | null>(null)
 	const copyTimeoutRef = React.useRef<
 		ReturnType<typeof setTimeout> | undefined
@@ -10,7 +14,7 @@ export function useCopyToClipboard() {
 		async (text: string, resetDelay?: number) => {
 			// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- typescript thinks it's always defined, I'd rather check it
 			if (!navigator.clipboard) {
-				console.warn('Clipboard not supported')
+				onError?.(new Error('Clipboard not supported'))
 				return false
 			}
 
@@ -27,12 +31,12 @@ export function useCopyToClipboard() {
 
 				return true
 			} catch (error) {
-				console.warn('Copy failed', error)
+				onError?.(error as Error)
 				setCopiedText(null)
 				return false
 			}
 		},
-		[],
+		[onError],
 	)
 
 	const reset = React.useCallback(() => {
