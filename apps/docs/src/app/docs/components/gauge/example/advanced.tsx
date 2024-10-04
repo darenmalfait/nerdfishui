@@ -28,7 +28,7 @@ export function GaugeAdvancedExample() {
 					},
 				)}
 			>
-				<GaugeText />
+				<GaugeText fontSize={24} value={`${gaugeValue}%`} />
 			</Gauge>
 		</div>
 	)
