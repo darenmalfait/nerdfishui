@@ -39,9 +39,10 @@ export const gaugeVariants = cva(
 export const GaugeText = React.forwardRef<
 	SVGTextElement,
 	React.ComponentPropsWithoutRef<'text'> & {
-		value?: number
+		fontSize?: number
+		value?: string
 	}
->(function GaugeText({ className, ...props }, ref) {
+>(function GaugeText({ className, value: propValue, fontSize, ...props }, ref) {
 	const { value, strokeWidth } = useGauge()
 
 	return (
@@ -53,12 +54,12 @@ export const GaugeText = React.forwardRef<
 			textAnchor="middle"
 			dominantBaseline="middle"
 			alignmentBaseline="central"
-			fontSize={36}
+			fontSize={fontSize ?? 36}
 			strokeWidth={strokeWidth}
 			className={cx('fill-current text-current', className)}
 			{...props}
 		>
-			{value}
+			{propValue ?? value}
 		</text>
 	)
 })
