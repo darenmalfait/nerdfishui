@@ -6,7 +6,7 @@ export const light: Colors = {
 	background: {
 		primary: '0 0% 100%',
 		muted: '240 4.76% 95.88%',
-		inverted: '0 0% 0%',
+		inverted: '220 6.67% 8.82%',
 	},
 	foreground: {
 		primary: '240 10% 3.9%',
@@ -43,8 +43,8 @@ export const dark: typeof light = {
 	...light,
 	primary: '0 0% 0%',
 	background: {
-		primary: '0 0% 0%',
-		muted: '240 3.7% 15.88%',
+		primary: '220 6.67% 8.82%',
+		muted: '228 7.46% 13.14%',
 		inverted: '0 0% 100%',
 	},
 	foreground: {
