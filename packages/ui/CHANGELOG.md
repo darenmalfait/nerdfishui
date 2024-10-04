@@ -1,5 +1,19 @@
 # @nerdfish/ui
 
+## 7.3.0
+
+### Minor Changes
+
+- Add new `Gauge` component
+
+### Patch Changes
+
+- add height to window header
+
+- Add `onError` callback to `useCopyToClipboard` hook
+
+- set correct border color on the `Input` variants
+
 ## 7.2.0
 
 ### Minor Changes
