@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.3.0
+
+### Minor Changes
+
+- warm up the dark colors
+
 ## 2.2.0
 
 ### Minor Changes
