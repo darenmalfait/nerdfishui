@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.3.1
+
+### Patch Changes
+
+- adjust `Tabs` border color
+
 ## 7.3.0
 
 ### Minor Changes
