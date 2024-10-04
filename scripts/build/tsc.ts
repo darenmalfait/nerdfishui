@@ -2,7 +2,7 @@ import { cpSync } from 'node:fs'
 import { join } from 'node:path/posix'
 
 export async function generateTypes(dir: string) {
-	const { execa } = await import('execa')
+	const { default: execa } = await import('execa')
 
 	await execa('pnpm', ['tsc', '--project', 'tsconfig.build.json'], {
 		cwd: dir,
