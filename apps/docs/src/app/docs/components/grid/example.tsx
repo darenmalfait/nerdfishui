@@ -40,7 +40,7 @@ function CardContent({
 					/>
 				</div>
 			</div>
-			<div className="group-[:not(:hover)]:bg-popover pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+			<div className="group-[:not(:hover)]:bg-popover rounded-b-semi pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
 				<Icon className="text-primary size-12 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75" />
 				<h3 className="text-primary text-xl font-semibold">{name}</h3>
 				<p className="text-muted max-w-lg">{description}</p>
@@ -63,7 +63,7 @@ function CardContent({
 				</Button>
 			</div>
 
-			<div className="group-hover:bg-popover pointer-events-none absolute inset-0 transform-gpu transition-all duration-300" />
+			<div className="group-hover:bg-popover rounded-semi pointer-events-none absolute inset-0 transform-gpu overflow-hidden transition-all duration-300" />
 		</>
 	)
 }
