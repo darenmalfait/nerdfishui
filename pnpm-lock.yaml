@@ -52,7 +52,7 @@ importers:
         specifier: ^1.0.6
         version: 1.0.6(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.3.3))(eslint@9.11.1(jiti@1.21.0))(prettier@3.3.3)(typescript@5.6.2)
       eslint:
-        specifier: ^9.11.0
+        specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.0)
       husky:
         specifier: ^9.1.6
@@ -200,7 +200,7 @@ importers:
         specifier: ^7.0.3
         version: 7.0.3
       eslint:
-        specifier: ^9.11.0
+        specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.0)
       eslint-config-next:
         specifier: ^14.2.13
@@ -273,7 +273,7 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       eslint:
-        specifier: ^9.11.0
+        specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.0)
       react:
         specifier: ^18.3.1
@@ -295,7 +295,7 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       eslint:
-        specifier: ^9.11.0
+        specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.0)
       npm-run-all2:
         specifier: ^6.2.3
@@ -434,7 +434,7 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       eslint:
-        specifier: ^9.11.0
+        specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.0)
       prettier:
         specifier: ^3.3.3
@@ -465,7 +465,7 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       eslint:
-        specifier: ^9.11.0
+        specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.0)
       prettier:
         specifier: ^3.3.3
