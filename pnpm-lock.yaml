@@ -188,7 +188,7 @@ importers:
         specifier: ^20.16.9
         version: 20.16.10
       '@types/react':
-        specifier: ^18.3.9
+        specifier: ^18.3.10
         version: 18.3.10
       '@types/react-dom':
         specifier: ^18.3.0
@@ -267,7 +267,7 @@ importers:
         specifier: workspace:^*
         version: link:../theme
       '@types/react':
-        specifier: ^18.3.9
+        specifier: ^18.3.10
         version: 18.3.10
       '@types/react-dom':
         specifier: ^18.3.0
@@ -289,7 +289,7 @@ importers:
         version: link:../utils
     devDependencies:
       '@types/react':
-        specifier: ^18.3.9
+        specifier: ^18.3.10
         version: 18.3.10
       '@types/react-dom':
         specifier: ^18.3.0
@@ -428,7 +428,7 @@ importers:
         specifier: workspace:*
         version: link:../tailwind-config
       '@types/react':
-        specifier: ^18.3.9
+        specifier: ^18.3.10
         version: 18.3.10
       '@types/react-dom':
         specifier: ^18.3.0
@@ -459,7 +459,7 @@ importers:
         version: 2.5.2
     devDependencies:
       '@types/react':
-        specifier: ^18.3.9
+        specifier: ^18.3.10
         version: 18.3.10
       '@types/react-dom':
         specifier: ^18.3.0
