@@ -89,7 +89,7 @@ const Title = React.forwardRef<
 			{size === 'h1' || size === 'h2' ? (
 				<div
 					className={cx(
-						'absolute -left-8 z-10 h-12 w-32 rounded-full opacity-50 blur-3xl',
+						'-z-1 absolute -left-8 h-12 w-32 rounded-full opacity-50 blur-3xl',
 						{
 							'bg-accent': variant === 'accent' && !blurredClassName,
 							'bg-inverted': variant === 'primary' && !blurredClassName,
