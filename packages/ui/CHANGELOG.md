@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.3.2
+
+### Patch Changes
+
+- adjust z-index of title blur bg
+
 ## 7.3.1
 
 ### Patch Changes
