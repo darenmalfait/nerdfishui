@@ -52,6 +52,36 @@ export const animation = {
 			'0%,70%,100%': { opacity: '1' },
 			'20%,50%': { opacity: '0' },
 		},
+		rubber: {
+			'0%': {
+				'-webkit-transform': 'scaleX(1)',
+				transform: 'scaleX(1)',
+			},
+			'30%': {
+				'-webkit-transform': 'scale3d(1.25, .75, 1)',
+				transform: 'scale3d(1.25, .75, 1)',
+			},
+			'40%': {
+				'-webkit-transform': 'scale3d(.75, 1.25, 1)',
+				transform: 'scale3d(.75, 1.25, 1)',
+			},
+			'50%': {
+				'-webkit-transform': 'scale3d(1.15, .85, 1)',
+				transform: 'scale3d(1.15, .85, 1)',
+			},
+			'65%': {
+				'-webkit-transform': 'scale3d(.95, 1.05, 1)',
+				transform: 'scale3d(.95, 1.05, 1)',
+			},
+			'75%': {
+				'-webkit-transform': 'scale3d(1.05, .95, 1)',
+				transform: 'scale3d(1.05, .95, 1)',
+			},
+			'100%': {
+				'-webkit-transform': 'scaleX(1)',
+				transform: 'scaleX(1)',
+			},
+		},
 	},
 	animation: {
 		'accordion-down': 'accordion-down 0.2s ease-out',
@@ -59,5 +89,6 @@ export const animation = {
 		shake: `shake 0.5s  cubic-bezier(0.4, 0, 1, 1)`,
 		pop: 'pop .3s cubic-bezier(0.4, 0, 1, 1)',
 		'caret-blink': 'caret-blink 1.25s ease-out infinite',
+		rubber: 'rubber 1s cubic-bezier(0.4, 0, 1, 1)',
 	},
 }
