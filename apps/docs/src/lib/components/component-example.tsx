@@ -27,7 +27,7 @@ export function ComponentExample({
 	component?: React.ReactNode
 }) {
 	return (
-		<div className={cx('flex flex-col gap-4', className)}>
+		<div className={cx('mt-4 flex flex-col gap-4', className)}>
 			{Component ? <Preview>{Component}</Preview> : null}
 			<div className="!bg-primary -my-2 p-0">
 				<div className="flex flex-col space-y-4">
