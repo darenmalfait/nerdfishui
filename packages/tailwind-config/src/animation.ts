@@ -82,6 +82,29 @@ export const animation = {
 				transform: 'scaleX(1)',
 			},
 		},
+		squeeze: {
+			'0%': {
+				transform: 'scaleY(1)',
+			},
+			'15%': {
+				transform: 'scaleY(0.95)',
+			},
+			'30%': {
+				transform: 'scaleY(0.9)',
+			},
+			'55%': {
+				transform: 'scaleY(0.75)',
+			},
+			'70%': {
+				transform: 'scaleY(1.3)',
+			},
+			'85%': {
+				transform: 'scaleY(0.95)',
+			},
+			'90%': {
+				transform: 'scaleY(1)',
+			},
+		},
 	},
 	animation: {
 		'accordion-down': 'accordion-down 0.2s ease-out',
@@ -90,5 +113,6 @@ export const animation = {
 		pop: 'pop .3s cubic-bezier(0.4, 0, 1, 1)',
 		'caret-blink': 'caret-blink 1.25s ease-out infinite',
 		rubber: 'rubber 1s cubic-bezier(0.4, 0, 1, 1)',
+		squeeze: 'squeeze 1s ease-out',
 	},
 }

@@ -127,6 +127,10 @@ export const docs: { navigation: NavigationGroup[] } = {
 			links: [
 				{ title: 'Aspect Ratio', href: '/docs/components/aspect-ratio/' },
 				{ title: 'Flags', href: '/docs/components/flags/' },
+				{
+					title: 'LoadingAnimation',
+					href: '/docs/components/loading-animation/',
+				},
 				{ title: 'Indicator', href: '/docs/components/indicator/' },
 				{
 					title: 'Separator',

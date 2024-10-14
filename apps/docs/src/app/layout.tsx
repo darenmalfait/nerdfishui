@@ -1,6 +1,5 @@
-import { Toaster } from '@nerdfish/ui'
+import { LoadingAnimation, Toaster } from '@nerdfish/ui'
 import { GeistSans } from 'geist/font/sans'
-import { Loader2 as Spinner } from 'lucide-react'
 import * as React from 'react'
 import { AppProviders } from './app-providers'
 import { SiteHeader } from './components/site-header'
@@ -23,7 +22,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 				<React.Suspense
 					fallback={
 						<div className="bg-popover inset-0 flex h-screen w-screen items-center justify-center">
-							<Spinner className="size-6 animate-spin" />
+							<LoadingAnimation />
 						</div>
 					}
 				>
