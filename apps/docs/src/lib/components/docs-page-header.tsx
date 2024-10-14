@@ -42,7 +42,7 @@ export function DocsPageHeader({
 						target="_blank"
 						href={`https://github.com/darenmalfait/nerdfishui/tree/main/packages/${githubPath.package}/src/${githubPath.path}`}
 						className={getButtonClassName({
-							className: 'mt-6',
+							className: 'mt-2',
 						})}
 						rel="noopener noreferrer"
 					>

@@ -10,7 +10,6 @@ import {
 	GettingStartedNavigation,
 } from '~/app/components/docs-navigation'
 import { Footer } from '~/app/components/footer'
-import { Prose } from '~/app/components/prose'
 
 interface DocsLayoutProps {
 	children: React.ReactNode
@@ -34,9 +33,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
 			</Sidebar>
 
 			<div className="mr-auto w-full pt-4">
-				<Prose as="article" className="max-w-none">
-					{children}
-				</Prose>
+				<article className="max-w-none">{children}</article>
 				<Footer />
 			</div>
 		</div>
