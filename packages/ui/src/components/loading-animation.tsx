@@ -16,7 +16,7 @@ const Fish = React.forwardRef<
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 912 421"
 				className={cx(
-					'direction-reverse fill-primary animate-squeeze repeat-infinite [animation-duration:2s]',
+					'direction-reverse animate-squeeze repeat-infinite fill-current [animation-duration:2s]',
 					className,
 				)}
 				{...props}
