@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.3.3
+
+### Patch Changes
+
+- Add new `LoadingAnimation` component
+
 ## 7.3.2
 
 ### Patch Changes
