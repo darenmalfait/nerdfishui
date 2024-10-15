@@ -1,5 +1,17 @@
 # @nerdfish/tailwind-config
 
+## 3.3.0
+
+### Minor Changes
+
+- add rubber animation
+
+- add squeeze animation
+
+### Patch Changes
+
+- Add new `LoadingAnimation` component
+
 ## 3.2.0
 
 ### Minor Changes
