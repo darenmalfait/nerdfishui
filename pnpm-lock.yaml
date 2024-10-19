@@ -85,10 +85,10 @@ importers:
         specifier: workspace:^2.0.0
         version: link:../../packages/utils
       '@next/env':
-        specifier: ^14.2.14
+        specifier: ^14.2.15
         version: 14.2.15
       '@next/mdx':
-        specifier: ^14.2.14
+        specifier: ^14.2.15
         version: 14.2.15(@mdx-js/loader@3.0.1(webpack@5.88.2(esbuild@0.23.0)))(@mdx-js/react@3.0.1(@types/react@18.3.10)(react@18.3.1))
       '@sindresorhus/slugify':
         specifier: ^2.2.1
@@ -133,7 +133,7 @@ importers:
         specifier: ^0.1.4
         version: 0.1.4
       next:
-        specifier: ^14.2.14
+        specifier: ^14.2.15
         version: 14.2.15(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       prism-react-renderer:
         specifier: ^2.4.0
@@ -203,7 +203,7 @@ importers:
         specifier: ^9.11.1
         version: 9.11.1(jiti@1.21.0)
       eslint-config-next:
-        specifier: ^14.2.14
+        specifier: ^14.2.15
         version: 14.2.15(eslint@9.11.1(jiti@1.21.0))(typescript@5.6.2)
       npm-run-all2:
         specifier: ^6.2.3
@@ -4234,6 +4234,7 @@ packages:
 
   commands-events@1.0.4:
     resolution: {integrity: sha512-HdP/+1Anoc7z+6L2h7nd4Imz54+LW+BjMGt30riBZrZ3ZeP/8el93wD8Jj8ltAaqVslqNgjX6qlhSBJwuDSmpg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   common-config@0.1.1:
     resolution: {integrity: sha512-mDp+nqoFbYsHKZfjg8OSb0CYfdPkuoGTMCVKy4ceYHR0EACTLV/qG8Q4cih2c/0IleQ7SISiqWqLMLXXZnJ2FA==}
@@ -4245,6 +4246,7 @@ packages:
 
   comparejs@1.0.0:
     resolution: {integrity: sha512-Ue/Zd9aOucHzHXwaCe4yeHR7jypp7TKrIBZ5yls35nPNiVXlW14npmNVKM1ZaLlQTKZ6/4ewA//gYKHHIwCpOw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   component-emitter@1.3.0:
     resolution: {integrity: sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==}
@@ -4368,6 +4370,7 @@ packages:
 
   crypto2@2.0.0:
     resolution: {integrity: sha512-jdXdAgdILldLOF53md25FiQ6ybj2kUFTiRjs7msKTUoZrzgT/M1FPX5dYGJjbbwFls+RJIiZxNTC02DE/8y0ZQ==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   css-background-parser@0.1.0:
     resolution: {integrity: sha512-2EZLisiZQ+7m4wwur/qiYJRniHX4K5Tc9w93MT3AS0WS1u5kaZ4FKXlOTBhOjc+CgEgPiGY+fX1yWD8UwpEqUA==}
@@ -4445,6 +4448,7 @@ packages:
 
   datasette@1.0.1:
     resolution: {integrity: sha512-aJdlCBToEJUP4M57r67r4V6tltwGKa3qetnjpBtXYIlqbX9tM9jsoDMxb4xd9AGjpp3282oHRmqI5Z8TVAU0Mg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
@@ -4597,6 +4601,7 @@ packages:
 
   draht@1.0.1:
     resolution: {integrity: sha512-yNNHL864dniNmIE9ZKD++mKypiAUAvVZtyV0QrbXH/ak3ebzFqo5xsmRBRqV8pZVhImOSBiyq500Wcmrf44zAg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -5121,6 +5126,7 @@ packages:
 
   flaschenpost@1.1.3:
     resolution: {integrity: sha512-1VAYPvDsVBGFJyUrOa/6clnJwZYC3qVq9nJLcypy6lvaaNbo1wOQiH8HQ+4Fw/k51pVG7JHzSf5epb8lmIW86g==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     hasBin: true
 
   flat-cache@4.0.1:
@@ -5151,6 +5157,7 @@ packages:
 
   formats@1.0.0:
     resolution: {integrity: sha512-For0Y8egwEK96JgJo4NONErPhtl7H2QzeB2NYGmzeGeJ8a1JZqPgLYOtM3oJRCYhmgsdDFd6KGRYyfe37XY4Yg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   forwarded@0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
@@ -5455,6 +5462,7 @@ packages:
 
   hase@2.0.0:
     resolution: {integrity: sha512-L83pBR/oZvQQNjv4kw9aUpTqBxERPiY7B42jsmkt1VDeUaRVhYkEIKzkCqrppjtxHe2EZqzZJzuhMXsWsxYIsw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
@@ -5998,6 +6006,7 @@ packages:
 
   json-lines@1.0.0:
     resolution: {integrity: sha512-ytuLZb4RBQb3bTRsG/QBenyIo5oHLpjeCVph3s2NnoAsZE9K6h+uR+OWpEOWV1UeHdX63tYctGppBpGAc+JNMA==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
@@ -6119,6 +6128,7 @@ packages:
 
   limes@2.0.0:
     resolution: {integrity: sha512-evWD0pnTgPX7QueaSoJl5JBUL30T1ZVzo34ke97tIKmeagqhBTYK/JkKL0vtG3MpNApw8ZY9TlbybfwEz9knBA==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   linebreak@1.1.0:
     resolution: {integrity: sha512-MHp03UImeVhB7XZtjd0E4n6+3xr5Dq/9xI/5FptGk5FrbDR3zagPa2DS6U8ks/3HjbKWG9Q1M2ufOzxV2qLYSQ==}
@@ -7020,6 +7030,7 @@ packages:
 
   partof@1.0.0:
     resolution: {integrity: sha512-+TXdhKCySpJDynCxgAPoGVyAkiK3QPusQ63/BdU5t68QcYzyU6zkP/T7F3gkMQBVUYqdWEADKa6Kx5zg8QIKrg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   pascalcase@0.1.1:
     resolution: {integrity: sha512-XHXfu/yOQRy9vYOtUDVMN60OEJjW013GoObG1o+xwQTpB9eYJX/BjXMsdW13ZDPruFhYYn0AG22w0xgQMwl3Nw==}
@@ -7326,6 +7337,7 @@ packages:
 
   processenv@1.1.0:
     resolution: {integrity: sha512-SymqIsn8GjEUy8nG7HiyEjgbfk1xFosRIakUX1NHLpriq3vVpKniGrr9RdMWCaGYWByIovbRt2f/WvmP/IOApQ==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   project-name@0.2.6:
     resolution: {integrity: sha512-ZOxqunIi7fnAX+E0tE+FLHv2pSEa7IgEbnVG2s4wPxWL+p2cUk9KRDZV4lNkpfyrVR6rfOUBxIbctbJDo/qOTA==}
@@ -7979,6 +7991,7 @@ packages:
 
   stethoskop@1.0.0:
     resolution: {integrity: sha512-4JnZ+UmTs9SFfDjSHFlD/EoXcb1bfwntkt4h1ipNGrpxtRzmHTxOmdquCJvIrVu608Um7a09cGX0ZSOSllWJNQ==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   stream-combiner@0.2.2:
     resolution: {integrity: sha512-6yHMqgLYDzQDcAkL+tjJDC5nSNuNIx0vZtRZeiPh7Saef7VHX9H5Ijn9l2VIol2zaNYlYEX6KyuT/237A58qEQ==}
@@ -8187,6 +8200,7 @@ packages:
 
   tailwind@4.0.0:
     resolution: {integrity: sha512-LlUNoD/5maFG1h5kQ6/hXfFPdcnYw+1Z7z+kUD/W/E71CUMwcnrskxiBM8c3G8wmPsD1VvCuqGYMHviI8+yrmg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -8277,6 +8291,7 @@ packages:
 
   timer2@1.0.0:
     resolution: {integrity: sha512-UOZql+P2ET0da+B7V3/RImN3IhC5ghb+9cpecfUhmYGIm0z73dDr3A781nBLnFYmRzeT1AmoT4w9Lgr8n7n7xg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   timescape@0.5.2:
     resolution: {integrity: sha512-dxyV4U6OHbHNGmMkjtZNLTZmrT1NE/GhD3JUdCRhvO0vtzGQGEQSwP+U1TBcAJfNxK0CRMVhCZ7WmI0SAqvCfA==}
@@ -8681,9 +8696,11 @@ packages:
 
   uuidv4@2.0.0:
     resolution: {integrity: sha512-sAUlwUVepcVk6bwnaW/oi6LCwMdueako5QQzRr90ioAVVcms6p1mV0PaSxK8gyAC4CRvKddsk217uUpZUbKd2Q==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   uuidv4@3.0.1:
     resolution: {integrity: sha512-PPzksdWRl2a5C9hrs3OOYrArTeyoR0ftJ3jtOy+BnVHkT2UlrrzPNt9nTdiGuxmQItHM/AcTXahwZZC57Njojg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   vali-date@1.0.0:
     resolution: {integrity: sha512-sgECfZthyaCKW10N0fm27cg8HYTFK5qMWgypqkXMQ4Wbl/zZKx7xZICgcoxIIE+WFAP/MBL2EFwC/YvLxw3Zeg==}
