@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.3.4
+
+### Patch Changes
+
+- add new `Square` loading animation variant
+
+- add option to hide the default close button in `Drawer`
+
 ## 7.3.3
 
 ### Patch Changes
