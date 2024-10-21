@@ -105,6 +105,40 @@ export const animation = {
 				transform: 'scaleY(1)',
 			},
 		},
+		loader: {
+			'0%': {
+				transform: 'rotate(0deg)',
+			},
+			'25%': {
+				transform: 'rotate(180deg)',
+			},
+			'50%': {
+				transform: 'rotate(180deg)',
+			},
+			'75%': {
+				transform: 'rotate(360deg)',
+			},
+			'100%': {
+				transform: 'rotate(360deg)',
+			},
+		},
+		'loader-inner': {
+			'0%': {
+				height: '0%',
+			},
+			'25%': {
+				height: '0%',
+			},
+			'50%': {
+				height: '100%',
+			},
+			'75%': {
+				height: '100%',
+			},
+			'100%': {
+				height: '0%',
+			},
+		},
 	},
 	animation: {
 		'accordion-down': 'accordion-down 0.2s ease-out',
@@ -114,5 +148,7 @@ export const animation = {
 		'caret-blink': 'caret-blink 1.25s ease-out infinite',
 		rubber: 'rubber 1s cubic-bezier(0.4, 0, 1, 1)',
 		squeeze: 'squeeze 1s ease-out',
+		loader: 'loader 2s linear infinite',
+		'loader-inner': 'loader-inner 2s linear infinite',
 	},
 }
