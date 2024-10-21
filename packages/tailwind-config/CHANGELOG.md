@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.3.1
+
+### Patch Changes
+
+- add new `Square` loading animation variant
+
 ## 3.3.0
 
 ### Minor Changes
