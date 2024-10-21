@@ -40,18 +40,37 @@ const Classic = React.forwardRef<
 	)
 })
 
+const Square = React.forwardRef<
+	HTMLDivElement,
+	React.ComponentPropsWithoutRef<'div'>
+>(function Square({ className, ...props }, ref) {
+	return (
+		<div
+			className={cx(
+				'animate-loader relative rounded-sm border-4 border-black dark:border-white',
+				className,
+			)}
+			ref={ref}
+			{...props}
+		>
+			<span className="bg-inverted animate-loader-inner vertical-align-top inline-block w-full" />
+		</div>
+	)
+})
+
 const LoaderMap = {
 	fish: Fish,
 	classic: Classic,
+	square: Square,
 }
 
 export const LoadingAnimation = React.forwardRef<
-	SVGSVGElement,
-	React.ComponentPropsWithoutRef<'svg'> & {
+	React.ElementRef<(typeof LoaderMap)[keyof typeof LoaderMap]>,
+	React.ComponentPropsWithoutRef<(typeof LoaderMap)[keyof typeof LoaderMap]> & {
 		variant?: keyof typeof LoaderMap
 	}
 >(function LoadingAnimation({ className, variant = 'fish', ...props }, ref) {
-	const Loader = LoaderMap[variant]
+	const Loader = LoaderMap[variant] as any
 
 	return <Loader ref={ref} className={cx('size-10', className)} {...props} />
 })

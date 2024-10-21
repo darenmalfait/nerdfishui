@@ -31,6 +31,7 @@ export function LoadingAnimationVariantsExample() {
 		<div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			<AnimationVariant variant="fish" />
 			<AnimationVariant variant="classic" />
+			<AnimationVariant variant="square" />
 		</div>
 	)
 }
