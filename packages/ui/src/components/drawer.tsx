@@ -60,7 +60,7 @@ export const DrawerContent = React.forwardRef<
 			>
 				<div
 					data-role="drawer-handle"
-					className="bg-inverted/10 mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
+					className="bg-inverted/10 mx-auto mb-3 mt-4 hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
 				/>
 				{!hideCloseButton ? (
 					<DrawerPrimitive.Close
@@ -75,7 +75,7 @@ export const DrawerContent = React.forwardRef<
 				<div className="h-full overflow-y-auto">{children}</div>
 				<div
 					data-role="drawer-handle"
-					className="bg-muted mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:opacity-100"
+					className="bg-muted mx-auto mb-3 mt-4 hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
 				/>
 			</DrawerPrimitive.Content>
 		</DrawerPrimitive.Portal>
