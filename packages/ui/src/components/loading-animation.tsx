@@ -47,13 +47,13 @@ const Square = React.forwardRef<
 	return (
 		<div
 			className={cx(
-				'animate-loader relative rounded-sm border-4 border-black dark:border-white',
+				'animate-loader border-muted relative rounded-sm border-4',
 				className,
 			)}
 			ref={ref}
 			{...props}
 		>
-			<span className="bg-inverted animate-loader-inner vertical-align-top inline-block w-full" />
+			<span className="bg-inverted animate-loader-inner inline-block w-full align-top" />
 		</div>
 	)
 })
