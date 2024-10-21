@@ -32,8 +32,10 @@ DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 
 export const DrawerContent = React.forwardRef<
 	React.ElementRef<typeof DrawerPrimitive.Content>,
-	React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => {
+	React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & {
+		hideCloseButton?: boolean
+	}
+>(({ className, children, hideCloseButton, ...props }, ref) => {
 	return (
 		<DrawerPrimitive.Portal>
 			<DrawerOverlay className="bg-primary/80" />
@@ -60,14 +62,16 @@ export const DrawerContent = React.forwardRef<
 					data-role="drawer-handle"
 					className="bg-inverted/10 mx-auto mb-3 mt-4 h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
 				/>
-				<DrawerPrimitive.Close
-					asChild
-					className="absolute right-0 top-0 mr-2 mt-2"
-				>
-					<Button variant="ghost" size="icon" aria-label="Close">
-						<XIcon aria-hidden className="size-4" />
-					</Button>
-				</DrawerPrimitive.Close>
+				{!hideCloseButton ? (
+					<DrawerPrimitive.Close
+						asChild
+						className="absolute right-0 top-0 mr-2 mt-2"
+					>
+						<Button variant="ghost" size="icon" aria-label="Close">
+							<XIcon aria-hidden className="size-4" />
+						</Button>
+					</DrawerPrimitive.Close>
+				) : null}
 				<div className="h-full overflow-y-auto">{children}</div>
 				<div
 					data-role="drawer-handle"
