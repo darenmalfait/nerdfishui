@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.4.0
+
+### Minor Changes
+
+- add spacing system based on 8 point grid system
+
 ## 3.3.1
 
 ### Patch Changes

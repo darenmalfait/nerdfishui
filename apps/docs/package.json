@@ -23,7 +23,7 @@
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@nerdfish/theme": "workspace:^2.3.0",
-    "@nerdfish/ui": "workspace:^7.3.4",
+    "@nerdfish/ui": "workspace:^7.3.5",
     "@nerdfish/utils": "workspace:^2.0.0",
     "@next/env": "^14.2.15",
     "@next/mdx": "^14.2.15",
