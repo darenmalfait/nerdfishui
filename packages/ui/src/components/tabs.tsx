@@ -13,7 +13,7 @@ export const TabsList = React.forwardRef<
 	<TabsPrimivite.List
 		ref={ref}
 		className={cx(
-			'border-b-muted/20 flex w-full items-center justify-start gap-1 border-b focus-within:outline-none',
+			'border-b-muted/20 gap-sm flex w-full items-center justify-start border-b focus-within:outline-none',
 			className,
 		)}
 		{...props}
@@ -41,7 +41,7 @@ export const TabsContent = React.forwardRef<
 	React.ComponentPropsWithoutRef<typeof TabsPrimivite.Content>
 >(({ className, ...props }, ref) => (
 	<TabsPrimivite.Content
-		className={cx('rounded-semi mt-3 focus-within:outline-none', className)}
+		className={cx('rounded-semi mt-md focus-within:outline-none', className)}
 		{...props}
 		ref={ref}
 	/>

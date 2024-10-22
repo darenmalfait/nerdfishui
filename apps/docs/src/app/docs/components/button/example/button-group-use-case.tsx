@@ -49,7 +49,7 @@ export function ButtonGroupUseCase() {
 								onSelect={() => setSelectedOption(option)}
 								key={key}
 							>
-								<div className="flex flex-col gap-2">
+								<div className="gap-sm flex flex-col">
 									<span className="font-bold">{label}</span>
 									<Description>{descriptionsMap[option]}</Description>
 								</div>

@@ -8,7 +8,7 @@ import { deprecateProp } from '../deprecate'
 const DEFAULT_VARIANT = 'info'
 
 export const alertVariants = cva(
-	'relative w-full rounded-semi border p-4 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-current [&>svg~]*]:pl-7',
+	'relative w-full rounded-semi border p-md [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-md [&>svg]:text-current [&>svg~]*]:pl-7',
 	{
 		variants: {
 			variant: {
@@ -40,7 +40,7 @@ export const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<h5
 		ref={ref}
-		className={cx('mb-1 font-semibold leading-none tracking-tight', className)}
+		className={cx('mb-sm font-semibold leading-none tracking-tight', className)}
 		{...props}
 	/>
 ))
@@ -69,7 +69,7 @@ function AlertIcon({
 
 	const Icon = IconMap[variant ?? DEFAULT_VARIANT]
 
-	return <Icon className={cx('h-4 w-4')} />
+	return <Icon className={cx('size-6')} />
 }
 
 export const Alert = React.forwardRef<
@@ -96,7 +96,7 @@ export const Alert = React.forwardRef<
 			{...props}
 			className={cx(
 				alertVariants({ variant }),
-				!hideIcon && 'pl-12',
+				!hideIcon && 'pl-xl',
 				className,
 			)}
 			ref={ref}

@@ -6,7 +6,7 @@ import { Mail } from 'lucide-react'
 export function ButtonWithIconExample() {
 	return (
 		<Button>
-			<Mail className="mr-2 size-4" /> Login with Email
+			<Mail className="mr-sm size-4" /> Login with Email
 		</Button>
 	)
 }

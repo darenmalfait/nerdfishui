@@ -10,7 +10,7 @@ export function GaugeAdvancedExample() {
 	const gaugeValue = value[0] ?? 0
 
 	return (
-		<div className="flex flex-col gap-8">
+		<div className="gap-lg flex flex-col">
 			<Slider min={0} max={100} value={value} onValueChange={setValue}>
 				<SliderThumb />
 			</Slider>

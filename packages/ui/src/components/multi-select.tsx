@@ -109,7 +109,7 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 									? `${selectedValues.length} items selected`
 									: null}
 							</span>
-							<ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
+							<ChevronsUpDown className="ml-sm size-4 shrink-0 opacity-50" />
 						</button>
 					</PopoverTrigger>
 					<PopoverContent className="w-[200px] p-0">
@@ -143,14 +143,14 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 												>
 													<Check
 														className={cx(
-															'mr-2 h-4 w-4 pt-1',
+															'mr-sm pt-sm h-4 w-4',
 															isActive ? 'opacity-100' : 'opacity-0',
 														)}
 													/>
 													<div className="flex flex-col items-start gap-y-1">
 														<div className="flex justify-start">
 															<span
-																className="mr-2 size-4 rounded-full"
+																className="mr-sm size-4 rounded-full"
 																style={{ backgroundColor: item.color }}
 															/>
 															<span className="flex-1">{item.label}</span>
@@ -187,7 +187,7 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 											setOpenSelect(false)
 											onCreateItemsClicked(inputValue)
 										}}
-										className="flex w-full items-center gap-x-2 px-2 py-1"
+										className="gap-x-sm px-sm py-xs flex w-full items-center"
 									>
 										<span>
 											<Plus className="size-4" />
@@ -200,13 +200,13 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 					</PopoverContent>
 				</Popover>
 
-				<div className="relative mt-3 overflow-y-auto">
+				<div className="mt-md relative overflow-y-auto">
 					{selectedValues.map(({ label, value, color }) => (
 						<Badge
 							key={value}
 							variant="outline"
 							style={color ? multiSelectBadgeStyle(color) : undefined}
-							className="dark:!bg-opacity/20 bg-muted shadow-outline mb-2 mr-2 border"
+							className="dark:!bg-opacity/20 bg-muted shadow-outline mb-sm mr-sm border"
 						>
 							{label}
 						</Badge>

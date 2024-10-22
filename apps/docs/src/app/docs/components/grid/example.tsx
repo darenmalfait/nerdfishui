@@ -40,14 +40,14 @@ function CardContent({
 					/>
 				</div>
 			</div>
-			<div className="group-[:not(:hover)]:bg-popover rounded-b-semi pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+			<div className="group-[:not(:hover)]:bg-popover rounded-b-semi gap-sm p-md pointer-events-none z-10 flex transform-gpu flex-col transition-all duration-300 group-hover:-translate-y-10">
 				<Icon className="text-primary size-12 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75" />
 				<h3 className="text-primary text-xl font-semibold">{name}</h3>
 				<p className="text-muted max-w-lg">{description}</p>
 			</div>
 			<div
 				className={cx(
-					'pointer-events-none absolute bottom-0 z-10 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100',
+					'p-md pointer-events-none absolute bottom-0 z-10 flex w-full translate-y-10 transform-gpu flex-row items-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100',
 				)}
 			>
 				<Button
@@ -58,7 +58,7 @@ function CardContent({
 				>
 					<a href={href}>
 						{cta}
-						<ArrowRightIcon className="ml-2 size-4" />
+						<ArrowRightIcon className="ml-sm size-4" />
 					</a>
 				</Button>
 			</div>

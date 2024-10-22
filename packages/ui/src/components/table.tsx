@@ -77,7 +77,7 @@ export const TableHead = React.forwardRef<
 	<th
 		ref={ref}
 		className={cx(
-			'tracking-none text-muted whitespace-nowrap bg-transparent py-3 pr-6 text-left align-middle text-[10px] font-bold uppercase opacity-70 shadow-none [&:has([role=checkbox])]:pr-0',
+			'tracking-none text-muted py-md pr-md whitespace-nowrap bg-transparent text-left align-middle text-[10px] font-bold uppercase opacity-70 shadow-none [&:has([role=checkbox])]:pr-0',
 			className,
 		)}
 		{...props}
@@ -92,7 +92,7 @@ export const TableCell = React.forwardRef<
 	<td
 		ref={ref}
 		className={cx(
-			'whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0 [&:has([role=checkbox])]:pr-0',
+			'p-md whitespace-nowrap text-sm sm:pl-0 [&:has([role=checkbox])]:pr-0',
 			className,
 		)}
 		{...props}
@@ -106,7 +106,7 @@ export const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<caption
 		ref={ref}
-		className={cx('text-muted mt-4 text-sm', className)}
+		className={cx('text-muted mt-md text-sm', className)}
 		{...props}
 	/>
 ))

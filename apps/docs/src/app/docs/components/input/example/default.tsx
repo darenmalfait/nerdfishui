@@ -44,7 +44,7 @@ export function InputExample() {
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
-						className="flex flex-col gap-6"
+						className="gap-md flex flex-col"
 						noValidate
 					>
 						<FormField

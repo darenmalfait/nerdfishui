@@ -22,7 +22,7 @@ interface ExamplesLayoutProps {
 
 export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
 	return (
-		<div className="container relative flex flex-col gap-10 pt-10">
+		<div className="gap-lg pt-lg container relative flex flex-col">
 			<PageHeader>
 				<PageHeaderHeading>Examples</PageHeaderHeading>
 				<PageHeaderDescription>

@@ -52,7 +52,7 @@ export async function GET(req: Request) {
 							fill="#fff"
 						/>
 					</svg>
-					<div tw="relative flex flex-col flex-1 py-10">
+					<div tw="relative flex flex-col flex-1 py-lg">
 						<div
 							tw="flex leading-[1.1] text-[80px] max-w-[700px] font-bold tracking-tighter"
 							style={{

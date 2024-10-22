@@ -31,7 +31,7 @@ export const EmptyStateTitle = React.forwardRef<
 		<H3
 			as={as}
 			variant={variant}
-			className={cx('m-0 text-center', className)}
+			className={cx('mb-xs m-0 mt-0 text-center', className)}
 			ref={ref}
 			{...props}
 		/>
@@ -46,7 +46,7 @@ export const EmptyStateIcon = React.forwardRef<
 	return (
 		<Slot
 			role="presentation"
-			className={cx('text-accent mb-4 size-12', className)}
+			className={cx('text-accent mb-md size-12', className)}
 			ref={ref}
 			{...props}
 		/>
@@ -60,7 +60,7 @@ export const EmptyStateDescription = React.forwardRef<
 >(function EmptyStateDescription({ className, ...props }, ref) {
 	return (
 		<Paragraph
-			className={cx('text-muted m-0 text-center', className)}
+			className={cx('text-muted m-0 mt-0 text-center', className)}
 			ref={ref}
 			{...props}
 		/>
@@ -73,7 +73,7 @@ export const EmptyStateActions = React.forwardRef<
 	React.ComponentPropsWithoutRef<'div'>
 >(function EmptyStateActions({ className, ...props }, ref) {
 	return (
-		<div className={cx('mt-4 flex gap-2', className)} ref={ref} {...props} />
+		<div className={cx('mt-lg gap-sm flex', className)} ref={ref} {...props} />
 	)
 })
 EmptyStateActions.displayName = 'EmptyStateActions'

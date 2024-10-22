@@ -17,22 +17,22 @@ interface DocsLayoutProps {
 
 export default function DocsLayout({ children }: DocsLayoutProps) {
 	return (
-		<div className="flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+		<div className="md:gap-md lg:gap-lg flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)]">
 			<Sidebar className="sticky top-[75px] hidden h-[calc(100vh-80px)] overscroll-contain md:block">
 				<div className="flex h-full flex-col">
-					<SidebarSection className="px-0 pr-4">
+					<SidebarSection className="pr-md px-0">
 						<GettingStartedNavigation />
 					</SidebarSection>
 					<SidebarDivider />
 					<ScrollArea>
-						<SidebarSection className="flex-1 px-0 pr-4">
+						<SidebarSection className="pr-md flex-1 px-0">
 							<ComponentNavigation />
 						</SidebarSection>
 					</ScrollArea>
 				</div>
 			</Sidebar>
 
-			<div className="mr-auto w-full pt-4">
+			<div className="pt-md mr-auto w-full">
 				<article className="max-w-none">{children}</article>
 				<Footer />
 			</div>

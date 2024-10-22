@@ -10,36 +10,36 @@ export const base = {
 			{},
 	},
 	'.prose h2:not(:where([class~="not-prose"] *))': {
-		'@apply mt-10 first:mt-0 scroll-m-20 font-title text-3xl !leading-normal':
+		'@apply mt-lg first:mt-0 scroll-m-20 font-title text-3xl !leading-normal':
 			{},
 	},
 	'.prose h3:not(:where([class~="not-prose"] *))': {
-		'@apply mt-8 first:mt-0 scroll-m-20 text-2xl font-semibold tracking-tight':
+		'@apply mt-md first:mt-0 scroll-m-20 text-2xl font-semibold tracking-tight':
 			{},
 	},
 	'.prose h4:not(:where([class~="not-prose"] *))': {
-		'@apply mt-8 first:mt-0 scroll-m-20 text-xl font-semibold tracking-tight':
+		'@apply mt-md first:mt-0 scroll-m-20 text-xl font-semibold tracking-tight':
 			{},
 	},
 	'.prose p:not(:where([class~="not-prose"] *))': {
-		'@apply leading-7 mt-6 first:mt-0': {},
+		'@apply leading-7 mt-md first:mt-0': {},
 	},
 	'.prose blockquote:not(:where([class~="not-prose"] *))': {
-		'@apply mt-6 first:mt-0 border-gray-300 italic text-muted dark:border-gray-700 ltr:border-l-2 ltr:pl-6 rtl:border-r-2 rtl:pr-6':
+		'@apply mt-md first:mt-0 border-gray-300 italic text-muted dark:border-gray-700 ltr:border-l-2 ltr:pl-md rtl:border-r-2 rtl:pr-md':
 			{},
 	},
 	'.prose ul:not(:where([class~="not-prose"] *))': {
-		'@apply list-disc first:mt-0 ltr:ml-6 rtl:mr-6': {},
+		'@apply list-disc first:mt-0 ltr:ml-md rtl:mr-md': {},
 	},
 	'.prose ol:not(:where([class~="not-prose"] *))': {
-		'@apply list-decimal first:mt-0 ltr:ml-6 rtl:mr-6': {},
+		'@apply list-decimal first:mt-0 ltr:ml-md rtl:mr-md': {},
 	},
 	'.prose ol li:not(:where([class~="not-prose"] *)), .prose ul li:not(:where([class~="not-prose"] *))':
 		{
 			'@apply my-2': {},
 		},
 	'.prose > div:not(:where([class~="not-prose"] *))': {
-		'@apply mt-6 first:mt-0': {},
+		'@apply mt-md first:mt-0': {},
 	},
 	'.bg-popover': {
 		'@apply backdrop-saturate-[200%] backdrop-blur-[14px] bg-primary/75 dark:bg-primary/40':

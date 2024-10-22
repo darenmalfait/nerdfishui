@@ -19,7 +19,7 @@ function AnimationVariant({
 			<CardHeader>
 				<CardTitle>{variant}</CardTitle>
 			</CardHeader>
-			<CardContent className="flex justify-center p-4">
+			<CardContent className="p-md flex justify-center">
 				<LoadingAnimation variant={variant} />
 			</CardContent>
 		</Card>
@@ -28,7 +28,7 @@ function AnimationVariant({
 
 export function LoadingAnimationVariantsExample() {
 	return (
-		<div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+		<div className="gap-md grid w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			<AnimationVariant variant="fish" />
 			<AnimationVariant variant="classic" />
 			<AnimationVariant variant="square" />

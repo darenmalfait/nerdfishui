@@ -37,10 +37,10 @@ export function CardExample({ className, ...props }: CardProps) {
 				<CardTitle>Cake Notifications</CardTitle>
 				<CardDescription>You have 3 unread cake messages.</CardDescription>
 			</CardHeader>
-			<CardContent className="grid gap-4">
-				<div className="rounded-semi flex items-center space-x-4 border p-4">
+			<CardContent className="gap-md grid">
+				<div className="rounded-semi p-md space-x-md flex items-center border">
 					<BellRing />
-					<div className="flex-1 space-y-1">
+					<div className="space-y-sm flex-1">
 						<p className="text-sm font-medium leading-none">
 							Push Notifications
 						</p>
@@ -52,10 +52,10 @@ export function CardExample({ className, ...props }: CardProps) {
 					{notifications.map((notification, index) => (
 						<div
 							key={index}
-							className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+							className="pb-sm mb-md grid grid-cols-[25px_1fr] items-start last:mb-0 last:pb-0"
 						>
 							<span className="flex size-2 translate-y-1 rounded-full bg-sky-500" />
-							<div className="space-y-1">
+							<div className="space-y-sm">
 								<p className="text-sm font-medium leading-none">
 									{notification.title}
 								</p>
@@ -67,7 +67,7 @@ export function CardExample({ className, ...props }: CardProps) {
 			</CardContent>
 			<CardFooter>
 				<Button className="w-full">
-					<Check className="mr-2 size-4" /> Mark all as read
+					<Check className="mr-sm size-4" /> Mark all as read
 				</Button>
 			</CardFooter>
 		</Card>

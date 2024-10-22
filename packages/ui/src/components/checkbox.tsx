@@ -63,7 +63,10 @@ export function Checkbox({
 			/>
 			<span className="peer-checked:animate-pop pointer-events-none absolute inset-0 hidden rounded-md peer-checked:block">
 				<Icon
-					className={cx(textClassName, 'pointer-events-none h-full w-full p-1')}
+					className={cx(
+						textClassName,
+						'p-sm pointer-events-none h-full w-full',
+					)}
 				/>
 			</span>
 		</label>

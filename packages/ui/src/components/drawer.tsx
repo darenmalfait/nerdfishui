@@ -46,13 +46,13 @@ export const DrawerContent = React.forwardRef<
 					// default
 					'shadow-outline bg-popover group fixed z-50 flex flex-col',
 					// top
-					'[&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0 [&[data-vaul-drawer-direction=top]]:mb-24 [&[data-vaul-drawer-direction=top]]:rounded-b-[10px]',
+					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0 [&[data-vaul-drawer-direction=top]]:rounded-b-[10px]',
 					// bottom
-					'[&[data-vaul-drawer-direction=bottom]]:inset-x-0 [&[data-vaul-drawer-direction=bottom]]:bottom-0 [&[data-vaul-drawer-direction=bottom]]:mt-24 [&[data-vaul-drawer-direction=bottom]]:rounded-t-[10px]',
+					'[&[data-vaul-drawer-direction=bottom]]:mt-2xl [&[data-vaul-drawer-direction=bottom]]:inset-x-0 [&[data-vaul-drawer-direction=bottom]]:bottom-0 [&[data-vaul-drawer-direction=bottom]]:rounded-t-[10px]',
 					// left
-					'[&[data-vaul-drawer-direction=left]]:inset-y-0 [&[data-vaul-drawer-direction=left]]:left-0 [&[data-vaul-drawer-direction=left]]:mr-24 [&[data-vaul-drawer-direction=left]]:w-auto [&[data-vaul-drawer-direction=left]]:rounded-r-[10px]',
+					'[&[data-vaul-drawer-direction=left]]:mr-2xl [&[data-vaul-drawer-direction=left]]:inset-y-0 [&[data-vaul-drawer-direction=left]]:left-0 [&[data-vaul-drawer-direction=left]]:w-auto [&[data-vaul-drawer-direction=left]]:rounded-r-[10px]',
 					// right
-					'[&[data-vaul-drawer-direction=right]]:inset-y-0 [&[data-vaul-drawer-direction=right]]:right-0 [&[data-vaul-drawer-direction=right]]:ml-24 [&[data-vaul-drawer-direction=right]]:w-auto [&[data-vaul-drawer-direction=right]]:rounded-l-[10px]',
+					'[&[data-vaul-drawer-direction=right]]:ml-2xl [&[data-vaul-drawer-direction=right]]:inset-y-0 [&[data-vaul-drawer-direction=right]]:right-0 [&[data-vaul-drawer-direction=right]]:w-auto [&[data-vaul-drawer-direction=right]]:rounded-l-[10px]',
 					// other
 					className,
 				)}
@@ -60,12 +60,12 @@ export const DrawerContent = React.forwardRef<
 			>
 				<div
 					data-role="drawer-handle"
-					className="bg-inverted/10 mx-auto mb-3 mt-4 hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
+					className="bg-inverted/10 mb-md mt-md mx-auto hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
 				/>
 				{!hideCloseButton ? (
 					<DrawerPrimitive.Close
 						asChild
-						className="absolute right-0 top-0 mr-2 mt-2"
+						className="mr-md mt-md absolute right-0 top-0"
 					>
 						<Button variant="ghost" size="icon" aria-label="Close">
 							<XIcon aria-hidden className="size-4" />
@@ -75,7 +75,7 @@ export const DrawerContent = React.forwardRef<
 				<div className="h-full overflow-y-auto">{children}</div>
 				<div
 					data-role="drawer-handle"
-					className="bg-muted mx-auto mb-3 mt-4 hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
+					className="bg-muted mb-md mt-md mx-auto hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
 				/>
 			</DrawerPrimitive.Content>
 		</DrawerPrimitive.Portal>
@@ -88,7 +88,7 @@ export const DrawerHeader = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
-		className={cx('grid gap-1.5 p-4 text-center sm:text-left', className)}
+		className={cx('gap-sm p-md grid text-center sm:text-left', className)}
 		{...props}
 	/>
 )
@@ -99,7 +99,7 @@ export const DrawerFooter = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
-		className={cx('mt-auto flex flex-col gap-2 p-4', className)}
+		className={cx('gap-sm p-md mt-auto flex flex-col', className)}
 		{...props}
 	/>
 )

@@ -5,7 +5,7 @@ export const Field = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-	return <div ref={ref} className={cx('space-y-1', className)} {...props} />
+	return <div ref={ref} className={cx('space-y-sm', className)} {...props} />
 })
 
 Field.displayName = 'Field'

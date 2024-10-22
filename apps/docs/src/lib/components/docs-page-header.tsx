@@ -42,11 +42,11 @@ export function DocsPageHeader({
 						target="_blank"
 						href={`https://github.com/darenmalfait/nerdfishui/tree/main/packages/${githubPath.package}/src/${githubPath.path}`}
 						className={getButtonClassName({
-							className: 'mt-2',
+							className: 'mr-sm',
 						})}
 						rel="noopener noreferrer"
 					>
-						<Icons.GitHub className="mr-2 size-5" />
+						<Icons.GitHub className="mr-sm size-5" />
 						View on GitHub
 					</Link>
 				</PageActions>

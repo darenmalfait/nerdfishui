@@ -12,7 +12,7 @@ const NavigationMenuViewport = React.forwardRef<
 	<div className={cx('absolute left-0 top-full flex justify-center')}>
 		<NavigationMenuPrimitive.Viewport
 			className={cx(
-				'origin-top-center shadow-outline bg-popover text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 rounded-semi relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
+				'origin-top-center shadow-outline bg-popover text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 rounded-semi mt-sm relative h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
 				className,
 			)}
 			ref={ref}
@@ -48,7 +48,7 @@ export const NavigationMenuList = React.forwardRef<
 	<NavigationMenuPrimitive.List
 		ref={ref}
 		className={cx(
-			'group flex flex-1 list-none items-center justify-center space-x-1',
+			'space-x-sm group flex flex-1 list-none items-center justify-center',
 			className,
 		)}
 		{...props}
@@ -73,7 +73,7 @@ export const NavigationMenuTrigger = React.forwardRef<
 	>
 		{children}{' '}
 		<ChevronDown
-			className="relative top-[1px] ml-1 size-3 transition duration-200 group-data-[state=open]:rotate-180"
+			className="ml-sm relative top-[1px] size-4 transition duration-200 group-data-[state=open]:rotate-180"
 			aria-hidden="true"
 		/>
 	</NavigationMenuPrimitive.Trigger>

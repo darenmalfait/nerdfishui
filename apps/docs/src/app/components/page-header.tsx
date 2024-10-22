@@ -10,7 +10,7 @@ export function PageHeader({
 	return (
 		<section
 			className={cx(
-				'mx-auto flex w-full flex-col items-start gap-2 md:pb-8 lg:pb-10',
+				'gap-sm mx-auto flex w-full flex-col items-start md:pb-8 lg:pb-10',
 				className,
 			)}
 			{...props}
@@ -49,7 +49,7 @@ export function PageActions({
 	return (
 		<div
 			className={cx(
-				'flex w-full items-center justify-start gap-2 py-2',
+				'gap-sm flex w-full items-center justify-start py-2',
 				className,
 			)}
 			{...props}

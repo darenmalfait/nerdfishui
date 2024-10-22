@@ -17,28 +17,29 @@ export function Calendar({
 		<DayPicker
 			showOutsideDays={showOutsideDays}
 			captionLayout="dropdown-buttons"
-			className={cx('p-3', className)}
+			className={className}
 			classNames={{
-				months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
-				month: 'space-y-4',
+				months:
+					'flex flex-col sm:flex-row space-y-md sm:space-x-md sm:space-y-0',
+				month: 'space-y-md',
 
 				caption:
-					'flex justify-center pt-1 relative space-x-2 items-center mx-auto',
-				caption_label: 'flex items-center gap-2 text-sm font-medium',
-				caption_dropdowns: 'flex relative gap-4 [&_.rdp-vhidden]:hidden',
+					'flex justify-center pt-sm relative space-x-sm items-center mx-auto',
+				caption_label: 'flex items-center gap-sm text-sm font-medium',
+				caption_dropdowns: 'flex relative gap-md [&_.rdp-vhidden]:hidden',
 				dropdown_month: 'relative inline-flex items-center',
 				dropdown_year: 'relative inline-flex items-center',
 				dropdown:
 					'absolute inset-0 w-full appearance-none opacity-0 z-10 cursor-pointer',
 
-				nav: 'space-x-4 flex items-center',
+				nav: 'space-x-md flex items-center',
 				nav_button: cx(buttonVariants({ variant: 'outline', size: 'iconSm' })),
 				nav_button_previous: 'absolute left-1',
 				nav_button_next: 'absolute right-1',
 				table: 'w-full border-collapse space-y-1',
 				head_row: 'flex',
 				head_cell: 'text-muted rounded-semi w-9 font-normal text-[0.8rem] ',
-				row: 'flex w-full mt-2',
+				row: 'flex w-full mr-sm',
 				cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-outside)]:bg-muted [&:has([aria-selected])]:bg-muted focus-within:relative focus-within:z-20 [&:has([aria-selected].day-range-end)]:rounded-r-semi [&:has([aria-selected].day-range-start)]:rounded-l-semi [&:has([aria-selected].day-range-middle)]:!rounded-none ',
 				day: cx(
 					buttonVariants({ variant: 'ghost' }),

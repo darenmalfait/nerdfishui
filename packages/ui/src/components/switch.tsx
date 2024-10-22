@@ -4,10 +4,8 @@ import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import * as SwitchPrimitives from '@radix-ui/react-switch'
 import * as React from 'react'
 
-import { inputVariants } from './input'
-
 const switchVariants = cva(
-	[inputVariants(), 'border-2 border-transparent bg-inverted/10'],
+	['focus-visible:outline-active border-2 border-transparent bg-inverted/10'],
 	{
 		variants: {
 			variant: {

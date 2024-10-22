@@ -50,9 +50,7 @@ export const TimePickerSegment = forwardRef<
 
 	return (
 		<div
-			className={cx(
-				'focus-within:bg-inverted/10 text-primary rounded-lg px-2 py-1',
-			)}
+			className={cx('focus-within:bg-inverted/10 text-primary p-xs rounded-lg')}
 		>
 			<input
 				{...getInputProps(segment)}
@@ -90,7 +88,7 @@ export const TimePickerSeparator = forwardRef<
 		<span
 			ref={ref}
 			{...props}
-			className={cx('time-primary py-1 text-sm', className)}
+			className={cx('time-primary py-sm text-sm', className)}
 		/>
 	)
 })
@@ -156,12 +154,12 @@ export const TimePicker = forwardRef<
 					{...props}
 					className={cx(
 						inputVariants({ inputSize, variant }),
-						'flex gap-1',
+						'gap-sm grid',
 						className,
 					)}
 				>
 					{addOnLeading}
-					<span className="flex flex-1 items-center justify-start">
+					<span className="gap-sm flex flex-1 items-center justify-start">
 						{children}
 					</span>
 					<InputIcon icon={icon} variant={variant} />

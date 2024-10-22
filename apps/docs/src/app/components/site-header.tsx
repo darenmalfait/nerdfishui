@@ -8,10 +8,10 @@ import { ThemeToggle } from './theme-toggle'
 export function SiteHeader() {
 	return (
 		<header className="border-muted/20 bg-popover sticky top-0 z-40 w-full border border-b">
-			<div className="container mx-auto flex h-16 max-w-screen-2xl items-center space-x-4 px-4 sm:justify-between sm:space-x-0">
+			<div className="space-x-md container mx-auto flex h-16 max-w-screen-2xl items-center px-4 sm:justify-between sm:space-x-0">
 				<MainNavigation />
-				<div className="flex flex-1 items-center justify-end space-x-4">
-					<nav className="flex items-center space-x-1">
+				<div className="space-x-md flex flex-1 items-center justify-end">
+					<nav className="space-x-sm flex items-center">
 						<ThemeToggle />
 						<Button variant="ghost" size="icon" asChild>
 							<Link

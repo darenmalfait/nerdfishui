@@ -54,7 +54,7 @@ export const DateTimePicker = forwardRef<
 				ref={ref}
 				addOnTrailing={
 					<DatePicker
-						className="p-3"
+						className="p-sm"
 						selected={date}
 						onSelect={setDate}
 						footer={
@@ -67,7 +67,7 @@ export const DateTimePicker = forwardRef<
 										ref={ref}
 										className={cx(
 											inputVariants({ inputSize: 'sm' }),
-											'mx-auto mt-2 inline-flex w-auto items-center gap-1',
+											'mt-sm gap-sm mx-auto inline-flex w-auto items-center',
 										)}
 									>
 										{timeFormat.map((field, i) => (

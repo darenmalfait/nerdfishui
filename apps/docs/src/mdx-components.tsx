@@ -49,19 +49,19 @@ export function useMDXComponents(components: MDXComponents) {
 					target={isExternal ? '_blank' : undefined}
 				>
 					{children}
-					{isExternal ? <Icons.ExternalLink className="ml-1 h-4 w-4" /> : null}
+					{isExternal ? <Icons.ExternalLink className="ml-sm size-4" /> : null}
 				</Link>
 			)
 		},
 		p: Paragraph,
 		ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-			<ul className={cx('my-6 ml-6 list-disc', className)} {...props} />
+			<ul className={cx('my-md ml-md list-disc', className)} {...props} />
 		),
 		ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-			<ol className={cx('my-6 ml-6 list-decimal', className)} {...props} />
+			<ol className={cx('my-md ml-md list-decimal', className)} {...props} />
 		),
 		li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-			<li className={cx('mt-2', className)} {...props} />
+			<li className={cx('mt-sm', className)} {...props} />
 		),
 		blockquote: ({
 			className,
@@ -69,7 +69,7 @@ export function useMDXComponents(components: MDXComponents) {
 		}: React.HTMLAttributes<HTMLElement>) => (
 			<blockquote
 				className={cx(
-					'mt-6 border-l-2 border-gray-300 pl-6 italic text-gray-800 [&>*]:text-gray-600',
+					'mt-md pl-md border-l-2 border-gray-300 italic text-gray-800 [&>*]:text-gray-600',
 					className,
 				)}
 				{...props}
@@ -96,7 +96,7 @@ export function useMDXComponents(components: MDXComponents) {
 			className,
 			...props
 		}: React.HTMLAttributes<HTMLTableElement>) => (
-			<div className="my-6 w-full overflow-y-auto">
+			<div className="my-md w-full overflow-y-auto">
 				<table className={cx('w-full', className)} {...props} />
 			</div>
 		),
@@ -158,7 +158,7 @@ export function useMDXComponents(components: MDXComponents) {
 					{__rawString__ && !__npmCommand__ ? (
 						<CopyButton
 							code={__rawString__}
-							className={cx('top-4', __withMeta__ && 'top-20')}
+							className={cx('top-md', __withMeta__ && 'top-20')}
 						/>
 					) : null}
 					{__npmCommand__ && __yarnCommand__ && __pnpmCommand__ ? (

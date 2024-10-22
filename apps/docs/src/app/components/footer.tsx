@@ -29,7 +29,7 @@ function PageLink({
 			{previous ? (
 				<>
 					<span className="text-sm">Previous</span>
-					<span className="text-accent flex items-center gap-2 text-lg font-bold">
+					<span className="text-accent gap-sm flex items-center text-lg font-bold">
 						<Icons.ChevronLeft className="size-3" />
 						{page.title}
 					</span>
@@ -37,7 +37,7 @@ function PageLink({
 			) : (
 				<>
 					<span className="text-sm">Next</span>
-					<span className="text-accent flex items-center justify-end gap-2 text-right text-lg font-bold">
+					<span className="text-accent gap-sm flex items-center justify-end text-right text-lg font-bold">
 						{page.title}
 						<Icons.ChevronRight className="size-3" />
 					</span>
@@ -75,12 +75,12 @@ function PageNavigation() {
 	return (
 		<div className="flex">
 			{previousPage ? (
-				<div className="flex w-full flex-col items-start gap-3">
+				<div className="gap-md flex w-full flex-col items-start">
 					<PageLink label="Previous" page={previousPage} previous />
 				</div>
 			) : null}
 			{nextPage ? (
-				<div className="ml-auto flex w-full flex-col items-end gap-3 text-right">
+				<div className="gap-md ml-auto flex w-full flex-col items-end text-right">
 					<PageLink label="Next" page={nextPage} />
 				</div>
 			) : null}
@@ -118,11 +118,11 @@ function SocialLink({
 
 function SmallPrint() {
 	return (
-		<div className="flex flex-col items-center justify-between gap-5 border-t border-gray-900/5 pt-8 sm:flex-row dark:border-white/5">
+		<div className="gap-md pt-lg flex flex-col items-center justify-between border-t border-gray-900/5 sm:flex-row dark:border-white/5">
 			<p className="text-muted text-xs">
 				&copy; Copyright {new Date().getFullYear()}. All rights reserved.
 			</p>
-			<div className="text-muted flex gap-4">
+			<div className="text-muted gap-md flex">
 				<SocialLink href="https://twitter.com/darenmalfait" icon={TwitterIcon}>
 					Follow us on Twitter
 				</SocialLink>
@@ -139,7 +139,7 @@ function SmallPrint() {
 
 export function Footer() {
 	return (
-		<footer className="mx-auto space-y-10 pb-4 pt-8">
+		<footer className="pt-lg mx-auto space-y-10 pb-4">
 			<PageNavigation />
 			<SmallPrint />
 		</footer>

@@ -7,7 +7,7 @@ function Preview({ children }: { children: React.ReactNode }) {
 	return (
 		<Resizable direction="horizontal">
 			<ResizablePanel
-				className="shadow-outline rounded-semi min-h-[350px] p-4"
+				className="shadow-outline rounded-semi p-md min-h-[350px]"
 				defaultSize={100}
 			>
 				{children}
@@ -27,12 +27,12 @@ export function ComponentExample({
 	component?: React.ReactNode
 }) {
 	return (
-		<div className={cx('mt-4 flex flex-col gap-4', className)}>
+		<div className={cx('gap-md mt-md flex flex-col', className)}>
 			{Component ? <Preview>{Component}</Preview> : null}
-			<div className="!bg-primary -my-2 p-0">
-				<div className="flex flex-col space-y-4">
+			<div className="!bg-primary -my-sm p-0">
+				<div className="space-y-md flex flex-col">
 					<div className="rounded-semi dark relative w-full [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-						<CopyButton className="top-4" code={children.toString()} />
+						<CopyButton className="top-md" code={children.toString()} />
 						{children}
 					</div>
 				</div>

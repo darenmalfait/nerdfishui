@@ -5,7 +5,7 @@ import { Bold, Italic } from 'lucide-react'
 
 export function ToggleVariantExample() {
 	return (
-		<div className="flex flex-wrap gap-3">
+		<div className="gap-md flex flex-wrap">
 			<Toggle variant="default" aria-label="Toggle italic">
 				<Italic className="size-4" />
 			</Toggle>

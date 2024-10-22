@@ -27,8 +27,8 @@ export function InputAddonExample() {
 	const [value, setValue] = React.useState<string>('')
 
 	return (
-		<div className="flex w-full flex-col gap-6">
-			<div className="flex flex-col gap-4 md:flex-row">
+		<div className="gap-md flex w-full flex-col">
+			<div className="gap-md flex flex-col md:flex-row">
 				<Input
 					name="slug"
 					type="text"
@@ -47,7 +47,7 @@ export function InputAddonExample() {
 					autoComplete="off"
 				/>
 			</div>
-			<div className="flex flex-col gap-4 md:flex-row">
+			<div className="gap-md flex flex-col md:flex-row">
 				<Input
 					name="slug"
 					type="text"
@@ -67,7 +67,7 @@ export function InputAddonExample() {
 					autoComplete="off"
 				/>
 			</div>
-			<div className="flex flex-col gap-4 md:flex-row">
+			<div className="gap-md flex flex-col md:flex-row">
 				<Input
 					name="slug"
 					type="text"

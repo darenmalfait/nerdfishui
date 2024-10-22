@@ -31,7 +31,7 @@ export const GettingStartedNavigation = React.forwardRef<
 					{...item}
 					active={stripPreSlash(pathname) === stripPreSlash(item.href)}
 					title={
-						<span className="flex justify-between gap-2">
+						<span className="gap-sm flex justify-between">
 							{title}
 							<StatusBadge status={status} />
 						</span>
@@ -70,7 +70,7 @@ export const ComponentNavigation = React.forwardRef<
 								{...link}
 								key={title}
 								title={
-									<span className="flex gap-2">
+									<span className="gap-sm flex">
 										{title}
 										<StatusBadge status={status} />
 									</span>
