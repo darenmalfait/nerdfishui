@@ -27,7 +27,7 @@ export const Steps = React.forwardRef<
 			<p className="text-muted text-xs font-medium">
 				{stepLabel(currentStep, maxSteps)}
 			</p>
-			<div className="flex w-full space-x-2 rtl:space-x-reverse">
+			<div className="space-x-sm flex w-full rtl:space-x-reverse">
 				{new Array(maxSteps).fill(0).map((_s, index) => {
 					return index <= currentStep - 1 ? (
 						<div

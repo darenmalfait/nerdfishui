@@ -15,7 +15,7 @@ export const sidebarVariants = cva('flex flex-col border-r border-primary', {
 })
 
 export const sidebarContentVariants: typeof sidebarVariants = cva(
-	'flex flex-col gap-2 px-3',
+	'flex flex-col gap-sm px-md',
 	{
 		variants: {
 			variant: {

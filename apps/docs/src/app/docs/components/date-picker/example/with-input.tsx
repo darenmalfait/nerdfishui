@@ -9,7 +9,7 @@ export function DatePickerWithInputExample() {
 	const [date, setDate] = React.useState<Date | undefined>(new Date())
 
 	return (
-		<div className="flex w-full gap-2">
+		<div className="gap-sm flex w-full">
 			<Field>
 				<Label>
 					Date
@@ -17,7 +17,7 @@ export function DatePickerWithInputExample() {
 				</Label>
 
 				<DatePicker
-					className="p-3"
+					className="p-sm"
 					selected={date}
 					onSelect={setDate}
 					fromYear={addYears(new Date(), -120).getFullYear()}

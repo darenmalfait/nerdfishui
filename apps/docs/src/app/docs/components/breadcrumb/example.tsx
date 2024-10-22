@@ -24,7 +24,7 @@ export function BreadcrumbExample() {
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
 					<DropdownMenu>
-						<DropdownMenuTrigger className="flex items-center gap-1">
+						<DropdownMenuTrigger className="gap-sm flex items-center">
 							<BreadcrumbEllipsis className="size-4" />
 							<span className="sr-only">Toggle menu</span>
 						</DropdownMenuTrigger>

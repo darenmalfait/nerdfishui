@@ -5,7 +5,7 @@ import { Mail } from 'lucide-react'
 
 export function ButtonSizesExample() {
 	return (
-		<div className="flex items-center space-x-2">
+		<div className="space-x-sm flex items-center">
 			<Button variant="accent" size="default">
 				Default
 			</Button>

@@ -74,7 +74,7 @@ export function ProfileForm() {
 		toast.success(
 			<div>
 				<span className="font=bold">You submitted the following values:</span>
-				<pre className="bg-inverted rounded-semi mt-2 w-[340px] p-4">
+				<pre className="bg-inverted rounded-semi mr-sm p-md w-[340px]">
 					<code className="text-inverted">{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			</div>,
@@ -190,7 +190,7 @@ export function ProfileForm() {
 					<Button
 						type="button"
 						variant="outline"
-						className="mt-2"
+						className="mr-sm"
 						onClick={() => append({ value: '' })}
 					>
 						Add URL

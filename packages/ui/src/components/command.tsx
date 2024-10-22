@@ -23,7 +23,7 @@ export const CommandDialog = ({ children, ...props }: DialogProps) => {
 	return (
 		<Dialog {...props}>
 			<DialogContent className="overflow-hidden p-0 shadow-2xl [&_[dialog-overlay]]:bg-red-100">
-				<Command className="[&_[cmdk-group-heading]]:text-primary [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
+				<Command className="[&_[cmdk-group-heading]]:text-primary [&_[cmdk-group]]:px-sm [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
 					{children}
 				</Command>
 			</DialogContent>
@@ -41,7 +41,7 @@ export const CommandInput = React.forwardRef<
 		cmdk-input-wrapper=""
 	>
 		{Icon ? (
-			<Icon className="text-primary mr-2 size-4 shrink-0 opacity-50" />
+			<Icon className="text-primary mr-sm size-4 shrink-0 opacity-50" />
 		) : null}
 
 		<CommandPrimitive.Input
@@ -73,7 +73,7 @@ export const CommandEmpty = React.forwardRef<
 >((props, ref) => (
 	<CommandPrimitive.Empty
 		ref={ref}
-		className="text-primary py-6 text-center text-sm"
+		className="text-primary py-lg text-center text-sm"
 		{...props}
 	/>
 ))
@@ -87,7 +87,7 @@ export const CommandGroup = React.forwardRef<
 	<CommandPrimitive.Group
 		ref={ref}
 		className={cx(
-			'text-primary [&_[cmdk-group-heading]]:text-primary overflow-hidden px-2 py-3 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:pb-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold',
+			'text-primary [&_[cmdk-group-heading]]:text-primary px-sm py-md [&_[cmdk-group-heading]]:px-sm [&_[cmdk-group-heading]]:pb-sm overflow-hidden [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold',
 			className,
 		)}
 		{...props}
@@ -102,7 +102,7 @@ export const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<CommandPrimitive.Separator
 		ref={ref}
-		className={cx('bg-muted -mx-1 h-px', className)}
+		className={cx('bg-muted -mx-xs h-px', className)}
 		{...props}
 	/>
 ))
@@ -115,7 +115,7 @@ export const CommandItem = React.forwardRef<
 	<CommandPrimitive.Item
 		ref={ref}
 		className={cx(
-			'aria-selected:bg-muted data-[disabled=true]:text-muted text-primary relative flex cursor-pointer select-none items-center rounded-lg px-2 py-1.5 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none',
+			'aria-selected:bg-muted data-[disabled=true]:text-muted text-primary px-sm py-sm relative flex cursor-pointer select-none items-center rounded-lg text-sm font-medium outline-none data-[disabled=true]:pointer-events-none',
 			className,
 		)}
 		{...props}

@@ -114,19 +114,19 @@ const madeForYouAlbums: Album[] = [
 function AppDemo() {
 	return (
 		<div className="bg-accent rounded-semi hidden xl:block">
-			<div className="p-8">
+			<div className="p-lg">
 				<div className="bg-primary rounded-semi overflow-hidden shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
-						<aside className="bg-muted pb-12 pr-2">
-							<div className="mb-8 px-8 pt-6">
+						<aside className="bg-muted pb-xl pr-sm">
+							<div className="mb-lg px-lg pt-md">
 								<p className="flex items-center text-2xl font-semibold tracking-tight">
-									<ChefHat className="mr-2" />
+									<ChefHat className="mr-sm" />
 									Chef
 								</p>
 							</div>
-							<div className="space-y-4">
-								<div className="px-3">
-									<NavigationList className="space-y-1">
+							<div className="space-y-md">
+								<div className="px-md">
+									<NavigationList className="space-y-sm">
 										<NavigationListTitle title="Discover" />
 										<NavigationListItem
 											icon={Utensils}
@@ -136,7 +136,7 @@ function AppDemo() {
 										<NavigationListItem icon={GridIcon} title="Browse" />
 									</NavigationList>
 								</div>
-								<div className="px-3 py-2">
+								<div className="py-sm px-3">
 									<NavigationList>
 										<NavigationListTitle title="Library" />
 										<NavigationListItem icon={History} title="History" />
@@ -157,8 +157,8 @@ function AppDemo() {
 										</TabsList>
 									</div>
 									<TabsContent value="recipes" className="shadow-none">
-										<div className="mb-2 flex items-center justify-between">
-											<div className="space-y-1">
+										<div className="mb-sm flex items-center justify-between">
+											<div className="space-y-sm">
 												<H2>Start Cooking</H2>
 												<Paragraph>
 													Delicious picks for you. Updated daily.
@@ -167,7 +167,7 @@ function AppDemo() {
 										</div>
 
 										<div className="relative">
-											<div className="relative flex space-x-4">
+											<div className="space-x-md relative flex">
 												{highlighted.map((album) => (
 													<AlbumArtwork
 														key={album.name}
@@ -177,15 +177,15 @@ function AppDemo() {
 												))}
 											</div>
 										</div>
-										<div className="mb-2 mt-6 space-y-1">
+										<div className="mb-sm mt-md space-y-sm">
 											<H2>Made for You</H2>
 											<Paragraph>
 												Your personal playlists. Updated daily.
 											</Paragraph>
 										</div>
 										<div className="relative">
-											<ScrollArea className="-ml-4">
-												<div className="flex space-x-4 py-2 pb-4 pl-4">
+											<ScrollArea className="-ml-md">
+												<div className="space-x-md py-sm pb-md pl-md flex">
 													{madeForYouAlbums.map((album) => (
 														<AlbumArtwork
 															key={album.name}
@@ -203,8 +203,8 @@ function AppDemo() {
 										value="ingredients"
 										className="h-full min-h-0 flex-col border-none data-[state=active]:flex"
 									>
-										<div className="mb-2 flex min-h-0 items-center justify-between">
-											<div className="space-y-1">
+										<div className="mb-sm flex min-h-0 items-center justify-between">
+											<div className="space-y-sm">
 												<H2>Ingredients</H2>
 												<Paragraph>
 													Find meals based on the ingredients you have.
@@ -213,7 +213,7 @@ function AppDemo() {
 										</div>
 										<div className="border-muted rounded-semi flex h-[450px] min-h-0 shrink-0 items-center justify-center border border-dashed">
 											<div className="mx-auto flex min-h-0 max-w-[420px] flex-col items-center justify-center text-center">
-												<Paragraph className="text-muted mb-4 mt-2 text-sm">
+												<Paragraph className="text-muted mt-sm mb-md text-sm">
 													You have no ingredients added. Add ingredients to
 												</Paragraph>
 												<Button>Add Ingredient</Button>
@@ -253,7 +253,7 @@ function AlbumArtwork({
 					/>
 				</AspectRatio>
 			</div>
-			<div className="space-y-1 text-sm">
+			<div className="space-y-sm text-sm">
 				<H3 className="font-medium leading-none">{album.name}</H3>
 				<Paragraph className="text-muted text-xs">{album.artist}</Paragraph>
 			</div>

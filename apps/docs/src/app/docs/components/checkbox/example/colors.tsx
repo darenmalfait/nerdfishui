@@ -4,7 +4,7 @@ import { Checkbox } from '@nerdfish/ui'
 
 export function CheckboxColorsExample() {
 	return (
-		<div className="items-top flex flex-col space-x-2">
+		<div className="items-top space-x-sm flex flex-col">
 			<Checkbox
 				bgClassName="bg-danger"
 				textClassName="text-danger"

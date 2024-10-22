@@ -5,20 +5,20 @@ import { Logo } from './icons/logo'
 
 export function MainNavigation() {
 	return (
-		<div className="flex items-center gap-6 md:gap-10">
+		<div className="gap-md flex items-center">
 			<Link href="/" aria-label="Home">
-				<div className="flex items-center space-x-3">
+				<div className="space-x-md flex items-center">
 					<Logo className="h-6" />
-					<span className="text-primary ml-2 flex items-center space-x-2 text-lg font-semibold">
+					<span className="text-primary space-x-sm ml-sm flex items-center text-lg font-semibold">
 						Nerdfish
-						<span className="border-muted ml-1 rounded-lg border p-1 text-[8px] leading-snug">
+						<span className="border-muted ml-sm p-sm rounded-lg border text-[8px] leading-snug">
 							UI
 						</span>
 					</span>
 				</div>
 			</Link>
 			{siteConfig.mainNav.length ? (
-				<nav className="hidden gap-6 md:flex">
+				<nav className="gap-md hidden md:flex">
 					{siteConfig.mainNav.map(
 						(item, index) =>
 							item.href && (

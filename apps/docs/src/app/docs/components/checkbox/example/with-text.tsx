@@ -6,7 +6,7 @@ export function CheckboxWithTextExample() {
 	return (
 		<div className="items-top flex flex-col space-y-2">
 			<Field>
-				<Label className="flex items-center gap-2">
+				<Label className="gap-sm flex items-center">
 					<Checkbox name="newsletter" />
 					Subscribe to our newsletter
 				</Label>

@@ -4,7 +4,7 @@ import { Button } from '@nerdfish/ui'
 
 export function ButtonVariantsExample() {
 	return (
-		<div className="flex space-x-2">
+		<div className="space-x-sm flex">
 			<Button variant="default">Default</Button>
 			<Button variant="accent">Nerdfish</Button>
 			<Button variant="secondary">Secondary</Button>

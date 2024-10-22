@@ -27,8 +27,8 @@ export function DialogExample() {
 						you&apos;re done.
 					</DialogDescription>
 				</DialogHeader>
-				<div className="grid gap-4 py-4">
-					<div className="grid grid-cols-4 items-center gap-4">
+				<div className="gap-md py-md grid">
+					<div className="gap-md grid grid-cols-4 items-center">
 						<Label htmlFor="name" className="text-right">
 							Cake Type
 						</Label>
@@ -36,7 +36,7 @@ export function DialogExample() {
 							<Input name="name" value="Chocolate Cake" />
 						</div>
 					</div>
-					<div className="grid grid-cols-4 items-center gap-4">
+					<div className="gap-md grid grid-cols-4 items-center">
 						<Label htmlFor="username" className="text-right">
 							Cake Topper
 						</Label>

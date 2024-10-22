@@ -303,7 +303,7 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 				className={cx(
 					inputVariants({ inputSize, variant }),
 					'flex h-36 content-start items-center justify-start',
-					!!Icon && 'pr-14',
+					!!Icon && 'pr-xl',
 					className,
 				)}
 				style={{
@@ -320,14 +320,14 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 						display: 'contents',
 						flexWrap: 'inherit',
 					}}
-					className="-mt-1"
+					className="-mt-sm"
 				>
 					{emails.map((email: string, index: number) => (
 						<Badge
 							data-tag
 							key={index}
 							variant="default"
-							className="mr-2 mt-1 inline-flex items-center"
+							className="mr-sm mt-xs inline-flex items-center"
 						>
 							<button
 								type="button"
@@ -337,7 +337,7 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 								{email}
 							</button>
 							<button
-								className="hover:bg-primary/10 active:bg-primary/15 ml-2 rounded-lg px-2 py-1"
+								className="hover:bg-primary/10 active:bg-primary/15 ml-sm px-sm py-xs rounded-lg"
 								data-tag-handle
 								onClick={() => removeEmail(index)}
 							>
@@ -352,7 +352,7 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 				<input
 					{...props}
 					style={{ width: inputWidth }}
-					className="mt-1 w-auto border-none bg-transparent py-1 outline-none"
+					className="mt-xs py-xs w-auto border-none bg-transparent outline-none"
 					ref={inputRef}
 					type="text"
 					disabled={disabled}

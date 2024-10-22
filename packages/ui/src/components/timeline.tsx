@@ -106,7 +106,7 @@ export const TimelineSeparator = React.forwardRef<
 			data-slot="separator"
 			className={cx(
 				'flex flex-shrink-0 flex-col items-center',
-				'grid-col-start-1 grid-row-start-1 mx-1 h-full min-w-6 flex-shrink-0 gap-2',
+				'grid-col-start-1 grid-row-start-1 gap-sm mx-1 h-full min-w-6 flex-shrink-0',
 				'before:empty-content before:block before:min-h-[0.5em] before:flex-1',
 				'after:empty-content after:block after:min-h-[0.5em] after:flex-1',
 				'has-[[data-slot=track]:first-of-type]:before:hidden has-[[data-slot=track]:last-of-type]:after:hidden',

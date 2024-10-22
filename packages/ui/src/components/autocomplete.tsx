@@ -116,17 +116,17 @@ export const AutoComplete = React.forwardRef<
 						disabled={disabled}
 					/>
 				</div>
-				<div className="relative mt-2">
+				<div className="mr-sm relative">
 					<CommandList>
 						<div
 							className={cx(
-								'bg-popover text-primary animate-in shadow-outline rounded-semi absolute top-0 z-10 w-full p-2 shadow-md outline-none',
+								'bg-popover text-primary animate-in shadow-outline rounded-semi p-sm absolute top-0 z-10 w-full shadow-md outline-none',
 								isOpen ? 'block' : 'hidden',
 							)}
 						>
 							{isLoading ? (
 								<CommandLoading>
-									<div className="p-1">
+									<div className="p-sm">
 										<Skeleton className="h-8 w-full" />
 									</div>
 								</CommandLoading>
@@ -147,8 +147,8 @@ export const AutoComplete = React.forwardRef<
 												}}
 												onSelect={() => handleSelectOption(option)}
 												className={cx(
-													'flex w-full items-center gap-2',
-													!isSelected ? 'pl-8' : null,
+													'gap-sm flex w-full items-center',
+													!isSelected ? 'pl-lg' : null,
 												)}
 											>
 												{isSelected ? <Check className="w-4" /> : null}

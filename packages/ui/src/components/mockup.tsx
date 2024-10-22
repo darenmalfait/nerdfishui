@@ -8,9 +8,9 @@ export const Mockup = React.forwardRef<
 	return (
 		<div
 			className={cx(
-				'bg-muted text-primary rounded-semi min-w-[18rem] py-5',
-				'before:mb-4 before:block before:rounded-full before:opacity-30 before:shadow-[1.4em_0,2.8em_0,4.2em_0] before:content-none',
-				'[&_pre]:pr-5 [&_pre]:before:mr-[2ch] [&_pre]:before:content-none',
+				'bg-muted text-primary rounded-semi py-md min-w-[18rem]',
+				'before:mb-md before:block before:rounded-full before:opacity-30 before:shadow-[1em_0,2.5em_0,4em_0] before:content-none',
+				'[&_pre]:pr-lg [&_pre]:before:mr-[2ch] [&_pre]:before:content-none',
 				'[&_pre[data-prefix]]:before:w-8 [&_pre[data-prefix]]:before:opacity-50 [&_pre[data-prefix]]:before:content-[attr(data-prefix)]',
 				'[&_code]:!border-none [&_code]:!shadow-[unset]',
 				className,
@@ -32,13 +32,13 @@ export const MockupWindow = React.forwardRef<
 		<div
 			className={cx(
 				'rounded-semi flex flex-col',
-				'before:mb-4 before:aspect-square before:h-3 before:w-3 before:shrink-0 before:self-start before:rounded-full before:opacity-30 before:shadow-[1.4em_0,2.8em_0,4.2em_0] before:rtl:self-end',
+				'before:mb-md before:aspect-square before:h-3 before:w-3 before:shrink-0 before:self-start before:rounded-full before:opacity-30 before:shadow-[1em_0,2.5em_0,4em_0] before:rtl:self-end',
 				className,
 			)}
 			ref={ref}
 			{...props}
 		>
-			<div className="flex flex-col px-5">{children}</div>
+			<div className="px-md flex flex-col">{children}</div>
 		</div>
 	)
 })

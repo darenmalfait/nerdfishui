@@ -4,7 +4,7 @@ import { Button, toast } from '@nerdfish/ui'
 
 export function ToastVariantExample() {
 	return (
-		<div className="flex flex-wrap gap-3 p-8">
+		<div className="gap-md p-lg flex flex-wrap">
 			<Button
 				variant="default"
 				onClick={() => toast.message('default example')}

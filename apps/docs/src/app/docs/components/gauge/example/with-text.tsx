@@ -4,7 +4,7 @@ import { Gauge, GaugeText } from '@nerdfish/ui'
 
 export function GaugeWithTextExample() {
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="gap-md flex flex-col">
 			<Gauge variant="info" value={80}>
 				<GaugeText />
 			</Gauge>

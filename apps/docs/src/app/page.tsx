@@ -21,12 +21,12 @@ export async function generateMetadata(): Promise<Metadata | undefined> {
 
 export default async function HomePage() {
 	return (
-		<main className="relative py-6 lg:gap-10 lg:py-6 xl:grid">
+		<main className="lg:gap-lg py-md relative xl:grid">
 			<div className="mx-auto w-full min-w-0">
-				<div className="relative isolate px-6 pt-14 lg:px-8">
+				<div className="px-md pt-xl lg:px-lg relative isolate">
 					<div
 						aria-hidden="true"
-						className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+						className="-top-3xl absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 					>
 						<div
 							style={{
@@ -36,7 +36,7 @@ export default async function HomePage() {
 							className="from-accent to-accent/50 relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
 						/>
 					</div>
-					<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+					<div className="py-3xl mx-auto max-w-2xl sm:py-48 lg:py-56">
 						<div className="text-center">
 							<H1 variant="primary">Components for your next project</H1>
 							<Paragraph>
@@ -44,7 +44,7 @@ export default async function HomePage() {
 								and TailwindCSS to help streamline proof of concept development
 								and provide visually pleasing and functional components.
 							</Paragraph>
-							<div className="mt-8 justify-center">
+							<div className="mt-lg justify-center">
 								<Button variant="accentuate" asChild>
 									<Link href="/docs">Get started</Link>
 								</Button>

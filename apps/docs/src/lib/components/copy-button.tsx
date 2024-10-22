@@ -38,7 +38,7 @@ export function CopyButton({
 					<Button
 						size="iconSm"
 						{...props}
-						className={cx('absolute right-2 top-2', className)}
+						className={cx('right-sm top-sm absolute', className)}
 						variant={copiedText ? 'success' : 'ghost'}
 						aria-label="copy"
 						onClick={() => handleCopy(code, COPY_TIMOUT)}
@@ -75,7 +75,7 @@ export function CopyNpmCommandButton({
 			<DropdownMenuTrigger asChild>
 				<Button
 					size="iconSm"
-					className={cx('absolute right-2 top-2', className)}
+					className={cx('right-sm top-sm absolute', className)}
 					variant={copiedText ? 'success' : 'ghost'}
 					aria-label="copy"
 					{...props}
@@ -91,19 +91,19 @@ export function CopyNpmCommandButton({
 				<DropdownMenuItem
 					onClick={() => handleCopy(commands.__npmCommand__, COPY_TIMOUT)}
 				>
-					<Icons.Npm className="mr-2 size-4 fill-[#CB3837]" />
+					<Icons.Npm className="mr-sm size-4 fill-[#CB3837]" />
 					<span>npm</span>
 				</DropdownMenuItem>
 				<DropdownMenuItem
 					onClick={() => handleCopy(commands.__yarnCommand__, COPY_TIMOUT)}
 				>
-					<Icons.Yarn className="mr-2 size-4 fill-[#2C8EBB]" />
+					<Icons.Yarn className="mr-sm size-4 fill-[#2C8EBB]" />
 					<span>yarn</span>
 				</DropdownMenuItem>
 				<DropdownMenuItem
 					onClick={() => handleCopy(commands.__pnpmCommand__, COPY_TIMOUT)}
 				>
-					<Icons.Pnpm className="mr-2 size-4 fill-[#F69220]" />
+					<Icons.Pnpm className="mr-sm size-4 fill-[#F69220]" />
 					<span>pnpm</span>
 				</DropdownMenuItem>
 			</DropdownMenuContent>

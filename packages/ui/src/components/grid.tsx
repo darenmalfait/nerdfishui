@@ -16,7 +16,7 @@ export const Grid = React.forwardRef<
 		<Comp
 			ref={ref}
 			className={cx(
-				'grid w-full auto-rows-[22rem] grid-cols-3 gap-4',
+				'gap-md grid w-full auto-rows-[22rem] grid-cols-3',
 				className,
 			)}
 			{...props}

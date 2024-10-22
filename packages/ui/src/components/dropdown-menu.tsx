@@ -21,8 +21,8 @@ export const DropdownMenuSubTrigger = React.forwardRef<
 	<DropdownMenuPrimitive.SubTrigger
 		ref={ref}
 		className={cx(
-			'focus:bg-muted data-[state=open]:bg-muted text-primary rounded-semi flex cursor-default select-none items-center px-2 py-1.5 text-sm font-medium outline-none',
-			inset && 'pl-8',
+			'focus:bg-muted data-[state=open]:bg-muted text-primary rounded-semi px-sm py-sm flex cursor-default select-none items-center text-sm font-medium outline-none',
+			inset && 'pl-lg',
 			className,
 		)}
 		{...props}
@@ -41,7 +41,7 @@ export const DropdownMenuSubContent = React.forwardRef<
 	<DropdownMenuPrimitive.SubContent
 		ref={ref}
 		className={cx(
-			'animate-in slide-in-from-left-1 shadow-outline bg-muted text-inverted/700 shadow-soft-xl rounded-semi z-50 min-w-[8rem] overflow-hidden p-3',
+			'animate-in slide-in-from-left-1 shadow-outline bg-muted text-inverted/700 shadow-soft-xl rounded-semi p-md z-50 min-w-[8rem] overflow-hidden',
 			className,
 		)}
 		{...props}
@@ -59,7 +59,7 @@ export const DropdownMenuContent = React.forwardRef<
 			ref={ref}
 			sideOffset={sideOffset}
 			className={cx(
-				'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 bg-primary text-primary shadow-soft-xl shadow-outline rounded-semi z-50 min-w-[8rem] overflow-hidden p-3',
+				'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 bg-primary text-primary shadow-soft-xl shadow-outline rounded-semi p-md z-50 min-w-[8rem] overflow-hidden',
 				className,
 			)}
 			{...props}
@@ -77,8 +77,8 @@ export const DropdownMenuItem = React.forwardRef<
 	<DropdownMenuPrimitive.Item
 		ref={ref}
 		className={cx(
-			'focus:bg-muted text-primary rounded-semi relative flex cursor-default select-none items-center px-3 py-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
-			inset && 'pl-8',
+			'focus:bg-muted text-primary rounded-semi px-sm py-sm relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			inset && 'pl-lg',
 			className,
 		)}
 		{...props}
@@ -93,13 +93,13 @@ export const DropdownMenuCheckboxItem = React.forwardRef<
 	<DropdownMenuPrimitive.CheckboxItem
 		ref={ref}
 		className={cx(
-			'focus:bg-muted rounded-semi relative flex cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'focus:bg-muted rounded-semi py-sm pl-lg pr-sm relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			className,
 		)}
 		checked={checked}
 		{...props}
 	>
-		<span className="absolute left-2 flex size-3.5 items-center justify-center">
+		<span className="left-sm absolute flex size-4 items-center justify-center">
 			<DropdownMenuPrimitive.ItemIndicator>
 				<Check className="size-4" />
 			</DropdownMenuPrimitive.ItemIndicator>
@@ -117,12 +117,12 @@ export const DropdownMenuRadioItem = React.forwardRef<
 	<DropdownMenuPrimitive.RadioItem
 		ref={ref}
 		className={cx(
-			'focus:bg-muted rounded-semi relative flex cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'focus:bg-muted rounded-semi py-sm pl-lg pr-sm relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			className,
 		)}
 		{...props}
 	>
-		<span className="absolute left-2 flex size-3.5 items-center justify-center">
+		<span className="left-sm absolute flex size-4 items-center justify-center">
 			<DropdownMenuPrimitive.ItemIndicator>
 				<Circle className="size-2 fill-current" />
 			</DropdownMenuPrimitive.ItemIndicator>
@@ -141,8 +141,8 @@ export const DropdownMenuLabel = React.forwardRef<
 	<DropdownMenuPrimitive.Label
 		ref={ref}
 		className={cx(
-			'text-primary px-2 py-1.5 text-sm font-semibold',
-			inset && 'pl-8',
+			'text-primary px-sm py-sm text-sm font-semibold',
+			inset && 'pl-lg',
 			className,
 		)}
 		{...props}
@@ -156,7 +156,7 @@ export const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<DropdownMenuPrimitive.Separator
 		ref={ref}
-		className={cx('bg-muted -mx-1 my-1 h-px', className)}
+		className={cx('bg-muted -mx-xs my-xs h-px', className)}
 		{...props}
 	/>
 ))

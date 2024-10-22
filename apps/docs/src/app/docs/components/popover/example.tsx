@@ -20,15 +20,15 @@ export function PopoverExample() {
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent className="w-80">
-				<div className="grid gap-4">
-					<div className="space-y-2">
+				<div className="gap-md grid">
+					<div className="space-y-sm">
 						<h4 className="font-medium leading-none">Cake Dimensions</h4>
 						<p className="text-sm text-gray-500 dark:text-gray-400">
 							Set the dimensions for the cake layer.
 						</p>
 					</div>
-					<div className="grid gap-4">
-						<div className="grid grid-cols-2 items-center gap-4">
+					<div className="gap-md grid">
+						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="width">Diameter</Label>
 							<Input
 								name="width"
@@ -38,7 +38,7 @@ export function PopoverExample() {
 								inputSize="sm"
 							/>
 						</div>
-						<div className="grid grid-cols-2 items-center gap-4">
+						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="maxWidth">Max. Layers</Label>
 							<Input
 								name="maxWidth"
@@ -48,7 +48,7 @@ export function PopoverExample() {
 								inputSize="sm"
 							/>
 						</div>
-						<div className="grid grid-cols-2 items-center gap-4">
+						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="height">Height</Label>
 							<Input
 								name="height"
@@ -58,7 +58,7 @@ export function PopoverExample() {
 								inputSize="sm"
 							/>
 						</div>
-						<div className="grid grid-cols-2 items-center gap-4">
+						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="maxHeight">Max. Toppings</Label>
 							<Input
 								name="maxHeight"

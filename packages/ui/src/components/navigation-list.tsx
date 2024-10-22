@@ -14,9 +14,9 @@ export const navigationListItemVariants = cva(
 				ghost: 'hover:bg-muted hover:text-primary',
 			},
 			size: {
-				default: 'h-10 px-4 py-2 min-h-10',
-				sm: 'h-9 px-3 min-h-9',
-				lg: 'h-11 px-8 min-h-11',
+				default: 'h-10 px-md py-sm min-h-10',
+				sm: 'h-9 px-md min-h-9',
+				lg: 'h-11 px-lg min-h-11',
 				icon: 'size-10 min-h-10',
 			},
 		},
@@ -50,7 +50,7 @@ function ItemIcon({
 		return <Icon className="size-4" />
 	}
 
-	return <Icon className="mr-2 size-4" />
+	return <Icon className="mr-sm size-4" />
 }
 
 function ItemLabel({
@@ -99,7 +99,7 @@ export function NavigationListItem<T>({
 					</Link>
 				</TooltipTrigger>
 
-				<TooltipContent side="right" className="flex items-center gap-4">
+				<TooltipContent side="right" className="gap-md flex items-center">
 					{title}
 					<ItemLabel label={label} className="text-muted" />
 				</TooltipContent>
@@ -158,7 +158,7 @@ export function NavigationListTitle({
 					</h2>
 				</TooltipTrigger>
 
-				<TooltipContent side="right" className="flex items-center gap-4">
+				<TooltipContent side="right" className="gap-md flex items-center">
 					{title}
 					<ItemLabel label={label} className="text-muted" />
 				</TooltipContent>
@@ -188,7 +188,7 @@ export function NavigationListSection({
 	children: React.ReactNode
 	className?: string
 }) {
-	return <div className={cx('grid gap-1 pb-4', className)}>{children}</div>
+	return <div className={cx('pb-md gap-sm grid', className)}>{children}</div>
 }
 
 export const NavigationList = React.forwardRef<
@@ -200,13 +200,13 @@ export const NavigationList = React.forwardRef<
 			{...props}
 			ref={ref}
 			className={cx(
-				'group flex flex-col gap-4 py-2 data-[collapsed=true]:py-2',
+				'gap-md py-sm data-[collapsed=true]:py-sm group flex flex-col',
 				className,
 			)}
 		>
 			<div
 				className={cx(
-					'grid gap-1 group-[[data-collapsed=true]]:justify-center',
+					'gap-sm grid group-[[data-collapsed=true]]:justify-center',
 					className,
 				)}
 			>

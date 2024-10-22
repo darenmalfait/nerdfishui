@@ -20,7 +20,7 @@ export const InputOTP = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<OTPInput
 		ref={ref}
-		containerClassName={cx('flex items-center gap-2', className)}
+		containerClassName={cx('gap-md flex items-center', className)}
 		{...props}
 	/>
 ))
@@ -32,7 +32,7 @@ export const InputOTPGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cx('flex items-center gap-1', className)}
+		className={cx('gap-sm flex items-center', className)}
 		{...props}
 	/>
 ))

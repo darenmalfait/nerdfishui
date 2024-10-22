@@ -30,7 +30,7 @@ export const ComponentNavigation = React.forwardRef<
 					{...item}
 					active={segment === stripPreSlash(item.href)}
 					title={
-						<span className="flex justify-between gap-2">
+						<span className="gap-sm flex justify-between">
 							{title}
 							<StatusBadge status={status} />
 						</span>

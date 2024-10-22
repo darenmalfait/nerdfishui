@@ -61,7 +61,7 @@ const ListItem = React.forwardRef<
 				<a
 					ref={ref}
 					className={cx(
-						'hover:bg-muted rounded-semi focus:bg-muted block select-none space-y-1 p-3 leading-none no-underline outline-none transition-colors',
+						'hover:bg-muted rounded-semi focus:bg-muted space-y-sm p-sm block select-none leading-none no-underline outline-none transition-colors',
 						className,
 					)}
 					{...props}
@@ -84,7 +84,7 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+						<ul className="gap-md p-md grid md:w-[400px] lg:w-[500px]">
 							<ListItem href="/recipes" title="Introduction">
 								Discover a variety of delicious recipes to try at home.
 							</ListItem>
@@ -100,7 +100,7 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Recipes</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+						<ul className="gap-md p-md grid w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
 							{recipes.map((recipe) => (
 								<ListItem
 									key={recipe.title}

@@ -5,7 +5,7 @@ import { Bold, Italic, Underline } from 'lucide-react'
 
 export function ToggleGroupExample() {
 	return (
-		<div className="flex flex-col gap-2">
+		<div className="gap-sm flex flex-col">
 			<ToggleGroup type="single">
 				<ToggleGroupItem value="a">A</ToggleGroupItem>
 				<ToggleGroupItem value="b">B</ToggleGroupItem>

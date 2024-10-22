@@ -63,7 +63,7 @@ export function Highlight({
 									)}
 								>
 									{showLines ? (
-										<span className="mr-6 text-xs opacity-30">{i + 1}</span>
+										<span className="mr-md text-xs opacity-30">{i + 1}</span>
 									) : null}
 									{line.map((token, key) => (
 										<span {...getTokenProps({ token, key })} key={key} />

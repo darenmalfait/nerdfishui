@@ -5,6 +5,7 @@ import { animation } from './animation'
 import { base } from './base'
 import { colors } from './colors'
 import { font } from './font'
+import { spacing } from './spacing'
 import { typography } from './typography'
 import { utilities } from './utilities'
 
@@ -28,6 +29,7 @@ const config: Partial<Config> = {
 			...font,
 			...typography,
 			...colors,
+			...spacing,
 			boxShadow: {
 				highlight: '0 0 1rem -0.15rem hsl(var(--colors-nerdfish))',
 				'soft-xxs': '0 1px 5px 1px #ddd',
@@ -54,11 +56,6 @@ const config: Partial<Config> = {
 			},
 			borderRadius: {
 				semi: '0.875rem',
-			},
-			spacing: {
-				'5vw': '5vw', // pull featured sections and navbar in the margin
-				'8vw': '8vw', // positions hero img inside the margin
-				'10vw': '10vw', // page margin
 			},
 			zIndex: {
 				'-1': '-10',

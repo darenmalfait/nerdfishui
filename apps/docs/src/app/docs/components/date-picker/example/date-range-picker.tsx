@@ -12,7 +12,7 @@ export function DateRangePickerExample() {
 
 	return (
 		<DateRangePicker
-			className="p-3"
+			className="p-sm"
 			selected={date}
 			onSelect={setDate}
 			fromYear={addYears(new Date(), -3).getFullYear()}

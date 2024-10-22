@@ -11,7 +11,7 @@ export const RadioGroup = React.forwardRef<
 >(({ className, ...props }, ref) => {
 	return (
 		<RadioGroupPrimitive.Root
-			className={cx('grid gap-2', className)}
+			className={cx('gap-sm grid', className)}
 			{...props}
 			ref={ref}
 		/>
@@ -37,7 +37,7 @@ export function RadioGroupField({
 				'[&>[data-slot=control]]:col-start-1 [&>[data-slot=control]]:row-start-1 [&>[data-slot=control]]:justify-self-center',
 
 				// Label layout
-				'[&>[data-slot=label]]:col-start-2 [&>[data-slot=label]]:row-start-1 [&>[data-slot=label]]:justify-self-start [&>[data-slot=label]]:pl-4',
+				'[&>[data-slot=label]]:pl-md [&>[data-slot=label]]:col-start-2 [&>[data-slot=label]]:row-start-1 [&>[data-slot=label]]:justify-self-start',
 
 				// Description layout
 				'[&>[data-slot=description]]:col-start-2 [&>[data-slot=description]]:row-start-2',

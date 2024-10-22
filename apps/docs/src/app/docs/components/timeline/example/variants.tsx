@@ -9,7 +9,7 @@ import {
 
 export function TimelineVariantsExample() {
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="gap-md flex flex-col">
 			<h3 className="text-lg font-bold">Outline</h3>
 			<Timeline variant="outline">
 				<TimelineItem>

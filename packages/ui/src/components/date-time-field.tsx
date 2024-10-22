@@ -53,7 +53,7 @@ export const DateTimeSegment = forwardRef<
 
 	return (
 		<div
-			className={cx('focus-within:bg-inverted/10 text-primary rounded-lg p-1')}
+			className={cx('focus-within:bg-inverted/10 text-primary p-xs rounded-lg')}
 		>
 			<input
 				{...getInputProps(segment)}
@@ -92,10 +92,7 @@ export const DateTimeSeparator = forwardRef<
 		<span
 			ref={ref}
 			{...props}
-			className={cx(
-				'text-muted align-top align-middle tabular-nums',
-				className,
-			)}
+			className={cx('text-muted align-middle tabular-nums', className)}
 		/>
 	)
 })
@@ -168,12 +165,12 @@ export const DateTimeField = forwardRef<
 					{...props}
 					className={cx(
 						inputVariants({ inputSize, variant }),
-						'flex gap-1',
+						'gap-sm flex',
 						className,
 					)}
 				>
 					{addOnLeading}
-					<span className="flex flex-1 items-center justify-start gap-1">
+					<span className="gap-sm flex flex-1 items-center justify-start">
 						{children}
 					</span>
 					<InputIcon icon={icon} variant={variant} />

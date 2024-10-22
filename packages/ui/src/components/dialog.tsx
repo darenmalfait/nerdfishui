@@ -54,7 +54,7 @@ export const DialogContent = React.forwardRef<
 		<DialogPrimitive.Content
 			ref={ref}
 			className={cx(
-				'shadow-outline bg-popover animate-in data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 rounded-b-semi sm:rounded-semi fixed z-50 grid w-full gap-4 p-4 sm:max-w-lg',
+				'shadow-outline bg-popover animate-in data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 rounded-b-semi sm:rounded-semi gap-md p-md fixed z-50 grid w-full sm:max-w-lg',
 				className,
 			)}
 			{...props}
@@ -64,9 +64,9 @@ export const DialogContent = React.forwardRef<
 				<Button
 					variant="ghost"
 					size="iconSm"
-					className="absolute right-4 top-4"
+					className="right-md top-md absolute"
 				>
-					<X className="size-3" />
+					<X className="size-4" />
 					<span className="sr-only">Close</span>
 				</Button>
 			</DialogPrimitive.Close>
@@ -81,7 +81,7 @@ export const DialogHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
 		className={cx(
-			'flex flex-col space-y-1.5 text-center sm:text-left',
+			'space-y-sm flex flex-col text-center sm:text-left',
 			className,
 		)}
 		{...props}
@@ -95,7 +95,7 @@ export const DialogFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
 		className={cx(
-			'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
+			'sm:space-x-sm flex flex-col-reverse sm:flex-row sm:justify-end',
 			className,
 		)}
 		{...props}

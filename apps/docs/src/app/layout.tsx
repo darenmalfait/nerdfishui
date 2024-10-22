@@ -30,7 +30,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 						<MobileNavProvider>
 							<main className={`${GeistSans.variable} bg-primary font-sans`}>
 								<SiteHeader />
-								<div className="container mx-auto w-full max-w-screen-2xl px-4 pt-2">
+								<div className="px-md pt-sm container mx-auto w-full max-w-screen-2xl">
 									{children}
 								</div>
 							</main>

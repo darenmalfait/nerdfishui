@@ -60,8 +60,8 @@ export function DrawerResponsiveExample() {
 						Make changes to your profile here. Click save when you&apos;re done.
 					</DrawerDescription>
 				</DrawerHeader>
-				<ProfileForm className="px-4" />
-				<DrawerFooter className="pt-2">
+				<ProfileForm className="px-md" />
+				<DrawerFooter className="pt-sm">
 					<DrawerClose asChild>
 						<Button variant="outline">Cancel</Button>
 					</DrawerClose>
@@ -73,8 +73,8 @@ export function DrawerResponsiveExample() {
 
 function ProfileForm({ className }: React.ComponentProps<'form'>) {
 	return (
-		<form className={cx('grid items-start gap-4', className)}>
-			<div className="grid gap-2">
+		<form className={cx('gap-md grid items-start', className)}>
+			<div className="gap-sm grid">
 				<Field>
 					<Label htmlFor="email">Email</Label>
 					<Input
@@ -85,7 +85,7 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
 					/>
 				</Field>
 			</div>
-			<div className="grid gap-2">
+			<div className="gap-sm grid">
 				<Field>
 					<Label htmlFor="username">Username</Label>
 					<Input name="username" id="username" defaultValue="@nerdfish" />

@@ -6,7 +6,7 @@ import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'text-md text-primary focus-outline bg-muted border-muted group relative block w-full rounded-xl border text-left font-bold outline-none',
+		'text-md text-primary p-md focus-outline bg-muted border-muted group relative block w-full rounded-xl border text-left font-bold outline-none',
 		// placeholder
 		'placeholder:text-muted',
 		// disabled
@@ -15,9 +15,9 @@ export const inputVariants = cva(
 	{
 		variants: {
 			inputSize: {
-				sm: 'p-2 text-sm',
-				md: 'px-4 py-3 text-base',
-				lg: 'px-8 py-5 text-lg',
+				sm: 'text-xs',
+				md: 'text-base',
+				lg: 'text-lg',
 			},
 			variant: {
 				error: 'animate-shake border-danger bg-danger-muted/50 text-danger',
@@ -60,7 +60,7 @@ export const InputIcon = React.forwardRef<
 			width="20px"
 			height="20px"
 			className={cx(
-				'absolute right-5 top-0 z-10 flex h-full items-center justify-center p-0',
+				'right-md absolute top-0 z-10 flex h-full items-center justify-center p-0',
 				variant === 'error' && 'text-danger',
 			)}
 		/>
@@ -93,7 +93,7 @@ export const Input = React.forwardRef<
 			<div
 				className={cx(
 					baseClassName,
-					'relative m-0 flex w-full items-center p-0 shadow-sm',
+					'relative m-0 flex w-full items-center !p-0 shadow-sm',
 					className,
 				)}
 			>
@@ -105,8 +105,8 @@ export const Input = React.forwardRef<
 					className={cx(
 						baseClassName,
 						'border-transparent bg-transparent',
-						!!addOnLeading && '!pl-2',
-						!!Icon && 'pr-14',
+						!!addOnLeading && '!pl-sm',
+						!!Icon && 'pr-xl',
 					)}
 					ref={ref as React.ForwardedRef<HTMLInputElement>}
 				/>

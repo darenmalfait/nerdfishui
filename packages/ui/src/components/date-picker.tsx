@@ -32,7 +32,7 @@ function Presets({
 					<button
 						key={value}
 						type="button"
-						className="text-primary/50 hover:text-primary/70 m-1 inline-flex text-sm"
+						className="text-primary/50 hover:text-primary/70 m-sm inline-flex text-sm"
 						onClick={() => onChange?.(addDays(new Date(), parseInt(value, 10)))}
 					>
 						<Badge>{label}</Badge>
@@ -63,7 +63,7 @@ const DatePickerTrigger = React.forwardRef<
 				className,
 			)}
 		>
-			<CalendarIcon className="mr-2 size-4" />
+			<CalendarIcon className="mr-sm size-4" />
 			<span>{selected ? format(selected, 'PPP') : placeholder}</span>
 		</PopoverTrigger>
 	)
@@ -108,7 +108,7 @@ export function DatePicker({
 					toYear={toYear}
 					onSelect={onSelect}
 				/>
-				<Presets presets={presets} className="py-3" onChange={onSelect} />
+				<Presets presets={presets} className="py-md" onChange={onSelect} />
 			</PopoverContent>
 		</Popover>
 	)
@@ -137,7 +137,7 @@ export function DateRangePickerTrigger({
 				className,
 			)}
 		>
-			<CalendarIcon className="mr-2 size-4" />
+			<CalendarIcon className="mr-sm size-4" />
 			<span>
 				{selected?.from ? (
 					selected.to ? (
@@ -172,7 +172,7 @@ export function DateRangePicker({
 	placeholder?: string
 }) {
 	return (
-		<div className={cx('grid gap-2', className)}>
+		<div className={cx('gap-sm grid', className)}>
 			<Popover>
 				<PopoverTrigger>
 					<DateRangePickerTrigger

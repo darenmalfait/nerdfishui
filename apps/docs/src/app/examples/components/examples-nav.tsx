@@ -29,7 +29,7 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
 		<div className="relative">
 			<ScrollArea className="max-w-[600px] lg:max-w-none">
 				<div
-					className={cx('mb-4 flex items-center border-b', className)}
+					className={cx('mb-md flex items-center border-b', className)}
 					{...props}
 				>
 					{examples.map((example, index) => (
@@ -73,7 +73,7 @@ export function ExampleCodeLink({ pathname }: ExampleCodeLinkProps) {
 			className="absolute right-0 top-0 hidden items-center rounded-[0.5rem] text-sm font-medium md:flex"
 		>
 			View code
-			<Icons.ArrowRight className="ml-1 h-4 w-4" />
+			<Icons.ArrowRight className="ml-sm size-4" />
 		</Link>
 	)
 }

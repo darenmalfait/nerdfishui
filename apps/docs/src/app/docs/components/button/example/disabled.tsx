@@ -4,7 +4,7 @@ import { Button } from '@nerdfish/ui'
 
 export function ButtonDisabledExample() {
 	return (
-		<div className="flex space-x-2">
+		<div className="space-x-sm flex">
 			<Button disabled variant="default">
 				Default
 			</Button>
