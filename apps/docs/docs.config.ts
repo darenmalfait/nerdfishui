@@ -18,6 +18,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Installation', href: '/docs/installation/' },
 				{ title: 'Utilities', href: '/docs/utilities/' },
 				{ title: 'Layout', href: '/docs/layout/' },
+				{ title: 'Colors', href: '/docs/colors/' },
 				{ title: 'Typography', href: '/docs/typography/' },
 			],
 		},

@@ -2,7 +2,6 @@ export const colors = {
 	colors: {
 		transparent: 'transparent',
 		current: 'currentColor',
-		nerdfish: 'hsl(var(--colors-nerdfish) / <alpha-value>)',
 		accent: 'hsl(var(--colors-accent) / <alpha-value>)',
 		primary: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
 		muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
