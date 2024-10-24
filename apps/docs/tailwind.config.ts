@@ -3,7 +3,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme'
 export default {
 	content: [
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
-		'src/**/*.{ts,tsx}',
+		'src/**/*.{ts,tsx,mdx}',
 		'../../node_modules/@nerdfish/**/*.{js,ts,jsx,tsx}',
 		'../../packages/ui/src/**/*.{ts,tsx}',
 	],
