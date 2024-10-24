@@ -54,14 +54,14 @@
     "cmdk": "^1.0.0",
     "date-fns": "^4.1.0",
     "input-otp": "^1.2.4",
-    "lucide-react": "^0.447.0",
-    "react-aria": "^3.35.0",
+    "lucide-react": "^0.453.0",
+    "react-aria": "^3.35.1",
     "react-day-picker": "^8.10.1",
     "react-hook-form": "^7.53.0",
     "react-resizable-panels": "^2.1.4",
     "react-stately": "^3.33.0",
     "sonner": "^1.5.0",
-    "timescape": "^0.5.2",
+    "timescape": "^0.6.1",
     "vaul": "^0.9.9"
   },
   "devDependencies": {
@@ -71,7 +71,7 @@
     "eslint": "^9.11.1",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
     "react": ">=18.3.1",
