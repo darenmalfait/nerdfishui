@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.3.1
+
+### Patch Changes
+
+- improve color pallette
+
 ## 2.3.0
 
 ### Minor Changes
