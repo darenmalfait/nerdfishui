@@ -65,7 +65,7 @@ export function Checkbox({
 				<Icon
 					className={cx(
 						textClassName,
-						'p-sm pointer-events-none h-full w-full',
+						'p-xs pointer-events-none h-full w-full',
 					)}
 				/>
 			</span>
