@@ -139,6 +139,14 @@ export const animation = {
 				height: '0%',
 			},
 		},
+		marquee: {
+			from: { transform: 'translateX(0)' },
+			to: { transform: 'translateX(calc(-100% - 1rem))' },
+		},
+		'marquee-vertical': {
+			from: { transform: 'translateY(0)' },
+			to: { transform: 'translateY(calc(-100% - 1rem))' },
+		},
 	},
 	animation: {
 		'accordion-down': 'accordion-down 0.2s ease-out',
@@ -150,5 +158,7 @@ export const animation = {
 		squeeze: 'squeeze 1s ease-out',
 		loader: 'loader 2s linear infinite',
 		'loader-inner': 'loader-inner 2s linear infinite',
+		marquee: 'marquee 40s linear infinite',
+		'marquee-vertical': 'marquee-vertical 40s linear infinite',
 	},
 }
