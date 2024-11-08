@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.4.0
+
+### Minor Changes
+
+- add `Marquee` component
+
 ## 7.3.6
 
 ### Patch Changes
