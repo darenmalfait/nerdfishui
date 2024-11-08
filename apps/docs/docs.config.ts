@@ -107,6 +107,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 					status: 'experimental',
 				},
 				{ title: 'HoverCard', href: '/docs/components/hover-card/' },
+				{ title: 'Marquee', href: '/docs/components/marquee/' },
 				{
 					title: 'Mockup',
 					href: '/docs/components/mockup/',
