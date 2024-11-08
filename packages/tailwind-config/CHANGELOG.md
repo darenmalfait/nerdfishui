@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.5.0
+
+### Minor Changes
+
+- add new marquee animation
+
 ## 3.4.0
 
 ### Minor Changes
