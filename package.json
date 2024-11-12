@@ -42,7 +42,7 @@
     "@changesets/cli": "^2.27.9",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@nerdfish/config": "^1.0.8",
+    "@nerdfish/config": "^1.0.9",
     "eslint": "^9.13.0",
     "husky": "^9.1.6",
     "prettier": "^3.3.3",
