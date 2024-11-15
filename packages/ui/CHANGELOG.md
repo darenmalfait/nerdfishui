@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.4.1
+
+### Patch Changes
+
+- increase h1 title
+
+- improve button sizing
+
 ## 7.4.0
 
 ### Minor Changes
