@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.4.2
+
+### Patch Changes
+
+- fix max size for h1 heading
+
 ## 7.4.1
 
 ### Patch Changes
