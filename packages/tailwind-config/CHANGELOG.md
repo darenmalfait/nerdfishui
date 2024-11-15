@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.5.1
+
+### Patch Changes
+
+- increase h1 title
+
 ## 3.5.0
 
 ### Minor Changes
