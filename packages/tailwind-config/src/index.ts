@@ -23,9 +23,6 @@ const pluginConfig: PluginCreator = ({ addBase, addUtilities, addVariant }) => {
 const config: Partial<Config> = {
 	theme: {
 		extend: {
-			fontSize: {
-				'2xs': ['0.75rem', { lineHeight: '1.25rem' }],
-			},
 			...font,
 			...typography,
 			...colors,

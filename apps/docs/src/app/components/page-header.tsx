@@ -21,10 +21,9 @@ export function PageHeader({
 }
 
 export function PageHeaderHeading({
-	className,
 	...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
-	return <H1 className={cx('tracking-tight', className)} {...props} />
+	return <H1 {...props} />
 }
 
 export function PageHeaderDescription({
