@@ -6,7 +6,7 @@ export const base = {
 	// not .not-prose prose
 
 	'.prose h1:not(:where([class~="not-prose"] *))': {
-		'@apply scroll-m-20 font-title text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]':
+		'@applytext-4xl lg:text-[6.5vw] 2xl:text[8.125rem] leading-[1] font-title scroll-m-20 font-extrabold':
 			{},
 	},
 	'.prose h2:not(:where([class~="not-prose"] *))': {
