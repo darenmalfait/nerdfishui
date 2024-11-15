@@ -35,7 +35,7 @@ export const titleVariants = cva('', {
 	variants: {
 		size: {
 			// Keep this the same to the prose styles in base.css (tailwind-config)
-			h1: 'text-4xl lg:text-[6.5vw] 2xl:text[8.125rem] leading-[1] font-title scroll-m-20 font-extrabold',
+			h1: 'text-4xl lg:text-[6.5vw] 2xl:text-[8.125rem] leading-[1] font-title scroll-m-20 font-extrabold',
 			h2: 'font-title mt-lg scroll-m-20 text-3xl font-extrabold tracking-tight first:mt-0 lg:text-4xl',
 			h3: 'mt-lg scroll-m-20 text-2xl font-semibold tracking-tight first:mt-0',
 			h4: 'mt-lg scroll-m-20 text-xl font-semibold tracking-tight first:mt-0',
