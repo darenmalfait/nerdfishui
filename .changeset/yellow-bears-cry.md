@@ -3,4 +3,4 @@
 '@nerdfish/theme': minor
 ---
 
-adjust color pallette
+adjust color palette
