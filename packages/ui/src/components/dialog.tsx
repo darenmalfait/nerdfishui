@@ -2,7 +2,7 @@
 
 import { cx } from '@nerdfish/utils'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { X } from 'lucide-react'
+import { XIcon } from 'lucide-react'
 import * as React from 'react'
 
 import { Button } from './button'
@@ -64,9 +64,9 @@ export const DialogContent = React.forwardRef<
 				<Button
 					variant="ghost"
 					size="iconSm"
-					className="right-md top-md absolute"
+					className="right-sm top-sm absolute"
 				>
-					<X className="size-4" />
+					<XIcon aria-hidden className="size-4" />
 					<span className="sr-only">Close</span>
 				</Button>
 			</DialogPrimitive.Close>

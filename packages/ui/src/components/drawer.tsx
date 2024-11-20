@@ -68,7 +68,7 @@ export const DrawerContent = React.forwardRef<
 						</Button>
 					</DrawerPrimitive.Close>
 				) : null}
-				<div className="relative max-h-[95vh] overflow-y-auto">
+				<div className="relative max-h-[100vh] overflow-y-auto">
 					<div
 						data-role="drawer-handle"
 						className="bg-muted mb-md mt-md top-md sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
