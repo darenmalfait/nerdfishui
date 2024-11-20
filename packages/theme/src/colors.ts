@@ -3,18 +3,19 @@ import { type Colors } from './types'
 export const light: Colors = {
 	accent: '17.85 64.75% 52.16%',
 	background: {
-		primary: '0 0% 100%',
-		muted: '200 29% 94%',
-		inverted: '220 6.67% 8.82%',
+		primary: '0 0% 97.25%', // #F8F8F8
+		secondary: '0 0% 100%', //#fff
+		muted: '0 0% 87.06%', // #DEDEDE
+		inverted: '0 0% 13.33%', //#222
 	},
 	foreground: {
-		primary: '220 6.67% 8.82%',
-		muted: '227 8% 35.29%',
-		inverted: '0 0% 98%',
+		primary: '0 0% 13.33%', // #222
+		muted: '0 0% 55.29%', // #8D8D8D
+		inverted: '0 0% 100%', // #FFF
 	},
 	border: {
-		primary: '0 0% 97%',
-		muted: '240 4% 85.9%',
+		primary: '0 0% 13.33%', // #222
+		muted: '0 0% 87.06%', // #DEDEDE
 	},
 	info: {
 		100: '212 100% 97%',
@@ -34,26 +35,26 @@ export const light: Colors = {
 	success: {
 		100: '152 100% 97%',
 		300: '148 97% 88%',
-		500: '131 87% 26%',
+		500: '131.74 29.11% 30.98%',
 	},
 }
 
 export const dark: typeof light = {
 	...light,
-	primary: '0 0% 0%',
 	background: {
-		primary: '220 6.67% 8.82%',
-		muted: '220 3% 17%',
-		inverted: '0 0% 100%',
+		primary: '240 1.69% 11.57%', // #1D1D1E
+		secondary: '0 0% 0%', // #000
+		muted: '210 2.5% 15.69%', // #272829
+		inverted: '0 0% 97.25%', // #F8F8F8
 	},
 	foreground: {
-		primary: '0 0% 98%',
-		muted: '240 5% 65%',
-		inverted: '0 0% 2%',
+		primary: '0 0% 100%', // #fff
+		muted: '0 0% 55.29%', // #8D8D8D
+		inverted: '0 0% 13.33%', // #222
 	},
 	border: {
-		primary: '240 4% 16%',
-		muted: '240 5% 65%',
+		primary: '0 0% 97.25%', // #F8F8F8
+		muted: '210 2.5% 15.69%', // #272829
 	},
 	info: {
 		100: '183 90% 8%',

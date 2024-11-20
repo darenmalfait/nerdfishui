@@ -24,6 +24,7 @@ export const colors = {
 	},
 	backgroundColor: {
 		primary: 'hsl(var(--colors-background-primary) / <alpha-value>)',
+		secondary: 'hsl(var(--colors-background-secondary) / <alpha-value>)',
 		muted: 'hsl(var(--colors-background-muted) / <alpha-value>)',
 		inverted: 'hsl(var(--colors-background-inverted) / <alpha-value>)',
 		success: {
