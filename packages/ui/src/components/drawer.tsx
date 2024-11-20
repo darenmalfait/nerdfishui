@@ -44,7 +44,7 @@ export const DrawerContent = React.forwardRef<
 				ref={ref}
 				className={cx(
 					// default
-					'shadow-outline bg-popover group fixed z-50 flex flex-col',
+					'shadow-outline bg-primary group fixed z-50 flex flex-col',
 					// top
 					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0 [&[data-vaul-drawer-direction=top]]:rounded-b-[10px]',
 					// bottom
@@ -58,25 +58,27 @@ export const DrawerContent = React.forwardRef<
 				)}
 				{...props}
 			>
-				<div
-					data-role="drawer-handle"
-					className="bg-inverted/10 mb-md mt-md mx-auto hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
-				/>
 				{!hideCloseButton ? (
 					<DrawerPrimitive.Close
 						asChild
-						className="mr-md mt-md absolute right-0 top-0"
+						className="mr-md mt-md absolute right-0 top-0 z-30"
 					>
 						<Button variant="ghost" size="icon" aria-label="Close">
 							<XIcon aria-hidden className="size-4" />
 						</Button>
 					</DrawerPrimitive.Close>
 				) : null}
-				<div className="h-full overflow-y-auto">{children}</div>
-				<div
-					data-role="drawer-handle"
-					className="bg-muted mb-md mt-md mx-auto hidden h-2 w-[100px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
-				/>
+				<div className="relative max-h-[95vh] overflow-y-auto">
+					<div
+						data-role="drawer-handle"
+						className="bg-muted mb-md mt-md top-md sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
+					/>
+					{children}
+					<div
+						data-role="drawer-handle"
+						className="bg-muted mb-md mt-md bottom-md sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
+					/>
+				</div>
 			</DrawerPrimitive.Content>
 		</DrawerPrimitive.Portal>
 	)
