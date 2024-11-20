@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.5.0
+
+### Minor Changes
+
+- add `input-size` prop to `Switch`
+
 ## 7.4.3
 
 ### Patch Changes

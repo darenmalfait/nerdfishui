@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.6.0
+
+### Minor Changes
+
+- adjust color palette
+
 ## 3.5.1
 
 ### Patch Changes
