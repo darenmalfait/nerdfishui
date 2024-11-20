@@ -25,7 +25,7 @@ export const CardHeader = React.forwardRef<
 	<div
 		ref={ref}
 		className={cx(
-			'bg-primary border-b-solid rounded-t-semi p-md space-y-sm mb-0 flex flex-col border-b-0 border-b-transparent pb-0',
+			'border-b-solid rounded-t-semi p-md space-y-sm mb-0 flex flex-col border-b-0 border-b-transparent bg-transparent pb-0',
 			className,
 		)}
 		{...props}
