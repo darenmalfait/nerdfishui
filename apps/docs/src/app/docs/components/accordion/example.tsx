@@ -25,7 +25,9 @@ export function AccordionExample() {
 				</AccordionContent>
 			</AccordionItem>
 			<AccordionItem value="item-3">
-				<AccordionTrigger>Salad</AccordionTrigger>
+				<AccordionTrigger>
+					A Very Long Title About Salads And Their Various Ingredients
+				</AccordionTrigger>
 				<AccordionContent>
 					The beautiful range of Apple Naturalé that has an exciting mix of
 					natural ingredients. With the Goodness of 100% Natural Ingredients
