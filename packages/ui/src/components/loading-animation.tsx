@@ -69,7 +69,7 @@ export const LoadingAnimation = React.forwardRef<
 	React.ComponentPropsWithoutRef<(typeof LoaderMap)[keyof typeof LoaderMap]> & {
 		variant?: keyof typeof LoaderMap
 	}
->(function LoadingAnimation({ className, variant = 'fish', ...props }, ref) {
+>(function LoadingAnimation({ className, variant = 'square', ...props }, ref) {
 	const Loader = LoaderMap[variant] as any
 
 	return <Loader ref={ref} className={cx('size-10', className)} {...props} />
