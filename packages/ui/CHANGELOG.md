@@ -1,5 +1,19 @@
 # @nerdfish/ui
 
+## 7.4.3
+
+### Patch Changes
+
+- set `AccordionTrigger` to align text left by default
+
+- make the default loading animation the square variant
+
+- move close button more to the corner in `Dialog`
+
+- `Drawer` now scrolls when overflowing
+
+- set `CardHeader` background to transparent
+
 ## 7.4.2
 
 ### Patch Changes
