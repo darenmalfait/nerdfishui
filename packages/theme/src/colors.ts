@@ -42,7 +42,7 @@ export const light: Colors = {
 export const dark: typeof light = {
 	...light,
 	background: {
-		primary: '240 1.69% 11.57%', // #1D1D1E
+		primary: '0 0% 7.06%', // #121212
 		secondary: '0 0% 0%', // #000
 		muted: '210 2.5% 15.69%', // #272829
 		inverted: '0 0% 97.25%', // #F8F8F8
