@@ -74,7 +74,7 @@ export function ProfileForm() {
 		toast.success(
 			<div>
 				<span className="font=bold">You submitted the following values:</span>
-				<pre className="bg-inverted rounded-semi mr-sm p-md w-[340px]">
+				<pre className="bg-inverted rounded-large mr-sm p-md w-[340px]">
 					<code className="text-inverted">{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			</div>,

@@ -63,7 +63,7 @@ function CardContent({
 				</Button>
 			</div>
 
-			<div className="group-hover:bg-popover rounded-semi pointer-events-none absolute inset-0 transform-gpu overflow-hidden transition-all duration-300" />
+			<div className="group-hover:bg-popover rounded-large pointer-events-none absolute inset-0 transform-gpu overflow-hidden transition-all duration-300" />
 		</>
 	)
 }

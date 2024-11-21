@@ -53,6 +53,7 @@ const config: Partial<Config> = {
 			},
 			borderRadius: {
 				semi: '0.875rem',
+				large: '1.5rem',
 			},
 			zIndex: {
 				'-1': '-10',

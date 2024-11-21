@@ -2,7 +2,7 @@ import { cx } from '@nerdfish/utils'
 
 const variantStyles = {
 	small: '',
-	medium: 'rounded-semi px-1.5 ring-1 ring-inset',
+	medium: 'rounded-large px-1.5 ring-1 ring-inset',
 }
 
 const colorStyles = {

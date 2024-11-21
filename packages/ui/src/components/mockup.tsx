@@ -8,7 +8,7 @@ export const Mockup = React.forwardRef<
 	return (
 		<div
 			className={cx(
-				'bg-muted text-primary rounded-semi py-md min-w-[18rem]',
+				'bg-muted text-primary rounded-large py-md min-w-[18rem]',
 				'before:mb-md before:block before:rounded-full before:opacity-30 before:shadow-[1em_0,2.5em_0,4em_0] before:content-none',
 				'[&_pre]:pr-lg [&_pre]:before:mr-[2ch] [&_pre]:before:content-none',
 				'[&_pre[data-prefix]]:before:w-8 [&_pre[data-prefix]]:before:opacity-50 [&_pre[data-prefix]]:before:content-[attr(data-prefix)]',
@@ -31,7 +31,7 @@ export const MockupWindow = React.forwardRef<
 	return (
 		<div
 			className={cx(
-				'rounded-semi flex flex-col',
+				'rounded-large flex flex-col',
 				'before:mb-md before:aspect-square before:h-3 before:w-3 before:shrink-0 before:self-start before:rounded-full before:opacity-30 before:shadow-[1em_0,2.5em_0,4em_0] before:rtl:self-end',
 				className,
 			)}
