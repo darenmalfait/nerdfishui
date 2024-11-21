@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.7.1
+
+### Patch Changes
+
+- increase roundness of large
+
 ## 3.7.0
 
 ### Minor Changes
