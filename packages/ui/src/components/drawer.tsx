@@ -46,13 +46,13 @@ export const DrawerContent = React.forwardRef<
 					// default
 					'shadow-outline bg-primary group fixed z-50 flex flex-col',
 					// top
-					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0 [&[data-vaul-drawer-direction=top]]:rounded-b-[10px]',
+					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:rounded-b-large [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0',
 					// bottom
-					'[&[data-vaul-drawer-direction=bottom]]:mt-2xl [&[data-vaul-drawer-direction=bottom]]:inset-x-0 [&[data-vaul-drawer-direction=bottom]]:bottom-0 [&[data-vaul-drawer-direction=bottom]]:rounded-t-[10px]',
+					'[&[data-vaul-drawer-direction=bottom]]:mt-2xl [&[data-vaul-drawer-direction=bottom]]:rounded-t-large [&[data-vaul-drawer-direction=bottom]]:inset-x-0 [&[data-vaul-drawer-direction=bottom]]:bottom-0',
 					// left
-					'[&[data-vaul-drawer-direction=left]]:mr-2xl [&[data-vaul-drawer-direction=left]]:inset-y-0 [&[data-vaul-drawer-direction=left]]:left-0 [&[data-vaul-drawer-direction=left]]:w-auto [&[data-vaul-drawer-direction=left]]:rounded-r-[10px]',
+					'[&[data-vaul-drawer-direction=left]]:mr-2xl [&[data-vaul-drawer-direction=left]]:rounded-r-semi [&[data-vaul-drawer-direction=left]]:inset-y-0 [&[data-vaul-drawer-direction=left]]:left-0 [&[data-vaul-drawer-direction=left]]:w-auto',
 					// right
-					'[&[data-vaul-drawer-direction=right]]:ml-2xl [&[data-vaul-drawer-direction=right]]:inset-y-0 [&[data-vaul-drawer-direction=right]]:right-0 [&[data-vaul-drawer-direction=right]]:w-auto [&[data-vaul-drawer-direction=right]]:rounded-l-[10px]',
+					'[&[data-vaul-drawer-direction=right]]:ml-2xl [&[data-vaul-drawer-direction=right]]:rounded-l-semi [&[data-vaul-drawer-direction=right]]:inset-y-0 [&[data-vaul-drawer-direction=right]]:right-0 [&[data-vaul-drawer-direction=right]]:w-auto',
 					// other
 					className,
 				)}
