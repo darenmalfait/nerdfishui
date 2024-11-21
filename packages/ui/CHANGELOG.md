@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.6.1
+
+### Patch Changes
+
+- adjust corners in `Drawer`
+
 ## 7.6.0
 
 ### Minor Changes
