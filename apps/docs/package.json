@@ -22,7 +22,7 @@
     "@hookform/resolvers": "^3.9.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@nerdfish/theme": "workspace:^2.4.0",
+    "@nerdfish/theme": "workspace:^2.4.1",
     "@nerdfish/ui": "workspace:^7.5.0",
     "@nerdfish/utils": "workspace:^2.0.0",
     "@next/env": "^14.2.17",

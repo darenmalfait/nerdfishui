@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.4.1
+
+### Patch Changes
+
+- tweak status colors
+
 ## 2.4.0
 
 ### Minor Changes
