@@ -58,14 +58,12 @@ const Title = React.forwardRef<
 	React.ComponentPropsWithRef<'h1'> &
 		VariantProps<typeof titleVariants> & {
 			as?: React.ElementType
-			blurredClassName?: string
 		}
 >(function Title(
 	{
 		className,
 		as,
 		size,
-		blurredClassName,
 		variant = size === 'h1' || size === 'h2' ? 'accent' : 'primary',
 		...props
 	},
@@ -86,19 +84,6 @@ const Title = React.forwardRef<
 				className,
 			)}
 		>
-			{size === 'h1' || size === 'h2' ? (
-				<div
-					className={cx(
-						'-z-1 absolute -left-8 h-12 w-32 rounded-full opacity-50 blur-3xl',
-						{
-							'bg-accent': variant === 'accent' && !blurredClassName,
-							'bg-inverted': variant === 'primary' && !blurredClassName,
-							'bg-inverted/80': variant === 'secondary' && !blurredClassName,
-							blurredClassName,
-						},
-					)}
-				/>
-			) : null}
 			{props.children}
 		</Tag>
 	)
