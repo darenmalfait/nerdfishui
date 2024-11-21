@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.6.0
+
+### Minor Changes
+
+- add new rounded-large option
+
+- remove blur from titles
+
 ## 7.5.0
 
 ### Minor Changes
