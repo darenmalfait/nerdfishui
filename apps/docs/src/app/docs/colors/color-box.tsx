@@ -3,15 +3,15 @@ import * as React from 'react'
 
 export function ColorBox({
 	className,
-	children,
+	value,
 }: {
 	className?: string
-	children: React.ReactNode
+	value: string
 }) {
 	return (
 		<div>
 			<div className={cx('rounded-semi p-sm inline-block w-auto', className)}>
-				{children}
+				<span className="text-current">{value}</span>
 			</div>
 		</div>
 	)
