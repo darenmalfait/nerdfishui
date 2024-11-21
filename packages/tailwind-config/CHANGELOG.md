@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.7.0
+
+### Minor Changes
+
+- add new rounded-large option
+
 ## 3.6.0
 
 ### Minor Changes
