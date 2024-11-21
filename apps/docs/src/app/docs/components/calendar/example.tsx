@@ -12,7 +12,7 @@ export function CalendarExample() {
 			mode="single"
 			selected={date}
 			onSelect={setDate}
-			className="shadow-outline rounded-semi"
+			className="shadow-outline rounded-large"
 			fromYear={currentYear - 10}
 			toYear={currentYear + 10}
 		/>
