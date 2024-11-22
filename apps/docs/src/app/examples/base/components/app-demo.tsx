@@ -119,7 +119,7 @@ function AppDemo() {
 					<div className="grid grid-cols-4 xl:grid-cols-5">
 						<aside className="bg-muted pb-xl pr-sm">
 							<div className="mb-lg px-lg pt-md">
-								<p className="flex items-center text-2xl font-semibold tracking-tight">
+								<p className="flex items-center text-2xl font-semibold">
 									<ChefHat className="mr-sm" />
 									Chef
 								</p>

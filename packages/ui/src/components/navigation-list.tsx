@@ -170,7 +170,7 @@ export function NavigationListTitle({
 		<h2
 			className={cx(
 				navigationListItemVariants({ variant: 'ghost', size: 'sm' }),
-				'justify-start text-lg font-semibold tracking-tight hover:bg-transparent',
+				'justify-start text-lg font-semibold hover:bg-transparent',
 				className,
 			)}
 		>
