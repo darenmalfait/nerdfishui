@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.6.2
+
+### Patch Changes
+
+- reduce H2 size on mobile
+
+- Improve design of `Slider` and add more variants
+
 ## 7.6.1
 
 ### Patch Changes
