@@ -14,15 +14,15 @@ const variants = [
 ] as const
 
 export function SliderVariantExample({
-  min = 0,
-  max = 100,
-  step = 1,
-  defaultValue = [50],
+	min = 0,
+	max = 100,
+	step = 1,
+	defaultValue = [50],
 }: {
-  min?: number
-  max?: number
-  step?: number
-  defaultValue?: number[]
+	min?: number
+	max?: number
+	step?: number
+	defaultValue?: number[]
 }) {
 	return (
 		<div className="gap-lg flex w-full flex-col">
