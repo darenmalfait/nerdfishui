@@ -1,45 +1,99 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import * as React from 'react'
+import { useFocusRing, mergeProps } from 'react-aria'
+
+export const sliderVariants = cva('', {
+	variants: {
+		variant: {
+			default: 'text-current',
+			muted: 'text-muted',
+			primary: 'text-primary',
+			secondary: 'text-secondary',
+			danger: 'text-danger',
+			success: 'text-success',
+			warning: 'text-warning',
+			info: 'text-info',
+			accent: 'text-accent',
+		},
+		inputSize: {
+			sm: '[&_[data-slot=track]]:h-[16px] [&_[data-slot=thumb]]:after:size-2 [&_[data-slot=thumb]]:size-[16px]',
+			md: '[&_[data-slot=track]]:h-[24px] [&_[data-slot=thumb]]:after:size-4 [&_[data-slot=thumb]]:size-[24px]',
+			lg: '[&_[data-slot=track]]:h-[32px] [&_[data-slot=thumb]]:after:size-6 [&_[data-slot=thumb]]:size-[32px]',
+			xl: '[&_[data-slot=track]]:h-[40px] [&_[data-slot=thumb]]:after:size-8 [&_[data-slot=thumb]]:size-[40px]',
+		},
+	},
+
+	defaultVariants: {
+		inputSize: 'md',
+		variant: 'accent',
+	},
+})
 
 export const SliderTrack = SliderPrimitive.Track
 export const SliderRange = SliderPrimitive.Range
 
 export const Slider = React.forwardRef<
 	React.ElementRef<typeof SliderPrimitive.Root>,
-	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, children, ...props }, ref) => (
-	<SliderPrimitive.Root
-		ref={ref}
-		className={cx(
-			'relative flex w-full touch-none select-none items-center',
-			className,
-		)}
-		{...props}
-	>
-		<SliderPrimitive.Track className="bg-inverted/10 dark:bg-inverted/20 relative h-2 w-full grow overflow-hidden rounded-full">
-			<SliderPrimitive.Range className="bg-inverted absolute h-full" />
-		</SliderPrimitive.Track>
-		{children}
-	</SliderPrimitive.Root>
-))
+	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> &
+		VariantProps<typeof sliderVariants>
+>(({ className, children, inputSize, variant, ...props }, ref) => {
+	const value = props.value ?? props.defaultValue
+	const hasSingleThumb = Array.isArray(value) ? value.length === 1 : false
+
+	return (
+		<SliderPrimitive.Root
+			ref={ref}
+			className={cx(
+				sliderVariants({ inputSize, variant }),
+				'gap-sm relative flex w-full items-center',
+				className,
+			)}
+			{...props}
+		>
+			<SliderPrimitive.Track
+				data-slot="track"
+				className={cx(
+					'bg-muted relative my-[calc((theme(spacing.7)-theme(spacing.5))/2)] flex w-full rounded-full border-x-[calc(theme(spacing.7)/2)] border-x-transparent border-s-current',
+					!hasSingleThumb && 'border-s-muted',
+					hasSingleThumb && 'border-s-current',
+				)}
+			>
+				<SliderPrimitive.Range
+					data-slot="range"
+					className="absolute h-full bg-current"
+				/>
+			</SliderPrimitive.Track>
+			{children}
+		</SliderPrimitive.Root>
+	)
+})
 Slider.displayName = SliderPrimitive.Root.displayName
 
 export const SliderThumb = React.forwardRef<
 	React.ElementRef<typeof SliderPrimitive.Thumb>,
 	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Thumb>
->((props, ref) => (
-	<SliderPrimitive.Thumb
-		ref={ref}
-		{...props}
-		className={cx(
-			'border-muted bg-primary focus-outline dark:ring-offset-inverted block h-4 w-4 rounded-full border-2 ring-offset-gray-100 transition-colors disabled:pointer-events-none disabled:opacity-50',
-			props.className,
-		)}
-	/>
-))
+>((props, ref) => {
+	// focus-visible is broken in radix slider, so we are doing a custom implementation
+	const { isFocusVisible, focusProps } = useFocusRing()
+
+	return (
+		<SliderPrimitive.Thumb
+			data-slot="thumb"
+			ref={ref}
+			{...mergeProps(focusProps, props)}
+			data-focus-visible={isFocusVisible}
+			className={cx(
+				'top-1/2 z-10 flex cursor-grab items-center justify-center rounded-full border-0 border-current bg-current outline-none outline-2 outline-offset-2 ring-transparent before:absolute before:h-11 before:w-11 before:rounded-full active:cursor-grabbing data-[focus-visible=true]:outline-current',
+				// The fill of the thumb
+				'after:shadow-small after:bg-primary after:rounded-full after:transition-all active:after:scale-75 motion-reduce:after:transition-none',
+				props.className,
+			)}
+		/>
+	)
+})
 SliderThumb.displayName = SliderPrimitive.Thumb.displayName
 
 export type SliderProps = React.ComponentPropsWithoutRef<typeof Slider>
