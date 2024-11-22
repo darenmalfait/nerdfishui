@@ -40,8 +40,8 @@ export const Slider = React.forwardRef<
 	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> &
 		VariantProps<typeof sliderVariants>
 >(({ className, children, inputSize, variant, ...props }, ref) => {
-	const value = props.value ?? props.defaultValue
-	const hasSingleThumb = Array.isArray(value) ? value.length === 1 : false
+	const value = props.value ?? props.defaultValue ?? []
+	const hasSingleThumb = Array.isArray(value) ? value.length <= 1 : false
 
 	return (
 		<SliderPrimitive.Root

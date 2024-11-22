@@ -1,9 +1,9 @@
 'use client'
 
-import { Slider, SliderThumb, type SliderProps } from '@nerdfish/ui'
+import { Slider, SliderThumb } from '@nerdfish/ui'
 import * as React from 'react'
 
-export function SliderCustomExample({ className, ...props }: SliderProps) {
+export function SliderCustomExample() {
 	return (
 		<div className="gap-lg flex w-full flex-col">
 			<Slider
@@ -11,7 +11,6 @@ export function SliderCustomExample({ className, ...props }: SliderProps) {
 				max={100}
 				step={10}
 				className="text-green-500"
-				{...props}
 			>
 				<SliderThumb />
 			</Slider>

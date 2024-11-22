@@ -1,68 +1,26 @@
 'use client'
 
-import { Slider, SliderThumb, type SliderProps } from '@nerdfish/ui'
+import { Slider, SliderThumb } from '@nerdfish/ui'
 import * as React from 'react'
 
-export function SliderVariantExample({ className, ...props }: SliderProps) {
+const variants = [
+	'default',
+	'muted',
+	'accent',
+	'danger',
+	'success',
+	'warning',
+	'info',
+] as const
+
+export function SliderVariantExample() {
 	return (
 		<div className="gap-lg flex w-full flex-col">
-			<Slider
-				variant="default"
-				defaultValue={[50]}
-				max={100}
-				step={10}
-				{...props}
-			>
-				<SliderThumb />
-			</Slider>
-			<Slider
-				variant="muted"
-				defaultValue={[50]}
-				max={100}
-				step={10}
-				{...props}
-			>
-				<SliderThumb />
-			</Slider>
-			<Slider
-				variant="accent"
-				defaultValue={[50]}
-				max={100}
-				step={10}
-				{...props}
-			>
-				<SliderThumb />
-			</Slider>
-			<Slider
-				variant="danger"
-				defaultValue={[50]}
-				max={100}
-				step={10}
-				{...props}
-			>
-				<SliderThumb />
-			</Slider>
-			<Slider
-				variant="success"
-				defaultValue={[50]}
-				max={100}
-				step={10}
-				{...props}
-			>
-				<SliderThumb />
-			</Slider>
-			<Slider
-				variant="warning"
-				defaultValue={[50]}
-				max={100}
-				step={10}
-				{...props}
-			>
-				<SliderThumb />
-			</Slider>
-			<Slider variant="info" defaultValue={[50]} max={100} step={10} {...props}>
-				<SliderThumb />
-			</Slider>
+			{variants.map((variant) => (
+				<Slider key={variant} variant={variant}>
+					<SliderThumb />
+				</Slider>
+			))}
 		</div>
 	)
 }
