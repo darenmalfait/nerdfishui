@@ -38,7 +38,6 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.457.0",
     "markdown-wasm": "^1.2.0",
-    "match-sorter": "^7.0.0",
     "mdast-util-to-string": "^4.0.0",
     "mdx-annotations": "^0.1.4",
     "next": "^14.2.17",
