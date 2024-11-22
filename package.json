@@ -29,7 +29,7 @@
   "dependencies": {
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-node-resolve": "^15.3.0",
-    "@rollup/plugin-replace": "^5.0.7",
+    "@rollup/plugin-replace": "^6.0.1",
     "rollup": "^4.27.0",
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-preserve-directives": "^0.4.0",
