@@ -123,9 +123,6 @@ importers:
       markdown-wasm:
         specifier: ^1.2.0
         version: 1.2.0
-      match-sorter:
-        specifier: ^7.0.0
-        version: 7.0.0
       mdast-util-to-string:
         specifier: ^4.0.0
         version: 4.0.0
@@ -6169,9 +6166,6 @@ packages:
     resolution: {integrity: sha512-BDEZIcrBSnooL0zC72Yt3z1HhJiCq+2pMnHKVDeYN/cilCrz3KrpqKPm4ZOfWCoDolRl4QyKQpfRlQWF6PqnjQ==}
     engines: {node: '>=0.10.0'}
 
-  match-sorter@7.0.0:
-    resolution: {integrity: sha512-J1370vFVhvn81QrUYv54y3IZbsaG1X4otKSwtGZbyfZxgWgjVxdRkASY+uaT2IlQUGeWFBEPbGFVKv1DNnHYKA==}
-
   matched@0.4.4:
     resolution: {integrity: sha512-zpasnbB5vQkvb0nfcKV0zEoGgMtV7atlWR1Vk3E8tEKh6EicMseKtVV+5vc+zsZwvDlcNMKlKK/CVOEeAalYRQ==}
     engines: {node: '>= 0.12.0'}
@@ -7285,9 +7279,6 @@ packages:
   remote-origin-url@0.5.3:
     resolution: {integrity: sha512-crQ7Xk1m/F2IiwBx5oTqk/c0hjoumrEz+a36+ZoVupskQRE/q7pAwHKsTNeiZ31sbSTELvVlVv4h1W0Xo5szKg==}
     engines: {node: '>= 0.8.0'}
-
-  remove-accents@0.5.0:
-    resolution: {integrity: sha512-8g3/Otx1eJaVD12e31UbJj1YzdtVvzH85HV7t+9MJYk/u3XmkOUJ5Ys9wQrf9PCPK8+xn4ymzqYCiZl6QWKn+A==}
 
   remove-trailing-separator@1.1.0:
     resolution: {integrity: sha512-/hS+Y0u3aOfIETiaiirUFwDBDzmXPvO+jAfKTitUngIPzdKc6Z0LoFjM/CK5PL4C+eKwHohlHAb6H0VFfmmUsw==}
@@ -13842,7 +13833,7 @@ snapshots:
       debug: 4.3.6
       enhanced-resolve: 5.15.0
       eslint: 9.14.0(jiti@1.21.0)
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.14.0(jiti@1.21.0))
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@9.14.0(jiti@1.21.0)))(eslint@9.14.0(jiti@1.21.0))
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-typescript@3.5.5)(eslint@9.14.0(jiti@1.21.0))
       get-tsconfig: 4.7.5
       globby: 13.1.3
@@ -13855,7 +13846,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.14.0(jiti@1.21.0)):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@9.14.0(jiti@1.21.0)))(eslint@9.14.0(jiti@1.21.0)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -13893,7 +13884,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.14.0(jiti@1.21.0)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.14.0(jiti@1.21.0))
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.12.1(eslint@9.14.0(jiti@1.21.0))(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@9.14.0(jiti@1.21.0)))(eslint@9.14.0(jiti@1.21.0))
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -15633,11 +15624,6 @@ snapshots:
       isobject: 3.0.1
       micromatch: 2.3.11
 
-  match-sorter@7.0.0:
-    dependencies:
-      '@babel/runtime': 7.24.5
-      remove-accents: 0.5.0
-
   matched@0.4.4:
     dependencies:
       arr-union: 3.1.0
@@ -17197,8 +17183,6 @@ snapshots:
   remote-origin-url@0.5.3:
     dependencies:
       parse-git-config: 1.1.1
-
-  remove-accents@0.5.0: {}
 
   remove-trailing-separator@1.1.0: {}
 
