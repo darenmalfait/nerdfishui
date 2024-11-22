@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.6.3
+
+### Patch Changes
+
+- tweak typography across library
+
+- change border to semi in `Alert`
+
 ## 7.6.2
 
 ### Patch Changes
