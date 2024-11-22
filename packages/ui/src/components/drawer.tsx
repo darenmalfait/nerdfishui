@@ -113,10 +113,7 @@ export const DrawerTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<DrawerPrimitive.Title
 		ref={ref}
-		className={cx(
-			'text-lg font-semibold leading-none tracking-tight',
-			className,
-		)}
+		className={cx('text-lg font-semibold leading-none', className)}
 		{...props}
 	/>
 ))

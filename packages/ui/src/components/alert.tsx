@@ -40,7 +40,7 @@ export const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<h5
 		ref={ref}
-		className={cx('mb-sm font-semibold leading-none tracking-tight', className)}
+		className={cx('mb-sm font-semibold leading-none', className)}
 		{...props}
 	/>
 ))

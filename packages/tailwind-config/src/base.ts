@@ -14,12 +14,10 @@ export const base = {
 			{},
 	},
 	'.prose h3:not(:where([class~="not-prose"] *))': {
-		'@apply mt-md first:mt-0 scroll-m-20 text-2xl font-semibold tracking-tight':
-			{},
+		'@apply mt-md first:mt-0 scroll-m-20 text-2xl font-semibold': {},
 	},
 	'.prose h4:not(:where([class~="not-prose"] *))': {
-		'@apply mt-md first:mt-0 scroll-m-20 text-xl font-semibold tracking-tight':
-			{},
+		'@apply mt-md first:mt-0 scroll-m-20 text-xl font-semibold': {},
 	},
 	'.prose p:not(:where([class~="not-prose"] *))': {
 		'@apply leading-7 mt-md first:mt-0': {},

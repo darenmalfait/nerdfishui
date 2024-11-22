@@ -168,10 +168,7 @@ export const DropdownMenuShortcut = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
 	return (
 		<span
-			className={cx(
-				'text-primary/50 ml-auto text-xs tracking-widest',
-				className,
-			)}
+			className={cx('text-primary/50 ml-auto text-xs', className)}
 			{...props}
 		/>
 	)
