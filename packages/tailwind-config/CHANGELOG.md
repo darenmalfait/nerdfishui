@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.7.2
+
+### Patch Changes
+
+- tweak typography across library
+
 ## 3.7.1
 
 ### Patch Changes
