@@ -17,15 +17,15 @@
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0"
   },
   "dependencies": {
-    "tailwindcss": "3.4.15"
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@nerdfish/theme": "workspace:^*",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
-    "eslint": "9.14.0",
-    "react": "18.3.1",
-    "typescript": "5.6.3"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^9.14.0",
+    "react": "^18.3.1",
+    "typescript": "^5.6.3"
   },
   "publishConfig": {
     "access": "public"
