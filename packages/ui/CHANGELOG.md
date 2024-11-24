@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.6.4
+
+### Patch Changes
+
+- add viewportClassname to navigation-menu
+
 ## 7.6.3
 
 ### Patch Changes
