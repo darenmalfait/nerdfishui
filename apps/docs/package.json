@@ -30,7 +30,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.15",
-    "@vercel/og": "^0.6.3",
+    "@vercel/og": "^0.6.4",
     "acorn": "^8.14.0",
     "date-fns": "^4.1.0",
     "framer-motion": "^11.11.17",
