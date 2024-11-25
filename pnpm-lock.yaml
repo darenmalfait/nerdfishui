@@ -79,7 +79,7 @@ importers:
         specifier: workspace:^2.4.1
         version: link:../../packages/theme
       '@nerdfish/ui':
-        specifier: workspace:^7.6.3
+        specifier: workspace:^7.6.4
         version: link:../../packages/ui
       '@nerdfish/utils':
         specifier: workspace:^2.0.0
