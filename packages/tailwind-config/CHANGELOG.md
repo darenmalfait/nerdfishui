@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.8.0
+
+### Minor Changes
+
+- New theme options
+
 ## 3.7.2
 
 ### Patch Changes
