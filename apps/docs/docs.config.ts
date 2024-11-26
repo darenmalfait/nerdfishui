@@ -52,6 +52,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 					status: 'new',
 				},
 				{ title: 'InputOTP', href: '/docs/components/input-otp/' },
+				{ title: 'Phone Input', href: '/docs/components/phone-input/' },
 				{ title: 'Multi Email', href: '/docs/components/multi-email/' },
 				{ title: 'Multi Select', href: '/docs/components/multi-select/' },
 				{ title: 'Radio Group', href: '/docs/components/radio-group/' },
