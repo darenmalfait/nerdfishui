@@ -145,7 +145,7 @@ const InputComponent = React.forwardRef<
 		<Input
 			variant={variant}
 			inputSize={inputSize}
-			className={cx('rounded-e-xl rounded-s-none', className)}
+			className={cx('flex-1 rounded-e-xl rounded-s-none', className)}
 			{...props}
 			ref={ref}
 		/>
