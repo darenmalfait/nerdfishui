@@ -89,7 +89,7 @@ export const Input = React.forwardRef<
 	const baseClassName = inputVariants({ inputSize, variant })
 
 	return (
-		<div className="flex flex-nowrap items-center space-x-2">
+		<div className="flex flex-1 flex-nowrap items-center space-x-2">
 			<div
 				className={cx(
 					baseClassName,
