@@ -160,7 +160,7 @@ export const AutoComplete = React.forwardRef<
 							) : null}
 
 							{!isLoading ? (
-								<CommandEmpty className="select-none rounded-sm px-2 py-3 text-center text-sm">
+								<CommandEmpty className="rounded-semi select-none px-2 py-3 text-center text-sm">
 									<EmptyState>
 										<EmptyStateDescription>
 											{emptyMessage}

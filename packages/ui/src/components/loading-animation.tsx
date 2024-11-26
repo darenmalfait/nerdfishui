@@ -16,7 +16,7 @@ const Fish = React.forwardRef<
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 912 421"
 				className={cx(
-					'direction-reverse animate-squeeze repeat-infinite fill-current [animation-duration:2s]',
+					'direction-reverse animate-squeeze repeat-infinite rounded-semi fill-current [animation-duration:2s]',
 					className,
 				)}
 				{...props}
@@ -47,7 +47,7 @@ const Square = React.forwardRef<
 	return (
 		<div
 			className={cx(
-				'animate-loader border-muted relative rounded-sm border-4',
+				'animate-loader border-muted rounded-semi relative overflow-hidden border-4',
 				className,
 			)}
 			ref={ref}
