@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.7.1
+
+### Patch Changes
+
+- make the input take the remaining place in `PhoneInput`
+
 ## 7.7.0
 
 ### Minor Changes
