@@ -40,7 +40,7 @@ function FlagComponent({ country, countryName }: RPNInput.FlagProps) {
 	const Flag = flags[country]
 
 	return (
-		<span className="rounded-semi flex h-4 w-6 overflow-hidden bg-transparent">
+		<span className="rounded-container flex h-4 w-6 overflow-hidden bg-transparent">
 			{Flag ? <Flag title={countryName} /> : null}
 		</span>
 	)
@@ -83,7 +83,7 @@ function CountrySelect({
 	const { variant, inputSize } = usePhoneInput()
 	const value = selectedCountry
 		? `+${RPNInput.getCountryCallingCode(selectedCountry)}`
-		: ''
+		: '+00'
 
 	return (
 		<Popover>
@@ -96,7 +96,11 @@ function CountrySelect({
 					)}
 					disabled={disabled}
 				>
-					<span className="min-w-[3ch]">{value}</span>
+					<span
+						className={cx('min-w-[3ch]', { 'text-muted': !selectedCountry })}
+					>
+						{value}
+					</span>
 					<ChevronsUpDown
 						className={cx(
 							'-mr-2 size-4 opacity-50',

@@ -32,3 +32,5 @@ export interface Breakpoints {
 	xxl: string
 	wd: string
 }
+
+export type Shape = RecursiveObject<Record<string, string>>

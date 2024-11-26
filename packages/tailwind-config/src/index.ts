@@ -52,6 +52,9 @@ const config: Partial<Config> = {
 				wd: breakpoints.wd,
 			},
 			borderRadius: {
+				container: 'var(--shape-rounded-container)',
+				base: 'var(--shape-rounded-base)',
+				// TODO: DEPRECATED
 				semi: '0.875rem',
 				large: '2.625rem',
 			},

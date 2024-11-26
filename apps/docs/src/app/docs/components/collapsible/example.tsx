@@ -31,14 +31,14 @@ export function CollapsibleExample() {
 					</Button>
 				</CollapsibleTrigger>
 			</div>
-			<div className="rounded-large border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
+			<div className="rounded-base border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
 				Omnis cum inventore harum exercitationem illum.
 			</div>
 			<CollapsibleContent className="space-y-2">
-				<div className="rounded-large border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
+				<div className="rounded-base border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
 					Explicabo aut debitis vitae at quo.
 				</div>
-				<div className="rounded-large border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
+				<div className="rounded-base border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
 					Non tempora provident.
 				</div>
 			</CollapsibleContent>

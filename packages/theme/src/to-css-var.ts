@@ -1,6 +1,6 @@
 import { pick, walkObject, type Dict, type WithCSSVar } from '@nerdfish/utils'
 
-const tokens = ['colors'] as const
+const tokens = ['colors', 'shape', 'breakpoints'] as const
 
 type ThemeProps = (typeof tokens)[number]
 
