@@ -1,5 +1,19 @@
 # @nerdfish/ui
 
+## 7.7.0
+
+### Minor Changes
+
+- New theme options
+
+- Add LabelAsterisk
+
+- add new `PhoneInput` component
+
+### Patch Changes
+
+- use rounded-semi instead of xl
+
 ## 7.6.4
 
 ### Patch Changes
