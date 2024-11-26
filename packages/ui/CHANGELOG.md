@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.7.2
+
+### Patch Changes
+
+- This should be the fix from 7.7.1
+
 ## 7.7.1
 
 ### Patch Changes
