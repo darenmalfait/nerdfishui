@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.5.0
+
+### Minor Changes
+
+- New theme options
+
 ## 2.4.1
 
 ### Patch Changes
