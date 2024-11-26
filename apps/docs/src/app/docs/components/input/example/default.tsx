@@ -16,6 +16,7 @@ import {
 	FormMessage,
 	Input,
 	toast,
+	LabelAsterisk,
 } from '@nerdfish/ui'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -54,6 +55,7 @@ export function InputExample() {
 								<FormItem>
 									<FormLabel>
 										Email
+										<LabelAsterisk />
 										<FormDescription>Your email address</FormDescription>
 									</FormLabel>
 
