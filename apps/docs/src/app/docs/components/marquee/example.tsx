@@ -59,7 +59,7 @@ const CatCard = ({
 	description: string
 }) => {
 	return (
-		<figure className="p-md shadow-outline rounded-large relative w-64 cursor-pointer overflow-hidden">
+		<figure className="p-md shadow-outline rounded-base relative w-64 cursor-pointer overflow-hidden">
 			<div className="flex flex-row items-center gap-2">
 				<img className="rounded-full" width="32" height="32" alt="" src={img} />
 				<div className="flex flex-col">
@@ -76,7 +76,7 @@ const CatCard = ({
 
 export function MarqueeExample() {
 	return (
-		<div className="bg-primary rounded-large shadow-outline relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden md:shadow-xl">
+		<div className="bg-primary rounded-base shadow-outline relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden md:shadow-xl">
 			<Marquee pauseOnHover duration={20000}>
 				{firstRow.map((cat) => (
 					<CatCard key={cat.breed} {...cat} />

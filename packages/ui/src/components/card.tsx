@@ -10,7 +10,7 @@ export const Card = React.forwardRef<
 	<div
 		ref={ref}
 		className={cx(
-			'bg-primary shadow-outline rounded-large mb-md relative flex min-w-0 flex-col break-words border-0',
+			'bg-primary shadow-outline rounded-base mb-md relative flex min-w-0 flex-col break-words border-0',
 			className,
 		)}
 		{...props}
@@ -25,7 +25,7 @@ export const CardHeader = React.forwardRef<
 	<div
 		ref={ref}
 		className={cx(
-			'border-b-solid rounded-t-semi p-md space-y-sm mb-0 flex flex-col border-b-0 border-b-transparent bg-transparent pb-0',
+			'border-b-solid rounded-t-container p-lg space-y-sm mb-0 flex flex-col border-b-0 border-b-transparent bg-transparent pb-0',
 			className,
 		)}
 		{...props}
@@ -59,7 +59,7 @@ export const CardContent = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-	<div ref={ref} className={cx('p-md', className)} {...props} />
+	<div ref={ref} className={cx('p-lg', className)} {...props} />
 ))
 CardContent.displayName = 'CardContent'
 
@@ -69,7 +69,7 @@ export const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cx('p-md flex items-center pt-0', className)}
+		className={cx('p-lg flex items-center pt-0', className)}
 		{...props}
 	/>
 ))

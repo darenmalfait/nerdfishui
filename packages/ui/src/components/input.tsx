@@ -6,7 +6,7 @@ import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'text-md text-primary p-md focus-outline bg-muted border-muted rounded-semi group relative block w-full border text-left font-bold outline-none',
+		'text-md text-primary p-md focus-outline bg-muted border-muted rounded-container group relative block w-full border text-left font-bold outline-none',
 		// placeholder
 		'placeholder:text-muted',
 		// disabled

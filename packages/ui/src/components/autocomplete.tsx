@@ -120,7 +120,7 @@ export const AutoComplete = React.forwardRef<
 					<CommandList>
 						<div
 							className={cx(
-								'bg-popover text-primary animate-in shadow-outline rounded-semi p-sm absolute top-0 z-10 w-full shadow-md outline-none',
+								'bg-popover text-primary animate-in shadow-outline rounded-container p-sm absolute top-0 z-10 w-full shadow-md outline-none',
 								isOpen ? 'block' : 'hidden',
 							)}
 						>
@@ -160,7 +160,7 @@ export const AutoComplete = React.forwardRef<
 							) : null}
 
 							{!isLoading ? (
-								<CommandEmpty className="rounded-semi select-none px-2 py-3 text-center text-sm">
+								<CommandEmpty className="rounded-container select-none px-2 py-3 text-center text-sm">
 									<EmptyState>
 										<EmptyStateDescription>
 											{emptyMessage}

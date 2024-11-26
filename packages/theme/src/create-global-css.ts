@@ -1,26 +1,30 @@
 import fs from 'fs'
 
+import { breakpoints } from './breakpoints'
 import { dark, light } from './colors'
+import { shape } from './shape'
 import { toCSSVar } from './to-css-var'
 
 function createGlobalCssVars() {
-	const lightTheme = toCSSVar({
+	const baseTheme = toCSSVar({
 		colors: light,
+		breakpoints,
+		shape,
 	})
 
 	const darkTheme = toCSSVar({
 		colors: dark,
 	})
 
-	const lightVars = Object.keys(lightTheme.cssVars)
-		.map((key) => `${key}: ${lightTheme.cssVars[key]};`)
+	const baseVars = Object.keys(baseTheme.cssVars)
+		.map((key) => `${key}: ${baseTheme.cssVars[key]};`)
 		.join('\n')
 
 	const darkVars = Object.keys(darkTheme.cssVars)
 		.map((key) => `${key}: ${darkTheme.cssVars[key]};`)
 		.join('\n')
 
-	const content = `:root {\n${lightVars}\n}\n\n.dark{\n${darkVars}\n}`
+	const content = `:root {\n${baseVars}\n}\n\n.dark{\n${darkVars}\n}`
 
 	if (!fs.existsSync('./dist')) {
 		fs.mkdirSync('./dist')
