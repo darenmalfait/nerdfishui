@@ -41,7 +41,10 @@ export const TabsContent = React.forwardRef<
 	React.ComponentPropsWithoutRef<typeof TabsPrimivite.Content>
 >(({ className, ...props }, ref) => (
 	<TabsPrimivite.Content
-		className={cx('rounded-base mt-md focus-within:outline-none', className)}
+		className={cx(
+			'rounded-container mt-md focus-within:outline-none',
+			className,
+		)}
 		{...props}
 		ref={ref}
 	/>

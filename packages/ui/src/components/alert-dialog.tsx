@@ -51,7 +51,7 @@ export const AlertDialogContent = React.forwardRef<
 		<AlertDialogPrimitive.Content
 			ref={ref}
 			className={cx(
-				'animate-in fade-in-90 shadow-outline slide-in-from-bottom-10 sm:zoom-in-90 sm:slide-in-from-bottom-0 bg-popover sm:rounded-base gap-md p-md fixed z-50 grid w-full max-w-lg scale-100 opacity-100 md:w-full',
+				'animate-in fade-in-90 shadow-outline slide-in-from-bottom-10 sm:zoom-in-90 sm:slide-in-from-bottom-0 bg-popover sm:rounded-container gap-md p-md fixed z-50 grid w-full max-w-lg scale-100 opacity-100 md:w-full',
 				className,
 			)}
 			{...props}
@@ -120,7 +120,7 @@ export const AlertDialogAction = React.forwardRef<
 	<AlertDialogPrimitive.Action
 		ref={ref}
 		className={cx(
-			'bg-inverted text-inverted hover:bg-inverted/80 rounded-base inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
+			'bg-inverted text-inverted hover:bg-inverted/80 rounded-container inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
 			className,
 		)}
 		{...props}
@@ -135,7 +135,7 @@ export const AlertDialogCancel = React.forwardRef<
 	<AlertDialogPrimitive.Cancel
 		ref={ref}
 		className={cx(
-			'text-primary hover:bg-muted rounded-base mr-sm inline-flex h-10 items-center justify-center border border-gray-200 bg-transparent px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-0 dark:border-gray-700 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
+			'text-primary hover:bg-muted rounded-container mr-sm inline-flex h-10 items-center justify-center border border-gray-200 bg-transparent px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-0 dark:border-gray-700 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
 			className,
 		)}
 		{...props}

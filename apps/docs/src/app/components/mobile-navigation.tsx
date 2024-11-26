@@ -55,7 +55,7 @@ export function MobileNavigation() {
 									<Logo className="h-6" />
 									<span className="text-primary ml-sm space-x-sm flex items-center text-lg font-semibold">
 										Nerdfish
-										<span className="border-muted ml-sm p-sm rounded-container border text-[8px] leading-snug">
+										<span className="border-muted ml-sm p-sm rounded-base border text-[8px] leading-snug">
 											UI
 										</span>
 									</span>

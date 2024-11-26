@@ -113,9 +113,9 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
 	return (
-		<div className="bg-accent rounded-base hidden xl:block">
+		<div className="bg-accent rounded-container hidden xl:block">
 			<div className="p-lg">
-				<div className="bg-primary rounded-base overflow-hidden shadow-2xl transition-all">
+				<div className="bg-primary rounded-container overflow-hidden shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
 						<aside className="bg-muted pb-xl pr-sm">
 							<div className="mb-lg px-lg pt-md">
@@ -211,7 +211,7 @@ function AppDemo() {
 												</Paragraph>
 											</div>
 										</div>
-										<div className="border-muted rounded-base flex h-[450px] min-h-0 shrink-0 items-center justify-center border border-dashed">
+										<div className="border-muted rounded-container flex h-[450px] min-h-0 shrink-0 items-center justify-center border border-dashed">
 											<div className="mx-auto flex min-h-0 max-w-[420px] flex-col items-center justify-center text-center">
 												<Paragraph className="text-muted mt-sm mb-md text-sm">
 													You have no ingredients added. Add ingredients to
@@ -243,13 +243,13 @@ function AlbumArtwork({
 }: AlbumArtworkProps) {
 	return (
 		<div className={cx('group space-y-3', className)} {...props}>
-			<div className="rounded-base object-cover">
+			<div className="rounded-container object-cover">
 				<AspectRatio ratio={aspectRatio === 'square' ? 1 : 3 / 4}>
 					<Image
 						src={album.cover}
 						alt={album.name}
 						fill
-						className="focus-ring rounded-base object-cover transition-all"
+						className="focus-ring rounded-container object-cover transition-all"
 					/>
 				</AspectRatio>
 			</div>

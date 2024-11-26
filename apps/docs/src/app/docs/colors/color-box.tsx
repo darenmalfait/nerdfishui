@@ -10,7 +10,9 @@ export function ColorBox({
 }) {
 	return (
 		<div>
-			<div className={cx('rounded-base p-sm inline-block w-auto', className)}>
+			<div
+				className={cx('rounded-container p-sm inline-block w-auto', className)}
+			>
 				<span className="text-current">{value}</span>
 			</div>
 		</div>

@@ -81,7 +81,7 @@ export function useMDXComponents(components: MDXComponents) {
 			...props
 		}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 			<img
-				className={cx('rounded-base border border-gray-200', className)}
+				className={cx('rounded-container border border-gray-200', className)}
 				alt={alt}
 				{...props}
 			/>

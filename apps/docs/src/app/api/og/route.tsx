@@ -81,7 +81,7 @@ export async function GET(req: Request) {
 								top: '40px',
 							}}
 							src={values.image}
-							tw="rounded-container shadow-2xl"
+							tw="rounded-base shadow-2xl"
 							height="550px"
 							width="700px"
 							alt="seo"

@@ -6,7 +6,7 @@ import * as React from 'react'
 import { Tooltip, TooltipTrigger, TooltipContent } from './tooltip'
 
 export const navigationListItemVariants = cva(
-	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-container text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-base text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
 	{
 		variants: {
 			variant: {
