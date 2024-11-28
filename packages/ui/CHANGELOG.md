@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.7.3
+
+### Patch Changes
+
+- scale up instead of down on press in `Button`
+
 ## 7.7.2
 
 ### Patch Changes
