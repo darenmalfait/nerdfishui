@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.7.4
+
+### Patch Changes
+
+- make the scaling more subtle in `Button`
+
 ## 7.7.3
 
 ### Patch Changes
