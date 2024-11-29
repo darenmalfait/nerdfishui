@@ -54,15 +54,15 @@
     "cmdk": "^1.0.4",
     "date-fns": "^4.1.0",
     "input-otp": "^1.4.1",
-    "lucide-react": "^0.460.0",
-    "react-aria": "^3.35.1",
+    "lucide-react": "^0.461.0",
+    "react-aria": "^3.36.0",
     "react-day-picker": "^8.10.1",
     "react-hook-form": "^7.53.2",
     "react-phone-number-input": "^3.4.9",
     "react-resizable-panels": "^2.1.7",
-    "react-stately": "^3.33.0",
+    "react-stately": "^3.34.0",
     "sonner": "^1.7.0",
-    "timescape": "^0.6.2",
+    "timescape": "^0.7.0",
     "vaul": "^0.9.9"
   },
   "devDependencies": {
@@ -72,7 +72,7 @@
     "eslint": "^9.15.0",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
     "react": ">=18.3.1",
