@@ -19,7 +19,7 @@ export function DrawerDirectionExample() {
 				<DrawerTrigger asChild>
 					<Button variant="outline">Left</Button>
 				</DrawerTrigger>
-				<DrawerContent className="w-full">
+				<DrawerContent className="!w-full max-w-[500px]">
 					<DrawerHeader>
 						<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
 						<DrawerDescription>This action cannot be undone.</DrawerDescription>
@@ -36,7 +36,7 @@ export function DrawerDirectionExample() {
 				<DrawerTrigger asChild>
 					<Button variant="outline">Right</Button>
 				</DrawerTrigger>
-				<DrawerContent className="w-full">
+				<DrawerContent className="!w-full max-w-[500px]">
 					<DrawerHeader>
 						<DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
 						<DrawerDescription>This action cannot be undone.</DrawerDescription>
