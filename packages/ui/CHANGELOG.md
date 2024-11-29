@@ -1,5 +1,12 @@
 # @nerdfish/ui
 
+## 7.7.5
+
+### Patch Changes
+
+- update Vaul dependency
+  ([#284](https://github.com/darenmalfait/nerdfishui/pull/284))
+
 ## 7.7.4
 
 ### Patch Changes
