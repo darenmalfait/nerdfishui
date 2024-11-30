@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.7.6
+
+### Patch Changes
+
+- show flag in `PhoneInput` instead of duplicate country code
+
 ## 7.7.5
 
 ### Patch Changes
