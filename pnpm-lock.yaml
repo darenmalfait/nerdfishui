@@ -46,8 +46,8 @@ importers:
         specifier: ^19.6.0
         version: 19.6.0
       '@nerdfish/config':
-        specifier: ^1.0.10
-        version: 1.0.10(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.4.1))(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)(typescript@5.7.2)
+        specifier: ^1.5.0
+        version: 1.5.1(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.4.1))(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)(typescript@5.7.2)
       eslint:
         specifier: ^9.15.0
         version: 9.15.0(jiti@1.21.6)
@@ -1715,8 +1715,8 @@ packages:
       '@types/react': '>=16'
       react: '>=16'
 
-  '@nerdfish/config@1.0.10':
-    resolution: {integrity: sha512-iSG5YWYb/QRHKiaBuH1feUZpKoUqJY+jkCKqVNf1TsrMJViIxTeXU2WSE+6+32AdujxLe4jG59xJBZhD/ygfTA==}
+  '@nerdfish/config@1.5.1':
+    resolution: {integrity: sha512-AkeJTOGX51oxUMtx49QGxqrm2Zpw3BYia42I9hHB48xNyQV45l5owW6SPKYEnNAPghQ2qaHajGpdENTVFAq0MQ==}
 
   '@next/env@14.2.18':
     resolution: {integrity: sha512-2vWLOUwIPgoqMJKG6dt35fVXVhgM09tw4tK3/Q34GFXDrfiHlG7iS33VA4ggnjWxjiz9KV5xzfsQzJX6vGAekA==}
@@ -9836,7 +9836,7 @@ snapshots:
       '@types/react': 18.3.12
       react: 18.3.1
 
-  '@nerdfish/config@1.0.10(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.4.1))(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)(typescript@5.7.2)':
+  '@nerdfish/config@1.5.1(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.4.1))(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)(typescript@5.7.2)':
     dependencies:
       '@eslint/compat': 1.2.3(eslint@9.15.0(jiti@1.21.6))
       '@total-typescript/ts-reset': 0.6.1
@@ -13788,7 +13788,7 @@ snapshots:
 
   eslint-plugin-import-x@4.4.3(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2):
     dependencies:
-      '@typescript-eslint/utils': 8.12.1(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
+      '@typescript-eslint/utils': 8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
       debug: 4.3.7
       doctrine: 3.0.0
       eslint: 9.15.0(jiti@1.21.6)
