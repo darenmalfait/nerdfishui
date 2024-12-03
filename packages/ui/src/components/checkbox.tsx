@@ -1,8 +1,8 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import { Check } from 'lucide-react'
-import * as React from 'react'
+import type * as React from 'react'
 
 import { type InputProps } from './input'
 

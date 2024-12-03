@@ -44,7 +44,7 @@ export const DrawerContent = React.forwardRef<
 				ref={ref}
 				className={cx(
 					// default
-					'shadow-outline bg-primary group fixed z-50 flex flex-col',
+					'bg-primary shadow-outline group fixed z-50 flex flex-col',
 					// top
 					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:rounded-b-container [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0',
 					// bottom
@@ -58,25 +58,25 @@ export const DrawerContent = React.forwardRef<
 				)}
 				{...props}
 			>
-				{!hideCloseButton ? (
+				{hideCloseButton ? null : (
 					<DrawerPrimitive.Close
 						asChild
-						className="mr-md mt-md absolute right-0 top-0 z-30"
+						className="mt-md mr-md absolute right-0 top-0 z-30"
 					>
 						<Button variant="ghost" size="icon" aria-label="Close">
 							<XIcon aria-hidden className="size-4" />
 						</Button>
 					</DrawerPrimitive.Close>
-				) : null}
+				)}
 				<div className="relative max-h-[100vh] overflow-y-auto">
 					<div
 						data-role="drawer-handle"
-						className="bg-muted mb-md mt-md top-md sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
+						className="top-md mt-md mb-md bg-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
 					/>
 					{children}
 					<div
 						data-role="drawer-handle"
-						className="bg-muted mb-md mt-md bottom-md sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
+						className="bottom-md mt-md mb-md bg-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
 					/>
 				</div>
 			</DrawerPrimitive.Content>

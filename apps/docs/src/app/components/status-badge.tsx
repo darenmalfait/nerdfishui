@@ -6,7 +6,7 @@ import {
 	TooltipTrigger,
 } from '@nerdfish/ui'
 import { type NavigationItem } from 'docs.config'
-import * as React from 'react'
+import type * as React from 'react'
 
 type Status = Exclude<NavigationItem['status'], undefined>
 

@@ -46,7 +46,7 @@ export const EmptyStateIcon = React.forwardRef<
 	return (
 		<Slot
 			role="presentation"
-			className={cx('text-accent mb-md size-12', className)}
+			className={cx('mb-md text-accent size-12', className)}
 			ref={ref}
 			{...props}
 		/>

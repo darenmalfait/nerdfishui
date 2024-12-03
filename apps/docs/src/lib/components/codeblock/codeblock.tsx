@@ -1,7 +1,6 @@
 'use client'
 
 import { themes } from 'prism-react-renderer'
-import * as React from 'react'
 import { CodeContainer } from './code-container'
 import { Highlight } from './highlight'
 

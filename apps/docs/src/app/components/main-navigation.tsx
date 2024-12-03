@@ -9,9 +9,9 @@ export function MainNavigation() {
 			<Link href="/" aria-label="Home">
 				<div className="space-x-md flex items-center">
 					<Logo className="h-6" />
-					<span className="text-primary space-x-sm ml-sm flex items-center text-lg font-semibold">
+					<span className="ml-sm space-x-sm text-primary flex items-center text-lg font-semibold">
 						Nerdfish
-						<span className="border-muted ml-sm p-sm rounded-base border text-[8px] leading-snug">
+						<span className="ml-sm rounded-base border-muted p-sm border text-[8px] leading-snug">
 							UI
 						</span>
 					</span>

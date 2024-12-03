@@ -1,16 +1,16 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import * as React from 'react'
 
 export const toggleVariants = cva(
-	'hover:bg-inverted/10 focus-outline data-[state=on]:bg-muted text-primary group relative inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors disabled:pointer-events-none  disabled:opacity-50',
+	'focus-outline group relative inline-flex items-center justify-center rounded-lg font-medium text-primary text-sm transition-colors hover:bg-inverted/10 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-muted',
 	{
 		variants: {
 			variant: {
 				default: 'bg-transparent',
-				outline: 'hover:bg-muted shadow-outline bg-transparent',
+				outline: 'bg-transparent shadow-outline hover:bg-muted',
 			},
 			size: {
 				default: 'h-10 px-3',

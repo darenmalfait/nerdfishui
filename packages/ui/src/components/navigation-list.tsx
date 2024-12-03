@@ -1,12 +1,12 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-import { Tooltip, TooltipTrigger, TooltipContent } from './tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
 export const navigationListItemVariants = cva(
-	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-base text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+	'inline-flex min-w-0 max-w-full items-center justify-center whitespace-nowrap rounded-base font-medium text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
 	{
 		variants: {
 			variant: {
@@ -14,9 +14,9 @@ export const navigationListItemVariants = cva(
 				ghost: 'hover:bg-muted hover:text-primary',
 			},
 			size: {
-				default: 'h-10 px-md py-sm min-h-10',
-				sm: 'h-9 px-md min-h-9',
-				lg: 'h-11 px-lg min-h-11',
+				default: 'h-10 min-h-10 px-md py-sm',
+				sm: 'h-9 min-h-9 px-md',
+				lg: 'h-11 min-h-11 px-lg',
 				icon: 'size-10 min-h-10',
 			},
 		},
@@ -188,7 +188,7 @@ export function NavigationListSection({
 	children: React.ReactNode
 	className?: string
 }) {
-	return <div className={cx('pb-md gap-sm grid', className)}>{children}</div>
+	return <div className={cx('gap-sm pb-md grid', className)}>{children}</div>
 }
 
 export const NavigationList = React.forwardRef<

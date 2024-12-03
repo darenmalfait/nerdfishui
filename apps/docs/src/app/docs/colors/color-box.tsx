@@ -1,5 +1,4 @@
 import { cx } from '@nerdfish/utils'
-import * as React from 'react'
 
 export function ColorBox({
 	className,

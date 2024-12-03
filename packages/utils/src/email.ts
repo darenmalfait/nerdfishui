@@ -39,7 +39,7 @@ const quotedEmailUserUtf8 =
 	/^([\s\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|(\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*$/i
 
 function isByteLength(str: string, options?: { min?: number; max?: number }) {
-	let min: number = 0
+	let min = 0
 	let max: number | undefined
 	const len = encodeURI(str).split(/%..|./).length - 1
 
@@ -69,7 +69,7 @@ function isFQDN(str: string, options?: IFqdnOptions) {
 			return false
 		}
 		// disallow spaces
-		if (/[\s\u2002-\u200B\u202F\u205F\u3000\uFEFF\uDB40\uDC20]/.test(tld)) {
+		if (/[\s\u2002-\u200B\u202F\u205F\u3000\uFEFF\uDB40\uDC20]/u.test(tld)) {
 			return false
 		}
 	}

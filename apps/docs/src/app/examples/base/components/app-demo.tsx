@@ -25,7 +25,7 @@ import {
 	Utensils,
 } from 'lucide-react'
 import Image from 'next/image'
-import * as React from 'react'
+import type * as React from 'react'
 
 interface Album {
 	name: string
@@ -113,11 +113,11 @@ const madeForYouAlbums: Album[] = [
 
 function AppDemo() {
 	return (
-		<div className="bg-accent rounded-container hidden xl:block">
+		<div className="rounded-container bg-accent hidden xl:block">
 			<div className="p-lg">
-				<div className="bg-primary rounded-container overflow-hidden shadow-2xl transition-all">
+				<div className="rounded-container bg-primary overflow-hidden shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
-						<aside className="bg-muted pb-xl pr-sm">
+						<aside className="bg-muted pr-sm pb-xl">
 							<div className="mb-lg px-lg pt-md">
 								<p className="flex items-center text-2xl font-semibold">
 									<ChefHat className="mr-sm" />
@@ -177,7 +177,7 @@ function AppDemo() {
 												))}
 											</div>
 										</div>
-										<div className="mb-sm mt-md space-y-sm">
+										<div className="mt-md mb-sm space-y-sm">
 											<H2>Made for You</H2>
 											<Paragraph>
 												Your personal playlists. Updated daily.
@@ -211,9 +211,9 @@ function AppDemo() {
 												</Paragraph>
 											</div>
 										</div>
-										<div className="border-muted rounded-container flex h-[450px] min-h-0 shrink-0 items-center justify-center border border-dashed">
+										<div className="rounded-container border-muted flex h-[450px] min-h-0 shrink-0 items-center justify-center border border-dashed">
 											<div className="mx-auto flex min-h-0 max-w-[420px] flex-col items-center justify-center text-center">
-												<Paragraph className="text-muted mt-sm mb-md text-sm">
+												<Paragraph className="mt-sm mb-md text-muted text-sm">
 													You have no ingredients added. Add ingredients to
 												</Paragraph>
 												<Button>Add Ingredient</Button>

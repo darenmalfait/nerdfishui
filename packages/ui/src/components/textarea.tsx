@@ -1,4 +1,4 @@
-import { cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cx } from '@nerdfish/utils'
 import * as React from 'react'
 import { inputVariants } from './input'
 

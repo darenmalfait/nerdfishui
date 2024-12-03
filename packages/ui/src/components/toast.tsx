@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import type * as React from 'react'
 import { Toaster as Sonner, toast } from 'sonner'
 
 import { getButtonClassName } from './button'

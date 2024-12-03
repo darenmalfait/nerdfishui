@@ -1,5 +1,5 @@
 import { Mockup, MockupWindow } from '@nerdfish/ui'
-import React from 'react'
+import type React from 'react'
 
 export function CodeContainer({
 	children,

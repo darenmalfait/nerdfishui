@@ -1,43 +1,27 @@
 {
-	"editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+	"typescript.tsdk": "node_modules/typescript/lib",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
-	"eslint.workingDirectories": [
-		"apps/docs",
-		"packages/tailwind-config",
-		"packages/theme",
-		"packages/tsconfig",
-		"packages/ui",
-		"packages/utils",
-		"tooling/config-eslint",
-		"tooling/config-tailwind",
-		"tooling/config-typescript"
-	],
-	"eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
-	"json.schemas": [
-		{
-			"fileMatch": ["tsconfig.*.json"],
-			"url": "https://json.schemastore.org/tsconfig"
-		},
-		{ "fileMatch": ["turbo.json"], "url": "https://turbo.build/schema.json" },
-		{
-			"fileMatch": ["vercel.json"],
-			"url": "https://openapi.vercel.sh/vercel.json"
-		}
-	],
-	"search.exclude": {
-		"**/node_modules": true,
-		"**/.next": true,
-		"**/.output": true,
-		"**/.turbo": true,
-		"**/.vercel": true,
-		"**/dist": true
+	"editor.formatOnPaste": true,
+	"emmet.showExpandedAbbreviation": "never",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
 	},
-	"tailwindCSS.experimental.classRegex": [
-		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-	],
-	"editor.quickSuggestions": {
-		"strings": true
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"typescript.tsdk": "node_modules/typescript/lib"
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"biome.enabled": false,
+	"prettier.enable": true
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cx } from '@nerdfish/utils'
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
 import * as React from 'react'
 import { toggleVariants } from './toggle'

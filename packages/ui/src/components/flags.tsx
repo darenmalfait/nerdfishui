@@ -78,8 +78,8 @@ export function Feature({
 	const hasFeature = useFeature(name)
 	if (typeof render === 'function') return render(hasFeature)
 	if (!hasFeature) return null
-	// eslint-disable-next-line react/jsx-no-useless-fragment
-	return <React.Fragment>{render}</React.Fragment>
+
+	return render
 }
 
 export type FeatureProps = React.ComponentPropsWithoutRef<typeof Feature>

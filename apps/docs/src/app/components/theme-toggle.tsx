@@ -33,7 +33,7 @@ function ThemeToggle({
 			onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}
 		>
 			{isDarkMode ? <Sun className="w-5" /> : <Moon className="w-5" />}
-			<div className="sr-only">{isDarkMode ? `Light` : `Dark`} Mode</div>
+			<div className="sr-only">{isDarkMode ? 'Light' : 'Dark'} Mode</div>
 		</Button>
 	)
 }

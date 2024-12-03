@@ -1,6 +1,6 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
 export const Paragraph = React.forwardRef<
@@ -35,12 +35,12 @@ export const titleVariants = cva('', {
 	variants: {
 		size: {
 			// Keep this the same to the prose styles in base.css (tailwind-config)
-			h1: 'text-4xl lg:text-[6.5vw] 2xl:text-[8.125rem] leading-[1] font-title scroll-m-20 font-extrabold',
-			h2: 'font-title mt-lg scroll-m-20 text-2xl md:text-3xl font-extrabold first:mt-0 lg:text-4xl',
-			h3: 'mt-lg scroll-m-20 text-xl md:text-2xl font-semibold first:mt-0',
-			h4: 'mt-lg scroll-m-20 text-lg md:text-xl font-semibold first:mt-0',
-			h5: 'mt-lg text-base md:text-lg font-bold first:mt-0',
-			h6: 'mt-lg text-base font-bold first:mt-0',
+			h1: 'scroll-m-20 font-extrabold font-title text-4xl leading-[1] lg:text-[6.5vw] 2xl:text-[8.125rem]',
+			h2: 'mt-lg scroll-m-20 font-extrabold font-title text-2xl first:mt-0 md:text-3xl lg:text-4xl',
+			h3: 'mt-lg scroll-m-20 font-semibold text-xl first:mt-0 md:text-2xl',
+			h4: 'mt-lg scroll-m-20 font-semibold text-lg first:mt-0 md:text-xl',
+			h5: 'mt-lg font-bold text-base first:mt-0 md:text-lg',
+			h6: 'mt-lg font-bold text-base first:mt-0',
 		},
 		variant: {
 			primary: 'text-primary',

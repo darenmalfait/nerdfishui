@@ -9,14 +9,14 @@ const Fish = React.forwardRef<
 	React.ComponentPropsWithoutRef<'svg'>
 >(function Fish({ className, ...props }, ref) {
 	return (
-		<span className="animate-shake repeat-infinite [animation-duration:4s]">
+		<span className="repeat-infinite animate-shake [animation-duration:4s]">
 			<svg
 				ref={ref}
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 912 421"
 				className={cx(
-					'direction-reverse animate-squeeze repeat-infinite rounded-base fill-current [animation-duration:2s]',
+					'direction-reverse repeat-infinite animate-squeeze rounded-base fill-current [animation-duration:2s]',
 					className,
 				)}
 				{...props}
@@ -47,13 +47,13 @@ const Square = React.forwardRef<
 	return (
 		<div
 			className={cx(
-				'animate-loader border-muted rounded-base relative overflow-hidden border-4',
+				'animate-loader rounded-base border-muted relative overflow-hidden border-4',
 				className,
 			)}
 			ref={ref}
 			{...props}
 		>
-			<span className="bg-inverted animate-loader-inner inline-block w-full align-top" />
+			<span className="animate-loader-inner bg-inverted inline-block w-full align-top" />
 		</div>
 	)
 })

@@ -3,13 +3,13 @@ import { Check } from 'lucide-react'
 import * as React from 'react'
 import { useControllableState } from '../hooks'
 import {
+	Command,
+	CommandEmpty,
 	CommandGroup,
+	CommandInput,
 	CommandItem,
 	CommandList,
-	CommandInput,
-	Command,
 	CommandLoading,
-	CommandEmpty,
 } from './command'
 import { EmptyState, EmptyStateDescription } from './empty-state'
 import { type InputProps } from './input'
@@ -120,7 +120,7 @@ export const AutoComplete = React.forwardRef<
 					<CommandList>
 						<div
 							className={cx(
-								'bg-popover text-primary animate-in shadow-outline rounded-base p-sm absolute top-0 z-10 w-full shadow-md outline-none',
+								'animate-in rounded-base bg-popover p-sm text-primary shadow-outline absolute top-0 z-10 w-full shadow-md outline-none',
 								isOpen ? 'block' : 'hidden',
 							)}
 						>
@@ -148,7 +148,7 @@ export const AutoComplete = React.forwardRef<
 												onSelect={() => handleSelectOption(option)}
 												className={cx(
 													'gap-sm flex w-full items-center',
-													!isSelected ? 'pl-lg' : null,
+													isSelected ? null : 'pl-lg',
 												)}
 											>
 												{isSelected ? <Check className="w-4" /> : null}
@@ -159,7 +159,7 @@ export const AutoComplete = React.forwardRef<
 								</CommandGroup>
 							) : null}
 
-							{!isLoading ? (
+							{isLoading ? null : (
 								<CommandEmpty className="rounded-base select-none px-2 py-3 text-center text-sm">
 									<EmptyState>
 										<EmptyStateDescription>
@@ -167,7 +167,7 @@ export const AutoComplete = React.forwardRef<
 										</EmptyStateDescription>
 									</EmptyState>
 								</CommandEmpty>
-							) : null}
+							)}
 						</div>
 					</CommandList>
 				</div>

@@ -17,7 +17,7 @@ export const PopoverContent = React.forwardRef<
 		align={align}
 		sideOffset={sideOffset}
 		className={cx(
-			'animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 shadow-outline bg-popover rounded-base p-md z-50 w-[--radix-popper-anchor-width] shadow-none',
+			'data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 animate-in rounded-base bg-popover p-md shadow-outline z-50 w-[--radix-popper-anchor-width] shadow-none',
 			className,
 		)}
 		{...props}

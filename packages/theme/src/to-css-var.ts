@@ -1,4 +1,4 @@
-import { pick, walkObject, type Dict, type WithCSSVar } from '@nerdfish/utils'
+import { type Dict, type WithCSSVar, pick, walkObject } from '@nerdfish/utils'
 
 const tokens = ['colors', 'shape', 'breakpoints'] as const
 
@@ -11,9 +11,9 @@ function replaceWhiteSpace(value: string, replaceValue = '-') {
 function escape(value: string | number) {
 	const valueStr = replaceWhiteSpace(value.toString())
 	if (valueStr.includes('\\.')) return value
-	const isDecimal = !Number.isInteger(parseFloat(value.toString()))
+	const isDecimal = !Number.isInteger(Number.parseFloat(value.toString()))
 
-	return isDecimal ? valueStr.replace('.', `\\.`) : value
+	return isDecimal ? valueStr.replace('.', '\\.') : value
 }
 
 function toVarReference(name: string, fallback?: string) {
