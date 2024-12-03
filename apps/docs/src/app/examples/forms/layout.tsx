@@ -1,12 +1,12 @@
 import {
-	NavigationListItem,
 	NavigationList,
+	NavigationListItem,
 	Separator,
 	Sidebar,
 	SidebarSection,
 } from '@nerdfish/ui'
 import { type Metadata } from 'next'
-import * as React from 'react'
+import type * as React from 'react'
 
 export const metadata: Metadata = {
 	title: 'Forms',
@@ -26,7 +26,7 @@ interface SettingsLayoutProps {
 
 export default function SettingsLayout({ children }: SettingsLayoutProps) {
 	return (
-		<div className="pb-xl space-y-md p-lg hidden md:block">
+		<div className="space-y-md p-lg pb-xl hidden md:block">
 			<div className="space-y-sm">
 				<h2 className="text-2xl font-bold">Settings</h2>
 				<p className="text-muted-foreground">

@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply min-h-screen max-w-full overscroll-none font-sans;
+	}
+
+	body {
+		@apply bg-primary min-h-screen overscroll-none;
+	}
+
+	.prose pre {
+		@apply bg-muted;
+	}
+
+	.prose pre {
+		@apply bg-muted;
+	}
+}

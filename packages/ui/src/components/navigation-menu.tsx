@@ -12,7 +12,7 @@ const NavigationMenuViewport = React.forwardRef<
 	<div className={cx('absolute left-0 top-full flex justify-center')}>
 		<NavigationMenuPrimitive.Viewport
 			className={cx(
-				'origin-top-center shadow-outline bg-popover text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 rounded-base mt-sm relative h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
+				'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 mt-sm origin-top-center rounded-base bg-popover text-primary shadow-outline data-[state=closed]:animate-out data-[state=open]:animate-in relative h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
 				className,
 			)}
 			ref={ref}
@@ -61,7 +61,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 export const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 export const getNavigationMenuTriggerStyle = cva(
-	'bg-primary hover:bg-muted rounded-base focus:bg-muted data-[active]:bg-muted data-[state=open]:bg-muted group relative inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50',
+	'group relative inline-flex h-10 w-max items-center justify-center rounded-base bg-primary px-4 py-2 font-medium text-sm transition-colors hover:bg-muted focus:bg-muted focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-muted data-[state=open]:bg-muted',
 )
 
 export const NavigationMenuTrigger = React.forwardRef<
@@ -89,7 +89,7 @@ export const NavigationMenuContent = React.forwardRef<
 	<NavigationMenuPrimitive.Content
 		ref={ref}
 		className={cx(
-			'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 left-0 top-0 w-full md:absolute md:w-auto',
+			'data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out left-0 top-0 w-full md:absolute md:w-auto',
 			className,
 		)}
 		{...props}
@@ -106,7 +106,7 @@ export const NavigationMenuIndicator = React.forwardRef<
 	<NavigationMenuPrimitive.Indicator
 		ref={ref}
 		className={cx(
-			'data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden',
+			'data-[state=hidden]:fade-out data-[state=visible]:fade-in data-[state=hidden]:animate-out data-[state=visible]:animate-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden',
 			className,
 		)}
 		{...props}

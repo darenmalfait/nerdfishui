@@ -1,7 +1,7 @@
 import { Button } from '@nerdfish/ui'
 import { type Metadata } from 'next'
 import Link from 'next/link'
-import * as React from 'react'
+import type * as React from 'react'
 import { Footer } from '../components/footer'
 import {
 	PageActions,
@@ -37,7 +37,7 @@ export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
 
 			<section>
 				<ExamplesNav />
-				<div className="bg-primary shadow-outline rounded-container overflow-hidden shadow">
+				<div className="rounded-container bg-primary shadow-outline overflow-hidden shadow">
 					{children}
 				</div>
 			</section>

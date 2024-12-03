@@ -113,7 +113,7 @@ export async function GET(req: Request) {
 			console.error(error.message)
 		}
 
-		return new Response(`Failed to generate image`, {
+		return new Response('Failed to generate image', {
 			status: 500,
 		})
 	}

@@ -1,12 +1,12 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import { AlertCircle } from 'lucide-react'
 import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'text-md text-primary p-md focus-outline bg-muted border-muted rounded-base group relative block w-full border text-left font-bold outline-none',
+		'focus-outline rounded-base border-muted bg-muted p-md text-md text-primary group relative block w-full border text-left font-bold outline-none',
 		// placeholder
 		'placeholder:text-muted',
 		// disabled

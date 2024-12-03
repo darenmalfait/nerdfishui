@@ -1,13 +1,13 @@
 import { Resizable, ResizableHandle, ResizablePanel } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
-import * as React from 'react'
+import type * as React from 'react'
 import { CopyButton } from './copy-button'
 
 function Preview({ children }: { children: React.ReactNode }) {
 	return (
 		<Resizable direction="horizontal">
 			<ResizablePanel
-				className="shadow-outline rounded-container p-md min-h-[350px]"
+				className="rounded-container p-md shadow-outline min-h-[350px]"
 				defaultSize={100}
 			>
 				{children}
@@ -27,7 +27,7 @@ export function ComponentExample({
 	component?: React.ReactNode
 }) {
 	return (
-		<div className={cx('gap-md mt-md flex flex-col', className)}>
+		<div className={cx('mt-md gap-md flex flex-col', className)}>
 			{Component ? <Preview>{Component}</Preview> : null}
 			<div className="!bg-primary -my-sm p-0">
 				<div className="space-y-md flex flex-col">

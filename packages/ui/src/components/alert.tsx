@@ -1,6 +1,6 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import { AlertTriangle, Info, Verified, XCircle } from 'lucide-react'
 import * as React from 'react'
 import { deprecateProp } from '../deprecate'
@@ -8,14 +8,14 @@ import { deprecateProp } from '../deprecate'
 const DEFAULT_VARIANT = 'info'
 
 export const alertVariants = cva(
-	'relative w-full rounded-base border p-md [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-md [&>svg]:text-current [&>svg~]*]:pl-7',
+	'[&>svg~]*]:pl-7 relative w-full rounded-base border p-md [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:top-md [&>svg]:left-4 [&>svg]:text-current',
 	{
 		variants: {
 			variant: {
-				warning: 'border-warning bg-warning-muted text-warning border',
-				success: 'border-success bg-success-muted text-success border',
-				info: 'border-info bg-info-muted text-info border',
-				danger: 'border-danger bg-danger-muted text-danger border',
+				warning: 'border border-warning bg-warning-muted text-warning',
+				success: 'border border-success bg-success-muted text-success',
+				info: 'border border-info bg-info-muted text-info',
+				danger: 'border border-danger bg-danger-muted text-danger',
 			},
 		},
 		defaultVariants: {

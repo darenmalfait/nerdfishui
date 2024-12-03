@@ -30,7 +30,7 @@ export const AccordionTrigger = React.forwardRef<
 		<AccordionPrimitive.Trigger
 			ref={ref}
 			className={cx(
-				'focus-visible:outline-active py-md relative flex flex-1 items-center justify-between text-left font-medium outline-none transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+				'py-md focus-visible:outline-active relative flex flex-1 items-center justify-between text-left font-medium outline-none transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
 				className,
 			)}
 			{...props}
@@ -49,7 +49,7 @@ export const AccordionContent = React.forwardRef<
 	<AccordionPrimitive.Content
 		ref={ref}
 		className={cx(
-			'data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up overflow-hidden text-sm transition-all',
+			'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm transition-all',
 			className,
 		)}
 		{...props}

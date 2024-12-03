@@ -4,7 +4,7 @@ import { ScrollArea, ScrollBar } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import * as React from 'react'
+import type * as React from 'react'
 import { Icons } from '~/app/components/icons'
 
 const examples = [

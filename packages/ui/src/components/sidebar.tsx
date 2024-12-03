@@ -1,11 +1,11 @@
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
-export const sidebarVariants = cva('flex flex-col border-r border-primary', {
+export const sidebarVariants = cva('flex flex-col border-primary border-r', {
 	variants: {
 		variant: {
-			default: 'w-full max-w-64 lg:max-w-72 py-3',
+			default: 'w-full max-w-64 py-3 lg:max-w-72',
 			compact: 'w-full max-w-16 py-3',
 		},
 	},

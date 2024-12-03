@@ -1,4 +1,4 @@
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import React from 'react'
 
 export const timelineVariants = cva(['flex flex-col justify-center'], {
@@ -6,10 +6,10 @@ export const timelineVariants = cva(['flex flex-col justify-center'], {
 		variant: {
 			solid: '',
 			outline:
-				'[&_[data-slot=dot]]:bg-transparent [&_[data-slot=dot]]:border-2 [&_[data-slot=dot]]:border-current',
+				'[&_[data-slot=dot]]:border-2 [&_[data-slot=dot]]:border-current [&_[data-slot=dot]]:bg-transparent',
 		},
 		size: {
-			sm: '[&_[data-slot=icon]]:min-w-2 [&_[data-slot=icon]]:min-h-2',
+			sm: '[&_[data-slot=icon]]:min-h-2 [&_[data-slot=icon]]:min-w-2',
 		},
 	},
 	defaultVariants: {

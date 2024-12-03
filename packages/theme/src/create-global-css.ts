@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 
 import { breakpoints } from './breakpoints'
 import { dark, light } from './colors'

@@ -1,20 +1,20 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
 export const badgeVariants = cva(
-	'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors',
+	'inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold text-xs transition-colors',
 	{
 		variants: {
 			variant: {
-				danger: 'bg-danger border-danger text-danger',
-				default: 'bg-inverted text-inverted border-transparent',
-				info: 'bg-info border-info text-info',
+				danger: 'border-danger bg-danger text-danger',
+				default: 'border-transparent bg-inverted text-inverted',
+				info: 'border-info bg-info text-info',
 				outline: 'text-primary',
-				secondary: 'bg-muted text-primary active-ring border-transparent',
-				success: 'bg-success-muted border-success text-success',
-				warning: 'bg-warning border-warning text-warning',
+				secondary: 'active-ring border-transparent bg-muted text-primary',
+				success: 'border-success bg-success-muted text-success',
+				warning: 'border-warning bg-warning text-warning',
 			},
 		},
 		defaultVariants: {

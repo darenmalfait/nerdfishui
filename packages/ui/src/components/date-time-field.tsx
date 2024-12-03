@@ -3,10 +3,10 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 import {
-	createContext,
-	forwardRef,
 	type HTMLAttributes,
 	type ReactNode,
+	createContext,
+	forwardRef,
 	useContext,
 } from 'react'
 import { type Options } from 'timescape'
@@ -53,7 +53,7 @@ export const DateTimeSegment = forwardRef<
 
 	return (
 		<div
-			className={cx('focus-within:bg-inverted/10 text-primary p-xs rounded-lg')}
+			className={cx('p-xs text-primary focus-within:bg-inverted/10 rounded-lg')}
 		>
 			<input
 				{...getInputProps(segment)}

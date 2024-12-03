@@ -5,7 +5,7 @@ import { cx, isEmail as isEmailFn } from '@nerdfish/utils'
 import * as React from 'react'
 import { useControllableState } from '../hooks'
 import { Badge } from './badge'
-import { inputVariants, type InputProps } from './input'
+import { type InputProps, inputVariants } from './input'
 
 export interface MultiEmailProps extends Omit<InputProps, 'onChange'> {
 	emails?: string[]
@@ -136,7 +136,7 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 
 						const results = await Promise.all(validations)
 						results.forEach((result) => {
-							if (!!result) {
+							if (result) {
 								addEmails(`${arr.shift()}`)
 								setSpinning(false)
 							} else if (arr.length === 1) {
@@ -327,7 +327,7 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 							data-tag
 							key={index}
 							variant="default"
-							className="mr-sm mt-xs inline-flex items-center"
+							className="mt-xs mr-sm inline-flex items-center"
 						>
 							<button
 								type="button"
@@ -337,7 +337,7 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 								{email}
 							</button>
 							<button
-								className="hover:bg-primary/10 active:bg-primary/15 ml-sm px-sm py-xs rounded-lg"
+								className="ml-sm px-sm py-xs hover:bg-primary/10 active:bg-primary/15 rounded-lg"
 								data-tag-handle
 								onClick={() => removeEmail(index)}
 							>

@@ -1,6 +1,6 @@
 import { breakpoints } from '@nerdfish/theme'
 import plugin from 'tailwindcss/plugin'
-import { type PluginCreator, type Config } from 'tailwindcss/types/config'
+import { type Config, type PluginCreator } from 'tailwindcss/types/config'
 import { animation } from './animation'
 import { base } from './base'
 import { colors } from './colors'
@@ -16,7 +16,7 @@ const pluginConfig: PluginCreator = ({ addBase, addUtilities, addVariant }) => {
 
 	addVariant(
 		'disabled-within',
-		`&:has(input:is(:disabled),button:is(:disabled))`,
+		'&:has(input:is(:disabled),button:is(:disabled))',
 	)
 }
 

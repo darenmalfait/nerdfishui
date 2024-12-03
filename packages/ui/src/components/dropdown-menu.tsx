@@ -21,7 +21,7 @@ export const DropdownMenuSubTrigger = React.forwardRef<
 	<DropdownMenuPrimitive.SubTrigger
 		ref={ref}
 		className={cx(
-			'focus:bg-muted data-[state=open]:bg-muted text-primary rounded-base px-sm py-sm flex cursor-default select-none items-center text-sm font-medium outline-none',
+			'rounded-base px-sm py-sm text-primary focus:bg-muted data-[state=open]:bg-muted flex cursor-default select-none items-center text-sm font-medium outline-none',
 			inset && 'pl-lg',
 			className,
 		)}
@@ -41,7 +41,7 @@ export const DropdownMenuSubContent = React.forwardRef<
 	<DropdownMenuPrimitive.SubContent
 		ref={ref}
 		className={cx(
-			'animate-in slide-in-from-left-1 shadow-outline bg-muted text-inverted/700 shadow-soft-xl rounded-base p-md z-50 min-w-[8rem] overflow-hidden',
+			'slide-in-from-left-1 animate-in rounded-base bg-muted p-md text-inverted/700 shadow-outline shadow-soft-xl z-50 min-w-[8rem] overflow-hidden',
 			className,
 		)}
 		{...props}
@@ -59,7 +59,7 @@ export const DropdownMenuContent = React.forwardRef<
 			ref={ref}
 			sideOffset={sideOffset}
 			className={cx(
-				'animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 bg-primary text-primary shadow-soft-xl shadow-outline rounded-base p-md z-50 min-w-[8rem] overflow-hidden',
+				'data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 animate-in rounded-base bg-primary p-md text-primary shadow-outline shadow-soft-xl z-50 min-w-[8rem] overflow-hidden',
 				className,
 			)}
 			{...props}
@@ -77,7 +77,7 @@ export const DropdownMenuItem = React.forwardRef<
 	<DropdownMenuPrimitive.Item
 		ref={ref}
 		className={cx(
-			'focus:bg-muted text-primary rounded-base px-sm py-sm relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'rounded-base px-sm py-sm text-primary focus:bg-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			inset && 'pl-lg',
 			className,
 		)}
@@ -93,7 +93,7 @@ export const DropdownMenuCheckboxItem = React.forwardRef<
 	<DropdownMenuPrimitive.CheckboxItem
 		ref={ref}
 		className={cx(
-			'focus:bg-muted rounded-base py-sm pl-lg pr-sm relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'rounded-base py-sm pr-sm pl-lg focus:bg-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			className,
 		)}
 		checked={checked}
@@ -117,7 +117,7 @@ export const DropdownMenuRadioItem = React.forwardRef<
 	<DropdownMenuPrimitive.RadioItem
 		ref={ref}
 		className={cx(
-			'focus:bg-muted rounded-base py-sm pl-lg pr-sm relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+			'rounded-base py-sm pr-sm pl-lg focus:bg-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
 			className,
 		)}
 		{...props}
@@ -141,7 +141,7 @@ export const DropdownMenuLabel = React.forwardRef<
 	<DropdownMenuPrimitive.Label
 		ref={ref}
 		className={cx(
-			'text-primary px-sm py-sm text-sm font-semibold',
+			'px-sm py-sm text-primary text-sm font-semibold',
 			inset && 'pl-lg',
 			className,
 		)}
@@ -156,7 +156,7 @@ export const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<DropdownMenuPrimitive.Separator
 		ref={ref}
-		className={cx('bg-muted -mx-xs my-xs h-px', className)}
+		className={cx('-mx-xs my-xs bg-muted h-px', className)}
 		{...props}
 	/>
 ))
