@@ -3,7 +3,7 @@ import alias, { type Alias } from '@rollup/plugin-alias'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
 import glob from 'fast-glob'
-import { type Plugin, type RollupOptions } from 'rollup'
+import type { Plugin, RollupOptions } from 'rollup'
 import esbuild from 'rollup-plugin-esbuild'
 import { preserveDirectives } from 'rollup-plugin-preserve-directives'
 

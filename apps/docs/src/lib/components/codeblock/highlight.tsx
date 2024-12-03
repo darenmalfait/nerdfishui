@@ -4,7 +4,7 @@ import {
 	type Language,
 	type PrismTheme,
 } from 'prism-react-renderer'
-import React from 'react'
+import type React from 'react'
 
 const RE = /{([\d,-]+)}/
 
@@ -14,8 +14,8 @@ const calculateLinesToHighlight = (meta: string) => {
 	}
 	const lineNumbers =
 		RE.exec(meta)?.[1]
-			?.split(`,`)
-			.map((v) => v.split(`-`).map((x) => parseInt(x, 10))) ?? []
+			?.split(',')
+			.map((v) => v.split('-').map((x) => Number.parseInt(x, 10))) ?? []
 
 	return (index: number) => {
 		const lineNumber = index + 1

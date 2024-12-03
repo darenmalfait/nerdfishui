@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import { addDays, format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import * as React from 'react'
-import { type SelectRangeEventHandler, type DateRange } from 'react-day-picker'
+import { type DateRange, type SelectRangeEventHandler } from 'react-day-picker'
 
 import { Badge } from './badge'
 import { Button, buttonVariants } from './button'
@@ -32,8 +32,10 @@ function Presets({
 					<button
 						key={value}
 						type="button"
-						className="text-primary/50 hover:text-primary/70 m-sm inline-flex text-sm"
-						onClick={() => onChange?.(addDays(new Date(), parseInt(value, 10)))}
+						className="m-sm text-primary/50 hover:text-primary/70 inline-flex text-sm"
+						onClick={() =>
+							onChange?.(addDays(new Date(), Number.parseInt(value, 10)))
+						}
 					>
 						<Badge>{label}</Badge>
 					</button>

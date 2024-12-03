@@ -1,6 +1,6 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
 const GaugeContext = React.createContext<{
@@ -114,11 +114,10 @@ export const Gauge = React.forwardRef<
 			const subtract = -strokePercent + 100
 
 			return `${Math.max(strokePercent * percentToPx - subtract * percentToPx, 0)} ${circumference}`
-		} else {
-			const subtract = gapPercent * 2 * offsetFactor
-
-			return `${Math.max(strokePercent * percentToPx - subtract * percentToPx, 0)} ${circumference}`
 		}
+		const subtract = gapPercent * 2 * offsetFactor
+
+		return `${Math.max(strokePercent * percentToPx - subtract * percentToPx, 0)} ${circumference}`
 	}
 
 	const secondaryStrokeDasharray = () => {
@@ -130,11 +129,10 @@ export const Gauge = React.forwardRef<
 			const subtract = strokePercent
 
 			return `${Math.max((100 - strokePercent) * percentToPx - subtract * percentToPx, 0)} ${circumference}`
-		} else {
-			const subtract = gapPercent * 2 * offsetFactorSecondary
-
-			return `${Math.max((100 - strokePercent) * percentToPx - subtract * percentToPx, 0)} ${circumference}`
 		}
+		const subtract = gapPercent * 2 * offsetFactorSecondary
+
+		return `${Math.max((100 - strokePercent) * percentToPx - subtract * percentToPx, 0)} ${circumference}`
 	}
 
 	const primaryTransform = () => {
@@ -146,11 +144,10 @@ export const Gauge = React.forwardRef<
 			const add = 0.5 * (-strokePercent + 100)
 
 			return `rotate(${-90 + add * percentToDegree}deg)`
-		} else {
-			const add = gapPercent * offsetFactor
-
-			return `rotate(${-90 + add * percentToDegree}deg)`
 		}
+		const add = gapPercent * offsetFactor
+
+		return `rotate(${-90 + add * percentToDegree}deg)`
 	}
 
 	const secondaryTransform = () => {
@@ -162,11 +159,10 @@ export const Gauge = React.forwardRef<
 			const subtract = 0.5 * strokePercent
 
 			return `rotate(${360 - 90 - subtract * percentToDegree}deg) scaleY(-1)`
-		} else {
-			const subtract = gapPercent * offsetFactorSecondary
-
-			return `rotate(${360 - 90 - subtract * percentToDegree}deg) scaleY(-1)`
 		}
+		const subtract = gapPercent * offsetFactorSecondary
+
+		return `rotate(${360 - 90 - subtract * percentToDegree}deg) scaleY(-1)`
 	}
 
 	const circleStyles: React.CSSProperties = {
@@ -174,7 +170,7 @@ export const Gauge = React.forwardRef<
 		strokeLinejoin: 'round',
 		strokeDashoffset: 0,
 		strokeWidth,
-		transition: `all 300ms ease 300ms`,
+		transition: 'all 300ms ease 300ms',
 		transformOrigin: '50% 50%',
 		shapeRendering: 'geometricPrecision',
 	}

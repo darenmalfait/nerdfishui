@@ -2,7 +2,7 @@
 
 import { getButtonClassName } from '@nerdfish/ui'
 import Link from 'next/link'
-import * as React from 'react'
+import type * as React from 'react'
 import { Icons } from '~/app/components/icons'
 import {
 	PageActions,

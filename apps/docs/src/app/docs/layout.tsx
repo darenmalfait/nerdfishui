@@ -1,10 +1,10 @@
 import {
 	ScrollArea,
-	SidebarDivider,
 	Sidebar,
+	SidebarDivider,
 	SidebarSection,
 } from '@nerdfish/ui'
-import * as React from 'react'
+import type * as React from 'react'
 import {
 	ComponentNavigation,
 	GettingStartedNavigation,

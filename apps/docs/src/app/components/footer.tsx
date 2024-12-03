@@ -4,7 +4,7 @@ import { cx } from '@nerdfish/utils'
 import { docs } from 'docs.config'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import * as React from 'react'
+import type * as React from 'react'
 import { Icons } from './icons'
 import { GithubLogo } from './icons/github-logo'
 import { stripTrailingSlash } from '~/lib/utils/string'
@@ -29,7 +29,7 @@ function PageLink({
 			{previous ? (
 				<>
 					<span className="text-sm">Previous</span>
-					<span className="text-accent gap-sm flex items-center text-lg font-bold">
+					<span className="gap-sm text-accent flex items-center text-lg font-bold">
 						<Icons.ChevronLeft className="size-3" />
 						{page.title}
 					</span>
@@ -37,7 +37,7 @@ function PageLink({
 			) : (
 				<>
 					<span className="text-sm">Next</span>
-					<span className="text-accent gap-sm flex items-center justify-end text-right text-lg font-bold">
+					<span className="gap-sm text-accent flex items-center justify-end text-right text-lg font-bold">
 						{page.title}
 						<Icons.ChevronRight className="size-3" />
 					</span>
@@ -122,7 +122,7 @@ function SmallPrint() {
 			<p className="text-muted text-xs">
 				&copy; Copyright {new Date().getFullYear()}. All rights reserved.
 			</p>
-			<div className="text-muted gap-md flex">
+			<div className="gap-md text-muted flex">
 				<SocialLink href="https://twitter.com/darenmalfait" icon={TwitterIcon}>
 					Follow us on Twitter
 				</SocialLink>

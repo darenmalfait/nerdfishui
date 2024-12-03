@@ -6,7 +6,7 @@ import { SiteHeader } from './components/site-header'
 import { MobileNavProvider } from './mobile-nav-provider'
 
 import '@nerdfish/theme/dist/nerdfishui.css'
-import '../styles/global.css'
+import '@repo/tailwind-config/styles/global.css'
 
 interface RootLayoutProps {
 	children: React.ReactNode

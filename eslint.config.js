@@ -5,14 +5,12 @@ export default [
 	...defaultConfig,
 	{
 		ignores: [
-			'!**/build/**',
-			'**/.turbo**',
-			'**/.next**',
-			'**/.changeset**',
+			'**/.changeset/**',
+			'**/.next/**',
+			'**/.turbo/**',
 			'**/dist/**',
-			'**/next/**',
 			'**/next-env.d.ts',
-			'**/__generated__/**',
+			'**/next/**',
 			'**/public/**',
 		],
 	},

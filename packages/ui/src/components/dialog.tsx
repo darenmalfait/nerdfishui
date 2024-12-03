@@ -37,7 +37,7 @@ export const DialogOverlay = React.forwardRef<
 	<DialogPrimitive.Overlay
 		ref={ref}
 		className={cx(
-			'data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in fixed inset-0 z-50 bg-black/5 backdrop-blur-sm transition-all duration-100',
+			'data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:animate-out fixed inset-0 z-50 bg-black/5 backdrop-blur-sm transition-all duration-100',
 			className,
 		)}
 		{...props}
@@ -54,7 +54,7 @@ export const DialogContent = React.forwardRef<
 		<DialogPrimitive.Content
 			ref={ref}
 			className={cx(
-				'shadow-outline bg-popover animate-in data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 rounded-b-base sm:rounded-base gap-md p-md fixed z-50 grid w-full sm:max-w-lg',
+				'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 animate-in gap-md rounded-b-base bg-popover p-md shadow-outline sm:rounded-base fixed z-50 grid w-full sm:max-w-lg',
 				className,
 			)}
 			{...props}
@@ -64,7 +64,7 @@ export const DialogContent = React.forwardRef<
 				<Button
 					variant="ghost"
 					size="iconSm"
-					className="right-sm top-sm absolute"
+					className="top-sm right-sm absolute"
 				>
 					<XIcon aria-hidden className="size-4" />
 					<span className="sr-only">Close</span>

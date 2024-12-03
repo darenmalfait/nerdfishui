@@ -6,7 +6,7 @@ import { Command as CommandPrimitive } from 'cmdk'
 import * as React from 'react'
 
 import { Dialog, DialogContent } from './dialog'
-import { inputVariants, type InputProps } from './input'
+import { type InputProps, inputVariants } from './input'
 
 export const Command = React.forwardRef<
 	React.ElementRef<typeof CommandPrimitive>,
@@ -41,7 +41,7 @@ export const CommandInput = React.forwardRef<
 		cmdk-input-wrapper=""
 	>
 		{Icon ? (
-			<Icon className="text-primary mr-sm size-4 shrink-0 opacity-50" />
+			<Icon className="mr-sm text-primary size-4 shrink-0 opacity-50" />
 		) : null}
 
 		<CommandPrimitive.Input
@@ -73,7 +73,7 @@ export const CommandEmpty = React.forwardRef<
 >((props, ref) => (
 	<CommandPrimitive.Empty
 		ref={ref}
-		className="text-primary py-lg text-center text-sm"
+		className="py-lg text-primary text-center text-sm"
 		{...props}
 	/>
 ))
@@ -87,7 +87,7 @@ export const CommandGroup = React.forwardRef<
 	<CommandPrimitive.Group
 		ref={ref}
 		className={cx(
-			'text-primary [&_[cmdk-group-heading]]:text-primary px-sm py-md [&_[cmdk-group-heading]]:px-sm [&_[cmdk-group-heading]]:pb-sm overflow-hidden [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold',
+			'px-sm py-md text-primary [&_[cmdk-group-heading]]:px-sm [&_[cmdk-group-heading]]:pb-sm [&_[cmdk-group-heading]]:text-primary overflow-hidden [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold',
 			className,
 		)}
 		{...props}
@@ -102,7 +102,7 @@ export const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<CommandPrimitive.Separator
 		ref={ref}
-		className={cx('bg-muted -mx-xs h-px', className)}
+		className={cx('-mx-xs bg-muted h-px', className)}
 		{...props}
 	/>
 ))
@@ -115,7 +115,7 @@ export const CommandItem = React.forwardRef<
 	<CommandPrimitive.Item
 		ref={ref}
 		className={cx(
-			'aria-selected:bg-muted data-[disabled=true]:text-muted text-primary px-sm py-sm relative flex cursor-pointer select-none items-center rounded-lg text-sm font-medium outline-none data-[disabled=true]:pointer-events-none',
+			'px-sm py-sm text-primary aria-selected:bg-muted data-[disabled=true]:text-muted relative flex cursor-pointer select-none items-center rounded-lg text-sm font-medium outline-none data-[disabled=true]:pointer-events-none',
 			className,
 		)}
 		{...props}

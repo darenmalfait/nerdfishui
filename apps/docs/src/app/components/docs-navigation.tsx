@@ -2,9 +2,9 @@
 
 import {
 	NavigationList,
-	NavigationListTitle,
 	NavigationListItem,
 	NavigationListSection,
+	NavigationListTitle,
 } from '@nerdfish/ui'
 import { docs } from 'docs.config'
 import { usePathname } from 'next/navigation'

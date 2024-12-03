@@ -1,12 +1,11 @@
 import { Button, H1, Paragraph } from '@nerdfish/ui'
 import { type Metadata } from 'next'
 import Link from 'next/link'
-import * as React from 'react'
 import { getMetaData } from '../lib/utils/seo'
 import { generateOGImageUrl } from '~/lib/utils/social'
 
 export async function generateMetadata(): Promise<Metadata | undefined> {
-	const title = `NerdfishUI`
+	const title = 'NerdfishUI'
 
 	return getMetaData({
 		ogImage: generateOGImageUrl({
@@ -21,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata | undefined> {
 
 export default async function HomePage() {
 	return (
-		<main className="lg:gap-lg py-md relative xl:grid">
+		<main className="py-md lg:gap-lg relative xl:grid">
 			<div className="mx-auto w-full min-w-0">
 				<div className="px-md pt-xl lg:px-lg relative isolate">
 					<div

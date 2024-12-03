@@ -12,7 +12,7 @@ export async function generateTypes(dir: string) {
 	try {
 		cpSync(
 			join(dir, 'dist', 'types', 'index.d.ts'),
-			join(dir, 'dist', 'types', 'index.d.mts'),
+			join(dir, 'dist', 'types', 'index.d.mts')
 		)
 	} catch {
 		console.info('No .dts file found')

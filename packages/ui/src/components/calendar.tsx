@@ -2,7 +2,7 @@
 
 import { cx } from '@nerdfish/utils'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import * as React from 'react'
+import type * as React from 'react'
 import { DayPicker, type DayPickerProps } from 'react-day-picker'
 
 import { buttonVariants } from './button'

@@ -7,12 +7,12 @@ import { useControllableState } from '../hooks'
 import { Badge } from './badge'
 import {
 	Command,
-	CommandInput,
-	CommandList,
 	CommandGroup,
+	CommandInput,
 	CommandItem,
+	CommandList,
 } from './command'
-import { inputVariants, type InputProps } from './input'
+import { type InputProps, inputVariants } from './input'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { ScrollArea } from './scroll-area'
 
@@ -72,9 +72,9 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 
 		function toggleItem(item: MultiSelectItem) {
 			setSelectedValues(
-				!selectedValues.includes(item)
-					? [...selectedValues, item]
-					: selectedValues.filter((l) => l.value !== item.value),
+				selectedValues.includes(item)
+					? selectedValues.filter((l) => l.value !== item.value)
+					: [...selectedValues, item],
 			)
 			inputRef.current?.focus()
 		}
@@ -206,7 +206,7 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 							key={value}
 							variant="outline"
 							style={color ? multiSelectBadgeStyle(color) : undefined}
-							className="dark:!bg-opacity/20 bg-muted shadow-outline mb-sm mr-sm border"
+							className="dark:!bg-opacity/20 mr-sm mb-sm bg-muted shadow-outline border"
 						>
 							{label}
 						</Badge>

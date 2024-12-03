@@ -1,12 +1,12 @@
-dist
-node_modules
-.next
-.env*
-.changeset
-*.log
-
+**/.changeset/**
+**/.next/**
+**/.turbo/**
+**/dist/**
+**/node_modules/**
+**/build/**
+**/coverage/**
+**/next-env.d.ts
+**/next/**
+**/public/**
 pnpm-lock.yaml
 
-!apps/**
-!packages/**
-!tooling/**

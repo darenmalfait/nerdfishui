@@ -1,23 +1,23 @@
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import * as SwitchPrimitives from '@radix-ui/react-switch'
 import * as React from 'react'
 
 const switchVariants = cva(
-	['focus-visible:outline-active border-2 border-transparent bg-inverted/10'],
+	['border-2 border-transparent bg-inverted/10 focus-visible:outline-active'],
 	{
 		variants: {
 			variant: {
 				accent:
-					'data-[state=checked]:bg-accent data-[state=checked]:border-accent',
+					'data-[state=checked]:border-accent data-[state=checked]:bg-accent',
 				danger:
-					'data-[state=checked]:bg-danger-accent data-[state=checked]:border-danger-accent',
+					'data-[state=checked]:border-danger-accent data-[state=checked]:bg-danger-accent',
 				success:
-					'data-[state=checked]:bg-success-accent data-[state=checked]:border-success-accent',
+					'data-[state=checked]:border-success-accent data-[state=checked]:bg-success-accent',
 				warning:
-					'data-[state=checked]:bg-warning-accent data-[state=checked]:border-warning-accent',
-				info: 'data-[state=checked]:bg-info-accent data-[state=checked]:border-info-accent',
+					'data-[state=checked]:border-warning-accent data-[state=checked]:bg-warning-accent',
+				info: 'data-[state=checked]:border-info-accent data-[state=checked]:bg-info-accent',
 			},
 			inputSize: {
 				sm: 'h-[16px] w-[32px] [&>[data-slot=thumb]]:size-4 [&>[data-slot=thumb]]:data-[state=checked]:translate-x-3',
@@ -45,7 +45,7 @@ export const Switch = React.forwardRef<
 			'peer inline-flex shrink-0 cursor-pointer items-center rounded-full p-0 transition-colors',
 
 			// disabled state
-			'disabled-within:opacity-50 disabled-within:cursor-not-allowed disabled-within:shadow-none disabled-within:hover:border-transparent',
+			'disabled-within:cursor-not-allowed disabled-within:opacity-50 disabled-within:shadow-none disabled-within:hover:border-transparent',
 			className,
 		)}
 		{...props}
@@ -54,7 +54,7 @@ export const Switch = React.forwardRef<
 		<SwitchPrimitives.Thumb
 			data-slot="thumb"
 			className={cx(
-				'bg-primary dark:bg-inverted data-[state=checked]:bg-primary pointer-events-none block rounded-full shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0.5',
+				'bg-primary data-[state=checked]:bg-primary dark:bg-inverted pointer-events-none block rounded-full shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0.5',
 			)}
 		/>
 	</SwitchPrimitives.Root>

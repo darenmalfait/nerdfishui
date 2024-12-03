@@ -151,7 +151,7 @@ export const animation = {
 	animation: {
 		'accordion-down': 'accordion-down 0.2s ease-out',
 		'accordion-up': 'accordion-up 0.2s ease-out',
-		shake: `shake 0.5s  cubic-bezier(0.4, 0, 1, 1)`,
+		shake: 'shake 0.5s  cubic-bezier(0.4, 0, 1, 1)',
 		pop: 'pop .3s cubic-bezier(0.4, 0, 1, 1)',
 		'caret-blink': 'caret-blink 1.25s ease-out infinite',
 		rubber: 'rubber 1s cubic-bezier(0.4, 0, 1, 1)',

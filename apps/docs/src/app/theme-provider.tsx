@@ -69,14 +69,13 @@ const ThemeScript = React.memo(
 
 			if (fallback) {
 				return `if(e==='light'||e==='dark'||!e)d.style.colorScheme=e||'${defaultTheme}'`
-			} else {
-				return `if(e==='light'||e==='dark')d.style.colorScheme=e`
 			}
+			return `if(e==='light'||e==='dark')d.style.colorScheme=e`
 		})()
 
 		const updateDOM = (
 			name: string,
-			literal: boolean = false,
+			literal = false,
 			setColorScheme = true,
 		) => {
 			const resolvedName = name
@@ -93,7 +92,7 @@ const ThemeScript = React.memo(
 			if (literal || resolvedName) {
 				text += `c.add(${val})`
 			} else {
-				text += `null`
+				text += 'null'
 			}
 
 			return text
