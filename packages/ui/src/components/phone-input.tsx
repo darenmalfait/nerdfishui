@@ -1,6 +1,6 @@
 'use client'
 
-import { type VariantProps, cx } from '@nerdfish/utils'
+import { cx, type VariantProps } from '@nerdfish/utils'
 import { CheckIcon, ChevronsUpDown } from 'lucide-react'
 import * as React from 'react'
 import * as RPNInput from 'react-phone-number-input'
@@ -89,7 +89,7 @@ function CountrySelect({
 					type="button"
 					className={cx(
 						inputVariants({ variant, inputSize }),
-						'border-r-inverted flex h-auto w-auto items-center gap-1 rounded-e-none rounded-s-xl px-3 focus:z-10',
+						'mr-xs gap-xs flex h-auto w-auto items-center focus:z-10',
 					)}
 					disabled={disabled}
 				>
@@ -141,7 +141,7 @@ const InputComponent = React.forwardRef<
 		<Input
 			variant={variant}
 			inputSize={inputSize}
-			className={cx('flex-1 rounded-e-xl rounded-s-none', className)}
+			className={cx('flex-1', className)}
 			{...props}
 			ref={ref}
 		/>
