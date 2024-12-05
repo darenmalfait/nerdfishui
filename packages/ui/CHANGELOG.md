@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.7.7
+
+### Patch Changes
+
+- tweak `PhoneInput` design
+
 ## 7.7.6
 
 ### Patch Changes
