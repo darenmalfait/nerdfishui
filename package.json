@@ -32,7 +32,7 @@
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-replace": "^6.0.1",
-    "rollup": "^4.27.4",
+    "rollup": "^4.28.0",
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-preserve-directives": "^0.4.0",
     "tailwindcss": "^3.4.16",
@@ -48,7 +48,7 @@
     "execa": "^9.5.1",
     "husky": "^9.1.7",
     "prettier": "^3.4.1",
-    "turbo": "^2.3.0"
+    "turbo": "^2.3.3"
   },
-  "packageManager": "pnpm@9.14.2"
+  "packageManager": "pnpm@9.14.4"
 }
