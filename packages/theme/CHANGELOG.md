@@ -1,5 +1,18 @@
 # @nerdfish/theme
 
+## 2.5.1
+
+### Patch Changes
+
+- update to react 19
+
+- adjust dependencies
+
+- Updated dependencies
+  [[`f530277`](https://github.com/darenmalfait/nerdfishui/commit/f5302774e6f0326d5693b97243d362df25562e40),
+  [`9577103`](https://github.com/darenmalfait/nerdfishui/commit/95771035ceb7156422adeebf39f077b06c32eb74)]:
+  - @nerdfish/utils@2.0.1
+
 ## 2.5.0
 
 ### Minor Changes
