@@ -282,6 +282,9 @@ importers:
         specifier: workspace:^*
         version: link:../utils
     devDependencies:
+      '@nerdfish/config':
+        specifier: ^1.6.1
+        version: 1.6.1(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.4.1))(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)(typescript@5.7.2)
       '@types/react':
         specifier: 19.0.1
         version: 19.0.1
@@ -424,6 +427,9 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@nerdfish/config':
+        specifier: ^1.6.1
+        version: 1.6.1(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.4.1))(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)(typescript@5.7.2)
       '@nerdfish/tailwind-config':
         specifier: workspace:*
         version: link:../tailwind-config
@@ -455,21 +461,15 @@ importers:
         specifier: ^2.5.5
         version: 2.5.5
     devDependencies:
-      '@types/react':
-        specifier: 19.0.1
-        version: 19.0.1
-      '@types/react-dom':
-        specifier: 19.0.2
-        version: 19.0.2(@types/react@19.0.1)
+      '@nerdfish/config':
+        specifier: ^1.6.1
+        version: 1.6.1(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.4.1))(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)(typescript@5.7.2)
       eslint:
         specifier: ^9.15.0
         version: 9.15.0(jiti@1.21.6)
       prettier:
         specifier: ^3.4.1
         version: 3.4.1
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
