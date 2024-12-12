@@ -1,0 +1,11 @@
+{
+	"extends": "@nerdfish/config/typescript",
+	"include": ["src"],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"noEmit": false,
+		"emitDeclarationOnly": true,
+		"declaration": true,
+		"outDir": "dist/types"
+	}
+}
