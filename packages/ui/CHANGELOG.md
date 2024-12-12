@@ -4,6 +4,19 @@
 
 ### Patch Changes
 
+- update to react 19
+
+- adjust dependencies
+
+- Updated dependencies
+  [[`f530277`](https://github.com/darenmalfait/nerdfishui/commit/f5302774e6f0326d5693b97243d362df25562e40),
+  [`9577103`](https://github.com/darenmalfait/nerdfishui/commit/95771035ceb7156422adeebf39f077b06c32eb74)]:
+  - @nerdfish/utils@2.0.1
+
+## 7.7.7
+
+### Patch Changes
+
 - tweak `PhoneInput` design
 
 ## 7.7.6

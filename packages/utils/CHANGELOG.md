@@ -1,5 +1,13 @@
 # @nerdfish/utils
 
+## 2.0.1
+
+### Patch Changes
+
+- update to react 19
+
+- adjust dependencies
+
 ## 2.0.0
 
 ### Major Changes
