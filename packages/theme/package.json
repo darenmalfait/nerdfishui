@@ -32,6 +32,7 @@
     "@nerdfish/utils": "workspace:^*"
   },
   "devDependencies": {
+    "@nerdfish/config": "^1.6.1",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
     "eslint": "^9.15.0",
