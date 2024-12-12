@@ -10,9 +10,17 @@
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,
   "type": "module",
-  "main": "./src/index.ts",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsx ../../scripts/build/main.ts --dts",
+    "build:fast": "tsx ../../scripts/build/main.ts",
     "clean": "rm -rf node_modules .turbo",
+    "dev": "pnpm build:fast --watch",
     "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0"
   },
