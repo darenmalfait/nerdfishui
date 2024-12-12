@@ -12,7 +12,6 @@ import { rehypeNpmCommand } from './src/lib/rehype-npm-command.js'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	trailingSlash: true,
-	swcMinify: true,
 	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 	typescript: {
 		ignoreBuildErrors: !!process.env.CI,
@@ -33,7 +32,6 @@ const nextConfig = {
 }
 
 const withMDX = createMDX({
-	extension: /\.mdx?$/,
 	options: {
 		remarkPlugins: [remarkGfm, codeImport],
 		rehypePlugins: [

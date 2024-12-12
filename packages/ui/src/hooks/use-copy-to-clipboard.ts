@@ -6,9 +6,9 @@ export function useCopyToClipboard({
 	onError?: (error: Error) => void
 } = {}) {
 	const [copiedText, setCopiedText] = React.useState<string | null>(null)
-	const copyTimeoutRef = React.useRef<
-		ReturnType<typeof setTimeout> | undefined
-	>()
+	const copyTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+		null,
+	)
 
 	const handleCopy = React.useCallback(
 		async (text: string, resetDelay?: number) => {
@@ -45,7 +45,7 @@ export function useCopyToClipboard({
 
 	React.useEffect(() => {
 		return () => {
-			clearTimeout(copyTimeoutRef.current)
+			if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current)
 		}
 	}, [])
 
