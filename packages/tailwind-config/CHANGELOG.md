@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.8.2
+
+### Patch Changes
+
+- build tailwind-config into dist
+
 ## 3.8.1
 
 ### Patch Changes
