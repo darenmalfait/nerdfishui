@@ -72,7 +72,7 @@
     "@nerdfish/tailwind-config": "workspace:*",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
-    "eslint": "^9.16.0",
+    "eslint": "^9.17.0",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2"
   },
