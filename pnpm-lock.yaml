@@ -492,8 +492,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
       tailwindcss-motion:
-        specifier: ^0.4.3-beta
-        version: 0.4.3-beta(tailwindcss@3.4.17)
+        specifier: ^1.0.0
+        version: 1.0.0(tailwindcss@3.4.17)
     devDependencies:
       tailwindcss:
         specifier: ^3.4.17
@@ -7992,8 +7992,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  tailwindcss-motion@0.4.3-beta:
-    resolution: {integrity: sha512-9S4nmSw01m0/z0UxodUNT7U+yUdlZdXnH9RMkb2rXvrUEQQ+rMVPeP9j4pMwJy779LECiSr+IoSTVrGluSfU2w==}
+  tailwindcss-motion@1.0.0:
+    resolution: {integrity: sha512-Bc8XJxiSGjup0NHsph4OBGXXFfmbInFUhvVVluKPScQD1R2kDQTZIODqumsI/lONryeTpDdKzwuuw1a99Z38bQ==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
@@ -18092,7 +18092,7 @@ snapshots:
     dependencies:
       tailwindcss: 3.4.17
 
-  tailwindcss-motion@0.4.3-beta(tailwindcss@3.4.17):
+  tailwindcss-motion@1.0.0(tailwindcss@3.4.17):
     dependencies:
       tailwindcss: 3.4.17
 
