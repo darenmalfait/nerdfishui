@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.7.8
+
+### Patch Changes
+
+- scale button out on click
+
 ## 7.7.7
 
 ### Patch Changes
