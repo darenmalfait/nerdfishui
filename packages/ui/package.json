@@ -53,14 +53,14 @@
     "@radix-ui/react-tooltip": "^1.1.6",
     "cmdk": "^1.0.4",
     "date-fns": "^4.1.0",
-    "input-otp": "^1.4.1",
-    "lucide-react": "^0.469.0",
+    "input-otp": "^1.4.2",
+    "lucide-react": "^0.471.0",
     "react": "19.0.0",
     "react-aria": "^3.36.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "19.0.0",
     "react-hook-form": "^7.54.2",
-    "react-phone-number-input": "^3.4.10",
+    "react-phone-number-input": "^3.4.11",
     "react-resizable-panels": "^2.1.7",
     "react-stately": "^3.34.0",
     "sonner": "^1.7.1",
@@ -70,11 +70,11 @@
   "devDependencies": {
     "@nerdfish/config": "^1.6.1",
     "@nerdfish/tailwind-config": "workspace:*",
-    "@types/react": "19.0.2",
-    "@types/react-dom": "19.0.2",
+    "@types/react": "19.0.6",
+    "@types/react-dom": "19.0.3",
     "eslint": "^9.17.0",
     "prettier": "^3.4.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   },
   "publishConfig": {
     "access": "public"
