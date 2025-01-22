@@ -29,7 +29,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@nerdfish/config": "^1.6.1",
+    "@nerdfish/config": "^1.8.0",
     "@types/react": "19.0.6",
     "@types/react-dom": "19.0.3",
     "typescript": "^5.7.3"
