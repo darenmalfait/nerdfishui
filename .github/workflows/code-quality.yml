@@ -36,6 +36,9 @@ jobs:
       - name: Install
         uses: ./packages/github-actions/install
 
+      - name: Build packages
+        run: pnpm run build:packages
+
       - name: Run lint
         run: pnpm lint
 
@@ -49,6 +52,9 @@ jobs:
 
       - name: Install
         uses: ./packages/github-actions/install
+
+      - name: Build packages
+        run: pnpm run build:packages
 
       - name: Cache TypeScript TSBuild Info Files
         id: cache-typescript-tsbuildinfo

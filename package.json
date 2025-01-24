@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:packages": "turbo run build --filter=!docs",
     "checks": "npm-run-all2 format lint typecheck",
     "checks:fix": "npm-run-all2 format:fix lint:fix typecheck",
     "clean": "turbo clean && rm -rf node_modules && rm -rf .turbo",

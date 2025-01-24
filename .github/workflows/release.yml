@@ -17,7 +17,7 @@ jobs:
         uses: ./packages/github-actions/install
 
       - name: build
-        run: pnpm run build
+        run: pnpm run build:packages
 
       - name: release
         env:
