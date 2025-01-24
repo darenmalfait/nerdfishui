@@ -1,0 +1,71 @@
+name: Quality Gate
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  NEXT_PUBLIC_URL: 'https://ui.nerdfish.be'
+
+jobs:
+  format:
+    name: Format
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install
+        uses: ./packages/github-actions/install
+
+      - name: Run format
+        run: pnpm format
+
+  lint:
+    name: Lint
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install
+        uses: ./packages/github-actions/install
+
+      - name: Build packages
+        run: pnpm run build:packages
+
+      - name: Run lint
+        run: pnpm lint
+
+  typecheck:
+    name: TypeCheck
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install
+        uses: ./packages/github-actions/install
+
+      - name: Build packages
+        run: pnpm run build:packages
+
+      - name: Cache TypeScript TSBuild Info Files
+        id: cache-typescript-tsbuildinfo
+        uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4
+        with:
+          path: node_modules/.cache/*-tsbuildinfo.json
+          # We use the commit hash as the key to always update the cache as a
+          # workaround to this issue:
+          # https://github.com/actions/cache/issues/106
+          key: ${{ runner.os }}-cache-typescript-tsbuildinfo-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-cache-typescript-tsbuildinfo-
+
+      - name: Run typecheck
+        run: pnpm run typecheck
