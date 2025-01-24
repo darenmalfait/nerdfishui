@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "build:packages": "turbo run build --filter=packages",
+    "build:packages": "turbo run build --filter=!docs",
     "changeset": "changeset",
     "changeset:release": "changeset publish",
     "changeset:version": "changeset version && pnpm install --no-frozen-lockfile && git add .",
