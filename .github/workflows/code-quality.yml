@@ -60,12 +60,11 @@ jobs:
         id: cache-typescript-tsbuildinfo
         uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4
         with:
-          path: node_modules/.cache/*-tsbuildinfo.json
+          path: '*/*/node_modules/.cache/tsbuildinfo.json'
           # We use the commit hash as the key to always update the cache as a
           # workaround to this issue:
           # https://github.com/actions/cache/issues/106
           key: ${{ runner.os }}-cache-typescript-tsbuildinfo-${{ github.sha }}
           restore-keys: ${{ runner.os }}-cache-typescript-tsbuildinfo-
-
       - name: Run typecheck
         run: pnpm run typecheck
