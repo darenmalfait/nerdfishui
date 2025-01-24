@@ -5,7 +5,6 @@ export default [
 	...defaultConfig,
 	{
 		ignores: [
-			'**/.changeset/**',
 			'**/.next/**',
 			'**/.turbo/**',
 			'**/dist/**',
