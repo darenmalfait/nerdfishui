@@ -7,41 +7,23 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+env:
+  NEXT_PUBLIC_URL: 'https://ui.nerdfish.be'
+
 jobs:
   release:
     timeout-minutes: 15
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@85880fa0301c86cca9da44039ee3bb12d3bedbfa # 0.12.1
-
       - name: ⬇️ Checkout repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-      - name: ⎔ Setup node
-        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
-        with:
-          node-version-file: '.nvmrc'
+      - name: Install
+        uses: ./packages/github-actions/install
 
-      - uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Install dependencies
-        run: pnpm install --ignore-scripts
-
-      - name: build packages
-        env:
-          NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
-        run: pnpm run build
+      - name: Build packages
+        run: pnpm run build:packages
 
       - name: Create Version PR or Publish to NPM
         id: changesets
