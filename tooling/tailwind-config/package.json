@@ -11,7 +11,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.16",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-motion": "^1.0.1"
+    "tailwindcss-motion": "^1.1.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
