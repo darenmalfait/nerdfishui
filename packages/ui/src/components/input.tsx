@@ -89,31 +89,29 @@ export const Input = React.forwardRef<
 	const baseClassName = inputVariants({ inputSize, variant })
 
 	return (
-		<div className="flex flex-1 flex-nowrap items-center space-x-2">
-			<div
+		<div
+			className={cx(
+				baseClassName,
+				'relative m-0 flex w-full items-center !p-0 shadow-sm',
+				className,
+			)}
+		>
+			{addOnLeading}
+			<input
+				data-slot="control"
+				type={type}
+				{...(inputProps as React.ComponentPropsWithoutRef<'input'>)}
 				className={cx(
 					baseClassName,
-					'relative m-0 flex w-full items-center !p-0 shadow-sm',
-					className,
+					'border-transparent bg-transparent',
+					!!addOnLeading && '!pl-sm',
+					!!Icon && 'pr-xl',
 				)}
-			>
-				{addOnLeading}
-				<input
-					data-slot="control"
-					type={type}
-					{...(inputProps as React.ComponentPropsWithoutRef<'input'>)}
-					className={cx(
-						baseClassName,
-						'border-transparent bg-transparent',
-						!!addOnLeading && '!pl-sm',
-						!!Icon && 'pr-xl',
-					)}
-					ref={ref as React.ForwardedRef<HTMLInputElement>}
-				/>
-				<InputIcon icon={Icon} variant={variant} />
-				{children ? <div className="flex shrink-0">{children}</div> : null}
-				{addOnTrailing}
-			</div>
+				ref={ref as React.ForwardedRef<HTMLInputElement>}
+			/>
+			<InputIcon icon={Icon} variant={variant} />
+			{children ? <div className="flex shrink-0">{children}</div> : null}
+			{addOnTrailing}
 		</div>
 	)
 })

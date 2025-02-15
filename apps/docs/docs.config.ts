@@ -97,6 +97,7 @@ export const docs: { navigation: NavigationGroup[] } = {
 				{ title: 'Command', href: '/docs/components/command/' },
 				{ title: 'Dialog', href: '/docs/components/dialog/' },
 				{ title: 'Drawer', href: '/docs/components/drawer/' },
+				{ title: 'Sheet', href: '/docs/components/sheet/' },
 				{
 					title: 'EmptyState',
 					href: '/docs/components/empty-state/',
