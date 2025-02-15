@@ -1,5 +1,15 @@
 # @nerdfish/ui
 
+## 7.8.0
+
+### Minor Changes
+
+- add `Sheet` component
+
+### Patch Changes
+
+- tweak `Input` layout
+
 ## 7.7.8
 
 ### Patch Changes
