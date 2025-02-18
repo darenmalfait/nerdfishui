@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.9.0
+
+### Minor Changes
+
+- add `ContextMenu` component
+
 ## 7.8.0
 
 ### Minor Changes
