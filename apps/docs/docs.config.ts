@@ -81,6 +81,11 @@ export const docs: { navigation: NavigationGroup[] } = {
 					status: 'needs-update',
 				},
 				{ title: 'NavigationList', href: '/docs/components/navigation-list/' },
+				{
+					title: 'ContextMenu',
+					href: '/docs/components/context-menu/',
+					status: 'new',
+				},
 				{ title: 'NavigationMenu', href: '/docs/components/navigation-menu/' },
 				{ title: 'Tabs', href: '/docs/components/tabs/' },
 			],
