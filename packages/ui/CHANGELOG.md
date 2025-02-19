@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.9.1
+
+### Patch Changes
+
+- use button styling as close button for `Sheet`
+
 ## 7.9.0
 
 ### Minor Changes
