@@ -2,8 +2,9 @@
 
 import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
-import { X } from 'lucide-react'
+import { XIcon } from 'lucide-react'
 import * as React from 'react'
+import { Button } from './button'
 
 export const Sheet = SheetPrimitive.Root
 
@@ -65,9 +66,15 @@ export function SheetContent({
 				{...props}
 			>
 				{children}
-				<SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary rounded-base absolute right-4 top-4 opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
-					<X className="h-4 w-4" />
-					<span className="sr-only">Close</span>
+				<SheetPrimitive.Close asChild>
+					<Button
+						variant="ghost"
+						size="iconSm"
+						className="top-sm right-sm absolute"
+					>
+						<XIcon aria-hidden className="size-4" />
+						<span className="sr-only">Close</span>
+					</Button>
 				</SheetPrimitive.Close>
 			</SheetPrimitive.Content>
 		</SheetPortal>
