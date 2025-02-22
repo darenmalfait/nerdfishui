@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.9.1
+
+### Patch Changes
+
+- move `ScrollArea` ref to viewport
+
+- use button styling as close button for `Sheet`
+
 ## 7.9.0
 
 ### Minor Changes
