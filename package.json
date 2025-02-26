@@ -45,10 +45,10 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@nerdfish/config": "^1.8.0",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "execa": "^9.5.2",
     "husky": "^9.1.7",
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.2",
     "turbo": "^2.4.2"
   },
   "packageManager": "pnpm@9.15.5"
