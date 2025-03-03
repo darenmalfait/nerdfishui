@@ -32,7 +32,7 @@
     "@nerdfish/config": "^1.8.0",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   },
   "publishConfig": {
     "access": "public"
