@@ -5,6 +5,10 @@ import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
 import * as React from 'react'
 
+const basePadding = 'p-sm'
+const outerRadius = 'rounded-base'
+const innerRadius = 'rounded-[calc(theme(borderRadius.base)-theme(padding.sm))]'
+
 export type ContextMenuProps = React.ComponentProps<
 	typeof ContextMenuPrimitive.Root
 >
@@ -49,7 +53,8 @@ export function ContextMenuSubTrigger({
 	return (
 		<ContextMenuPrimitive.SubTrigger
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary data-[state=open]:bg-muted/90 data-[state=open]:text-primary px-sm py-sm flex cursor-default select-none items-center rounded-sm text-sm outline-none',
+				'focus:bg-muted/90 focus:text-primary data-[state=open]:bg-muted/90 data-[state=open]:text-primary px-sm py-sm flex cursor-default select-none items-center text-sm outline-none',
+				innerRadius,
 				inset && 'pl-lg',
 				className,
 			)}
@@ -72,7 +77,9 @@ export function ContextMenuSubContent({
 	return (
 		<ContextMenuPrimitive.SubContent
 			className={cx(
-				'bg-popover text-primary shadow-outline data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 rounded-base p-sm z-50 min-w-[8rem] shadow-lg',
+				'bg-primary text-primary shadow-outline data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] shadow-lg',
+				outerRadius,
+				basePadding,
 				className,
 			)}
 			{...props}
@@ -92,7 +99,9 @@ export function ContextMenuContent({
 		<ContextMenuPrimitive.Portal>
 			<ContextMenuPrimitive.Content
 				className={cx(
-					'bg-popover text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 shadow-outline rounded-base p-sm z-50 min-w-[8rem] shadow-md',
+					'bg-primary text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 shadow-outline z-50 min-w-[8rem] shadow-md',
+					outerRadius,
+					basePadding,
 					className,
 				)}
 				{...props}
@@ -115,7 +124,8 @@ export function ContextMenuItem({
 	return (
 		<ContextMenuPrimitive.Item
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary px-sm py-sm relative flex cursor-default select-none items-center rounded-sm text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				'focus:bg-muted/90 focus:text-primary px-sm py-sm relative flex cursor-default select-none items-center text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				innerRadius,
 				inset && 'pl-lg',
 				className,
 			)}
@@ -137,7 +147,8 @@ export function ContextMenuCheckboxItem({
 	return (
 		<ContextMenuPrimitive.CheckboxItem
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary py-sm pl-lg relative flex cursor-default select-none items-center rounded-sm pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				'focus:bg-muted/90 focus:text-primary py-sm pl-lg relative flex cursor-default select-none items-center pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				innerRadius,
 				className,
 			)}
 			checked={checked}
@@ -165,7 +176,8 @@ export function ContextMenuRadioItem({
 	return (
 		<ContextMenuPrimitive.RadioItem
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary py-sm pl-lg relative flex cursor-default select-none items-center rounded-sm pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				'focus:bg-muted/90 focus:text-primary py-sm pl-lg relative flex cursor-default select-none items-center pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				innerRadius,
 				className,
 			)}
 			{...props}
