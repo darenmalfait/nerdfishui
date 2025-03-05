@@ -22,7 +22,7 @@ import {
 export function CommandExample() {
 	return (
 		<Command className="shadow-soft-sm shadow-outline rounded-base border">
-			<div className="border-primary border-b">
+			<div className="border-muted border-b">
 				<CommandInput
 					placeholder="Type a command or search..."
 					className="rounded-base bg-transparent"
