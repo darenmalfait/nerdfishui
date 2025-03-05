@@ -44,7 +44,9 @@ export function CardExample({ className, ...props }: CardProps) {
 						<p className="text-sm font-medium leading-none">
 							Push Notifications
 						</p>
-						<p className="text-muted text-sm">Send notifications to device.</p>
+						<p className="text-foreground-muted text-sm">
+							Send notifications to device.
+						</p>
 					</div>
 					<Switch />
 				</div>
@@ -59,7 +61,9 @@ export function CardExample({ className, ...props }: CardProps) {
 								<p className="text-sm font-medium leading-none">
 									{notification.title}
 								</p>
-								<p className="text-muted text-sm">{notification.description}</p>
+								<p className="text-foreground-muted text-sm">
+									{notification.description}
+								</p>
 							</div>
 						</div>
 					))}

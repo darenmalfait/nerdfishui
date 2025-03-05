@@ -37,7 +37,7 @@ export function MobileNavigation() {
 				aria-label="Toggle navigation"
 				onClick={toggle}
 			>
-				<Icons.Menu className="text-primary size-4" />
+				<Icons.Menu className="text-foreground size-4" />
 			</Button>
 			<Drawer
 				direction="right"
@@ -53,7 +53,7 @@ export function MobileNavigation() {
 							<Link href="/" aria-label="Home">
 								<div className="space-x-md flex items-center">
 									<Logo className="h-6" />
-									<span className="ml-sm space-x-sm text-primary flex items-center text-lg font-semibold">
+									<span className="ml-sm space-x-sm text-foreground flex items-center text-lg font-semibold">
 										Nerdfish
 										<span className="ml-sm rounded-base border-muted p-sm border text-[8px] leading-snug">
 											UI

@@ -29,7 +29,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
 		<div className="space-y-md p-lg pb-xl hidden md:block">
 			<div className="space-y-sm">
 				<h2 className="text-2xl font-bold">Settings</h2>
-				<p className="text-muted-foreground">
+				<p className="text-foreground-muted">
 					Manage your account settings and set e-mail preferences.
 				</p>
 			</div>

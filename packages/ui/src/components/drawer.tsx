@@ -38,13 +38,13 @@ export const DrawerContent = React.forwardRef<
 >(({ className, children, hideCloseButton, ...props }, ref) => {
 	return (
 		<DrawerPrimitive.Portal>
-			<DrawerOverlay className="bg-primary/80" />
+			<DrawerOverlay className="bg-background/80" />
 
 			<DrawerPrimitive.Content
 				ref={ref}
 				className={cx(
 					// default
-					'bg-primary shadow-outline group fixed z-50 flex flex-col',
+					'bg-background shadow-outline group fixed z-50 flex flex-col',
 					// top
 					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:rounded-b-container [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0',
 					// bottom
@@ -71,12 +71,12 @@ export const DrawerContent = React.forwardRef<
 				<div className="relative max-h-[100vh] overflow-y-auto">
 					<div
 						data-role="drawer-handle"
-						className="top-md mt-md mb-md bg-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
+						className="top-md mt-md mb-md bg-background-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
 					/>
 					{children}
 					<div
 						data-role="drawer-handle"
-						className="bottom-md mt-md mb-md bg-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
+						className="bottom-md mt-md mb-md bg-background-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
 					/>
 				</div>
 			</DrawerPrimitive.Content>
@@ -125,7 +125,7 @@ export const DrawerDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<DrawerPrimitive.Description
 		ref={ref}
-		className={cx('text-muted text-sm', className)}
+		className={cx('text-foreground-muted text-sm', className)}
 		{...props}
 	/>
 ))

@@ -120,7 +120,7 @@ export const AutoComplete = React.forwardRef<
 					<CommandList>
 						<div
 							className={cx(
-								'animate-in rounded-base bg-popover p-sm text-primary shadow-outline absolute top-0 z-10 w-full shadow-md outline-none',
+								'animate-in rounded-base bg-popover p-sm text-foreground shadow-outline absolute top-0 z-10 w-full shadow-md outline-none',
 								isOpen ? 'block' : 'hidden',
 							)}
 						>

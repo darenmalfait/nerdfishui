@@ -15,8 +15,8 @@ export function Toaster(props: ToasterProps) {
 			toastOptions={{
 				classNames: {
 					toast:
-						'group p-md gap-md toast group-[.toaster]:bg-muted group-[.toaster]:text-primary group-[.toaster]:shadow-outline group-[.toaster]:border-none group-[.toaster]:shadow-lg',
-					description: 'group-[.toast]:text-muted',
+						'group p-md gap-md toast group-[.toaster]:bg-background-muted group-[.toaster]:text-foreground group-[.toaster]:shadow-outline group-[.toaster]:border-none group-[.toaster]:shadow-lg',
+					description: 'group-[.toast]:text-foreground-muted',
 					actionButton: getButtonClassName({
 						variant: 'default',
 						size: 'default',

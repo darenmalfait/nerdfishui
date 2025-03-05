@@ -155,7 +155,7 @@ export const TimelineIcon = React.forwardRef<
 		<div
 			ref={ref}
 			data-slot="icon"
-			className={cx('z-1 text-muted flex items-center', className)}
+			className={cx('z-1 text-foreground-muted flex items-center', className)}
 			{...rest}
 		>
 			{children ?? <TimelineDot />}
@@ -177,7 +177,7 @@ export const TimelineTrack = React.forwardRef<
 		<div
 			ref={ref}
 			data-slot="track"
-			className={cx('bg-inverted/10 min-h-[0.5em] w-px flex-1', className)}
+			className={cx('bg-foreground/10 min-h-[0.5em] w-px flex-1', className)}
 			{...rest}
 		>
 			{children}

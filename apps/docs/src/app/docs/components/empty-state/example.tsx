@@ -14,7 +14,7 @@ export function EmptyStateExample() {
 	return (
 		<EmptyState>
 			<EmptyStateIcon>
-				<TriangleAlertIcon className="!text-danger" />
+				<TriangleAlertIcon className="!text-danger-foreground" />
 			</EmptyStateIcon>
 			<EmptyStateTitle>No data</EmptyStateTitle>
 			<EmptyStateDescription>No data to display</EmptyStateDescription>

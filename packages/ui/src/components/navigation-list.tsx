@@ -10,8 +10,8 @@ export const navigationListItemVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'bg-muted text-primary hover:bg-inverted/20',
-				ghost: 'hover:bg-muted hover:text-primary',
+				default: 'bg-background-muted text-foreground hover:bg-foreground/20',
+				ghost: 'hover:bg-background-muted hover:text-foreground',
 			},
 			size: {
 				default: 'h-10 min-h-10 px-md py-sm',
@@ -101,7 +101,7 @@ export function NavigationListItem<T>({
 
 				<TooltipContent side="right" className="gap-md flex items-center">
 					{title}
-					<ItemLabel label={label} className="text-muted" />
+					<ItemLabel label={label} className="text-foreground-muted" />
 				</TooltipContent>
 			</Tooltip>
 		)
@@ -160,7 +160,7 @@ export function NavigationListTitle({
 
 				<TooltipContent side="right" className="gap-md flex items-center">
 					{title}
-					<ItemLabel label={label} className="text-muted" />
+					<ItemLabel label={label} className="text-foreground-muted" />
 				</TooltipContent>
 			</Tooltip>
 		)

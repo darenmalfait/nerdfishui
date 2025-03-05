@@ -60,7 +60,7 @@ export const EmptyStateDescription = React.forwardRef<
 >(function EmptyStateDescription({ className, ...props }, ref) {
 	return (
 		<Paragraph
-			className={cx('text-muted m-0 mt-0 text-center', className)}
+			className={cx('text-foreground-muted m-0 mt-0 text-center', className)}
 			ref={ref}
 			{...props}
 		/>

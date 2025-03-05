@@ -40,7 +40,7 @@ function FlagComponent({ country, countryName }: RPNInput.FlagProps) {
 	const Flag = flags[country]
 
 	return (
-		<span className="bg-inverted/20 flex h-4 w-6 overflow-hidden rounded-sm [&_svg]:size-full">
+		<span className="bg-foreground/20 flex h-4 w-6 overflow-hidden rounded-sm [&_svg]:size-full">
 			{Flag ? <Flag title={countryName} /> : null}
 		</span>
 	)
@@ -59,7 +59,7 @@ function CountrySelectOption({
 		<CommandItem className="gap-sm" onSelect={() => onChange(country)}>
 			<FlagComponent country={country} countryName={countryName} />
 			<span className="flex-1 text-sm">{countryName}</span>
-			<span className="text-primary text-sm">{`+${RPNInput.getCountryCallingCode(country)}`}</span>
+			<span className="text-foreground text-sm">{`+${RPNInput.getCountryCallingCode(country)}`}</span>
 			<CheckIcon
 				className={`ml-auto size-4 ${country === selectedCountry ? 'opacity-100' : 'opacity-0'}`}
 			/>

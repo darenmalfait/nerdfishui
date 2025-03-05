@@ -39,9 +39,9 @@ export function Calendar({
 				table: 'w-full border-collapse space-y-1',
 				head_row: 'flex',
 				head_cell:
-					'text-muted rounded-container w-9 font-normal text-[0.8rem] ',
+					'text-foreground-muted rounded-container w-9 font-normal text-[0.8rem] ',
 				row: 'flex w-full mr-sm',
-				cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-outside)]:bg-muted [&:has([aria-selected])]:bg-muted focus-within:relative focus-within:z-20 [&:has([aria-selected].day-range-end)]:rounded-r-container [&:has([aria-selected].day-range-start)]:rounded-l-container [&:has([aria-selected].day-range-middle)]:!rounded-none ',
+				cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-outside)]:bg-background-muted [&:has([aria-selected])]:bg-background-muted focus-within:relative focus-within:z-20 [&:has([aria-selected].day-range-end)]:rounded-r-container [&:has([aria-selected].day-range-start)]:rounded-l-container [&:has([aria-selected].day-range-middle)]:!rounded-none ',
 				day: cx(
 					buttonVariants({ variant: 'ghost' }),
 					'h-9 w-9 p-0 font-normal aria-selected:opacity-100',
@@ -49,14 +49,14 @@ export function Calendar({
 				day_range_start: 'day-range-start',
 				day_range_end: 'day-range-end',
 				day_selected:
-					'bg-inverted !text-inverted hover:!bg-inverted/90 day-selected',
+					'bg-foreground !text-background hover:!bg-foreground/90 day-selected',
 				day_today:
-					'bg-accent text-white hover:!bg-inverted/90 hover:!text-inverted',
+					'bg-accent text-white hover:!bg-foreground/90 hover:!text-background',
 				day_outside:
-					'day-outside text-muted opacity-50 aria-selected:bg-accent/10 aria-selected:text-primary aria-selected:opacity-100',
-				day_disabled: 'text-muted opacity-50',
+					'day-outside text-foreground-muted opacity-50 aria-selected:bg-accent/10 aria-selected:text-foreground aria-selected:opacity-100',
+				day_disabled: 'text-foreground-muted opacity-50',
 				day_range_middle:
-					'z-0 aria-selected:bg-accent/10 aria-selected:!text-primary hover:aria-selected:!text-inverted rounded-none day-range-middle',
+					'z-0 aria-selected:bg-accent/10 aria-selected:!text-foreground hover:aria-selected:!text-background rounded-none day-range-middle',
 				day_hidden: 'invisible',
 				...classNames,
 			}}

@@ -41,9 +41,9 @@ function CardContent({
 				</div>
 			</div>
 			<div className="group-[:not(:hover)]:bg-popover rounded-b-base gap-sm p-md pointer-events-none z-10 flex transform-gpu flex-col transition-all duration-300 group-hover:-translate-y-10">
-				<Icon className="text-primary size-12 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75" />
-				<h3 className="text-primary text-xl font-semibold">{name}</h3>
-				<p className="text-muted max-w-lg">{description}</p>
+				<Icon className="text-foreground size-12 origin-left transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75" />
+				<h3 className="text-foreground text-xl font-semibold">{name}</h3>
+				<p className="text-foreground-muted max-w-lg">{description}</p>
 			</div>
 			<div
 				className={cx(

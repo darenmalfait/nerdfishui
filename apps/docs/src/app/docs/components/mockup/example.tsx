@@ -9,10 +9,13 @@ export function MockupExample() {
 				<pre data-prefix="1">
 					<code>npm i @nerdfish/ui</code>
 				</pre>
-				<pre data-prefix=">" className="text-warning">
+				<pre data-prefix=">" className="text-warning-foreground">
 					<code>installing...</code>
 				</pre>
-				<pre data-prefix="3" className="bg-danger text-danger">
+				<pre
+					data-prefix="3"
+					className="bg-danger-background text-danger-foreground"
+				>
 					<code>Error!</code>
 				</pre>
 				<pre>

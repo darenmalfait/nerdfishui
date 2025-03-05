@@ -19,7 +19,7 @@ export function GaugeAdvancedExample() {
 				variant="info"
 				value={gaugeValue}
 				className={cx(
-					'[&>[data-slot=secondary]]:stroke-muted/20 [&>[data-slot=text]]:text-primary',
+					'[&>[data-slot=secondary]]:stroke-muted/20 [&>[data-slot=text]]:text-foreground',
 					{
 						'text-blue-500': gaugeValue < 25,
 						'text-green-500': gaugeValue >= 25 && gaugeValue < 50,

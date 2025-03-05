@@ -58,7 +58,7 @@ export const RadioGroupItem = React.forwardRef<
 			data-slot="control"
 			ref={ref}
 			className={cx(
-				'focus-outline border-muted text-primary ring-offset-background relative aspect-square h-4 w-4 rounded-full border outline-none disabled:cursor-not-allowed disabled:opacity-50',
+				'focus-outline border-muted text-foreground ring-offset-background relative aspect-square h-4 w-4 rounded-full border outline-none disabled:cursor-not-allowed disabled:opacity-50',
 				className,
 			)}
 			{...props}

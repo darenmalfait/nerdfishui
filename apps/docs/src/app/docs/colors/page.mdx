@@ -12,58 +12,85 @@ import { ColorBox } from './color-box'
 ## Background
 
 <div className="space-y-sm mt-md">
-	<ColorBox className="bg-primary" value="bg-primary" />
-	<ColorBox className="bg-secondary" value="bg-secondary" />
-	<ColorBox className="bg-muted" value="bg-muted" />
-	<ColorBox className="bg-inverted text-inverted" value="bg-inverted" />
+	<ColorBox className="bg-background" value="bg-background" />
+	<ColorBox
+		className="bg-background-secondary"
+		value="bg-background-secondary"
+	/>
+	<ColorBox className="bg-background-muted" value="bg-background-muted" />
+	<ColorBox className="bg-foreground text-background" value="bg-foreground" />
 </div>
 
 ## Foreground
 
 <div className="space-y-sm mt-md">
-	<ColorBox className="text-primary" value="text-primary" />
-	<ColorBox className="text-muted" value="text-muted" />
-	<ColorBox className="text-inverted bg-inverted" value="text-inverted" />
+	<ColorBox className="text-foreground" value="text-foreground" />
+	<ColorBox className="text-foreground-muted" value="text-foreground-muted" />
+	<ColorBox className="text-background bg-foreground" value="text-background" />
 </div>
 
 ## Info
 
 <div className="space-y-sm mt-md">
-	<ColorBox className="bg-info" value="bg-info" />
-	<ColorBox className="bg-info-muted" value="bg-info-muted" />
-	<ColorBox className="bg-info-accent text-white" value="bg-info-accent" />
-	<ColorBox className="text-info" value="text-info" />
+	<ColorBox className="bg-info-background" value="bg-info-background" />
+	<ColorBox
+		className="bg-info-background-muted"
+		value="bg-info-background-muted"
+	/>
+	<ColorBox
+		className="bg-info-background-accent text-white"
+		value="bg-info-background-accent"
+	/>
+	<ColorBox className="text-info-foreground" value="text-info-foreground" />
 </div>
 
 ## Warning
 
 <div className="space-y-sm mt-md">
-	<ColorBox className="bg-warning" value="bg-warning" />
-	<ColorBox className="bg-warning-muted" value="bg-warning-muted" />
+	<ColorBox className="bg-warning-background" value="bg-warning-background" />
 	<ColorBox
-		className="bg-warning-accent text-inverted"
-		value="bg-warning-accent"
+		className="bg-warning-background-muted"
+		value="bg-warning-background-muted"
 	/>
-	<ColorBox className="text-warning" value="text-warning" />
+	<ColorBox
+		className="bg-warning-background-accent text-white"
+		value="bg-warning-background-accent"
+	/>
+	<ColorBox
+		className="text-warning-foreground"
+		value="text-warning-foreground"
+	/>
 </div>
 
 ## Danger
 
 <div className="space-y-sm mt-md">
-	<ColorBox className="bg-danger" value="bg-danger" />
-	<ColorBox className="bg-danger-muted" value="bg-danger-muted" />
-	<ColorBox className="bg-danger-accent text-white" value="bg-danger-accent" />
-	<ColorBox className="text-danger" value="text-danger" />
+	<ColorBox className="bg-danger-background" value="bg-danger-background" />
+	<ColorBox
+		className="bg-danger-background-muted"
+		value="bg-danger-background-muted"
+	/>
+	<ColorBox
+		className="bg-danger-background-accent text-white"
+		value="bg-danger-background-accent"
+	/>
+	<ColorBox className="text-danger-foreground" value="text-danger-foreground" />
 </div>
 
 ## Success
 
 <div className="space-y-sm mt-md">
-	<ColorBox className="bg-success" value="bg-success" />
-	<ColorBox className="bg-success-muted" value="bg-success-muted" />
+	<ColorBox className="bg-success-background" value="bg-success-background" />
 	<ColorBox
-		className="bg-success-accent text-inverted"
-		value="bg-success-accent"
+		className="bg-success-background-muted"
+		value="bg-success-background-muted"
 	/>
-	<ColorBox className="text-success" value="text-success" />
+	<ColorBox
+		className="bg-success-background-accent text-background"
+		value="bg-success-background-accent"
+	/>
+	<ColorBox
+		className="text-success-foreground"
+		value="text-success-foreground"
+	/>
 </div>

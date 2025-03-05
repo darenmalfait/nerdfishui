@@ -94,7 +94,7 @@ export const AlertDialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<AlertDialogPrimitive.Title
 		ref={ref}
-		className={cx('text-primary text-lg font-semibold', className)}
+		className={cx('text-foreground text-lg font-semibold', className)}
 		{...props}
 	/>
 ))
@@ -106,7 +106,7 @@ export const AlertDialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<AlertDialogPrimitive.Description
 		ref={ref}
-		className={cx('text-muted text-sm', className)}
+		className={cx('text-foreground-muted text-sm', className)}
 		{...props}
 	/>
 ))
@@ -120,7 +120,7 @@ export const AlertDialogAction = React.forwardRef<
 	<AlertDialogPrimitive.Action
 		ref={ref}
 		className={cx(
-			'rounded-container bg-inverted text-inverted hover:bg-inverted/80 inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
+			'rounded-container bg-foreground text-background hover:bg-foreground/80 inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
 			className,
 		)}
 		{...props}
@@ -135,7 +135,7 @@ export const AlertDialogCancel = React.forwardRef<
 	<AlertDialogPrimitive.Cancel
 		ref={ref}
 		className={cx(
-			'mr-sm rounded-container text-primary hover:bg-muted inline-flex h-10 items-center justify-center border border-gray-200 bg-transparent px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-0 dark:border-gray-700 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
+			'mr-sm rounded-container text-foreground hover:bg-background-muted inline-flex h-10 items-center justify-center border border-gray-200 bg-transparent px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-0 dark:border-gray-700 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
 			className,
 		)}
 		{...props}

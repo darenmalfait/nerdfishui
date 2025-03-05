@@ -8,13 +8,15 @@ export const badgeVariants = cva(
 	{
 		variants: {
 			variant: {
-				danger: 'border-danger bg-danger text-danger',
-				default: 'border-transparent bg-inverted text-inverted',
-				info: 'border-info bg-info text-info',
-				outline: 'text-primary',
-				secondary: 'active-ring border-transparent bg-muted text-primary',
-				success: 'border-success bg-success-muted text-success',
-				warning: 'border-warning bg-warning text-warning',
+				danger: 'border-danger bg-danger-background text-danger-foreground',
+				default: 'border-transparent bg-foreground text-background',
+				info: 'border-info bg-info-background text-info-foreground',
+				outline: 'text-foreground',
+				secondary:
+					'active-ring border-transparent bg-background-muted text-foreground',
+				success:
+					'border-success bg-success-background-muted text-success-foreground',
+				warning: 'border-warning bg-warning-background text-warning-foreground',
 			},
 		},
 		defaultVariants: {

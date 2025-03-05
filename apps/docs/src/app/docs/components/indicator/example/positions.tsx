@@ -32,7 +32,9 @@ export function IndicatorPositionsExample() {
 			<IndicatorItem bottom right>
 				<Badge>bottom right</Badge>
 			</IndicatorItem>
-			<div className="bg-muted grid size-64 place-items-center">content</div>
+			<div className="bg-background-muted grid size-64 place-items-center">
+				content
+			</div>
 		</Indicator>
 	)
 }

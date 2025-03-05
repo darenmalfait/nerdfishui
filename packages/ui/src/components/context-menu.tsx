@@ -53,7 +53,7 @@ export function ContextMenuSubTrigger({
 	return (
 		<ContextMenuPrimitive.SubTrigger
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary data-[state=open]:bg-muted/90 data-[state=open]:text-primary px-sm py-sm flex cursor-default select-none items-center text-sm outline-none',
+				'focus:bg-background-muted/90 focus:text-foreground data-[state=open]:bg-background-muted/90 data-[state=open]:text-foreground px-sm py-sm flex cursor-default select-none items-center text-sm outline-none',
 				innerRadius,
 				inset && 'pl-lg',
 				className,
@@ -77,7 +77,7 @@ export function ContextMenuSubContent({
 	return (
 		<ContextMenuPrimitive.SubContent
 			className={cx(
-				'bg-primary text-primary shadow-outline data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] shadow-lg',
+				'bg-background text-foreground shadow-outline data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] shadow-lg',
 				outerRadius,
 				basePadding,
 				className,
@@ -99,7 +99,7 @@ export function ContextMenuContent({
 		<ContextMenuPrimitive.Portal>
 			<ContextMenuPrimitive.Content
 				className={cx(
-					'bg-primary text-primary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 shadow-outline z-50 min-w-[8rem] shadow-md',
+					'bg-background text-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-sm data-[side=top]:slide-in-from-bottom-2 shadow-outline z-50 min-w-[8rem] shadow-md',
 					outerRadius,
 					basePadding,
 					className,
@@ -124,7 +124,7 @@ export function ContextMenuItem({
 	return (
 		<ContextMenuPrimitive.Item
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary px-sm py-sm relative flex cursor-default select-none items-center text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				'focus:bg-background-muted/90 focus:text-foreground px-sm py-sm relative flex cursor-default select-none items-center text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 				innerRadius,
 				inset && 'pl-lg',
 				className,
@@ -147,7 +147,7 @@ export function ContextMenuCheckboxItem({
 	return (
 		<ContextMenuPrimitive.CheckboxItem
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary py-sm pl-lg relative flex cursor-default select-none items-center pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				'focus:bg-background-muted/90 focus:text-foreground py-sm pl-lg relative flex cursor-default select-none items-center pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 				innerRadius,
 				className,
 			)}
@@ -176,7 +176,7 @@ export function ContextMenuRadioItem({
 	return (
 		<ContextMenuPrimitive.RadioItem
 			className={cx(
-				'focus:bg-muted/90 focus:text-primary py-sm pl-lg relative flex cursor-default select-none items-center pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+				'focus:bg-background-muted/90 focus:text-foreground py-sm pl-lg relative flex cursor-default select-none items-center pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 				innerRadius,
 				className,
 			)}
@@ -206,7 +206,7 @@ export function ContextMenuLabel({
 	return (
 		<ContextMenuPrimitive.Label
 			className={cx(
-				'text-primary px-sm py-sm text-sm font-semibold',
+				'text-foreground px-sm py-sm text-sm font-semibold',
 				inset && 'pl-lg',
 				className,
 			)}
@@ -225,7 +225,7 @@ export function ContextMenuSeparator({
 }: ContextMenuSeparatorProps) {
 	return (
 		<ContextMenuPrimitive.Separator
-			className={cx('bg-muted -mx-xs my-xs h-px', className)}
+			className={cx('bg-background-muted -mx-xs my-xs h-px', className)}
 			{...props}
 		/>
 	)
@@ -239,7 +239,10 @@ export function ContextMenuShortcut({
 }: ContextMenuShortcutProps) {
 	return (
 		<span
-			className={cx('text-muted ml-auto text-xs tracking-widest', className)}
+			className={cx(
+				'text-foreground-muted ml-auto text-xs tracking-widest',
+				className,
+			)}
 			{...props}
 		/>
 	)

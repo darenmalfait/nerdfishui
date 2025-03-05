@@ -6,8 +6,8 @@ export function CheckboxColorsExample() {
 	return (
 		<div className="items-top space-x-sm flex flex-col">
 			<Checkbox
-				bgClassName="bg-danger"
-				textClassName="text-danger"
+				bgClassName="bg-danger-background"
+				textClassName="text-danger-foreground"
 				name="newsletters4"
 				defaultChecked
 			/>

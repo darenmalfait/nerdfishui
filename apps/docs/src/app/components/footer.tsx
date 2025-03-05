@@ -111,7 +111,7 @@ function SocialLink({
 	return (
 		<Link href={href} className="group">
 			<span className="sr-only">{children}</span>
-			<Icon className="text-muted size-5" />
+			<Icon className="text-foreground-muted size-5" />
 		</Link>
 	)
 }
@@ -119,10 +119,10 @@ function SocialLink({
 function SmallPrint() {
 	return (
 		<div className="gap-md pt-lg flex flex-col items-center justify-between border-t border-gray-900/5 sm:flex-row dark:border-white/5">
-			<p className="text-muted text-xs">
+			<p className="text-foreground-muted text-xs">
 				&copy; Copyright {new Date().getFullYear()}. All rights reserved.
 			</p>
-			<div className="gap-md text-muted flex">
+			<div className="gap-md text-foreground-muted flex">
 				<SocialLink href="https://twitter.com/darenmalfait" icon={TwitterIcon}>
 					Follow us on Twitter
 				</SocialLink>

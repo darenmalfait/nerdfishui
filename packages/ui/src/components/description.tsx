@@ -9,7 +9,7 @@ export const Description = React.forwardRef<
 		<p
 			ref={ref}
 			data-slot="description"
-			className={cx('text-muted text-sm', className)}
+			className={cx('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)
@@ -28,7 +28,7 @@ export const ErrorDescription = React.forwardRef<
 	return (
 		<p
 			ref={ref}
-			className={cx('text-danger text-sm font-medium', className)}
+			className={cx('text-danger-foreground text-sm font-medium', className)}
 			{...props}
 		/>
 	)

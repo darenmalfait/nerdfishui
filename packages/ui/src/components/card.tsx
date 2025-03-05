@@ -10,7 +10,7 @@ export const Card = React.forwardRef<
 	<div
 		ref={ref}
 		className={cx(
-			'mb-md rounded-container bg-primary shadow-outline relative flex min-w-0 flex-col break-words border-0',
+			'mb-md rounded-container bg-background shadow-outline relative flex min-w-0 flex-col break-words border-0',
 			className,
 		)}
 		{...props}
@@ -51,7 +51,11 @@ export const CardDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-	<p ref={ref} className={cx('text-muted text-sm', className)} {...props} />
+	<p
+		ref={ref}
+		className={cx('text-foreground-muted text-sm', className)}
+		{...props}
+	/>
 ))
 CardDescription.displayName = 'CardDescription'
 

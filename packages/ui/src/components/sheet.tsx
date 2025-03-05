@@ -30,7 +30,7 @@ function SheetOverlay({
 }
 
 export const sheetVariants = cva(
-	'fixed z-50 gap-4 bg-primary p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+	'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
 	{
 		variants: {
 			side: {
@@ -117,7 +117,7 @@ export function SheetTitle({
 }: React.ComponentProps<typeof SheetPrimitive.Title>) {
 	return (
 		<SheetPrimitive.Title
-			className={cx('text-primary text-lg font-semibold', className)}
+			className={cx('text-foreground text-lg font-semibold', className)}
 			{...props}
 		/>
 	)
@@ -129,7 +129,7 @@ export function SheetDescription({
 }: React.ComponentProps<typeof SheetPrimitive.Description>) {
 	return (
 		<SheetPrimitive.Description
-			className={cx('text-muted text-sm', className)}
+			className={cx('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)

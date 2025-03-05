@@ -32,7 +32,7 @@ function Presets({
 					<button
 						key={value}
 						type="button"
-						className="m-sm text-primary/50 hover:text-primary/70 inline-flex text-sm"
+						className="m-sm text-foreground/50 hover:text-foreground/70 inline-flex text-sm"
 						onClick={() =>
 							onChange?.(addDays(new Date(), Number.parseInt(value, 10)))
 						}
@@ -61,7 +61,7 @@ const DatePickerTrigger = React.forwardRef<
 			className={cx(
 				buttonVariants({ variant: 'outline' }),
 				'w-[280px] justify-start text-left font-normal',
-				!selected && 'text-muted',
+				!selected && 'text-foreground-muted',
 				className,
 			)}
 		>
@@ -135,7 +135,7 @@ export function DateRangePickerTrigger({
 			variant="outline"
 			className={cx(
 				'w-[300px] justify-start text-left font-normal',
-				!selected && 'text-muted',
+				!selected && 'text-foreground-muted',
 				className,
 			)}
 		>

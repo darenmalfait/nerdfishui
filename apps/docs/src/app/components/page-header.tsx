@@ -33,7 +33,7 @@ export function PageHeaderDescription({
 	return (
 		<p
 			className={cx(
-				'text-primary max-w-2xl text-balance text-lg font-light',
+				'text-foreground max-w-2xl text-balance text-lg font-light',
 				className,
 			)}
 			{...props}

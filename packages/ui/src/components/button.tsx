@@ -10,22 +10,22 @@ export const buttonVariants = cva(
 		variants: {
 			variant: {
 				default:
-					'border-transparent bg-inverted text-inverted hover:bg-inverted/80 disabled:bg-inverted/90 disabled:text-inverted/60',
+					'border-transparent bg-foreground text-background hover:bg-foreground/80 disabled:bg-foreground/90 disabled:text-background/60',
 				secondary:
-					'border-transparent bg-muted text-primary hover:bg-inverted/20 disabled:bg-muted/50 disabled:text-muted/80',
+					'border-transparent bg-background-muted text-foreground hover:bg-foreground/20 disabled:bg-background-muted/50 disabled:text-foreground-muted/80',
 				accent:
 					'border-transparent bg-accent text-white hover:bg-accent/75 disabled:bg-accent/20 disabled:text-accent',
 				danger:
-					'border-danger bg-danger text-danger hover:bg-danger-muted disabled:bg-danger-muted/50 disabled:text-danger/80',
+					'border-danger bg-danger-background text-danger-foreground hover:bg-danger-background-muted disabled:bg-danger-background-muted/50 disabled:text-danger-foreground/80',
 				success:
-					'border-success bg-success text-success hover:bg-success-muted disabled:bg-success-muted/50 disabled:text-success/80',
+					'border-success bg-success-background text-success-foreground hover:bg-success-background-muted disabled:bg-success-background-muted/50 disabled:text-success-foreground/80',
 				outline:
-					'bg-primary text-primary shadow-outline hover:bg-muted disabled:text-primary/50',
+					'bg-background text-foreground shadow-outline hover:bg-background-muted disabled:text-foreground/50',
 				ghost:
-					'border-transparent text-primary hover:bg-muted disabled:text-primary/50',
+					'border-transparent text-foreground hover:bg-background-muted disabled:text-foreground/50',
 				accentuate:
-					'border-2 border-transparent bg-[linear-gradient(hsl(var(--colors-background-primary)),hsl(var(--colors-background-primary))),linear-gradient(to_right,hsl(var(--colors-info-500)),hsl(var(--colors-accent)))] bg-origin-border text-primary [background-clip:padding-box,_border-box] hover:bg-[linear-gradient(hsl(var(--colors-background-muted)),hsl(var(--colors-background-muted))),linear-gradient(to_right,hsl(var(--colors-info-500)),hsl(var(--colors-accent)))]',
-				link: 'border-none bg-transparent text-primary underline-offset-4 hover:underline disabled:text-primary/50',
+					'border-2 border-transparent bg-[linear-gradient(hsl(var(--colors-background-primary)),hsl(var(--colors-background-primary))),linear-gradient(to_right,hsl(var(--colors-info-500)),hsl(var(--colors-accent)))] bg-origin-border text-foreground [background-clip:padding-box,_border-box] hover:bg-[linear-gradient(hsl(var(--colors-background-muted)),hsl(var(--colors-background-muted))),linear-gradient(to_right,hsl(var(--colors-info-500)),hsl(var(--colors-accent)))]',
+				link: 'border-none bg-transparent text-foreground underline-offset-4 hover:underline disabled:text-foreground/50',
 			},
 			size: {
 				default: 'h-10 text-base',

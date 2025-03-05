@@ -11,7 +11,7 @@ export const Label = React.forwardRef<
 			data-slot="label"
 			ref={ref}
 			className={cx(
-				'space-y-xs text-primary block text-sm font-bold',
+				'space-y-xs text-foreground block text-sm font-bold',
 				'[&_[data-slot=description]]:font-normal',
 				className,
 			)}
@@ -28,7 +28,11 @@ export const LabelAsterisk = React.forwardRef<
 	Omit<React.ComponentPropsWithoutRef<'span'>, 'children'>
 >(({ className, ...props }, ref) => {
 	return (
-		<span ref={ref} className={cx('ml-xs text-danger', className)} {...props}>
+		<span
+			ref={ref}
+			className={cx('ml-xs text-danger-foreground', className)}
+			{...props}
+		>
 			*
 		</span>
 	)

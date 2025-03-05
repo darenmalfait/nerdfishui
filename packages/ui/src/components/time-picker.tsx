@@ -50,7 +50,9 @@ export const TimePickerSegment = forwardRef<
 
 	return (
 		<div
-			className={cx('p-xs text-primary focus-within:bg-inverted/10 rounded-lg')}
+			className={cx(
+				'p-xs text-foreground focus-within:bg-foreground/10 rounded-lg',
+			)}
 		>
 			<input
 				{...getInputProps(segment)}

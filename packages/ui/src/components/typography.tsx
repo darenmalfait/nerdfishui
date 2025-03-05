@@ -19,7 +19,7 @@ export const Paragraph = React.forwardRef<
 			ref={ref}
 			className={cx(
 				'mt-md max-w-full leading-7 first:mt-0',
-				prose ? 'prose prose-light dark:prose-invert' : 'text-primary',
+				prose ? 'prose prose-light dark:prose-invert' : 'text-foreground',
 				className,
 			)}
 		/>
@@ -43,8 +43,8 @@ export const titleVariants = cva('', {
 			h6: 'mt-lg font-bold text-base first:mt-0',
 		},
 		variant: {
-			primary: 'text-primary',
-			secondary: 'text-muted',
+			primary: 'text-foreground',
+			secondary: 'text-foreground-muted',
 			accent: 'text-accent',
 		},
 	},

@@ -115,9 +115,9 @@ function AppDemo() {
 	return (
 		<div className="rounded-container bg-accent hidden xl:block">
 			<div className="p-lg">
-				<div className="rounded-container bg-primary overflow-hidden shadow-2xl transition-all">
+				<div className="rounded-container bg-background overflow-hidden shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
-						<aside className="bg-muted pr-sm pb-xl">
+						<aside className="bg-background-muted pr-sm pb-xl">
 							<div className="mb-lg px-lg pt-md">
 								<p className="flex items-center text-2xl font-semibold">
 									<ChefHat className="mr-sm" />
@@ -213,7 +213,7 @@ function AppDemo() {
 										</div>
 										<div className="rounded-container border-muted flex h-[450px] min-h-0 shrink-0 items-center justify-center border border-dashed">
 											<div className="mx-auto flex min-h-0 max-w-[420px] flex-col items-center justify-center text-center">
-												<Paragraph className="mt-sm mb-md text-muted text-sm">
+												<Paragraph className="mt-sm mb-md text-foreground-muted text-sm">
 													You have no ingredients added. Add ingredients to
 												</Paragraph>
 												<Button>Add Ingredient</Button>
@@ -255,7 +255,9 @@ function AlbumArtwork({
 			</div>
 			<div className="space-y-sm text-sm">
 				<H3 className="font-medium leading-none">{album.name}</H3>
-				<Paragraph className="text-muted text-xs">{album.artist}</Paragraph>
+				<Paragraph className="text-foreground-muted text-xs">
+					{album.artist}
+				</Paragraph>
 			</div>
 		</div>
 	)

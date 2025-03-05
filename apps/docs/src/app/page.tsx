@@ -38,7 +38,7 @@ export default async function HomePage() {
 					<div className="py-3xl mx-auto max-w-5xl sm:py-24">
 						<div className="text-center">
 							<H1 variant="primary">Components for your next project</H1>
-							<Paragraph className="text-muted text-xl">
+							<Paragraph className="text-foreground-muted text-xl">
 								An open source, opinionated component library built with React
 								and TailwindCSS to help streamline proof of concept development
 								and provide visually pleasing and functional components.

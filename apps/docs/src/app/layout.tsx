@@ -17,7 +17,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 		<html lang="en" suppressHydrationWarning>
 			<head />
 			<body
-				className={`bg-primary min-h-screen font-sans antialiased ${GeistSans.variable}`}
+				className={`bg-background min-h-screen font-sans antialiased ${GeistSans.variable}`}
 			>
 				<React.Suspense
 					fallback={
@@ -28,7 +28,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 				>
 					<AppProviders>
 						<MobileNavProvider>
-							<main className={`${GeistSans.variable} bg-primary font-sans`}>
+							<main className={`${GeistSans.variable} bg-background font-sans`}>
 								<SiteHeader />
 								<div className="px-md pt-sm container mx-auto w-full max-w-screen-2xl">
 									{children}

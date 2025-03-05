@@ -8,7 +8,7 @@ export const Mockup = React.forwardRef<
 	return (
 		<div
 			className={cx(
-				'rounded-base bg-muted py-md text-primary min-w-[18rem]',
+				'rounded-base bg-background-muted py-md text-foreground min-w-[18rem]',
 				'before:mb-md before:block before:rounded-full before:opacity-30 before:shadow-[1em_0,2.5em_0,4em_0] before:content-none',
 				'[&_pre]:pr-lg [&_pre]:before:mr-[2ch] [&_pre]:before:content-none',
 				'[&_pre[data-prefix]]:before:w-8 [&_pre[data-prefix]]:before:opacity-50 [&_pre[data-prefix]]:before:content-[attr(data-prefix)]',

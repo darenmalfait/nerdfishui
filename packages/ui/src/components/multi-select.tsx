@@ -156,7 +156,7 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 															<span className="flex-1">{item.label}</span>
 														</div>
 														{item.description ? (
-															<span className="text-muted text-[10px]">
+															<span className="text-foreground-muted text-[10px]">
 																{item.description}
 															</span>
 														) : null}
@@ -206,7 +206,7 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 							key={value}
 							variant="outline"
 							style={color ? multiSelectBadgeStyle(color) : undefined}
-							className="dark:!bg-opacity/20 mr-sm mb-sm bg-muted shadow-outline border"
+							className="dark:!bg-opacity/20 mr-sm mb-sm bg-background-muted shadow-outline border"
 						>
 							{label}
 						</Badge>

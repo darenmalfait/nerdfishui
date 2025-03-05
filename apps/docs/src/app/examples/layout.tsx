@@ -37,7 +37,7 @@ export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
 
 			<section>
 				<ExamplesNav />
-				<div className="rounded-container bg-primary shadow-outline overflow-hidden shadow">
+				<div className="rounded-container bg-background shadow-outline overflow-hidden shadow">
 					{children}
 				</div>
 			</section>

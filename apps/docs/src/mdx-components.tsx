@@ -107,7 +107,7 @@ export function useMDXComponents(components: MDXComponents) {
 		}: React.HTMLAttributes<HTMLTableRowElement>) => (
 			<tr
 				className={cx(
-					'even:bg-muted m-0 border-t border-gray-300 p-0',
+					'even:bg-background-muted m-0 border-t border-gray-300 p-0',
 					className,
 				)}
 				{...props}

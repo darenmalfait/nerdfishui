@@ -1,6 +1,6 @@
 export const base = {
 	html: {
-		'@apply text-primary antialiased font-sans': {},
+		'@apply text-foreground antialiased font-sans': {},
 	},
 	// keep these styles in sync with the ones in packages/ui/src/typography
 	// not .not-prose prose
@@ -23,7 +23,7 @@ export const base = {
 		'@apply leading-7 mt-md first:mt-0': {},
 	},
 	'.prose blockquote:not(:where([class~="not-prose"] *))': {
-		'@apply mt-md first:mt-0 border-gray-300 italic text-muted dark:border-gray-700 ltr:border-l-2 ltr:pl-md rtl:border-r-2 rtl:pr-md':
+		'@apply mt-md first:mt-0 border-gray-300 italic text-foreground-muted dark:border-gray-700 ltr:border-l-2 ltr:pl-md rtl:border-r-2 rtl:pr-md':
 			{},
 	},
 	'.prose ul:not(:where([class~="not-prose"] *))': {
@@ -40,11 +40,11 @@ export const base = {
 		'@apply mt-md first:mt-0': {},
 	},
 	'.bg-popover': {
-		'@apply backdrop-saturate-[200%] backdrop-blur-[14px] bg-primary/75 dark:bg-primary/40':
+		'@apply backdrop-saturate-[200%] backdrop-blur-[14px] bg-background/75 dark:bg-background/40':
 			{},
 	},
 	'.bg-popover-inverted': {
-		'@apply backdrop-saturate-[200%] backdrop-blur-[14px] bg-inverted/40 dark:bg-inverted/75':
+		'@apply backdrop-saturate-[200%] backdrop-blur-[14px] bg-foreground/40 dark:bg-foreground/75':
 			{},
 	},
 }

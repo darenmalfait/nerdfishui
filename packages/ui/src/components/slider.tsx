@@ -9,13 +9,13 @@ export const sliderVariants = cva('', {
 	variants: {
 		variant: {
 			default: 'text-current',
-			muted: 'text-muted',
-			primary: 'text-primary',
-			secondary: 'text-secondary',
-			danger: 'text-danger',
-			success: 'text-success',
-			warning: 'text-warning',
-			info: 'text-info',
+			muted: 'text-foreground-muted',
+			primary: 'text-foreground',
+			secondary: 'text-foreground-secondary',
+			danger: 'text-danger-foreground',
+			success: 'text-success-foreground',
+			warning: 'text-warning-foreground',
+			info: 'text-info-foreground',
 			accent: 'text-accent',
 		},
 		inputSize: {
@@ -56,7 +56,7 @@ export const Slider = React.forwardRef<
 			<SliderPrimitive.Track
 				data-slot="track"
 				className={cx(
-					'bg-muted relative my-[calc((theme(spacing.7)-theme(spacing.5))/2)] flex w-full rounded-full border-x-[calc(theme(spacing.7)/2)] border-x-transparent border-s-current',
+					'bg-background-muted relative my-[calc((theme(spacing.7)-theme(spacing.5))/2)] flex w-full rounded-full border-x-[calc(theme(spacing.7)/2)] border-x-transparent border-s-current',
 					!hasSingleThumb && 'border-s-muted',
 					hasSingleThumb && 'border-s-current',
 				)}
@@ -88,7 +88,7 @@ export const SliderThumb = React.forwardRef<
 			className={cx(
 				'top-1/2 z-10 flex cursor-grab items-center justify-center rounded-full border-0 border-current bg-current outline-none outline-2 outline-offset-2 ring-transparent before:absolute before:h-11 before:w-11 before:rounded-full active:cursor-grabbing data-[focus-visible=true]:outline-current',
 				// The fill of the thumb
-				'after:bg-primary after:shadow-small after:rounded-full after:transition-all active:after:scale-75 motion-reduce:after:transition-none',
+				'after:bg-background after:shadow-small after:rounded-full after:transition-all active:after:scale-75 motion-reduce:after:transition-none',
 				props.className,
 			)}
 		/>

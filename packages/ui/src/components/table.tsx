@@ -11,7 +11,7 @@ export const Table = React.forwardRef<
 		<table
 			ref={ref}
 			className={cx(
-				'text-muted mb-0 w-full caption-bottom items-center justify-center align-top',
+				'text-foreground-muted mb-0 w-full caption-bottom items-center justify-center align-top',
 				className,
 			)}
 			{...props}
@@ -62,7 +62,7 @@ export const TableRow = React.forwardRef<
 	<tr
 		ref={ref}
 		className={cx(
-			'hover:bg-muted/50 data-[state=selected]:bg-muted border-b border-b-black/5 transition-colors last:border-b-0 dark:border-b-white/5',
+			'hover:bg-background-muted/50 data-[state=selected]:bg-background-muted border-b border-b-black/5 transition-colors last:border-b-0 dark:border-b-white/5',
 			className,
 		)}
 		{...props}
@@ -77,7 +77,7 @@ export const TableHead = React.forwardRef<
 	<th
 		ref={ref}
 		className={cx(
-			'py-md pr-md text-muted whitespace-nowrap bg-transparent text-left align-middle text-[10px] font-bold uppercase opacity-70 shadow-none [&:has([role=checkbox])]:pr-0',
+			'py-md pr-md text-foreground-muted whitespace-nowrap bg-transparent text-left align-middle text-[10px] font-bold uppercase opacity-70 shadow-none [&:has([role=checkbox])]:pr-0',
 			className,
 		)}
 		{...props}
@@ -106,7 +106,7 @@ export const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<caption
 		ref={ref}
-		className={cx('mt-md text-muted text-sm', className)}
+		className={cx('mt-md text-foreground-muted text-sm', className)}
 		{...props}
 	/>
 ))

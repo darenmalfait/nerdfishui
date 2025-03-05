@@ -17,7 +17,7 @@ export function Skeleton({
 					{...props}
 					key={index}
 					className={cx(
-						'bg-inverted/10 inline-block h-[1lh] w-full animate-pulse rounded-lg text-inherit',
+						'bg-foreground/10 inline-block h-[1lh] w-full animate-pulse rounded-lg text-inherit',
 						className,
 					)}
 				/>

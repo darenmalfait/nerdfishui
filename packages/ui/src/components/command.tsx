@@ -25,7 +25,7 @@ export const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
 	return (
 		<Dialog {...props}>
 			<DialogContent className="overflow-hidden p-0 shadow-2xl [&_[dialog-overlay]]:bg-red-100">
-				<Command className="[&_[cmdk-group-heading]]:text-primary [&_[cmdk-group]]:px-sm [&_[cmdk-group-heading]]:px-sm [&_[cmdk-item]]:px-sm [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
+				<Command className="[&_[cmdk-group-heading]]:text-foreground [&_[cmdk-group]]:px-sm [&_[cmdk-group-heading]]:px-sm [&_[cmdk-item]]:px-sm [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
 					{children}
 				</Command>
 			</DialogContent>
@@ -51,7 +51,7 @@ export function CommandInput({
 			cmdk-input-wrapper=""
 		>
 			{Icon ? (
-				<Icon className="mr-sm text-primary size-4 shrink-0 opacity-50" />
+				<Icon className="mr-sm text-foreground size-4 shrink-0 opacity-50" />
 			) : null}
 
 			<CommandPrimitive.Input
@@ -84,7 +84,7 @@ export type CommandEmptyProps = React.ComponentProps<
 export function CommandEmpty({ className, ...props }: CommandEmptyProps) {
 	return (
 		<CommandPrimitive.Empty
-			className={cx('py-lg text-primary text-center text-sm', className)}
+			className={cx('py-lg text-foreground text-center text-sm', className)}
 			{...props}
 		/>
 	)
@@ -98,7 +98,7 @@ export function CommandGroup({ className, ...props }: CommandGroupProps) {
 	return (
 		<CommandPrimitive.Group
 			className={cx(
-				'p-sm text-primary [&_[cmdk-group-heading]]:px-sm [&_[cmdk-group-heading]]:pb-sm [&_[cmdk-group-heading]]:text-primary overflow-hidden [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold',
+				'p-sm text-foreground [&_[cmdk-group-heading]]:px-sm [&_[cmdk-group-heading]]:pb-sm [&_[cmdk-group-heading]]:text-foreground overflow-hidden [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-semibold',
 				className,
 			)}
 			{...props}
@@ -115,7 +115,7 @@ export function CommandSeparator({
 }: CommandSeparatorProps) {
 	return (
 		<CommandPrimitive.Separator
-			className={cx('-mx-xs bg-muted h-px', className)}
+			className={cx('-mx-xs bg-background-muted h-px', className)}
 			{...props}
 		/>
 	)
@@ -129,7 +129,7 @@ export function CommandItem({ className, ...props }: CommandItemProps) {
 	return (
 		<CommandPrimitive.Item
 			className={cx(
-				'p-sm text-primary aria-selected:bg-muted data-[disabled=true]:text-muted relative flex cursor-pointer select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none',
+				'p-sm text-foreground aria-selected:bg-background-muted data-[disabled=true]:text-foreground-muted relative flex cursor-pointer select-none items-center text-sm font-medium outline-none data-[disabled=true]:pointer-events-none',
 				className,
 				innerRadius,
 			)}
@@ -143,7 +143,7 @@ export type CommandShortcutProps = React.ComponentProps<'span'>
 export function CommandShortcut({ className, ...props }: CommandShortcutProps) {
 	return (
 		<span
-			className={cx('text-primary/50 ml-auto text-xs', className)}
+			className={cx('text-foreground/50 ml-auto text-xs', className)}
 			{...props}
 		/>
 	)

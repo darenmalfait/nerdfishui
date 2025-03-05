@@ -75,7 +75,13 @@ export const SidebarDivider = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<'div'>
 >(({ className, ...props }, ref) => {
-	return <div className={cx('bg-muted h-px w-full')} ref={ref} {...props} />
+	return (
+		<div
+			className={cx('bg-background-muted h-px w-full')}
+			ref={ref}
+			{...props}
+		/>
+	)
 })
 SidebarDivider.displayName = 'SidebarDivider'
 

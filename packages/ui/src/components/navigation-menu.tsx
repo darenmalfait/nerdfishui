@@ -12,7 +12,7 @@ const NavigationMenuViewport = React.forwardRef<
 	<div className={cx('absolute left-0 top-full flex justify-center')}>
 		<NavigationMenuPrimitive.Viewport
 			className={cx(
-				'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 mt-sm origin-top-center rounded-base bg-popover text-primary shadow-outline data-[state=closed]:animate-out data-[state=open]:animate-in relative h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
+				'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 mt-sm origin-top-center rounded-base bg-popover text-foreground shadow-outline data-[state=closed]:animate-out data-[state=open]:animate-in relative h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden shadow-lg md:w-[var(--radix-navigation-menu-viewport-width)]',
 				className,
 			)}
 			ref={ref}
@@ -61,7 +61,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 export const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 export const getNavigationMenuTriggerStyle = cva(
-	'group relative inline-flex h-10 w-max items-center justify-center rounded-base bg-primary px-4 py-2 font-medium text-sm transition-colors hover:bg-muted focus:bg-muted focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-muted data-[state=open]:bg-muted',
+	'group relative inline-flex h-10 w-max items-center justify-center rounded-base bg-background px-4 py-2 font-medium text-sm transition-colors hover:bg-background-muted focus:bg-background-muted focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-background-muted data-[state=open]:bg-background-muted',
 )
 
 export const NavigationMenuTrigger = React.forwardRef<
@@ -111,7 +111,7 @@ export const NavigationMenuIndicator = React.forwardRef<
 		)}
 		{...props}
 	>
-		<div className="bg-muted relative top-[60%] size-2 rotate-45 rounded-tl-sm shadow-md" />
+		<div className="bg-background-muted relative top-[60%] size-2 rotate-45 rounded-tl-sm shadow-md" />
 	</NavigationMenuPrimitive.Indicator>
 ))
 NavigationMenuIndicator.displayName =

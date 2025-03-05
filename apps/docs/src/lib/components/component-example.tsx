@@ -29,7 +29,7 @@ export function ComponentExample({
 	return (
 		<div className={cx('mt-md gap-md flex flex-col', className)}>
 			{Component ? <Preview>{Component}</Preview> : null}
-			<div className="!bg-primary -my-sm p-0">
+			<div className="!bg-background -my-sm p-0">
 				<div className="space-y-md flex flex-col">
 					<div className="rounded-container dark relative w-full [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
 						<CopyButton className="top-md" code={children.toString()} />

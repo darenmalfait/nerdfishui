@@ -25,8 +25,8 @@ export const checkboxVariants = cva(
 export function Checkbox({
 	className,
 	inputSize = 'sm',
-	bgClassName = 'bg-primary',
-	textClassName = 'text-primary',
+	bgClassName = 'bg-background',
+	textClassName = 'text-foreground',
 	icon: Icon = Check,
 	...props
 }: Omit<InputProps, 'inputSize' | 'variant'> &
@@ -54,7 +54,7 @@ export function Checkbox({
 					// border
 					'border-transparent',
 					// background
-					'peer-[:not(:checked)]:bg-inverted/10 dark:peer-[:not(:checked)]:bg-inverted/20',
+					'peer-[:not(:checked)]:bg-foreground/10 dark:peer-[:not(:checked)]:bg-foreground/20',
 					// disabled state
 					'peer-disabled:opacity-50',
 					// checked state

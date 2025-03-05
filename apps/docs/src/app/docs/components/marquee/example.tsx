@@ -70,10 +70,10 @@ const CatCard = ({
 					src={img}
 				/>
 				<div className="flex flex-col">
-					<figcaption className="text-primary text-sm font-medium">
+					<figcaption className="text-foreground text-sm font-medium">
 						{name}
 					</figcaption>
-					<p className="text-muted text-xs font-medium">{breed}</p>
+					<p className="text-foreground-muted text-xs font-medium">{breed}</p>
 				</div>
 			</div>
 			<blockquote className="mt-2 text-sm">{description}</blockquote>
@@ -83,7 +83,7 @@ const CatCard = ({
 
 export function MarqueeExample() {
 	return (
-		<div className="bg-primary rounded-container shadow-outline relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden md:shadow-xl">
+		<div className="bg-background rounded-container shadow-outline relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden md:shadow-xl">
 			<Marquee pauseOnHover duration={20000}>
 				{firstRow.map((cat) => (
 					<CatCard key={cat.breed} {...cat} />

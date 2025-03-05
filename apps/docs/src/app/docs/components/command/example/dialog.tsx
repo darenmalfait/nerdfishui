@@ -36,9 +36,9 @@ export function CommandDialogExample() {
 
 	return (
 		<>
-			<p className="text-muted text-sm">
+			<p className="text-foreground-muted text-sm">
 				Press{' '}
-				<kbd className="bg-muted text-muted shadow-outline gap-sm pointer-events-none inline-flex h-5 select-none items-center rounded border px-1.5 font-mono text-[10px] font-medium opacity-100">
+				<kbd className="bg-background-muted text-foreground-muted shadow-outline gap-sm pointer-events-none inline-flex h-5 select-none items-center rounded border px-1.5 font-mono text-[10px] font-medium opacity-100">
 					<span className="text-xs">⌘</span>J
 				</kbd>
 			</p>

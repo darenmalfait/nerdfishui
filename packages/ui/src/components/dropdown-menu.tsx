@@ -48,7 +48,7 @@ export function DropdownMenuSubTrigger({
 	return (
 		<DropdownMenuPrimitive.SubTrigger
 			className={cx(
-				'px-sm py-sm text-primary focus:bg-muted data-[state=open]:bg-muted flex cursor-default select-none items-center text-sm font-medium outline-none',
+				'px-sm py-sm text-foreground focus:bg-background-muted data-[state=open]:bg-background-muted flex cursor-default select-none items-center text-sm font-medium outline-none',
 				innerRadius,
 				inset && 'pl-lg',
 				className,
@@ -71,7 +71,7 @@ export function DropdownMenuSubContent({
 	return (
 		<DropdownMenuPrimitive.SubContent
 			className={cx(
-				'slide-in-from-left-1 animate-in bg-primary shadow-outline shadow-soft-xl z-50 min-w-[8rem] overflow-hidden',
+				'slide-in-from-left-1 animate-in bg-background shadow-outline shadow-soft-xl z-50 min-w-[8rem] overflow-hidden',
 				outerRadius,
 				basePadding,
 				className,
@@ -94,7 +94,7 @@ export function DropdownMenuContent({
 			<DropdownMenuPrimitive.Content
 				sideOffset={sideOffset}
 				className={cx(
-					'data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 animate-in bg-primary text-primary shadow-outline shadow-soft-xl z-50 min-w-[8rem] overflow-hidden',
+					'data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 animate-in bg-background text-foreground shadow-outline shadow-soft-xl z-50 min-w-[8rem] overflow-hidden',
 					basePadding,
 					outerRadius,
 					className,
@@ -117,7 +117,7 @@ export function DropdownMenuItem({
 	return (
 		<DropdownMenuPrimitive.Item
 			className={cx(
-				'px-sm py-sm text-primary focus:bg-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
+				'px-sm py-sm text-foreground focus:bg-background-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
 				innerRadius,
 				inset && 'pl-lg',
 				className,
@@ -139,7 +139,7 @@ export function DropdownMenuCheckboxItem({
 	return (
 		<DropdownMenuPrimitive.CheckboxItem
 			className={cx(
-				'py-sm pr-sm pl-lg focus:bg-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
+				'py-sm pr-sm pl-lg focus:bg-background-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
 				innerRadius,
 				className,
 			)}
@@ -167,7 +167,7 @@ export function DropdownMenuRadioItem({
 	return (
 		<DropdownMenuPrimitive.RadioItem
 			className={cx(
-				'py-sm pr-sm pl-lg focus:bg-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
+				'py-sm pr-sm pl-lg focus:bg-background-muted relative flex cursor-default select-none items-center text-sm font-medium outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
 				innerRadius,
 				className,
 			)}
@@ -196,7 +196,7 @@ export function DropdownMenuLabel({
 	return (
 		<DropdownMenuPrimitive.Label
 			className={cx(
-				'px-sm py-sm text-primary text-sm font-semibold',
+				'px-sm py-sm text-foreground text-sm font-semibold',
 				inset && 'pl-lg',
 				className,
 			)}
@@ -214,7 +214,7 @@ export function DropdownMenuSeparator({
 }: DropdownMenuSeparatorProps) {
 	return (
 		<DropdownMenuPrimitive.Separator
-			className={cx('-mx-xs my-xs bg-muted h-px', className)}
+			className={cx('-mx-xs my-xs bg-background-muted h-px', className)}
 			{...props}
 		/>
 	)
@@ -228,7 +228,7 @@ export function DropdownMenuShortcut({
 }: DropdownMenuShortcutProps) {
 	return (
 		<span
-			className={cx('text-primary/50 ml-auto text-xs', className)}
+			className={cx('text-foreground/50 ml-auto text-xs', className)}
 			{...props}
 		/>
 	)

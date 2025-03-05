@@ -53,7 +53,7 @@ const Square = React.forwardRef<
 			ref={ref}
 			{...props}
 		>
-			<span className="animate-loader-inner bg-inverted inline-block w-full align-top" />
+			<span className="animate-loader-inner bg-foreground inline-block w-full align-top" />
 		</div>
 	)
 })

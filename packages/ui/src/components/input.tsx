@@ -6,9 +6,9 @@ import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'focus-outline rounded-base border-muted bg-muted p-md text-md text-primary group relative block w-full border text-left font-bold outline-none',
+		'focus-outline rounded-base border-muted bg-background-muted p-md text-md text-foreground group relative block w-full border text-left font-bold outline-none',
 		// placeholder
-		'placeholder:text-muted',
+		'placeholder:text-foreground-muted',
 		// disabled
 		'disabled-within:opacity-50 before:has-[[data-disabled]]:shadow-none',
 	),
@@ -20,8 +20,10 @@ export const inputVariants = cva(
 				lg: 'text-lg',
 			},
 			variant: {
-				error: 'animate-shake border-danger bg-danger-muted/50 text-danger',
-				success: 'border-success bg-success-muted/50 text-success',
+				error:
+					'animate-shake border-danger bg-danger-background-muted/50 text-danger-foreground',
+				success:
+					'border-success bg-success-background-muted/50 text-success-foreground',
 				default: 'border border-transparent',
 			},
 		},
@@ -63,7 +65,7 @@ export const InputIcon = React.forwardRef<
 			height="20px"
 			className={cx(
 				'right-md absolute top-0 z-10 flex h-full items-center justify-center p-0',
-				variant === 'error' && 'text-danger',
+				variant === 'error' && 'text-danger-foreground',
 			)}
 		/>
 	)

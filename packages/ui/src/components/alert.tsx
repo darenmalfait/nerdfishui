@@ -12,10 +12,13 @@ export const alertVariants = cva(
 	{
 		variants: {
 			variant: {
-				warning: 'border border-warning bg-warning-muted text-warning',
-				success: 'border border-success bg-success-muted text-success',
-				info: 'border border-info bg-info-muted text-info',
-				danger: 'border border-danger bg-danger-muted text-danger',
+				warning:
+					'border border-warning bg-warning-background-muted text-warning-foreground',
+				success:
+					'border border-success bg-success-background-muted text-success-foreground',
+				info: 'border border-info bg-info-background-muted text-info-foreground',
+				danger:
+					'border border-danger bg-danger-background-muted text-danger-foreground',
 			},
 		},
 		defaultVariants: {

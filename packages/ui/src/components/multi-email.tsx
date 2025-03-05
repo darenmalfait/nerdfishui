@@ -337,7 +337,7 @@ export const MultiEmail = React.forwardRef<HTMLInputElement, MultiEmailProps>(
 								{email}
 							</button>
 							<button
-								className="ml-sm px-sm py-xs hover:bg-primary/10 active:bg-primary/15 rounded-lg"
+								className="ml-sm px-sm py-xs hover:bg-background/10 active:bg-background/15 rounded-lg"
 								data-tag-handle
 								onClick={() => removeEmail(index)}
 							>

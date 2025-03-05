@@ -10,10 +10,10 @@ export function TabsExample() {
 				<TabsTrigger value="privacy">Privacy</TabsTrigger>
 			</TabsList>
 			<TabsContent value="general">
-				<p className="text-primary text-sm">General settings tab</p>
+				<p className="text-foreground text-sm">General settings tab</p>
 			</TabsContent>
 			<TabsContent value="privacy">
-				<p className="text-primary text-sm">Privacy settings tab</p>
+				<p className="text-foreground text-sm">Privacy settings tab</p>
 			</TabsContent>
 		</Tabs>
 	)
