@@ -36,13 +36,15 @@ export type InputSize = VariantProps<typeof inputVariants>['inputSize']
 export type InputVariant = VariantProps<typeof inputVariants>['variant']
 export type InputVariants = VariantProps<typeof inputVariants>
 
-export type InputProps = {
+export interface InputAddOns extends InputVariants {
 	icon?: React.ElementType
 	addOnLeading?: React.ReactNode
 	addOnTrailing?: React.ReactNode
 	action?: () => void
-} & InputVariants &
-	React.ComponentPropsWithRef<'input'>
+}
+export interface InputProps
+	extends React.ComponentPropsWithRef<'input'>,
+		InputAddOns {}
 
 export const InputIcon = React.forwardRef<
 	HTMLDivElement,
