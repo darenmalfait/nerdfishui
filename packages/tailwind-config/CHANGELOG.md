@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.9.0
+
+### Minor Changes
+
+- feat add new color names
+
 ## 3.8.2
 
 ### Patch Changes

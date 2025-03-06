@@ -1,5 +1,17 @@
 # @repo/tailwind-config
 
+## 0.1.0
+
+### Minor Changes
+
+- feat add new color names
+
+### Patch Changes
+
+- Updated dependencies
+  [[`105a6dd`](https://github.com/darenmalfait/nerdfishui/commit/105a6dde57b808afceb93e6846066b63dae0975a)]:
+  - @nerdfish/tailwind-config@3.9.0
+
 ## 0.0.2
 
 ### Patch Changes

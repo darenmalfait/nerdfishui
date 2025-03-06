@@ -1,5 +1,21 @@
 # @nerdfish/ui
 
+## 7.10.0
+
+### Minor Changes
+
+- feat add new color names
+
+### Patch Changes
+
+- tweak `Command` styling
+
+- improve `ContextMenu` border radius
+
+- improve overall `Select` layout
+
+- improve `Dropdown` overall design
+
 ## 7.9.1
 
 ### Patch Changes
