@@ -47,7 +47,7 @@ importers:
         version: 19.7.1
       '@nerdfish/config':
         specifier: ^1.8.0
-        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.2)(typescript@5.8.2)
+        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.3)(typescript@5.8.2)
       eslint:
         specifier: ^9.21.0
         version: 9.21.0(jiti@2.4.2)
@@ -58,8 +58,8 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       prettier:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.5.3
+        version: 3.5.3
       turbo:
         specifier: ^2.4.4
         version: 2.4.4
@@ -168,7 +168,7 @@ importers:
     devDependencies:
       '@nerdfish/config':
         specifier: ^1.8.0
-        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.2)(typescript@5.8.2)
+        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.3)(typescript@5.8.2)
       '@nerdfish/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config
@@ -200,8 +200,8 @@ importers:
         specifier: ^9.21.0
         version: 9.21.0(jiti@2.4.2)
       eslint-config-next:
-        specifier: 15.2.0
-        version: 15.2.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2)
+        specifier: 15.2.1
+        version: 15.2.1(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2)
       npm-run-all2:
         specifier: ^7.0.2
         version: 7.0.2
@@ -221,8 +221,8 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1(postcss@8.5.3)
       prettier:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.5.3
+        version: 3.5.3
       rehype:
         specifier: ^13.0.2
         version: 13.0.2
@@ -267,7 +267,7 @@ importers:
     devDependencies:
       '@nerdfish/config':
         specifier: ^1.8.0
-        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.2)(typescript@5.8.2)
+        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.3)(typescript@5.8.2)
       '@types/react':
         specifier: 19.0.10
         version: 19.0.10
@@ -286,7 +286,7 @@ importers:
     devDependencies:
       '@nerdfish/config':
         specifier: ^1.8.0
-        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.2)(typescript@5.8.2)
+        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.3)(typescript@5.8.2)
       '@types/react':
         specifier: 19.0.10
         version: 19.0.10
@@ -300,8 +300,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       prettier:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.5.3
+        version: 3.5.3
       react:
         specifier: 19.0.0
         version: 19.0.0
@@ -434,7 +434,7 @@ importers:
     devDependencies:
       '@nerdfish/config':
         specifier: ^1.8.0
-        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.2)(typescript@5.8.2)
+        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.3)(typescript@5.8.2)
       '@nerdfish/tailwind-config':
         specifier: workspace:*
         version: link:../tailwind-config
@@ -448,8 +448,8 @@ importers:
         specifier: ^9.21.0
         version: 9.21.0(jiti@2.4.2)
       prettier:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.5.3
+        version: 3.5.3
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -468,13 +468,13 @@ importers:
     devDependencies:
       '@nerdfish/config':
         specifier: ^1.8.0
-        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.2)(typescript@5.8.2)
+        version: 1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.3)(typescript@5.8.2)
       eslint:
         specifier: ^9.21.0
         version: 9.21.0(jiti@2.4.2)
       prettier:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.5.3
+        version: 3.5.3
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -1707,8 +1707,8 @@ packages:
   '@next/eslint-plugin-next@15.1.5':
     resolution: {integrity: sha512-3cCrXBybsqe94UxD6DBQCYCCiP9YohBMgZ5IzzPYHmPzj8oqNlhBii5b6o1HDDaRHdz2pVnSsAROCtrczy8O0g==}
 
-  '@next/eslint-plugin-next@15.2.0':
-    resolution: {integrity: sha512-jHFUG2OwmAuOASqq253RAEG/5BYcPHn27p1NoWZDCf4OdvdK0yRYWX92YKkL+Mk2s+GyJrmd/GATlL5b2IySpw==}
+  '@next/eslint-plugin-next@15.2.1':
+    resolution: {integrity: sha512-6ppeToFd02z38SllzWxayLxjjNfzvc7Wm07gQOKSLjyASvKcXjNStZrLXMHuaWkhjqxe+cnhb2uzfWXm1VEj/Q==}
 
   '@next/mdx@15.2.0':
     resolution: {integrity: sha512-q10eCj5ERepucvG/2vos/iNXh9XZCG7qTPMi9/QIYWW4SUnaZnz7ip7F4QpyHSRp4A3afk/BTVDTwuOOZ1VZMA==}
@@ -4637,8 +4637,8 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
-  eslint-config-next@15.2.0:
-    resolution: {integrity: sha512-LkG0KKpinAoNPk2HXSx0fImFb/hQ6RnhSxTkpJFTkQ0SmnzsbRsjjN95WC/mDY34nKOenpptYEVvfkCR/h+VjA==}
+  eslint-config-next@15.2.1:
+    resolution: {integrity: sha512-mhsprz7l0no8X+PdDnVHF4dZKu9YBJp2Rf6ztWbXBLJ4h6gxmW//owbbGJMBVUU+PibGJDAqZhW4pt8SC8HSow==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0 || ^9.0.0
       typescript: '>=3.3.1'
@@ -7094,8 +7094,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.5.2:
-    resolution: {integrity: sha512-lc6npv5PH7hVqozBR7lkBNOGXV9vMwROAPlumdBkX0wTbbzPu/U1hk5yL8p2pt4Xoc+2mkT8t/sow2YrV/M5qg==}
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -9794,14 +9794,14 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2)':
+  '@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3)':
     dependencies:
       '@babel/core': 7.24.4
       '@babel/generator': 7.24.4
       '@babel/parser': 7.24.4
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
-      prettier: 3.5.2
+      prettier: 3.5.3
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
@@ -9990,7 +9990,7 @@ snapshots:
       '@types/react': 19.0.10
       react: 19.0.0
 
-  '@nerdfish/config@1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.2)(typescript@5.8.2)':
+  '@nerdfish/config@1.8.0(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(@typescript-eslint/utils@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(prettier@3.5.3)(typescript@5.8.2)':
     dependencies:
       '@eslint/compat': 1.2.3(eslint@9.21.0(jiti@2.4.2))
       '@next/eslint-plugin-next': 15.1.5
@@ -10004,8 +10004,8 @@ snapshots:
       eslint-plugin-testing-library: 6.4.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2)
       eslint-plugin-unicorn: 56.0.1(eslint@9.21.0(jiti@2.4.2))
       globals: 15.12.0
-      prettier-plugin-packagejson: 2.5.3(prettier@3.5.2)
-      prettier-plugin-tailwindcss: 0.6.8(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(prettier@3.5.2)
+      prettier-plugin-packagejson: 2.5.3(prettier@3.5.3)
+      prettier-plugin-tailwindcss: 0.6.8(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(prettier@3.5.3)
       tslib: 2.8.1
       typescript-eslint: 8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2)
     transitivePeerDependencies:
@@ -10039,7 +10039,7 @@ snapshots:
     dependencies:
       fast-glob: 3.3.1
 
-  '@next/eslint-plugin-next@15.2.0':
+  '@next/eslint-plugin-next@15.2.1':
     dependencies:
       fast-glob: 3.3.1
 
@@ -13868,9 +13868,9 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-config-next@15.2.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2):
+  eslint-config-next@15.2.1(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2):
     dependencies:
-      '@next/eslint-plugin-next': 15.2.0
+      '@next/eslint-plugin-next': 15.2.1
       '@rushstack/eslint-patch': 1.10.4
       '@typescript-eslint/eslint-plugin': 8.16.0(@typescript-eslint/parser@8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2)
       '@typescript-eslint/parser': 8.16.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2)
@@ -16842,22 +16842,22 @@ snapshots:
 
   preserve@0.2.0: {}
 
-  prettier-plugin-packagejson@2.5.3(prettier@3.5.2):
+  prettier-plugin-packagejson@2.5.3(prettier@3.5.3):
     dependencies:
       sort-package-json: 2.10.1
       synckit: 0.9.2
     optionalDependencies:
-      prettier: 3.5.2
+      prettier: 3.5.3
 
-  prettier-plugin-tailwindcss@0.6.8(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.2))(prettier@3.5.2):
+  prettier-plugin-tailwindcss@0.6.8(@ianvs/prettier-plugin-sort-imports@4.2.1(prettier@3.5.3))(prettier@3.5.3):
     dependencies:
-      prettier: 3.5.2
+      prettier: 3.5.3
     optionalDependencies:
-      '@ianvs/prettier-plugin-sort-imports': 4.2.1(prettier@3.5.2)
+      '@ianvs/prettier-plugin-sort-imports': 4.2.1(prettier@3.5.3)
 
   prettier@2.8.8: {}
 
-  prettier@3.5.2: {}
+  prettier@3.5.3: {}
 
   pretty-hrtime@1.0.3: {}
 
