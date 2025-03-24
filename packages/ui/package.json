@@ -55,7 +55,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.482.0",
+    "lucide-react": "^0.483.0",
     "react": "19.0.0",
     "react-aria": "^3.38.1",
     "react-day-picker": "^8.10.1",
@@ -71,7 +71,7 @@
   "devDependencies": {
     "@nerdfish/config": "^1.8.0",
     "@nerdfish/tailwind-config": "workspace:*",
-    "@types/react": "19.0.10",
+    "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
     "eslint": "^9.22.0",
     "prettier": "^3.5.3",
