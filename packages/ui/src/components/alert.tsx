@@ -1,17 +1,24 @@
 'use client'
 
 import { type VariantProps, cva, cx } from '@nerdfish/utils'
-import { AlertTriangle, Info, Verified, XCircle } from 'lucide-react'
+import {
+	AlertTriangleIcon,
+	InfoIcon,
+	MegaphoneIcon,
+	VerifiedIcon,
+	XCircleIcon,
+} from 'lucide-react'
 import * as React from 'react'
 import { deprecateProp } from '../deprecate'
 
-const DEFAULT_VARIANT = 'info'
+const DEFAULT_VARIANT = 'default'
 
 export const alertVariants = cva(
-	'[&>svg~]*]:pl-7 relative w-full rounded-base border p-md [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:top-md [&>svg]:left-4 [&>svg]:text-current',
+	'relative w-full rounded-base border p-md [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:top-md [&>svg]:left-md [&>svg]:text-current',
 	{
 		variants: {
 			variant: {
+				default: 'border border-muted bg-background-muted text-foreground',
 				warning:
 					'border border-warning bg-warning-background-muted text-warning-foreground',
 				success:
@@ -31,63 +38,62 @@ const IconMap: Record<
 	Exclude<VariantProps<typeof alertVariants>['variant'], undefined | null>,
 	React.ElementType
 > = {
-	danger: XCircle,
-	warning: AlertTriangle,
-	success: Verified,
-	info: Info,
+	default: MegaphoneIcon,
+	danger: XCircleIcon,
+	warning: AlertTriangleIcon,
+	success: VerifiedIcon,
+	info: InfoIcon,
 }
 
-export const AlertTitle = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-	<h5
-		ref={ref}
-		className={cx('mb-sm font-semibold leading-none', className)}
-		{...props}
-	/>
-))
-AlertTitle.displayName = 'AlertTitle'
+export type AlertTitleProps = React.ComponentProps<'h5'>
+export function AlertTitle({ className, ...props }: AlertTitleProps) {
+	return <h5 className={cx('mb-0 text-sm font-medium', className)} {...props} />
+}
 
-export const AlertDescription = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-	<div
-		ref={ref}
-		className={cx('text-sm text-current [&_p]:leading-relaxed', className)}
-		{...props}
-	/>
-))
-AlertDescription.displayName = 'AlertDescription'
+export type AlertDescriptionProps = React.ComponentProps<'p'>
+export function AlertDescription({
+	className,
+	...props
+}: React.ComponentProps<'p'>) {
+	return (
+		<p
+			className={cx(
+				'text-foreground/80 text-xs [&_p]:leading-relaxed',
+				className,
+			)}
+			{...props}
+		/>
+	)
+}
 
-function AlertIcon({
-	variant,
-	hideIcon,
-}: {
+interface AlertIconProps {
 	variant?: VariantProps<typeof alertVariants>['variant']
 	hideIcon?: boolean
-}) {
+}
+function AlertIcon({ variant, hideIcon }: AlertIconProps) {
 	if (hideIcon) return null
 
 	const Icon = IconMap[variant ?? DEFAULT_VARIANT]
 
-	return <Icon className={cx('size-6')} />
+	return <Icon className={cx('size-[36px]')} />
 }
 
-export const Alert = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithRef<'div'> & {
-		variant?: VariantProps<typeof alertVariants>['variant']
-		hideIcon?: boolean
-		title?: React.ReactNode
-		children?: React.ReactNode
-		description?: string
-	}
->(function Alert(
-	{ className, variant, hideIcon, title, children, description, ...props },
-	ref,
-) {
+export interface AlertProps extends Omit<React.ComponentProps<'div'>, 'title'> {
+	variant?: VariantProps<typeof alertVariants>['variant']
+	hideIcon?: boolean
+	title?: React.ReactNode
+	description?: string
+}
+
+export function Alert({
+	className,
+	variant,
+	hideIcon,
+	title,
+	description,
+	children,
+	...props
+}: AlertProps) {
 	deprecateProp(
 		description,
 		'Alert: description is deprecated, use <AlertDescription /> instead',
@@ -99,10 +105,11 @@ export const Alert = React.forwardRef<
 			{...props}
 			className={cx(
 				alertVariants({ variant }),
-				!hideIcon && 'pl-xl',
+				{
+					'pl-xl': !hideIcon,
+				},
 				className,
 			)}
-			ref={ref}
 		>
 			<AlertIcon variant={variant} hideIcon={hideIcon} />
 			{children}
@@ -110,11 +117,4 @@ export const Alert = React.forwardRef<
 			{description ? <AlertDescription>{description}</AlertDescription> : null}
 		</div>
 	)
-})
-Alert.displayName = 'Alert'
-
-export type AlertProps = React.ComponentPropsWithoutRef<typeof Alert>
-export type AlertTitleProps = React.ComponentPropsWithoutRef<typeof AlertTitle>
-export type AlertDescriptionProps = React.ComponentPropsWithoutRef<
-	typeof AlertDescription
->
+}
