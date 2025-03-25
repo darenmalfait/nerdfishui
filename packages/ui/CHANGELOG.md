@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.10.1
+
+### Patch Changes
+
+- tweak `Alert` component layout
+
 ## 7.10.0
 
 ### Minor Changes
