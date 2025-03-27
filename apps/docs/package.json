@@ -64,7 +64,7 @@
     "@types/react-dom": "19.0.4",
     "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
-    "eslint": "^9.22.0",
+    "eslint": "^9.23.0",
     "eslint-config-next": "15.2.3",
     "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.3",
