@@ -12,7 +12,7 @@ runs:
       shell: bash
       run: npm i -g turbo
 
-    - uses: pnpm/action-setup@v4
+    - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
 
     - uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4
       name: pnpm-cache
