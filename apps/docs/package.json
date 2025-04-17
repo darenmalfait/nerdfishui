@@ -38,7 +38,7 @@
     "markdown-wasm": "^1.2.0",
     "mdast-util-to-string": "^4.0.0",
     "mdx-annotations": "^0.1.4",
-    "motion": "^12.6.5",
+    "motion": "^12.7.4",
     "next": "15.3.0",
     "prism-react-renderer": "^2.4.1",
     "react": "19.1.0",
