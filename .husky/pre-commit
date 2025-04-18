@@ -1,4 +1,1 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-pnpm i && pnpm checks
+npm run checks:fix
