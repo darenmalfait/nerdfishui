@@ -1,5 +1,21 @@
 # @nerdfish/ui
 
+## 7.11.0
+
+### Minor Changes
+
+- improve color pallette
+
+- adjust base rounded
+
+- update tabs design
+
+### Patch Changes
+
+- increase title line height
+
+- increase dialog spacing
+
 ## 7.10.1
 
 ### Patch Changes
