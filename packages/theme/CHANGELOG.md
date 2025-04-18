@@ -1,5 +1,13 @@
 # @nerdfish/theme
 
+## 2.6.0
+
+### Minor Changes
+
+- adjust base rounded
+
+- update tabs design
+
 ## 2.5.1
 
 ### Patch Changes
