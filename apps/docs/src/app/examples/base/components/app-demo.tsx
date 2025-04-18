@@ -117,7 +117,7 @@ function AppDemo() {
 			<div className="p-lg">
 				<div className="rounded-container bg-background overflow-hidden shadow-2xl transition-all">
 					<div className="grid grid-cols-4 xl:grid-cols-5">
-						<aside className="bg-background-muted pr-sm pb-xl">
+						<aside className="bg-background-secondary pr-sm pb-xl">
 							<div className="mb-lg px-lg pt-md">
 								<p className="flex items-center text-2xl font-semibold">
 									<ChefHat className="mr-sm" />
