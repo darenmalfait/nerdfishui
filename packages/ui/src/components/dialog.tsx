@@ -54,7 +54,7 @@ export const DialogContent = React.forwardRef<
 		<DialogPrimitive.Content
 			ref={ref}
 			className={cx(
-				'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 animate-in gap-md rounded-b-base bg-popover p-md shadow-outline sm:rounded-base fixed z-50 grid w-full sm:max-w-lg',
+				'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0 animate-in gap-md rounded-b-base bg-popover p-lg shadow-outline sm:rounded-base fixed z-50 grid w-full sm:max-w-lg',
 				className,
 			)}
 			{...props}
