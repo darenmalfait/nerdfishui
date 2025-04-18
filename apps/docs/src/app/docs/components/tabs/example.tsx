@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@nerdfish/ui'
 
 export function TabsExample() {
 	return (
-		<Tabs defaultValue="general" className="w-[400px]">
+		<Tabs defaultValue="general">
 			<TabsList>
 				<TabsTrigger value="general">General</TabsTrigger>
 				<TabsTrigger value="privacy">Privacy</TabsTrigger>
