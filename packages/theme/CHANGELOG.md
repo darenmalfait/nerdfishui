@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.6.1
+
+### Patch Changes
+
+- fix foreground color
+
 ## 2.6.0
 
 ### Minor Changes
