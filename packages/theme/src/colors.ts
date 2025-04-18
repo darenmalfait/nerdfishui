@@ -51,15 +51,15 @@ export const dark: typeof light = {
 		primary: '0 0% 12.16%', // #1F1F1F
 		secondary: '0 0% 8.63%', // #161616
 		muted: '0 0% 21.18%', // #363636
-		inverted: '0 0% 97.25%', // #D1CFC0
+		inverted: '52.94 15.6% 78.63%', // #D1CFC0
 	},
 	foreground: {
-		primary: '0 0% 97.25%', // #D1CFC0
+		primary: '52.94 15.6% 78.63%', // #D1CFC0
 		muted: '52 10.07% 70.78%', // #bcbaad
 		inverted: '0 0% 13.33%', // #1F1F1F
 	},
 	border: {
-		primary: '0 0% 97.25%', // #F8F8F8
+		primary: '52.94 15.6% 78.63%', // #D1CFC0
 		muted: '52 10.07% 70.78%', // #bcbaad
 	},
 	info: {
