@@ -3,19 +3,19 @@ import { type Colors } from './types'
 export const light: Colors = {
 	accent: '17.85 64.75% 52.16%', // #D46536
 	background: {
-		primary: '0 0% 97.25%', // #F8F8F8
+		primary: '52 36.59% 91.96%', // #F2F0E3
 		secondary: '0 0% 100%', //#fff
-		muted: '0 0% 87.06%', // #DEDEDE
-		inverted: '0 0% 13.33%', //#222
+		muted: '52 23.08% 87.25%', // #E6E4D7
+		inverted: '0 0% 18.04%', //#2E2E2E
 	},
 	foreground: {
-		primary: '0 0% 13.33%', // #222
-		muted: '0 0% 55.29%', // #8D8D8D
-		inverted: '0 0% 100%', // #FFF
+		primary: '0 0% 18.04%', // #2E2E2E
+		muted: '0 0% 26.27%', // #434343
+		inverted: '52 36.59% 91.96%', // #F2F0E3
 	},
 	border: {
-		primary: '0 0% 13.33%', // #222
-		muted: '0 0% 87.06%', // #DEDEDE
+		primary: '0 0% 18.04%', // #2E2E2E
+		muted: '0 0% 26.27%', // #DEDEDE
 	},
 
 	// INFO: status colors: using https://goodpalette.io as contrast checker
@@ -48,19 +48,19 @@ export const light: Colors = {
 export const dark: typeof light = {
 	...light,
 	background: {
-		primary: '0 0% 7.06%', // #121212
-		secondary: '0 0% 0%', // #000
-		muted: '210 2.5% 15.69%', // #272829
-		inverted: '0 0% 97.25%', // #F8F8F8
+		primary: '0 0% 12.16%', // #1F1F1F
+		secondary: '0 0% 8.63%', // #161616
+		muted: '0 0% 21.18%', // #363636
+		inverted: '0 0% 97.25%', // #D1CFC0
 	},
 	foreground: {
-		primary: '0 0% 100%', // #fff
-		muted: '0 0% 55.29%', // #8D8D8D
-		inverted: '0 0% 13.33%', // #222
+		primary: '0 0% 97.25%', // #D1CFC0
+		muted: '52 10.07% 70.78%', // #bcbaad
+		inverted: '0 0% 13.33%', // #1F1F1F
 	},
 	border: {
 		primary: '0 0% 97.25%', // #F8F8F8
-		muted: '210 2.5% 15.69%', // #272829
+		muted: '52 10.07% 70.78%', // #bcbaad
 	},
 	info: {
 		100: '183 90% 8%',
