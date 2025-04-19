@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 3.9.1
+
+### Patch Changes
+
+- improve prose typography
+
 ## 3.9.0
 
 ### Minor Changes
