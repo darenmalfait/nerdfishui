@@ -32,20 +32,27 @@ export const sliderVariants = cva('', {
 	},
 })
 
+export type SliderTrackProps = React.ComponentProps<typeof SliderTrack>
 export const SliderTrack = SliderPrimitive.Track
+
+export type SliderRangeProps = React.ComponentProps<typeof SliderRange>
 export const SliderRange = SliderPrimitive.Range
 
-export const Slider = React.forwardRef<
-	React.ElementRef<typeof SliderPrimitive.Root>,
-	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> &
-		VariantProps<typeof sliderVariants>
->(({ className, children, inputSize, variant, ...props }, ref) => {
+export interface SliderProps
+	extends React.ComponentProps<typeof SliderPrimitive.Root>,
+		VariantProps<typeof sliderVariants> {}
+export function Slider({
+	className,
+	children,
+	inputSize,
+	variant,
+	...props
+}: SliderProps) {
 	const value = props.value ?? props.defaultValue ?? []
 	const hasSingleThumb = Array.isArray(value) ? value.length <= 1 : false
 
 	return (
 		<SliderPrimitive.Root
-			ref={ref}
 			className={cx(
 				sliderVariants({ inputSize, variant }),
 				'gap-sm relative flex w-full items-center',
@@ -69,20 +76,16 @@ export const Slider = React.forwardRef<
 			{children}
 		</SliderPrimitive.Root>
 	)
-})
-Slider.displayName = SliderPrimitive.Root.displayName
+}
 
-export const SliderThumb = React.forwardRef<
-	React.ElementRef<typeof SliderPrimitive.Thumb>,
-	React.ComponentPropsWithoutRef<typeof SliderPrimitive.Thumb>
->((props, ref) => {
-	// focus-visible is broken in radix slider, so we are doing a custom implementation
+export type SliderThumbProps = React.ComponentProps<
+	typeof SliderPrimitive.Thumb
+>
+export function SliderThumb(props: SliderThumbProps) {
 	const { isFocusVisible, focusProps } = useFocusRing()
-
 	return (
 		<SliderPrimitive.Thumb
 			data-slot="thumb"
-			ref={ref}
 			{...mergeProps(focusProps, props)}
 			data-focus-visible={isFocusVisible}
 			className={cx(
@@ -93,16 +96,4 @@ export const SliderThumb = React.forwardRef<
 			)}
 		/>
 	)
-})
-SliderThumb.displayName = SliderPrimitive.Thumb.displayName
-
-export type SliderProps = React.ComponentPropsWithoutRef<typeof Slider>
-export type SliderThumbProps = React.ComponentPropsWithoutRef<
-	typeof SliderThumb
->
-export type SliderTrackProps = React.ComponentPropsWithoutRef<
-	typeof SliderTrack
->
-export type SliderRangeProps = React.ComponentPropsWithoutRef<
-	typeof SliderRange
->
+}
