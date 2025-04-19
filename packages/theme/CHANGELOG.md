@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.6.2
+
+### Patch Changes
+
+- tweak accent color
+
 ## 2.6.1
 
 ### Patch Changes

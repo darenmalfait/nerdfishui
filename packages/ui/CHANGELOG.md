@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.11.2
+
+### Patch Changes
+
+- improve calendar design and update package
+
+- tweak accent color
+
 ## 7.11.1
 
 ### Patch Changes
