@@ -57,7 +57,7 @@ export const Slider = React.forwardRef<
 				data-slot="track"
 				className={cx(
 					'bg-background-muted relative my-[calc((theme(spacing.7)-theme(spacing.5))/2)] flex w-full rounded-full border-x-[calc(theme(spacing.7)/2)] border-x-transparent border-s-current',
-					!hasSingleThumb && 'border-s-muted',
+					!hasSingleThumb && 'border-s-background-muted',
 					hasSingleThumb && 'border-s-current',
 				)}
 			>
