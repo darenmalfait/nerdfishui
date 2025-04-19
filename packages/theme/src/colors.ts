@@ -47,6 +47,7 @@ export const light: Colors = {
 
 export const dark: typeof light = {
 	...light,
+	accent: '15 69.23% 59.22%', // #df734f
 	background: {
 		primary: '0 0% 12.16%', // #1F1F1F
 		secondary: '0 0% 8.63%', // #161616

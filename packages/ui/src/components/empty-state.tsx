@@ -31,7 +31,7 @@ export const EmptyStateTitle = React.forwardRef<
 		<H3
 			as={as}
 			variant={variant}
-			className={cx('mb-xs m-0 mt-0 text-center', className)}
+			className={cx('mb-xs m-0 !mt-0 text-center', className)}
 			ref={ref}
 			{...props}
 		/>
@@ -46,7 +46,7 @@ export const EmptyStateIcon = React.forwardRef<
 	return (
 		<Slot
 			role="presentation"
-			className={cx('mb-md text-accent size-12', className)}
+			className={cx('mb-lg text-accent size-12', className)}
 			ref={ref}
 			{...props}
 		/>
