@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.11.1
+
+### Patch Changes
+
+- improve prose typography
+
 ## 7.11.0
 
 ### Minor Changes
