@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.11.3
+
+### Patch Changes
+
+- fix slider layout glitch
+
 ## 7.11.2
 
 ### Patch Changes
