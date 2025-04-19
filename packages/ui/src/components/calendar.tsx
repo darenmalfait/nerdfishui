@@ -1,73 +1,143 @@
 'use client'
 
 import { cx } from '@nerdfish/utils'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import type * as React from 'react'
-import { DayPicker, type DayPickerProps } from 'react-day-picker'
+import {
+	DayPicker,
+	type DropdownNavProps,
+	type DropdownProps,
+	type DayPickerProps,
+} from 'react-day-picker'
 
 import { buttonVariants } from './button'
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from './select'
+
+export type CalendarProps = DayPickerProps
 
 export function Calendar({
 	className,
 	classNames,
 	showOutsideDays = true,
+	components: userComponents,
 	...props
 }: DayPickerProps) {
+	const handleCalendarChange = (
+		_value: string | number,
+		_e: React.ChangeEventHandler<HTMLSelectElement>,
+	) => {
+		const _event = {
+			target: {
+				value: String(_value),
+			},
+		} as React.ChangeEvent<HTMLSelectElement>
+		_e(_event)
+	}
+
+	const defaultComponents = {
+		Chevron: (componentProps: React.ComponentProps<typeof ChevronLeftIcon>) => {
+			if (componentProps.orientation === 'left') {
+				return (
+					<ChevronLeftIcon
+						size={16}
+						strokeWidth={2}
+						{...componentProps}
+						aria-hidden="true"
+					/>
+				)
+			}
+			return (
+				<ChevronRightIcon
+					size={16}
+					strokeWidth={2}
+					{...componentProps}
+					aria-hidden="true"
+				/>
+			)
+		},
+		DropdownNav: (componentProps: DropdownNavProps) => {
+			return (
+				<div className="flex w-full items-center gap-2">
+					{componentProps.children}
+				</div>
+			)
+		},
+		Dropdown: (componentProps: DropdownProps) => {
+			return (
+				<Select
+					value={String(componentProps.value)}
+					onValueChange={(value) => {
+						if (componentProps.onChange) {
+							handleCalendarChange(value, componentProps.onChange)
+						}
+					}}
+				>
+					<SelectTrigger className="h-8 w-fit font-medium first:grow">
+						<SelectValue />
+					</SelectTrigger>
+					<SelectContent className="max-h-[min(26rem,var(--radix-select-content-available-height))]">
+						{componentProps.options?.map((option) => (
+							<SelectItem
+								key={option.value}
+								value={String(option.value)}
+								disabled={option.disabled}
+							>
+								{option.label}
+							</SelectItem>
+						))}
+					</SelectContent>
+				</Select>
+			)
+		},
+	}
+
+	const mergedComponents = {
+		...defaultComponents,
+		...userComponents,
+	}
+
 	return (
 		<DayPicker
 			showOutsideDays={showOutsideDays}
-			captionLayout="dropdown-buttons"
+			captionLayout="dropdown"
 			className={className}
+			components={mergedComponents}
 			classNames={{
-				months:
-					'flex flex-col sm:flex-row space-y-md sm:space-x-md sm:space-y-0',
-				month: 'space-y-md',
-
-				caption:
-					'flex justify-center pt-sm relative space-x-sm items-center mx-auto',
-				caption_label: 'flex items-center gap-sm text-sm font-medium',
-				caption_dropdowns: 'flex relative gap-md [&_.rdp-vhidden]:hidden',
-				dropdown_month: 'relative inline-flex items-center',
-				dropdown_year: 'relative inline-flex items-center',
-				dropdown:
-					'absolute inset-0 w-full appearance-none opacity-0 z-10 cursor-pointer',
-
-				nav: 'space-x-md flex items-center',
-				nav_button: cx(buttonVariants({ variant: 'outline', size: 'iconSm' })),
-				nav_button_previous: 'absolute left-1',
-				nav_button_next: 'absolute right-1',
-				table: 'w-full border-collapse space-y-1',
-				head_row: 'flex',
-				head_cell:
-					'text-foreground-muted rounded-container w-9 font-normal text-[0.8rem] ',
-				row: 'flex w-full mr-sm',
-				cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-outside)]:bg-background-muted [&:has([aria-selected])]:bg-background-muted focus-within:relative focus-within:z-20 [&:has([aria-selected].day-range-end)]:rounded-r-container [&:has([aria-selected].day-range-start)]:rounded-l-container [&:has([aria-selected].day-range-middle)]:!rounded-none ',
-				day: cx(
+				months: 'relative flex flex-col sm:flex-row gap-4',
+				month: 'w-full',
+				month_caption:
+					'relative mx-10 mb-1 flex h-9 items-center justify-center z-20',
+				caption_label: 'text-sm font-medium',
+				nav: 'absolute top-0 flex w-full justify-between z-10',
+				button_previous: cx(
 					buttonVariants({ variant: 'ghost' }),
-					'h-9 w-9 p-0 font-normal aria-selected:opacity-100',
+					'text-foreground-muted/80 hover:text-foreground size-9 p-0',
 				),
-				day_range_start: 'day-range-start',
-				day_range_end: 'day-range-end',
-				day_selected:
-					'bg-foreground !text-background hover:!bg-foreground/90 day-selected',
-				day_today:
-					'bg-accent text-white hover:!bg-foreground/90 hover:!text-background',
-				day_outside:
-					'day-outside text-foreground-muted opacity-50 aria-selected:bg-accent/10 aria-selected:text-foreground aria-selected:opacity-100',
-				day_disabled: 'text-foreground-muted opacity-50',
-				day_range_middle:
-					'z-0 aria-selected:bg-accent/10 aria-selected:!text-foreground hover:aria-selected:!text-background rounded-none day-range-middle',
-				day_hidden: 'invisible',
-				...classNames,
-			}}
-			components={{
-				IconLeft: () => <ChevronLeft className="h-4 w-4" />,
-				IconRight: () => <ChevronRight className="h-4 w-4" />,
+				button_next: cx(
+					buttonVariants({ variant: 'ghost' }),
+					'text-foreground-muted/80 hover:text-foreground size-9 p-0',
+				),
+				weekday: 'size-9 p-0 text-xs font-medium text-foreground-muted/80',
+				day_button:
+					'relative flex size-9 items-center justify-center whitespace-nowrap rounded-base p-0 text-foreground outline-offset-2 group-[[data-selected]:not(.range-middle)]:[transition-property:color,background-color,border-radius,box-shadow] group-[[data-selected]:not(.range-middle)]:duration-150 focus:outline-none group-data-[disabled]:pointer-events-none focus-visible:z-10 hover:bg-muted group-data-[selected]:bg-inverted group-data-[selected]:text-inverted hover:text-foreground group-data-[selected]:text-primary-foreground group-data-[disabled]:text-foreground/30 group-data-[disabled]:line-through group-data-[outside]:text-foreground/30 group-data-[outside]:group-data-[selected]:text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 group-[.range-start:not(.range-end)]:rounded-e-none group-[.range-end:not(.range-start)]:rounded-s-none group-[.range-middle]:rounded-none group-data-[selected]:group-[.range-middle]:bg-secondary group-data-[selected]:group-[.range-middle]:hover:bg-muted group-data-[selected]:group-[.range-middle]:text-foreground',
+				day: 'group size-9 px-0 text-sm',
+				range_start: 'range-start',
+				range_end: 'range-end',
+				range_middle: 'range-middle',
+				today:
+					'*:after:pointer-events-none *:after:absolute *:after:bottom-1 *:after:start-1/2 *:after:z-10 *:after:size-[3px] *:after:-translate-x-1/2 *:after:rounded-full *:after:bg-accent [&[data-selected]:not(.range-middle)>*]:after:bg-accent [&[data-disabled]>*]:after:bg-foreground/30 *:after:transition-colors',
+				outside:
+					'text-foreground-muted data-selected:bg-accent/50 data-selected:text-foreground-muted',
+				hidden: 'invisible',
+				week_number: 'size-9 p-0 text-xs font-medium text-foreground-muted/80',
 			}}
 			{...props}
 		/>
 	)
 }
-Calendar.displayName = 'Calendar'
-
-export type CalendarProps = React.ComponentPropsWithoutRef<typeof Calendar>
