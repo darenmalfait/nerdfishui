@@ -3,6 +3,42 @@ export const typography = {
 		return {
 			DEFAULT: {
 				css: {
+					'--tw-prose-body': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-headings': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-lead': 'hsl(var(--colors-foreground-primary-muted))',
+					'--tw-prose-links': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-bold': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-counters': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-bullets': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-hr': 'hsl(var(--colors-foreground-muted))',
+					'--tw-prose-quotes': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-quote-borders': 'hsl(var(--colors-foreground-muted))',
+					'--tw-prose-captions': 'hsl(var(--colors-foreground-primary-muted))',
+					'--tw-prose-code': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-pre-code': 'hsl(var(--colors-background-muted))',
+					'--tw-prose-pre-bg': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-th-borders': 'hsl(var(--colors-foreground-muted))',
+					'--tw-prose-td-borders': 'hsl(var(--colors-background-muted))',
+					'--tw-prose-invert-body': 'hsl(var(--colors-background-muted))',
+					'--tw-prose-invert-headings':
+						'hsl(var(--colors-foreground-inverted))',
+					'--tw-prose-invert-lead': 'hsl(var(--colors-foreground-muted))',
+					'--tw-prose-invert-links': 'hsl(var(--colors-foreground-inverted))',
+					'--tw-prose-invert-bold': 'hsl(var(--colors-foreground-inverted))',
+					'--tw-prose-invert-counters': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-invert-bullets': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-invert-hr': 'hsl(var(--colors-foreground-primary-muted))',
+					'--tw-prose-invert-quotes': 'hsl(var(--colors-background-muted))',
+					'--tw-prose-invert-quote-borders':
+						'hsl(var(--colors-foreground-primary-muted))',
+					'--tw-prose-invert-captions': 'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-invert-code': 'hsl(var(--colors-foreground-inverted))',
+					'--tw-prose-invert-pre-code': 'hsl(var(--colors-foreground-muted))',
+					'--tw-prose-invert-pre-bg': 'hsl(var(--colors-background-muted))',
+					'--tw-prose-invert-th-borders':
+						'hsl(var(--colors-foreground-primary))',
+					'--tw-prose-invert-td-borders':
+						'hsl(var(--colors-foreground-primary-muted))',
 					'> *': {
 						gridColumn: '1 / -1',
 
@@ -19,35 +55,6 @@ export const typography = {
 						marginTop: 0,
 						marginBottom: 0,
 						borderRadius: theme('borderRadius.lg'),
-					},
-				},
-				dark: {
-					css: {
-						color: theme('colors.gray[300]'),
-						'[class~="lead"]': { color: theme('colors.gray[400]') },
-						a: { color: theme('colors.gray[100]') },
-						strong: { color: theme('colors.gray[100]') },
-						'ul > li::before': {
-							backgroundColor: theme('colors.gray[700]'),
-						},
-						hr: { borderColor: theme('colors.gray[800]') },
-						blockquote: {
-							color: theme('colors.gray[100]'),
-							borderLeftColor: theme('colors.gray[800]'),
-						},
-						h1: { color: theme('colors.gray[100]') },
-						h2: { color: theme('colors.gray[100]') },
-						h3: { color: theme('colors.gray[100]') },
-						h4: { color: theme('colors.gray[100]') },
-						pre: {
-							color: theme('colors.gray[200]'),
-							backgroundColor: theme('colors.gray[800]'),
-						},
-						thead: {
-							color: theme('colors.gray[100]'),
-							borderBottomColor: theme('colors.gray[700]'),
-						},
-						'tbody tr': { borderBottomColor: theme('colors.gray[800]') },
 					},
 				},
 			},

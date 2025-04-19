@@ -3,7 +3,7 @@
 
 export function TypographyProseExample() {
 	return (
-		<div className="prose dark:prose-invert">
+		<div className="prose">
 			<h2>Chapter 1: The Beginning</h2>
 			<p>
 				Long ago, in a land far away, there was a magical kingdom ruled by a

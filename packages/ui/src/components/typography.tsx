@@ -19,7 +19,7 @@ export const Paragraph = React.forwardRef<
 			ref={ref}
 			className={cx(
 				'mt-md max-w-full leading-7 first:mt-0',
-				prose ? 'prose prose-light dark:prose-invert' : 'text-foreground',
+				prose ? 'prose' : 'text-foreground',
 				className,
 			)}
 		/>
