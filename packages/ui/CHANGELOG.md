@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.11.4
+
+### Patch Changes
+
+- `Button`: add small scale increase on hover
+
 ## 7.11.3
 
 ### Patch Changes
