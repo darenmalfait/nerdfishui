@@ -6,7 +6,7 @@ import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'focus-outline rounded-base border-muted bg-background-muted p-md text-md text-foreground group relative block w-full border text-left font-bold outline-none',
+		'focus-outline rounded-base bg-background-muted p-md text-md text-foreground group relative block w-full border border-transparent text-left font-bold outline-none',
 		// placeholder
 		'placeholder:text-foreground-muted',
 		// disabled
@@ -25,6 +25,7 @@ export const inputVariants = cva(
 				success:
 					'border-success bg-success-background-muted/50 text-success-foreground',
 				default: 'border border-transparent',
+				bordered: 'border border-muted',
 			},
 		},
 		defaultVariants: {

@@ -31,6 +31,7 @@ export function PopoverExample() {
 						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="width">Diameter</Label>
 							<Input
+								variant="bordered"
 								name="width"
 								id="width"
 								defaultValue="10 inches"
@@ -41,6 +42,7 @@ export function PopoverExample() {
 						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="maxWidth">Max. Layers</Label>
 							<Input
+								variant="bordered"
 								name="maxWidth"
 								id="maxWidth"
 								defaultValue="3"
@@ -51,6 +53,7 @@ export function PopoverExample() {
 						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="height">Height</Label>
 							<Input
+								variant="bordered"
 								name="height"
 								id="height"
 								defaultValue="4 inches"
@@ -61,6 +64,7 @@ export function PopoverExample() {
 						<div className="gap-md grid grid-cols-2 items-center">
 							<Label htmlFor="maxHeight">Max. Toppings</Label>
 							<Input
+								variant="bordered"
 								name="maxHeight"
 								id="maxHeight"
 								defaultValue="Unlimited"

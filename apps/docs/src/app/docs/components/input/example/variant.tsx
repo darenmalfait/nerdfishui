@@ -33,6 +33,15 @@ export function InputVariantsExample() {
 					placeholder="Email"
 				/>
 			</Field>
+			<Field>
+				<Label>Bordered</Label>
+				<Input
+					name="email-bordered"
+					variant="bordered"
+					type="email"
+					placeholder="Email"
+				/>
+			</Field>
 		</div>
 	)
 }
