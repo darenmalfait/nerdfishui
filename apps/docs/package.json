@@ -54,7 +54,7 @@
     "zod": "^3.24.4"
   },
   "devDependencies": {
-    "@nerdfish/config": "^1.8.0",
+    "@nerdfish/config": "^1.9.2",
     "@nerdfish/tailwind-config": "workspace:*",
     "@svgr/webpack": "^8.1.0",
     "@types/eslint": "^9.6.1",
