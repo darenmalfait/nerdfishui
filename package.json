@@ -45,7 +45,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@nerdfish/config": "^1.8.0",
-    "eslint": "^9.25.1",
+    "eslint": "^9.26.0",
     "execa": "^9.5.2",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
