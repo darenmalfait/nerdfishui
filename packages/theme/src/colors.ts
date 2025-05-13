@@ -43,6 +43,23 @@ export const light: Colors = {
 		300: '148.42 100% 88.82%', // #C6FFE1
 		500: '127.23 87.37% 18.63%', // #065910
 	},
+
+	// Code editor
+	shiki: {
+		foreground: '#2E2E2E',
+		background: '#E6E4D7',
+		token: {
+			constant: '#0550ae',
+			string: '#0a3069',
+			comment: '#6e7781',
+			keyword: '#cf222e',
+			parameter: '#116329',
+			function: '#8250df',
+			'string-expression': '#0a3069',
+			punctuation: '#212121',
+			link: '#0a3069',
+		},
+	},
 }
 
 export const dark: typeof light = {
@@ -82,5 +99,22 @@ export const dark: typeof light = {
 		100: '123 90% 8%',
 		300: '128 91% 17%',
 		500: '138 65% 52%',
+	},
+
+	// Code editor
+	shiki: {
+		foreground: '#D1CFC0',
+		background: '#363636',
+		token: {
+			constant: '#79c0ff',
+			string: '#a5d6ff',
+			comment: '#8b949e',
+			keyword: '#ff7b72',
+			parameter: '#7ee787',
+			function: '#d2a8ff',
+			'string-expression': '#a5d6ff',
+			punctuation: '#212121',
+			link: '#a5d6ff',
+		},
 	},
 }

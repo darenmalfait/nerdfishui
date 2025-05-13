@@ -135,6 +135,11 @@ export const docs: { navigation: NavigationGroup[] } = {
 			title: 'Utility',
 			links: [
 				{ title: 'Aspect Ratio', href: '/docs/components/aspect-ratio/' },
+				{
+					title: 'Code Block',
+					href: '/docs/components/code-block/',
+					status: 'new',
+				},
 				{ title: 'Flags', href: '/docs/components/flags/' },
 				{
 					title: 'LoadingAnimation',

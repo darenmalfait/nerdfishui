@@ -13,7 +13,6 @@ import {
 	TooltipTrigger,
 	useCopyToClipboard,
 } from '@nerdfish/ui'
-import { cx } from '@nerdfish/utils'
 import type React from 'react'
 import { Icons } from '~/app/components/icons'
 import { type NpmCommands } from '~/lib/types/unist'
@@ -38,7 +37,7 @@ export function CopyButton({
 					<Button
 						size="iconSm"
 						{...props}
-						className={cx('top-sm right-sm absolute', className)}
+						className={className}
 						variant={copiedText ? 'success' : 'ghost'}
 						aria-label="copy"
 						onClick={() => handleCopy(code, COPY_TIMOUT)}
@@ -75,7 +74,7 @@ export function CopyNpmCommandButton({
 			<DropdownMenuTrigger asChild>
 				<Button
 					size="iconSm"
-					className={cx('top-sm right-sm absolute', className)}
+					className={className}
 					variant={copiedText ? 'success' : 'ghost'}
 					aria-label="copy"
 					{...props}

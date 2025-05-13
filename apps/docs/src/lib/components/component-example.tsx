@@ -1,13 +1,12 @@
 import { Resizable, ResizableHandle, ResizablePanel } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import type * as React from 'react'
-import { CopyButton } from './copy-button'
 
 function Preview({ children }: { children: React.ReactNode }) {
 	return (
 		<Resizable direction="horizontal">
 			<ResizablePanel
-				className="rounded-container p-md shadow-outline min-h-[350px]"
+				className="rounded-base p-md shadow-outline min-h-[350px]"
 				defaultSize={100}
 			>
 				{children}
@@ -31,8 +30,7 @@ export function ComponentExample({
 			{Component ? <Preview>{Component}</Preview> : null}
 			<div className="!bg-background -my-sm p-0">
 				<div className="space-y-md flex flex-col">
-					<div className="rounded-container dark relative w-full [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-						<CopyButton className="top-md" code={children.toString()} />
+					<div className="rounded-base relative w-full [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
 						{children}
 					</div>
 				</div>

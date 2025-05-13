@@ -1,0 +1,25 @@
+<DocsPageHeader
+	title="Code Block"
+	description="A code block is a component that displays a block of code."
+	githubPath={{
+		package: 'ui',
+		path: 'code-block.tsx',
+	}}
+/>
+
+<ComponentExample
+	component={<CodeBlockExample />}
+	src="/src/app/docs/components/code-block/example.tsx"
+/>
+
+## Usage
+
+```tsx
+import { CodeBlock } from '@nerdfish/ui'
+```
+
+```tsx
+<CodeBlock>
+	<CodeBlockCode code={code} language="javascript" theme="github-dark" />
+</CodeBlock>
+```
