@@ -7,8 +7,9 @@ import * as React from 'react'
 export type HoverCardProps = React.ComponentProps<
 	typeof HoverCardPrimitive.Root
 >
-export const HoverCard = HoverCardPrimitive.Root
-
+export function HoverCard({ openDelay = 200, ...props }: HoverCardProps) {
+	return <HoverCardPrimitive.Root openDelay={openDelay} {...props} />
+}
 export type HoverCardTriggerProps = React.ComponentProps<
 	typeof HoverCardPrimitive.Trigger
 >
