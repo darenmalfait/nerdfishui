@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.7.0
+
+### Minor Changes
+
+- add code-block component
+
 ## 2.6.2
 
 ### Patch Changes
