@@ -1,5 +1,19 @@
 # @nerdfish/ui
 
+## 7.12.0
+
+### Minor Changes
+
+- add code-block component
+
+- `Popover`: improve design and example
+
+### Patch Changes
+
+- Hovercard: reduce open delay
+
+- Tooltip: remove default delay
+
 ## 7.11.4
 
 ### Patch Changes
