@@ -56,7 +56,10 @@ function CountrySelectOption({
 	onChange: (country: RPNInput.Country) => void
 }) {
 	return (
-		<CommandItem className="gap-sm" onSelect={() => onChange(country)}>
+		<CommandItem
+			className="gap-sm hover:!bg-background !p-sm !-mx-sm"
+			onSelect={() => onChange(country)}
+		>
 			<FlagComponent country={country} countryName={countryName} />
 			<span className="flex-1 text-sm">{countryName}</span>
 			<span className="text-foreground text-sm">{`+${RPNInput.getCountryCallingCode(country)}`}</span>
@@ -105,13 +108,13 @@ function CountrySelect({
 					/>
 				</button>
 			</PopoverTrigger>
-			<PopoverContent className="w-[300px] p-0">
+			<PopoverContent className="w-[300px]">
 				<Command>
-					<CommandInput placeholder="Search country..." />
+					<CommandInput className="mb-sm" placeholder="Search country..." />
 					<CommandList>
 						<ScrollArea className="h-72">
 							<CommandEmpty>No country found.</CommandEmpty>
-							<CommandGroup>
+							<CommandGroup className="gap-sm">
 								{countryList.map(({ value: val, label }) =>
 									val ? (
 										<CountrySelectOption

@@ -40,8 +40,8 @@ export interface CommandInputProps
 export function CommandInput({
 	className,
 	icon: Icon,
-	inputSize,
-	variant,
+	inputSize = 'sm',
+	variant = 'bordered',
 	...props
 }: CommandInputProps) {
 	return (
