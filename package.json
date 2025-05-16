@@ -44,12 +44,12 @@
     "@changesets/cli": "^2.29.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@nerdfish/config": "^1.8.0",
-    "eslint": "^9.25.1",
+    "@nerdfish/config": "^1.9.2",
+    "eslint": "^9.27.0",
     "execa": "^9.5.3",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "turbo": "^2.5.3"
   },
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.11.0"
 }

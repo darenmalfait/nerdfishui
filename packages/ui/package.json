@@ -55,10 +55,10 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.503.0",
+    "lucide-react": "^0.511.0",
     "react": "19.1.0",
     "react-aria": "^3.39.0",
-    "react-day-picker": "^9.6.7",
+    "react-day-picker": "^9.7.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.56.3",
     "react-phone-number-input": "^3.4.12",
@@ -70,11 +70,11 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@nerdfish/config": "^1.8.0",
+    "@nerdfish/config": "^1.9.2",
     "@nerdfish/tailwind-config": "workspace:*",
     "@types/react": "19.1.4",
     "@types/react-dom": "19.1.5",
-    "eslint": "^9.25.1",
+    "eslint": "^9.27.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   },
