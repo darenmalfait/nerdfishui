@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.12.1
+
+### Patch Changes
+
+- PhoneInput: adjust input styling
+
 ## 7.12.0
 
 ### Minor Changes
