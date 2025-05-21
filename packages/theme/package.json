@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@nerdfish/config": "^1.8.0",
-    "@types/react": "19.1.4",
+    "@types/react": "19.1.5",
     "@types/react-dom": "19.1.5",
     "eslint": "^9.25.1",
     "npm-run-all2": "^7.0.2",
