@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.13.1
+
+### Patch Changes
+
+- Button: rounded-base
+
 ## 7.13.0
 
 ### Minor Changes
