@@ -5,7 +5,7 @@ import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
 export const buttonVariants = cva(
-	'focus-outline relative inline-flex items-center justify-center hover:scale-[102%] rounded-container border px-[0.625em] py-[0.5em] font-medium text-sm transition-all active:scale-95 disabled:pointer-events-none',
+	'focus-outline relative inline-flex items-center justify-center hover:scale-[102%] rounded-subtle border px-[1.5em] py-[1em] font-medium text-sm transition-all active:scale-95 disabled:pointer-events-none',
 	{
 		variants: {
 			variant: {
@@ -28,13 +28,12 @@ export const buttonVariants = cva(
 				link: 'border-none bg-transparent text-foreground underline-offset-4 hover:underline disabled:text-foreground/50',
 			},
 			size: {
-				default: 'h-10 text-base',
 				xs: 'text-xs',
-				sm: 'text-sm',
+				default: 'text-sm',
 				lg: 'text-lg',
 				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)]',
-				icon: 'flex size-10 items-center justify-center',
-				iconSm: 'flex size-8 items-center justify-center',
+				icon: 'flex size-[50px] p-0 items-center justify-center',
+				iconSm: 'flex size-[42px] p-0 items-center justify-center',
 			},
 		},
 		defaultVariants: {
@@ -54,13 +53,19 @@ export function getButtonClassName({
 	return cx(buttonVariants({ variant, size, className }))
 }
 
-export const Button = React.forwardRef<
-	HTMLButtonElement,
-	React.ButtonHTMLAttributes<HTMLButtonElement> &
-		VariantProps<typeof buttonVariants> & {
-			asChild?: boolean
-		}
->(({ variant, asChild, size, className, ...props }, ref) => {
+export interface ButtonProps
+	extends React.ComponentProps<'button'>,
+		VariantProps<typeof buttonVariants> {
+	asChild?: boolean
+}
+
+export function Button({
+	variant,
+	size,
+	asChild,
+	className,
+	...props
+}: ButtonProps) {
 	const Comp = asChild ? Slot : 'button'
 
 	return (
@@ -70,11 +75,7 @@ export const Button = React.forwardRef<
 				size,
 				className,
 			})}
-			ref={ref}
 			{...props}
 		/>
 	)
-})
-Button.displayName = 'Button'
-
-export type ButtonProps = React.ComponentPropsWithoutRef<typeof Button>
+}

@@ -72,6 +72,7 @@
   "devDependencies": {
     "@nerdfish/config": "^1.8.0",
     "@nerdfish/tailwind-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
     "@types/react": "19.1.5",
     "@types/react-dom": "19.1.5",
     "eslint": "^9.25.1",

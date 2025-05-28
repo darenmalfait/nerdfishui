@@ -21,11 +21,7 @@ export function CollapsibleExample() {
 			<div className="space-x-md flex items-center justify-between px-4">
 				<h4 className="text-sm font-semibold">@darenmalfait</h4>
 				<CollapsibleTrigger asChild>
-					<Button
-						variant="ghost"
-						size="sm"
-						className="flex w-9 justify-center p-0"
-					>
+					<Button variant="ghost" className="flex w-9 justify-center p-0">
 						<ChevronsUpDown className="size-4" />
 						<span className="sr-only">Toggle</span>
 					</Button>

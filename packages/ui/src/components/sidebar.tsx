@@ -2,17 +2,20 @@ import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
-export const sidebarVariants = cva('flex flex-col border-primary border-r', {
-	variants: {
-		variant: {
-			default: 'w-full max-w-64 py-3 lg:max-w-72',
-			compact: 'w-full max-w-16 py-3',
+export const sidebarVariants = cva(
+	'flex flex-col border-foreground/20 border-r',
+	{
+		variants: {
+			variant: {
+				default: 'w-full max-w-64 py-3 lg:max-w-72',
+				compact: 'w-full max-w-16 py-3',
+			},
+		},
+		defaultVariants: {
+			variant: 'default',
 		},
 	},
-	defaultVariants: {
-		variant: 'default',
-	},
-})
+)
 
 export const sidebarContentVariants: typeof sidebarVariants = cva(
 	'flex flex-col gap-sm px-md',
@@ -76,11 +79,7 @@ export const SidebarDivider = React.forwardRef<
 	React.ComponentPropsWithoutRef<'div'>
 >(({ className, ...props }, ref) => {
 	return (
-		<div
-			className={cx('bg-background-muted h-px w-full')}
-			ref={ref}
-			{...props}
-		/>
+		<div className={cx('bg-foreground/20 h-px w-full')} ref={ref} {...props} />
 	)
 })
 SidebarDivider.displayName = 'SidebarDivider'

@@ -50,12 +50,7 @@ function CardContent({
 					'p-md pointer-events-none absolute bottom-0 z-10 flex w-full translate-y-10 transform-gpu flex-row items-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100',
 				)}
 			>
-				<Button
-					variant="ghost"
-					asChild
-					size="sm"
-					className="pointer-events-auto"
-				>
+				<Button variant="ghost" asChild className="pointer-events-auto">
 					<a href={href}>
 						{cta}
 						<ArrowRightIcon className="ml-sm size-4" />

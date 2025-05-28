@@ -29,7 +29,10 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
 		<div className="relative">
 			<ScrollArea className="max-w-[600px] lg:max-w-none">
 				<div
-					className={cx('mb-md flex items-center border-b', className)}
+					className={cx(
+						'mb-md border-foreground/20 flex items-center border-b',
+						className,
+					)}
 					{...props}
 				>
 					{examples.map((example, index) => (

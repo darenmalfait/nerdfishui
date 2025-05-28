@@ -33,11 +33,11 @@ export function ButtonGroupUseCase() {
 
 	return (
 		<ButtonGroup>
-			<Button>{labelsMap[selectedOption]}</Button>
+			<Button variant="success">{labelsMap[selectedOption]}</Button>
 
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
-					<Button size="icon">
+					<Button variant="success" size="icon">
 						<ChevronDownIcon className="size-4" />
 					</Button>
 				</DropdownMenuTrigger>
