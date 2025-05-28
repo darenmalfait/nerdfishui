@@ -1,5 +1,11 @@
 # @nerdfish/theme
 
+## 2.8.0
+
+### Minor Changes
+
+- update button design
+
 ## 2.7.0
 
 ### Minor Changes

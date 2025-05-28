@@ -1,6 +1,6 @@
 {
   "name": "@nerdfish/tailwind-config",
-  "version": "3.9.1",
+  "version": "3.10.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/darenmalfait/nerdfishui",

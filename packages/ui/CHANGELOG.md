@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.13.0
+
+### Minor Changes
+
+- update button design
+
 ## 7.12.1
 
 ### Patch Changes

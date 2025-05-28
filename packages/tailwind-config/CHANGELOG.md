@@ -1,5 +1,17 @@
 # @nerdfish/tailwind-config
 
+## 3.10.0
+
+### Minor Changes
+
+- update button design
+
+### Patch Changes
+
+- Updated dependencies
+  [[`f7ff72a`](https://github.com/darenmalfait/nerdfishui/commit/f7ff72abf3485c8f782accb1e3ab8db02ce7712b)]:
+  - @nerdfish/theme@2.8.0
+
 ## 3.9.1
 
 ### Patch Changes
