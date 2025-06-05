@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.14.0
+
+### Minor Changes
+
+- add new loading-animation variants
+
 ## 7.13.1
 
 ### Patch Changes
