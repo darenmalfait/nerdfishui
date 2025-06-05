@@ -1,80 +1,277 @@
 'use client'
 
 import { cx } from '@nerdfish/utils'
-import { Loader2 } from 'lucide-react'
+import { LoaderCircleIcon } from 'lucide-react'
 import * as React from 'react'
 
-const Fish = React.forwardRef<
-	SVGSVGElement,
-	React.ComponentPropsWithoutRef<'svg'>
->(function Fish({ className, ...props }, ref) {
+type LoadingAnimationVariantProps = Omit<BaseLoadingAnimationProps, 'variant'>
+
+function ClassicLoader({ className, ...props }: LoadingAnimationVariantProps) {
 	return (
-		<span className="repeat-infinite animate-shake [animation-duration:4s]">
-			<svg
-				ref={ref}
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 912 421"
-				className={cx(
-					'direction-reverse repeat-infinite animate-squeeze rounded-base fill-current [animation-duration:2s]',
-					className,
-				)}
-				{...props}
-			>
-				<path
-					fillRule="evenodd"
-					clipRule="evenodd"
-					d="M911.633 210h.002l-.001.25.001.25h-.002c-.503 70.167-106.5 210-316.998 210-179.361 0-351.372-125.661-440.759-199.817L9.03 304.582c-4.971 2.88-10.757-2.2-8.545-7.502l35.836-85.89a5.989 5.989 0 0 1 2.22-2.69 5.989 5.989 0 0 1-2.22-2.69L.485 119.92c-2.212-5.302 3.574-10.382 8.545-7.502l147.333 85.34C246.428 123.36 416.924 0 594.635 0 805.133 0 911.13 139.833 911.633 210Zm-100.998.5c0-15.464 12.536-28 28-28s28 12.536 28 28-12.536 28-28 28-28-12.536-28-28Z"
+		<LoaderCircleIcon className={cx('animate-spin', className)} {...props} />
+	)
+}
+
+function CircleFilled({ className, ...props }: LoadingAnimationVariantProps) {
+	return (
+		<div className="relative">
+			<div className="absolute inset-0 rotate-180">
+				<LoaderCircleIcon
+					className={cx(
+						'animate-spin',
+						className,
+						'text-foreground opacity-20',
+					)}
+					{...props}
 				/>
-			</svg>
-		</span>
+			</div>
+			<LoaderCircleIcon
+				className={cx('relative animate-spin', className)}
+				{...props}
+			/>
+		</div>
 	)
-})
+}
 
-const Classic = React.forwardRef<
-	SVGSVGElement,
-	React.ComponentPropsWithoutRef<'svg'>
->(function Classic({ className, ...props }, ref) {
+function Ellipsis({ ...props }: LoadingAnimationVariantProps) {
 	return (
-		<Loader2 ref={ref} className={cx('animate-spin', className)} {...props} />
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+			<title>Loading...</title>
+			<circle cx="4" cy="12" r="2" fill="currentColor">
+				<animate
+					id="ellipsis1"
+					begin="0;ellipsis3.end+0.25s"
+					attributeName="cy"
+					calcMode="spline"
+					dur="0.6s"
+					values="12;6;12"
+					keySplines=".33,.66,.66,1;.33,0,.66,.33"
+				/>
+			</circle>
+			<circle cx="12" cy="12" r="2" fill="currentColor">
+				<animate
+					begin="ellipsis1.begin+0.1s"
+					attributeName="cy"
+					calcMode="spline"
+					dur="0.6s"
+					values="12;6;12"
+					keySplines=".33,.66,.66,1;.33,0,.66,.33"
+				/>
+			</circle>
+			<circle cx="20" cy="12" r="2" fill="currentColor">
+				<animate
+					id="ellipsis3"
+					begin="ellipsis1.begin+0.2s"
+					attributeName="cy"
+					calcMode="spline"
+					dur="0.6s"
+					values="12;6;12"
+					keySplines=".33,.66,.66,1;.33,0,.66,.33"
+				/>
+			</circle>
+		</svg>
 	)
-})
+}
 
-const Square = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<'div'>
->(function Square({ className, ...props }, ref) {
+function Ring({ ...props }: LoadingAnimationVariantProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 44 44"
+			stroke="currentColor"
+			{...props}
+		>
+			<title>Loading...</title>
+			<g fill="none" fillRule="evenodd" strokeWidth="2">
+				<circle cx="22" cy="22" r="1">
+					<animate
+						attributeName="r"
+						begin="0s"
+						dur="1.8s"
+						values="1; 20"
+						calcMode="spline"
+						keyTimes="0; 1"
+						keySplines="0.165, 0.84, 0.44, 1"
+						repeatCount="indefinite"
+					/>
+					<animate
+						attributeName="stroke-opacity"
+						begin="0s"
+						dur="1.8s"
+						values="1; 0"
+						calcMode="spline"
+						keyTimes="0; 1"
+						keySplines="0.3, 0.61, 0.355, 1"
+						repeatCount="indefinite"
+					/>
+				</circle>
+				<circle cx="22" cy="22" r="1">
+					<animate
+						attributeName="r"
+						begin="-0.9s"
+						dur="1.8s"
+						values="1; 20"
+						calcMode="spline"
+						keyTimes="0; 1"
+						keySplines="0.165, 0.84, 0.44, 1"
+						repeatCount="indefinite"
+					/>
+					<animate
+						attributeName="stroke-opacity"
+						begin="-0.9s"
+						dur="1.8s"
+						values="1; 0"
+						calcMode="spline"
+						keyTimes="0; 1"
+						keySplines="0.3, 0.61, 0.355, 1"
+						repeatCount="indefinite"
+					/>
+				</circle>
+			</g>
+		</svg>
+	)
+}
+
+function Bars(props: LoadingAnimationVariantProps) {
+	return (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+			<title>Loading...</title>
+			<style>
+				{`
+      .spinner-bar {
+        animation: spinner-bars-animation .8s linear infinite;
+        animation-delay: -.8s;
+      }
+      .spinner-bars-2 {
+        animation-delay: -.65s;
+      }
+      .spinner-bars-3 {
+        animation-delay: -0.5s;
+      }
+      @keyframes spinner-bars-animation {
+        0% {
+          y: 1px;
+          height: 22px;
+        }
+        93.75% {
+          y: 5px;
+          height: 14px;
+          opacity: 0.2;
+        }
+      }
+    `}
+			</style>
+			<rect
+				className="spinner-bar"
+				x="1"
+				y="1"
+				width="6"
+				height="22"
+				fill="currentColor"
+			/>
+			<rect
+				className="spinner-bar spinner-bars-2"
+				x="9"
+				y="1"
+				width="6"
+				height="22"
+				fill="currentColor"
+			/>
+			<rect
+				className="spinner-bar spinner-bars-3"
+				x="17"
+				y="1"
+				width="6"
+				height="22"
+				fill="currentColor"
+			/>
+		</svg>
+	)
+}
+
+function Infinite(props: LoadingAnimationVariantProps) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 100 100"
+			preserveAspectRatio="xMidYMid"
+			{...props}
+		>
+			<title>Loading...</title>
+			<path
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="10"
+				strokeDasharray="205.271142578125 51.317785644531256"
+				d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+				strokeLinecap="round"
+				style={{
+					transform: 'scale(0.8)',
+					transformOrigin: '50px 50px',
+				}}
+			>
+				<animate
+					attributeName="stroke-dashoffset"
+					repeatCount="indefinite"
+					dur="2s"
+					keyTimes="0;1"
+					values="0;256.58892822265625"
+				/>
+			</path>
+		</svg>
+	)
+}
+
+function Square({ className, ...props }: LoadingAnimationVariantProps) {
 	return (
 		<div
 			className={cx(
-				'animate-loader rounded-base border-muted relative overflow-hidden border-4',
+				'animate-loader rounded-subtle border-muted relative overflow-hidden border-4',
 				className,
 			)}
-			ref={ref}
 			{...props}
 		>
 			<span className="animate-loader-inner bg-foreground inline-block w-full align-top" />
 		</div>
 	)
-})
-
-const LoaderMap = {
-	fish: Fish,
-	classic: Classic,
-	square: Square,
 }
 
-export const LoadingAnimation = React.forwardRef<
-	React.ElementRef<(typeof LoaderMap)[keyof typeof LoaderMap]>,
-	React.ComponentPropsWithoutRef<(typeof LoaderMap)[keyof typeof LoaderMap]> & {
-		variant?: keyof typeof LoaderMap
-	}
->(function LoadingAnimation({ className, variant = 'square', ...props }, ref) {
-	const Loader = LoaderMap[variant] as any
+function SquareFull({ className, ...props }: LoadingAnimationVariantProps) {
+	return (
+		<div
+			className={cx(
+				'bg-inverted rounded-subtle animate-spin transition !duration-[3000ms]',
+				className,
+			)}
+			style={{ animationDuration: '3s' }}
+			{...props}
+		/>
+	)
+}
 
-	return <Loader ref={ref} className={cx('size-10', className)} {...props} />
-})
+const LoaderMap = {
+	classic: ClassicLoader,
+	square: Square,
+	squareFull: SquareFull,
+	infinite: Infinite,
+	bars: Bars,
+	ellipsis: Ellipsis,
+	ring: Ring,
+	circleFilled: CircleFilled,
+}
 
-export type LoadingAnimationProps = React.ComponentPropsWithoutRef<
-	typeof LoadingAnimation
->
+type BaseLoadingAnimationProps = React.ComponentProps<'svg'> &
+	React.ComponentProps<'div'>
+export interface LoadingAnimationProps extends BaseLoadingAnimationProps {
+	variant?: keyof typeof LoaderMap
+}
+
+export function LoadingAnimation({
+	className,
+	variant = 'classic',
+	...props
+}: LoadingAnimationProps) {
+	const Loader = LoaderMap[variant]
+
+	return <Loader className={cx('size-8', className)} {...props} />
+}
