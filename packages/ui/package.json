@@ -65,7 +65,7 @@
     "react-resizable-panels": "^2.1.9",
     "react-stately": "^3.37.0",
     "shiki": "^3.4.2",
-    "sonner": "^2.0.4",
+    "sonner": "^2.0.5",
     "timescape": "^0.7.1",
     "vaul": "^1.1.2"
   },
@@ -73,8 +73,8 @@
     "@nerdfish/config": "^1.8.0",
     "@nerdfish/tailwind-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
-    "@types/react": "19.1.6",
-    "@types/react-dom": "19.1.5",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
     "eslint": "^9.25.1",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
