@@ -28,17 +28,47 @@ export const buttonVariants = cva(
 				link: 'border-none bg-transparent text-foreground underline-offset-4 hover:underline disabled:text-foreground/50',
 			},
 			size: {
-				xs: 'text-xs',
+				sm: 'text-xs',
 				default: 'text-sm',
 				lg: 'text-lg',
 				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)]',
-				icon: 'flex size-[50px] p-0 items-center justify-center',
-				iconSm: 'flex size-[42px] p-0 items-center justify-center',
+			},
+			icon: {
+				false: null,
+				true: 'aspect-1 p-0 items-center justify-center',
 			},
 		},
+		compoundVariants: [
+			{
+				icon: true,
+				size: 'sm',
+				className: 'p-0 size-[42px] [&>svg]:size-4',
+			},
+			{
+				icon: true,
+				size: 'default',
+				className: 'p-0 size-[50px] [&>svg]:size-5',
+			},
+			{
+				icon: true,
+				size: 'lg',
+				className: 'p-0 size-[66px] [&>svg]:size-6',
+			},
+			{
+				icon: true,
+				size: 'lg',
+				className: 'p-0 size-[66px] [&>svg]:size-6',
+			},
+			{
+				icon: true,
+				size: 'xl',
+				className: 'p-0 size-[95px] [&>svg]:size-10',
+			},
+		],
 		defaultVariants: {
 			variant: 'default',
 			size: 'default',
+			icon: false,
 		},
 	},
 )
@@ -46,11 +76,12 @@ export const buttonVariants = cva(
 export function getButtonClassName({
 	variant = 'default',
 	size = 'default',
+	icon,
 	className,
 }: VariantProps<typeof buttonVariants> & {
 	className?: string
 }) {
-	return cx(buttonVariants({ variant, size, className }))
+	return cx(buttonVariants({ variant, size, icon, className }))
 }
 
 export interface ButtonProps
@@ -63,6 +94,7 @@ export function Button({
 	variant,
 	size,
 	asChild,
+	icon,
 	className,
 	...props
 }: ButtonProps) {
@@ -73,6 +105,7 @@ export function Button({
 			className={getButtonClassName({
 				variant,
 				size,
+				icon,
 				className,
 			})}
 			{...props}

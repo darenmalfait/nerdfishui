@@ -69,7 +69,8 @@ export function SheetContent({
 				<SheetPrimitive.Close asChild>
 					<Button
 						variant="ghost"
-						size="iconSm"
+						size="sm"
+						icon
 						className="top-sm right-sm absolute"
 					>
 						<XIcon aria-hidden className="size-4" />

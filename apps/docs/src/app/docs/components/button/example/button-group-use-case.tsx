@@ -37,7 +37,7 @@ export function ButtonGroupUseCase() {
 
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
-					<Button variant="success" size="icon">
+					<Button variant="success" icon>
 						<ChevronDownIcon className="size-4" />
 					</Button>
 				</DropdownMenuTrigger>

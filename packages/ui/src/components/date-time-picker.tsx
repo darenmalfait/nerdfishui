@@ -83,7 +83,7 @@ export const DateTimePicker = forwardRef<
 							) : null
 						}
 					>
-						<Button size="iconSm" variant="default">
+						<Button icon size="sm" variant="default">
 							<CalendarIcon className="size-4" />
 						</Button>
 					</DatePicker>

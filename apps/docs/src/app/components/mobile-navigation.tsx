@@ -30,7 +30,7 @@ export function MobileNavigation() {
 	return (
 		<>
 			<Button
-				size="icon"
+				icon
 				variant="ghost"
 				type="button"
 				className="md:hidden"
@@ -62,7 +62,7 @@ export function MobileNavigation() {
 								</div>
 							</Link>
 							<DrawerClose className="-mr-md">
-								<Button variant="ghost" size="icon">
+								<Button variant="ghost" icon>
 									<Icons.Close className="size-4" />
 								</Button>
 							</DrawerClose>

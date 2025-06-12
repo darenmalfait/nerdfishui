@@ -63,7 +63,7 @@ export const DrawerContent = React.forwardRef<
 						asChild
 						className="mt-md mr-md absolute right-0 top-0 z-30"
 					>
-						<Button variant="ghost" size="icon" aria-label="Close">
+						<Button variant="ghost" icon aria-label="Close">
 							<XIcon aria-hidden className="size-4" />
 						</Button>
 					</DrawerPrimitive.Close>

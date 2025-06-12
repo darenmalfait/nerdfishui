@@ -33,7 +33,7 @@ export function CodeBlockExample() {
 					</div>
 					<Button
 						variant="ghost"
-						size="icon"
+						icon
 						className="h-8 w-8"
 						onClick={() => void handleCopy(code)}
 					>

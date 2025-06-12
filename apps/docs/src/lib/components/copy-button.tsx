@@ -35,7 +35,8 @@ export function CopyButton({
 			<Tooltip>
 				<TooltipTrigger asChild>
 					<Button
-						size="iconSm"
+						icon
+						size="sm"
 						{...props}
 						className={className}
 						variant={copiedText ? 'success' : 'ghost'}
@@ -73,7 +74,8 @@ export function CopyNpmCommandButton({
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button
-					size="iconSm"
+					size="sm"
+					icon
 					className={className}
 					variant={copiedText ? 'success' : 'ghost'}
 					aria-label="copy"
