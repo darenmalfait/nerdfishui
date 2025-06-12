@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import * as uiComponents from '@nerdfish/ui'
 
 import { cx } from '@nerdfish/utils'
