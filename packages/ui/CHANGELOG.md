@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 7.15.0
+
+### Minor Changes
+
+- change icon props for `Button`
+
 ## 7.14.0
 
 ### Minor Changes
