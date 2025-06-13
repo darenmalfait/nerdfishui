@@ -32,14 +32,14 @@
     "@nerdfish/utils": "workspace:^*"
   },
   "devDependencies": {
-    "@nerdfish/config": "^1.8.0",
+    "@nerdfish/config": "^1.9.3",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
-    "eslint": "^9.25.1",
+    "eslint": "^9.28.0",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.3",
     "react": "19.1.0",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
   "publishConfig": {
