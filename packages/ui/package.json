@@ -55,7 +55,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.514.0",
+    "lucide-react": "^0.515.0",
     "react": "19.1.0",
     "react-aria": "^3.41.1",
     "react-day-picker": "^9.7.0",
@@ -75,7 +75,7 @@
     "@repo/tailwind-config": "workspace:*",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
-    "eslint": "^9.28.0",
+    "eslint": "^9.29.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   },
