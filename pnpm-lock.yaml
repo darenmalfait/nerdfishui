@@ -79,7 +79,7 @@ importers:
         specifier: workspace:^2.8.0
         version: link:../../packages/theme
       '@nerdfish/ui':
-        specifier: workspace:^7.14.0
+        specifier: workspace:^7.15.0
         version: link:../../packages/ui
       '@nerdfish/utils':
         specifier: workspace:^2.0.1
@@ -19051,7 +19051,7 @@ snapshots:
       '@webassemblyjs/wasm-parser': 1.11.6
       acorn: 8.15.0
       acorn-import-assertions: 1.9.0(acorn@8.15.0)
-      browserslist: 4.24.4
+      browserslist: 4.25.0
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.15.0
       es-module-lexer: 1.6.0
