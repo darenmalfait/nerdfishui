@@ -18,14 +18,15 @@ export const alertVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'border border-muted/10 bg-background-muted text-foreground',
+				default:
+					'border border-muted/10 bg-background-muted text-foreground [&>[data-slot=description]]:text-muted',
 				warning:
-					'border border-warning bg-warning-background-muted text-warning-foreground',
+					'border border-warning bg-warning-background-accent text-white [&>[data-slot=description]]:text-white/80',
 				success:
-					'border border-success bg-success-background-muted text-success-foreground',
-				info: 'border border-info bg-info-background-muted text-info-foreground',
+					'border border-success bg-success-background-accent text-white [&>[data-slot=description]]:text-white/80',
+				info: 'border border-info bg-info-background-accent text-white [&>[data-slot=description]]:text-white/80',
 				danger:
-					'border border-danger bg-danger-background-muted text-danger-foreground',
+					'border border-danger bg-danger-background-accent text-white [&>[data-slot=description]]:text-white/80',
 			},
 		},
 		defaultVariants: {
@@ -57,10 +58,8 @@ export function AlertDescription({
 }: React.ComponentProps<'p'>) {
 	return (
 		<p
-			className={cx(
-				'text-foreground/80 text-xs [&_p]:leading-relaxed',
-				className,
-			)}
+			data-slot="description"
+			className={cx('text-xs [&_p]:leading-relaxed', className)}
 			{...props}
 		/>
 	)

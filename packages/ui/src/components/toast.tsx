@@ -13,8 +13,12 @@ export function Toaster(props: ToasterProps) {
 			richColors
 			toastOptions={{
 				classNames: {
+					error: '!bg-danger-accent !text-white !ring-danger',
+					info: '!bg-info-accent !text-white !ring-info',
+					warning: '!bg-warning-accent !text-white !ring-warning',
+					success: '!bg-success-accent !text-white !ring-success',
 					toast:
-						'p-md gap-md toast group-[.toaster]:bg-background-muted group-[.toaster]:text-foreground group-[.toaster]:shadow-outline group group-[.toaster]:border-none group-[.toaster]:shadow-lg',
+						'!rounded-base !border-transparent p-md gap-md toast group-[.toaster]:bg-background-muted group-[.toaster]:text-foreground group-[.toaster]:shadow-outline group group-[.toaster]:border-none group-[.toaster]:shadow-lg',
 					description: 'group-[.toast]:text-foreground-muted',
 					actionButton: getButtonClassName({
 						variant: 'default',

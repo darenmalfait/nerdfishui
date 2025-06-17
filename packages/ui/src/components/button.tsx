@@ -16,9 +16,9 @@ export const buttonVariants = cva(
 				accent:
 					'border-transparent bg-accent text-white hover:bg-accent/75 disabled:bg-accent/20 disabled:text-accent',
 				danger:
-					'border-danger bg-danger-background text-danger-foreground hover:bg-danger-background-muted disabled:bg-danger-background-muted/50 disabled:text-danger-foreground/80',
+					'border-danger bg-danger-accent text-white hover:bg-danger-accent/80 disabled:bg-danger-background disabled:text-danger-foreground',
 				success:
-					'border-success bg-success-background text-success-foreground hover:bg-success-background-muted disabled:bg-success-background-muted/50 disabled:text-success-foreground/80',
+					'border-success bg-success-accent text-white hover:bg-success-accent/80 disabled:bg-success-background disabled:text-success-foreground',
 				outline:
 					'bg-background text-foreground shadow-outline hover:bg-background-muted disabled:text-foreground/50',
 				ghost:
