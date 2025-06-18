@@ -1,5 +1,13 @@
 # @nerdfish/ui
 
+## 7.16.0
+
+### Minor Changes
+
+- update colors
+
+- `Toast` update styling
+
 ## 7.15.0
 
 ### Minor Changes
