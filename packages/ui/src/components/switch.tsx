@@ -9,15 +9,15 @@ const switchVariants = cva(
 	{
 		variants: {
 			variant: {
-				accent:
-					'data-[state=checked]:border-accent data-[state=checked]:bg-accent',
+				brand:
+					'data-[state=checked]:border-brand data-[state=checked]:bg-brand',
 				danger:
-					'data-[state=checked]:border-danger-accent data-[state=checked]:bg-danger-accent',
+					'data-[state=checked]:border-danger data-[state=checked]:bg-background-danger',
 				success:
-					'data-[state=checked]:border-success-accent data-[state=checked]:bg-success-background-accent',
+					'data-[state=checked]:border-success data-[state=checked]:bg-background-success',
 				warning:
-					'data-[state=checked]:border-warning-accent data-[state=checked]:bg-warning-background-accent',
-				info: 'data-[state=checked]:border-info-accent data-[state=checked]:bg-info-background-accent',
+					'data-[state=checked]:border-warning data-[state=checked]:bg-background-warning',
+				info: 'data-[state=checked]:border-info data-[state=checked]:bg-background-info',
 			},
 			inputSize: {
 				sm: 'h-[16px] w-[32px] [&>[data-slot=thumb]]:size-4 [&>[data-slot=thumb]]:data-[state=checked]:translate-x-3',

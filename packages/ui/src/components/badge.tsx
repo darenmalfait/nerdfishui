@@ -8,15 +8,17 @@ export const badgeVariants = cva(
 	{
 		variants: {
 			variant: {
-				danger: 'border-danger bg-danger-background text-danger-foreground',
+				danger:
+					'border-danger bg-background-danger text-foreground-danger-contrast',
 				default: 'border-transparent bg-foreground text-background',
-				info: 'border-info bg-info-background text-info-foreground',
+				info: 'border-info bg-background-info text-foreground-info-contrast',
 				outline: 'text-foreground',
 				secondary:
 					'active-ring border-transparent bg-background-muted text-foreground',
 				success:
-					'border-success bg-success-background-muted text-success-foreground',
-				warning: 'border-warning bg-warning-background text-warning-foreground',
+					'border-success bg-background-success text-foreground-success-contrast',
+				warning:
+					'border-warning bg-background-warning text-foreground-warning-contrast',
 			},
 		},
 		defaultVariants: {

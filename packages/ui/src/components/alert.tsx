@@ -21,12 +21,12 @@ export const alertVariants = cva(
 				default:
 					'border border-muted/10 bg-background-muted text-foreground [&>[data-slot=description]]:text-muted',
 				warning:
-					'border border-warning bg-warning-background-accent text-white [&>[data-slot=description]]:text-white/80',
+					'border border-warning bg-background-warning text-foreground-warning-contrast [&>[data-slot=description]]:text-foreground-warning-contrast/80',
 				success:
-					'border border-success bg-success-background-accent text-white [&>[data-slot=description]]:text-white/80',
-				info: 'border border-info bg-info-background-accent text-white [&>[data-slot=description]]:text-white/80',
+					'border border-success bg-background-success text-foreground-success-contrast [&>[data-slot=description]]:text-foreground-success-contrast/80',
+				info: 'border border-info bg-background-info text-foreground-info-contrast [&>[data-slot=description]]:text-foreground-info-contrast/80',
 				danger:
-					'border border-danger bg-danger-background-accent text-white [&>[data-slot=description]]:text-white/80',
+					'border border-danger bg-background-danger text-foreground-danger-contrast [&>[data-slot=description]]:text-foreground-danger-contrast/80',
 			},
 		},
 		defaultVariants: {

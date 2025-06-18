@@ -33,7 +33,7 @@ export function TimelineCustomIconsExample() {
 		<Timeline>
 			<TimelineItem>
 				<TimelineSeparator>
-					<CustomIcon icon={UserCheck} className="text-accent" />
+					<CustomIcon icon={UserCheck} className="text-brand" />
 					<TimelineTrack />
 				</TimelineSeparator>
 				<TimelineContent>Validate</TimelineContent>

@@ -11,7 +11,7 @@ export const Textarea = React.forwardRef<
 		<textarea
 			className={cx(
 				inputVariants({ inputSize, variant }),
-				'focus:outline-accent relative flex min-h-[80px]',
+				'focus:outline-brand relative flex min-h-[80px]',
 				className,
 			)}
 			ref={ref}

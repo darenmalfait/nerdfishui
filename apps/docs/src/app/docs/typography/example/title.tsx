@@ -8,7 +8,7 @@ export function TypographyTitleExample() {
 			<H2>Default</H2>
 			<H2 variant="primary">Primary</H2>
 			<H2 variant="secondary">Secondary</H2>
-			<H2 variant="accent">Nerdfish</H2>
+			<H2 variant="brand">Nerdfish</H2>
 		</div>
 	)
 }

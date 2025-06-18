@@ -12,11 +12,11 @@ export const sliderVariants = cva('', {
 			muted: 'text-foreground-muted',
 			primary: 'text-foreground',
 			secondary: 'text-foreground-secondary',
-			danger: 'text-danger-foreground',
-			success: 'text-success-foreground',
-			warning: 'text-warning-foreground',
-			info: 'text-info-foreground',
-			accent: 'text-accent',
+			danger: 'text-foreground-danger',
+			success: 'text-foreground-success',
+			warning: 'text-foreground-warning',
+			info: 'text-foreground-info',
+			brand: 'text-brand',
 		},
 		inputSize: {
 			sm: '[&_[data-slot=thumb]]:size-[16px] [&_[data-slot=thumb]]:after:size-2 [&_[data-slot=track]]:h-[16px]',
@@ -28,7 +28,7 @@ export const sliderVariants = cva('', {
 
 	defaultVariants: {
 		inputSize: 'md',
-		variant: 'accent',
+		variant: 'brand',
 	},
 })
 
