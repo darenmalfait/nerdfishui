@@ -76,10 +76,10 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(@types/react@19.1.8)(react@19.1.0)
       '@nerdfish/theme':
-        specifier: workspace:^2.8.0
+        specifier: workspace:^2.9.0
         version: link:../../packages/theme
       '@nerdfish/ui':
-        specifier: workspace:^7.15.0
+        specifier: workspace:^7.16.0
         version: link:../../packages/ui
       '@nerdfish/utils':
         specifier: workspace:^2.0.1
