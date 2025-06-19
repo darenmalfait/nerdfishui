@@ -1,5 +1,16 @@
 # @nerdfish/ui
 
+## 8.0.0
+
+### Major Changes
+
+- ## update color naming ([#405](https://github.com/darenmalfait/nerdfishui/pull/405))
+
+  `info`, `warning`, `success` and `danger` colors have been moved within
+  background, foreground parents.
+
+  `accent` color has been renamed to `brand`
+
 ## 7.16.0
 
 ### Minor Changes
