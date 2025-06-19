@@ -12,11 +12,11 @@ export const utilities = {
 		'--color-gray-50': '#f8fafc',
 	},
 	'.outline-active': {
-		'@apply relative after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:ring-2 after:ring-accent':
+		'@apply relative after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:ring-2 after:ring-brand':
 			{},
 	},
 	'.focus-outline': {
-		'@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] outline-none after:ring-transparent focus-visible:after:ring-2 focus-visible:after:ring-accent focus-within:[&:has(:focus-visible)]:after:ring-2 focus-within:[&:has(:focus-visible)]:after:ring-accent':
+		'@apply after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] outline-none after:ring-transparent focus-visible:after:ring-2 focus-visible:after:ring-brand focus-within:[&:has(:focus-visible)]:after:ring-2 focus-within:[&:has(:focus-visible)]:after:ring-brand':
 			{},
 	},
 	'.focus-ring': {

@@ -30,7 +30,7 @@ export const LabelAsterisk = React.forwardRef<
 	return (
 		<span
 			ref={ref}
-			className={cx('ml-xs text-danger-foreground', className)}
+			className={cx('ml-xs text-foreground-danger', className)}
 			{...props}
 		>
 			*

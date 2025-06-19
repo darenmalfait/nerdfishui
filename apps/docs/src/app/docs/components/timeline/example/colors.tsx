@@ -12,7 +12,7 @@ export function TimelineColorsExample() {
 		<Timeline>
 			<TimelineItem>
 				<TimelineSeparator>
-					<TimelineIcon className="text-accent" />
+					<TimelineIcon className="text-brand" />
 					<TimelineTrack />
 				</TimelineSeparator>
 				<TimelineContent>Validate</TimelineContent>

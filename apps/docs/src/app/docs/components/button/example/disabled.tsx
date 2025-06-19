@@ -8,7 +8,7 @@ export function ButtonDisabledExample() {
 			<Button disabled variant="default">
 				Default
 			</Button>
-			<Button disabled variant="accent">
+			<Button disabled variant="brand">
 				Nerdfish
 			</Button>
 			<Button disabled variant="secondary">

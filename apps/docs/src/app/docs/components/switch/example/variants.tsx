@@ -11,7 +11,7 @@ export function SwitchVariantsExample() {
 			</Label>
 			<Label className="hover:bg-background-muted rounded-base gap-md p-md flex w-full cursor-pointer items-center justify-between">
 				<span>Accent</span>
-				<Switch variant="accent" />
+				<Switch variant="brand" />
 			</Label>
 			<Label className="hover:bg-background-muted rounded-base gap-md p-md flex w-full cursor-pointer items-center justify-between">
 				<span>Danger</span>

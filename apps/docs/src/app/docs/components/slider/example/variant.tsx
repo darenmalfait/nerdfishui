@@ -6,7 +6,7 @@ import * as React from 'react'
 const variants = [
 	'default',
 	'muted',
-	'accent',
+	'brand',
 	'danger',
 	'success',
 	'warning',

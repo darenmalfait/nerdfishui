@@ -14,7 +14,7 @@ export function TimelineVariantsExample() {
 			<Timeline variant="outline">
 				<TimelineItem>
 					<TimelineSeparator>
-						<TimelineIcon className="text-accent" />
+						<TimelineIcon className="text-brand" />
 						<TimelineTrack />
 					</TimelineSeparator>
 					<TimelineContent>Validate</TimelineContent>

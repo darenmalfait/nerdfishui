@@ -21,9 +21,9 @@ export const inputVariants = cva(
 			},
 			variant: {
 				error:
-					'animate-shake border-danger bg-danger-background-muted/50 text-danger-foreground',
+					'animate-shake border-danger bg-background-danger-muted text-foreground-danger',
 				success:
-					'border-success bg-success-background-muted/50 text-success-foreground',
+					'border-success bg-background-success-muted text-foreground-success',
 				default: 'border border-transparent',
 				bordered: 'border border-muted',
 			},
@@ -66,7 +66,7 @@ export const InputIcon = React.forwardRef<
 			height="20px"
 			className={cx(
 				'right-md absolute top-0 z-10 flex h-full items-center justify-center p-0',
-				variant === 'error' && 'text-danger-foreground',
+				variant === 'error' && 'text-foreground-danger',
 			)}
 		/>
 	)

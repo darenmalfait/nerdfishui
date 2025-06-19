@@ -25,12 +25,12 @@ export const gaugeVariants = cva(
 			variant: {
 				default: 'text-foreground [&>[data-slot=secondary]]:stroke-primary/20',
 				success:
-					'text-success-foreground [&>[data-slot=secondary]]:stroke-success/20',
+					'text-foreground-success [&>[data-slot=secondary]]:stroke-success/20',
 				danger:
-					'text-danger-foreground [&>[data-slot=secondary]]:stroke-danger/20',
+					'text-foreground-danger [&>[data-slot=secondary]]:stroke-danger/20',
 				warning:
-					'text-warning-foreground [&>[data-slot=secondary]]:stroke-warning/20',
-				info: 'text-info-foreground [&>[data-slot=secondary]]:stroke-info/20',
+					'text-foreground-warning [&>[data-slot=secondary]]:stroke-warning/20',
+				info: 'text-foreground-info [&>[data-slot=secondary]]:stroke-info/20',
 			},
 		},
 		defaultVariants: {

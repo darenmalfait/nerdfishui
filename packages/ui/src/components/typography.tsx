@@ -45,7 +45,7 @@ export const titleVariants = cva('', {
 		variant: {
 			primary: 'text-foreground',
 			secondary: 'text-foreground-muted',
-			accent: 'text-accent',
+			brand: 'text-brand',
 		},
 	},
 	defaultVariants: {
@@ -59,16 +59,7 @@ const Title = React.forwardRef<
 		VariantProps<typeof titleVariants> & {
 			as?: React.ElementType
 		}
->(function Title(
-	{
-		className,
-		as,
-		size,
-		variant = size === 'h1' || size === 'h2' ? 'accent' : 'primary',
-		...props
-	},
-	ref,
-) {
+>(function Title({ className, as, size, variant = 'primary', ...props }, ref) {
 	const Tag = as ?? size ?? DEFAULT_TITLE_SIZE
 
 	return (
@@ -80,7 +71,7 @@ const Title = React.forwardRef<
 					size,
 					variant,
 				}),
-				variant === 'accent',
+				variant === 'brand',
 				className,
 			)}
 		>

@@ -2,55 +2,62 @@ export const colors = {
 	colors: {
 		transparent: 'transparent',
 		current: 'currentColor',
+		brand: 'hsl(var(--colors-brand) / <alpha-value>)',
+		// DEPRACETED, now brand
 		accent: 'hsl(var(--colors-accent) / <alpha-value>)',
+
 		foreground: {
 			DEFAULT: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
 			secondary: 'hsl(var(--colors-foreground-secondary) / <alpha-value>)',
 			muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
 			inverted: 'hsl(var(--colors-foreground-inverted) / <alpha-value>)',
+			info: {
+				DEFAULT: 'hsl(var(--colors-foreground-info-primary) / <alpha-value>)',
+				contrast: 'hsl(var(--colors-foreground-info-contrast) / <alpha-value>)',
+			},
+			success: {
+				DEFAULT:
+					'hsl(var(--colors-foreground-success-primary) / <alpha-value>)',
+				contrast:
+					'hsl(var(--colors-foreground-success-contrast) / <alpha-value>)',
+			},
+			warning: {
+				DEFAULT:
+					'hsl(var(--colors-foreground-warning-primary) / <alpha-value>)',
+				contrast:
+					'hsl(var(--colors-foreground-warning-contrast) / <alpha-value>)',
+			},
+			danger: {
+				DEFAULT: 'hsl(var(--colors-foreground-danger-primary) / <alpha-value>)',
+				contrast:
+					'hsl(var(--colors-foreground-danger-contrast) / <alpha-value>)',
+			},
 		},
 		background: {
 			DEFAULT: 'hsl(var(--colors-background-primary) / <alpha-value>)',
 			secondary: 'hsl(var(--colors-background-secondary) / <alpha-value>)',
 			muted: 'hsl(var(--colors-background-muted) / <alpha-value>)',
 			inverted: 'hsl(var(--colors-background-inverted) / <alpha-value>)',
-		},
-		success: {
-			DEFAULT: 'hsl(var(--colors-success-500) / <alpha-value>)',
-			foreground: 'hsl(var(--colors-success-500) / <alpha-value>)',
-			background: {
-				DEFAULT: 'hsl(var(--colors-success-300) / <alpha-value>)',
-				muted: 'hsl(var(--colors-success-100) / <alpha-value>)',
-				accent: 'hsl(var(--colors-success-500) / <alpha-value>)',
+			info: {
+				DEFAULT: 'hsl(var(--colors-background-info-primary) / <alpha-value>)',
+				muted: 'hsl(var(--colors-background-info-muted) / <alpha-value>)',
+			},
+			success: {
+				DEFAULT:
+					'hsl(var(--colors-background-success-primary) / <alpha-value>)',
+				muted: 'hsl(var(--colors-background-success-muted) / <alpha-value>)',
+			},
+			warning: {
+				DEFAULT:
+					'hsl(var(--colors-background-warning-primary) / <alpha-value>)',
+				muted: 'hsl(var(--colors-background-warning-muted) / <alpha-value>)',
+			},
+			danger: {
+				DEFAULT: 'hsl(var(--colors-background-danger-primary) / <alpha-value>)',
+				muted: 'hsl(var(--colors-background-danger-muted) / <alpha-value>)',
 			},
 		},
-		danger: {
-			DEFAULT: 'hsl(var(--colors-danger-500) / <alpha-value>)',
-			foreground: 'hsl(var(--colors-danger-500) / <alpha-value>)',
-			background: {
-				DEFAULT: 'hsl(var(--colors-danger-300) / <alpha-value>)',
-				muted: 'hsl(var(--colors-danger-100) / <alpha-value>)',
-				accent: 'hsl(var(--colors-danger-500) / <alpha-value>)',
-			},
-		},
-		warning: {
-			DEFAULT: 'hsl(var(--colors-warning-500) / <alpha-value>)',
-			foreground: 'hsl(var(--colors-warning-500) / <alpha-value>)',
-			background: {
-				DEFAULT: 'hsl(var(--colors-warning-300) / <alpha-value>)',
-				muted: 'hsl(var(--colors-warning-100) / <alpha-value>)',
-				accent: 'hsl(var(--colors-warning-500) / <alpha-value>)',
-			},
-		},
-		info: {
-			DEFAULT: 'hsl(var(--colors-info-500) / <alpha-value>)',
-			foreground: 'hsl(var(--colors-info-500) / <alpha-value>)',
-			background: {
-				DEFAULT: 'hsl(var(--colors-info-300) / <alpha-value>)',
-				muted: 'hsl(var(--colors-info-100) / <alpha-value>)',
-				accent: 'hsl(var(--colors-info-500) / <alpha-value>)',
-			},
-		},
+
 		gray: {
 			100: 'var(--color-gray-100)',
 			200: 'var(--color-gray-200)',
@@ -68,61 +75,25 @@ export const colors = {
 		muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
 		inverted: 'hsl(var(--colors-foreground-inverted) / <alpha-value>)',
 	},
-	backgroundColor: {
-		// DEPRECATED
-		success: {
-			DEFAULT: 'hsl(var(--colors-success-300) / <alpha-value>)',
-			muted: 'hsl(var(--colors-success-100) / <alpha-value>)',
-			accent: 'hsl(var(--colors-success-500) / <alpha-value>)',
-		},
-		danger: {
-			DEFAULT: 'hsl(var(--colors-danger-300) / <alpha-value>)',
-			muted: 'hsl(var(--colors-danger-100) / <alpha-value>)',
-			accent: 'hsl(var(--colors-danger-500) / <alpha-value>)',
-		},
-		warning: {
-			DEFAULT: 'hsl(var(--colors-warning-300) / <alpha-value>)',
-			muted: 'hsl(var(--colors-warning-100) / <alpha-value>)',
-			accent: 'hsl(var(--colors-warning-500) / <alpha-value>)',
-		},
-		info: {
-			DEFAULT: 'hsl(var(--colors-info-300) / <alpha-value>)',
-			muted: 'hsl(var(--colors-info-100) / <alpha-value>)',
-			accent: 'hsl(var(--colors-info-500) / <alpha-value>)',
-		},
-		primary: 'hsl(var(--colors-background-primary) / <alpha-value>)',
-		secondary: 'hsl(var(--colors-background-secondary) / <alpha-value>)',
-		muted: 'hsl(var(--colors-background-muted) / <alpha-value>)',
-		inverted: 'hsl(var(--colors-background-inverted) / <alpha-value>)',
-	},
-	textColor: {
-		// DEPRECATED
-		primary: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
-		muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
-		inverted: 'hsl(var(--colors-foreground-inverted) / <alpha-value>)',
-	},
+
 	borderColor: {
 		primary: 'hsl(var(--colors-border-primary) / <alpha-value>)',
 		muted: 'hsl(var(--colors-border-muted) / <alpha-value>)',
 		success: {
-			DEFAULT: 'hsl(var(--colors-success-300) / <alpha-value>)',
-			accent: 'hsl(var(--colors-success-500) / <alpha-value>)',
-			muted: 'hsl(var(--colors-success-100) / <alpha-value>)',
+			DEFAULT: 'hsl(var(--colors-background-success-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-success-muted) / <alpha-value>)',
 		},
 		danger: {
-			DEFAULT: 'hsl(var(--colors-danger-300) / <alpha-value>)',
-			accent: 'hsl(var(--colors-danger-500) / <alpha-value>)',
-			muted: 'hsl(var(--colors-danger-100) / <alpha-value>)',
+			DEFAULT: 'hsl(var(--colors-background-danger-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-danger-muted) / <alpha-value>)',
 		},
 		warning: {
-			DEFAULT: 'hsl(var(--colors-warning-300) / <alpha-value>)',
-			accent: 'hsl(var(--colors-warning-500) / <alpha-value>)',
-			muted: 'hsl(var(--colors-warning-100) / <alpha-value>)',
+			DEFAULT: 'hsl(var(--colors-background-warning-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-warning-muted) / <alpha-value>)',
 		},
 		info: {
-			DEFAULT: 'hsl(var(--colors-info-300) / <alpha-value>)',
-			accent: 'hsl(var(--colors-info-500) / <alpha-value>)',
-			muted: 'hsl(var(--colors-info-100) / <alpha-value>)',
+			DEFAULT: 'hsl(var(--colors-background-info-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-info-muted) / <alpha-value>)',
 		},
 	},
 }

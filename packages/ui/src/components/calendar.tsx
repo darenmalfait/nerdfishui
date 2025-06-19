@@ -131,9 +131,9 @@ export function Calendar({
 				range_end: 'range-end',
 				range_middle: 'range-middle',
 				today:
-					'*:after:pointer-events-none *:after:absolute *:after:bottom-1 *:after:start-1/2 *:after:z-10 *:after:size-[3px] *:after:-translate-x-1/2 *:after:rounded-full *:after:bg-accent [&[data-selected]:not(.range-middle)>*]:after:bg-accent [&[data-disabled]>*]:after:bg-foreground/30 *:after:transition-colors',
+					'*:after:pointer-events-none *:after:absolute *:after:bottom-1 *:after:start-1/2 *:after:z-10 *:after:size-[3px] *:after:-translate-x-1/2 *:after:rounded-full *:after:bg-brand [&[data-selected]:not(.range-middle)>*]:after:bg-brand [&[data-disabled]>*]:after:bg-foreground/30 *:after:transition-colors',
 				outside:
-					'text-foreground-muted data-selected:bg-accent/50 data-selected:text-foreground-muted',
+					'text-foreground-muted data-selected:bg-brand/50 data-selected:text-foreground-muted',
 				hidden: 'invisible',
 				week_number: 'size-9 p-0 text-xs font-medium text-foreground-muted/80',
 			}}

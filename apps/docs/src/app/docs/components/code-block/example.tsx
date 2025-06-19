@@ -38,7 +38,7 @@ export function CodeBlockExample() {
 						onClick={() => void handleCopy(code)}
 					>
 						{copiedText ? (
-							<CheckIcon className="text-success-foreground h-4 w-4" />
+							<CheckIcon className="text-foreground-success h-4 w-4" />
 						) : (
 							<CopyIcon className="h-4 w-4" />
 						)}

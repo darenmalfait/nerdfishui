@@ -28,7 +28,7 @@ export const ErrorDescription = React.forwardRef<
 	return (
 		<p
 			ref={ref}
-			className={cx('text-danger-foreground text-sm font-medium', className)}
+			className={cx('text-foreground-danger text-sm font-medium', className)}
 			{...props}
 		/>
 	)

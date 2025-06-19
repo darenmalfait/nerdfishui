@@ -7,19 +7,19 @@ export function ButtonSizesExample() {
 	return (
 		<div className="gap-sm flex flex-col">
 			<div className="space-x-sm flex items-center">
-				<Button variant="accent" size="sm">
+				<Button variant="brand" size="sm">
 					Small
 				</Button>
-				<Button variant="accent" size="default">
+				<Button variant="brand" size="default">
 					Default
 				</Button>
-				<Button variant="accent" size="lg">
+				<Button variant="brand" size="lg">
 					Large
 				</Button>
-				<Button variant="accent" size="xl">
+				<Button variant="brand" size="xl">
 					Extra Large
 				</Button>
-				<Button variant="accent" icon>
+				<Button variant="brand" icon>
 					<Mail />
 					<span className="sr-only">Mail</span>
 				</Button>
@@ -51,16 +51,16 @@ export function ButtonSizesExample() {
 				</ButtonGroup>
 			</div>
 			<div className="space-x-sm flex items-center">
-				<Button variant="accent" size="sm" icon>
+				<Button variant="brand" size="sm" icon>
 					<Mail />
 				</Button>
-				<Button variant="accent" size="default" icon>
+				<Button variant="brand" size="default" icon>
 					<Mail />
 				</Button>
-				<Button variant="accent" size="lg" icon>
+				<Button variant="brand" size="lg" icon>
 					<Mail />
 				</Button>
-				<Button variant="accent" size="xl" icon>
+				<Button variant="brand" size="xl" icon>
 					<Mail />
 				</Button>
 			</div>
