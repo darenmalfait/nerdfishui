@@ -1,6 +1,6 @@
 {
   "name": "@repo/tailwind-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "scripts": {
     "clean": "rm -rf node_modules .turbo"

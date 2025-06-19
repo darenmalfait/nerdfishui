@@ -1,5 +1,11 @@
 # @nerdfish/tailwind-config
 
+## 4.0.1
+
+### Patch Changes
+
+- update missing styles
+
 ## 4.0.0
 
 ### Major Changes

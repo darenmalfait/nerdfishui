@@ -1,5 +1,13 @@
 # @repo/tailwind-config
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`95881cd`](https://github.com/darenmalfait/nerdfishui/commit/95881cdaf7028deeb1b1ef1a8095a7cc27f1f203)]:
+  - @nerdfish/tailwind-config@4.0.1
+
 ## 0.1.3
 
 ### Patch Changes
