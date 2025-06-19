@@ -1,10 +1,10 @@
-export const colors = {
+import { type CustomThemeConfig } from 'tailwindcss/types/config'
+
+export const colors: Partial<CustomThemeConfig> = {
 	colors: {
 		transparent: 'transparent',
 		current: 'currentColor',
 		brand: 'hsl(var(--colors-brand) / <alpha-value>)',
-		// DEPRACETED, now brand
-		accent: 'hsl(var(--colors-accent) / <alpha-value>)',
 
 		foreground: {
 			DEFAULT: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
@@ -69,11 +69,29 @@ export const colors = {
 			800: 'var(--color-gray-800)',
 			900: 'var(--color-gray-900)',
 		},
+	},
 
-		// DEPRECATED
-		primary: 'hsl(var(--colors-foreground-primary) / <alpha-value>)',
-		muted: 'hsl(var(--colors-foreground-muted) / <alpha-value>)',
-		inverted: 'hsl(var(--colors-foreground-inverted) / <alpha-value>)',
+	backgroundColor: {
+		primary: 'hsl(var(--colors-background-primary) / <alpha-value>)',
+		secondary: 'hsl(var(--colors-background-secondary) / <alpha-value>)',
+		muted: 'hsl(var(--colors-background-muted) / <alpha-value>)',
+		inverted: 'hsl(var(--colors-background-inverted) / <alpha-value>)',
+		info: {
+			DEFAULT: 'hsl(var(--colors-background-info-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-info-muted) / <alpha-value>)',
+		},
+		success: {
+			DEFAULT: 'hsl(var(--colors-background-success-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-success-muted) / <alpha-value>)',
+		},
+		warning: {
+			DEFAULT: 'hsl(var(--colors-background-warning-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-warning-muted) / <alpha-value>)',
+		},
+		danger: {
+			DEFAULT: 'hsl(var(--colors-background-danger-primary) / <alpha-value>)',
+			muted: 'hsl(var(--colors-background-danger-muted) / <alpha-value>)',
+		},
 	},
 
 	borderColor: {

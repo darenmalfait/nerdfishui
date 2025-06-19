@@ -20,15 +20,15 @@ export const utilities = {
 			{},
 	},
 	'.focus-ring': {
-		'@apply focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-primary focus:ring-primary focus-within:ring-primary group-hover:ring-primary group-focus:ring-primary ring-primary ring-offset-4 ring-offset-inverted':
+		'@apply focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-foreground focus:ring-foreground focus-within:ring-foreground group-hover:ring-foreground group-focus:ring-foreground ring-foreground ring-offset-4 ring-offset-foreground-inverted':
 			{},
 	},
 	'.active-ring': {
-		'@apply active:ring-2 active:ring-primary active:ring-offset-inverted active:ring-offset-4':
+		'@apply active:ring-2 active:ring-foreground active:ring-offset-foreground-inverted active:ring-offset-4':
 			{},
 	},
 	'.shadow-outline': {
-		'@apply ring-1 ring-muted/30 border-transparent': {},
+		'@apply ring-1 ring-foreground-muted/30 border-transparent': {},
 	},
 	'.empty-content': {
 		content: "''",
