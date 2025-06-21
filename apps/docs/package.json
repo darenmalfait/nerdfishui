@@ -34,7 +34,7 @@
     "date-fns": "^4.1.0",
     "geist": "^1.4.2",
     "lodash": "^4.17.21",
-    "lucide-react": "^0.516.0",
+    "lucide-react": "^0.522.0",
     "markdown-wasm": "^1.2.0",
     "mdast-util-to-string": "^4.0.0",
     "mdx-annotations": "^0.1.4",
