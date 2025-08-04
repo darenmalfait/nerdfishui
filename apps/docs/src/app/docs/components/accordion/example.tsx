@@ -9,7 +9,7 @@ import {
 
 export function AccordionExample() {
 	return (
-		<Accordion type="single" collapsible className="w-[450px]">
+		<Accordion className="w-[450px]">
 			<AccordionItem value="item-1">
 				<AccordionTrigger>Fish</AccordionTrigger>
 				<AccordionContent>
