@@ -1,6 +1,6 @@
 'use client'
 
-import { getButtonClassName } from '@nerdfish/ui'
+import { buttonVariants } from '@nerdfish/ui'
 import Link from 'next/link'
 import type * as React from 'react'
 import { Icons } from '~/app/components/icons'
@@ -41,7 +41,7 @@ export function DocsPageHeader({
 					<Link
 						target="_blank"
 						href={`https://github.com/darenmalfait/nerdfishui/tree/main/packages/${githubPath.package}/src/${githubPath.path}`}
-						className={getButtonClassName({
+						className={buttonVariants({
 							className: 'mr-sm',
 						})}
 						rel="noopener noreferrer"

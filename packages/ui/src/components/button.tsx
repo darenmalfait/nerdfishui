@@ -1,7 +1,7 @@
 'use client'
 
 import { useRender } from '@base-ui-components/react/use-render'
-import { type VariantProps, cva, cx } from '@nerdfish/utils'
+import { type VariantProps, cva } from '@nerdfish/utils'
 
 export const buttonVariants = cva(
 	'focus-outline relative inline-flex items-center justify-center hover:scale-[102%] rounded-base border px-[1.5em] py-[1em] font-medium text-sm transition-all active:scale-95 disabled:pointer-events-none',
@@ -72,17 +72,6 @@ export const buttonVariants = cva(
 	},
 )
 
-export function getButtonClassName({
-	variant = 'default',
-	size = 'default',
-	icon,
-	className,
-}: VariantProps<typeof buttonVariants> & {
-	className?: string
-}) {
-	return cx(buttonVariants({ variant, size, icon, className }))
-}
-
 export interface ButtonProps
 	extends useRender.ComponentProps<'button'>,
 		VariantProps<typeof buttonVariants> {}
@@ -99,7 +88,7 @@ export function Button({
 		render,
 		props: {
 			'data-slot': 'button',
-			className: getButtonClassName({
+			className: buttonVariants({
 				variant,
 				size,
 				icon,
