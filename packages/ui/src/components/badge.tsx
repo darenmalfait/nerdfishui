@@ -1,7 +1,7 @@
 'use client'
 
-import { type VariantProps, cva, cx } from '@nerdfish/utils'
-import * as React from 'react'
+import { useRender } from '@base-ui-components/react/use-render'
+import { type VariantProps, cva } from '@nerdfish/utils'
 
 export const badgeVariants = cva(
 	'inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold text-xs transition-colors',
@@ -27,18 +27,25 @@ export const badgeVariants = cva(
 	},
 )
 
-export const Badge = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof badgeVariants>
->(({ className, variant, ...props }, ref) => {
-	return (
-		<div
-			ref={ref}
-			className={cx(badgeVariants({ variant }), className)}
-			{...props}
-		/>
-	)
-})
-Badge.displayName = 'Badge'
+export interface BadgeProps
+	extends useRender.ComponentProps<'div'>,
+		VariantProps<typeof badgeVariants> {}
 
-export type BadgeProps = React.ComponentPropsWithoutRef<typeof Badge>
+export function Badge({
+	variant,
+	render = <div />,
+	className,
+	...props
+}: BadgeProps) {
+	return useRender({
+		render,
+		props: {
+			'data-slot': 'badge',
+			className: badgeVariants({
+				variant,
+				className,
+			}),
+			...props,
+		},
+	})
+}
