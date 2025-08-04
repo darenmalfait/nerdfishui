@@ -1,5 +1,11 @@
 # @nerdfish/ui
 
+## 8.0.1
+
+### Patch Changes
+
+- update deps
+
 ## 8.0.0
 
 ### Major Changes
