@@ -1,8 +1,7 @@
 'use client'
 
+import { useRender } from '@base-ui-components/react/use-render'
 import { type VariantProps, cva, cx } from '@nerdfish/utils'
-import { Slot } from '@radix-ui/react-slot'
-import * as React from 'react'
 
 export const buttonVariants = cva(
 	'focus-outline relative inline-flex items-center justify-center hover:scale-[102%] rounded-base border px-[1.5em] py-[1em] font-medium text-sm transition-all active:scale-95 disabled:pointer-events-none',
@@ -85,30 +84,28 @@ export function getButtonClassName({
 }
 
 export interface ButtonProps
-	extends React.ComponentProps<'button'>,
-		VariantProps<typeof buttonVariants> {
-	asChild?: boolean
-}
+	extends useRender.ComponentProps<'button'>,
+		VariantProps<typeof buttonVariants> {}
 
 export function Button({
 	variant,
 	size,
-	asChild,
+	render = <button />,
 	icon,
 	className,
 	...props
 }: ButtonProps) {
-	const Comp = asChild ? Slot : 'button'
-
-	return (
-		<Comp
-			className={getButtonClassName({
+	return useRender({
+		render,
+		props: {
+			'data-slot': 'button',
+			className: getButtonClassName({
 				variant,
 				size,
 				icon,
 				className,
-			})}
-			{...props}
-		/>
-	)
+			}),
+			...props,
+		},
+	})
 }

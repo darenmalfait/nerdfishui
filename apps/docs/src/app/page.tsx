@@ -44,9 +44,10 @@ export default async function HomePage() {
 								and provide visually pleasing and functional components.
 							</Paragraph>
 							<div className="mt-lg justify-center">
-								<Button size="lg" asChild>
-									<Link href="/docs">Get started</Link>
-								</Button>
+								<Button
+									size="lg"
+									render={<Link href="/docs">Get started</Link>}
+								/>
 							</div>
 						</div>
 					</div>

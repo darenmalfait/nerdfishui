@@ -50,12 +50,16 @@ function CardContent({
 					'p-md pointer-events-none absolute bottom-0 z-10 flex w-full translate-y-10 transform-gpu flex-row items-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100',
 				)}
 			>
-				<Button variant="ghost" asChild className="pointer-events-auto">
-					<a href={href}>
-						{cta}
-						<ArrowRightIcon className="ml-sm size-4" />
-					</a>
-				</Button>
+				<Button
+					variant="ghost"
+					render={
+						<a href={href}>
+							{cta}
+							<ArrowRightIcon className="ml-sm size-4" />
+						</a>
+					}
+					className="pointer-events-auto"
+				/>
 			</div>
 
 			<div className="group-hover:bg-popover rounded-container pointer-events-none absolute inset-0 transform-gpu overflow-hidden transition-all duration-300" />

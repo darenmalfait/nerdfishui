@@ -1,4 +1,4 @@
-export * from './as-child'
+export * from './render'
 export * from './default'
 export * from './disabled'
 export * from './icon-only'

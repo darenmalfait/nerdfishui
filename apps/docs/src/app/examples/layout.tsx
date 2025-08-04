@@ -29,9 +29,7 @@ export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
 					Check out some examples app built using the components.
 				</PageHeaderDescription>
 				<PageActions>
-					<Button asChild>
-						<Link href="/docs">Get Started</Link>
-					</Button>
+					<Button render={<Link href="/docs">Get Started</Link>} />
 				</PageActions>
 			</PageHeader>
 

@@ -13,15 +13,19 @@ export function SiteHeader() {
 				<div className="space-x-md flex flex-1 items-center justify-end">
 					<nav className="space-x-sm flex items-center">
 						<ThemeToggle />
-						<Button variant="ghost" icon asChild>
-							<Link
-								href="https://github.com/darenmalfait/nerdfishui"
-								// rel="noopener noreferrer"
-								target="_blank"
-							>
-								<Icons.GitHub className="size-4" />
-							</Link>
-						</Button>
+						<Button
+							variant="ghost"
+							icon
+							render={
+								<Link
+									href="https://github.com/darenmalfait/nerdfishui"
+									// rel="noopener noreferrer"
+									target="_blank"
+								>
+									<Icons.GitHub className="size-4" />
+								</Link>
+							}
+						/>
 						<MobileNavigation />
 					</nav>
 				</div>
