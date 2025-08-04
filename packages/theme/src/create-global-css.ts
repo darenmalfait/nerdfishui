@@ -24,7 +24,7 @@ function createGlobalCssVars() {
 		.map((key) => `${key}: ${darkTheme.cssVars[key]};`)
 		.join('\n')
 
-	const content = `:root {\n${baseVars}\n}\n\n.dark{\n${darkVars}\n}`
+	const content = `:root {\n${baseVars}\n}\n\n.dark{\n${darkVars}\n}\n\n.root {\nisolation: isolate;\n}`
 
 	if (!fs.existsSync('./dist')) {
 		fs.mkdirSync('./dist')
