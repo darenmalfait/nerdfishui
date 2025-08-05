@@ -3,13 +3,11 @@
 import { cx } from '@nerdfish/utils'
 import type * as React from 'react'
 
-export function Skeleton({
-	className,
-	count = 1,
-	...props
-}: React.HTMLAttributes<HTMLDivElement> & {
+export interface SkeletonProps extends React.ComponentProps<'div'> {
 	count?: number
-}) {
+}
+
+export function Skeleton({ className, count = 1, ...props }: SkeletonProps) {
 	return (
 		<>
 			{Array.from({ length: count }).map((_, index) => (
