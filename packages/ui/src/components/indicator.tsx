@@ -1,45 +1,43 @@
 'use client'
 
+import { useRender } from '@base-ui-components/react/use-render'
 import { cx } from '@nerdfish/utils'
-import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
-export const Indicator = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithRef<'div'>
->(function Indicator(props, ref) {
+export type IndicatorProps = React.ComponentProps<'div'>
+export function Indicator(props: IndicatorProps) {
 	return (
 		<div
-			ref={ref}
 			{...props}
 			className={cx('relative inline-flex w-max', props.className)}
 		/>
 	)
-})
-Indicator.displayName = 'Indicator'
+}
 
-export const IndicatorItem = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithRef<'div'> & {
-		asChild?: boolean
-		top?: boolean
-		left?: boolean
-		center?: boolean // horizontal
-		right?: boolean
-		middle?: boolean
-		bottom?: boolean // vertical
-	}
->(function IndicatorItem(
-	{ asChild, className, top, right, left, center, middle, bottom, ...props },
-	ref,
-) {
-	const Comp = asChild ? Slot : 'div'
+export interface IndicatorItemProps extends useRender.ComponentProps<'div'> {
+	top?: boolean
+	left?: boolean
+	center?: boolean // horizontal
+	right?: boolean
+	middle?: boolean
+	bottom?: boolean // vertical
+}
 
-	return (
-		<Comp
-			ref={ref}
-			{...props}
-			className={cx(
+export function IndicatorItem({
+	render = <div />,
+	className,
+	top,
+	right,
+	left,
+	center,
+	middle,
+	bottom,
+	...props
+}: IndicatorItemProps) {
+	return useRender({
+		render,
+		props: {
+			className: cx(
 				'absolute bottom-auto end-0 start-auto top-0 z-10 inline-block -translate-y-1/2 translate-x-1/2 transform whitespace-nowrap rtl:-translate-x-1/2',
 				{
 					'end-auto start-0 -translate-x-1/2 rtl:translate-x-1/2': left,
@@ -50,13 +48,8 @@ export const IndicatorItem = React.forwardRef<
 					'bottom-auto top-0 -translate-y-1/2': top,
 				},
 				className,
-			)}
-		/>
-	)
-})
-IndicatorItem.displayName = 'IndicatorItem'
-
-export type IndicatorProps = React.ComponentPropsWithoutRef<typeof Indicator>
-export type IndicatorItemProps = React.ComponentPropsWithoutRef<
-	typeof IndicatorItem
->
+			),
+			...props,
+		},
+	})
+}
