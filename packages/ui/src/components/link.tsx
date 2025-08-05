@@ -3,20 +3,16 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const Link = React.forwardRef<
-	HTMLElement,
-	React.DetailedHTMLProps<
-		React.AnchorHTMLAttributes<HTMLAnchorElement>,
-		HTMLAnchorElement
-	> & {
-		disabled?: boolean
-		external?: boolean
-		as?: React.ElementType
-		onClick?: React.MouseEventHandler<HTMLAnchorElement>
-		to?: string
-		children?: React.ReactNode
-	}
->(function Link(props, ref) {
+export interface LinkProps extends React.ComponentProps<'a'> {
+	disabled?: boolean
+	external?: boolean
+	as?: React.ElementType
+	onClick?: React.MouseEventHandler<HTMLAnchorElement>
+	to?: string
+	children?: React.ReactNode
+}
+
+export function Link(props: LinkProps) {
 	const {
 		disabled,
 		external,
@@ -33,7 +29,6 @@ export const Link = React.forwardRef<
 
 	return (
 		<Tag
-			ref={ref}
 			className={cx(
 				'focus-outline space-x-sm text-foreground relative inline-flex bg-transparent outline-none hover:bg-transparent dark:hover:bg-transparent',
 				className,
@@ -47,6 +42,4 @@ export const Link = React.forwardRef<
 			{...rest}
 		/>
 	)
-})
-
-export type LinkProps = React.ComponentPropsWithoutRef<typeof Link>
+}
