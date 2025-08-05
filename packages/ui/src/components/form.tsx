@@ -83,7 +83,10 @@ const FormItem = React.forwardRef<
 })
 FormItem.displayName = 'FormItem'
 
-const FormLabel = React.forwardRef<
+const FormLabel: React.ForwardRefExoticComponent<
+	React.ComponentPropsWithoutRef<typeof Label> &
+		React.RefAttributes<React.ElementRef<typeof Label>>
+> = React.forwardRef<
 	React.ElementRef<typeof Label>,
 	React.ComponentPropsWithoutRef<typeof Label>
 >(({ className, ...props }, ref) => {

@@ -6,12 +6,12 @@ import { Bold, Italic, Underline } from 'lucide-react'
 export function ToggleGroupExample() {
 	return (
 		<div className="gap-sm flex flex-col">
-			<ToggleGroup type="single">
+			<ToggleGroup>
 				<ToggleGroupItem value="a">A</ToggleGroupItem>
 				<ToggleGroupItem value="b">B</ToggleGroupItem>
 				<ToggleGroupItem value="c">C</ToggleGroupItem>
 			</ToggleGroup>
-			<ToggleGroup type="multiple">
+			<ToggleGroup toggleMultiple>
 				<ToggleGroupItem value="bold" aria-label="Toggle bold">
 					<Bold className="size-4" />
 				</ToggleGroupItem>
