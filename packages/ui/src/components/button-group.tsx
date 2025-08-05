@@ -4,23 +4,21 @@ import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 import { type ButtonProps } from './button'
 
-export const ButtonGroup = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<'div'> & {
-		className?: string
-		orientation?: 'horizontal' | 'vertical'
-		children: React.ReactElement<ButtonProps>[]
-	}
->(function ButtonGroup(
-	{ className, orientation = 'horizontal', children },
-	ref,
-) {
+export interface ButtonGroupProps extends React.ComponentProps<'div'> {
+	orientation?: 'horizontal' | 'vertical'
+	children: React.ReactElement<ButtonProps>[]
+}
+export function ButtonGroup({
+	className,
+	orientation = 'horizontal',
+	children,
+	...props
+}: ButtonGroupProps) {
 	const isHorizontal = orientation === 'horizontal'
 	const isVertical = orientation === 'vertical'
 
 	return (
 		<div
-			ref={ref}
 			className={cx(
 				'flex',
 				{
@@ -33,13 +31,9 @@ export const ButtonGroup = React.forwardRef<
 				},
 				className,
 			)}
+			{...props}
 		>
 			{children}
 		</div>
 	)
-})
-ButtonGroup.displayName = 'ButtonGroup'
-
-export type ButtonGroupProps = React.ComponentPropsWithoutRef<
-	typeof ButtonGroup
->
+}
