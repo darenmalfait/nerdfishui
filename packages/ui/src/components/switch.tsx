@@ -1,7 +1,7 @@
 'use client'
 
+import { Switch as SwitchPrimitive } from '@base-ui-components/react/switch'
 import { type VariantProps, cva, cx } from '@nerdfish/utils'
-import * as SwitchPrimitives from '@radix-ui/react-switch'
 import * as React from 'react'
 
 const switchVariants = cva(
@@ -33,32 +33,36 @@ const switchVariants = cva(
 	},
 )
 
-export const Switch = React.forwardRef<
-	React.ElementRef<typeof SwitchPrimitives.Root>,
-	React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> &
-		VariantProps<typeof switchVariants>
->(({ className, variant, inputSize, ...props }, ref) => (
-	<SwitchPrimitives.Root
-		className={cx(
-			switchVariants({ variant, inputSize }),
-			// basic styles
-			'peer inline-flex shrink-0 cursor-pointer items-center rounded-full p-0 transition-colors',
+export interface SwitchProps
+	extends React.ComponentProps<typeof SwitchPrimitive.Root>,
+		VariantProps<typeof switchVariants> {}
 
-			// disabled state
-			'disabled-within:cursor-not-allowed disabled-within:opacity-50 disabled-within:shadow-none disabled-within:hover:border-transparent',
-			className,
-		)}
-		{...props}
-		ref={ref}
-	>
-		<SwitchPrimitives.Thumb
-			data-slot="thumb"
+export function Switch({
+	className,
+	variant,
+	inputSize,
+	...props
+}: SwitchProps) {
+	return (
+		<SwitchPrimitive.Root
+			data-slot="switch"
 			className={cx(
-				'bg-background data-[state=checked]:bg-background dark:bg-foreground pointer-events-none block rounded-full shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0.5',
-			)}
-		/>
-	</SwitchPrimitives.Root>
-))
-Switch.displayName = SwitchPrimitives.Root.displayName
+				switchVariants({ variant, inputSize }),
+				// basic styles
+				'peer inline-flex shrink-0 cursor-pointer items-center rounded-full p-0 transition-colors',
 
-export type SwitchProps = React.ComponentPropsWithoutRef<typeof Switch>
+				// disabled state
+				'disabled-within:cursor-not-allowed disabled-within:opacity-50 disabled-within:shadow-none disabled-within:hover:border-transparent',
+				className,
+			)}
+			{...props}
+		>
+			<SwitchPrimitive.Thumb
+				data-slot="switch-thumb"
+				className={cx(
+					'bg-background data-[state=checked]:bg-background dark:bg-foreground pointer-events-none block rounded-full shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0.5',
+				)}
+			/>
+		</SwitchPrimitive.Root>
+	)
+}
