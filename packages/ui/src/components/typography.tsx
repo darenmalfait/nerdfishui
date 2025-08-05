@@ -3,20 +3,19 @@
 import { type VariantProps, cva, cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const Paragraph = React.forwardRef<
-	HTMLParagraphElement,
-	React.ComponentPropsWithRef<'p'> & {
-		prose?: boolean
-		as?: React.ElementType
-	}
->(function Paragraph(
-	{ className, prose = false, as: Tag = 'p', ...props },
-	ref,
-) {
+export interface ParagraphProps extends React.ComponentProps<'p'> {
+	prose?: boolean
+	as?: React.ElementType
+}
+export function Paragraph({
+	className,
+	prose = false,
+	as: Tag = 'p',
+	...props
+}: ParagraphProps) {
 	return (
 		<Tag
 			{...props}
-			ref={ref}
 			className={cx(
 				'mt-md max-w-full leading-7 first:mt-0',
 				prose ? 'prose' : 'text-foreground',
@@ -24,10 +23,7 @@ export const Paragraph = React.forwardRef<
 			)}
 		/>
 	)
-})
-Paragraph.displayName = 'Paragraph'
-
-export type ParagraphProps = React.ComponentPropsWithRef<typeof Paragraph>
+}
 
 const DEFAULT_TITLE_SIZE = 'h2'
 
@@ -53,19 +49,24 @@ export const titleVariants = cva('', {
 	},
 })
 
-const Title = React.forwardRef<
-	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h1'> &
-		VariantProps<typeof titleVariants> & {
-			as?: React.ElementType
-		}
->(function Title({ className, as, size, variant = 'primary', ...props }, ref) {
+export interface TitleProps
+	extends React.ComponentProps<'h1'>,
+		VariantProps<typeof titleVariants> {
+	as?: React.ElementType
+}
+
+export function Title({
+	className,
+	as,
+	size,
+	variant = 'primary',
+	...props
+}: TitleProps) {
 	const Tag = as ?? size ?? DEFAULT_TITLE_SIZE
 
 	return (
 		<Tag
 			{...props}
-			ref={ref}
 			className={cx(
 				titleVariants({
 					size,
@@ -78,66 +79,28 @@ const Title = React.forwardRef<
 			{props.children}
 		</Tag>
 	)
-})
+}
 
-export type TitleProps = React.ComponentPropsWithRef<typeof Title>
+export function H1({ className, ...props }: Omit<TitleProps, 'size'>) {
+	return <Title {...props} className={cx('relative', className)} size="h1" />
+}
 
-export const H1 = React.forwardRef<
-	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h1'> & TitleProps
->(function H1(props, ref) {
-	return (
-		<Title
-			{...props}
-			className={cx('relative', props.className)}
-			size="h1"
-			ref={ref}
-		>
-			{props.children}
-		</Title>
-	)
-})
+export function H2({ className, ...props }: Omit<TitleProps, 'size'>) {
+	return <Title {...props} className={cx('relative', className)} size="h2" />
+}
 
-export const H2 = React.forwardRef<
-	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h2'> & TitleProps
->(function H2(props, ref) {
-	return (
-		<Title
-			{...props}
-			className={cx('relative', props.className)}
-			size="h2"
-			ref={ref}
-		>
-			{props.children}
-		</Title>
-	)
-})
+export function H3({ className, ...props }: Omit<TitleProps, 'size'>) {
+	return <Title {...props} size="h3" />
+}
 
-export const H3 = React.forwardRef<
-	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h3'> & TitleProps
->(function H3(props, ref) {
-	return <Title {...props} size="h3" ref={ref} />
-})
+export function H4({ className, ...props }: Omit<TitleProps, 'size'>) {
+	return <Title {...props} size="h4" />
+}
 
-export const H4 = React.forwardRef<
-	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h3'> & TitleProps
->(function H4(props, ref) {
-	return <Title {...props} size="h4" ref={ref} />
-})
+export function H5({ className, ...props }: Omit<TitleProps, 'size'>) {
+	return <Title {...props} size="h5" />
+}
 
-export const H5 = React.forwardRef<
-	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h5'> & TitleProps
->(function H5(props, ref) {
-	return <Title {...props} size="h5" ref={ref} />
-})
-
-export const H6 = React.forwardRef<
-	HTMLHeadingElement,
-	React.ComponentPropsWithRef<'h6'> & TitleProps
->(function H6(props, ref) {
-	return <Title {...props} size="h6" ref={ref} />
-})
+export function H6({ className, ...props }: Omit<TitleProps, 'size'>) {
+	return <Title {...props} size="h6" />
+}
