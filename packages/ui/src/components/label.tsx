@@ -1,45 +1,33 @@
+import { Field as LabelPrimitive } from '@base-ui-components/react/field'
 import { cx } from '@nerdfish/utils'
-import type * as LabelPrimitive from '@radix-ui/react-label'
 import * as React from 'react'
 
-export const Label = React.forwardRef<
-	React.ElementRef<typeof LabelPrimitive.Root>,
-	React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, children, ...props }, ref) => {
+export type LabelProps = React.ComponentProps<typeof LabelPrimitive.Label>
+export function Label({ className, ...props }: LabelProps) {
 	return (
-		<label
-			data-slot="label"
-			ref={ref}
-			className={cx(
-				'space-y-xs text-foreground block text-sm font-bold',
-				'[&_[data-slot=description]]:font-normal',
-				className,
-			)}
-			{...props}
-		>
-			{children}
-		</label>
+		<LabelPrimitive.Root>
+			<LabelPrimitive.Label
+				data-slot="label"
+				className={cx(
+					'space-y-xs text-foreground block text-sm font-bold',
+					'[&_[data-slot=description]]:font-normal',
+					className,
+				)}
+				{...props}
+			/>
+		</LabelPrimitive.Root>
 	)
-})
-Label.displayName = 'Label'
+}
 
-export const LabelAsterisk = React.forwardRef<
-	HTMLSpanElement,
-	Omit<React.ComponentPropsWithoutRef<'span'>, 'children'>
->(({ className, ...props }, ref) => {
+export type LabelAsteriskProps = React.ComponentProps<'span'>
+export function LabelAsterisk({
+	className,
+	children,
+	...props
+}: LabelAsteriskProps) {
 	return (
-		<span
-			ref={ref}
-			className={cx('ml-xs text-foreground-danger', className)}
-			{...props}
-		>
-			*
+		<span className={cx('ml-xs text-foreground-danger', className)} {...props}>
+			*{children}
 		</span>
 	)
-})
-LabelAsterisk.displayName = 'LabelAsterisk'
-
-export type LabelProps = React.ComponentPropsWithoutRef<typeof Label>
-export type LabelAsteriskProps = React.ComponentPropsWithoutRef<
-	typeof LabelAsterisk
->
+}
