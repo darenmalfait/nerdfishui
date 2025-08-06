@@ -1,5 +1,5 @@
+import { useRender } from '@base-ui-components/react/use-render'
 import { type VariantProps, cva, cx } from '@nerdfish/utils'
-import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
 export const sidebarVariants = cva(
@@ -17,7 +17,7 @@ export const sidebarVariants = cva(
 	},
 )
 
-export const sidebarContentVariants: typeof sidebarVariants = cva(
+export const sidebarSectionVariants: typeof sidebarVariants = cva(
 	'flex flex-col gap-sm px-md',
 	{
 		variants: {
@@ -32,64 +32,54 @@ export const sidebarContentVariants: typeof sidebarVariants = cva(
 	},
 )
 
-export const Sidebar = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<'nav'> &
-		VariantProps<typeof sidebarVariants> & {
-			asChild?: boolean
-		}
->(({ className, children, asChild, variant, ...props }, ref) => {
-	const Comp = asChild ? Slot : 'nav'
+export interface SidebarProps
+	extends useRender.ComponentProps<'nav'>,
+		VariantProps<typeof sidebarVariants> {}
 
-	return (
-		<Comp
-			className={cx(sidebarVariants({ variant }), className)}
-			ref={ref}
-			{...props}
-		>
-			{children}
-		</Comp>
-	)
-})
-Sidebar.displayName = 'Sidebar'
+export function Sidebar({
+	className,
+	render = <nav />,
+	variant,
+	...props
+}: SidebarProps) {
+	return useRender({
+		render,
+		props: {
+			'data-slot': 'sidebar',
+			className: sidebarVariants({
+				variant,
+				className,
+			}),
+			...props,
+		},
+	})
+}
 
-export const SidebarSection = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<'div'> &
-		VariantProps<typeof sidebarContentVariants> & {
-			asChild?: boolean
-		}
->(({ className, children, asChild, variant, ...props }, ref) => {
-	const Comp = asChild ? Slot : 'div'
+export interface SidebarSectionProps
+	extends useRender.ComponentProps<'div'>,
+		VariantProps<typeof sidebarSectionVariants> {}
 
-	return (
-		<Comp
-			className={cx(sidebarContentVariants({ variant }), className)}
-			ref={ref}
-			{...props}
-		>
-			{children}
-		</Comp>
-	)
-})
-SidebarSection.displayName = 'SidebarSection'
+export function SidebarSection({
+	className,
+	render = <nav />,
+	variant,
+	...props
+}: SidebarProps) {
+	return useRender({
+		render,
+		props: {
+			'data-slot': 'sidebar',
+			className: sidebarSectionVariants({
+				variant,
+				className,
+			}),
+			...props,
+		},
+	})
+}
 
-export const SidebarDivider = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<'div'>
->(({ className, ...props }, ref) => {
-	return (
-		<div className={cx('bg-foreground/20 h-px w-full')} ref={ref} {...props} />
-	)
-})
-SidebarDivider.displayName = 'SidebarDivider'
+export type SidebarDividerProps = React.ComponentProps<'div'>
 
-export type SidebarProps = React.ComponentPropsWithoutRef<typeof Sidebar>
-
-export type SidebarSectionProps = React.ComponentPropsWithoutRef<
-	typeof SidebarSection
->
-
-export type SidebarDividerProps = React.ComponentPropsWithoutRef<
-	typeof SidebarDivider
->
+export function SidebarDivider({ className, ...props }: SidebarDividerProps) {
+	return <div className={cx('bg-foreground/20 h-px w-full')} {...props} />
+}
