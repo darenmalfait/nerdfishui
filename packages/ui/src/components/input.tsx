@@ -45,52 +45,50 @@ export interface InputAddOns extends InputVariants {
 	addOnTrailing?: React.ReactNode
 	action?: () => void
 }
-export interface InputProps
-	extends React.ComponentPropsWithRef<'input'>,
-		InputAddOns {}
 
-export const InputIcon = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithRef<'div'> & {
-		icon?: React.ElementType
-		variant: InputVariant
-	}
->(function InputIcon({ icon: Icon, variant }, ref) {
+export interface InputAddonProps extends React.ComponentProps<'div'> {
+	icon?: React.ElementType
+	variant: InputVariant
+}
+
+export function InputIcon({
+	icon: Icon,
+	variant,
+	className,
+	...props
+}: InputAddonProps) {
 	if (variant === 'error') Icon = AlertCircle
 	if (!Icon) return null
 
 	return (
 		<Icon
-			ref={ref}
 			width="20px"
 			height="20px"
 			className={cx(
 				'right-md absolute top-0 z-10 flex h-full items-center justify-center p-0',
 				variant === 'error' && 'text-foreground-danger',
+				className,
 			)}
+			{...props}
 		/>
 	)
-})
+}
 
-export type InputIconProps = React.ComponentPropsWithoutRef<typeof InputIcon>
+export interface InputProps
+	extends React.ComponentPropsWithRef<'input'>,
+		InputAddOns {}
 
-export const Input = React.forwardRef<
-	HTMLInputElement | HTMLTextAreaElement,
-	InputProps
->(function Input(
-	{
-		type,
-		className,
-		inputSize,
-		variant,
-		icon: Icon,
-		children,
-		addOnLeading,
-		addOnTrailing,
-		...inputProps
-	},
-	ref,
-) {
+export function Input({
+	type,
+	className,
+	inputSize,
+	variant,
+	icon: Icon,
+	children,
+	addOnLeading,
+	addOnTrailing,
+	...inputProps
+}: InputProps) {
 	const baseClassName = inputVariants({ inputSize, variant })
 
 	return (
@@ -112,11 +110,10 @@ export const Input = React.forwardRef<
 					!!addOnLeading && '!pl-sm',
 					!!Icon && 'pr-xl',
 				)}
-				ref={ref as React.ForwardedRef<HTMLInputElement>}
 			/>
 			<InputIcon icon={Icon} variant={variant} />
 			{children ? <div className="flex shrink-0">{children}</div> : null}
 			{addOnTrailing}
 		</div>
 	)
-})
+}
