@@ -52,7 +52,8 @@ const DatePickerTrigger = React.forwardRef<
 		placeholder?: string
 	}
 >(({ children, selected, className, placeholder, ...props }, ref) => {
-	if (children) return <PopoverTrigger asChild>{children}</PopoverTrigger>
+	// eslint-disable-next-line react/jsx-no-useless-fragment
+	if (children) return <PopoverTrigger render={<>{children}</>} />
 
 	return (
 		<PopoverTrigger

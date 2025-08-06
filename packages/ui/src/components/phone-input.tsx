@@ -87,27 +87,29 @@ function CountrySelect({
 
 	return (
 		<Popover>
-			<PopoverTrigger asChild>
-				<button
-					type="button"
-					className={cx(
-						inputVariants({ variant, inputSize }),
-						'mr-xs gap-xs flex h-auto w-auto items-center focus:z-10',
-					)}
-					disabled={disabled}
-				>
-					<FlagComponent
-						country={selectedCountry}
-						countryName={selectedCountry}
-					/>
-					<ChevronsUpDown
+			<PopoverTrigger
+				render={
+					<button
+						type="button"
 						className={cx(
-							'-mr-2 size-4 opacity-50',
-							disabled ? 'hidden' : 'opacity-100',
+							inputVariants({ variant, inputSize }),
+							'mr-xs gap-xs flex h-auto w-auto items-center focus:z-10',
 						)}
-					/>
-				</button>
-			</PopoverTrigger>
+						disabled={disabled}
+					>
+						<FlagComponent
+							country={selectedCountry}
+							countryName={selectedCountry}
+						/>
+						<ChevronsUpDown
+							className={cx(
+								'-mr-2 size-4 opacity-50',
+								disabled ? 'hidden' : 'opacity-100',
+							)}
+						/>
+					</button>
+				}
+			/>
 			<PopoverContent className="w-[300px]">
 				<Command>
 					<CommandInput className="mb-sm" placeholder="Search country..." />

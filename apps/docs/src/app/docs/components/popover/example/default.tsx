@@ -13,12 +13,14 @@ import { Cake } from 'lucide-react'
 export function PopoverExample() {
 	return (
 		<Popover>
-			<PopoverTrigger asChild>
-				<Button variant="outline" className="w-10 rounded-full p-0">
-					<Cake className="size-4" />
-					<span className="sr-only">Open popover</span>
-				</Button>
-			</PopoverTrigger>
+			<PopoverTrigger
+				render={
+					<Button variant="outline" icon className="!p-0">
+						<Cake />
+						<span className="sr-only">Open popover</span>
+					</Button>
+				}
+			/>
 			<PopoverContent className="w-80">
 				<div className="gap-md grid">
 					<div className="space-y-sm">

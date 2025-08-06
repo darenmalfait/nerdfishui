@@ -87,31 +87,35 @@ export const MultiSelect = React.forwardRef<HTMLInputElement, MultiSelectProps>(
 		return (
 			<div>
 				<Popover open={openSelect} onOpenChange={onSelectOpenChange}>
-					<PopoverTrigger asChild>
-						<button
-							data-slot="control"
-							role="combobox"
-							aria-controls="listbox"
-							aria-expanded={openSelect}
-							className={cx(
-								inputVariants({ inputSize, variant }),
-								'flex items-center justify-between',
-								props.className,
-							)}
-						>
-							<span className="truncate">
-								{selectedValues.length === 0 ? placeholder : null}
-								{selectedValues.length === 1 ? selectedValues[0]?.label : null}
-								{selectedValues.length === 2
-									? selectedValues.map(({ label }) => label).join(', ')
-									: null}
-								{selectedValues.length > 2
-									? `${selectedValues.length} items selected`
-									: null}
-							</span>
-							<ChevronsUpDown className="ml-sm size-4 shrink-0 opacity-50" />
-						</button>
-					</PopoverTrigger>
+					<PopoverTrigger
+						render={
+							<button
+								data-slot="control"
+								role="combobox"
+								aria-controls="listbox"
+								aria-expanded={openSelect}
+								className={cx(
+									inputVariants({ inputSize, variant }),
+									'flex items-center justify-between',
+									props.className,
+								)}
+							>
+								<span className="truncate">
+									{selectedValues.length === 0 ? placeholder : null}
+									{selectedValues.length === 1
+										? selectedValues[0]?.label
+										: null}
+									{selectedValues.length === 2
+										? selectedValues.map(({ label }) => label).join(', ')
+										: null}
+									{selectedValues.length > 2
+										? `${selectedValues.length} items selected`
+										: null}
+								</span>
+								<ChevronsUpDown className="ml-sm size-4 shrink-0 opacity-50" />
+							</button>
+						}
+					/>
 					<PopoverContent className="w-[200px] p-0">
 						<Command
 							filter={(value, search) => {
