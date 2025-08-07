@@ -22,6 +22,13 @@ export const checkboxVariants = cva(
 	},
 )
 
+export interface CheckboxProps
+	extends Omit<InputProps, 'inputSize' | 'variant'>,
+		VariantProps<typeof checkboxVariants> {
+	bgClassName?: string
+	textClassName?: string
+	icon?: React.ElementType
+}
 export function Checkbox({
 	className,
 	inputSize = 'sm',
@@ -29,12 +36,7 @@ export function Checkbox({
 	textClassName = 'text-foreground',
 	icon: Icon = Check,
 	...props
-}: Omit<InputProps, 'inputSize' | 'variant'> &
-	VariantProps<typeof checkboxVariants> & {
-		bgClassName?: string
-		textClassName?: string
-		icon?: React.ElementType
-	}) {
+}: CheckboxProps) {
 	return (
 		<label
 			className={cx(
@@ -72,5 +74,3 @@ export function Checkbox({
 		</label>
 	)
 }
-
-export type CheckboxProps = React.ComponentPropsWithoutRef<typeof Checkbox>
