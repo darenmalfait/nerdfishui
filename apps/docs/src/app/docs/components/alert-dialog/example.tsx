@@ -16,9 +16,7 @@ import {
 export function AlertDialogExample() {
 	return (
 		<AlertDialog>
-			<AlertDialogTrigger asChild>
-				<Button variant="outline">Open</Button>
-			</AlertDialogTrigger>
+			<AlertDialogTrigger render={<Button variant="outline">Open</Button>} />
 			<AlertDialogContent>
 				<AlertDialogHeader>
 					<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>

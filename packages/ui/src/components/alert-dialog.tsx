@@ -1,178 +1,162 @@
 'use client'
 
+import { AlertDialog as AlertDialogPrimitive } from '@base-ui-components/react/alert-dialog'
 import { cx } from '@nerdfish/utils'
-import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import * as React from 'react'
+import { type ButtonProps } from 'react-day-picker'
+import { Button } from './button'
 
-export const AlertDialog = AlertDialogPrimitive.Root
-export const AlertDialogTrigger = AlertDialogPrimitive.Trigger
+export type AlertDialogProps = AlertDialogPrimitive.Root.Props
+export function AlertDialog({ ...props }: AlertDialogProps) {
+	return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
+}
 
-export const AlertDialogPortal = ({
-	className,
-	children,
+export type AlertDialogTriggerProps = AlertDialogPrimitive.Trigger.Props
+export function AlertDialogTrigger({ ...props }: AlertDialogTriggerProps) {
+	return (
+		<AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
+	)
+}
+
+export type AlertDialogCloseProps = AlertDialogPrimitive.Close.Props
+export function AlertDialogClose({
 	...props
-}: AlertDialogPrimitive.AlertDialogPortalProps & {
-	className?: string
-}) => (
-	<AlertDialogPrimitive.Portal {...props}>
-		<div
-			className={cx(
-				'fixed inset-0 z-50 flex items-end justify-center sm:items-center',
-				className,
-			)}
-		>
-			{children}
-		</div>
-	</AlertDialogPrimitive.Portal>
-)
-AlertDialogPortal.displayName = AlertDialogPrimitive.Portal.displayName
+}: React.ComponentProps<typeof AlertDialogPrimitive.Close>) {
+	return (
+		<AlertDialogPrimitive.Close data-slot="alert-dialog-close" {...props} />
+	)
+}
 
-export const AlertDialogOverlay = React.forwardRef<
-	React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
-	React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
->(({ className, children, ...props }, ref) => (
-	<AlertDialogPrimitive.Overlay
-		className={cx(
-			'fade-in animate-in fixed inset-0 z-50 bg-black/5 backdrop-blur-sm transition-opacity',
-			className,
-		)}
-		{...props}
-		ref={ref}
-	/>
-))
-AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
+export type AlertDialogPortalProps = AlertDialogPrimitive.Portal.Props
+function AlertDialogPortal({ ...props }: AlertDialogPortalProps) {
+	return (
+		<AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
+	)
+}
 
-export const AlertDialogContent = React.forwardRef<
-	React.ElementRef<typeof AlertDialogPrimitive.Content>,
-	React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
->(({ className, ...props }, ref) => (
-	<AlertDialogPortal>
-		<AlertDialogOverlay />
-		<AlertDialogPrimitive.Content
-			ref={ref}
+export type AlertDialogOverlayProps = AlertDialogPrimitive.Backdrop.Props
+function AlertDialogOverlay({ className, ...props }: AlertDialogOverlayProps) {
+	return (
+		<AlertDialogPrimitive.Backdrop
+			data-slot="alert-dialog-overlay"
 			className={cx(
-				'fade-in-90 slide-in-from-bottom-10 sm:zoom-in-90 sm:slide-in-from-bottom-0 animate-in gap-md bg-popover p-md shadow-outline sm:rounded-container fixed z-50 grid w-full max-w-lg scale-100 opacity-100 md:w-full',
+				'data-ending-style:opacity-0 data-starting-style:opacity-0 fixed inset-0 bg-black/5 backdrop-blur-sm transition-all duration-200 ease-out',
 				className,
 			)}
 			{...props}
 		/>
-	</AlertDialogPortal>
-))
-AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
+	)
+}
 
-export const AlertDialogHeader = ({
+export type AlertDialogContentProps = AlertDialogPrimitive.Popup.Props
+export function AlertDialogContent({
+	className,
+	children,
+	...props
+}: React.ComponentProps<typeof AlertDialogPrimitive.Popup>) {
+	return (
+		<AlertDialogPortal>
+			<AlertDialogOverlay />
+			<AlertDialogPrimitive.Popup
+				data-slot="alert-dialog-content"
+				className={cx(
+					'bg-popover text-popover-foreground z-50 grid w-full sm:max-w-[calc(100%-2rem)]',
+					'fixed bottom-0 w-full sm:bottom-auto sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
+					'gap-md p-md rounded-base shadow-outline shadow-lg outline-none sm:max-w-lg sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
+					'duration-200',
+					'data-[starting-style]:translate-y-full data-[starting-style]:opacity-0',
+					'data-[ending-style]:translate-y-full data-[ending-style]:opacity-0',
+					'data-[starting-style]:sm:translate-y-[-50%] data-[starting-style]:sm:scale-95',
+					'data-[ending-style]:sm:translate-y-[-50%] data-[ending-style]:sm:scale-95',
+					className,
+				)}
+				{...props}
+			>
+				{children}
+			</AlertDialogPrimitive.Popup>
+		</AlertDialogPortal>
+	)
+}
+
+export type AlertDialogHeaderProps = React.ComponentProps<'div'>
+export function AlertDialogHeader({
 	className,
 	...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-	<div
-		className={cx(
-			'flex flex-col space-y-2 text-center sm:text-left',
-			className,
-		)}
-		{...props}
-	/>
-)
-AlertDialogHeader.displayName = 'AlertDialogHeader'
+}: AlertDialogHeaderProps) {
+	return (
+		<div
+			data-slot="alert-dialog-header"
+			className={cx('gap-sm flex flex-col text-center sm:text-left', className)}
+			{...props}
+		/>
+	)
+}
 
-export const AlertDialogFooter = ({
+export type AlertDialogFooterProps = React.ComponentProps<'div'>
+export function AlertDialogFooter({
 	className,
 	...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-	<div
-		className={cx(
-			'sm:space-x-sm flex flex-col-reverse sm:flex-row sm:justify-end',
-			className,
-		)}
-		{...props}
-	/>
-)
-AlertDialogFooter.displayName = 'AlertDialogFooter'
+}: React.HTMLAttributes<HTMLDivElement>) {
+	return (
+		<div
+			data-slot="alert-dialog-footer"
+			className={cx(
+				'flex flex-col-reverse gap-2 sm:flex-row sm:justify-end',
+				className,
+			)}
+			{...props}
+		/>
+	)
+}
 
-export const AlertDialogTitle = React.forwardRef<
-	React.ElementRef<typeof AlertDialogPrimitive.Title>,
-	React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>
->(({ className, ...props }, ref) => (
-	<AlertDialogPrimitive.Title
-		ref={ref}
-		className={cx('text-foreground text-lg font-semibold', className)}
-		{...props}
-	/>
-))
-AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
+export type AlertDialogTitleProps = AlertDialogPrimitive.Title.Props
+export function AlertDialogTitle({
+	className,
+	...props
+}: AlertDialogTitleProps) {
+	return (
+		<AlertDialogPrimitive.Title
+			data-slot="alert-dialog-title"
+			className={cx('text-foreground text-lg font-semibold', className)}
+			{...props}
+		/>
+	)
+}
 
-export const AlertDialogDescription = React.forwardRef<
-	React.ElementRef<typeof AlertDialogPrimitive.Description>,
-	React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
->(({ className, ...props }, ref) => (
-	<AlertDialogPrimitive.Description
-		ref={ref}
-		className={cx('text-foreground-muted text-sm', className)}
-		{...props}
-	/>
-))
-AlertDialogDescription.displayName =
-	AlertDialogPrimitive.Description.displayName
+export type AlertDialogDescriptionProps = AlertDialogPrimitive.Description.Props
+export function AlertDialogDescription({
+	className,
+	...props
+}: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {
+	return (
+		<AlertDialogPrimitive.Description
+			data-slot="alert-dialog-description"
+			className={cx('text-foreground-muted text-sm', className)}
+			{...props}
+		/>
+	)
+}
 
-export const AlertDialogAction = React.forwardRef<
-	React.ElementRef<typeof AlertDialogPrimitive.Action>,
-	React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
->(({ className, ...props }, ref) => (
-	<AlertDialogPrimitive.Action
-		ref={ref}
-		className={cx(
-			'rounded-container bg-foreground text-background hover:bg-foreground/80 inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
-			className,
-		)}
-		{...props}
-	/>
-))
-AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
+export type AlertDialogActionProps = ButtonProps
+export function AlertDialogAction({
+	className,
+	...props
+}: AlertDialogActionProps) {
+	return (
+		<AlertDialogPrimitive.Close
+			render={<Button variant="default" {...props} />}
+		/>
+	)
+}
 
-export const AlertDialogCancel = React.forwardRef<
-	React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
-	React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
->(({ className, ...props }, ref) => (
-	<AlertDialogPrimitive.Cancel
-		ref={ref}
-		className={cx(
-			'mr-sm rounded-container text-foreground hover:bg-background-muted inline-flex h-10 items-center justify-center border border-gray-200 bg-transparent px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-0 dark:border-gray-700 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900',
-			className,
-		)}
-		{...props}
-	/>
-))
-AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
-
-export type AlertDialogProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialog
->
-export type AlertDialogPortalProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogPortal
->
-export type AlertDialogOverlayProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogOverlay
->
-export type AlertDialogTriggerProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogTrigger
->
-export type AlertDialogContentProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogContent
->
-export type AlertDialogHeaderProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogHeader
->
-export type AlertDialogFooterProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogFooter
->
-export type AlertDialogTitleProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogTitle
->
-export type AlertDialogDescriptionProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogDescription
->
-export type AlertDialogActionProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogAction
->
-export type AlertDialogCancelProps = React.ComponentPropsWithoutRef<
-	typeof AlertDialogCancel
->
+export type AlertDialogCancelProps = ButtonProps
+export function AlertDialogCancel({
+	className,
+	...props
+}: AlertDialogCancelProps) {
+	return (
+		<AlertDialogPrimitive.Close
+			render={<Button variant="secondary" {...props} />}
+		/>
+	)
+}
