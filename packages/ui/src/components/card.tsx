@@ -3,85 +3,59 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const Card = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-	<div
-		ref={ref}
-		className={cx(
-			'mb-md rounded-container bg-background shadow-outline relative flex min-w-0 flex-col break-words border-0',
-			className,
-		)}
-		{...props}
-	/>
-))
-Card.displayName = 'Card'
+export type CardProps = React.ComponentProps<'div'>
+export function Card({ className, ...props }: CardProps) {
+	return (
+		<div
+			className={cx(
+				'mb-md rounded-container bg-background shadow-outline relative flex min-w-0 flex-col break-words border-0',
+				className,
+			)}
+			{...props}
+		/>
+	)
+}
 
-export const CardHeader = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-	<div
-		ref={ref}
-		className={cx(
-			'space-y-sm rounded-t-base border-b-solid p-lg mb-0 flex flex-col border-b-0 border-b-transparent bg-transparent pb-0',
-			className,
-		)}
-		{...props}
-	/>
-))
-CardHeader.displayName = 'CardHeader'
+export type CardHeaderProps = React.ComponentProps<'div'>
+export function CardHeader({ className, ...props }: CardHeaderProps) {
+	return (
+		<div
+			className={cx(
+				'space-y-sm rounded-t-base border-b-solid p-lg mb-0 flex flex-col border-b-0 border-b-transparent bg-transparent pb-0',
+				className,
+			)}
+			{...props}
+		/>
+	)
+}
 
-export const CardTitle = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-	<h3
-		ref={ref}
-		className={cx('text-lg font-semibold leading-none', className)}
-		{...props}
-	>
-		{props.children}
-	</h3>
-))
-CardTitle.displayName = 'CardTitle'
+export type CardTitleProps = React.ComponentProps<'h3'>
+export function CardTitle({ className, ...props }: CardTitleProps) {
+	return (
+		<h3
+			className={cx('text-lg font-semibold leading-none', className)}
+			{...props}
+		>
+			{props.children}
+		</h3>
+	)
+}
 
-export const CardDescription = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-	<p
-		ref={ref}
-		className={cx('text-foreground-muted text-sm', className)}
-		{...props}
-	/>
-))
-CardDescription.displayName = 'CardDescription'
+export type CardDescriptionProps = React.ComponentProps<'h3'>
+export function CardDescription({ className, ...props }: CardDescriptionProps) {
+	return (
+		<p className={cx('text-foreground-muted text-sm', className)} {...props} />
+	)
+}
 
-export const CardContent = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-	<div ref={ref} className={cx('p-lg', className)} {...props} />
-))
-CardContent.displayName = 'CardContent'
+export type CardContentProps = React.ComponentProps<'div'>
+export function CardContent({ className, ...props }: CardContentProps) {
+	return <div className={cx('p-lg', className)} {...props} />
+}
 
-export const CardFooter = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-	<div
-		ref={ref}
-		className={cx('p-lg flex items-center pt-0', className)}
-		{...props}
-	/>
-))
-CardFooter.displayName = 'CardFooter'
-
-export type CardProps = React.ComponentProps<typeof Card>
-export type CardHeaderProps = React.ComponentProps<typeof CardHeader>
-export type CardTitleProps = React.ComponentProps<typeof CardTitle>
-export type CardDescriptionProps = React.ComponentProps<typeof CardDescription>
-export type CardContentProps = React.ComponentProps<typeof CardContent>
-export type CardFooterProps = React.ComponentProps<typeof CardFooter>
+export type CardFooterProps = React.ComponentProps<'div'>
+export function CardFooter({ className, ...props }: CardFooterProps) {
+	return (
+		<div className={cx('p-lg flex items-center pt-0', className)} {...props} />
+	)
+}
