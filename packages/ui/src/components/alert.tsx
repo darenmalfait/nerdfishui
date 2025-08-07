@@ -9,7 +9,6 @@ import {
 	XCircleIcon,
 } from 'lucide-react'
 import * as React from 'react'
-import { deprecateProp } from '../deprecate'
 
 const DEFAULT_VARIANT = 'default'
 
@@ -80,25 +79,15 @@ function AlertIcon({ variant, hideIcon }: AlertIconProps) {
 export interface AlertProps extends Omit<React.ComponentProps<'div'>, 'title'> {
 	variant?: VariantProps<typeof alertVariants>['variant']
 	hideIcon?: boolean
-	title?: React.ReactNode
-	description?: string
 }
 
 export function Alert({
 	className,
 	variant,
 	hideIcon,
-	title,
-	description,
 	children,
 	...props
 }: AlertProps) {
-	deprecateProp(
-		description,
-		'Alert: description is deprecated, use <AlertDescription /> instead',
-	)
-	deprecateProp(title, 'Alert: title is deprecated, use <AlertTitle /> instead')
-
 	return (
 		<div
 			{...props}
@@ -112,8 +101,6 @@ export function Alert({
 		>
 			<AlertIcon variant={variant} hideIcon={hideIcon} />
 			{children}
-			{title ? <AlertTitle>{title}</AlertTitle> : null}
-			{description ? <AlertDescription>{description}</AlertDescription> : null}
 		</div>
 	)
 }
