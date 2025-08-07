@@ -1,55 +1,59 @@
 'use client'
 
+import { Avatar as AvatarPrimitive } from '@base-ui-components/react/avatar'
 import { cx } from '@nerdfish/utils'
-import * as AvatarPrimitive from '@radix-ui/react-avatar'
-import * as React from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
 
-export const Avatar = React.forwardRef<
-	React.ElementRef<typeof AvatarPrimitive.Root>,
-	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
->(({ className, ...props }, ref) => (
-	<AvatarPrimitive.Root
-		ref={ref}
-		className={cx(
-			'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
-			className,
-		)}
-		{...props}
-	/>
-))
-Avatar.displayName = AvatarPrimitive.Root.displayName
+export const avatarVariants = cva(
+	'relative flex shrink-0 overflow-hidden rounded-full',
+	{
+		variants: {
+			size: {
+				sm: 'size-8 text-sm',
+				md: 'size-10',
+				lg: 'size-12 text-lg',
+			},
+		},
+		defaultVariants: {
+			size: 'md',
+		},
+	},
+)
 
-export const AvatarImage = React.forwardRef<
-	React.ElementRef<typeof AvatarPrimitive.Image>,
-	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
-	<AvatarPrimitive.Image
-		ref={ref}
-		className={cx('aspect-square h-full w-full', className)}
-		{...props}
-	/>
-))
-AvatarImage.displayName = AvatarPrimitive.Image.displayName
+export interface AvatarProps
+	extends AvatarPrimitive.Root.Props,
+		VariantProps<typeof avatarVariants> {}
+export function Avatar({ className, size, ...props }: AvatarProps) {
+	return (
+		<AvatarPrimitive.Root
+			data-slot="avatar"
+			className={cx(avatarVariants({ size }), className)}
+			{...props}
+		/>
+	)
+}
 
-export const AvatarFallback = React.forwardRef<
-	React.ElementRef<typeof AvatarPrimitive.Fallback>,
-	React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
->(({ className, ...props }, ref) => (
-	<AvatarPrimitive.Fallback
-		ref={ref}
-		className={cx(
-			'bg-background-muted flex h-full w-full items-center justify-center rounded-full',
-			className,
-		)}
-		{...props}
-	/>
-))
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
+export type AvatarImageProps = AvatarPrimitive.Image.Props
+export function AvatarImage({ className, ...props }: AvatarImageProps) {
+	return (
+		<AvatarPrimitive.Image
+			data-slot="avatar-image"
+			className={cx('size-full object-cover', className)}
+			{...props}
+		/>
+	)
+}
 
-export type AvatarProps = React.ComponentPropsWithoutRef<typeof Avatar>
-export type AvatarImageProps = React.ComponentPropsWithoutRef<
-	typeof AvatarImage
->
-export type AvatarFallbackProps = React.ComponentPropsWithoutRef<
-	typeof AvatarFallback
->
+export type AvatarFallbackProps = AvatarPrimitive.Fallback.Props
+export function AvatarFallback({ className, ...props }: AvatarFallbackProps) {
+	return (
+		<AvatarPrimitive.Fallback
+			data-slot="avatar-fallback"
+			className={cx(
+				'bg-muted flex size-full select-none items-center justify-center rounded-full',
+				className,
+			)}
+			{...props}
+		/>
+	)
+}
