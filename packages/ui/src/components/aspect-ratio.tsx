@@ -1,7 +1,28 @@
-'use client'
+import { cx } from '@nerdfish/utils'
+import * as React from 'react'
 
-import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio'
+export interface AspectRatioProps extends React.ComponentProps<'div'> {
+	ratio?: number
+}
 
-export const AspectRatio = AspectRatioPrimitive.Root
-
-export type AspectRatioProps = AspectRatioPrimitive.AspectRatioProps
+export function AspectRatio({
+	children,
+	className,
+	ratio = 1,
+	style,
+	...props
+}: AspectRatioProps) {
+	return (
+		<div
+			data-slot="aspect-ratio"
+			style={{
+				...style,
+				paddingBottom: `${(1 / ratio) * 100}%`,
+			}}
+			className={cx('relative w-full', className)}
+			{...props}
+		>
+			<div className="absolute inset-0 size-full">{children}</div>
+		</div>
+	)
+}

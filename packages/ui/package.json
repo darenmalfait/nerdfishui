@@ -30,7 +30,6 @@
   "dependencies": {
     "@base-ui-components/react": "1.0.0-beta.2",
     "@nerdfish/utils": "workspace:*",
-    "@radix-ui/react-aspect-ratio": "^1.1.7",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-collapsible": "^1.1.11",
     "@radix-ui/react-context-menu": "^2.2.15",

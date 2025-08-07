@@ -10,7 +10,6 @@ import {
 	NavigationListTitle,
 	Paragraph,
 	ScrollArea,
-	ScrollBar,
 	Tabs,
 	TabsContent,
 	TabsList,
@@ -195,7 +194,6 @@ function AppDemo() {
 														/>
 													))}
 												</div>
-												<ScrollBar orientation="horizontal" />
 											</ScrollArea>
 										</div>
 									</TabsContent>

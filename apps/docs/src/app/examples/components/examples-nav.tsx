@@ -1,6 +1,6 @@
 'use client'
 
-import { ScrollArea, ScrollBar } from '@nerdfish/ui'
+import { ScrollArea } from '@nerdfish/ui'
 import { cx } from '@nerdfish/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -51,7 +51,6 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
 						</Link>
 					))}
 				</div>
-				<ScrollBar orientation="horizontal" className="invisible" />
 			</ScrollArea>
 		</div>
 	)
