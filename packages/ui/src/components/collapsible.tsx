@@ -1,17 +1,33 @@
 'use client'
-import * as CollapsiblePrimitive from '@radix-ui/react-collapsible'
-import type * as React from 'react'
 
-export const Collapsible = CollapsiblePrimitive.Root
-export const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
-export const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
+import { Collapsible as CollapsiblePrimitive } from '@base-ui-components/react/collapsible'
+import { cx } from '@nerdfish/utils'
 
-export type CollapsibleProps = React.ComponentPropsWithoutRef<
-	typeof Collapsible
->
-export type CollapsibleTriggerProps = React.ComponentPropsWithoutRef<
-	typeof CollapsibleTrigger
->
-export type CollapsibleContentProps = React.ComponentPropsWithoutRef<
-	typeof CollapsibleContent
->
+export type CollapsibleProps = CollapsiblePrimitive.Root.Props
+export function Collapsible({ ...props }: CollapsibleProps) {
+	return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />
+}
+
+export type CollapsibleTriggerProps = CollapsiblePrimitive.Trigger.Props
+export function CollapsibleTrigger({ ...props }: CollapsibleTriggerProps) {
+	return (
+		<CollapsiblePrimitive.Trigger data-slot="collapsible-trigger" {...props} />
+	)
+}
+
+export type CollapsibleContentProps = CollapsiblePrimitive.Panel.Props
+export function CollapsibleContent({
+	className,
+	...props
+}: CollapsibleContentProps) {
+	return (
+		<CollapsiblePrimitive.Panel
+			data-slot="collapsible-content"
+			className={cx(
+				'data-ending-style:h-0 data-starting-style:h-0 h-[var(--collapsible-panel-height)] overflow-hidden text-sm transition-all duration-200',
+				className,
+			)}
+			{...props}
+		/>
+	)
+}

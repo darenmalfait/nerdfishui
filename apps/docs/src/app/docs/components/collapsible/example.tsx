@@ -20,12 +20,14 @@ export function CollapsibleExample() {
 		>
 			<div className="space-x-md flex items-center justify-between px-4">
 				<h4 className="text-sm font-semibold">@darenmalfait</h4>
-				<CollapsibleTrigger asChild>
-					<Button variant="ghost" className="flex w-9 justify-center p-0">
-						<ChevronsUpDown className="size-4" />
-						<span className="sr-only">Toggle</span>
-					</Button>
-				</CollapsibleTrigger>
+				<CollapsibleTrigger
+					render={
+						<Button variant="ghost" className="flex w-9 justify-center p-0">
+							<ChevronsUpDown className="size-4" />
+							<span className="sr-only">Toggle</span>
+						</Button>
+					}
+				/>
 			</div>
 			<div className="rounded-container border border-gray-200 px-4 py-3 font-mono text-sm dark:border-gray-700">
 				Omnis cum inventore harum exercitationem illum.
