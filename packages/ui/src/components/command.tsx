@@ -1,11 +1,10 @@
 'use client'
 
 import { cx } from '@nerdfish/utils'
-import { type DialogProps } from '@radix-ui/react-dialog'
 import { Command as CommandPrimitive } from 'cmdk'
 import * as React from 'react'
 
-import { Dialog, DialogContent } from './dialog'
+import { Dialog, DialogContent, type DialogProps } from './dialog'
 import { type InputAddOns, inputVariants } from './input'
 
 const innerRadius = 'rounded-[calc(theme(borderRadius.base)-theme(padding.sm))]'
