@@ -34,7 +34,7 @@ export const buttonVariants = cva(
 			},
 			icon: {
 				false: null,
-				true: 'aspect-1 p-0 items-center justify-center',
+				true: 'aspect-1 !p-0 items-center justify-center',
 			},
 		},
 		compoundVariants: [

@@ -17,9 +17,7 @@ import {
 export function SheetExample() {
 	return (
 		<Sheet>
-			<SheetTrigger asChild>
-				<Button variant="outline">Open</Button>
-			</SheetTrigger>
+			<SheetTrigger render={<Button variant="outline">Open</Button>} />
 			<SheetContent>
 				<SheetHeader>
 					<SheetTitle>Edit profile</SheetTitle>
@@ -42,9 +40,7 @@ export function SheetExample() {
 					</div>
 				</div>
 				<SheetFooter>
-					<SheetClose asChild>
-						<Button type="submit">Save changes</Button>
-					</SheetClose>
+					<SheetClose render={<Button type="submit">Save changes</Button>} />
 				</SheetFooter>
 			</SheetContent>
 		</Sheet>
