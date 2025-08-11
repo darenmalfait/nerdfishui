@@ -2,23 +2,16 @@
 
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
-import {
-	type HTMLAttributes,
-	type ReactNode,
-	createContext,
-	forwardRef,
-	useContext,
-} from 'react'
 import { type Options } from 'timescape'
 import { type DateType, useTimescape } from 'timescape/react'
 import { useControllableState } from '../hooks'
 import { InputIcon, type InputProps, inputVariants } from './input'
 
 type DateTimeContextValue = ReturnType<typeof useTimescape>
-const DateTimeContext = createContext<DateTimeContextValue | null>(null)
+const DateTimeContext = React.createContext<DateTimeContextValue | null>(null)
 
 const useTimepickerContext = (): DateTimeContextValue => {
-	const context = useContext(DateTimeContext)
+	const context = React.useContext(DateTimeContext)
 	if (!context) {
 		throw new Error(
 			'Unable to access DateTimeContext. This component should be wrapped by a DateTime component',
@@ -41,13 +34,18 @@ export const DATE_TIME_SEGMENT_PLACEHOLDER: {
 	years: '----',
 }
 
-export const DateTimeSegment = forwardRef<
-	React.ElementRef<'input'>,
-	Omit<HTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> & {
-		segment: DateType
-		inputClassName?: string
-	}
->(({ segment, inputClassName, className, ...props }, ref) => {
+export interface DateTimeSegmentProps
+	extends Omit<React.ComponentProps<'input'>, 'value' | 'onChange'> {
+	segment: DateType
+	inputClassName?: string
+}
+export function DateTimeSegment({
+	segment,
+	inputClassName,
+	className,
+	ref,
+	...props
+}: DateTimeSegmentProps) {
 	const { getInputProps } = useTimepickerContext()
 	const { ref: timePickerInputRef } = getInputProps(segment)
 
@@ -79,20 +77,15 @@ export const DateTimeSegment = forwardRef<
 			/>
 		</div>
 	)
-})
-DateTimeSegment.displayName = 'DateTimeSegment'
+}
 
-export type DateTimeSegmentProps = React.ComponentPropsWithoutRef<
-	typeof DateTimeSegment
->
-
-export const DateTimeSeparator = forwardRef<
-	React.ElementRef<'span'>,
-	HTMLAttributes<HTMLSpanElement>
->(({ className, ...props }, ref) => {
+export type DateTimeSeparatorProps = React.ComponentProps<'span'>
+export function DateTimeSeparator({
+	className,
+	...props
+}: DateTimeSeparatorProps) {
 	return (
 		<span
-			ref={ref}
 			{...props}
 			className={cx(
 				'text-foreground-muted align-middle tabular-nums',
@@ -100,93 +93,75 @@ export const DateTimeSeparator = forwardRef<
 			)}
 		/>
 	)
-})
-DateTimeSeparator.displayName = 'DateTimeSeparator'
+}
 
-export type DateTimeSeparatorProps = React.ComponentPropsWithoutRef<
-	typeof DateTimeSeparator
->
-
-const DEFAULT_OPTIONS: Options = {
+export const DEFAULT_DATETIMEFIELD_OPTIONS: Options = {
 	hour12: false,
 	digits: '2-digit',
 }
 
-export const DateTimeField = forwardRef<
-	React.ElementRef<'div'>,
-	Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue' | 'onChange'> &
-		Omit<InputProps, 'value' | 'onChange' | 'defaultValue'> & {
-			value?: Date
-			defaultValue?: Date
-			onChange?: (date?: Date) => void
-			children?: ReactNode
-			options?: Omit<Options, 'date' | 'onChangeDate'>
+export interface DateTimeFieldProps
+	extends Omit<InputProps, 'value' | 'onChange' | 'defaultValue'> {
+	value?: Date
+	defaultValue?: Date
+	onChange?: (date?: Date) => void
+	children?: React.ReactNode
+	options?: Omit<Options, 'date' | 'onChangeDate'>
+}
+export function DateTimeField({
+	value: valueProp,
+	onChange: onChangeProp,
+	defaultValue,
+	options,
+	className,
+	inputSize,
+	variant,
+	children,
+	addOnLeading,
+	addOnTrailing,
+	icon,
+	...props
+}: DateTimeFieldProps) {
+	const [value, setValue] = useControllableState<Date | undefined>(
+		valueProp,
+		defaultValue,
+		onChangeProp,
+	)
+
+	const timePickerContext = useTimescape({
+		...DEFAULT_DATETIMEFIELD_OPTIONS,
+		date: value,
+		onChangeDate: setValue,
+		...options,
+	})
+
+	// Keep the date in sync in case it's controlled from somewhere else (ie. DatePicker)
+	React.useEffect(() => {
+		if (value !== timePickerContext.options.date) {
+			timePickerContext.update((state) => ({
+				...state,
+				date: value,
+			}))
 		}
->(
-	(
-		{
-			value: valueProp,
-			onChange: onChangeProp,
-			defaultValue,
-			options,
-			className,
-			inputSize,
-			variant,
-			children,
-			addOnLeading,
-			addOnTrailing,
-			icon,
-			...props
-		},
-		ref,
-	) => {
-		const [value, setValue] = useControllableState<Date | undefined>(
-			valueProp,
-			defaultValue,
-			onChangeProp,
-		)
+	}, [timePickerContext, value])
 
-		const timePickerContext = useTimescape({
-			...DEFAULT_OPTIONS,
-			date: value,
-			onChangeDate: setValue,
-			...options,
-		})
-
-		// Keep the date in sync in case it's controlled from somewhere else (ie. DatePicker)
-		React.useEffect(() => {
-			if (value !== timePickerContext.options.date) {
-				timePickerContext.update((state) => ({
-					...state,
-					date: value,
-				}))
-			}
-		}, [timePickerContext, value])
-
-		return (
-			<DateTimeContext.Provider value={timePickerContext}>
-				<div
-					ref={ref}
-					{...props}
-					className={cx(
-						inputVariants({ inputSize, variant }),
-						'gap-sm flex',
-						className,
-					)}
-				>
-					{addOnLeading}
-					<span className="gap-sm flex flex-1 items-center justify-start">
-						{children}
-					</span>
-					<InputIcon icon={icon} variant={variant} />
-					{addOnTrailing}
-				</div>
-			</DateTimeContext.Provider>
-		)
-	},
-)
-DateTimeField.displayName = 'DateTimeField'
-
-export type DateTimeFieldProps = React.ComponentPropsWithoutRef<
-	typeof DateTimeField
->
+	return (
+		<DateTimeContext value={timePickerContext}>
+			<div
+				{...props}
+				className={cx(
+					inputVariants({ inputSize, variant }),
+					'gap-sm flex',
+					className,
+				)}
+			>
+				{addOnLeading}
+				<span className="gap-sm flex flex-1 items-center justify-start">
+					{children}
+				</span>
+				<InputIcon icon={icon} variant={variant} />
+				{addOnTrailing}
+			</div>
+		</DateTimeContext>
+	)
+}
