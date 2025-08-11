@@ -48,7 +48,14 @@ export async function getConfig(options: Options): Promise<RollupOptions> {
 	]
 
 	const external = deps.length ? new RegExp(`^(${deps.join('|')})`) : undefined
-	const entries = await glob('src/**/*.{ts,tsx}')
+	const entryFiles = await glob('src/**/*.{ts,tsx}')
+	
+	// Create input object mapping output names to source files
+	const input: Record<string, string> = {}
+	for (const file of entryFiles) {
+		const outputName = file.replace(/^src\//, '').replace(/\.(ts|tsx)$/, '')
+		input[outputName] = resolve(dir, file)
+	}
 
 	const outputs: RollupOptions['output'] = [
 		{
@@ -71,7 +78,7 @@ export async function getConfig(options: Options): Promise<RollupOptions> {
 	}
 
 	return {
-		input: entries,
+		input,
 		onLog(level, log, handler) {
 			if (log.code === 'EMPTY_BUNDLE') return
 			return handler(level, log)

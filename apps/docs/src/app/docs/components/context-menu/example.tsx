@@ -2,6 +2,7 @@ import {
 	ContextMenu,
 	ContextMenuCheckboxItem,
 	ContextMenuContent,
+	ContextMenuGroup,
 	ContextMenuItem,
 	ContextMenuLabel,
 	ContextMenuRadioGroup,
@@ -53,14 +54,18 @@ export function ContextMenuExample() {
 				</ContextMenuCheckboxItem>
 				<ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
 				<ContextMenuSeparator />
-				<ContextMenuRadioGroup value="nerdfish">
-					<ContextMenuLabel inset>Companies</ContextMenuLabel>
-					<ContextMenuSeparator />
-					<ContextMenuRadioItem value="nerdfish">Nerdfish</ContextMenuRadioItem>
-					<ContextMenuRadioItem value="nerdturtle">
-						Nerdturtle
-					</ContextMenuRadioItem>
-				</ContextMenuRadioGroup>
+				<ContextMenuGroup>
+					<ContextMenuRadioGroup value="nerdfish">
+						<ContextMenuLabel inset>Companies</ContextMenuLabel>
+						<ContextMenuSeparator />
+						<ContextMenuRadioItem value="nerdfish">
+							Nerdfish
+						</ContextMenuRadioItem>
+						<ContextMenuRadioItem value="nerdturtle">
+							Nerdturtle
+						</ContextMenuRadioItem>
+					</ContextMenuRadioGroup>
+				</ContextMenuGroup>
 			</ContextMenuContent>
 		</ContextMenu>
 	)

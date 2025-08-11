@@ -752,7 +752,6 @@
 ### Patch Changes
 
 - `Multi-Email` improvements:
-
   - Added `onBlur` event to `MultiEmail` component
   - Added emails are now editable by clicking on them
   - `Backspace` key now edits the last email in the list, instead of deleting it

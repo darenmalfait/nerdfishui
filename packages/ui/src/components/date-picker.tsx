@@ -4,12 +4,16 @@ import { cx } from '@nerdfish/utils'
 import { addDays, format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import * as React from 'react'
-import { type DateRange, type SelectRangeEventHandler } from 'react-day-picker'
-
+import { type DateRange, type OnSelectHandler } from 'react-day-picker'
 import { Badge } from './badge'
 import { Button, buttonVariants } from './button'
 import { Calendar, type CalendarProps } from './calendar'
-import { Popover, PopoverContent, PopoverTrigger } from './popover'
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+	type PopoverTriggerProps,
+} from './popover'
 
 export type DatepickerPreset = { value: string; label: string }
 export type { DateRange }
@@ -45,20 +49,23 @@ function Presets({
 	)
 }
 
-const DatePickerTrigger = React.forwardRef<
-	React.ElementRef<typeof PopoverTrigger>,
-	React.ComponentPropsWithoutRef<typeof PopoverTrigger> & {
-		selected?: Date
-		placeholder?: string
-	}
->(({ children, selected, className, placeholder, ...props }, ref) => {
+export interface DatePickerTriggerProps extends PopoverTriggerProps {
+	selected?: Date
+	placeholder?: string
+}
+export function DatePickerTrigger({
+	children,
+	selected,
+	className,
+	placeholder,
+	...props
+}: DatePickerTriggerProps) {
 	// eslint-disable-next-line react/jsx-no-useless-fragment
 	if (children) return <PopoverTrigger render={<>{children}</>} />
 
 	return (
 		<PopoverTrigger
 			{...props}
-			ref={ref}
 			className={cx(
 				buttonVariants({ variant: 'outline' }),
 				'w-[280px] justify-start text-left font-normal',
@@ -70,9 +77,16 @@ const DatePickerTrigger = React.forwardRef<
 			<span>{selected ? format(selected, 'PPP') : placeholder}</span>
 		</PopoverTrigger>
 	)
-})
-DatePickerTrigger.displayName = 'DatePickerTrigger'
+}
 
+export type DatePickerProps = CalendarProps & {
+	className?: string
+	selected?: Date
+	onSelect?: (value: Date | undefined) => void
+	presets?: DatepickerPreset[]
+	placeholder?: string
+	children?: React.ReactNode
+}
 export function DatePicker({
 	className,
 	selected,
@@ -80,17 +94,10 @@ export function DatePicker({
 	presets,
 	placeholder = 'Pick a date',
 	children,
-	fromYear,
-	toYear,
+	startMonth,
+	endMonth,
 	...props
-}: CalendarProps & {
-	className?: string
-	selected?: Date
-	onSelect?: (value: Date | undefined) => void
-	presets?: DatepickerPreset[]
-	placeholder?: string
-	children?: React.ReactNode
-}) {
+}: DatePickerProps) {
 	return (
 		<Popover>
 			<DatePickerTrigger
@@ -104,11 +111,11 @@ export function DatePicker({
 				<Calendar
 					{...props}
 					mode="single"
-					initialFocus
+					autoFocus
 					defaultMonth={selected}
 					selected={selected}
-					fromYear={fromYear}
-					toYear={toYear}
+					startMonth={startMonth}
+					endMonth={endMonth}
 					onSelect={onSelect}
 				/>
 				<Presets presets={presets} className="py-md" onChange={onSelect} />
@@ -117,17 +124,18 @@ export function DatePicker({
 	)
 }
 
+export interface DateRangePickerTriggerProps {
+	children?: React.ReactNode
+	className?: string
+	selected?: DateRange
+	placeholder?: string
+}
 export function DateRangePickerTrigger({
 	children,
 	selected,
 	className,
 	placeholder,
-}: {
-	children?: React.ReactNode
-	className?: string
-	selected?: DateRange
-	placeholder?: string
-}) {
+}: DateRangePickerTriggerProps) {
 	if (children) return children
 
 	return (
@@ -159,21 +167,22 @@ export function DateRangePickerTrigger({
 	)
 }
 
+export type DateRangePickerProps = CalendarProps & {
+	selected?: DateRange
+	children?: React.ReactNode
+	placeholder?: string
+	onSelect?: OnSelectHandler<DateRange | undefined>
+}
 export function DateRangePicker({
 	className,
 	selected,
 	onSelect,
 	children,
-	fromYear,
-	toYear,
+	startMonth,
+	endMonth,
 	placeholder,
 	...props
-}: CalendarProps & {
-	selected?: DateRange
-	onSelect?: SelectRangeEventHandler
-	children?: React.ReactNode
-	placeholder?: string
-}) {
+}: DateRangePickerProps) {
 	return (
 		<div className={cx('gap-sm grid', className)}>
 			<Popover>
@@ -189,22 +198,17 @@ export function DateRangePicker({
 				<PopoverContent className="w-auto p-0" align="start">
 					<Calendar
 						{...props}
-						initialFocus
+						autoFocus
 						mode="range"
 						defaultMonth={selected?.from}
 						selected={selected}
 						onSelect={onSelect}
 						numberOfMonths={2}
-						fromYear={fromYear}
-						toYear={toYear}
+						startMonth={startMonth}
+						endMonth={endMonth}
 					/>
 				</PopoverContent>
 			</Popover>
 		</div>
 	)
 }
-
-export type DatepickerProps = React.ComponentPropsWithoutRef<typeof DatePicker>
-export type DateRangePickerProps = React.ComponentPropsWithoutRef<
-	typeof DateRangePicker
->

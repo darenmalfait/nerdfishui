@@ -111,7 +111,7 @@ export function NavigationListItem<T>({
 		<Link
 			className={cx(
 				navigationListItemVariants({
-					variant: variant ? variant : active ? 'default' : 'ghost',
+					variant: variant ?? (active ? 'default' : 'ghost'),
 					size,
 				}),
 				'justify-start',

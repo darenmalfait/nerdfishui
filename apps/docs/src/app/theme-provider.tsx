@@ -9,7 +9,7 @@ const isServer = typeof window === 'undefined'
 const storageKey = 'theme'
 
 function getSystemTheme(e?: MediaQueryList | MediaQueryListEvent) {
-	if (!e) e = window.matchMedia(MEDIA)
+	e ??= window.matchMedia(MEDIA)
 	const isDark = e.matches
 	const systemTheme = isDark ? 'dark' : 'light'
 	return systemTheme
