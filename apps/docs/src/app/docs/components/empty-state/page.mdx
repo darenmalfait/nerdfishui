@@ -28,9 +28,7 @@ import { TriangleAlertIcon } from 'lucide-react'
 
 ```tsx
 <EmptyState>
-	<EmptyStateIcon>
-		<TriangleAlertIcon />
-	</EmptyStateIcon>
+	<EmptyStateIcon render={<TriangleAlertIcon />} />
 	<EmptyStateTitle>No data</EmptyStateTitle>
 	<EmptyStateDescription>No data to display</EmptyStateDescription>
 	<EmptyStateActions>

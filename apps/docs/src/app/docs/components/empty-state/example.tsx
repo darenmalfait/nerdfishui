@@ -13,9 +13,10 @@ import { TriangleAlertIcon } from 'lucide-react'
 export function EmptyStateExample() {
 	return (
 		<EmptyState>
-			<EmptyStateIcon>
-				<TriangleAlertIcon className="!text-foreground-danger" />
-			</EmptyStateIcon>
+			<EmptyStateIcon
+				render={<TriangleAlertIcon className="!text-foreground-danger" />}
+			/>
+
 			<EmptyStateTitle>No data</EmptyStateTitle>
 			<EmptyStateDescription>No data to display</EmptyStateDescription>
 			<EmptyStateActions>
