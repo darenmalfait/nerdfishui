@@ -52,7 +52,7 @@ export function DateTimeSegment({
 	return (
 		<div
 			className={cx(
-				'p-xs text-foreground focus-within:bg-foreground/10 rounded-lg',
+				'p-xs text-foreground focus-within:bg-foreground/10 rounded-base',
 			)}
 		>
 			<input
