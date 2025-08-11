@@ -2,11 +2,15 @@ import { type VariantProps, cx } from '@nerdfish/utils'
 import * as React from 'react'
 import { inputVariants } from './input'
 
-export const Textarea = React.forwardRef<
-	HTMLTextAreaElement,
-	React.ComponentPropsWithoutRef<'textarea'> &
-		VariantProps<typeof inputVariants>
->(({ className, inputSize, variant, ...props }, ref) => {
+export interface TextareaProps
+	extends React.ComponentProps<'textarea'>,
+		VariantProps<typeof inputVariants> {}
+export function TextArea({
+	className,
+	inputSize,
+	variant,
+	...props
+}: TextareaProps) {
 	return (
 		<textarea
 			className={cx(
@@ -14,9 +18,7 @@ export const Textarea = React.forwardRef<
 				'focus:outline-brand relative flex min-h-[80px]',
 				className,
 			)}
-			ref={ref}
 			{...props}
 		/>
 	)
-})
-Textarea.displayName = 'Textarea'
+}
