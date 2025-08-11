@@ -2,7 +2,6 @@ import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
 export type DescriptionProps = React.ComponentProps<'p'>
-
 export function Description({ className, ...props }: DescriptionProps) {
 	return (
 		<p
@@ -14,7 +13,6 @@ export function Description({ className, ...props }: DescriptionProps) {
 }
 
 export type ErrorDescriptionProps = React.ComponentProps<'p'>
-
 export function ErrorDescription({ className, ...props }: DescriptionProps) {
 	return (
 		<p
