@@ -2,10 +2,8 @@
 
 import { Separator as SeparatorPrimitive } from '@base-ui-components/react'
 import { cx } from '@nerdfish/utils'
-import * as React from 'react'
 
-export type SeparatorProps = React.ComponentProps<typeof SeparatorPrimitive>
-
+export type SeparatorProps = SeparatorPrimitive.Props
 export function Separator({
 	className,
 	orientation = 'horizontal',
