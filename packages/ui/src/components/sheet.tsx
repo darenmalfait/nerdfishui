@@ -1,35 +1,35 @@
 'use client'
 
-import { Dialog as BaseSheet } from '@base-ui-components/react/dialog'
+import { Dialog as SheetPrimitive } from '@base-ui-components/react/dialog'
 import { cva, cx, type VariantProps } from '@nerdfish/utils'
 import { XIcon } from 'lucide-react'
 import * as React from 'react'
 import { Button } from './button'
 
-export type SheetProps = BaseSheet.Root.Props
+export type SheetProps = SheetPrimitive.Root.Props
 export function Sheet({ ...props }: SheetProps) {
-	return <BaseSheet.Root data-slot="sheet" {...props} />
+	return <SheetPrimitive.Root data-slot="sheet" {...props} />
 }
 
-export type SheetTriggerProps = BaseSheet.Trigger.Props
+export type SheetTriggerProps = SheetPrimitive.Trigger.Props
 export function SheetTrigger({ ...props }: SheetTriggerProps) {
-	return <BaseSheet.Trigger data-slot="sheet-trigger" {...props} />
+	return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />
 }
 
-export type SheetCloseProps = BaseSheet.Close.Props
+export type SheetCloseProps = SheetPrimitive.Close.Props
 export function SheetClose({ ...props }: SheetCloseProps) {
-	return <BaseSheet.Close data-slot="sheet-close" {...props} />
+	return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
 }
 
-export type SheetPortalProps = BaseSheet.Portal.Props
+export type SheetPortalProps = SheetPrimitive.Portal.Props
 export function SheetPortal({ ...props }: SheetPortalProps) {
-	return <BaseSheet.Portal data-slot="sheet-portal" {...props} />
+	return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
 }
 
-export type SheetOverlayProps = BaseSheet.Backdrop.Props
+export type SheetOverlayProps = SheetPrimitive.Backdrop.Props
 export function SheetOverlay({ className, ...props }: SheetOverlayProps) {
 	return (
-		<BaseSheet.Backdrop
+		<SheetPrimitive.Backdrop
 			data-slot="sheet-overlay"
 			className={cx(
 				'fixed inset-0 bg-black/50 transition-all duration-200 [&[data-ending-style]]:opacity-0 [&[data-starting-style]]:opacity-0',
@@ -60,7 +60,7 @@ export const sheetVariants = cva(
 )
 
 export interface SheetContentProps
-	extends BaseSheet.Popup.Props,
+	extends SheetPrimitive.Popup.Props,
 		VariantProps<typeof sheetVariants> {}
 export function SheetContent({
 	className,
@@ -71,7 +71,7 @@ export function SheetContent({
 	return (
 		<SheetPortal>
 			<SheetOverlay />
-			<BaseSheet.Popup
+			<SheetPrimitive.Popup
 				data-slot="sheet-content"
 				className={cx(sheetVariants({ side }), className)}
 				{...props}
@@ -87,7 +87,7 @@ export function SheetContent({
 						}
 					/>
 				</div>
-			</BaseSheet.Popup>
+			</SheetPrimitive.Popup>
 		</SheetPortal>
 	)
 }
@@ -103,10 +103,10 @@ export function SheetHeader({ className, ...props }: SheetHeaderProps) {
 	)
 }
 
-export type SheetTitleProps = BaseSheet.Title.Props
+export type SheetTitleProps = SheetPrimitive.Title.Props
 export function SheetTitle({ className, ...props }: SheetTitleProps) {
 	return (
-		<BaseSheet.Title
+		<SheetPrimitive.Title
 			data-slot="sheet-title"
 			className={cx('text-foreground font-semibold', className)}
 			{...props}
@@ -114,13 +114,13 @@ export function SheetTitle({ className, ...props }: SheetTitleProps) {
 	)
 }
 
-export type SheetDescriptionProps = BaseSheet.Description.Props
+export type SheetDescriptionProps = SheetPrimitive.Description.Props
 export function SheetDescription({
 	className,
 	...props
 }: SheetDescriptionProps) {
 	return (
-		<BaseSheet.Description
+		<SheetPrimitive.Description
 			data-slot="sheet-description"
 			className={cx('text-foreground-muted text-sm', className)}
 			{...props}
