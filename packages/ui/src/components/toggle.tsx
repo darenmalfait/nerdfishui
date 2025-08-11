@@ -2,6 +2,7 @@
 
 import { Toggle as TogglePrimitive } from '@base-ui-components/react/toggle'
 import { type VariantProps, cva, cx } from '@nerdfish/utils'
+import * as React from 'react'
 
 export const toggleVariants = cva(
 	'focus-outline group relative inline-flex items-center justify-center rounded-lg font-medium text-foreground text-sm transition-colors hover:bg-foreground/10 disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-background-muted',
@@ -25,7 +26,7 @@ export const toggleVariants = cva(
 )
 
 export interface ToggleProps
-	extends TogglePrimitive.Props,
+	extends React.ComponentProps<typeof TogglePrimitive>,
 		VariantProps<typeof toggleVariants> {}
 
 export function Toggle({ className, variant, size, ...props }: ToggleProps) {

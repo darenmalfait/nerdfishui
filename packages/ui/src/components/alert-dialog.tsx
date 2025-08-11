@@ -6,35 +6,43 @@ import * as React from 'react'
 import { type ButtonProps } from 'react-day-picker'
 import { Button } from './button'
 
-export type AlertDialogProps = AlertDialogPrimitive.Root.Props
+export type AlertDialogProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Root
+>
 export function AlertDialog({ ...props }: AlertDialogProps) {
 	return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
 }
 
-export type AlertDialogTriggerProps = AlertDialogPrimitive.Trigger.Props
+export type AlertDialogTriggerProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Trigger
+>
 export function AlertDialogTrigger({ ...props }: AlertDialogTriggerProps) {
 	return (
 		<AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
 	)
 }
 
-export type AlertDialogCloseProps = AlertDialogPrimitive.Close.Props
-export function AlertDialogClose({
-	...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Close>) {
+export type AlertDialogCloseProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Close
+>
+export function AlertDialogClose({ ...props }: AlertDialogCloseProps) {
 	return (
 		<AlertDialogPrimitive.Close data-slot="alert-dialog-close" {...props} />
 	)
 }
 
-export type AlertDialogPortalProps = AlertDialogPrimitive.Portal.Props
+export type AlertDialogPortalProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Portal
+>
 function AlertDialogPortal({ ...props }: AlertDialogPortalProps) {
 	return (
 		<AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
 	)
 }
 
-export type AlertDialogOverlayProps = AlertDialogPrimitive.Backdrop.Props
+export type AlertDialogOverlayProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Backdrop
+>
 function AlertDialogOverlay({ className, ...props }: AlertDialogOverlayProps) {
 	return (
 		<AlertDialogPrimitive.Backdrop
@@ -48,7 +56,9 @@ function AlertDialogOverlay({ className, ...props }: AlertDialogOverlayProps) {
 	)
 }
 
-export type AlertDialogContentProps = AlertDialogPrimitive.Popup.Props
+export type AlertDialogContentProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Popup
+>
 export function AlertDialogContent({
 	className,
 	children,
@@ -109,7 +119,9 @@ export function AlertDialogFooter({
 	)
 }
 
-export type AlertDialogTitleProps = AlertDialogPrimitive.Title.Props
+export type AlertDialogTitleProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Title
+>
 export function AlertDialogTitle({
 	className,
 	...props
@@ -123,7 +135,9 @@ export function AlertDialogTitle({
 	)
 }
 
-export type AlertDialogDescriptionProps = AlertDialogPrimitive.Description.Props
+export type AlertDialogDescriptionProps = React.ComponentProps<
+	typeof AlertDialogPrimitive.Description
+>
 export function AlertDialogDescription({
 	className,
 	...props

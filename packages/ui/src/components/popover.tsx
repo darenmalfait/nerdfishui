@@ -17,7 +17,8 @@ export type PopoverCloseProps = React.ComponentProps<
 >
 export const PopoverClose = PopoverPrimitive.Close
 
-export interface PopoverContentProps extends PopoverPrimitive.Popup.Props {
+export interface PopoverContentProps
+	extends React.ComponentProps<typeof PopoverPrimitive.Popup> {
 	align?: PopoverPrimitive.Positioner.Props['align']
 	sideOffset?: PopoverPrimitive.Positioner.Props['sideOffset']
 }

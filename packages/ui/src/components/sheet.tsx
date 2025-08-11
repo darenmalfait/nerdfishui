@@ -6,27 +6,33 @@ import { XIcon } from 'lucide-react'
 import * as React from 'react'
 import { Button } from './button'
 
-export type SheetProps = SheetPrimitive.Root.Props
+export type SheetProps = React.ComponentProps<typeof SheetPrimitive.Root>
 export function Sheet({ ...props }: SheetProps) {
 	return <SheetPrimitive.Root data-slot="sheet" {...props} />
 }
 
-export type SheetTriggerProps = SheetPrimitive.Trigger.Props
+export type SheetTriggerProps = React.ComponentProps<
+	typeof SheetPrimitive.Trigger
+>
 export function SheetTrigger({ ...props }: SheetTriggerProps) {
 	return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />
 }
 
-export type SheetCloseProps = SheetPrimitive.Close.Props
+export type SheetCloseProps = React.ComponentProps<typeof SheetPrimitive.Close>
 export function SheetClose({ ...props }: SheetCloseProps) {
 	return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
 }
 
-export type SheetPortalProps = SheetPrimitive.Portal.Props
+export type SheetPortalProps = React.ComponentProps<
+	typeof SheetPrimitive.Portal
+>
 export function SheetPortal({ ...props }: SheetPortalProps) {
 	return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
 }
 
-export type SheetOverlayProps = SheetPrimitive.Backdrop.Props
+export type SheetOverlayProps = React.ComponentProps<
+	typeof SheetPrimitive.Backdrop
+>
 export function SheetOverlay({ className, ...props }: SheetOverlayProps) {
 	return (
 		<SheetPrimitive.Backdrop
@@ -60,7 +66,7 @@ export const sheetVariants = cva(
 )
 
 export interface SheetContentProps
-	extends SheetPrimitive.Popup.Props,
+	extends React.ComponentProps<typeof SheetPrimitive.Popup>,
 		VariantProps<typeof sheetVariants> {}
 export function SheetContent({
 	className,
@@ -103,7 +109,7 @@ export function SheetHeader({ className, ...props }: SheetHeaderProps) {
 	)
 }
 
-export type SheetTitleProps = SheetPrimitive.Title.Props
+export type SheetTitleProps = React.ComponentProps<typeof SheetPrimitive.Title>
 export function SheetTitle({ className, ...props }: SheetTitleProps) {
 	return (
 		<SheetPrimitive.Title
@@ -114,7 +120,9 @@ export function SheetTitle({ className, ...props }: SheetTitleProps) {
 	)
 }
 
-export type SheetDescriptionProps = SheetPrimitive.Description.Props
+export type SheetDescriptionProps = React.ComponentProps<
+	typeof SheetPrimitive.Description
+>
 export function SheetDescription({
 	className,
 	...props

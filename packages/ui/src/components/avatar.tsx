@@ -3,6 +3,7 @@
 import { Avatar as AvatarPrimitive } from '@base-ui-components/react/avatar'
 import { cx } from '@nerdfish/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
+import * as React from 'react'
 
 export const avatarVariants = cva(
 	'relative flex shrink-0 overflow-hidden rounded-full',
@@ -21,7 +22,7 @@ export const avatarVariants = cva(
 )
 
 export interface AvatarProps
-	extends AvatarPrimitive.Root.Props,
+	extends React.ComponentProps<typeof AvatarPrimitive.Root>,
 		VariantProps<typeof avatarVariants> {}
 export function Avatar({ className, size, ...props }: AvatarProps) {
 	return (
@@ -33,7 +34,9 @@ export function Avatar({ className, size, ...props }: AvatarProps) {
 	)
 }
 
-export type AvatarImageProps = AvatarPrimitive.Image.Props
+export type AvatarImageProps = React.ComponentProps<
+	typeof AvatarPrimitive.Image
+>
 export function AvatarImage({ className, ...props }: AvatarImageProps) {
 	return (
 		<AvatarPrimitive.Image
@@ -44,7 +47,9 @@ export function AvatarImage({ className, ...props }: AvatarImageProps) {
 	)
 }
 
-export type AvatarFallbackProps = AvatarPrimitive.Fallback.Props
+export type AvatarFallbackProps = React.ComponentProps<
+	typeof AvatarPrimitive.Fallback
+>
 export function AvatarFallback({ className, ...props }: AvatarFallbackProps) {
 	return (
 		<AvatarPrimitive.Fallback

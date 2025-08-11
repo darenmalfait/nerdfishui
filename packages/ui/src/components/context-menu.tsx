@@ -9,26 +9,34 @@ const basePadding = 'p-sm'
 const outerRadius = 'rounded-base'
 const innerRadius = 'rounded-[calc(theme(borderRadius.base)-theme(padding.sm))]'
 
-export type ContextMenuProps = ContextMenuPrimitive.Root.Props
+export type ContextMenuProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.Root
+>
 export function ContextMenu({ ...props }: ContextMenuProps) {
 	return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />
 }
 
-export type ContextMenuTriggerProps = ContextMenuPrimitive.Trigger.Props
+export type ContextMenuTriggerProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.Trigger
+>
 export function ContextMenuTrigger({ ...props }: ContextMenuTriggerProps) {
 	return (
 		<ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />
 	)
 }
 
-export type ContextMenuGroupProps = ContextMenuPrimitive.Group.Props
+export type ContextMenuGroupProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.Group
+>
 export function ContextMenuGroup({ ...props }: ContextMenuGroupProps) {
 	return (
 		<ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />
 	)
 }
 
-export type ContextMenuPortalProps = ContextMenuPrimitive.Portal.Props
+export type ContextMenuPortalProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.Portal
+>
 export function ContextMenuPortal({
 	...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Portal>) {
@@ -37,7 +45,9 @@ export function ContextMenuPortal({
 	)
 }
 
-export type ContextMenuPositionerProps = ContextMenuPrimitive.Positioner.Props
+export type ContextMenuPositionerProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.Positioner
+>
 export function ContextMenuPositioner({
 	...props
 }: ContextMenuPositionerProps) {
@@ -49,7 +59,9 @@ export function ContextMenuPositioner({
 	)
 }
 
-export type ContextMenuRadioGroupProps = ContextMenuPrimitive.RadioGroup.Props
+export type ContextMenuRadioGroupProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.RadioGroup
+>
 export function ContextMenuRadioGroup({
 	...props
 }: ContextMenuRadioGroupProps) {
@@ -62,7 +74,7 @@ export function ContextMenuRadioGroup({
 }
 
 export interface ContextMenuContentProps
-	extends ContextMenuPrimitive.Popup.Props {
+	extends React.ComponentProps<typeof ContextMenuPrimitive.Popup> {
 	align?: ContextMenuPrimitive.Positioner.Props['align']
 	sideOffset?: ContextMenuPrimitive.Positioner.Props['sideOffset']
 }
@@ -94,7 +106,8 @@ export function ContextMenuContent({
 	)
 }
 
-export interface ContextMenuItemProps extends ContextMenuPrimitive.Item.Props {
+export interface ContextMenuItemProps
+	extends React.ComponentProps<typeof ContextMenuPrimitive.Item> {
 	inset?: boolean
 	variant?: 'default' | 'destructive'
 }
@@ -120,8 +133,9 @@ export function ContextMenuItem({
 	)
 }
 
-export type ContextMenuCheckboxItemProps =
-	ContextMenuPrimitive.CheckboxItem.Props
+export type ContextMenuCheckboxItemProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.CheckboxItem
+>
 export function ContextMenuCheckboxItem({
 	className,
 	children,
@@ -148,7 +162,9 @@ export function ContextMenuCheckboxItem({
 	)
 }
 
-export type ContextMenuRadioItemProps = ContextMenuPrimitive.RadioItem.Props
+export type ContextMenuRadioItemProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.RadioItem
+>
 export function ContextMenuRadioItem({
 	className,
 	children,
@@ -174,7 +190,7 @@ export function ContextMenuRadioItem({
 }
 
 export interface ContextMenuLabelProps
-	extends ContextMenuPrimitive.GroupLabel.Props {
+	extends React.ComponentProps<typeof ContextMenuPrimitive.GroupLabel> {
 	inset?: boolean
 }
 export function ContextMenuLabel({
@@ -196,7 +212,9 @@ export function ContextMenuLabel({
 	)
 }
 
-export type ContextMenuSeparatorProps = ContextMenuPrimitive.Separator.Props
+export type ContextMenuSeparatorProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.Separator
+>
 export function ContextMenuSeparator({
 	className,
 	...props
@@ -227,7 +245,9 @@ export function ContextMenuShortcut({
 	)
 }
 
-export type ContextMenuSubProps = ContextMenuPrimitive.SubmenuRoot.Props
+export type ContextMenuSubProps = React.ComponentProps<
+	typeof ContextMenuPrimitive.SubmenuRoot
+>
 export function ContextMenuSub({ ...props }: ContextMenuSubProps) {
 	return (
 		<ContextMenuPrimitive.SubmenuRoot
@@ -240,7 +260,7 @@ export function ContextMenuSub({ ...props }: ContextMenuSubProps) {
 }
 
 export interface ContextMenuSubTriggerProps
-	extends ContextMenuPrimitive.SubmenuTrigger.Props {
+	extends React.ComponentProps<typeof ContextMenuPrimitive.SubmenuTrigger> {
 	inset?: boolean
 }
 export function ContextMenuSubTrigger({
@@ -268,7 +288,7 @@ export function ContextMenuSubTrigger({
 }
 
 export interface ContextMenuSubContentProps
-	extends ContextMenuPrimitive.Popup.Props {
+	extends React.ComponentProps<typeof ContextMenuPrimitive.Popup> {
 	align?: ContextMenuPrimitive.Positioner.Props['align']
 	sideOffset?: ContextMenuPrimitive.Positioner.Props['sideOffset']
 }
