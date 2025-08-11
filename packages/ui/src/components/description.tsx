@@ -13,7 +13,10 @@ export function Description({ className, ...props }: DescriptionProps) {
 }
 
 export type ErrorDescriptionProps = React.ComponentProps<'p'>
-export function ErrorDescription({ className, ...props }: DescriptionProps) {
+export function ErrorDescription({
+	className,
+	...props
+}: ErrorDescriptionProps) {
 	return (
 		<p
 			className={cx('text-foreground-danger text-sm font-medium', className)}
