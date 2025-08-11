@@ -13,15 +13,18 @@ export function TooltipExample() {
 	return (
 		<TooltipProvider>
 			<Tooltip>
-				<TooltipTrigger asChild>
-					<Button
-						variant="outline"
-						className="flex w-10 items-center justify-center rounded-full p-0"
-					>
-						<Plus className="size-4" />
-						<span className="sr-only">Add</span>
-					</Button>
-				</TooltipTrigger>
+				<TooltipTrigger
+					render={
+						<Button
+							icon
+							variant="outline"
+							className="flex items-center justify-center rounded-full"
+						>
+							<Plus className="size-4" />
+							<span className="sr-only">Add</span>
+						</Button>
+					}
+				/>
 				<TooltipContent>
 					<p>Add to library</p>
 				</TooltipContent>

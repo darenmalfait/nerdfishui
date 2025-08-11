@@ -5,7 +5,7 @@ import { inputVariants } from './input'
 export interface TextareaProps
 	extends React.ComponentProps<'textarea'>,
 		VariantProps<typeof inputVariants> {}
-export function TextArea({
+export function Textarea({
 	className,
 	inputSize,
 	variant,

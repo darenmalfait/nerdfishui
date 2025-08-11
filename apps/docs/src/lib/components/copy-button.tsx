@@ -33,23 +33,25 @@ export function CopyButton({
 	return (
 		<TooltipProvider>
 			<Tooltip>
-				<TooltipTrigger asChild>
-					<Button
-						icon
-						size="sm"
-						{...props}
-						className={className}
-						variant={copiedText ? 'success' : 'ghost'}
-						aria-label="copy"
-						onClick={() => handleCopy(code, COPY_TIMOUT)}
-					>
-						{copiedText ? (
-							<Icons.Check className="size-4" />
-						) : (
-							<Icons.Copy className="size-4" />
-						)}
-					</Button>
-				</TooltipTrigger>
+				<TooltipTrigger
+					render={
+						<Button
+							icon
+							size="sm"
+							{...props}
+							className={className}
+							variant={copiedText ? 'success' : 'ghost'}
+							aria-label="copy"
+							onClick={() => handleCopy(code, COPY_TIMOUT)}
+						>
+							{copiedText ? (
+								<Icons.Check className="size-4" />
+							) : (
+								<Icons.Copy className="size-4" />
+							)}
+						</Button>
+					}
+				/>
 				<TooltipContent>{label}</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>

@@ -81,23 +81,25 @@ export function NavigationListItem<T>({
 
 	if (isCollapsed) {
 		return (
-			<Tooltip delayDuration={0}>
-				<TooltipTrigger asChild>
-					<Link
-						className={cx(
-							navigationListItemVariants({
-								variant: active ? 'default' : 'ghost',
-								size: 'icon',
-							}),
-							'h-9 w-9',
-							className,
-						)}
-						{...props}
-					>
-						<ItemIcon icon={Icon} isCollapsed={isCollapsed} />
-						<span className="sr-only">{title}</span>
-					</Link>
-				</TooltipTrigger>
+			<Tooltip>
+				<TooltipTrigger
+					render={
+						<Link
+							className={cx(
+								navigationListItemVariants({
+									variant: active ? 'default' : 'ghost',
+									size: 'icon',
+								}),
+								'h-9 w-9',
+								className,
+							)}
+							{...props}
+						>
+							<ItemIcon icon={Icon} isCollapsed={isCollapsed} />
+							<span className="sr-only">{title}</span>
+						</Link>
+					}
+				/>
 
 				<TooltipContent side="right" className="gap-md flex items-center">
 					{title}
@@ -141,22 +143,24 @@ export function NavigationListTitle({
 }) {
 	if (isCollapsed) {
 		return (
-			<Tooltip delayDuration={0}>
-				<TooltipTrigger asChild>
-					<h2
-						className={cx(
-							navigationListItemVariants({
-								variant: 'ghost',
-								size: 'icon',
-							}),
-							'h-9 w-9 hover:bg-transparent',
-							className,
-						)}
-					>
-						<ItemIcon icon={Icon} isCollapsed={isCollapsed} />
-						<span className="sr-only">{title}</span>
-					</h2>
-				</TooltipTrigger>
+			<Tooltip>
+				<TooltipTrigger
+					render={
+						<h2
+							className={cx(
+								navigationListItemVariants({
+									variant: 'ghost',
+									size: 'icon',
+								}),
+								'h-9 w-9 hover:bg-transparent',
+								className,
+							)}
+						>
+							<ItemIcon icon={Icon} isCollapsed={isCollapsed} />
+							<span className="sr-only">{title}</span>
+						</h2>
+					}
+				/>
 
 				<TooltipContent side="right" className="gap-md flex items-center">
 					{title}
