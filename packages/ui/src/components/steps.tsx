@@ -3,27 +3,22 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const Steps = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement> & {
-		maxSteps: number
-		currentStep: number
-		navigateToStep?: (step: number) => void
-		stepLabel?: (current: number, total: number) => string
-	}
->(function Steps(
-	{
-		className,
-		maxSteps,
-		currentStep,
-		navigateToStep,
-		stepLabel = (current, total) => `Step ${current} of ${total}`,
-		...props
-	},
-	ref,
-) {
+export interface StepsProps extends React.ComponentProps<'div'> {
+	maxSteps: number
+	currentStep: number
+	navigateToStep?: (step: number) => void
+	stepLabel?: (current: number, total: number) => string
+}
+export function Steps({
+	className,
+	maxSteps,
+	currentStep,
+	navigateToStep,
+	stepLabel = (current, total) => `Step ${current} of ${total}`,
+	...props
+}: StepsProps) {
 	return (
-		<div {...props} className={cx('space-y-2', className)} ref={ref}>
+		<div {...props} className={cx('space-y-sm', className)}>
 			<p className="text-foreground-muted text-xs font-medium">
 				{stepLabel(currentStep, maxSteps)}
 			</p>
@@ -59,8 +54,4 @@ export const Steps = React.forwardRef<
 			</div>
 		</div>
 	)
-})
-
-Steps.displayName = 'Steps'
-
-export type StepsProps = React.ComponentPropsWithoutRef<typeof Steps>
+}
