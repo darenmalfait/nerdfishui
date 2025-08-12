@@ -59,13 +59,16 @@ export function InputExample() {
 										<FormDescription>Your email address</FormDescription>
 									</FormLabel>
 
-									<FormControl>
-										<Input
-											{...field}
-											type="email"
-											placeholder="Example: john@doe.com"
-										/>
-									</FormControl>
+									<FormControl
+										render={
+											<Input
+												{...field}
+												type="email"
+												placeholder="Example: john@doe.com"
+											/>
+										}
+									/>
+
 									<FormMessage />
 								</FormItem>
 							)}

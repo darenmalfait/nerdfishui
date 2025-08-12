@@ -62,9 +62,12 @@ export function PhoneInputExample() {
 										<FormDescription>Your phone number</FormDescription>
 									</FormLabel>
 
-									<FormControl>
-										<PhoneInput variant="default" inputSize="lg" {...field} />
-									</FormControl>
+									<FormControl
+										render={
+											<PhoneInput variant="default" inputSize="lg" {...field} />
+										}
+									/>
+
 									<FormMessage />
 								</FormItem>
 							)}

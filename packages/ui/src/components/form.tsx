@@ -1,7 +1,7 @@
 'use client'
 
+import { useRender } from '@base-ui-components/react'
 import { cx } from '@nerdfish/utils'
-import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 import {
 	Controller,
@@ -12,11 +12,12 @@ import {
 	useFormContext,
 } from 'react-hook-form'
 import { Description, ErrorDescription } from './description'
-import { Field } from './field'
+import { Field, type FieldProps } from './field'
 import { type InputProps } from './input'
 import { Label } from './label'
 
-const Form = FormProvider
+export type FormProps = React.ComponentProps<typeof FormProvider>
+export const Form = FormProvider
 
 type FormFieldContextValue<
 	TFieldValues extends FieldValues = FieldValues,
@@ -28,20 +29,23 @@ type FormFieldContextValue<
 const FormFieldContext = React.createContext<FormFieldContextValue | null>(null)
 const FormItemContext = React.createContext<FormItemContextValue | null>(null)
 
-const FormField = <
+export type FormFieldProps<
 	TFieldValues extends FieldValues = FieldValues,
 	TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({
-	...props
-}: ControllerProps<TFieldValues, TName>) => {
+> = ControllerProps<TFieldValues, TName>
+
+export function FormField<
+	TFieldValues extends FieldValues = FieldValues,
+	TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+>({ ...props }: FormFieldProps<TFieldValues, TName>) {
 	return (
-		<FormFieldContext.Provider value={{ name: props.name }}>
+		<FormFieldContext value={{ name: props.name }}>
 			<Controller {...props} />
-		</FormFieldContext.Provider>
+		</FormFieldContext>
 	)
 }
 
-const useFormField = () => {
+export function useFormField() {
 	const fieldContext = React.useContext(FormFieldContext)
 	const itemContext = React.useContext(FormItemContext)
 	const { getFieldState, formState } = useFormContext()
@@ -69,78 +73,63 @@ type FormItemContextValue = {
 	id: string
 }
 
-const FormItem = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->((props, ref) => {
+export type FormItemProps = FieldProps
+export function FormItem({ ...props }: FormItemProps) {
 	const id = React.useId()
 
 	return (
-		<FormItemContext.Provider value={{ id }}>
-			<Field ref={ref} {...props} />
-		</FormItemContext.Provider>
+		<FormItemContext value={{ id }}>
+			<Field {...props} />
+		</FormItemContext>
 	)
-})
-FormItem.displayName = 'FormItem'
+}
 
-const FormLabel: React.ForwardRefExoticComponent<
-	React.ComponentPropsWithoutRef<typeof Label> &
-		React.RefAttributes<React.ElementRef<typeof Label>>
-> = React.forwardRef<
-	React.ElementRef<typeof Label>,
-	React.ComponentPropsWithoutRef<typeof Label>
->(({ className, ...props }, ref) => {
+export type FormLabelProps = React.ComponentProps<typeof Label>
+export function FormLabel({ className, ...props }: FormLabelProps) {
 	const { error, formItemId } = useFormField()
 
 	return (
 		<Label
-			ref={ref}
 			className={cx(error && 'text-foreground-danger', className)}
 			htmlFor={formItemId}
 			{...props}
 		/>
 	)
-})
-FormLabel.displayName = 'FormLabel'
+}
 
-const FormControl = React.forwardRef<
-	React.ElementRef<typeof Slot>,
-	React.ComponentPropsWithoutRef<typeof Slot> & {
-		variant?: InputProps['variant']
-	}
->(({ className, ...props }, ref) => {
+export interface FormControlProps extends useRender.ComponentProps<'div'> {
+	render: useRender.RenderProp<React.ComponentProps<'div'>>
+	variant?: InputProps['variant']
+}
+
+export function FormControl({ render, variant, ...props }: FormControlProps) {
 	const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
-	return (
-		<Slot
-			ref={ref}
-			id={formItemId}
-			aria-describedby={
-				error ? `${formDescriptionId} ${formMessageId}` : `${formDescriptionId}`
-			}
-			aria-invalid={!!error}
-			variant={props.variant ?? (error ? 'error' : 'default')}
-			{...props}
-		/>
-	)
-})
-FormControl.displayName = 'FormControl'
+	return useRender({
+		render,
+		props: {
+			'data-slot': 'form-control',
+			id: formItemId,
+			'aria-describedby': !error
+				? `${formDescriptionId}`
+				: `${formDescriptionId} ${formMessageId}`,
+			'aria-invalid': !!error,
+			variant: variant ?? (error ? 'error' : 'default'),
+			...props,
+		},
+	})
+}
 
-const FormDescription = React.forwardRef<
-	React.ElementRef<typeof Description>,
-	React.ComponentPropsWithoutRef<typeof Description>
->((props, ref) => {
+export type FormDescriptionProps = React.ComponentProps<typeof Description>
+export function FormDescription({ ...props }: FormDescriptionProps) {
 	const { formDescriptionId } = useFormField()
+	return <Description id={formDescriptionId} {...props} />
+}
 
-	return <Description ref={ref} id={formDescriptionId} {...props} />
-})
-FormDescription.displayName = 'FormDescription'
-
-const FormMessage = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLParagraphElement>
->(({ children, ...props }, ref) => {
+export type FormMessageProps = React.ComponentProps<typeof ErrorDescription>
+export function FormMessage({ children, ...props }: FormMessageProps) {
 	const { error, formMessageId } = useFormField()
+
 	const body = error ? String(error.message) : children
 
 	if (!body) {
@@ -148,34 +137,8 @@ const FormMessage = React.forwardRef<
 	}
 
 	return (
-		<ErrorDescription ref={ref} id={formMessageId} {...props}>
+		<ErrorDescription id={formMessageId} {...props}>
 			{body}
 		</ErrorDescription>
 	)
-})
-FormMessage.displayName = 'FormMessage'
-
-export {
-	useFormField,
-	Form,
-	FormItem,
-	FormLabel,
-	FormControl,
-	FormDescription,
-	FormMessage,
-	FormField,
 }
-
-export type FormProps = React.ComponentPropsWithoutRef<typeof Form>
-export type FormItemProps = React.ComponentPropsWithoutRef<typeof FormItem>
-export type FormLabelProps = React.ComponentPropsWithoutRef<typeof FormLabel>
-export type FormControlProps = React.ComponentPropsWithoutRef<
-	typeof FormControl
->
-export type FormDescriptionProps = React.ComponentPropsWithoutRef<
-	typeof FormDescription
->
-export type FormMessageProps = React.ComponentPropsWithoutRef<
-	typeof FormMessage
->
-export type FormFieldProps = React.ComponentPropsWithoutRef<typeof FormField>

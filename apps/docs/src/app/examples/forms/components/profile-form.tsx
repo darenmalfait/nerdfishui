@@ -103,9 +103,9 @@ export function ProfileForm() {
 								</FormDescription>
 							</FormLabel>
 
-							<FormControl>
-								<Input placeholder="nerdfish" {...field} />
-							</FormControl>
+							<FormControl
+								render={<Input placeholder="nerdfish" {...field} />}
+							/>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -124,23 +124,32 @@ export function ProfileForm() {
 								</FormDescription>
 							</FormLabel>
 
-							<FormControl>
-								<Select
-									onValueChange={field.onChange}
-									defaultValue={field.value}
-								>
-									<FormControl>
-										<SelectTrigger>
-											<SelectValue placeholder="Select a verified email to display" />
-										</SelectTrigger>
-									</FormControl>
-									<SelectContent>
-										<SelectItem value="m@example.com">m@example.com</SelectItem>
-										<SelectItem value="m@google.com">m@google.com</SelectItem>
-										<SelectItem value="m@support.com">m@support.com</SelectItem>
-									</SelectContent>
-								</Select>
-							</FormControl>
+							<FormControl
+								render={
+									<Select
+										onValueChange={field.onChange}
+										defaultValue={field.value}
+									>
+										<FormControl
+											render={
+												<SelectTrigger>
+													<SelectValue placeholder="Select a verified email to display" />
+												</SelectTrigger>
+											}
+										/>
+										<SelectContent>
+											<SelectItem value="m@example.com">
+												m@example.com
+											</SelectItem>
+											<SelectItem value="m@google.com">m@google.com</SelectItem>
+											<SelectItem value="m@support.com">
+												m@support.com
+											</SelectItem>
+										</SelectContent>
+									</Select>
+								}
+							/>
+
 							<FormMessage />
 						</FormItem>
 					)}
@@ -158,9 +167,7 @@ export function ProfileForm() {
 								</FormDescription>
 							</FormLabel>
 
-							<FormControl>
-								<Textarea {...field} />
-							</FormControl>
+							<FormControl render={<Textarea {...field} />} />
 							<FormMessage />
 						</FormItem>
 					)}
@@ -181,9 +188,7 @@ export function ProfileForm() {
 										</FormDescription>
 									</FormLabel>
 
-									<FormControl>
-										<Input {...field} />
-									</FormControl>
+									<FormControl render={<Input {...field} />} />
 									<FormMessage />
 								</FormItem>
 							)}
