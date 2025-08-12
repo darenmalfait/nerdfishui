@@ -24,6 +24,7 @@ const nextConfig = {
 		remotePatterns: [
 			{ hostname: 'avatars.githubusercontent.com' },
 			{ hostname: 'images.unsplash.com' },
+			{ hostname: 'avatar.vercel.sh' },
 		],
 	},
 	experimental: {

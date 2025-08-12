@@ -8,7 +8,7 @@ export function Grid({ className, render = <div />, ...props }: GridProps) {
 	return useRender({
 		render,
 		props: {
-			'data-slot': 'button',
+			'data-slot': 'grid',
 			className: cx(
 				'gap-md grid w-full auto-rows-[22rem] grid-cols-3',
 				className,
@@ -27,7 +27,7 @@ export function GridCard({
 	return useRender({
 		render,
 		props: {
-			'data-slot': 'button',
+			'data-slot': 'grid-card',
 			className: cx(
 				'rounded-container group relative col-span-3 flex flex-col justify-between overflow-hidden',
 				// light styles

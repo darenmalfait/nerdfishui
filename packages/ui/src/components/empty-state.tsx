@@ -43,7 +43,7 @@ export function EmptyStateIcon({
 		render,
 		props: {
 			role: 'presentation',
-			'data-slot': 'button',
+			'data-slot': 'empty-state-icon',
 			className: cx('mb-lg text-brand size-12', className),
 			...props,
 		},
