@@ -8,7 +8,7 @@ const GaugeContext = React.createContext<{
 	strokeWidth: number
 } | null>(null)
 
-const useGauge = () => {
+function useGauge() {
 	const context = React.useContext(GaugeContext)
 
 	if (!context) {
@@ -39,18 +39,20 @@ export const gaugeVariants = cva(
 	},
 )
 
-export const GaugeText = React.forwardRef<
-	SVGTextElement,
-	React.ComponentPropsWithoutRef<'text'> & {
-		fontSize?: number
-		value?: string
-	}
->(function GaugeText({ className, value: propValue, fontSize, ...props }, ref) {
+export interface GaugeTextProps extends React.ComponentProps<'text'> {
+	fontSize?: number
+	value?: string
+}
+export function GaugeText({
+	className,
+	value: propValue,
+	fontSize,
+	...props
+}: GaugeTextProps) {
 	const { value, strokeWidth } = useGauge()
 
 	return (
 		<text
-			ref={ref}
 			x="50%"
 			y="50%"
 			data-slot="text"
@@ -65,37 +67,33 @@ export const GaugeText = React.forwardRef<
 			{propValue ?? value}
 		</text>
 	)
-})
+}
 
-export const Gauge = React.forwardRef<
-	SVGSVGElement,
-	React.ComponentPropsWithoutRef<'svg'> &
-		VariantProps<typeof gaugeVariants> & {
-			// Current value of the gauge, expressed as a percentage.
-			value?: number
-			// Width and height of the gauge. Defaults to 100%.
-			size?: number | string
-			// Percentage of the total circumference that represents a gap in the gauge. Defaults to 5%.
-			gapPercent?: number
-			// Stroke width of the gauge. Defaults to 10px.
-			strokeWidth?: number
-			// Determines if the gauge should have equal primary and secondary stroke lengths. Defaults to false.
-			equal?: boolean
-		}
->(function Gauge(
-	{
-		children,
-		className,
-		strokeWidth = 10,
-		value = 0,
-		equal = false,
-		gapPercent = 5,
-		size = 100,
-		variant,
-		...props
-	},
-	ref,
-) {
+export interface GaugeProps
+	extends React.ComponentProps<'svg'>,
+		VariantProps<typeof gaugeVariants> {
+	// Current value of the gauge, expressed as a percentage.
+	value?: number
+	// Width and height of the gauge. Defaults to 100%.
+	size?: number | string
+	// Percentage of the total circumference that represents a gap in the gauge. Defaults to 5%.
+	gapPercent?: number
+	// Stroke width of the gauge. Defaults to 10px.
+	strokeWidth?: number
+	// Determines if the gauge should have equal primary and secondary stroke lengths. Defaults to false.
+	equal?: boolean
+}
+export function Gauge({
+	children,
+	className,
+	strokeWidth = 10,
+	value = 0,
+	equal = false,
+	gapPercent = 5,
+	size = 100,
+	variant,
+	...props
+}: GaugeProps) {
 	const strokePercent = value // %
 
 	const circleSize = 100 // px
@@ -179,9 +177,8 @@ export const Gauge = React.forwardRef<
 	}
 
 	return (
-		<GaugeContext.Provider value={{ value, strokeWidth }}>
+		<GaugeContext value={{ value, strokeWidth }}>
 			<svg
-				ref={ref}
 				className={cx(gaugeVariants({ variant }), className)}
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox={`0 0 ${circleSize} ${circleSize}`}
@@ -219,7 +216,6 @@ export const Gauge = React.forwardRef<
 				/>
 				{children}
 			</svg>
-		</GaugeContext.Provider>
+		</GaugeContext>
 	)
-})
-Gauge.displayName = 'Gauge'
+}
