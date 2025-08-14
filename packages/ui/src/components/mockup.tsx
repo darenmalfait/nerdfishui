@@ -1,10 +1,8 @@
 import { cx } from '@nerdfish/utils'
 import * as React from 'react'
 
-export const Mockup = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->(function Mockup({ children, className, ...props }, ref) {
+export type MockupProps = React.ComponentProps<'div'>
+export function Mockup({ children, className, ...props }: MockupProps) {
 	return (
 		<div
 			className={cx(
@@ -15,19 +13,19 @@ export const Mockup = React.forwardRef<
 				'[&_code]:!border-none [&_code]:!shadow-[unset]',
 				className,
 			)}
-			ref={ref}
 			{...props}
 		>
 			{children}
 		</div>
 	)
-})
-Mockup.displayName = 'Mockup'
+}
 
-export const MockupWindow = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->(function MockupWindow({ children, className, ...props }, ref) {
+export type MockupWindowProps = React.ComponentProps<'div'>
+export function MockupWindow({
+	children,
+	className,
+	...props
+}: MockupWindowProps) {
 	return (
 		<div
 			className={cx(
@@ -35,16 +33,9 @@ export const MockupWindow = React.forwardRef<
 				'before:mb-md before:aspect-square before:h-3 before:w-3 before:shrink-0 before:self-start before:rounded-full before:opacity-30 before:shadow-[1em_0,2.5em_0,4em_0] before:rtl:self-end',
 				className,
 			)}
-			ref={ref}
 			{...props}
 		>
 			<div className="px-md flex flex-col">{children}</div>
 		</div>
 	)
-})
-MockupWindow.displayName = 'MockupWindow'
-
-export type MockupProps = React.ComponentPropsWithoutRef<typeof Mockup>
-export type MockupWindowProps = React.ComponentPropsWithoutRef<
-	typeof MockupWindow
->
+}
