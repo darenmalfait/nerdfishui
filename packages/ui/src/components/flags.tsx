@@ -20,13 +20,11 @@ function mergeFeatures(a: FeatureGroup, b: FeatureGroup): FeatureGroup {
 	return { ...a, ...b }
 }
 
-export function FlagsProvider({
-	features = {},
-	children,
-}: {
+export interface FlagsProviderProps {
 	features?: FeatureFlags
 	children: React.ReactNode
-}) {
+}
+export function FlagsProvider({ features = {}, children }: FlagsProviderProps) {
 	const currentFeatures = useFeatures()
 	return (
 		<FeatureFlagsContext.Provider
@@ -61,12 +59,7 @@ export function useFeature(name: string): boolean | FeatureGroup {
 	return featureGroup
 }
 
-// Render Prop API
-export function Feature({
-	name,
-	children,
-	render = children,
-}: {
+export interface FeatureProps {
 	name: string
 	children?:
 		| React.ReactNode
@@ -74,12 +67,11 @@ export function Feature({
 	render?:
 		| React.ReactNode
 		| ((hasFeature: boolean | FeatureGroup) => React.ReactElement)
-}) {
+}
+export function Feature({ name, children, render = children }: FeatureProps) {
 	const hasFeature = useFeature(name)
 	if (typeof render === 'function') return render(hasFeature)
 	if (!hasFeature) return null
 
 	return render
 }
-
-export type FeatureProps = React.ComponentPropsWithoutRef<typeof Feature>
