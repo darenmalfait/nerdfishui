@@ -60,7 +60,7 @@
     "@types/eslint": "^9.6.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.15.33",
-    "@types/react": "19.1.9",
+    "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
     "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
