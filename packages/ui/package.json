@@ -55,18 +55,18 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.516.0",
+    "lucide-react": "^0.542.0",
     "react": "19.1.1",
-    "react-aria": "^3.41.1",
-    "react-day-picker": "^9.7.0",
+    "react-aria": "^3.43.1",
+    "react-day-picker": "^9.9.0",
     "react-dom": "19.1.1",
-    "react-hook-form": "^7.58.1",
+    "react-hook-form": "^7.62.0",
     "react-phone-number-input": "^3.4.12",
     "react-resizable-panels": "^2.1.9",
-    "react-stately": "^3.39.0",
-    "shiki": "^3.6.0",
+    "react-stately": "^3.41.0",
+    "shiki": "^3.12.0",
     "sonner": "^2.0.7",
-    "timescape": "^0.7.1",
+    "timescape": "^0.8.0",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
@@ -75,9 +75,9 @@
     "@repo/tailwind-config": "workspace:*",
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.8",
-    "eslint": "^9.29.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "eslint": "^9.34.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
   },
   "publishConfig": {
     "access": "public"
