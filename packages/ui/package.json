@@ -74,7 +74,7 @@
     "@nerdfish/tailwind-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@types/react": "19.1.12",
-    "@types/react-dom": "19.1.8",
+    "@types/react-dom": "19.1.9",
     "eslint": "^9.29.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
