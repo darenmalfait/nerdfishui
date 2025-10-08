@@ -1,0 +1,48 @@
+import { ItemExample } from './example/default'
+import { ItemVariantsExample } from './example/variants'
+import { ItemSizesExample } from './example/sizes'
+import { ItemIconExample } from './example/icon'
+import { ItemImageExample } from './example/image'
+import { ItemAvatarExample } from './example/avatar'
+import { ItemGroupExample } from './example/group'
+
+<DocsPageHeader
+	title="Item"
+	description="A versatile component that you can use to display any content."
+	githubPath={{
+		package: 'react',
+		path: 'src/components/item/item.tsx',
+	}}
+/>
+
+<ComponentExample component={ItemExample} name="default" />
+
+## Item vs Field
+
+Use Field if you need to display a form input such as a checkbox, input, radio, or select.
+
+If you only need to display content such as a title, description, and actions, use Item.
+
+## Variants
+
+<ComponentExample component={ItemVariantsExample} name="variants" />
+
+## Sizes
+
+<ComponentExample component={ItemSizesExample} name="sizes" />
+
+## Icon
+
+<ComponentExample component={ItemIconExample} name="icon" />
+
+## Avatar
+
+<ComponentExample component={ItemAvatarExample} name="avatar" />
+
+## Image
+
+<ComponentExample component={ItemImageExample} name="image" />
+
+## Group
+
+<ComponentExample component={ItemGroupExample} name="group" />

@@ -1,0 +1,12 @@
+{
+	"extends": "@nerdfish/config/typescript",
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"baseUrl": "."
+	},
+	"references": [
+		{
+			"path": "./tsconfig.build.json"
+		}
+	]
+}

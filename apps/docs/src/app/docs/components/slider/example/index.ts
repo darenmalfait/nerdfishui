@@ -1,5 +1,0 @@
-export * from './custom'
-export * from './default'
-export * from './input-size'
-export * from './range'
-export * from './variant'

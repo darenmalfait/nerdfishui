@@ -1,0 +1,142 @@
+{
+  "name": "@nerdfish/react",
+  "version": "1.0.0",
+  "description": "Nerdfish React Components",
+  "keywords": [
+    "react",
+    "react-component",
+    "nerdfish",
+    "unstyled",
+    "a11y"
+  ],
+  "homepage": "https://ui.nerdfish.be",
+  "bugs": {
+    "url": "https://github.com/darenmalfait/nerdfishui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darenmalfait/nerdfishui",
+    "directory": "packages/react"
+  },
+  "license": "MIT",
+  "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./postcss.config.mjs": "./postcss.config.mjs",
+    "./styles/global.css": "./src/styles/global.css",
+    "./hooks/use-controllable-state": "./src/hooks/use-controllable-state.ts",
+    "./hooks/use-copy-to-clipboard": "./src/hooks/use-copy-to-clipboard.ts",
+    "./hooks/use-is-mobile": "./src/hooks/use-is-mobile.ts",
+    "./accordion": "./src/components/accordion/accordion.tsx",
+    "./alert": "./src/components/alert/alert.tsx",
+    "./alert-dialog": "./src/components/alert-dialog/alert-dialog.tsx",
+    "./aspect-ratio": "./src/components/aspect-ratio/aspect-ratio.tsx",
+    "./avatar": "./src/components/avatar/avatar.tsx",
+    "./badge": "./src/components/badge/badge.tsx",
+    "./button-group": "./src/components/button-group/button-group.tsx",
+    "./button": "./src/components/button/button.tsx",
+    "./breadcrumb": "./src/components/breadcrumb/breadcrumb.tsx",
+    "./calendar": "./src/components/calendar/calendar.tsx",
+    "./card": "./src/components/card/card.tsx",
+    "./chart": "./src/components/chart/chart.tsx",
+    "./checkbox": "./src/components/checkbox/checkbox.tsx",
+    "./code-block": "./src/components/code-block/code-block.tsx",
+    "./context-menu": "./src/components/context-menu/context-menu.tsx",
+    "./collapsible": "./src/components/collapsible/collapsible.tsx",
+    "./combobox": "./src/components/combobox/combobox.tsx",
+    "./command": "./src/components/command/command.tsx",
+    "./dialog": "./src/components/dialog/dialog.tsx",
+    "./drawer": "./src/components/drawer/drawer.tsx",
+    "./dropdown-menu": "./src/components/dropdown-menu/dropdown-menu.tsx",
+    "./empty": "./src/components/empty/empty.tsx",
+    "./field": "./src/components/field/field.tsx",
+    "./date-field": "./src/components/date-field/date-field.tsx",
+    "./date-picker": "./src/components/date-picker/date-picker.tsx",
+    "./filters": "./src/components/filters/filters.tsx",
+    "./input-group": "./src/components/input-group/input-group.tsx",
+    "./input": "./src/components/input/input.tsx",
+    "./input-otp": "./src/components/input-otp/input-otp.tsx",
+    "./item": "./src/components/item/item.tsx",
+    "./kbd": "./src/components/kbd/kbd.tsx",
+    "./label": "./src/components/label/label.tsx",
+    "./marquee": "./src/components/marquee/marquee.tsx",
+    "./number-input": "./src/components/number-input/number-input.tsx",
+    "./navigation-menu": "./src/components/navigation-menu/navigation-menu.tsx",
+    "./pagination": "./src/components/pagination/pagination.tsx",
+    "./phone-input": "./src/components/phone-input/phone-input.tsx",
+    "./popover": "./src/components/popover/popover.tsx",
+    "./progress": "./src/components/progress/progress.tsx",
+    "./radio-group": "./src/components/radio-group/radio-group.tsx",
+    "./scroll-area": "./src/components/scroll-area/scroll-area.tsx",
+    "./sidebar": "./src/components/sidebar/sidebar.tsx",
+    "./separator": "./src/components/separator/separator.tsx",
+    "./select": "./src/components/select/select.tsx",
+    "./sheet": "./src/components/sheet/sheet.tsx",
+    "./skeleton": "./src/components/skeleton/skeleton.tsx",
+    "./slider": "./src/components/slider/slider.tsx",
+    "./spinner": "./src/components/spinner/spinner.tsx",
+    "./switch": "./src/components/switch/switch.tsx",
+    "./tabs": "./src/components/tabs/tabs.tsx",
+    "./toggle": "./src/components/toggle/toggle.tsx",
+    "./toggle-group": "./src/components/toggle-group/toggle-group.tsx",
+    "./toast": "./src/components/toast/toast.tsx",
+    "./textarea": "./src/components/textarea/textarea.tsx",
+    "./tooltip": "./src/components/tooltip/tooltip.tsx"
+  },
+  "scripts": {
+    "prebuild": "rimraf --glob build build-tests \"*.tsbuildinfo\"",
+    "build": "tsx ../../scripts/build/main.ts --dts && pnpm copy-files",
+    "copy-files": "mkdir -p dist/styles && cp -r src/styles/* dist/styles/ && cp -r postcss.config.mjs dist/postcss.config.mjs",
+    "dev": "tsx ../../scripts/build/main.ts --dts --watch",
+    "format": "prettier . --check --cache --cache-location=\"node_modules/.cache/prettiercache\"",
+    "format:fix": "prettier . --write --cache --cache-location=\"node_modules/.cache/prettiercache\" --log-level=warn",
+    "lint": "eslint . --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
+    "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "1.0.0-beta.4",
+    "@nerdfish/utils": "workspace:*",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "cmdk": "^1.1.1",
+    "geist": "^1.5.1",
+    "input-otp": "^1.4.2",
+    "react-aria-components": "^1.13.0",
+    "react-phone-number-input": "^3.4.12",
+    "recharts": "^3.3.0",
+    "shiki": "^3.13.0",
+    "sonner": "^2.0.7",
+    "tw-animate-css": "^1.4.0",
+    "vaul": "^1.1.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "lucide-react": "^0.544.0",
+    "postcss": "^8.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@types/react": "^17 || ^18 || ^19",
+    "react": "^17 || ^18 || ^19",
+    "react-dom": "^17 || ^18 || ^19"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  }
+}

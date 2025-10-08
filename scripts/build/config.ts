@@ -56,6 +56,7 @@ export async function getConfig(options: Options): Promise<RollupOptions> {
 			exports: 'named',
 			entryFileNames: '[name].js',
 			dir: resolve(dir, 'dist/esm'),
+			preserveModulesRoot: resolve(dir, 'src'),
 			preserveModules: true,
 		},
 	]
@@ -66,6 +67,7 @@ export async function getConfig(options: Options): Promise<RollupOptions> {
 			exports: 'named',
 			entryFileNames: '[name].cjs',
 			dir: resolve(dir, 'dist/cjs'),
+			preserveModulesRoot: resolve(dir, 'src'),
 			preserveModules: true,
 		})
 	}

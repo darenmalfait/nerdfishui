@@ -1,17 +1,17 @@
 'use client'
 
-import { getButtonClassName } from '@nerdfish/ui'
+import { buttonVariants } from '@nerdfish/react/button'
 import Link from 'next/link'
-import type * as React from 'react'
-import { Icons } from '~/app/components/icons'
+import { type HTMLAttributes } from 'react'
+import { Icons } from '@/lib/components/icons'
 import {
 	PageActions,
 	PageHeader,
 	PageHeaderDescription,
 	PageHeaderHeading,
-} from '~/app/components/page-header'
+} from '@/lib/components/page-header'
 
-interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+interface DocsPageHeaderProps extends HTMLAttributes<HTMLDivElement> {
 	title?: string
 	description?: string
 	githubPath?: {
@@ -41,12 +41,12 @@ export function DocsPageHeader({
 					<Link
 						target="_blank"
 						href={`https://github.com/darenmalfait/nerdfishui/tree/main/packages/${githubPath.package}/src/${githubPath.path}`}
-						className={getButtonClassName({
-							className: 'mr-sm',
+						className={buttonVariants({
+							className: 'mr-best-friends',
 						})}
 						rel="noopener noreferrer"
 					>
-						<Icons.GitHub className="mr-sm size-5" />
+						<Icons.GitHub className="mr-best-friends size-4" />
 						View on GitHub
 					</Link>
 				</PageActions>

@@ -1,0 +1,19 @@
+'use client'
+
+export function UnorderedListExample() {
+	return (
+		<ul className="list-inside list-disc space-y-2">
+			<li>
+				Id maxime optio soluta placeat ea eaque similique consectetur dicta
+				tempore.
+			</li>
+			<li>
+				Repellat veritatis et harum ad sint reprehenderit tenetur, possimus
+				tempora.
+			</li>
+			<li>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit harum ad sint.
+			</li>
+		</ul>
+	)
+}

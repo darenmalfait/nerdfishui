@@ -1,48 +1,77 @@
-import * as uiComponents from '@nerdfish/ui'
+import {
+	CodeBlock,
+	CodeBlockCode,
+	CodeBlockGroup,
+} from '@nerdfish/react/code-block'
 import { cx } from '@nerdfish/utils'
 import { type MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import type * as React from 'react'
-import * as examples from './component-examples.ts'
 import { ComponentExample } from './lib/components/component-example'
-import { CopyButton, CopyNpmCommandButton } from './lib/components/copy-button'
+import { CopyButton } from './lib/components/copy-button'
 import { DocsPageHeader } from './lib/components/docs-page-header'
-import { Icons } from '~/app/components/icons'
-import { type NpmCommands } from '~/lib/types/unist'
-import { stripPreSlash } from '~/lib/utils/string'
-
-const {
-	H1,
-	H2,
-	H3,
-	H4,
-	H5,
-	H6,
-	Paragraph,
-	CodeBlock,
-	CodeBlockGroup,
-	CodeBlockCode,
-} = uiComponents
+import { Icons } from './lib/components/icons'
+import { stripPreSlash } from '@/lib/utils/string'
 
 export function useMDXComponents(components: MDXComponents) {
 	return {
 		...components,
-		...uiComponents,
+
 		DocsPageHeader,
-		code: (props: React.HTMLAttributes<HTMLElement>) => <code {...props} />,
-		h1: H1,
-		h2: H2,
-		h3: H3,
-		h4: H4,
-		h5: H5,
-		h6: H6,
+		pre: (props: React.HTMLAttributes<HTMLElement>) => (
+			<CodeBlock className="my-friends">
+				<CodeBlockGroup className="border-muted/10 p-best-friends px-friends border-b backdrop-blur-sm">
+					<div className="text-sm font-medium" />
+					<CopyButton
+						code={props.children as string}
+						className="-mr-best-friends"
+					/>
+				</CodeBlockGroup>
+
+				<CodeBlockCode
+					className="max-h-[350px] overflow-auto"
+					code={props.children as string}
+				/>
+			</CodeBlock>
+		),
+		code: (props: React.HTMLAttributes<HTMLElement>) => (
+			<code
+				className="bg-background-muted text-foreground-muted rounded-md px-1.5 py-0.5 text-sm"
+				{...props}
+			/>
+		),
+		h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+			<h1
+				className="typography-heading mb-casual mt-acquaintances first:mt-0"
+				{...props}
+			/>
+		),
+		h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+			<h2
+				className="typography-heading-sm mb-casual mt-acquaintances first:mt-0"
+				{...props}
+			/>
+		),
+		h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+			<h3
+				className="typography-subtitle mb-friends mt-friends first:mt-0"
+				{...props}
+			/>
+		),
+
+		p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
+			<p
+				className="typography-body mb-friends mt-casual first:mt-0"
+				{...props}
+			/>
+		),
 		a: ({
 			className,
 			children,
 			href,
 			...props
-		}: React.ComponentPropsWithoutRef<'a'>) => {
+		}: Omit<React.ComponentPropsWithoutRef<'a'>, 'popover'>) => {
 			const isExternal = href?.startsWith('http')
 			const slug = isExternal ? href : `/${stripPreSlash(href ?? '')}`
 
@@ -52,26 +81,33 @@ export function useMDXComponents(components: MDXComponents) {
 				<Link
 					{...props}
 					className={cx(
-						'border-brand hover:text-brand inline-flex items-center border-b-2 font-normal text-inherit no-underline transition-colors',
+						'border-accent hover:text-accent inline-flex items-center border-b-2 font-normal text-inherit no-underline transition-colors',
 						className,
 					)}
 					href={slug}
 					target={isExternal ? '_blank' : undefined}
 				>
 					{children}
-					{isExternal ? <Icons.ExternalLink className="ml-sm size-4" /> : null}
+					{isExternal ? (
+						<Icons.ExternalLink className="ml-best-friends size-4" />
+					) : null}
 				</Link>
 			)
 		},
-		p: Paragraph,
 		ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-			<ul className={cx('my-md ml-md list-disc', className)} {...props} />
+			<ul
+				className={cx('my-friends ml-friends list-disc', className)}
+				{...props}
+			/>
 		),
 		ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-			<ol className={cx('my-md ml-md list-decimal', className)} {...props} />
+			<ol
+				className={cx('my-friends ml-friends list-decimal', className)}
+				{...props}
+			/>
 		),
 		li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-			<li className={cx('mt-sm', className)} {...props} />
+			<li className={cx('mt-best-friends', className)} {...props} />
 		),
 		blockquote: ({
 			className,
@@ -79,7 +115,7 @@ export function useMDXComponents(components: MDXComponents) {
 		}: React.HTMLAttributes<HTMLElement>) => (
 			<blockquote
 				className={cx(
-					'mt-md pl-md border-l-2 border-gray-300 italic text-gray-800 [&>*]:text-gray-600',
+					'mt-friends pl-friends border-l-2 border-gray-300 text-gray-800 italic [&>*]:text-gray-600',
 					className,
 				)}
 				{...props}
@@ -106,7 +142,7 @@ export function useMDXComponents(components: MDXComponents) {
 			className,
 			...props
 		}: React.HTMLAttributes<HTMLTableElement>) => (
-			<div className="my-md w-full overflow-y-auto">
+			<div className="my-friends w-full overflow-y-auto">
 				<table className={cx('w-full', className)} {...props} />
 			</div>
 		),
@@ -146,59 +182,8 @@ export function useMDXComponents(components: MDXComponents) {
 				{...props}
 			/>
 		),
-		pre: ({
-			className,
-			__rawString__,
-			__npmCommand__,
-			__pnpmCommand__,
-			__yarnCommand__,
-			__withMeta__,
-			__src__,
-			children,
-			...rest
-		}: React.HTMLAttributes<HTMLPreElement> & {
-			__rawString__?: string
-			__withMeta__?: boolean
-			__src__?: string
-		} & NpmCommands) => {
-			if (typeof children === 'string') return <pre {...rest} />
 
-			const { props } = children as any
-
-			const match = /language-(\w+)/.exec(props.className ?? '')
-			const language = match ? match[1] : null
-
-			if (!language) return <pre {...rest} />
-
-			return (
-				<CodeBlock className="my-md">
-					<CodeBlockGroup className="border-muted/10 p-sm bg-popover border-b">
-						<div className="flex items-center gap-2">
-							<div className="bg-foreground/10 text-primary px-sm py-xs rounded-[calc(theme(borderRadius.base)-theme(padding.sm))] text-xs font-medium">
-								{language}
-							</div>
-						</div>
-						<div>
-							{__rawString__ && !__npmCommand__ ? (
-								<CopyButton code={__rawString__} />
-							) : null}
-							{__npmCommand__ && __yarnCommand__ && __pnpmCommand__ ? (
-								<CopyNpmCommandButton
-									commands={{
-										__npmCommand__,
-										__pnpmCommand__,
-										__yarnCommand__,
-									}}
-								/>
-							) : null}
-						</div>
-					</CodeBlockGroup>
-					<CodeBlockCode code={__rawString__ ?? ''} />
-				</CodeBlock>
-			)
-		},
 		Image,
 		ComponentExample,
-		...examples,
 	}
 }

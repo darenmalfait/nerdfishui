@@ -1,7 +1,7 @@
 import { type z } from 'zod'
 
-import { type ogImageSchema } from '../types/og'
 import { getDomainUrl } from './misc'
+import { type ogImageSchema } from '@/types/og'
 
 function generateOGImageUrl({ ...props }: z.infer<typeof ogImageSchema>) {
 	const url = getDomainUrl()

@@ -10,9 +10,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Usage](#usage)
-  - [Installation](#installation)
-  - [Configuration](#configuration)
-  - [Quick start](#quick-start)
+- [Install](#install)
+- [Configuration](#configuration)
   - [Useful Commands](#useful-commands)
 - [Docs](#docs)
 - [Versioning \& Publishing Packages](#versioning--publishing-packages)
@@ -35,88 +34,29 @@ styling, with strong inspiration from
 
 ## Usage
 
-### Installation
+## Install
 
 To install the component-library run the following within your project
 directory.
 
-npm
-
-```sh
-npm install @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
+```bash
+npm install @nerdfish/react @nerdfish/utils postcss tailwindcss @tailwindcss/postcss
 ```
 
-yarn
+## Configuration
 
-```sh
-yarn add @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
-```
-
-npm
-
-```sh
-pnpm add @nerdfish/theme @nerdfish/tailwind-config @nerdfish/ui postcss tailwindcss @tailwindcss/typography lucide-react tailwindcss-animate
-```
-
-### Configuration
-
-The theme of this library depends on the @tailwindcss/typography plugin. To use
-it, follow the steps on the plugin source page.
-https://github.com/tailwindlabs/tailwindcss-typography For animations, you need
-to install the tailwindcss-animate plugin.
-
-```js
-// tailwind.config.js
-module.exports = {
-	mode: 'jit',
-	content: [
-		// ... paths that use tailwind
-		'./node_modules/@nerdfish/**/*.{js,ts,jsx,tsx}', // path to nerdfishui
-	],
-	theme: {
-		extend: {},
-	},
-	plugins: [
-		require('tailwindcss-animate'),
-		require('@tailwindcss/typography'),
-		require('@nerdfish/tailwind-config'),
-	],
-}
-```
-
-```js
-// postcss.config.js
-module.exports = {
-	plugins: {
-		tailwindcss: {},
-		autoprefixer: {},
-	},
-}
+```bash
+//postcss.config.mjs
+export { default } from '@nerdfish/react/postcss.config.mjs'
 ```
 
 Then you need a global css file which you import at the root of the project
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-### Quick start
-
-```js
-import * as React from 'react'
-import { H1, ThemeProvider } from '@nerdfish/ui'
-
-import '@nerdfish/theme/dist/nerdfishui.css'
-
-function App() {
-	return (
-		<ThemeProvider>
-			<H1>Hello Nerdfish</H1>
-		</ThemeProvider>
-	)
-}
+//styles.css
+@import '@nerdfish/react/styles/global.css';
+@source "../**/*.{ts,tsx}";
+@source "../../node_modules/@nerdfish/react"; // path to nerdfishui
 ```
 
 ### Useful Commands

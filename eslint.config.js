@@ -12,6 +12,7 @@ export default [
 			'**/next-env.d.ts',
 			'**/next/**',
 			'**/public/**',
+			'**/.source/**',
 		],
 	},
 ]

@@ -1,5 +1,0 @@
-export * from './default'
-export * from './danger'
-export * from './outline'
-export * from './secondary'
-export * from './success'
