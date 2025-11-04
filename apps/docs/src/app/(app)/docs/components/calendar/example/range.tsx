@@ -17,7 +17,7 @@ export function CalendarRangeExample() {
 				selected={range}
 				onSelect={setRange}
 				cellSize="32px"
-				className="rounded-base border-border border shadow-sm"
+				className="rounded-base border-border p-friends border shadow-sm"
 				captionLayout="dropdown"
 			/>
 		</div>

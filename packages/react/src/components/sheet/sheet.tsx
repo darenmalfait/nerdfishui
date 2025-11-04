@@ -66,7 +66,7 @@ export const sheetVariants = cva(
 		variants: {
 			variant: {
 				default: '',
-				inset: 'rounded-base border-border',
+				inset: 'rounded-container border-border',
 			},
 			side: {
 				top: 'data-[closed]:slide-out-to-top data-[open]:slide-in-from-top',

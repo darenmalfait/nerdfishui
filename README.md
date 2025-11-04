@@ -55,7 +55,6 @@ Then you need a global css file which you import at the root of the project
 ```css
 //styles.css
 @import '@nerdfish/react/styles/global.css';
-@source "../**/*.{ts,tsx}";
 @source "../../node_modules/@nerdfish/react"; // path to nerdfishui
 ```
 

@@ -145,9 +145,6 @@
 	--color-background-secondary: var(--background-secondary);
 	--color-background-muted: var(--background-muted);
 
-	--color-popover: var(--popover);
-	--color-popover-contrast: var(--popover-contrast);
-
 	--color-destructive: var(--destructive);
 	--color-destructive-contrast: var(--destructive-contrast);
 	--color-destructive-background: var(--destructive-background);
@@ -197,8 +194,8 @@
 	--color-gray-100: #f4f4f5;
 	--color-gray-50: #f8fafc;
 
-	--radius-base: 1.125rem;
-	--radius-compact: calc(var(--radius-base) / 2);
+	--radius-base: 0.75rem;
+	--radius-compact: calc(var(--radius-base) - 2px);
 	--radius-container: calc(var(--radius-base) * 2);
 
 	--spacing: 4px;
@@ -232,6 +229,12 @@
 	--animate-loader-inner: loader-inner 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 	--animate-marquee: marquee var(--duration) infinite linear;
 	--animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+	--color-popover: var(--popover);
+	--color-popover-contrast: var(--popover-contrast);
+	--radius-popover: var(--radius-base);
+	--spacing-popover: var(--spacing-friends);
+	--spacing-popover-compact: var(--spacing-best-friends);
 
 	@keyframes accordion-down {
 		from {

@@ -95,14 +95,14 @@ const FilterContext = createContext<FilterContextValue>({
 
 const useFilterContext = () => useContext(FilterContext)
 
-const filterSizeVariants = cva(['px-[1.5em] py-[1em] gap-best-friends'], {
+const filterSizeVariants = cva(['px-[1.5em] py-[1em] gap-popover-compact'], {
 	variants: {
 		size: {
-			xs: 'text-[0.625rem] [&_svg:not([class*=size-])]:size-4',
-			sm: 'text-xs [&_svg:not([class*=size-])]:size-4',
-			md: 'text-sm [&_svg:not([class*=size-])]:size-5',
-			lg: 'text-lg [&_svg:not([class*=size-])]:size-6',
-			xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] [&_svg:not([class*=size-])]:size-10',
+			xs: 'text-[0.625rem] [&_svg:not([class*=size-])]:size-4 h-7',
+			sm: 'text-xs [&_svg:not([class*=size-])]:size-4 h-8',
+			md: 'text-sm [&_svg:not([class*=size-])]:size-5 h-10',
+			lg: 'text-lg [&_svg:not([class*=size-])]:size-6 h-12',
+			xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] [&_svg:not([class*=size-])]:size-10 h-14',
 		},
 	},
 })
@@ -420,7 +420,7 @@ const filterFieldBetweenVariants = cva(
 )
 
 const filtersContainerVariants = cva(
-	['flex flex-wrap items-center', 'gap-best-friends'],
+	['flex flex-wrap items-center', 'gap-popover-compact'],
 	{
 		variants: {
 			variant: {
@@ -801,7 +801,7 @@ function SelectOptionsPopover<T = unknown>({
 									<CommandItem
 										key={String(option.value)}
 										className={cx(
-											'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+											'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 											'group flex items-center gap-2',
 										)}
 										onSelect={() => {
@@ -840,7 +840,7 @@ function SelectOptionsPopover<T = unknown>({
 										<CommandItem
 											key={String(option.value)}
 											className={cx(
-												'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+												'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 												'group flex items-center gap-2',
 											)}
 											value={option.label}
@@ -931,7 +931,7 @@ function SelectOptionsPopover<T = unknown>({
 			</PopoverTrigger>
 			<PopoverContent
 				align="start"
-				className={cx('!p-best-friends w-[200px]', field.className)}
+				className={cx('!p-popover-compact w-[200px]', field.className)}
 			>
 				<Command>
 					{field.searchable !== false ? (
@@ -954,7 +954,7 @@ function SelectOptionsPopover<T = unknown>({
 									<CommandItem
 										key={String(option.value)}
 										className={cx(
-											'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+											'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 											'group flex items-center gap-2',
 										)}
 										onSelect={() => {
@@ -986,7 +986,7 @@ function SelectOptionsPopover<T = unknown>({
 										<CommandItem
 											key={String(option.value)}
 											className={cx(
-												'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+												'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 												'group flex items-center gap-2',
 											)}
 											value={option.label}
@@ -1422,7 +1422,7 @@ function FilterValueSelector<T = unknown>({
 				</div>
 			</PopoverTrigger>
 			<PopoverContent
-				className={cx('!p-best-friends w-36', field.popoverContentClassName)}
+				className={cx('!p-popover-compact w-36', field.popoverContentClassName)}
 			>
 				<Command>
 					{field.searchable !== false ? (
@@ -1445,7 +1445,7 @@ function FilterValueSelector<T = unknown>({
 									<CommandItem
 										key={String(option.value)}
 										className={cx(
-											'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+											'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 											'group flex items-center gap-2',
 										)}
 										onSelect={() => {
@@ -1476,7 +1476,7 @@ function FilterValueSelector<T = unknown>({
 										<CommandItem
 											key={String(option.value)}
 											className={cx(
-												'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+												'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 												'group flex items-center gap-2',
 											)}
 											value={option.label}
@@ -1911,7 +1911,7 @@ export function Filters<T = unknown>({
 						/>
 						<PopoverContent
 							className={cx(
-								'!p-best-friends w-[200px]',
+								'!p-popover-compact w-[200px]',
 								popoverContentClassName,
 							)}
 							align="start"
@@ -1987,7 +1987,7 @@ export function Filters<T = unknown>({
 																	<CommandItem
 																		key={field.key}
 																		className={cx(
-																			'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+																			'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 																			'group flex items-center gap-2',
 																		)}
 																		onSelect={() =>
@@ -2042,7 +2042,7 @@ export function Filters<T = unknown>({
 																	<CommandItem
 																		key={field.key}
 																		className={cx(
-																			'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+																			'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 																			'group flex items-center gap-2',
 																		)}
 																		onSelect={() =>
@@ -2071,7 +2071,7 @@ export function Filters<T = unknown>({
 													<CommandItem
 														key={field.key}
 														className={cx(
-															'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+															'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 															'group flex items-center gap-2',
 														)}
 														onSelect={() => field.key && addFilter(field.key)}

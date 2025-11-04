@@ -28,7 +28,6 @@ function ThemeToggle({
 		<Button
 			variant="ghost"
 			icon
-			size="xs"
 			type="button"
 			{...props}
 			onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}

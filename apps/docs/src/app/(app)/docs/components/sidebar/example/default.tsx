@@ -271,11 +271,9 @@ export function SidebarExample() {
 										<DropdownMenuGroup>
 											<DropdownMenuItem className="gap-best-friends p-2">
 												<div className="bg-background flex size-6 items-center justify-center rounded-md border">
-													<Plus className="size-4" />
+													<Plus className="text-foreground size-4" />
 												</div>
-												<div className="text-muted-contrast font-medium">
-													Add team
-												</div>
+												<div className="font-medium">Add team</div>
 											</DropdownMenuItem>
 										</DropdownMenuGroup>
 									</DropdownMenuContent>

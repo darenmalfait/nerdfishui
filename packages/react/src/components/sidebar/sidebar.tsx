@@ -255,7 +255,7 @@ export function Sidebar({
 				<div
 					data-sidebar="sidebar"
 					data-slot="sidebar-inner"
-					className="bg-sidebar group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:rounded-base flex h-full w-full flex-col group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+					className="bg-sidebar group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:rounded-container flex h-full w-full flex-col group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
 				>
 					{children}
 				</div>

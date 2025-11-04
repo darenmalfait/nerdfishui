@@ -14,7 +14,7 @@ import { CopyButton } from './copy-button'
 
 function Preview({ children }: { children: ReactNode }) {
 	return (
-		<div className="rounded-base p-friends border-border flex min-h-[450px] items-center justify-center border">
+		<div className="rounded-container p-casual border-border flex min-h-[450px] items-center justify-center border">
 			<div className="mx-auto flex w-full max-w-[800px] justify-center">
 				{children}
 			</div>

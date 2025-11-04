@@ -3,7 +3,7 @@ import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'rounded-base bg-background-muted text-md text-foreground group relative block w-full border border-transparent px-[1.5em] py-[1em] text-left font-bold outline-none',
+		'rounded-base bg-background-muted text-md text-foreground group relative block w-full border border-transparent px-[1.5em] py-[0.5em] text-left font-bold outline-none',
 		//focus
 		'focus-visible:ring-ring focus-visible:border-border focus-visible:ring-[3px]',
 		// placeholder
@@ -13,18 +13,18 @@ export const inputVariants = cva(
 		// selection
 		'selection:bg-background-inverted selection:text-foreground-inverted',
 		// file
-		'file:text-foreground file:text-md file:mr-friends file:inline-flex file:border-0 file:bg-transparent file:font-medium',
+		'file:text-foreground file:text-md file:mr-friends file:inline-flex file:h-full file:items-center file:border-0 file:bg-transparent file:font-medium',
 		// invalid
 		'aria-invalid:border-destructive aria-invalid:ring-destructive/40',
 	),
 	{
 		variants: {
 			size: {
-				xs: 'text-[0.625rem]',
-				sm: 'text-xs',
-				md: 'text-sm',
-				lg: 'text-lg',
-				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)]',
+				xs: 'text-[0.625rem] h-8',
+				sm: 'text-xs h-10',
+				md: 'text-sm h-12',
+				lg: 'text-lg h-14',
+				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] h-16',
 			},
 			variant: {
 				default:

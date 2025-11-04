@@ -50,7 +50,8 @@ export function CalendarDayButton({
 			data-range-end={modifiers.range_end}
 			data-range-middle={modifiers.range_middle}
 			className={cx(
-				'!rounded-compact data-[selected-single=true]:bg-background-inverted data-[selected-single=true]:text-foreground-inverted data-[range-middle=true]:bg-background-secondary data-[range-middle=true]:text-foreground data-[range-start=true]:bg-background-inverted data-[range-start=true]:text-foreground-inverted data-[range-end=true]:bg-background-inverted data-[range-end=true]:text-foreground-inverted group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-ring/50 gap-bff data-[range-end=true]:rounded-compact data-[range-end=true]:rounded-r-compact data-[range-start=true]:rounded-compact data-[range-start=true]:rounded-l-compact flex aspect-square size-auto w-full min-w-(--cell-size) flex-col leading-none font-normal group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] data-[range-middle=true]:rounded-none [&>span]:text-xs [&>span]:opacity-70',
+				'!rounded-compact data-[selected-single=true]:bg-background-inverted data-[selected-single=true]:text-foreground-inverted data-[range-middle=true]:bg-background-secondary/50 data-[range-middle=true]:text-foreground data-[range-start=true]:bg-background-inverted data-[range-start=true]:text-foreground-inverted data-[range-end=true]:bg-background-inverted data-[range-end=true]:text-foreground-inverted group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-ring/50 gap-bff data-[range-end=true]:rounded-compact data-[range-end=true]:rounded-r-compact data-[range-start=true]:rounded-compact data-[range-start=true]:rounded-l-compact flex aspect-square size-auto w-full min-w-(--cell-size) flex-col leading-none font-normal group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] data-[range-middle=true]:rounded-none [&>span]:text-xs [&>span]:opacity-70',
+				'!h-full',
 				defaultClassNames.day,
 				className,
 			)}
@@ -85,7 +86,7 @@ export function Calendar({
 			}
 			showOutsideDays={showOutsideDays}
 			className={cx(
-				'bg-background group/calendar p-best-friends [--cell-size:--spacing(8)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
+				'bg-background group/calendar [--cell-size:--spacing(8)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent',
 				String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
 				String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
 				className,
@@ -165,7 +166,7 @@ export function Calendar({
 				),
 				range_middle: cx(
 					'relative rounded-none before:absolute',
-					'before:content-[" "] before:bg-background-secondary before:-inset-x-bff before:absolute before:inset-y-0 before:z-[0]',
+					'before:content-[" "] before:bg-background-secondary/50 before:-inset-x-bff before:absolute before:inset-y-0 before:z-[0]',
 					defaultClassNames.range_middle,
 				),
 				range_end: cx(

@@ -107,7 +107,7 @@ export function DatePicker({
 			>
 				{children}
 			</DatePickerTrigger>
-			<PopoverContent className="w-auto p-0">
+			<PopoverContent className="w-auto">
 				<Calendar
 					captionLayout="dropdown"
 					{...props}

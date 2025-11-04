@@ -12,7 +12,7 @@ export function CalendarCellSizeExample() {
 			cellSize="56px"
 			selected={date}
 			onSelect={setDate}
-			className="rounded-base border-border border shadow-sm"
+			className="rounded-base border-border p-friends border shadow-sm"
 			captionLayout="dropdown"
 		/>
 	)

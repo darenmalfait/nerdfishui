@@ -100,7 +100,7 @@ export function PopoverContent({
 				<PopoverPrimitive.Popup
 					data-slot="popover-content"
 					className={cx(
-						'bg-popover text-popover-contrast outline-border rounded-base p-friends z-50 w-72 origin-[var(--transform-origin)] shadow-md outline -outline-offset-1 transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0',
+						'bg-popover text-popover-contrast outline-border rounded-popover p-popover z-50 w-72 origin-[var(--transform-origin)] shadow-md outline -outline-offset-1 transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0',
 						className,
 					)}
 					{...props}

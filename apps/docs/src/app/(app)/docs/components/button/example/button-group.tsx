@@ -32,7 +32,7 @@ export function ButtonGroupExample() {
 	const [label, setLabel] = useState('personal')
 
 	return (
-		<ButtonGroup>
+		<ButtonGroup className="gap-friends">
 			<ButtonGroup className="hidden sm:flex">
 				<Button variant="outline" icon aria-label="Go Back">
 					<ArrowLeftIcon />

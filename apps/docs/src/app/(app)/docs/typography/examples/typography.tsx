@@ -7,9 +7,10 @@ export function TypographyExample() {
 			<h2>Chapter 1: The Beginning</h2>
 			<p>
 				Long ago, in a land far away, there was a magical kingdom ruled by a
-				kind and just king. The kingdom was full of riches, and the people were
-				happy and content. But one day, a dark sorcerer cast a curse upon the
-				land, causing the crops to wither and the rivers to dry up.
+				kind and just king. The kingdom was <a href="#">full of riches</a>, and
+				the people were happy and content. But one day, a dark sorcerer cast a
+				curse upon the land, causing the crops to wither and the rivers to dry
+				up.
 			</p>
 			<h2>Chapter 2: The Quest</h2>
 			<p>
@@ -20,15 +21,17 @@ export function TypographyExample() {
 			</p>
 			<h3>Chapter 3: The Journey</h3>
 			<p>
-				The king called forth his bravest knight, Sir Cedric, to undertake the
-				quest for the Golden Apple. Sir Cedric set out on his journey, facing
-				many dangers and obstacles along the way.
+				The king called forth his <mark>bravest</mark> knight, Sir Cedric, to
+				undertake the quest for the Golden Apple. Sir Cedric set out on his
+				journey, facing many <strong>dangers and obstacles</strong> along the
+				way.
 			</p>
 			<h5>Chapter 4: The Battle</h5>
 			<p>
-				Sir Cedric finally reached the dragon's lair, where he was met with a
-				fierce battle. But Sir Cedric was brave and skilled, and he was able to
-				defeat the dragon and retrieve the Golden Apple.
+				Sir Cedric finally <span className="underline">reached</span> the
+				dragon's lair, where he was met with a fierce battle. But Sir Cedric was
+				brave and skilled, and he was able to defeat the dragon and retrieve the
+				Golden Apple.
 			</p>
 			<blockquote>
 				"With this Golden Apple, I wish for the curse to be lifted and for

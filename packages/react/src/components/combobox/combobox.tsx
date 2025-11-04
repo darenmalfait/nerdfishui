@@ -45,7 +45,7 @@ export function ComboboxInput({
 		<ComboboxPrimitive.Input
 			data-slot="combobox-input"
 			data-variant={variant}
-			className={cx(inputVariants({ variant, size }), className)}
+			className={cx(inputVariants({ variant, size }), 'max-h-full', className)}
 			{...props}
 		/>
 	)
@@ -143,9 +143,10 @@ export function ComboboxPopup({ className, ...props }: ComboboxPopupProps) {
 		<ComboboxPrimitive.Popup
 			data-slot="combobox-popup"
 			className={cx(
+				'p-popover-compact',
 				'max-h-[min(var(--available-height),20rem)] w-[var(--anchor-width)] max-w-[var(--available-width)]',
 				'scroll-pt-best-friends scroll-pb-best-friends overflow-y-auto overscroll-contain bg-[canvas]',
-				'border-border bg-popover text-popover-contrast rounded-base border shadow-md shadow-black/5',
+				'border-border bg-popover text-popover-contrast rounded-popover border shadow-md shadow-black/5',
 				'origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90',
 				'data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0',
 				className,
@@ -161,7 +162,7 @@ export function ComboboxList({ className, ...props }: ComboboxListProps) {
 	return (
 		<ComboboxPrimitive.List
 			data-slot="combobox-list"
-			className={cx('space-y-bff p-best-friends empty:!p-0', className)}
+			className={cx('space-y-bff empty:!p-0', className)}
 			{...props}
 		/>
 	)
@@ -197,7 +198,7 @@ export function ComboboxItem({ className, ...props }: ComboboxItemProps) {
 			data-slot="combobox-item"
 			className={cx(
 				'relative flex cursor-default items-center',
-				'py-best-friends rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+				'py-best-friends rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 				'text-foreground gap-best-friends relative items-center ps-7 pe-2 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50',
 				'[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-4 [&_svg:not([role=img]):not([class*=text-])]:opacity-60',
 				'data-[highlighted]:text-foreground-inverted data-[highlighted]:bg-background-inverted data-[highlighted]:[&_svg:not([role=img])]:text-foreground-inverted',

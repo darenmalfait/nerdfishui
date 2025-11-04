@@ -7,7 +7,7 @@ export function Card({ className, ...props }: CardProps) {
 		<div
 			data-slot="card"
 			className={cx(
-				'bg-background text-foreground gap-friends rounded-base py-friends flex w-full flex-col border shadow-sm',
+				'bg-background text-foreground gap-friends rounded-container py-friends flex w-full flex-col border shadow-sm',
 				className,
 			)}
 			{...props}

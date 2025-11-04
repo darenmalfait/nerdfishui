@@ -104,7 +104,7 @@ export function NavigationMenuContent({
 		<NavigationMenuPrimitive.Content
 			data-slot="navigation-menu-content"
 			className={cx(
-				'xs:min-w-[400px] p-best-friends h-full w-[calc(100vw_-_40px)] sm:w-max',
+				'xs:min-w-[400px] p-popover-compact h-full w-[calc(100vw_-_40px)] sm:w-max',
 				'transition-[opacity,transform,translate] duration-[var(--duration)] ease-[var(--easing)]',
 				'data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
 				'data-[starting-style]:data-[activation-direction=left]:translate-x-[-50%]',
@@ -174,7 +174,7 @@ export function NavigationMenuPopup({
 	return (
 		<NavigationMenuPrimitive.Popup
 			className={cx(
-				'data-[ending-style]:easing-[ease] bg-popover outline-border xs:w-[var(--popup-width)] rounded-base relative h-[var(--popup-height)] w-[var(--popup-width)] origin-[var(--transform-origin)] shadow-lg outline-1 transition-[opacity,transform,width,height,scale,translate] duration-[var(--duration)] ease-[var(--easing)] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[ending-style]:duration-150 data-[starting-style]:scale-90 data-[starting-style]:opacity-0',
+				'data-[ending-style]:easing-[ease] bg-popover outline-border xs:w-[var(--popup-width)] rounded-popover relative h-[var(--popup-height)] w-[var(--popup-width)] origin-[var(--transform-origin)] shadow-lg outline-1 transition-[opacity,transform,width,height,scale,translate] duration-[var(--duration)] ease-[var(--easing)] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[ending-style]:duration-150 data-[starting-style]:scale-90 data-[starting-style]:opacity-0',
 				className,
 			)}
 			{...props}
@@ -211,8 +211,8 @@ export function NavigationMenuLink({
 		<NavigationMenuPrimitive.Link
 			data-slot="navigation-menu-link"
 			className={cx(
-				'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
-				"data-[active]:focus:bg-background-muted data-[active]:hover:bg-background-muted data-[active]:bg-background-muted/50 data-[active]:text-foreground hover:bg-background-muted hover:text-foreground focus:bg-background-muted focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground gap-bff p-best-friends flex flex-col text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+				'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
+				"data-[active]:focus:bg-background-muted data-[active]:hover:bg-background-muted data-[active]:bg-background-muted/50 data-[active]:text-foreground hover:bg-background-muted hover:text-foreground focus:bg-background-muted focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground gap-bff p-popover flex flex-col text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}

@@ -26,15 +26,15 @@ export const buttonVariants = cva(
 				link: 'border-none bg-transparent text-foreground underline-offset-4 hover:underline disabled:text-foreground/50',
 			},
 			size: {
-				xs: 'text-[0.625rem] !rounded-compact',
-				sm: 'text-xs',
-				md: 'text-sm',
-				lg: 'text-lg',
-				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)]',
+				xs: 'text-[0.625rem] rounded-compact h-7',
+				sm: 'text-xs h-8 ',
+				md: 'text-sm h-10',
+				lg: 'text-lg h-12',
+				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] h-14',
 			},
 			icon: {
 				false: null,
-				true: 'aspect-1 !p-0 items-center justify-center',
+				true: 'aspect-square !p-0 items-center justify-center',
 			},
 		},
 		compoundVariants: [
@@ -42,27 +42,27 @@ export const buttonVariants = cva(
 				icon: true,
 				size: 'xs',
 				className:
-					'p-0 size-[2.313rem] [&_svg:not([class*=size-])]:size-4 rounded-compact',
+					'p-0 size-7 [&_svg:not([class*=size-])]:size-3 rounded-compact',
 			},
 			{
 				icon: true,
 				size: 'sm',
-				className: 'p-0 size-[2.625rem] [&_svg:not([class*=size-])]:size-4',
+				className: 'p-0 size-9 [&_svg:not([class*=size-])]:size-4',
 			},
 			{
 				icon: true,
 				size: 'md',
-				className: 'p-0 size-[3.125rem] [&_svg:not([class*=size-])]:size-5',
+				className: 'p-0 size-10 [&_svg:not([class*=size-])]:size-4',
 			},
 			{
 				icon: true,
 				size: 'lg',
-				className: 'p-0 size-[4.125rem] [&_svg:not([class*=size-])]:size-6',
+				className: 'p-0 size-12 [&_svg:not([class*=size-])]:size-6',
 			},
 			{
 				icon: true,
 				size: 'xl',
-				className: 'p-0 size-[5.938rem] [&_svg:not([class*=size-])]:size-10',
+				className: 'p-0 size-14 [&_svg:not([class*=size-])]:size-8',
 			},
 		],
 		defaultVariants: {

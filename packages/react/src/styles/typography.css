@@ -70,6 +70,14 @@
 	}
 }
 
+@utility typography-body-small {
+	@apply text-base;
+
+	@variant lg {
+		@apply text-lg;
+	}
+}
+
 @utility typography-caption {
 	@apply text-foreground-muted text-sm;
 }

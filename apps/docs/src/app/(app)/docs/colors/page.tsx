@@ -4,6 +4,71 @@ import { DocsPageHeader } from '@/lib/components/docs-page-header'
 
 const colors: ColorPaletteType[] = [
 	{
+		name: 'Main Palette',
+		colors: [
+			{
+				name: 'accent',
+				className: 'text-accent',
+				variable: 'var(--color-accent)',
+				foreground: 'var(--color-accent-contrast)',
+			},
+			{
+				name: 'background',
+				className: 'bg-background',
+				variable: 'var(--color-background)',
+				foreground: 'var(--color-foreground)',
+			},
+			{
+				name: 'background-muted',
+				className: 'bg-background-muted',
+				variable: 'var(--color-background-muted)',
+				foreground: 'var(--color-foreground)',
+			},
+			{
+				name: 'background-secondary',
+				className: 'bg-background-secondary',
+				variable: 'var(--color-background-secondary)',
+				foreground: 'var(--color-foreground)',
+			},
+			{
+				name: 'foreground',
+				className: 'text-foreground',
+				variable: 'var(--color-foreground)',
+				foreground: 'var(--color-foreground-inverted)',
+			},
+			{
+				name: 'foreground-muted',
+				className: 'text-foreground-muted',
+				variable: 'var(--color-foreground-muted)',
+				foreground: 'var(--color-foreground-inverted)',
+			},
+			{
+				name: 'destructive',
+				className: 'text-destructive',
+				variable: 'var(--color-destructive)',
+				foreground: 'var(--color-destructive-contrast)',
+			},
+			{
+				name: 'success',
+				className: 'text-success',
+				variable: 'var(--color-success)',
+				foreground: 'var(--color-success-contrast)',
+			},
+			{
+				name: 'info',
+				className: 'text-info',
+				variable: 'var(--color-info)',
+				foreground: 'var(--color-info-contrast)',
+			},
+			{
+				name: 'warning',
+				className: 'text-warning',
+				variable: 'var(--color-warning)',
+				foreground: 'var(--color-warning-contrast)',
+			},
+		],
+	},
+	{
 		name: 'Accent',
 		colors: [
 			{

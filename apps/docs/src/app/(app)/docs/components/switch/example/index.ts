@@ -1,3 +1,3 @@
 export * from './default'
-export * from './icon'
+export * from './with-icon'
 export * from './size'

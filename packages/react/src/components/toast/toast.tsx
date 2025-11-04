@@ -43,8 +43,8 @@ export function Toaster({ position = 'top-center', ...props }: ToasterProps) {
 					...props.toastOptions?.classNames,
 
 					toast: cx(
-						'!rounded-base !p-friends has-[>[data-icon]]:!p-best-friends has-[>[data-icon]>.sonner-loader[data-visible=true]]:!p-friends',
-						'[&_[data-icon]]:!p-best-friends [&_[data-icon]]:!rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))] [&_[data-icon]]:!ml-px [&_[data-icon]]:!flex [&_[data-icon]]:!size-auto [&_[data-icon]]:!items-center [&_[data-icon]]:!justify-center',
+						'!rounded-popover !p-popover has-[>[data-icon]]:!p-popover-compact has-[>[data-icon]>.sonner-loader[data-visible=true]]:!p-popover',
+						'[&_[data-icon]]:!p-best-friends [&_[data-icon]]:!rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))] [&_[data-icon]]:!ml-px [&_[data-icon]]:!flex [&_[data-icon]]:!size-auto [&_[data-icon]]:!items-center [&_[data-icon]]:!justify-center',
 					),
 					success:
 						'[&_[data-icon]]:!bg-success [&_[data-icon]]:!text-success-contrast !bg-success-background !text-success !border-success/10',

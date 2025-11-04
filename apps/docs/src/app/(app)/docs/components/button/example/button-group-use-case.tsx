@@ -54,7 +54,7 @@ export function ButtonGroupUseCase() {
 								>
 									<div className="gap-best-friends flex flex-col">
 										<span className="font-bold">{label}</span>
-										<p className="typography-body">{descriptionsMap[option]}</p>
+										<p className="text-sm">{descriptionsMap[option]}</p>
 									</div>
 								</DropdownMenuItem>
 							)

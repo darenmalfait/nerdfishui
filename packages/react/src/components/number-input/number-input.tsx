@@ -53,7 +53,7 @@ export function NumberInput({
 					<NumberInputPrimitive.Decrement
 						className={cx(
 							buttonVariants({ variant: 'ghost', size }),
-							'rounded-s-base',
+							'rounded-s-base h-full',
 							'border-e-border border-e',
 							'rounded-e-none',
 						)}
@@ -72,7 +72,7 @@ export function NumberInput({
 					<NumberInputPrimitive.Increment
 						className={cx(
 							buttonVariants({ variant: 'ghost', size }),
-							'rounded-e-base rounded-s-none',
+							'rounded-e-base h-full rounded-s-none',
 							'border-s-border border-s',
 						)}
 						data-slot="number-field-increment"

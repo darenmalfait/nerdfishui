@@ -46,7 +46,7 @@ export function InputOTPSlot({
 }: InputOTPSlotProps) {
 	const inputOTPContext: RenderProps | undefined = useContext(OTPInputContext)
 
-	const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {}
+	const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index] ?? {}
 
 	return (
 		<div

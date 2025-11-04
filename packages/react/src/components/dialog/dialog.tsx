@@ -57,7 +57,7 @@ export function DialogContent({
 				data-slot="dialog-content"
 				className={cx(
 					'bg-popover text-popover-contrast fixed z-50 grid w-full sm:max-w-[calc(100%-2rem)]',
-					'p-friends gap-friends rounded-base border shadow-lg duration-200 outline-none sm:max-w-[512px] sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
+					'p-friends gap-friends rounded-container border shadow-lg duration-200 outline-none sm:max-w-[512px] sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
 					'fixed bottom-0 w-full sm:top-[50%] sm:bottom-auto sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
 					'duration-200',
 					'data-[starting-style]:translate-y-full data-[starting-style]:opacity-0',

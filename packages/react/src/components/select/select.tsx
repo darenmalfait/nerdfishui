@@ -92,15 +92,16 @@ export function SelectContent({
 				<SelectPrimitive.Popup
 					data-slot="select-content"
 					className={cx(
+						'p-popover-compact bg-popover text-popover-contrast rounded-popover',
 						'group origin-[var(--transform-origin)] bg-[canvas] bg-clip-padding shadow-lg transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[side=none]:data-[ending-style]:transition-none data-[starting-style]:scale-90 data-[starting-style]:opacity-0 data-[side=none]:data-[starting-style]:scale-100 data-[side=none]:data-[starting-style]:opacity-100 data-[side=none]:data-[starting-style]:transition-none',
-						'border-border bg-popover text-popover-contrast rounded-base border shadow-lg',
-						'py-0 [&_*[data-slot=select-item]]:min-w-[var(--anchor-width)]',
+						'border-border border shadow-lg',
+						'[&_*[data-slot=select-item]]:min-w-[var(--anchor-width)]',
 						className,
 					)}
 					{...props}
 				>
 					<SelectScrollUpButton />
-					<SelectPrimitive.List className="scroll-py-casual px-best-friends py-best-friends relative max-h-[var(--available-height)] overflow-y-auto">
+					<SelectPrimitive.List className="scroll-py-casual relative max-h-[var(--available-height)] overflow-y-auto">
 						{children}
 					</SelectPrimitive.List>
 					<SelectScrollDownButton />
@@ -117,7 +118,7 @@ export function SelectItem({ className, children, ...props }: SelectItemProps) {
 			data-slot="select-item"
 			className={cx(
 				"data-highlighted:bg-background-inverted data-highlighted:text-foreground-inverted data-highlighted:[&_svg:not([class*='text-'])]:text-foreground-inverted [&_svg:not([class*='text-'])]:text-foreground-muted gap-best-friends *:[span]:last:gap-best-friends pl-best-friends relative flex w-full cursor-default items-center pr-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center",
-				'py-best-friends rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
+				'py-best-friends rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
 				className,
 			)}
 			{...props}
@@ -138,7 +139,7 @@ export function SelectLabel({ className, ...props }: SelectLabelProps) {
 		<SelectPrimitive.GroupLabel
 			data-slot="select-label"
 			className={cx(
-				'text-foreground-muted bg-popover px-best-friends py-best-friends top-0 text-xs font-medium',
+				'text-foreground-muted px-best-friends py-best-friends top-0 bg-transparent text-xs font-medium',
 				className,
 			)}
 			{...props}
@@ -173,7 +174,7 @@ export function SelectScrollUpButton({
 		<SelectPrimitive.ScrollUpArrow
 			data-slot="select-scroll-up-button"
 			className={cx(
-				'bg-popover/70 text-foreground-muted rounded-t-base py-best-friendsf top-px left-[1px] z-[100] flex w-[calc(100%-2px)] cursor-default items-center justify-center backdrop-blur-sm',
+				'bg-popover/70 text-foreground-muted rounded-t-base py-best-friends top-px left-[1px] z-[100] flex w-[calc(100%-2px)] cursor-default items-center justify-center backdrop-blur-sm',
 				className,
 			)}
 			{...props}
@@ -194,7 +195,7 @@ export function SelectScrollDownButton({
 		<SelectPrimitive.ScrollDownArrow
 			data-slot="select-scroll-down-button"
 			className={cx(
-				'bg-popover/70 rounded-b-base py-best-friendsf bottom-px left-[1px] z-[100] flex w-[calc(100%-2px)] cursor-default items-center justify-center backdrop-blur-sm',
+				'bg-popover/70 rounded-b-base py-best-friends bottom-px left-[1px] z-[100] flex w-[calc(100%-2px)] cursor-default items-center justify-center backdrop-blur-sm',
 				className,
 			)}
 			{...props}

@@ -19,7 +19,6 @@ export function SiteHeader() {
 							<Button
 								variant="ghost"
 								icon
-								size="xs"
 								render={
 									<Link
 										href="https://github.com/darenmalfait/nerdfishui"
