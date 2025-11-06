@@ -10,12 +10,9 @@
   "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
   "sideEffects": false,
   "type": "module",
-  "main": "dist/cjs/index.cjs",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "build": "tsx ../../scripts/build/main.ts --dts",
     "build:fast": "tsx ../../scripts/build/main.ts",
@@ -36,9 +33,10 @@
     "@nerdfish/config": "^1.9.3",
     "eslint": "^9.29.0",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   }
 }

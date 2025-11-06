@@ -4,9 +4,11 @@
 **/dist/**
 **/node_modules/**
 **/build/**
+!scripts/build/**
 **/coverage/**
 **/next-env.d.ts
 **/next/**
 **/public/**
 pnpm-lock.yaml
-
+nerdfishui.css
+**/.source/**

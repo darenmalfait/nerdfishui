@@ -1,6 +1,7 @@
 {
 	"extends": "@nerdfish/config/typescript",
 	"include": ["src"],
+	"exclude": ["node_modules"],
 	"compilerOptions": {
 		"noEmit": false,
 		"emitDeclarationOnly": true,

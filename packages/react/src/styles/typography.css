@@ -1,0 +1,317 @@
+@utility typography-heading-xl {
+	@apply scroll-m-20 text-7xl tracking-tight;
+
+	@variant lg {
+		@apply text-9xl;
+	}
+}
+
+@utility typography-heading-lg {
+	@apply scroll-m-20 text-6xl tracking-tight;
+
+	@variant lg {
+		@apply text-8xl;
+	}
+}
+
+@utility typography-heading {
+	@apply scroll-m-20 text-5xl tracking-tight;
+
+	@variant lg {
+		@apply text-7xl;
+	}
+}
+
+@utility typography-heading-sm {
+	@apply scroll-m-20 text-4xl tracking-tight;
+
+	@variant lg {
+		@apply text-6xl;
+	}
+}
+
+@utility typography-headline {
+	@apply scroll-m-20 text-2xl;
+
+	@variant lg {
+		@apply text-4xl;
+	}
+}
+
+@utility typography-title {
+	@apply scroll-m-20 text-xl;
+
+	@variant lg {
+		@apply text-3xl;
+	}
+}
+
+@utility typography-subtitle {
+	@apply text-foreground-muted scroll-m-20 text-base;
+
+	@variant lg {
+		@apply text-xl;
+	}
+}
+
+@utility typography-body {
+	@apply text-lg;
+
+	@variant lg {
+		@apply text-xl;
+	}
+}
+
+@utility typography-body-large {
+	@apply text-xl;
+
+	@variant lg {
+		@apply text-3xl;
+	}
+}
+
+@utility typography-body-small {
+	@apply text-base;
+
+	@variant lg {
+		@apply text-lg;
+	}
+}
+
+@utility typography-caption {
+	@apply text-foreground-muted text-sm;
+}
+
+@utility typography-blockquote {
+	@apply border-border pl-friends text-foreground-muted border-l-2 text-xl;
+}
+
+@utility ins {
+	@apply bg-success-background text-success p-bff pl-casual relative block font-mono no-underline;
+
+	&::before {
+		@apply left-best-friends absolute font-mono content-['+'];
+	}
+}
+
+@utility del {
+	@apply bg-destructive-background text-destructive p-bff pl-casual relative block font-mono no-underline;
+
+	&::before {
+		@apply left-best-friends absolute font-mono content-['-'];
+	}
+}
+
+@utility mark {
+	@apply bg-accent rounded-[calc(theme(borderRadius.compact)/2)] px-bff text-accent-contrast;
+}
+
+@layer base {
+	.typography {
+		max-width: 65ch;
+		color: var(--color-foreground);
+
+		& h1:not(.not-typography h1) {
+			@apply typography-heading;
+		}
+
+		& h2:not(.not-typography h2) {
+			@apply typography-heading-sm mt-acquaintances first:mt-0;
+		}
+
+		& h3:not(.not-typography h3) {
+			@apply typography-subtitle mt-proximity-3 first:mt-0;
+		}
+
+		& h4:not(.not-typography h4) {
+			@apply typography-body mt-proximity-3 first:mt-0;
+		}
+
+		& h5:not(.not-typography h5) {
+			@apply mt-proximity-3 scroll-m-20 text-base first:mt-0;
+		}
+
+		& h6:not(.not-typography h6) {
+			@apply mt-proximity-3 scroll-m-20 text-base first:mt-0;
+		}
+
+		& h1:not(.not-typography h1),
+		& h2:not(.not-typography h2),
+		& h3:not(.not-typography h3),
+		& h4:not(.not-typography h4),
+		& h5:not(.not-typography h5),
+		& h6:not(.not-typography h6) {
+			& + p {
+				margin-top: 0;
+			}
+		}
+
+		& p:not(.not-typography p) {
+			line-height: 1.75;
+
+			&:not(:first-child) {
+				@apply mt-casual;
+			}
+		}
+
+		& li:not(.not-typography li) {
+			line-height: 1.75;
+		}
+
+		& a:not(.not-typography a) {
+			@apply text-accent underline-offset-4;
+		}
+
+		& blockquote:not(.not-typography blockquote) {
+			@apply typography-blockquote mt-casual;
+		}
+
+		& table:not(.not-typography table) {
+			@apply my-casual w-full overflow-y-auto;
+
+			& thead tr {
+				margin: 0;
+				border-top: 1px solid var(--color-border);
+				padding: 0;
+
+				&:nth-child(even) {
+					background-color: var(--color-background-muted);
+				}
+			}
+
+			& th {
+				@apply px-friends py-best-friends border-border text-left font-bold;
+
+				&[align='center'] {
+					text-align: center;
+				}
+
+				&[align='right'] {
+					text-align: right;
+				}
+			}
+
+			& tbody tr {
+				margin: 0;
+				border-top: 1px solid var(--color-border);
+				padding: 0;
+
+				&:nth-child(even) {
+					background-color: var(--color-background-muted);
+				}
+			}
+
+			& td {
+				@apply px-friends py-best-friends border-border text-left;
+
+				&[align='center'] {
+					@apply text-center;
+				}
+
+				&[align='right'] {
+					@apply text-right;
+				}
+			}
+		}
+
+		& ul:not(.not-typography ul) {
+			@apply mt-casual ml-casual list-disc;
+
+			& > li {
+				@apply mt-best-friends;
+			}
+
+			& p {
+				@apply mt-0 mb-0 inline;
+			}
+		}
+
+		& ol:not(.not-typography ol) {
+			@apply mt-casual ml-casual list-decimal;
+
+			& > li {
+				@apply mt-best-friends;
+			}
+
+			& p {
+				@apply mt-0 mb-0 inline;
+			}
+		}
+
+		& pre:not(.not-typography pre) {
+			@apply bg-background-muted rounded-compact px-friends py-friends my-casual overflow-y-auto font-mono text-sm;
+		}
+
+		& code:not(pre code):not(.not-typography code) {
+			@apply rounded-base relative px-1.5 py-0.5 font-mono text-sm font-bold;
+		}
+
+		& .lead:not(.not-typography .lead) {
+			@apply text-foreground-muted text-xl;
+		}
+
+		& .large:not(.not-typography .large) {
+			@apply text-lg font-bold;
+		}
+
+		& .small:not(.not-typography .small) {
+			@apply text-sm font-medium;
+		}
+
+		& .muted:not(.not-typography .muted) {
+			@apply text-foreground-muted text-sm;
+		}
+
+		& img:not(.not-typography img),
+		& picture:not(.not-typography picture),
+		& video:not(.not-typography video) {
+			@apply my-casual;
+		}
+
+		& picture > img:not(.not-typography picture > img) {
+			@apply mt-0 mb-0;
+		}
+
+		& kbd:not(.not-typography kbd) {
+			@apply rounded-base bg-background-muted text-foreground-muted text-xs font-bold;
+		}
+
+		& hr {
+			@apply my-proximity-3;
+		}
+
+		& dl:not(.not-typography dl) {
+			@apply my-casual;
+
+			& dt {
+				@apply mt-casual font-bold tracking-tight;
+
+				&:first-child {
+					@apply mt-0;
+				}
+			}
+		}
+
+		& details:not(.not-typography details) {
+			@apply mt-casual;
+
+			& summary {
+				@apply mt-casual cursor-pointer font-bold tracking-tight;
+			}
+
+			& p {
+				&:first-of-type {
+					@apply mt-best-friends;
+				}
+			}
+		}
+
+		& mark:not(.not-typography mark) {
+			@apply mark;
+		}
+
+		& small:not(.not-typography small) {
+			@apply text-xs leading-[1];
+		}
+	}
+}

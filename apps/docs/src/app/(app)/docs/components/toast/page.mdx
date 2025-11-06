@@ -1,0 +1,36 @@
+import { ToastExample } from './example/default'
+import { ToastExamplesExample } from './example/examples'
+
+<DocsPageHeader
+	title="Toast"
+	description="An opinionated toast component for React."
+	githubPath={{
+		package: 'react',
+		path: 'src/components/toast/toast.tsx',
+	}}
+/>
+
+<ComponentExample component={ToastExample} name="default" />
+
+## Toaster
+
+This needs to be placed in the root component of your application.
+
+```tsx
+import { Toaster } from '@nerdfish/react/toast'
+
+function RootLayout({ children }: RootLayoutProps) {
+	return (
+		<html lang="en">
+			<body>
+				<Toaster />
+				{children}
+			</body>
+		</html>
+	)
+}
+```
+
+## Examples
+
+<ComponentExample component={ToastExamplesExample} name="examples" />

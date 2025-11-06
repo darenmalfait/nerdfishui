@@ -42,3 +42,4 @@ yarn-error.log
 # env files
 .env*
 !.env.example
+packages/theme/nerdfishui.css
