@@ -1,5 +1,5 @@
 @utility typography-heading-xl {
-	@apply scroll-m-20 text-7xl tracking-tight;
+	@apply scroll-m-20 text-7xl font-bold tracking-tight;
 
 	@variant lg {
 		@apply text-9xl;
@@ -7,7 +7,7 @@
 }
 
 @utility typography-heading-lg {
-	@apply scroll-m-20 text-6xl tracking-tight;
+	@apply scroll-m-20 text-6xl font-bold tracking-tight;
 
 	@variant lg {
 		@apply text-8xl;
@@ -15,7 +15,7 @@
 }
 
 @utility typography-heading {
-	@apply scroll-m-20 text-5xl tracking-tight;
+	@apply scroll-m-20 text-5xl font-bold tracking-tight;
 
 	@variant lg {
 		@apply text-7xl;
@@ -23,7 +23,7 @@
 }
 
 @utility typography-heading-sm {
-	@apply scroll-m-20 text-4xl tracking-tight;
+	@apply scroll-m-20 text-4xl font-bold tracking-tight;
 
 	@variant lg {
 		@apply text-6xl;
@@ -31,7 +31,7 @@
 }
 
 @utility typography-headline {
-	@apply scroll-m-20 text-2xl;
+	@apply scroll-m-20 text-2xl font-bold;
 
 	@variant lg {
 		@apply text-4xl;
@@ -39,7 +39,7 @@
 }
 
 @utility typography-title {
-	@apply scroll-m-20 text-xl;
+	@apply scroll-m-20 text-xl font-semibold;
 
 	@variant lg {
 		@apply text-3xl;
@@ -47,7 +47,7 @@
 }
 
 @utility typography-subtitle {
-	@apply text-foreground-muted scroll-m-20 text-base;
+	@apply text-foreground-muted scroll-m-20 text-base font-medium;
 
 	@variant lg {
 		@apply text-xl;
