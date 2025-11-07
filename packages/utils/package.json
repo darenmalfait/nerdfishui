@@ -30,9 +30,9 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "@nerdfish/config": "^1.9.3",
-    "eslint": "^9.29.0",
-    "prettier": "^3.5.3",
+    "@nerdfish/config": "^1.9.4",
+    "eslint": "^9.37.0",
+    "prettier": "^3.6.2",
     "typescript": "^5.9.3"
   },
   "publishConfig": {

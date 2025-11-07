@@ -30,7 +30,7 @@ export function CollapsibleContent({
 		<BaseCollapsible.Panel
 			data-slot="collapsible-panel"
 			className={cx(
-				'h-[var(--collapsible-panel-height)] overflow-hidden transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0',
+				'h-(--collapsible-panel-height) overflow-hidden transition-all ease-out data-ending-style:h-0 data-starting-style:h-0',
 				className,
 			)}
 			{...props}

@@ -99,12 +99,12 @@ const users = [
 
 export function ScrollAreaExample() {
 	return (
-		<Card className="w-[400px]">
+		<Card className="w-100">
 			<CardHeader>
 				<CardTitle>Recent Users</CardTitle>
 			</CardHeader>
 			<CardContent>
-				<ScrollArea className="h-[300px] pe-3.5">
+				<ScrollArea className="h-75 pe-3.5">
 					{users.map((user) => {
 						return (
 							<div

@@ -95,7 +95,7 @@ export function Slider({
 				key={index}
 				data-slot="slider-thumb"
 				className={cx(
-					'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-[dragging]:ring-4 data-[focused]:ring-4 data-[touched]:ring-4',
+					'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
 				)}
 				onPointerDown={handlePointerDown}
 			/>
@@ -127,7 +127,7 @@ export function Slider({
 			min={min}
 			max={max}
 			className={cx(
-				'relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
+				'relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
 				className,
 			)}
 			onValueChange={handleValueChange}
@@ -153,7 +153,7 @@ export function SliderThumb({ className, ...props }: SliderThumbProps) {
 		<SliderPrimitive.Thumb
 			data-slot="slider-thumb"
 			className={cx(
-				'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-[dragging]:ring-4 data-[focused]:ring-4 data-[touched]:ring-4',
+				'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
 				className,
 			)}
 			{...props}

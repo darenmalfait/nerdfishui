@@ -35,7 +35,7 @@ export function ScrollBar({
 			data-slot="scroll-area-scrollbar"
 			orientation={orientation}
 			className={cx(
-				'flex touch-none p-px opacity-0 transition-[colors,opacity] delay-300 duration-150 select-none data-[hovering]:opacity-100 data-[hovering]:delay-0 data-[hovering]:duration-75 data-[scrolling]:opacity-100 data-[scrolling]:delay-0 data-[scrolling]:duration-75',
+				'flex touch-none p-px opacity-0 transition-[colors,opacity] delay-300 duration-150 select-none data-hovering:opacity-100 data-hovering:delay-0 data-hovering:duration-75 data-scrolling:opacity-100 data-scrolling:delay-0 data-scrolling:duration-75',
 				orientation === 'vertical' &&
 					'h-full w-2 border-l border-l-transparent',
 				orientation === 'horizontal' &&

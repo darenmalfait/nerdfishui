@@ -117,10 +117,10 @@ export function MarqueeExample() {
 				))}
 			</Marquee>
 			{/* Stylish gradient overlays */}
-			<div className="from-background/95 pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r to-transparent" />
-			<div className="from-background/95 pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l to-transparent" />
-			<div className="from-background/90 pointer-events-none absolute top-0 left-0 h-12 w-full bg-gradient-to-b to-transparent" />
-			<div className="from-background/90 pointer-events-none absolute bottom-0 left-0 h-12 w-full bg-gradient-to-t to-transparent" />
+			<div className="from-background/95 pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-linear-to-r to-transparent" />
+			<div className="from-background/95 pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-linear-to-l to-transparent" />
+			<div className="from-background/90 pointer-events-none absolute top-0 left-0 h-12 w-full bg-linear-to-b to-transparent" />
+			<div className="from-background/90 pointer-events-none absolute bottom-0 left-0 h-12 w-full bg-linear-to-t to-transparent" />
 		</div>
 	)
 }

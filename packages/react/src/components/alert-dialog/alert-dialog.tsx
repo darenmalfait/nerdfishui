@@ -69,12 +69,12 @@ export function AlertDialogContent({
 				className={cx(
 					'bg-popover text-popover-contrast z-50 grid w-full sm:max-w-[calc(100%-2rem)]',
 					'fixed bottom-0 w-full sm:top-[50%] sm:bottom-auto sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
-					'rounded-container gap-friends p-friends border shadow-lg outline-none sm:max-w-[512px] sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
+					'rounded-container gap-friends p-friends border shadow-lg outline-none sm:max-w-128 sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
 					'duration-200',
-					'data-[starting-style]:translate-y-full data-[starting-style]:opacity-0',
-					'data-[ending-style]:translate-y-full data-[ending-style]:opacity-0',
-					'data-[starting-style]:sm:translate-y-[-50%] data-[starting-style]:sm:scale-95',
-					'data-[ending-style]:sm:translate-y-[-50%] data-[ending-style]:sm:scale-95',
+					'data-starting-style:translate-y-full data-starting-style:opacity-0',
+					'data-ending-style:translate-y-full data-ending-style:opacity-0',
+					'data-starting-style:sm:translate-y-[-50%] data-starting-style:sm:scale-95',
+					'data-ending-style:sm:translate-y-[-50%] data-ending-style:sm:scale-95',
 					className,
 				)}
 				{...props}

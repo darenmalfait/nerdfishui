@@ -144,11 +144,11 @@ export function ComboboxPopup({ className, ...props }: ComboboxPopupProps) {
 			data-slot="combobox-popup"
 			className={cx(
 				'p-popover-compact',
-				'max-h-[min(var(--available-height),20rem)] w-[var(--anchor-width)] max-w-[var(--available-width)]',
+				'max-h-[min(var(--available-height),20rem)] w-(--anchor-width) max-w-(--available-width)',
 				'scroll-pt-best-friends scroll-pb-best-friends overflow-y-auto overscroll-contain bg-[canvas]',
 				'border-border bg-popover text-popover-contrast rounded-popover border shadow-md shadow-black/5',
-				'origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90',
-				'data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0',
+				'origin-(--transform-origin) transition-[transform,scale,opacity] data-ending-style:scale-90',
+				'data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0',
 				className,
 			)}
 			{...props}
@@ -162,7 +162,7 @@ export function ComboboxList({ className, ...props }: ComboboxListProps) {
 	return (
 		<ComboboxPrimitive.List
 			data-slot="combobox-list"
-			className={cx('space-y-bff empty:!p-0', className)}
+			className={cx('space-y-bff empty:p-0!', className)}
 			{...props}
 		/>
 	)
@@ -198,10 +198,10 @@ export function ComboboxItem({ className, ...props }: ComboboxItemProps) {
 			data-slot="combobox-item"
 			className={cx(
 				'relative flex cursor-default items-center',
-				'py-best-friends rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
+				'py-best-friends rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 				'text-foreground gap-best-friends relative items-center ps-7 pe-2 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50',
 				'[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-4 [&_svg:not([role=img]):not([class*=text-])]:opacity-60',
-				'data-[highlighted]:text-foreground-inverted data-[highlighted]:bg-background-inverted data-[highlighted]:[&_svg:not([role=img])]:text-foreground-inverted',
+				'data-highlighted:text-foreground-inverted data-highlighted:bg-background-inverted data-highlighted:[&_svg:not([role=img])]:text-foreground-inverted',
 				className,
 			)}
 			{...props}
@@ -290,7 +290,7 @@ export function ComboboxClear({
 					className={cx(
 						'ring-offset-background rounded-base absolute end-6 top-1/2 -translate-y-1/2 cursor-pointer opacity-70',
 						'focus:ring-ring opacity-60 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none',
-						'data-[disabled]:pointer-events-none',
+						'data-disabled:pointer-events-none',
 						className,
 					)}
 					{...props}
@@ -315,7 +315,7 @@ export function ComboboxIcon({
 			className={cx(
 				'ring-offset-background rounded-base absolute end-2 top-1/2 -translate-y-1/2 cursor-pointer opacity-70 transition-opacity',
 				'focus:ring-ring opacity-60 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none',
-				'data-[disabled]:pointer-events-none',
+				'data-disabled:pointer-events-none',
 				className,
 			)}
 			{...props}
@@ -365,10 +365,10 @@ export function ComboboxChips({
 		<ComboboxPrimitive.Chips
 			data-slot="combobox-chips"
 			className={cx(
-				'[&_[data-slot=combobox-input]]:px-0 [&_[data-slot=combobox-input]]:py-0',
-				'[&_[data-slot=combobox-input]]:min-h-0 [&_[data-slot=combobox-input]]:flex-1',
-				'[&_[data-slot=combobox-input]]:rounded-none [&_[data-slot=combobox-input]]:border-0 [&_[data-slot=combobox-input]]:shadow-none',
-				'[&_[data-slot=combobox-input]]:ring-0 [&_[data-slot=combobox-input]]:outline-none',
+				'**:data-[slot=combobox-input]:px-0 **:data-[slot=combobox-input]:py-0',
+				'**:data-[slot=combobox-input]:min-h-0 **:data-[slot=combobox-input]:flex-1',
+				'**:data-[slot=combobox-input]:rounded-none **:data-[slot=combobox-input]:border-0 **:data-[slot=combobox-input]:shadow-none',
+				'**:data-[slot=combobox-input]:ring-0 **:data-[slot=combobox-input]:outline-none',
 				inputVariants({ variant, size }),
 				'gap-bff flex flex-wrap items-center',
 				className,

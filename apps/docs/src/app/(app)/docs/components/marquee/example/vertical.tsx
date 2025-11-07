@@ -105,7 +105,7 @@ function TestimonialCard({
 
 export function MarqueeVerticalExample() {
 	return (
-		<div className="relative flex h-[500px] w-full flex-row items-center justify-center gap-1.5 overflow-hidden">
+		<div className="relative flex h-125 w-full flex-row items-center justify-center gap-1.5 overflow-hidden">
 			{/* Vertical Marquee (downwards) */}
 			<Marquee vertical pauseOnHover repeat={3} className="[--duration:40s]">
 				{testimonials.map((review) => (
@@ -125,8 +125,8 @@ export function MarqueeVerticalExample() {
 				))}
 			</Marquee>
 			{/* Gradient overlays for vertical marquee */}
-			<div className="from-background pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b" />
-			<div className="from-background pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t" />
+			<div className="from-background pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-linear-to-b" />
+			<div className="from-background pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t" />
 		</div>
 	)
 }

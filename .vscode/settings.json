@@ -23,5 +23,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"biome.enabled": false,
-	"prettier.enable": true
+	"prettier.enable": true,
+	"typescript.validate.enable": true,
+	"typescript.tsserver.experimental.enableProjectDiagnostics": true
 }

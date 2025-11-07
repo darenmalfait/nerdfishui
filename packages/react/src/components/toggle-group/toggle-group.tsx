@@ -84,7 +84,7 @@ export function ToggleGroupItem({
 					size: context.size ?? size,
 				}),
 				'px-best-friends w-auto min-w-0 shrink-0 focus:z-10 focus-visible:z-10 data-[spacing=0]:rounded-none',
-				'data-[spacing=0]:first:!rounded-l-compact data-[spacing=0]:last:!rounded-r-compact data-[spacing=0]:shadow-none data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l',
+				'data-[spacing=0]:first:rounded-l-compact! data-[spacing=0]:last:rounded-r-compact! data-[spacing=0]:shadow-none data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l',
 				className,
 			)}
 			{...props}

@@ -14,8 +14,8 @@ import { CopyButton } from './copy-button'
 
 function Preview({ children }: { children: ReactNode }) {
 	return (
-		<div className="rounded-container p-casual border-border flex min-h-[450px] items-center justify-center border">
-			<div className="mx-auto flex w-full max-w-[800px] justify-center">
+		<div className="rounded-container p-casual border-border flex min-h-112.5 items-center justify-center border">
+			<div className="mx-auto flex w-full max-w-200 justify-center">
 				{children}
 			</div>
 		</div>
@@ -71,7 +71,7 @@ export function ComponentExample({
 						</CodeBlockGroup>
 
 						<CodeBlockCode
-							className="max-h-[350px] overflow-auto"
+							className="max-h-87.5 overflow-auto"
 							code={sourceCode}
 						/>
 					</CodeBlock>

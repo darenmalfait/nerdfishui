@@ -15,7 +15,7 @@ export function Radius({ radius }: { radius: Radius }) {
 					style={{
 						borderRadius: radius.variable,
 					}}
-					className="bg-background-inverted h-[100px] w-1/2"
+					className="bg-background-inverted h-25 w-1/2"
 				/>
 			</div>
 		</div>

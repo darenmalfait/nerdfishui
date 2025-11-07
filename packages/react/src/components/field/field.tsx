@@ -50,7 +50,7 @@ export function FieldGroup({ className, ...props }: FieldGroupProps) {
 		<div
 			data-slot="field-group"
 			className={cx(
-				'group/field-group data-[slot=checkbox-group]:gap-casual gap-casual [&>[data-slot=field-group]]:gap-friends @container/field-group flex w-full flex-col',
+				'group/field-group data-[slot=checkbox-group]:gap-casual gap-casual *:data-[slot=field-group]:gap-friends @container/field-group flex w-full flex-col',
 				className,
 			)}
 			{...props}
@@ -122,7 +122,7 @@ export function FieldLabel({ className, ...props }: FieldLabelProps) {
 			data-slot="field-label"
 			className={cx(
 				'group/field-label peer/field-label gap-best-friends flex w-fit leading-snug group-data-[disabled=true]/field:opacity-50',
-				'[&>*]:data-[slot=field]:p-friends has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border',
+				'*:data-[slot=field]:p-friends has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border',
 				'has-data-[state=checked]:bg-background/5 has-data-[state=checked]:border-border',
 				className,
 			)}
@@ -154,7 +154,7 @@ export function FieldDescription({
 		<p
 			data-slot="field-description"
 			className={cx(
-				'text-foreground-muted text-sm leading-normal font-normal group-has-[[data-orientation=horizontal]]/field:text-balance',
+				'text-foreground-muted text-sm leading-normal font-normal group-has-data-[orientation=horizontal]/field:text-balance',
 				'last:mt-0 nth-last-2:-mt-1 [[data-variant=legend]+&]:-mt-1.5',
 				'[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
 				className,

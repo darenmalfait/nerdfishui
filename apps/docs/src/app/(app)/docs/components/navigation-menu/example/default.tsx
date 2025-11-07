@@ -55,12 +55,12 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Home</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+						<ul className="grid gap-2 md:w-100 lg:w-125 lg:grid-cols-[.75fr_1fr]">
 							<li className="row-span-3">
 								<NavigationMenuLink
 									render={
 										<Link
-											className="from-muted/50 to-muted rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))] flex h-full w-full flex-col justify-end bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
+											className="from-muted/50 to-muted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] flex h-full w-full flex-col justify-end bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
 											href="/"
 										/>
 									}
@@ -86,7 +86,7 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Components</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+						<ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
 							{components.map((component) => (
 								<ListItem
 									key={component.title}
@@ -111,7 +111,7 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>List</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[300px] gap-4">
+						<ul className="grid w-75 gap-4">
 							<li>
 								<NavigationMenuLink render={<Link href="#" />}>
 									<div className="font-medium">Components</div>
@@ -138,7 +138,7 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Simple</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[200px] gap-4">
+						<ul className="grid w-50 gap-4">
 							<li>
 								<NavigationMenuLink render={<Link href="#" />}>
 									Components
@@ -156,7 +156,7 @@ export function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-[200px] gap-4">
+						<ul className="grid w-50 gap-4">
 							<li>
 								<NavigationMenuLink
 									render={

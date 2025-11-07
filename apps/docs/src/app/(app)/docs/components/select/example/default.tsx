@@ -21,7 +21,7 @@ const fruits = [
 export function SelectExample() {
 	return (
 		<Select items={fruits}>
-			<SelectTrigger className="w-[180px]">
+			<SelectTrigger className="w-45">
 				<SelectValue />
 			</SelectTrigger>
 			<SelectContent>

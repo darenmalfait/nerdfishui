@@ -9,7 +9,7 @@ export function TabsVariantsExample() {
 		<div className="gap-casual flex flex-col">
 			<Tabs
 				defaultValue="profile"
-				className="text-muted-foreground w-[375px] text-sm"
+				className="text-muted-foreground w-93.75 text-sm"
 			>
 				<TabsList variant="default" className="grid w-full grid-cols-2">
 					<TabsTrigger value="profile">
@@ -30,7 +30,7 @@ export function TabsVariantsExample() {
 			</Tabs>
 			<Tabs
 				defaultValue="profile"
-				className="text-muted-foreground w-[375px] text-sm"
+				className="text-muted-foreground w-93.75 text-sm"
 			>
 				<TabsList variant="button" className="grid w-full grid-cols-2">
 					<TabsTrigger value="profile">
@@ -51,7 +51,7 @@ export function TabsVariantsExample() {
 			</Tabs>
 			<Tabs
 				defaultValue="profile"
-				className="text-muted-foreground w-[375px] text-sm"
+				className="text-muted-foreground w-93.75 text-sm"
 			>
 				<TabsList variant="line" className="grid w-full grid-cols-2">
 					<TabsTrigger value="profile">

@@ -66,7 +66,7 @@ export function ButtonGroupSeparator({
 			data-slot="button-group-separator"
 			orientation={orientation}
 			className={cx(
-				'bg-background-muted relative !m-0 self-stretch data-[orientation=vertical]:h-auto',
+				'bg-background-muted relative m-0! self-stretch data-[orientation=vertical]:h-auto',
 				className,
 			)}
 			{...props}

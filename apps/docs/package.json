@@ -55,7 +55,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@nerdfish/config": "^1.9.3",
+    "@nerdfish/config": "^1.9.4",
     "@shikijs/compat": "^1.1.7",
     "@svgr/webpack": "^8.1.0",
     "@types/eslint": "^9.6.1",
@@ -75,7 +75,7 @@
     "postcss-nesting": "^13.0.2",
     "prettier": "^3.6.2",
     "rehype-pretty-code": "^0.14.1",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3",
     "unist-builder": "3.0.0",
     "unist-util-visit": "^4.1.2"

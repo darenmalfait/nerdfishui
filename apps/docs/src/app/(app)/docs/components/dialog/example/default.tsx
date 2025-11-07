@@ -21,7 +21,7 @@ export function DialogExample() {
 				<DialogTrigger
 					render={<Button variant="outline">Open Dialog</Button>}
 				/>
-				<DialogContent className="sm:max-w-[425px]">
+				<DialogContent className="sm:max-w-106.25">
 					<DialogHeader>
 						<DialogTitle>Edit profile</DialogTitle>
 						<DialogDescription>

@@ -52,7 +52,7 @@ export function ReactHookFormExample() {
 	function onSubmit(data: z.infer<typeof formSchema>) {
 		toast('You submitted the following values:', {
 			description: (
-				<pre className="bg-muted/50 text-foreground p-friends mt-best-friends rounded-compact w-[320px] overflow-x-auto">
+				<pre className="bg-muted/50 text-foreground p-friends mt-best-friends rounded-compact w-80 overflow-x-auto">
 					<code>{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			),

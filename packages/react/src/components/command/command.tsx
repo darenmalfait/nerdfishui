@@ -48,7 +48,7 @@ export function CommandDialog({
 				<DialogDescription>{description}</DialogDescription>
 			</DialogHeader>
 			<DialogContent
-				className={cx('overflow-hidden !p-0', className)}
+				className={cx('overflow-hidden p-0!', className)}
 				showCloseButton={showCloseButton}
 			>
 				<Command className="[&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
@@ -85,7 +85,7 @@ export function CommandList({ className, ...props }: CommandListProps) {
 		<CommandPrimitive.List
 			data-slot="command-list"
 			className={cx(
-				'scroll-py-best-friends max-h-[300px] overflow-x-hidden overflow-y-auto',
+				'scroll-py-best-friends max-h-75 overflow-x-hidden overflow-y-auto',
 				className,
 			)}
 			{...props}
@@ -110,7 +110,7 @@ export function CommandGroup({ className, ...props }: CommandGroupProps) {
 		<CommandPrimitive.Group
 			data-slot="command-group"
 			className={cx(
-				'text-foreground [&_[cmdk-group-heading]]:text-foreground-muted [&_[cmdk-group-heading]]:px-friends [&_[cmdk-group-heading]]:py-best-friends overflow-hidden [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
+				'text-foreground **:[[cmdk-group-heading]]:text-foreground-muted **:[[cmdk-group-heading]]:px-friends **:[[cmdk-group-heading]]:py-best-friends overflow-hidden **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-medium',
 				className,
 			)}
 			{...props}

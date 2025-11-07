@@ -48,7 +48,7 @@ export function NumberInput({
 			>
 				{children}
 				<NumberInputPrimitive.Group
-					className={inputVariants({ variant, size, className: 'flex !p-0' })}
+					className={inputVariants({ variant, size, className: 'flex p-0!' })}
 				>
 					<NumberInputPrimitive.Decrement
 						className={cx(
@@ -65,7 +65,7 @@ export function NumberInput({
 						className={inputVariants({
 							variant,
 							size,
-							className: '!rounded-none !border-none !bg-transparent',
+							className: 'rounded-none! border-none! bg-transparent!',
 						})}
 						data-slot="number-field-input"
 					/>

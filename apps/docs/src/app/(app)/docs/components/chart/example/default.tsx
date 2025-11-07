@@ -172,7 +172,7 @@ export function ChartExample() {
 			<CardContent className="px-best-friends sm:p-friends">
 				<ChartContainer
 					config={chartConfig}
-					className="aspect-auto h-[250px] w-full"
+					className="aspect-auto h-62.5 w-full"
 				>
 					<BarChart
 						accessibilityLayer
@@ -202,7 +202,7 @@ export function ChartExample() {
 								return (
 									<ChartTooltipContent
 										{...props}
-										className="w-[150px]"
+										className="w-37.5"
 										nameKey="views"
 										labelFormatter={(value) => {
 											return new Date(value).toLocaleDateString('nl-BE', {

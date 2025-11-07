@@ -79,7 +79,7 @@ export function MobileNav({ className }: { className?: string }) {
 				}
 			/>
 			<PopoverContent
-				className="bg-background/90 no-scrollbar z-50 h-(--available-height) w-(--available-width) overflow-y-auto rounded-none !border-none p-0 shadow-none backdrop-blur duration-100"
+				className="bg-background/90 no-scrollbar z-50 h-(--available-height) w-(--available-width) overflow-y-auto rounded-none border-none! p-0 shadow-none backdrop-blur duration-100"
 				align="start"
 				side="bottom"
 				sideOffset={5}

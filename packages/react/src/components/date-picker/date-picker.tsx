@@ -24,7 +24,7 @@ function Presets({
 	if (!presets.length) return null
 
 	return (
-		<div className={cx('px-friends flex max-w-[250px] flex-wrap', className)}>
+		<div className={cx('px-friends flex max-w-62.5 flex-wrap', className)}>
 			{presets.map(({ value, label }) => {
 				return (
 					<Badge
@@ -65,7 +65,7 @@ function DatePickerTrigger({
 			{...props}
 			className={cx(
 				buttonVariants({ variant: 'outline' }),
-				'w-[280px] justify-start text-left font-normal',
+				'w-70 justify-start text-left font-normal',
 				!selected && 'text-foreground-muted',
 				className,
 			)}

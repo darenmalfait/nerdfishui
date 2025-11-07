@@ -39,7 +39,7 @@ export function CollapsibleCardExample() {
 	]
 
 	return (
-		<Card className="w-full md:w-[350px]">
+		<Card className="w-full md:w-87.5">
 			<Collapsible open={isOpen} onOpenChange={setIsOpen}>
 				<CardHeader className="h-auto items-center gap-0">
 					<div className="gap-friends flex items-center justify-between">

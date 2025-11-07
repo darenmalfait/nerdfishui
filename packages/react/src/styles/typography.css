@@ -103,7 +103,7 @@
 }
 
 @utility mark {
-	@apply bg-accent rounded-[calc(theme(borderRadius.compact)/2)] px-bff text-accent-contrast;
+	@apply bg-accent px-bff text-accent-contrast rounded-[calc(var(--radius-compact)/2)];
 }
 
 @layer base {
@@ -311,7 +311,7 @@
 		}
 
 		& small:not(.not-typography small) {
-			@apply text-xs leading-[1];
+			@apply text-xs leading-none;
 		}
 	}
 }

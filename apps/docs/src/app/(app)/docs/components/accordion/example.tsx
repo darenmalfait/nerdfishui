@@ -9,7 +9,7 @@ import {
 
 export function AccordionExample() {
 	return (
-		<Accordion className="w-[450px]">
+		<Accordion className="w-112.5">
 			<AccordionItem value="item-1">
 				<AccordionTrigger>Fish</AccordionTrigger>
 				<AccordionContent>

@@ -22,11 +22,11 @@ export function ProgressAnimatedExample() {
 	}, [])
 
 	return (
-		<div className="w-full space-y-2 md:w-[500px]">
+		<div className="w-full space-y-2 md:w-125">
 			<h3 className="text-sm font-medium">Pulsing Animation</h3>
 			<Progress
 				value={progress}
-				className="[&_[data-slot=progress-indicator]]:animate-pulse [&_[data-slot=progress-indicator]]:bg-purple-600"
+				className="**:data-[slot=progress-indicator]:animate-pulse **:data-[slot=progress-indicator]:bg-purple-600"
 			/>
 			<div className="text-muted-foreground inline-flex items-center gap-2 text-xs">
 				Processing data...

@@ -212,8 +212,8 @@ export function SidebarExample() {
 	}
 
 	return (
-		<div className="p-best-friends border-border rounded-base relative h-fit translate-0 transform overflow-hidden overflow-y-auto border [&_*]:!max-h-[500px]">
-			<SidebarProvider className="!min-h-[500px]">
+		<div className="p-best-friends border-border rounded-base relative h-fit translate-0 transform overflow-hidden overflow-y-auto border **:max-h-125!">
+			<SidebarProvider className="min-h-125!">
 				<Sidebar collapsible="icon">
 					<SidebarHeader>
 						<SidebarMenu>
@@ -470,7 +470,7 @@ export function SidebarExample() {
 					<SidebarRail />
 				</Sidebar>
 				<SidebarInset>
-					<header className="gap-best-friends flex h-16 shrink-0 items-center transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+					<header className="gap-best-friends flex h-16 shrink-0 items-center transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
 						<div className="gap-best-friends flex items-center px-4">
 							<SidebarTrigger className="-ml-1" />
 							<Separator orientation="vertical" className="mr-2 h-4" />
@@ -495,7 +495,7 @@ export function SidebarExample() {
 							<div className="bg-background-muted/50 aspect-video rounded-xl" />
 							<div className="bg-background-muted/50 aspect-video rounded-xl" />
 						</div>
-						<div className="bg-background-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
+						<div className="bg-background-muted/50 min-h-screen flex-1 rounded-xl md:min-h-min" />
 					</div>
 				</SidebarInset>
 			</SidebarProvider>

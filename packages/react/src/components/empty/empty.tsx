@@ -19,7 +19,7 @@ export function EmptyHeader({ className, ...props }: ComponentProps<'div'>) {
 		<div
 			data-slot="empty-header"
 			className={cx(
-				'gap-best-friends flex max-w-[400px] flex-col items-center text-center',
+				'gap-best-friends flex max-w-100 flex-col items-center text-center',
 				className,
 			)}
 			{...props}
@@ -85,7 +85,7 @@ export function EmptyContent({ className, ...props }: ComponentProps<'div'>) {
 		<div
 			data-slot="empty-content"
 			className={cx(
-				'gap-friends flex w-full max-w-[400px] min-w-0 flex-col items-center text-sm text-balance',
+				'gap-friends flex w-full max-w-100 min-w-0 flex-col items-center text-sm text-balance',
 				className,
 			)}
 			{...props}

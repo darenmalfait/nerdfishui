@@ -9,7 +9,7 @@ export function ToggleGroupExample() {
 			<ToggleGroupItem
 				value="star"
 				aria-label="Toggle star"
-				className="data-[pressed]:bg-transparent data-[pressed]:*:[svg]:fill-yellow-500 data-[pressed]:*:[svg]:stroke-yellow-500"
+				className="data-pressed:bg-transparent data-pressed:*:[svg]:fill-yellow-500 data-pressed:*:[svg]:stroke-yellow-500"
 			>
 				<StarIcon />
 				Star
@@ -17,7 +17,7 @@ export function ToggleGroupExample() {
 			<ToggleGroupItem
 				value="heart"
 				aria-label="Toggle heart"
-				className="data-[pressed]:bg-transparent data-[pressed]:*:[svg]:fill-red-500 data-[pressed]:*:[svg]:stroke-red-500"
+				className="data-pressed:bg-transparent data-pressed:*:[svg]:fill-red-500 data-pressed:*:[svg]:stroke-red-500"
 			>
 				<HeartIcon />
 				Heart
@@ -25,7 +25,7 @@ export function ToggleGroupExample() {
 			<ToggleGroupItem
 				value="bookmark"
 				aria-label="Toggle bookmark"
-				className="data-[pressed]:bg-transparent data-[pressed]:*:[svg]:fill-blue-500 data-[pressed]:*:[svg]:stroke-blue-500"
+				className="data-pressed:bg-transparent data-pressed:*:[svg]:fill-blue-500 data-pressed:*:[svg]:stroke-blue-500"
 			>
 				<BookmarkIcon />
 				Bookmark

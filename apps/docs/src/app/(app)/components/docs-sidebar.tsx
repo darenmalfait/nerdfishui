@@ -26,7 +26,7 @@ export function DocsSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
 			{...props}
 		>
 			<SidebarContent className="no-scrollbar px-best-friends overflow-x-hidden">
-				<div className="from-background via-background/80 to-background/50 sticky -top-1 z-10 h-8 shrink-0 bg-gradient-to-b blur-xs" />
+				<div className="from-background via-background/80 to-background/50 sticky -top-1 z-10 h-8 shrink-0 bg-linear-to-b blur-xs" />
 
 				{docsNav.map((item) => (
 					<SidebarGroup key={item.title}>
@@ -53,7 +53,7 @@ export function DocsSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
 						</SidebarGroupContent>
 					</SidebarGroup>
 				))}
-				<div className="from-background via-background/80 to-background/50 sticky -bottom-1 z-10 h-16 shrink-0 bg-gradient-to-t blur-xs" />
+				<div className="from-background via-background/80 to-background/50 sticky -bottom-1 z-10 h-16 shrink-0 bg-linear-to-t blur-xs" />
 			</SidebarContent>
 		</Sidebar>
 	)

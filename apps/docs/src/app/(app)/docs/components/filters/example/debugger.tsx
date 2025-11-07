@@ -213,7 +213,7 @@ export function FiltersDebugExample() {
 				</div>
 
 				{/* Debug Block */}
-				<pre className="bg-muted rounded-base p-friends mt-2 max-h-[400px] overflow-auto overflow-x-auto border text-xs">
+				<pre className="bg-muted rounded-base p-friends mt-2 max-h-100 overflow-auto overflow-x-auto border text-xs">
 					{JSON.stringify(filters, null, 2)}
 				</pre>
 			</div>

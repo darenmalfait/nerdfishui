@@ -42,7 +42,7 @@ const years = [
 
 export function FieldExample() {
 	return (
-		<div className="w-[500px]">
+		<div className="w-125">
 			<form>
 				<FieldGroup>
 					<FieldSet>

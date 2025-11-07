@@ -66,7 +66,7 @@ export function ContextMenuSubTrigger({
 			data-slot="context-menu-sub-trigger"
 			data-inset={inset}
 			className={cx(
-				"focus:bg-background-inverted focus:text-foreground-inverted data-[state=open]:bg-background-inverted data-[state=open]:text-accent-foreground rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))] px-best-friends py-best-friends flex cursor-default items-center text-sm outline-hidden select-none data-[inset]:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5",
+				"focus:bg-background-inverted focus:text-foreground-inverted data-[state=open]:bg-background-inverted data-[state=open]:text-accent-foreground rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends flex cursor-default items-center text-sm outline-hidden select-none data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5",
 				className,
 			)}
 			{...props}
@@ -198,7 +198,7 @@ export function ContextMenuItem({
 			data-inset={inset}
 			data-variant={variant}
 			className={cx(
-				"focus:bg-background-inverted focus:text-foreground-inverted data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-foreground-muted rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))] px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"focus:bg-background-inverted focus:text-foreground-inverted data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:text-destructive! [&_svg:not([class*='text-'])]:text-foreground-muted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -219,7 +219,7 @@ export function ContextMenuCheckboxItem({
 		<ContextMenuPrimitive.CheckboxItem
 			data-slot="context-menu-checkbox-item"
 			className={cx(
-				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 pe-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 pe-2 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			checked={checked}
@@ -247,7 +247,7 @@ export function ContextMenuRadioItem({
 		<ContextMenuPrimitive.RadioItem
 			data-slot="context-menu-radio-item"
 			className={cx(
-				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -277,7 +277,7 @@ export function ContextMenuGroupLabel({
 			data-slot="context-menu-group-label"
 			data-inset={inset}
 			className={cx(
-				'text-foreground-muted px-best-friends py-best-friends text-xs font-medium data-[inset]:ps-7',
+				'text-foreground-muted px-best-friends py-best-friends text-xs font-medium data-inset:ps-7',
 				className,
 			)}
 			{...props}

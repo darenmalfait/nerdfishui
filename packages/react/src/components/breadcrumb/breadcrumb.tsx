@@ -20,7 +20,7 @@ export function BreadcrumbList({ className, ...props }: BreadcrumbListProps) {
 		<ol
 			data-slot="breadcrumb-list"
 			className={cx(
-				'text-foreground-muted gap-bff flex flex-wrap items-center text-sm break-words',
+				'text-foreground-muted gap-bff flex flex-wrap items-center text-sm wrap-break-word',
 				className,
 			)}
 			{...props}

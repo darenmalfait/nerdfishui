@@ -43,7 +43,7 @@ export function ButtonGroupUseCase() {
 						</Button>
 					}
 				/>
-				<DropdownMenuContent className="max-w-[300px]">
+				<DropdownMenuContent className="max-w-75">
 					<DropdownMenuGroup>
 						{Object.entries(labelsMap).map(([key, label]) => {
 							const option = key as keyof typeof labelsMap

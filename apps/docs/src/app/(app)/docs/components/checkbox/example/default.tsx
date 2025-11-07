@@ -29,7 +29,7 @@ export function CheckboxExample() {
 					Enable notifications
 				</Label>
 			</div>
-			<Label className="hover:bg-background-muted/20 gap-best-friends p-friends rounded-base has-[[aria-checked=true]]:border-info has-[[aria-checked=true]]:bg-info-background flex items-start border">
+			<Label className="hover:bg-background-muted/20 gap-best-friends p-friends rounded-base has-aria-checked:border-info has-aria-checked:bg-info-background flex items-start border">
 				<Checkbox
 					id="toggle-2"
 					defaultChecked

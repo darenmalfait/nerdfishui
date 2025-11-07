@@ -46,7 +46,7 @@ export function AccordionTrigger({
 				data-slot="accordion-trigger"
 				className={cx(
 					'p-friends hover:bg-background-muted/20 rounded-base relative flex flex-1 items-center justify-between text-left font-medium transition-all outline-none',
-					'[&[data-panel-open]]:hover:bg-transparent',
+					'data-panel-open:hover:bg-transparent',
 					'[&[data-panel-open]>[data-slot="accordion-trigger-icon"]>svg]:rotate-180',
 					'font-bold',
 					className,
@@ -76,8 +76,8 @@ export function AccordionContent({
 		<AccordionPrimitive.Panel
 			data-slot="accordion-content"
 			className={cx(
-				'h-[var(--accordion-panel-height)] overflow-hidden text-sm transition-[height] ease-out',
-				'data-[ending-style]:h-0 data-[starting-style]:h-0',
+				'h-(--accordion-panel-height) overflow-hidden text-sm transition-[height] ease-out',
+				'data-ending-style:h-0 data-starting-style:h-0',
 				className,
 			)}
 			{...props}

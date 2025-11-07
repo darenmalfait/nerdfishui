@@ -62,8 +62,8 @@ function CountrySelectOption({
 	return (
 		<CommandItem
 			className={cx(
-				'rounded-[calc(theme(borderRadius.base)-theme(padding.best-friends))]',
-				'gap-best-friends hover:!bg-background-inverted group/country-select-option hover:!text-foreground-inverted',
+				'rounded-[calc(var(--radius-base)-theme(padding.best-friends))]',
+				'gap-best-friends hover:bg-background-inverted! group/country-select-option hover:text-foreground-inverted!',
 			)}
 			onSelect={() => onChange(country)}
 		>
@@ -121,7 +121,7 @@ function CountrySelect({
 					</button>
 				}
 			/>
-			<PopoverContent className="w-[300px]">
+			<PopoverContent className="w-75">
 				<Command>
 					<CommandInput placeholder="Search country..." />
 					<CommandList className="mt-best-friends">

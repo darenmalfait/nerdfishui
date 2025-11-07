@@ -86,7 +86,7 @@ export function NavigationMenuTrigger({
 		>
 			{children}{' '}
 			<ChevronDownIcon
-				className="relative top-[1px] ms-1 size-3 transition duration-300 group-data-[popup-open]:rotate-180"
+				className="relative top-px ms-1 size-3 transition duration-300 group-data-popup-open:rotate-180"
 				aria-hidden="true"
 			/>
 		</NavigationMenuPrimitive.Trigger>
@@ -104,13 +104,13 @@ export function NavigationMenuContent({
 		<NavigationMenuPrimitive.Content
 			data-slot="navigation-menu-content"
 			className={cx(
-				'xs:min-w-[400px] p-popover-compact h-full w-[calc(100vw_-_40px)] sm:w-max',
-				'transition-[opacity,transform,translate] duration-[var(--duration)] ease-[var(--easing)]',
-				'data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
-				'data-[starting-style]:data-[activation-direction=left]:translate-x-[-50%]',
-				'data-[starting-style]:data-[activation-direction=right]:translate-x-[50%]',
-				'data-[ending-style]:data-[activation-direction=left]:translate-x-[50%]',
-				'data-[ending-style]:data-[activation-direction=right]:translate-x-[-50%]',
+				'xs:min-w-[400px] p-popover-compact h-full w-[calc(100vw-40px)] sm:w-max',
+				'transition-[opacity,transform,translate] duration-(--duration) ease-(--easing)',
+				'data-ending-style:opacity-0 data-starting-style:opacity-0',
+				'data-starting-style:data-[activation-direction=left]:translate-x-[-50%]',
+				'data-starting-style:data-[activation-direction=right]:translate-x-[50%]',
+				'data-ending-style:data-[activation-direction=left]:translate-x-[50%]',
+				'data-ending-style:data-[activation-direction=right]:translate-x-[-50%]',
 				className,
 			)}
 			{...props}
@@ -146,7 +146,7 @@ export function NavigationMenuPositioner({
 				collisionPadding={{ top: 5, bottom: 5, left: 20, right: 20 }}
 				collisionAvoidance={{ side: 'none' }}
 				className={cx(
-					"box-border h-[var(--positioner-height)] w-[var(--positioner-width)] max-w-[var(--available-width)] transition-[top,left,right,bottom] duration-[var(--duration)] ease-[var(--easing)] before:absolute before:content-[''] data-[instant]:transition-none data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0 data-[side=bottom]:before:h-2.5 data-[side=left]:before:top-0 data-[side=left]:before:right-[-10px] data-[side=left]:before:bottom-0 data-[side=left]:before:w-2.5 data-[side=right]:before:top-0 data-[side=right]:before:bottom-0 data-[side=right]:before:left-[-10px] data-[side=right]:before:w-2.5 data-[side=top]:before:right-0 data-[side=top]:before:bottom-[-10px] data-[side=top]:before:left-0 data-[side=top]:before:h-2.5",
+					"box-border h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom] duration-(--duration) ease-(--easing) before:absolute before:content-[''] data-instant:transition-none data-[side=bottom]:before:-top-2.5 data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0 data-[side=bottom]:before:h-2.5 data-[side=left]:before:top-0 data-[side=left]:before:-right-2.5 data-[side=left]:before:bottom-0 data-[side=left]:before:w-2.5 data-[side=right]:before:top-0 data-[side=right]:before:bottom-0 data-[side=right]:before:-left-2.5 data-[side=right]:before:w-2.5 data-[side=top]:before:right-0 data-[side=top]:before:-bottom-2.5 data-[side=top]:before:left-0 data-[side=top]:before:h-2.5",
 					className,
 				)}
 				style={
@@ -174,7 +174,7 @@ export function NavigationMenuPopup({
 	return (
 		<NavigationMenuPrimitive.Popup
 			className={cx(
-				'data-[ending-style]:easing-[ease] bg-popover outline-border xs:w-[var(--popup-width)] rounded-popover relative h-[var(--popup-height)] w-[var(--popup-width)] origin-[var(--transform-origin)] shadow-lg outline-1 transition-[opacity,transform,width,height,scale,translate] duration-[var(--duration)] ease-[var(--easing)] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[ending-style]:duration-150 data-[starting-style]:scale-90 data-[starting-style]:opacity-0',
+				'data-[ending-style]:easing-[ease] bg-popover outline-border xs:w-[var(--popup-width)] rounded-popover relative h-(--popup-height) w-(--popup-width) origin-(--transform-origin) shadow-lg outline-1 transition-[opacity,transform,width,height,scale,translate] duration-(--duration) ease-(--easing) data-ending-style:scale-90 data-ending-style:opacity-0 data-ending-style:duration-150 data-starting-style:scale-90 data-starting-style:opacity-0',
 				className,
 			)}
 			{...props}
@@ -211,8 +211,8 @@ export function NavigationMenuLink({
 		<NavigationMenuPrimitive.Link
 			data-slot="navigation-menu-link"
 			className={cx(
-				'rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))]',
-				"data-[active]:focus:bg-background-muted data-[active]:hover:bg-background-muted data-[active]:bg-background-muted/50 data-[active]:text-foreground hover:bg-background-muted hover:text-foreground focus:bg-background-muted focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground gap-bff p-popover flex flex-col text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+				'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
+				"data-active:focus:bg-background-muted data-active:hover:bg-background-muted data-active:bg-background-muted/50 data-active:text-foreground hover:bg-background-muted hover:text-foreground focus:bg-background-muted focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground gap-bff p-popover flex flex-col text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -231,7 +231,7 @@ export function NavigationMenuArrow({
 		<NavigationMenuPrimitive.Arrow
 			data-slot="navigation-menu-arrow"
 			className={cx(
-				'flex transition-[left] duration-[var(--duration)] ease-[var(--easing)] data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=left]:rotate-90 data-[side=right]:left-[-13px] data-[side=right]:-rotate-90 data-[side=top]:bottom-[-8px] data-[side=top]:rotate-180',
+				'flex transition-[left] duration-(--duration) ease-(--easing) data-[side=bottom]:-top-2 data-[side=left]:-right-3.25 data-[side=left]:rotate-90 data-[side=right]:-left-3.25 data-[side=right]:-rotate-90 data-[side=top]:-bottom-2 data-[side=top]:rotate-180',
 				className,
 			)}
 			{...props}

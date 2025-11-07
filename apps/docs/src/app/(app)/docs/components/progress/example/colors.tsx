@@ -12,7 +12,7 @@ export function ProgressVariantsExample() {
 	}, [])
 
 	return (
-		<div className="space-y-casual w-full md:w-[500px]">
+		<div className="space-y-casual w-full md:w-125">
 			<div className="space-y-2">
 				<h3 className="text-sm font-medium">Default</h3>
 				<Progress value={progress}>
@@ -24,7 +24,7 @@ export function ProgressVariantsExample() {
 				<h3 className="text-sm font-medium">Green</h3>
 				<Progress
 					value={progress}
-					className="[&_[data-slot=progress-indicator]]:bg-green-500"
+					className="**:data-[slot=progress-indicator]:bg-green-500"
 				>
 					<ProgressValue />
 				</Progress>
@@ -34,7 +34,7 @@ export function ProgressVariantsExample() {
 				<h3 className="text-sm font-medium">Yellow</h3>
 				<Progress
 					value={progress}
-					className="[&_[data-slot=progress-indicator]]:bg-yellow-500"
+					className="**:data-[slot=progress-indicator]:bg-yellow-500"
 				>
 					<ProgressValue />
 				</Progress>
@@ -44,7 +44,7 @@ export function ProgressVariantsExample() {
 				<h3 className="text-sm font-medium">Destructive</h3>
 				<Progress
 					value={progress}
-					className="[&_[data-slot=progress-indicator]]:bg-destructive"
+					className="**:data-[slot=progress-indicator]:bg-destructive"
 				>
 					<ProgressValue />
 				</Progress>

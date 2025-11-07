@@ -30,8 +30,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0(rollup@4.52.4)
       tailwindcss:
-        specifier: ^4.1.14
-        version: 4.1.14
+        specifier: ^4.1.16
+        version: 4.1.17
       tsx:
         specifier: ^4.20.3
         version: 4.20.6
@@ -49,8 +49,11 @@ importers:
         specifier: ^19.8.1
         version: 19.8.1
       '@nerdfish/config':
-        specifier: ^1.9.3
+        specifier: ^1.9.4
         version: 1.9.4(@typescript-eslint/utils@8.46.1(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.37.0(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
+      '@next/eslint-plugin-next':
+        specifier: ^15.5.6
+        version: 15.5.6
       '@pnpm/find-workspace-dir':
         specifier: ^1000.1.2
         version: 1000.1.3
@@ -58,7 +61,7 @@ importers:
         specifier: ^4.17.12
         version: 4.17.12
       eslint:
-        specifier: ^9.29.0
+        specifier: ^9.37.0
         version: 9.37.0(jiti@2.6.1)
       execa:
         specifier: ^9.6.0
@@ -67,7 +70,7 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       prettier:
-        specifier: ^3.5.3
+        specifier: ^3.6.2
         version: 3.6.2
       turbo:
         specifier: ^2.5.5
@@ -170,7 +173,7 @@ importers:
         version: 5.1.7(@babel/core@7.28.4)(react@19.2.0)
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.1.14)
+        version: 1.0.7(tailwindcss@4.1.17)
       update:
         specifier: ^0.7.4
         version: 0.7.4
@@ -179,7 +182,7 @@ importers:
         version: 3.25.76
     devDependencies:
       '@nerdfish/config':
-        specifier: ^1.9.3
+        specifier: ^1.9.4
         version: 1.9.4(@typescript-eslint/utils@8.46.1(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.37.0(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
       '@shikijs/compat':
         specifier: ^1.1.7
@@ -239,8 +242,8 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1(shiki@3.13.0)
       tailwindcss:
-        specifier: ^4.1.14
-        version: 4.1.14
+        specifier: ^4.1.16
+        version: 4.1.17
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -318,8 +321,8 @@ importers:
         specifier: ^19.1.1
         version: 19.2.0(react@19.2.0)
       tailwindcss:
-        specifier: ^4.1.14
-        version: 4.1.14
+        specifier: ^4.1.16
+        version: 4.1.17
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -338,13 +341,13 @@ importers:
         version: 3.3.1
     devDependencies:
       '@nerdfish/config':
-        specifier: ^1.9.3
+        specifier: ^1.9.4
         version: 1.9.4(@typescript-eslint/utils@8.46.1(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.37.0(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
       eslint:
-        specifier: ^9.29.0
+        specifier: ^9.37.0
         version: 9.37.0(jiti@2.6.1)
       prettier:
-        specifier: ^3.5.3
+        specifier: ^3.6.2
         version: 3.6.2
       typescript:
         specifier: ^5.9.3
@@ -1564,6 +1567,9 @@ packages:
 
   '@next/eslint-plugin-next@15.5.4':
     resolution: {integrity: sha512-SR1vhXNNg16T4zffhJ4TS7Xn7eq4NfKfcOsRwea7RIAHrjRpI9ALYbamqIJqkAhowLlERffiwk0FMvTLNdnVtw==}
+
+  '@next/eslint-plugin-next@15.5.6':
+    resolution: {integrity: sha512-YxDvsT2fwy1j5gMqk3ppXlsgDopHnkM4BoxSVASbvvgh5zgsK8lvWerDzPip8k3WVzsTZ1O7A7si1KNfN4OZfQ==}
 
   '@next/mdx@15.5.4':
     resolution: {integrity: sha512-QUc14KkswCau2/Lul13t13v8QYRiEh3aeyUMUix5mK/Zd8c/J9NQuVvLGhxS7fxGPU+fOcv0GaXqZshkvNaX7A==}
@@ -7581,6 +7587,9 @@ packages:
   tailwindcss@4.1.14:
     resolution: {integrity: sha512-b7pCxjGO98LnxVkKjaZSDeNuljC4ueKUddjENJOADtubtdo8llTaJy7HwBMeLNSSo2N5QIAgklslK1+Ir8r6CA==}
 
+  tailwindcss@4.1.17:
+    resolution: {integrity: sha512-j9Ee2YjuQqYT9bbRTfTZht9W/ytp5H+jJpZKiYdP/bpnXARAuELt9ofP0lPnmHjbga7SNQIxdTAXCmtKVYjN+Q==}
+
   tapable@2.3.0:
     resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
     engines: {node: '>=6'}
@@ -9609,6 +9618,10 @@ snapshots:
   '@next/env@15.5.4': {}
 
   '@next/eslint-plugin-next@15.5.4':
+    dependencies:
+      fast-glob: 3.3.1
+
+  '@next/eslint-plugin-next@15.5.6':
     dependencies:
       fast-glob: 3.3.1
 
@@ -17313,11 +17326,13 @@ snapshots:
 
   tailwind-merge@3.3.1: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@4.1.14):
+  tailwindcss-animate@1.0.7(tailwindcss@4.1.17):
     dependencies:
-      tailwindcss: 4.1.14
+      tailwindcss: 4.1.17
 
   tailwindcss@4.1.14: {}
+
+  tailwindcss@4.1.17: {}
 
   tapable@2.3.0: {}
 

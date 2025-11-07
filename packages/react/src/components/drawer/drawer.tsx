@@ -64,27 +64,27 @@ export function DrawerContent({
 					// default
 					'bg-background shadow-outline group fixed z-50 flex flex-col',
 					// top
-					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:rounded-b-container [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0',
+					'data-[vaul-drawer-direction=top]:mb-2xl data-[vaul-drawer-direction=top]:rounded-b-container data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0',
 					// bottom
-					'[&[data-vaul-drawer-direction=bottom]]:mt-2xl [&[data-vaul-drawer-direction=bottom]]:rounded-t-container [&[data-vaul-drawer-direction=bottom]]:inset-x-0 [&[data-vaul-drawer-direction=bottom]]:bottom-0',
+					'data-[vaul-drawer-direction=bottom]:mt-2xl data-[vaul-drawer-direction=bottom]:rounded-t-container data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0',
 					// left
-					'[&[data-vaul-drawer-direction=left]]:mr-2xl [&[data-vaul-drawer-direction=left]]:rounded-r-base [&[data-vaul-drawer-direction=left]]:inset-y-0 [&[data-vaul-drawer-direction=left]]:left-0 [&[data-vaul-drawer-direction=left]]:w-auto',
+					'data-[vaul-drawer-direction=left]:mr-2xl data-[vaul-drawer-direction=left]:rounded-r-base data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-auto',
 					// right
-					'[&[data-vaul-drawer-direction=right]]:ml-2xl [&[data-vaul-drawer-direction=right]]:rounded-l-base [&[data-vaul-drawer-direction=right]]:inset-y-0 [&[data-vaul-drawer-direction=right]]:right-0 [&[data-vaul-drawer-direction=right]]:w-auto',
+					'data-[vaul-drawer-direction=right]:ml-2xl data-[vaul-drawer-direction=right]:rounded-l-base data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-auto',
 					// other
 					className,
 				)}
 				{...props}
 			>
-				<div className="relative max-h-[100vh] overflow-y-auto">
+				<div className="relative max-h-screen overflow-y-auto">
 					<div
 						data-role="drawer-handle"
-						className="top-friends mt-friends mb-friends bg-background-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
+						className="top-friends mt-friends mb-friends bg-background-muted sticky mx-auto hidden h-2 w-12.5 rounded-full opacity-0 group-data-[vaul-drawer-direction=bottom]:block group-data-[vaul-drawer-direction=bottom]:opacity-100"
 					/>
 					{children}
 					<div
 						data-role="drawer-handle"
-						className="bottom-friends mt-friends mb-friends bg-background-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
+						className="bottom-friends mt-friends mb-friends bg-background-muted sticky mx-auto hidden h-2 w-12.5 rounded-full opacity-0 group-data-[vaul-drawer-direction=top]:block group-data-[vaul-drawer-direction=top]:opacity-100"
 					/>
 				</div>
 			</DrawerPrimitive.Content>

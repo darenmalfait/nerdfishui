@@ -28,7 +28,7 @@ export function InputInvalidExample() {
 	function onSubmit(data: z.infer<typeof FormSchema>) {
 		toast('You submitted the following values', {
 			description: (
-				<pre className="rounded-base mt-2 w-[320px] bg-neutral-950 p-4">
+				<pre className="rounded-base mt-2 w-80 bg-neutral-950 p-4">
 					<code className="text-white">{JSON.stringify(data, null, 2)}</code>
 				</pre>
 			),

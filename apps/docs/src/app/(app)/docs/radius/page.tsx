@@ -42,7 +42,7 @@ export default function RadiusPage() {
 					the container.
 				</p>
 				<div className="rounded-container bg-background-inverted w-full p-2">
-					<div className="rounded-[calc(theme(borderRadius.container)-theme(padding.2))] text-foreground bg-background w-full p-4">
+					<div className="text-foreground bg-background w-full rounded-[calc(var(--radius-container)-theme(padding.2))] p-4">
 						rounded-[calc(theme(borderRadius.container)-theme(padding.2))]
 					</div>
 				</div>

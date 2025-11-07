@@ -15,7 +15,7 @@ import { Label } from '@nerdfish/react/label'
 
 export function CardExample() {
 	return (
-		<Card className="w-full md:w-[350px]">
+		<Card className="w-full md:w-87.5">
 			<CardHeader>
 				<CardTitle>Login to your account</CardTitle>
 				<CardDescription>

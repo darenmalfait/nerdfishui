@@ -443,7 +443,7 @@
 		text-rendering: optimizelegibility;
 	}
 	body {
-		@apply min-h-[100dvh];
+		@apply min-h-dvh;
 		font-synthesis-weight: none;
 		text-rendering: optimizeLegibility;
 	}

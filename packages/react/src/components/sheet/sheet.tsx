@@ -52,7 +52,7 @@ function SheetBackdrop({ className, ...props }: SheetBackdropProps) {
 		<SheetPrimitive.Backdrop
 			data-slot="sheet-overlay"
 			className={cx(
-				'data-[open]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:animation-duration-[300ms] data-[open]:fade-in-0 fixed inset-0 z-50 bg-black/50',
+				'data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-closed:animation-duration-[300ms] data-open:fade-in-0 fixed inset-0 z-50 bg-black/50',
 				className,
 			)}
 			{...props}
@@ -158,7 +158,7 @@ export function SheetContent({
 				{...props}
 			>
 				{children}
-				<SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[open]:bg-background-muted top-friends right-friends rounded-base absolute opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
+				<SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-open:bg-background-muted top-friends right-friends rounded-base absolute opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
 					<XIcon className="size-4" />
 					<span className="sr-only">Close</span>
 				</SheetPrimitive.Close>
