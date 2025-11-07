@@ -5,7 +5,7 @@ import { type VariantProps, cva } from '@nerdfish/utils'
 import { type ReactElement } from 'react'
 
 export const buttonVariants = cva(
-	'focus-within:ring-ring focus-within:ring-[3px] !outline-none relative inline-flex gap-best-friends items-center justify-center rounded-base border px-[1.5em] py-[1em] font-medium transition-all active:scale-95 disabled:pointer-events-none',
+	'focus-within:ring-ring focus-within:ring-[3px] !outline-none relative inline-flex gap-best-friends items-center justify-center rounded-base border font-medium transition-all active:scale-95 disabled:pointer-events-none',
 	{
 		variants: {
 			variant: {
@@ -26,11 +26,11 @@ export const buttonVariants = cva(
 				link: 'border-none bg-transparent text-foreground underline-offset-4 hover:underline disabled:text-foreground/50',
 			},
 			size: {
-				xs: 'text-[0.625rem] rounded-compact h-7',
-				sm: 'text-xs h-8 ',
-				md: 'text-sm h-10',
-				lg: 'text-lg h-12',
-				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] h-14',
+				xs: 'text-[0.625rem] rounded-compact px-2 py-1',
+				sm: 'text-xs px-3 py-1.5',
+				md: 'text-sm px-4 py-2',
+				lg: 'text-lg px-6 py-3',
+				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] px-8 py-4',
 			},
 			icon: {
 				false: null,
@@ -57,12 +57,12 @@ export const buttonVariants = cva(
 			{
 				icon: true,
 				size: 'lg',
-				className: 'p-0 size-12 [&_svg:not([class*=size-])]:size-6',
+				className: 'p-0 size-14 [&_svg:not([class*=size-])]:size-6',
 			},
 			{
 				icon: true,
 				size: 'xl',
-				className: 'p-0 size-14 [&_svg:not([class*=size-])]:size-8',
+				className: 'p-0 size-19 [&_svg:not([class*=size-])]:size-8',
 			},
 		],
 		defaultVariants: {

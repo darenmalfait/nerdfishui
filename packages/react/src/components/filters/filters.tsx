@@ -95,14 +95,14 @@ const FilterContext = createContext<FilterContextValue>({
 
 const useFilterContext = () => useContext(FilterContext)
 
-const filterSizeVariants = cva(['px-[1.5em] py-[1em] gap-popover-compact'], {
+const filterSizeVariants = cva(['gap-popover-compact'], {
 	variants: {
 		size: {
-			xs: 'text-[0.625rem] [&_svg:not([class*=size-])]:size-4 h-7',
-			sm: 'text-xs [&_svg:not([class*=size-])]:size-4 h-8',
-			md: 'text-sm [&_svg:not([class*=size-])]:size-5 h-10',
-			lg: 'text-lg [&_svg:not([class*=size-])]:size-6 h-12',
-			xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] [&_svg:not([class*=size-])]:size-10 h-14',
+			xs: 'text-[0.625rem] [&_svg:not([class*=size-])]:size-4 px-2 py-1',
+			sm: 'text-xs [&_svg:not([class*=size-])]:size-4 px-3 py-1.5',
+			md: 'text-sm [&_svg:not([class*=size-])]:size-5 px-4 py-2',
+			lg: 'text-lg [&_svg:not([class*=size-])]:size-6 px-6 py-3',
+			xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] [&_svg:not([class*=size-])]:size-10 px-8 py-4',
 		},
 	},
 })

@@ -3,7 +3,7 @@ import * as React from 'react'
 
 export const inputVariants = cva(
 	cx(
-		'rounded-base bg-background-muted text-md text-foreground group relative block w-full border border-transparent px-[1.5em] py-[0.5em] text-left font-bold outline-none',
+		'rounded-base bg-background-muted text-md text-foreground group relative block w-full border border-transparent text-left font-bold outline-none',
 		//focus
 		'focus-visible:ring-ring focus-visible:border-border focus-visible:ring-[3px]',
 		// placeholder
@@ -20,11 +20,11 @@ export const inputVariants = cva(
 	{
 		variants: {
 			size: {
-				xs: 'text-[0.625rem] h-8',
-				sm: 'text-xs h-10',
-				md: 'text-sm h-12',
-				lg: 'text-lg h-14',
-				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] h-16',
+				xs: 'text-[0.625rem] px-2 py-1',
+				sm: 'text-xs px-3 py-1.5',
+				md: 'text-sm px-4 py-2',
+				lg: 'text-lg  px-6 py-3',
+				xl: 'text-[clamp(1.25rem,4.2vw,1.6625rem)] px-8 py-4',
 			},
 			variant: {
 				default:
