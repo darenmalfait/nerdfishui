@@ -61,13 +61,32 @@ export function DrawerContent({
 			<DrawerPrimitive.Content
 				data-slot="drawer-content"
 				className={cx(
-					'bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border',
+					// default
+					'bg-background shadow-outline group fixed z-50 flex flex-col',
+					// top
+					'[&[data-vaul-drawer-direction=top]]:mb-2xl [&[data-vaul-drawer-direction=top]]:rounded-b-container [&[data-vaul-drawer-direction=top]]:inset-x-0 [&[data-vaul-drawer-direction=top]]:top-0',
+					// bottom
+					'[&[data-vaul-drawer-direction=bottom]]:mt-2xl [&[data-vaul-drawer-direction=bottom]]:rounded-t-container [&[data-vaul-drawer-direction=bottom]]:inset-x-0 [&[data-vaul-drawer-direction=bottom]]:bottom-0',
+					// left
+					'[&[data-vaul-drawer-direction=left]]:mr-2xl [&[data-vaul-drawer-direction=left]]:rounded-r-base [&[data-vaul-drawer-direction=left]]:inset-y-0 [&[data-vaul-drawer-direction=left]]:left-0 [&[data-vaul-drawer-direction=left]]:w-auto',
+					// right
+					'[&[data-vaul-drawer-direction=right]]:ml-2xl [&[data-vaul-drawer-direction=right]]:rounded-l-base [&[data-vaul-drawer-direction=right]]:inset-y-0 [&[data-vaul-drawer-direction=right]]:right-0 [&[data-vaul-drawer-direction=right]]:w-auto',
+					// other
 					className,
 				)}
 				{...props}
 			>
-				<div className="bg-background-muted mt-friends mx-auto h-2 w-[100px] rounded-full" />
-				{children}
+				<div className="relative max-h-[100vh] overflow-y-auto">
+					<div
+						data-role="drawer-handle"
+						className="top-friends mt-friends mb-friends bg-background-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=bottom]]:block group-[[data-vaul-drawer-direction=bottom]]:opacity-100"
+					/>
+					{children}
+					<div
+						data-role="drawer-handle"
+						className="bottom-friends mt-friends mb-friends bg-background-muted sticky mx-auto hidden h-2 w-[50px] rounded-full opacity-0 group-[[data-vaul-drawer-direction=top]]:block group-[[data-vaul-drawer-direction=top]]:opacity-100"
+					/>
+				</div>
 			</DrawerPrimitive.Content>
 		</DrawerPortal>
 	)
