@@ -483,4 +483,8 @@
 	}
 }
 
+@utility bg-blurred {
+	@apply bg-background/10 backdrop-blur-sm backdrop-saturate-150;
+}
+
 @import './typography.css';
