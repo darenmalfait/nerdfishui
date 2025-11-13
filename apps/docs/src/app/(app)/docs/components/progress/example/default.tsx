@@ -12,7 +12,7 @@ export function ProgressExample() {
 	}, [])
 
 	return (
-		<div className="w-full md:w-[500px]">
+		<div className="w-full md:w-125">
 			<Progress value={progress}>
 				<ProgressValue />
 			</Progress>

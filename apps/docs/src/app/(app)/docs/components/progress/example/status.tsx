@@ -38,7 +38,7 @@ export function ProgressStatusExample() {
 	}, [])
 
 	return (
-		<div className="space-y-casual w-full md:w-[500px]">
+		<div className="space-y-casual w-full md:w-125">
 			<div className="flex justify-between text-sm">
 				<span>Workspace Setup</span>
 				<span className="text-foreground-muted">

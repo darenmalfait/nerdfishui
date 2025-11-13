@@ -25,7 +25,7 @@ export function DatePickerInputExample() {
 				>
 					<DateInput />
 				</DateField>
-				<InputGroupAddon align="inline-end" className="!pr-friends ml-bff">
+				<InputGroupAddon align="inline-end" className="pr-friends! ml-bff">
 					<DatePicker
 						selected={date ? new Date(date) : undefined}
 						onSelect={(value) =>
