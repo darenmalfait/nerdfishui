@@ -43,8 +43,8 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.5",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@nerdfish/config": "^1.9.4",
     "@next/eslint-plugin-next": "^15.5.6",
     "@pnpm/find-workspace-dir": "^1000.1.2",
