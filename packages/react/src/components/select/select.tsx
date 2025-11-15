@@ -23,7 +23,13 @@ export type SelectPositionerProps = ComponentProps<
 	typeof SelectPrimitive.Positioner
 >
 export function SelectPositioner({ ...props }: SelectPositionerProps) {
-	return <SelectPrimitive.Positioner data-slot="select-positioner" {...props} />
+	return (
+		<SelectPrimitive.Positioner
+			className="z-[500]"
+			data-slot="select-positioner"
+			{...props}
+		/>
+	)
 }
 
 export type SelectValueProps = ComponentProps<typeof SelectPrimitive.Value>
@@ -73,6 +79,9 @@ export type SelectContentProps = ComponentProps<
 	typeof SelectPrimitive.Popup
 > & {
 	sideOffset?: SelectPrimitive.Positioner.Props['sideOffset']
+	side?: SelectPrimitive.Positioner.Props['side']
+	align?: SelectPrimitive.Positioner.Props['align']
+	alignOffset?: SelectPrimitive.Positioner.Props['alignOffset']
 	position?: 'popper' | 'item-aligned'
 }
 export function SelectContent({
@@ -80,27 +89,41 @@ export function SelectContent({
 	children,
 	sideOffset = 4,
 	position = 'item-aligned',
+	side = 'bottom',
+	align = 'center',
+	alignOffset = 0,
 	...props
 }: SelectContentProps) {
 	return (
 		<SelectPortal>
 			<SelectPositioner
-				className="z-10 outline-none select-none"
+				className="outline-none select-none"
+				side={side}
 				sideOffset={sideOffset}
 				alignItemWithTrigger={position === 'item-aligned'}
+				align={align}
+				alignOffset={alignOffset}
 			>
+				<SelectScrollUpButton />
+
 				<SelectPrimitive.Popup
 					data-slot="select-content"
 					className={cx(
+						'relative max-h-(--available-height) min-w-(--anchor-width) overflow-x-hidden overflow-y-auto',
 						'p-popover-compact bg-popover text-popover-contrast rounded-popover',
-						'group origin-(--transform-origin) bg-[canvas] bg-clip-padding shadow-lg transition-[transform,scale,opacity] data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0 data-[side=none]:data-ending-style:transition-none data-[side=none]:data-starting-style:scale-100 data-[side=none]:data-starting-style:opacity-100 data-[side=none]:data-starting-style:transition-none',
-						'border-border border shadow-lg',
-						'[&_*[data-slot=select-item]]:min-w-(--anchor-width)',
+						'origin-(--transform-origin)',
+						'border-border border shadow-md',
+						'data-open:animate-in data-closed:animate-out',
+						'data-closed:fade-out-0 data-open:fade-in-0',
+						'data-closed:zoom-out-95 data-open:zoom-in-95',
+						'data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2',
+						'data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+						position === 'item-aligned' &&
+							'[&_*[data-slot=select-item]]:min-w-(--anchor-width)',
 						className,
 					)}
 					{...props}
 				>
-					<SelectScrollUpButton />
 					<SelectPrimitive.List className="scroll-py-casual relative max-h-(--available-height) overflow-y-auto">
 						{children}
 					</SelectPrimitive.List>

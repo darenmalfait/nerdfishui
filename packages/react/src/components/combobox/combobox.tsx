@@ -130,7 +130,7 @@ export function ComboboxPositioner({
 	return (
 		<ComboboxPrimitive.Positioner
 			data-slot="combobox-positioner"
-			className={cx('z-50 outline-none', className)}
+			className={cx('outline-none', className)}
 			{...props}
 		/>
 	)

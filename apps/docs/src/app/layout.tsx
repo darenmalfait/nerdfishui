@@ -21,16 +21,18 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 					'[--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]',
 				)}
 			>
-				<React.Suspense
-					fallback={
-						<div className="bg-background inset-0 flex h-screen w-screen items-center justify-center backdrop-blur-sm">
-							<Spinner />
-						</div>
-					}
-				>
-					<AppProviders>{children}</AppProviders>
-				</React.Suspense>
-				<Toaster />
+				<div className="root">
+					<React.Suspense
+						fallback={
+							<div className="bg-background inset-0 flex h-screen w-screen items-center justify-center backdrop-blur-sm">
+								<Spinner />
+							</div>
+						}
+					>
+						<AppProviders>{children}</AppProviders>
+					</React.Suspense>
+					<Toaster />
+				</div>
 			</body>
 		</html>
 	)

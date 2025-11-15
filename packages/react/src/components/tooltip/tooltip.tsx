@@ -65,7 +65,7 @@ export function TooltipContent({
 				<TooltipPrimitive.Popup
 					data-slot="tooltip-content"
 					className={cx(
-						'bg-background-inverted text-foreground-inverted outline-border rounded-compact px-friends py-best-friends z-50 w-fit origin-(--transform-origin) text-xs text-balance shadow-sm outline -outline-offset-1 transition-[transform,scale,opacity] data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0',
+						'bg-background-inverted text-foreground-inverted outline-border rounded-compact px-friends py-best-friends w-fit origin-(--transform-origin) text-xs text-balance shadow-sm outline -outline-offset-1 transition-[transform,scale,opacity] data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0',
 						className,
 					)}
 					{...props}

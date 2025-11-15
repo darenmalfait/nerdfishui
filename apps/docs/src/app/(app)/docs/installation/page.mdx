@@ -26,3 +26,13 @@ Then you need a global css file which you import at the root of the project
 @import '@nerdfish/react/styles/global.css';
 @source "../../node_modules/@nerdfish/react"; // path to nerdfishui
 ```
+
+### Portals
+
+To make portalled components always appear on top of the entire page, add the following div element to your application layout root:
+
+```tsx
+<body>
+	<div className="root">{children}</div>
+</body>
+```

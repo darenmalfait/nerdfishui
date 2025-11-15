@@ -52,7 +52,7 @@ function SheetBackdrop({ className, ...props }: SheetBackdropProps) {
 		<SheetPrimitive.Backdrop
 			data-slot="sheet-overlay"
 			className={cx(
-				'data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-closed:animation-duration-[300ms] data-open:fade-in-0 fixed inset-0 z-50 bg-black/50',
+				'data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-closed:animation-duration-[300ms] data-open:fade-in-0 fixed inset-0 bg-black/50',
 				className,
 			)}
 			{...props}
@@ -61,7 +61,7 @@ function SheetBackdrop({ className, ...props }: SheetBackdropProps) {
 }
 
 export const sheetVariants = cva(
-	'bg-background data-[open]:animate-in data-[closed]:animate-out gap-friends fixed z-50 flex flex-col shadow-lg transition ease-in-out data-[closed]:duration-300 data-[open]:duration-500',
+	'bg-background data-[open]:animate-in data-[closed]:animate-out gap-friends fixed flex flex-col shadow-lg transition ease-in-out data-[closed]:duration-300 data-[open]:duration-500',
 	{
 		variants: {
 			variant: {

@@ -55,7 +55,7 @@ export function DropdownMenuContent({
 					data-slot="dropdown-menu-content"
 					className={cx(
 						'bg-popover border-border p-best-friends rounded-popover border shadow-md',
-						'data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 text-popover-contrast data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[12rem] origin-(--transform-origin) overflow-hidden',
+						'data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 text-popover-contrast data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 min-w-[12rem] origin-(--transform-origin) overflow-hidden',
 						className,
 					)}
 					{...props}
@@ -283,7 +283,7 @@ export function DropdownMenuSubContent({
 					data-slot="dropdown-menu-content"
 					className={cx(
 						'border-border bg-popover text-popover-contrast rounded-popover p-popover-compact border shadow-md',
-						'z-50 min-w-[12rem] origin-(--transform-origin) overflow-hidden',
+						'min-w-[12rem] origin-(--transform-origin) overflow-hidden',
 						'data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
 						className,
 					)}
