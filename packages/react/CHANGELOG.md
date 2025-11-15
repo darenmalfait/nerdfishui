@@ -1,5 +1,13 @@
 # @nerdfish/react
 
+## 1.0.4
+
+### Patch Changes
+
+- Add root element isolation and docs
+
+- add `ProgressCircle` to `@nerdfish/react/progress`
+
 ## 1.0.3
 
 ### Patch Changes
