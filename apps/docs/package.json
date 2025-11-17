@@ -27,7 +27,7 @@
     "@nerdfish/utils": "workspace:*",
     "@next/env": "15.5.6",
     "@next/mdx": "15.5.6",
-    "@sindresorhus/slugify": "^2.2.1",
+    "@sindresorhus/slugify": "^3.0.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@vercel/og": "^0.8.5",
     "acorn": "^8.15.0",
