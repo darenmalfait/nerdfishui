@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@nerdfish/config": "^1.9.4",
-    "@shikijs/compat": "^1.29.2",
+    "@shikijs/compat": "^2.5.0",
     "@svgr/webpack": "^8.1.0",
     "@types/eslint": "^9.6.1",
     "@types/mdx": "^2.0.13",
