@@ -66,7 +66,7 @@ following div element to your application layout root:
 
 ```tsx
 <body>
-	<div className="root">{children}</div>
+	<div className="isolate">{children}</div>
 </body>
 ```
 

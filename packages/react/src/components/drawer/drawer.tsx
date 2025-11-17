@@ -43,7 +43,7 @@ export function DrawerOverlay({ className, ...props }: DrawerOverlayProps) {
 	return (
 		<DrawerPrimitive.Overlay
 			data-slot="drawer-overlay"
-			className={cx('fixed inset-0 z-50 bg-black/80', className)}
+			className={cx('fixed inset-0 bg-black/80', className)}
 			{...props}
 		/>
 	)
@@ -62,7 +62,7 @@ export function DrawerContent({
 				data-slot="drawer-content"
 				className={cx(
 					// default
-					'bg-background shadow-outline group fixed z-50 flex flex-col',
+					'bg-background shadow-outline group fixed flex flex-col',
 					// top
 					'data-[vaul-drawer-direction=top]:mb-2xl data-[vaul-drawer-direction=top]:rounded-b-container data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0',
 					// bottom

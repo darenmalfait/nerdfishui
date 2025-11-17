@@ -427,10 +427,6 @@
 	body {
 		@apply bg-background text-foreground relative;
 	}
-
-	.root {
-		@apply isolate;
-	}
 }
 
 @layer base {
