@@ -133,7 +133,7 @@
     }
   },
   "engines": {
-    "node": ">=14.21.3"
+    "node": ">=24.11.1"
   },
   "publishConfig": {
     "access": "public",
