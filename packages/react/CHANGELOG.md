@@ -1,5 +1,11 @@
 # @nerdfish/react
 
+## 1.0.5
+
+### Patch Changes
+
+- remove z indexes for portal components
+
 ## 1.0.4
 
 ### Patch Changes
