@@ -78,6 +78,6 @@
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "unist-builder": "4.0.0",
-    "unist-util-visit": "^4.1.2"
+    "unist-util-visit": "^5.0.0"
   }
 }
