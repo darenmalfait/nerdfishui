@@ -7,7 +7,7 @@ import {
 	type Filter,
 	type FilterFieldConfig,
 } from '@nerdfish/react/filters'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import {
 	AlertCircleIcon,
 	BanIcon,
@@ -42,7 +42,7 @@ const PriorityIconIcon = ({ priority }: { priority: string }) => {
 	}
 	return (
 		<div
-			className={cx(
+			className={cn(
 				'size-2.25 shrink-0 rounded-full',
 				colors[priority as keyof typeof colors],
 			)}

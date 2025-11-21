@@ -11,7 +11,16 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./assertion": "./src/assertion.ts",
+    "./class": "./src/class.ts",
+    "./color": "./src/color.ts",
+    "./date": "./src/date.ts",
+    "./email": "./src/email.ts",
+    "./object": "./src/object.ts",
+    "./slugify": "./src/slugify.ts",
+    "./types": "./src/types.ts",
+    "./walk-object": "./src/walk-object.ts"
   },
   "scripts": {
     "build": "tsx ../../scripts/build/main.ts --dts",

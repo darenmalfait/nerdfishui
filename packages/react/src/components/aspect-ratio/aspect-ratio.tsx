@@ -1,4 +1,4 @@
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export interface AspectRatioProps extends ComponentProps<'div'> {
@@ -18,7 +18,7 @@ export function AspectRatio({
 				...style,
 				paddingBottom: `${(1 / ratio) * 100}%`,
 			}}
-			className={cx('relative w-full', className)}
+			className={cn('relative w-full', className)}
 			{...props}
 		>
 			<div className="absolute inset-0 size-full">{children}</div>

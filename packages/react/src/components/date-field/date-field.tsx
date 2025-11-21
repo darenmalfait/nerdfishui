@@ -1,6 +1,6 @@
 'use client'
 
-import { cx, type VariantProps } from '@nerdfish/utils'
+import { cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 import {
 	composeRenderProps,
@@ -33,7 +33,7 @@ export function DateField<T extends DateValueRa>({
 	return (
 		<I18nProvider locale={locale}>
 			<DateFieldRa
-				className={composeRenderProps(className, (cn) => cx(cn))}
+				className={composeRenderProps(className, (c) => cn(c))}
 				data-slot="datefield"
 				hourCycle={24}
 				shouldForceLeadingZeros={true}
@@ -56,7 +56,7 @@ export function TimeField<T extends TimeValueRa>({
 	return (
 		<I18nProvider locale={locale}>
 			<TimeFieldRa
-				className={composeRenderProps(className, (cn) => cx(cn))}
+				className={composeRenderProps(className, (c) => cn(c))}
 				data-slot="datefield"
 				hourCycle={24}
 				shouldForceLeadingZeros={true}
@@ -72,10 +72,10 @@ export { type DateSegmentProps }
 export function DateSegment({ className, ...props }: DateSegmentProps) {
 	return (
 		<DateSegmentRa
-			className={composeRenderProps(className, (cn) =>
-				cx(
+			className={composeRenderProps(className, (c) =>
+				cn(
 					`text-foreground data-[type=literal]:text-foreground-muted/70 data-placeholder:text-foreground-muted/70 data-invalid:data-focused:bg-destructive data-invalid:data-placeholder:text-destructive data-invalid:text-destructive data-invalid:data-focused:data-placeholder:text-destructive-foreground data-invalid:data-focused:text-destructive-foreground data-focused:bg-background-inverted/20 data-focused:data-placeholder:text-foreground data-focused:text-foreground inline-flex rounded px-0.5 caret-transparent outline-hidden data-disabled:cursor-not-allowed data-disabled:opacity-50 data-[type=literal]:px-0`,
-					cn,
+					c,
 				),
 			)}
 			{...props}
@@ -104,8 +104,8 @@ export function DateInput({
 	return (
 		<DateInputRa
 			data-slot="input"
-			className={composeRenderProps(className, (cn) =>
-				cx(inputVariants({ size, variant }), dateInputStyles, cn),
+			className={composeRenderProps(className, (c) =>
+				cn(inputVariants({ size, variant }), dateInputStyles, c),
 			)}
 			{...props}
 		>

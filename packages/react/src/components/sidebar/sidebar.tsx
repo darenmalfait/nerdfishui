@@ -1,7 +1,7 @@
 'use client'
 
 import { useRender } from '@base-ui-components/react/use-render'
-import { cx, cva, type VariantProps } from '@nerdfish/utils'
+import { cn, cva, type VariantProps } from '@nerdfish/utils/class'
 
 import { PanelLeftIcon } from 'lucide-react'
 import {
@@ -148,7 +148,7 @@ export function SidebarProvider({
 							...style,
 						} as CSSProperties
 					}
-					className={cx(
+					className={cn(
 						'group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full',
 						className,
 					)}
@@ -180,7 +180,7 @@ export function Sidebar({
 		return (
 			<div
 				data-slot="sidebar"
-				className={cx(
+				className={cn(
 					'bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col',
 					className,
 				)}
@@ -228,7 +228,7 @@ export function Sidebar({
 			{/* This is what handles the sidebar gap on desktop */}
 			<div
 				data-slot="sidebar-gap"
-				className={cx(
+				className={cn(
 					'relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear',
 					'group-data-[collapsible=offcanvas]:w-0',
 					'group-data-[side=right]:rotate-180',
@@ -239,7 +239,7 @@ export function Sidebar({
 			/>
 			<div
 				data-slot="sidebar-container"
-				className={cx(
+				className={cn(
 					'fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex',
 					side === 'left'
 						? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
@@ -305,7 +305,7 @@ export function SidebarRail({ className, ...props }: SidebarRailProps) {
 			tabIndex={-1}
 			onClick={toggleSidebar}
 			title="Toggle Sidebar"
-			className={cx(
+			className={cn(
 				'hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:left-1/2 after:w-0.5 sm:flex',
 				'in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize',
 				'[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
@@ -324,7 +324,7 @@ export function SidebarInset({ className, ...props }: SidebarInsetProps) {
 	return (
 		<main
 			data-slot="sidebar-inset"
-			className={cx(
+			className={cn(
 				'bg-background relative flex w-full flex-1 flex-col',
 				'md:peer-data-[variant=inset]:rounded-base md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2',
 				className,
@@ -340,7 +340,7 @@ export function SidebarInput({ className, ...props }: SidebarInputProps) {
 		<Input
 			data-slot="sidebar-input"
 			data-sidebar="input"
-			className={cx('bg-background h-8 w-full shadow-none', className)}
+			className={cn('bg-background h-8 w-full shadow-none', className)}
 			{...props}
 		/>
 	)
@@ -352,7 +352,7 @@ export function SidebarHeader({ className, ...props }: SidebarHeaderProps) {
 		<div
 			data-slot="sidebar-header"
 			data-sidebar="header"
-			className={cx('gap-best-friends p-best-friends flex flex-col', className)}
+			className={cn('gap-best-friends p-best-friends flex flex-col', className)}
 			{...props}
 		/>
 	)
@@ -364,7 +364,7 @@ export function SidebarFooter({ className, ...props }: SidebarFooterProps) {
 		<div
 			data-slot="sidebar-footer"
 			data-sidebar="footer"
-			className={cx('gap-best-friends p-best-friends flex flex-col', className)}
+			className={cn('gap-best-friends p-best-friends flex flex-col', className)}
 			{...props}
 		/>
 	)
@@ -379,7 +379,7 @@ export function SidebarSeparator({
 		<Separator
 			data-slot="sidebar-separator"
 			data-sidebar="separator"
-			className={cx('bg-sidebar-border mx-best-friends w-auto', className)}
+			className={cn('bg-sidebar-border mx-best-friends w-auto', className)}
 			{...props}
 		/>
 	)
@@ -391,7 +391,7 @@ export function SidebarContent({ className, ...props }: SidebarContentProps) {
 		<div
 			data-slot="sidebar-content"
 			data-sidebar="content"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex min-h-0 flex-1 flex-col overflow-auto group-data-[collapsible=icon]:overflow-hidden',
 				className,
 			)}
@@ -406,7 +406,7 @@ export function SidebarGroup({ className, ...props }: SidebarGroupProps) {
 		<div
 			data-slot="sidebar-group"
 			data-sidebar="group"
-			className={cx(
+			className={cn(
 				'p-best-friends relative flex w-full min-w-0 flex-col',
 				className,
 			)}
@@ -426,7 +426,7 @@ export function SidebarGroupLabel({
 		props: {
 			'data-slot': 'sidebar-group-label',
 			'data-sidebar': 'group-label',
-			className: cx(
+			className: cn(
 				'text-sidebar-foreground/70 ring-sidebar-ring rounded-compact px-best-friends flex h-8 shrink-0 items-center text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
 				'group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0',
 				className,
@@ -447,7 +447,7 @@ export function SidebarGroupAction({
 		props: {
 			'data-slot': 'sidebar-group-action',
 			'data-sidebar': 'group-action',
-			className: cx(
+			className: cn(
 				'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-muted hover:text-sidebar-muted-contrast rounded-compact absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center p-0 outline-hidden transition-transform focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
 				// Increases the hit area of the button on mobile.
 				'after:absolute after:-inset-2 md:after:hidden',
@@ -468,7 +468,7 @@ export function SidebarGroupContent({
 		<div
 			data-slot="sidebar-group-content"
 			data-sidebar="group-content"
-			className={cx('w-full text-sm', className)}
+			className={cn('w-full text-sm', className)}
 			{...props}
 		/>
 	)
@@ -480,7 +480,7 @@ export function SidebarMenu({ className, ...props }: SidebarMenuProps) {
 		<ul
 			data-slot="sidebar-menu"
 			data-sidebar="menu"
-			className={cx('gap-bff flex w-full min-w-0 flex-col', className)}
+			className={cn('gap-bff flex w-full min-w-0 flex-col', className)}
 			{...props}
 		/>
 	)
@@ -492,7 +492,7 @@ export function SidebarMenuItem({ className, ...props }: SidebarMenuItemProps) {
 		<li
 			data-slot="sidebar-menu-item"
 			data-sidebar="menu-item"
-			className={cx('group/menu-item relative', className)}
+			className={cn('group/menu-item relative', className)}
 			{...props}
 		/>
 	)
@@ -543,7 +543,7 @@ export function SidebarMenuButton({
 			'data-sidebar': 'menu-button',
 			'data-size': size,
 			'data-active': isActive,
-			className: cx(sidebarMenuButtonVariants({ variant, size }), className),
+			className: cn(sidebarMenuButtonVariants({ variant, size }), className),
 			...props,
 		},
 	})
@@ -585,7 +585,7 @@ export function SidebarMenuAction({
 		props: {
 			'data-slot': 'sidebar-menu-action',
 			'data-sidebar': 'menu-action',
-			className: cx(
+			className: cn(
 				'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-muted hover:text-sidebar-muted-contrast peer-hover/menu-button:text-sidebar-muted-contrast rounded-base absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center p-0 outline-hidden transition-transform focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
 				// Increases the hit area of the button on mobile.
 				'after:absolute after:-inset-2 md:after:hidden',
@@ -611,7 +611,7 @@ export function SidebarMenuBadge({
 		<div
 			data-slot="sidebar-menu-badge"
 			data-sidebar="menu-badge"
-			className={cx(
+			className={cn(
 				'text-sidebar-foreground rounded-base pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center px-1 text-xs font-medium tabular-nums select-none',
 				'peer-hover/menu-button:text-sidebar-muted-contrast peer-data-[active=true]/menu-button:text-sidebar-muted-contrast',
 				'peer-data-[size=sm]/menu-button:top-1',
@@ -642,7 +642,7 @@ export function SidebarMenuSkeleton({
 		<div
 			data-slot="sidebar-menu-skeleton"
 			data-sidebar="menu-skeleton"
-			className={cx(
+			className={cn(
 				'gap-best-friends rounded-base px-best-friends flex h-8 items-center',
 				className,
 			)}
@@ -676,7 +676,7 @@ export function SidebarMenuSub({
 		<ul
 			data-slot="sidebar-menu-sub"
 			data-sidebar="menu-sub"
-			className={cx(
+			className={cn(
 				'border-sidebar-border gap-bff px-best-friends mx-3.5 flex min-w-0 translate-x-px flex-col border-l py-0.5',
 				'group-data-[collapsible=icon]:hidden',
 				className,
@@ -695,7 +695,7 @@ export function SidebarMenuSubItem({
 		<li
 			data-slot="sidebar-menu-sub-item"
 			data-sidebar="menu-sub-item"
-			className={cx('group/menu-sub-item relative', className)}
+			className={cn('group/menu-sub-item relative', className)}
 			{...props}
 		/>
 	)
@@ -720,7 +720,7 @@ export function SidebarMenuSubButton({
 			'data-sidebar': 'menu-sub-button',
 			'data-size': size,
 			'data-active': isActive,
-			className: cx(
+			className: cn(
 				'ml-best-friends',
 				'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-muted hover:text-sidebar-muted-contrast active:bg-sidebar-muted active:text-sidebar-muted-contrast [&>svg]:text-sidebar-muted-contrast gap-best-friends rounded-compact px-best-friends flex h-7 min-w-0 -translate-x-px items-center overflow-hidden outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0',
 				'data-[active=true]:bg-sidebar-muted data-[active=true]:text-sidebar-muted-contrast',

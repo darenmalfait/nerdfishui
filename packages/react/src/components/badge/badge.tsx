@@ -1,5 +1,5 @@
 import { useRender } from '@base-ui-components/react/use-render'
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ReactElement, type HTMLAttributes } from 'react'
 
 export const badgeVariants = cva(
@@ -178,7 +178,7 @@ export function Badge({
 
 		props: {
 			'data-slot': 'badge',
-			className: cx(
+			className: cn(
 				badgeVariants({ variant, size, appearance, shape, disabled }),
 				className,
 			),
@@ -201,7 +201,7 @@ export function BadgeButton({
 		props: {
 			'data-slot': 'badge-button',
 			role: 'button' as const,
-			className: cx(badgeButtonVariants({ variant, className })),
+			className: cn(badgeButtonVariants({ variant, className })),
 			...props,
 		},
 	})
@@ -212,7 +212,7 @@ export function BadgeDot({ className, ...props }: BadgeDotProps) {
 	return (
 		<span
 			data-slot="badge-dot"
-			className={cx(
+			className={cn(
 				'size-1.5 rounded-full bg-[currentColor] opacity-75',
 				className,
 			)}

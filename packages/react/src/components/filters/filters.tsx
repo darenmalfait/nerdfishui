@@ -2,7 +2,7 @@
 /* eslint-disable complexity */
 'use client'
 
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { AlertCircleIcon, CheckIcon, PlusIcon, XIcon } from 'lucide-react'
 import {
 	type ButtonHTMLAttributes,
@@ -579,7 +579,7 @@ function FilterInput<T = unknown>({
 
 	return (
 		<div
-			className={cx(
+			className={cn(
 				'w-36',
 				filterInputVariants({ variant: context.variant, size: context.size }),
 				className,
@@ -632,7 +632,7 @@ function FilterInput<T = unknown>({
 			{field?.suffix ? (
 				<div
 					data-slot="filters-suffix"
-					className={cx(
+					className={cn(
 						filterFieldAddonVariants({
 							variant: context.variant,
 							size: context.size,
@@ -662,7 +662,7 @@ function FilterRemoveButton({
 	return (
 		<button
 			data-slot="filters-remove"
-			className={cx(
+			className={cn(
 				filterRemoveButtonVariants({
 					variant: context.variant,
 					size: context.size,
@@ -800,7 +800,7 @@ function SelectOptionsPopover<T = unknown>({
 								{selectedOptions.map((option) => (
 									<CommandItem
 										key={String(option.value)}
-										className={cx(
+										className={cn(
 											'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 											'group flex items-center gap-2',
 										)}
@@ -839,7 +839,7 @@ function SelectOptionsPopover<T = unknown>({
 									{unselectedOptions.map((option) => (
 										<CommandItem
 											key={String(option.value)}
-											className={cx(
+											className={cn(
 												'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 												'group flex items-center gap-2',
 											)}
@@ -910,7 +910,7 @@ function SelectOptionsPopover<T = unknown>({
 						<>
 							{selectedOptions.length > 0 ? (
 								<div
-									className={cx(
+									className={cn(
 										'flex items-center -space-x-1.5',
 										field.selectedOptionsClassName,
 									)}
@@ -931,7 +931,7 @@ function SelectOptionsPopover<T = unknown>({
 			</PopoverTrigger>
 			<PopoverContent
 				align="start"
-				className={cx('p-popover-compact! w-50', field.className)}
+				className={cn('p-popover-compact! w-50', field.className)}
 			>
 				<Command>
 					{field.searchable !== false ? (
@@ -953,7 +953,7 @@ function SelectOptionsPopover<T = unknown>({
 								{selectedOptions.map((option) => (
 									<CommandItem
 										key={String(option.value)}
-										className={cx(
+										className={cn(
 											'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 											'group flex items-center gap-2',
 										)}
@@ -985,7 +985,7 @@ function SelectOptionsPopover<T = unknown>({
 									{unselectedOptions.map((option) => (
 										<CommandItem
 											key={String(option.value)}
-											className={cx(
+											className={cn(
 												'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 												'group flex items-center gap-2',
 											)}
@@ -1143,7 +1143,7 @@ function FilterValueSelector<T = unknown>({
 						value={startDateTime}
 						onChange={(e) => onChange([e.target.value, endDateTime] as T[])}
 						onInputChange={field.onInputChange}
-						className={cx('w-36', field.className)}
+						className={cn('w-36', field.className)}
 						field={field}
 					/>
 					<div
@@ -1160,7 +1160,7 @@ function FilterValueSelector<T = unknown>({
 						value={endDateTime}
 						onChange={(e) => onChange([startDateTime, e.target.value] as T[])}
 						onInputChange={field.onInputChange}
-						className={cx('w-36', field.className)}
+						className={cn('w-36', field.className)}
 						field={field}
 					/>
 				</div>
@@ -1173,7 +1173,7 @@ function FilterValueSelector<T = unknown>({
 				value={(values[0] as string) || ''}
 				onChange={(e) => onChange([e.target.value] as T[])}
 				onInputChange={field.onInputChange}
-				className={cx('w-36', field.className)}
+				className={cn('w-36', field.className)}
 				field={field}
 			/>
 		)
@@ -1267,7 +1267,7 @@ function FilterValueSelector<T = unknown>({
 					value={startDate}
 					onChange={(e) => onChange([e.target.value, endDate] as T[])}
 					onInputChange={field.onInputChange}
-					className={cx('hover:bg-background-muted w-36', field.className)}
+					className={cn('hover:bg-background-muted w-36', field.className)}
 					field={field}
 				/>
 				<div
@@ -1284,7 +1284,7 @@ function FilterValueSelector<T = unknown>({
 					value={endDate}
 					onChange={(e) => onChange([startDate, e.target.value] as T[])}
 					onInputChange={field.onInputChange}
-					className={cx('hover:bg-background-muted w-36', field.className)}
+					className={cn('hover:bg-background-muted w-36', field.className)}
 					field={field}
 				/>
 			</div>
@@ -1305,7 +1305,7 @@ function FilterValueSelector<T = unknown>({
 						onChange={(e) => onChange([e.target.value, maxVal] as T[])}
 						onInputChange={field.onInputChange}
 						placeholder={context.i18n.min}
-						className={cx('w-16', field.className)}
+						className={cn('w-16', field.className)}
 						min={field.min}
 						max={field.max}
 						step={field.step}
@@ -1327,7 +1327,7 @@ function FilterValueSelector<T = unknown>({
 						onChange={(e) => onChange([minVal, e.target.value] as T[])}
 						onInputChange={field.onInputChange}
 						placeholder={context.i18n.max}
-						className={cx('w-16', field.className)}
+						className={cn('w-16', field.className)}
 						min={field.min}
 						max={field.max}
 						step={field.step}
@@ -1351,7 +1351,7 @@ function FilterValueSelector<T = unknown>({
 					step={field.type === 'number' ? field.step : undefined}
 					pattern={field.pattern}
 					field={field}
-					className={cx('w-36', field.className)}
+					className={cn('w-36', field.className)}
 				/>
 			</div>
 		)
@@ -1365,7 +1365,7 @@ function FilterValueSelector<T = unknown>({
 				onChange={(e) => onChange([e.target.value] as T[])}
 				onInputChange={field.onInputChange}
 				field={field}
-				className={cx('w-16', field.className)}
+				className={cn('w-16', field.className)}
 			/>
 		)
 	}
@@ -1422,7 +1422,7 @@ function FilterValueSelector<T = unknown>({
 				</div>
 			</PopoverTrigger>
 			<PopoverContent
-				className={cx('p-popover-compact! w-36', field.popoverContentClassName)}
+				className={cn('p-popover-compact! w-36', field.popoverContentClassName)}
 			>
 				<Command>
 					{field.searchable !== false ? (
@@ -1444,7 +1444,7 @@ function FilterValueSelector<T = unknown>({
 								{selectedOptions.map((option) => (
 									<CommandItem
 										key={String(option.value)}
-										className={cx(
+										className={cn(
 											'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 											'group flex items-center gap-2',
 										)}
@@ -1475,7 +1475,7 @@ function FilterValueSelector<T = unknown>({
 									{unselectedOptions.map((option) => (
 										<CommandItem
 											key={String(option.value)}
-											className={cx(
+											className={cn(
 												'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 												'group flex items-center gap-2',
 											)}
@@ -1571,7 +1571,7 @@ export const FiltersContent = <T = unknown,>({
 
 	return (
 		<div
-			className={cx(
+			className={cn(
 				filtersContainerVariants({
 					variant: context.variant,
 					size: context.size,
@@ -1875,7 +1875,7 @@ export function Filters<T = unknown>({
 			}}
 		>
 			<div
-				className={cx(filtersContainerVariants({ variant, size }), className)}
+				className={cn(filtersContainerVariants({ variant, size }), className)}
 			>
 				{showAddButton && selectableFields.length > 0 ? (
 					<Popover
@@ -1892,7 +1892,7 @@ export function Filters<T = unknown>({
 							render={
 								(addButton as any) ?? (
 									<button
-										className={cx(
+										className={cn(
 											filterAddButtonVariants({
 												variant,
 												size,
@@ -1910,7 +1910,7 @@ export function Filters<T = unknown>({
 							}
 						/>
 						<PopoverContent
-							className={cx('p-popover-compact! w-50', popoverContentClassName)}
+							className={cn('p-popover-compact! w-50', popoverContentClassName)}
 							align="start"
 						>
 							<Command>
@@ -1983,7 +1983,7 @@ export function Filters<T = unknown>({
 																return (
 																	<CommandItem
 																		key={field.key}
-																		className={cx(
+																		className={cn(
 																			'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 																			'group flex items-center gap-2',
 																		)}
@@ -2038,7 +2038,7 @@ export function Filters<T = unknown>({
 																return (
 																	<CommandItem
 																		key={field.key}
-																		className={cx(
+																		className={cn(
 																			'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 																			'group flex items-center gap-2',
 																		)}
@@ -2067,7 +2067,7 @@ export function Filters<T = unknown>({
 												return (
 													<CommandItem
 														key={field.key}
-														className={cx(
+														className={cn(
 															'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 															'group flex items-center gap-2',
 														)}

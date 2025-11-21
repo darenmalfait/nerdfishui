@@ -1,5 +1,5 @@
 import { Separator } from '@nerdfish/react/separator'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { BlockquoteExample } from './examples/blockquote'
 import { InsertDeleteExample } from './examples/insert-delete'
 import { MarkExample } from './examples/mark'
@@ -63,7 +63,7 @@ export default function TypographyPage() {
 							<div key={variant.className}>
 								<div className="gap-casual flex items-center">
 									<code className="w-full">{variant.className}</code>
-									<span className={cx(variant.className, 'w-full')}>Aa</span>
+									<span className={cn(variant.className, 'w-full')}>Aa</span>
 								</div>
 								<Separator className="last:hidden" />
 							</div>

@@ -3,7 +3,7 @@ import {
 	CodeBlockCode,
 	CodeBlockGroup,
 } from '@nerdfish/react/code-block'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -80,7 +80,7 @@ export function useMDXComponents(components: MDXComponents) {
 			return (
 				<Link
 					{...props}
-					className={cx(
+					className={cn(
 						'border-accent hover:text-accent inline-flex items-center border-b-2 font-normal text-inherit no-underline transition-colors',
 						className,
 					)}
@@ -96,25 +96,25 @@ export function useMDXComponents(components: MDXComponents) {
 		},
 		ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
 			<ul
-				className={cx('my-friends ml-friends list-disc', className)}
+				className={cn('my-friends ml-friends list-disc', className)}
 				{...props}
 			/>
 		),
 		ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
 			<ol
-				className={cx('my-friends ml-friends list-decimal', className)}
+				className={cn('my-friends ml-friends list-decimal', className)}
 				{...props}
 			/>
 		),
 		li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-			<li className={cx('mt-best-friends', className)} {...props} />
+			<li className={cn('mt-best-friends', className)} {...props} />
 		),
 		blockquote: ({
 			className,
 			...props
 		}: React.HTMLAttributes<HTMLElement>) => (
 			<blockquote
-				className={cx(
+				className={cn(
 					'mt-friends pl-friends border-l-2 border-gray-300 text-gray-800 italic *:text-gray-600',
 					className,
 				)}
@@ -128,7 +128,7 @@ export function useMDXComponents(components: MDXComponents) {
 		}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 			// eslint-disable-next-line @next/next/no-img-element
 			<img
-				className={cx('rounded-container border border-gray-200', className)}
+				className={cn('rounded-container border border-gray-200', className)}
 				alt={alt}
 				{...props}
 			/>
@@ -144,7 +144,7 @@ export function useMDXComponents(components: MDXComponents) {
 			...props
 		}: React.HTMLAttributes<HTMLTableElement>) => (
 			<div className="my-friends w-full overflow-y-auto">
-				<table className={cx('w-full', className)} {...props} />
+				<table className={cn('w-full', className)} {...props} />
 			</div>
 		),
 		tr: ({
@@ -152,7 +152,7 @@ export function useMDXComponents(components: MDXComponents) {
 			...props
 		}: React.HTMLAttributes<HTMLTableRowElement>) => (
 			<tr
-				className={cx(
+				className={cn(
 					'even:bg-background-muted m-0 border-t border-gray-300 p-0',
 					className,
 				)}
@@ -164,7 +164,7 @@ export function useMDXComponents(components: MDXComponents) {
 			...props
 		}: React.HTMLAttributes<HTMLTableCellElement>) => (
 			<th
-				className={cx(
+				className={cn(
 					'border border-gray-200 px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right',
 					className,
 				)}
@@ -176,7 +176,7 @@ export function useMDXComponents(components: MDXComponents) {
 			...props
 		}: React.HTMLAttributes<HTMLTableCellElement>) => (
 			<td
-				className={cx(
+				className={cn(
 					'border border-gray-200 px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right',
 					className,
 				)}

@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { useEffect, useState, type ComponentProps } from 'react'
 import { createCssVariablesTheme, createHighlighter } from 'shiki'
 
@@ -8,7 +8,7 @@ export type CodeBlockProps = ComponentProps<'div'>
 export function CodeBlock({ children, className, ...props }: CodeBlockProps) {
 	return (
 		<div
-			className={cx(
+			className={cn(
 				'not-typography flex w-full flex-col overflow-clip',
 				'shadow-outline bg-background-muted text-foreground rounded-base',
 				className,
@@ -63,7 +63,7 @@ export function CodeBlockCode({
 		void highlight()
 	}, [code, language])
 
-	const classNames = cx(
+	const classNames = cn(
 		'[&>pre]:px-friends [&>pre]:py-friends w-full overflow-x-auto text-[14px]',
 		className,
 	)
@@ -92,7 +92,7 @@ export function CodeBlockGroup({
 }: CodeBlockGroupProps) {
 	return (
 		<div
-			className={cx('flex items-center justify-between', className)}
+			className={cn('flex items-center justify-between', className)}
 			{...props}
 		>
 			{children}

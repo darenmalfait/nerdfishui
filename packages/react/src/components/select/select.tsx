@@ -1,5 +1,5 @@
 import { Select as SelectPrimitive } from '@base-ui-components/react/select'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'
 import { inputVariants, type InputVariants } from '../input/input'
@@ -25,7 +25,7 @@ export type SelectPositionerProps = ComponentProps<
 export function SelectPositioner({ ...props }: SelectPositionerProps) {
 	return (
 		<SelectPrimitive.Positioner
-			className="z-[500]"
+			className="z-500"
 			data-slot="select-positioner"
 			{...props}
 		/>
@@ -37,7 +37,7 @@ export function SelectValue({ className, ...props }: SelectValueProps) {
 	return (
 		<SelectPrimitive.Value
 			data-slot="select-value"
-			className={cx('text-sm', className)}
+			className={cn('text-sm', className)}
 			{...props}
 		/>
 	)
@@ -57,7 +57,7 @@ export function SelectTrigger({
 	return (
 		<SelectPrimitive.Trigger
 			data-slot="select-trigger"
-			className={cx(
+			className={cn(
 				inputVariants({ size, variant }),
 				'group flex cursor-pointer items-center justify-between whitespace-nowrap',
 				className,
@@ -108,7 +108,7 @@ export function SelectContent({
 
 				<SelectPrimitive.Popup
 					data-slot="select-content"
-					className={cx(
+					className={cn(
 						'relative max-h-(--available-height) min-w-(--anchor-width) overflow-x-hidden overflow-y-auto',
 						'p-popover-compact bg-popover text-popover-contrast rounded-popover',
 						'origin-(--transform-origin)',
@@ -139,7 +139,7 @@ export function SelectItem({ className, children, ...props }: SelectItemProps) {
 	return (
 		<SelectPrimitive.Item
 			data-slot="select-item"
-			className={cx(
+			className={cn(
 				"data-highlighted:bg-background-inverted data-highlighted:text-foreground-inverted data-highlighted:[&_svg:not([class*='text-'])]:text-foreground-inverted [&_svg:not([class*='text-'])]:text-foreground-muted gap-best-friends *:[span]:last:gap-best-friends pl-best-friends relative flex w-full cursor-default items-center pr-8 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center",
 				'py-best-friends rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 				className,
@@ -161,7 +161,7 @@ export function SelectLabel({ className, ...props }: SelectLabelProps) {
 	return (
 		<SelectPrimitive.GroupLabel
 			data-slot="select-label"
-			className={cx(
+			className={cn(
 				'text-foreground-muted px-best-friends py-best-friends top-0 bg-transparent text-xs font-medium',
 				className,
 			)}
@@ -177,7 +177,7 @@ export function SelectSeparator({ className, ...props }: SelectSeparatorProps) {
 	return (
 		<SelectPrimitive.Separator
 			data-slot="select-separator"
-			className={cx(
+			className={cn(
 				'bg-border my-best-friendsf pointer-events-none -mx-1 h-px',
 				className,
 			)}
@@ -196,7 +196,7 @@ export function SelectScrollUpButton({
 	return (
 		<SelectPrimitive.ScrollUpArrow
 			data-slot="select-scroll-up-button"
-			className={cx(
+			className={cn(
 				'bg-popover/70 text-foreground-muted rounded-t-base py-best-friends top-px left-px z-100 flex w-[calc(100%-2px)] cursor-default items-center justify-center backdrop-blur-sm',
 				className,
 			)}
@@ -217,7 +217,7 @@ export function SelectScrollDownButton({
 	return (
 		<SelectPrimitive.ScrollDownArrow
 			data-slot="select-scroll-down-button"
-			className={cx(
+			className={cn(
 				'bg-popover/70 rounded-b-base py-best-friends bottom-px left-px z-100 flex w-[calc(100%-2px)] cursor-default items-center justify-center backdrop-blur-sm',
 				className,
 			)}

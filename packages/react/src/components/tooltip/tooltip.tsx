@@ -1,7 +1,7 @@
 'use client'
 
 import { Tooltip as TooltipPrimitive } from '@base-ui-components/react/tooltip'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export type TooltipProviderProps = ComponentProps<
@@ -64,7 +64,7 @@ export function TooltipContent({
 			<TooltipPositioner sideOffset={sideOffset} align={align} side={side}>
 				<TooltipPrimitive.Popup
 					data-slot="tooltip-content"
-					className={cx(
+					className={cn(
 						'bg-background-inverted text-foreground-inverted outline-border rounded-compact px-friends py-best-friends w-fit origin-(--transform-origin) text-xs text-balance shadow-sm outline -outline-offset-1 transition-[transform,scale,opacity] data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0',
 						className,
 					)}

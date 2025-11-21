@@ -1,11 +1,11 @@
-import { cx, type VariantProps, cva } from '@nerdfish/utils'
+import { cn, type VariantProps, cva } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export function Empty({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			data-slot="empty"
-			className={cx(
+			className={cn(
 				'gap-casual rounded-base p-casual flex min-w-0 flex-1 flex-col items-center justify-center border-dashed text-center text-balance',
 				className,
 			)}
@@ -18,7 +18,7 @@ export function EmptyHeader({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			data-slot="empty-header"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex max-w-100 flex-col items-center text-center',
 				className,
 			)}
@@ -51,7 +51,7 @@ export function EmptyMedia({
 		<div
 			data-slot="empty-icon"
 			data-variant={variant}
-			className={cx(emptyMediaVariants({ variant, className }))}
+			className={cn(emptyMediaVariants({ variant, className }))}
 			{...props}
 		/>
 	)
@@ -61,7 +61,7 @@ export function EmptyTitle({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			data-slot="empty-title"
-			className={cx('text-lg font-medium tracking-tight', className)}
+			className={cn('text-lg font-medium tracking-tight', className)}
 			{...props}
 		/>
 	)
@@ -71,7 +71,7 @@ export function EmptyDescription({ className, ...props }: ComponentProps<'p'>) {
 	return (
 		<div
 			data-slot="empty-description"
-			className={cx(
+			className={cn(
 				'text-foreground-muted [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4',
 				className,
 			)}
@@ -84,7 +84,7 @@ export function EmptyContent({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			data-slot="empty-content"
-			className={cx(
+			className={cn(
 				'gap-friends flex w-full max-w-100 min-w-0 flex-col items-center text-sm text-balance',
 				className,
 			)}

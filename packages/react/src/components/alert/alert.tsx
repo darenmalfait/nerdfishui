@@ -1,4 +1,4 @@
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, type VariantProps, cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 const alertVariants = cva(
@@ -30,7 +30,7 @@ export function Alert({ className, variant, ...props }: AlertProps) {
 		<div
 			data-slot="alert"
 			role="alert"
-			className={cx(alertVariants({ variant }), className)}
+			className={cn(alertVariants({ variant }), className)}
 			{...props}
 		/>
 	)
@@ -41,7 +41,7 @@ export function AlertTitle({ className, ...props }: AlertTitleProps) {
 	return (
 		<div
 			data-slot="alert-title"
-			className={cx(
+			className={cn(
 				'col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight',
 				className,
 			)}
@@ -58,7 +58,7 @@ export function AlertDescription({
 	return (
 		<div
 			data-slot="alert-description"
-			className={cx(
+			className={cn(
 				'text-foreground-muted gap-bff col-start-2 grid justify-items-start text-sm [&_p]:leading-relaxed',
 				className,
 			)}

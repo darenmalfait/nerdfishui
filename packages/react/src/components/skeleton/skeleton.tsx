@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export interface SkeletonProps extends ComponentProps<'span'> {
@@ -13,7 +13,7 @@ export function Skeleton({ className, count = 1, ...props }: SkeletonProps) {
 				<span
 					{...props}
 					key={index}
-					className={cx(
+					className={cn(
 						'bg-background-inverted/10 rounded-base inline-block h-lh w-full animate-pulse text-inherit',
 						className,
 					)}

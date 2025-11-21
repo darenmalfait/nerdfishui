@@ -1,7 +1,7 @@
 'use client'
 
 import { Dialog as DialogPrimitive } from '@base-ui-components/react'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { XIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'
 
@@ -30,7 +30,7 @@ export function DialogOverlay({ className, ...props }: DialogOverlayProps) {
 	return (
 		<DialogPrimitive.Backdrop
 			data-slot="dialog-overlay"
-			className={cx(
+			className={cn(
 				'fixed inset-0 bg-black/50 transition-all duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0',
 				className,
 			)}
@@ -55,7 +55,7 @@ export function DialogContent({
 			<DialogOverlay />
 			<DialogPrimitive.Popup
 				data-slot="dialog-content"
-				className={cx(
+				className={cn(
 					'bg-popover text-popover-contrast fixed grid w-full sm:max-w-[calc(100%-2rem)]',
 					'p-friends gap-friends rounded-container border shadow-lg duration-200 outline-none sm:max-w-128 sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
 					'fixed bottom-0 w-full sm:top-[50%] sm:bottom-auto sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
@@ -85,7 +85,7 @@ export function DialogHeader({ className, ...props }: DialogHeaderProps) {
 	return (
 		<div
 			data-slot="dialog-header"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex flex-col text-center sm:text-left',
 				className,
 			)}
@@ -99,7 +99,7 @@ export function DialogFooter({ className, ...props }: DialogFooterProps) {
 	return (
 		<div
 			data-slot="dialog-footer"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex flex-col-reverse sm:flex-row sm:justify-end',
 				className,
 			)}
@@ -113,7 +113,7 @@ export function DialogTitle({ className, ...props }: DialogTitleProps) {
 	return (
 		<DialogPrimitive.Title
 			data-slot="dialog-title"
-			className={cx('text-lg leading-none font-semibold', className)}
+			className={cn('text-lg leading-none font-semibold', className)}
 			{...props}
 		/>
 	)
@@ -129,7 +129,7 @@ export function DialogDescription({
 	return (
 		<DialogPrimitive.Description
 			data-slot="dialog-description"
-			className={cx('text-foreground-muted text-sm', className)}
+			className={cn('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)

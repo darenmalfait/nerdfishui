@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import {
 	CircleCheckIcon,
 	InfoIcon,
@@ -42,7 +42,7 @@ export function Toaster({ position = 'top-center', ...props }: ToasterProps) {
 				classNames: {
 					...props.toastOptions?.classNames,
 
-					toast: cx(
+					toast: cn(
 						'!rounded-popover !p-popover has-[>[data-icon]]:!p-popover-compact has-[>[data-icon]>.sonner-loader[data-visible=true]]:!p-popover',
 						'[&_[data-icon]]:!p-best-friends [&_[data-icon]]:!rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))] [&_[data-icon]]:!ml-px [&_[data-icon]]:!flex [&_[data-icon]]:!size-auto [&_[data-icon]]:!items-center [&_[data-icon]]:!justify-center',
 					),

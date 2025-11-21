@@ -1,7 +1,7 @@
 'use client'
 
 import { useRender } from '@base-ui-components/react/use-render'
-import { type VariantProps, cva } from '@nerdfish/utils'
+import { type VariantProps, cva } from '@nerdfish/utils/class'
 import { type ReactElement } from 'react'
 
 export const buttonVariants = cva(

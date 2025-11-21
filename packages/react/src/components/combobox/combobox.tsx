@@ -1,7 +1,7 @@
 'use client'
 
 import { Combobox as ComboboxPrimitive } from '@base-ui-components/react/combobox'
-import { cx, type VariantProps } from '@nerdfish/utils'
+import { type VariantProps, cn } from '@nerdfish/utils/class'
 import { CheckIcon, ChevronDownIcon, XIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'
 import { Badge } from '../badge/badge'
@@ -19,7 +19,7 @@ export function ComboboxControl({ className, ...props }: ComboboxControlProps) {
 	return (
 		<span
 			data-slot="combobox-control"
-			className={cx('relative', className)}
+			className={cn('relative', className)}
 			{...props}
 		/>
 	)
@@ -45,7 +45,7 @@ export function ComboboxInput({
 		<ComboboxPrimitive.Input
 			data-slot="combobox-input"
 			data-variant={variant}
-			className={cx(inputVariants({ variant, size }), 'max-h-full', className)}
+			className={cn(inputVariants({ variant, size }), 'max-h-full', className)}
 			{...props}
 		/>
 	)
@@ -59,7 +59,7 @@ export function ComboboxStatus({ className, ...props }: ComboboxStatusProps) {
 	return (
 		<ComboboxPrimitive.Status
 			data-slot="combobox-status"
-			className={cx('text-foreground-muted text-sm', className)}
+			className={cn('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)
@@ -130,7 +130,7 @@ export function ComboboxPositioner({
 	return (
 		<ComboboxPrimitive.Positioner
 			data-slot="combobox-positioner"
-			className={cx('outline-none', className)}
+			className={cn('outline-none', className)}
 			{...props}
 		/>
 	)
@@ -142,7 +142,7 @@ export function ComboboxPopup({ className, ...props }: ComboboxPopupProps) {
 	return (
 		<ComboboxPrimitive.Popup
 			data-slot="combobox-popup"
-			className={cx(
+			className={cn(
 				'p-popover-compact',
 				'max-h-[min(var(--available-height),20rem)] w-(--anchor-width) max-w-(--available-width)',
 				'scroll-pt-best-friends scroll-pb-best-friends overflow-y-auto overscroll-contain bg-[canvas]',
@@ -162,7 +162,7 @@ export function ComboboxList({ className, ...props }: ComboboxListProps) {
 	return (
 		<ComboboxPrimitive.List
 			data-slot="combobox-list"
-			className={cx('space-y-bff empty:p-0!', className)}
+			className={cn('space-y-bff empty:p-0!', className)}
 			{...props}
 		/>
 	)
@@ -184,7 +184,7 @@ export function ComboboxRow({ className, ...props }: ComboboxRowProps) {
 	return (
 		<ComboboxPrimitive.Row
 			data-slot="combobox-row"
-			className={cx('gap-best-friends flex items-center', className)}
+			className={cn('gap-best-friends flex items-center', className)}
 			{...props}
 		/>
 	)
@@ -196,7 +196,7 @@ export function ComboboxItem({ className, ...props }: ComboboxItemProps) {
 	return (
 		<ComboboxPrimitive.Item
 			data-slot="combobox-item"
-			className={cx(
+			className={cn(
 				'relative flex cursor-default items-center',
 				'py-best-friends rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 				'text-foreground gap-best-friends relative items-center ps-7 pe-2 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50',
@@ -220,7 +220,7 @@ export function ComboboxItemIndicator({
 	return (
 		<ComboboxPrimitive.ItemIndicator
 			data-slot="combobox-item-indicator"
-			className={cx(
+			className={cn(
 				'absolute start-2.5 top-1/2 flex -translate-y-1/2 items-center justify-center',
 				className,
 			)}
@@ -248,7 +248,7 @@ export function ComboboxGroupLabel({
 	return (
 		<ComboboxPrimitive.GroupLabel
 			data-slot="combobox-group-label"
-			className={cx(
+			className={cn(
 				'text-foreground-muted py-best-friends px-best-friends text-xs font-medium',
 				className,
 			)}
@@ -263,7 +263,7 @@ export function ComboboxEmpty({ className, ...props }: ComboboxEmptyProps) {
 	return (
 		<ComboboxPrimitive.Empty
 			data-slot="combobox-empty"
-			className={cx(
+			className={cn(
 				'text-foreground-muted py-best-friends px-friends text-sm empty:m-0 empty:p-0',
 				className,
 			)}
@@ -287,7 +287,7 @@ export function ComboboxClear({
 			render={
 				<ComboboxPrimitive.Clear
 					data-slot="combobox-clear"
-					className={cx(
+					className={cn(
 						'ring-offset-background rounded-base absolute end-6 top-1/2 -translate-y-1/2 cursor-pointer opacity-70',
 						'focus:ring-ring opacity-60 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none',
 						'data-disabled:pointer-events-none',
@@ -312,7 +312,7 @@ export function ComboboxIcon({
 	return (
 		<ComboboxPrimitive.Icon
 			data-slot="combobox-icon"
-			className={cx(
+			className={cn(
 				'ring-offset-background rounded-base absolute end-2 top-1/2 -translate-y-1/2 cursor-pointer opacity-70 transition-opacity',
 				'focus:ring-ring opacity-60 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none',
 				'data-disabled:pointer-events-none',
@@ -331,7 +331,7 @@ export function ComboboxArrow({ className, ...props }: ComboboxArrowProps) {
 	return (
 		<ComboboxPrimitive.Arrow
 			data-slot="combobox-arrow"
-			className={cx('', className)}
+			className={cn('', className)}
 			{...props}
 		/>
 	)
@@ -345,7 +345,7 @@ export function ComboboxTrigger({ className, ...props }: ComboboxTriggerProps) {
 	return (
 		<ComboboxPrimitive.Trigger
 			data-slot="combobox-trigger"
-			className={cx('relative', className)}
+			className={cn('relative', className)}
 			{...props}
 		/>
 	)
@@ -364,7 +364,7 @@ export function ComboboxChips({
 	return (
 		<ComboboxPrimitive.Chips
 			data-slot="combobox-chips"
-			className={cx(
+			className={cn(
 				'**:data-[slot=combobox-input]:px-0 **:data-[slot=combobox-input]:py-0',
 				'**:data-[slot=combobox-input]:min-h-0 **:data-[slot=combobox-input]:flex-1',
 				'**:data-[slot=combobox-input]:rounded-none **:data-[slot=combobox-input]:border-0 **:data-[slot=combobox-input]:shadow-none',
@@ -406,7 +406,7 @@ export function ComboboxChipRemove({
 			render={
 				<ComboboxPrimitive.ChipRemove
 					data-slot="combobox-chip-remove"
-					className={cx(
+					className={cn(
 						'hover:bg-background-muted/10 ms-1 -mr-1 cursor-pointer p-0 [&_svg]:opacity-60 hover:[&_svg]:opacity-100',
 						className,
 					)}
@@ -430,7 +430,7 @@ export function ComboboxSeparator({
 	return (
 		<ComboboxPrimitive.Separator
 			data-slot="combobox-separator"
-			className={cx('bg-background-muted my-1.5 h-px', className)}
+			className={cn('bg-background-muted my-1.5 h-px', className)}
 			{...props}
 		/>
 	)

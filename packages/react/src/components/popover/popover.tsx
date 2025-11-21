@@ -1,6 +1,5 @@
 import { Popover as PopoverPrimitive } from '@base-ui-components/react/popover'
-
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export type PopoverProps = ComponentProps<typeof PopoverPrimitive.Root>
@@ -44,7 +43,7 @@ export function PopoverHeader({ className, ...props }: PopoverHeaderProps) {
 	return (
 		<div
 			data-slot="popover-header"
-			className={cx('gap-y-bff relative flex flex-col', className)}
+			className={cn('gap-y-bff relative flex flex-col', className)}
 			{...props}
 		/>
 	)
@@ -55,7 +54,7 @@ export function PopoverTitle({ className, ...props }: PopoverTitleProps) {
 	return (
 		<PopoverPrimitive.Title
 			data-slot="popover-title"
-			className={cx('text-sm font-semibold', className)}
+			className={cn('text-sm font-semibold', className)}
 			{...props}
 		/>
 	)
@@ -71,7 +70,7 @@ export function PopoverDescription({
 	return (
 		<PopoverPrimitive.Description
 			data-slot="popover-description"
-			className={cx('text-foreground-muted text-sm', className)}
+			className={cn('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)
@@ -99,7 +98,7 @@ export function PopoverContent({
 			<PopoverPositioner sideOffset={sideOffset} align={align} side={side}>
 				<PopoverPrimitive.Popup
 					data-slot="popover-content"
-					className={cx(
+					className={cn(
 						'bg-popover text-popover-contrast outline-border rounded-popover p-popover w-72 origin-(--transform-origin) shadow-md outline -outline-offset-1 transition-[transform,scale,opacity] data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0',
 						className,
 					)}
@@ -131,7 +130,7 @@ export function PopoverFooter({ className, ...props }: PopoverFooterProps) {
 	return (
 		<div
 			data-slot="popover-footer"
-			className={cx(
+			className={cn(
 				'flex flex-col-reverse gap-2 sm:flex-row sm:justify-end',
 				className,
 			)}

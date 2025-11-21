@@ -1,5 +1,5 @@
 import { useRender } from '@base-ui-components/react/use-render'
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ReactElement, type ComponentProps } from 'react'
 import { Separator } from '../separator/separator'
 
@@ -32,7 +32,7 @@ export function ButtonGroup({
 	return useRender({
 		render,
 		props: {
-			className: cx(buttonGroupVariants({ orientation }), className),
+			className: cn(buttonGroupVariants({ orientation }), className),
 			...props,
 		},
 	})
@@ -46,7 +46,7 @@ export function ButtonGroupText({
 	return useRender({
 		render: <span />,
 		props: {
-			className: cx(
+			className: cn(
 				"bg-background-muted gap-best-friends rounded-base px-friends flex items-center border text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
 				className,
 			),
@@ -65,7 +65,7 @@ export function ButtonGroupSeparator({
 		<Separator
 			data-slot="button-group-separator"
 			orientation={orientation}
-			className={cx(
+			className={cn(
 				'bg-background-muted relative m-0! self-stretch data-[orientation=vertical]:h-auto',
 				className,
 			)}

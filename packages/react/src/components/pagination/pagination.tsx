@@ -1,4 +1,4 @@
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import {
 	ChevronLeftIcon,
 	ChevronRightIcon,
@@ -14,7 +14,7 @@ export function Pagination({ className, ...props }: PaginationProps) {
 			role="navigation"
 			aria-label="pagination"
 			data-slot="pagination"
-			className={cx('mx-auto flex w-full justify-center', className)}
+			className={cn('mx-auto flex w-full justify-center', className)}
 			{...props}
 		/>
 	)
@@ -28,7 +28,7 @@ export function PaginationContent({
 	return (
 		<ul
 			data-slot="pagination-content"
-			className={cx('gap-bff flex flex-row items-center', className)}
+			className={cn('gap-bff flex flex-row items-center', className)}
 			{...props}
 		/>
 	)
@@ -55,7 +55,7 @@ export function PaginationLink({
 			aria-current={isActive ? 'page' : undefined}
 			data-slot="pagination-link"
 			data-active={isActive}
-			className={cx(
+			className={cn(
 				buttonVariants({
 					icon,
 					variant: isActive ? 'outline' : 'ghost',
@@ -77,7 +77,7 @@ export function PaginationPrevious({
 		<PaginationLink
 			aria-label="Go to previous page"
 			icon={false}
-			className={cx('gap-bff', className)}
+			className={cn('gap-bff', className)}
 			{...props}
 		>
 			<ChevronLeftIcon className="size-4" />
@@ -92,7 +92,7 @@ export function PaginationNext({ className, ...props }: PaginationNextProps) {
 		<PaginationLink
 			aria-label="Go to next page"
 			icon={false}
-			className={cx('gap-bff', className)}
+			className={cn('gap-bff', className)}
 			{...props}
 		>
 			<span className="hidden sm:block">Next</span>
@@ -110,7 +110,7 @@ export function PaginationEllipsis({
 		<span
 			aria-hidden
 			data-slot="pagination-ellipsis"
-			className={cx('flex size-9 items-center justify-center', className)}
+			className={cn('flex size-9 items-center justify-center', className)}
 			{...props}
 		>
 			<MoreHorizontalIcon className="size-4" />

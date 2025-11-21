@@ -1,5 +1,5 @@
 import { ContextMenu as ContextMenuPrimitive } from '@base-ui-components/react/context-menu'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'
 import { Kbd } from '../kbd/kbd'
@@ -65,7 +65,7 @@ export function ContextMenuSubTrigger({
 		<ContextMenuPrimitive.SubmenuTrigger
 			data-slot="context-menu-sub-trigger"
 			data-inset={inset}
-			className={cx(
+			className={cn(
 				"focus:bg-background-inverted focus:text-foreground-inverted data-[state=open]:bg-background-inverted data-[state=open]:text-accent-foreground rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends flex cursor-default items-center text-sm outline-hidden select-none data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5",
 				className,
 			)}
@@ -87,7 +87,7 @@ export function ContextMenuSubPopup({
 	return (
 		<ContextMenuPrimitive.Popup
 			data-slot="context-menu-sub-popup"
-			className={cx(
+			className={cn(
 				'bg-popover text-popover-contrast data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 rounded-popover p-best-friends max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto border shadow-md outline-none',
 				className,
 			)}
@@ -138,7 +138,7 @@ function ContextMenuPopup({
 	return (
 		<ContextMenuPrimitive.Popup
 			data-slot="context-menu-content"
-			className={cx(
+			className={cn(
 				'bg-popover text-popover-contrast data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 rounded-popover p-best-friends max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto border shadow-md outline-none',
 				className,
 			)}
@@ -197,7 +197,7 @@ export function ContextMenuItem({
 			data-slot="context-menu-item"
 			data-inset={inset}
 			data-variant={variant}
-			className={cx(
+			className={cn(
 				"focus:bg-background-inverted focus:text-foreground-inverted data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:text-destructive! [&_svg:not([class*='text-'])]:text-foreground-muted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
@@ -218,7 +218,7 @@ export function ContextMenuCheckboxItem({
 	return (
 		<ContextMenuPrimitive.CheckboxItem
 			data-slot="context-menu-checkbox-item"
-			className={cx(
+			className={cn(
 				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 pe-2 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
@@ -246,7 +246,7 @@ export function ContextMenuRadioItem({
 	return (
 		<ContextMenuPrimitive.RadioItem
 			data-slot="context-menu-radio-item"
-			className={cx(
+			className={cn(
 				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
@@ -276,7 +276,7 @@ export function ContextMenuGroupLabel({
 		<ContextMenuPrimitive.GroupLabel
 			data-slot="context-menu-group-label"
 			data-inset={inset}
-			className={cx(
+			className={cn(
 				'text-foreground-muted px-best-friends py-best-friends text-xs font-medium data-inset:ps-7',
 				className,
 			)}
@@ -295,7 +295,7 @@ export function ContextMenuSeparator({
 	return (
 		<ContextMenuPrimitive.Separator
 			data-slot="context-menu-separator"
-			className={cx('bg-border my-best-friends -mx-1 h-px', className)}
+			className={cn('bg-border my-best-friends -mx-1 h-px', className)}
 			{...props}
 		/>
 	)
@@ -309,7 +309,7 @@ export function ContextMenuShortcut({
 	return (
 		<Kbd
 			data-slot="context-menu-shortcut"
-			className={cx('ms-auto', className)}
+			className={cn('ms-auto', className)}
 			{...props}
 		/>
 	)

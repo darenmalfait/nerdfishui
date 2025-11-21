@@ -2,7 +2,7 @@
 
 import { Toggle as TogglePrimitive } from '@base-ui-components/react/toggle'
 import { ToggleGroup as ToggleGroupPrimitive } from '@base-ui-components/react/toggle-group'
-import { cx, type VariantProps } from '@nerdfish/utils'
+import { cn, type VariantProps } from '@nerdfish/utils/class'
 import {
 	type ComponentProps,
 	createContext,
@@ -42,7 +42,7 @@ export function ToggleGroup({
 			data-size={size}
 			data-spacing={spacing}
 			style={{ ...style, '--gap': spacing } as CSSProperties}
-			className={cx(
+			className={cn(
 				'group/toggle-group flex items-center gap-1 data-[variant=outline]:shadow-xs',
 				'gap-[--spacing(var(--gap))]',
 				className,
@@ -78,7 +78,7 @@ export function ToggleGroupItem({
 			data-size={context.size ?? size}
 			data-spacing={context.spacing ?? 0}
 			value={value}
-			className={cx(
+			className={cn(
 				toggleVariants({
 					variant: context.variant ?? variant,
 					size: context.size ?? size,

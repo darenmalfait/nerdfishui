@@ -1,4 +1,4 @@
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps, type HTMLAttributes } from 'react'
 
 export function PageHeader({
@@ -8,7 +8,7 @@ export function PageHeader({
 }: HTMLAttributes<HTMLDivElement>) {
 	return (
 		<section
-			className={cx(
+			className={cn(
 				'gap-friends mt-casual mb-acquaintances mx-auto flex w-full flex-col items-start',
 				className,
 			)}
@@ -23,7 +23,7 @@ export function PageHeaderHeading({
 	className,
 	...props
 }: ComponentProps<'h1'>) {
-	return <h1 className={cx('typography-heading', className)} {...props} />
+	return <h1 className={cn('typography-heading', className)} {...props} />
 }
 
 export function PageHeaderDescription({
@@ -32,7 +32,7 @@ export function PageHeaderDescription({
 }: HTMLAttributes<HTMLParagraphElement>) {
 	return (
 		<p
-			className={cx('typography-subtitle max-w-2xl text-balance', className)}
+			className={cn('typography-subtitle max-w-2xl text-balance', className)}
 			{...props}
 		/>
 	)
@@ -44,7 +44,7 @@ export function PageActions({
 }: HTMLAttributes<HTMLDivElement>) {
 	return (
 		<div
-			className={cx(
+			className={cn(
 				'gap-best-friends flex w-full items-center justify-start py-2',
 				className,
 			)}

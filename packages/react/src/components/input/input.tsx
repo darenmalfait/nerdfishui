@@ -1,8 +1,8 @@
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import * as React from 'react'
 
 export const inputVariants = cva(
-	cx(
+	cn(
 		'rounded-base bg-background-muted text-md text-foreground group relative block w-full border border-transparent text-left font-bold outline-none',
 		//focus
 		'focus-visible:ring-ring focus-visible:border-border focus-visible:ring-[3px]',
@@ -60,7 +60,7 @@ export function Input({
 			type={type}
 			data-slot="input"
 			{...props}
-			className={cx(inputVariants({ size, variant }), className)}
+			className={cn(inputVariants({ size, variant }), className)}
 		/>
 	)
 }

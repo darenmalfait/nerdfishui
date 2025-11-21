@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unknown-property */
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { ImageResponse } from '@vercel/og'
 import { ogImageSchema } from '@/types/og'
 
@@ -35,7 +35,7 @@ export async function GET(req: Request) {
 		return new ImageResponse(
 			(
 				<div
-					tw={cx('relative flex h-full w-full flex-col items-start p-12')}
+					tw={cn('relative flex h-full w-full flex-col items-start p-12')}
 					style={{
 						color: paint,
 						backgroundImage:

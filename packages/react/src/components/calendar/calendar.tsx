@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import {
 	ChevronDownIcon,
 	ChevronLeftIcon,
@@ -49,7 +49,7 @@ export function CalendarDayButton({
 			data-range-start={modifiers.range_start}
 			data-range-end={modifiers.range_end}
 			data-range-middle={modifiers.range_middle}
-			className={cx(
+			className={cn(
 				'rounded-compact! data-[selected-single=true]:bg-background-inverted data-[selected-single=true]:text-foreground-inverted data-[range-middle=true]:bg-background-secondary/50 data-[range-middle=true]:text-foreground data-[range-start=true]:bg-background-inverted data-[range-start=true]:text-foreground-inverted data-[range-end=true]:bg-background-inverted data-[range-end=true]:text-foreground-inverted group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-ring/50 gap-bff data-[range-end=true]:rounded-compact data-[range-end=true]:rounded-r-compact data-[range-start=true]:rounded-compact data-[range-start=true]:rounded-l-compact flex aspect-square size-auto w-full min-w-(--cell-size) flex-col leading-none font-normal group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] data-[range-middle=true]:rounded-none [&>span]:text-xs [&>span]:opacity-70',
 				'h-full!',
 				defaultClassNames.day,
@@ -85,7 +85,7 @@ export function Calendar({
 				} as CSSProperties
 			}
 			showOutsideDays={showOutsideDays}
-			className={cx(
+			className={cn(
 				'bg-background group/calendar [--cell-size:--spacing(8)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent',
 				String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
 				String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
@@ -98,43 +98,43 @@ export function Calendar({
 				...formatters,
 			}}
 			classNames={{
-				root: cx('w-fit', defaultClassNames.root),
-				months: cx(
+				root: cn('w-fit', defaultClassNames.root),
+				months: cn(
 					'gap-casual relative flex flex-col md:flex-row',
 					defaultClassNames.months,
 				),
-				month: cx('gap-friends flex w-full flex-col', defaultClassNames.month),
-				nav: cx(
+				month: cn('gap-friends flex w-full flex-col', defaultClassNames.month),
+				nav: cn(
 					'gap-best-friends absolute inset-x-0 top-0 flex w-full items-center justify-between',
 					defaultClassNames.nav,
 				),
-				button_previous: cx(
+				button_previous: cn(
 					buttonVariants({ variant: buttonVariant }),
 					'size-(--cell-size) p-0 select-none aria-disabled:opacity-50',
 					defaultClassNames.button_previous,
 				),
-				button_next: cx(
+				button_next: cn(
 					buttonVariants({ variant: buttonVariant }),
 					'size-(--cell-size) p-0 select-none aria-disabled:opacity-50',
 					defaultClassNames.button_next,
 				),
-				month_caption: cx(
+				month_caption: cn(
 					'flex h-(--cell-size) w-full items-center justify-center px-(--cell-size)',
 					defaultClassNames.month_caption,
 				),
-				dropdowns: cx(
+				dropdowns: cn(
 					'gap-bff flex h-(--cell-size) w-full items-center justify-center text-sm font-medium',
 					defaultClassNames.dropdowns,
 				),
-				dropdown_root: cx(
+				dropdown_root: cn(
 					'has-focus:border-ring border-input has-focus:ring-ring/50 rounded-compact relative border shadow-xs has-focus:ring-[3px]',
 					defaultClassNames.dropdown_root,
 				),
-				dropdown: cx(
+				dropdown: cn(
 					'bg-popover absolute inset-0 opacity-0',
 					defaultClassNames.dropdown,
 				),
-				caption_label: cx(
+				caption_label: cn(
 					'font-medium select-none',
 					captionLayout === 'label'
 						? 'text-sm'
@@ -142,66 +142,66 @@ export function Calendar({
 					defaultClassNames.caption_label,
 				),
 				table: 'w-full border-collapse',
-				weekdays: cx('gap-bff flex', defaultClassNames.weekdays),
-				weekday: cx(
+				weekdays: cn('gap-bff flex', defaultClassNames.weekdays),
+				weekday: cn(
 					'text-foreground-muted rounded-compact flex-1 text-[0.8rem] font-normal select-none',
 					defaultClassNames.weekday,
 				),
-				week: cx('mt-best-friends gap-bff flex w-full', defaultClassNames.week),
-				week_number_header: cx(
+				week: cn('mt-best-friends gap-bff flex w-full', defaultClassNames.week),
+				week_number_header: cn(
 					'w-(--cell-size) select-none',
 					defaultClassNames.week_number_header,
 				),
-				week_number: cx(
+				week_number: cn(
 					'text-foreground-muted text-[0.8rem] select-none',
 					defaultClassNames.week_number,
 				),
-				day: cx(
+				day: cn(
 					'group/day data-[selected]:rounded-r-compact aspect-square h-full w-full p-0 text-center select-none',
 					defaultClassNames.day,
 				),
-				range_start: cx(
+				range_start: cn(
 					'bg-background-muted rounded-l-compact',
 					defaultClassNames.range_start,
 				),
-				range_middle: cx(
+				range_middle: cn(
 					'relative rounded-none before:absolute',
 					'before:content-[" "] before:bg-background-secondary/50 before:-inset-x-bff before:absolute before:inset-y-0 before:z-[0]',
 					defaultClassNames.range_middle,
 				),
-				range_end: cx(
+				range_end: cn(
 					'bg-background-muted rounded-r-compact',
 					defaultClassNames.range_end,
 				),
-				today: cx(
+				today: cn(
 					'bg-background-muted text-foreground rounded-compact',
 					defaultClassNames.today,
 				),
-				outside: cx(
+				outside: cn(
 					defaultClassNames.outside,
 					'text-foreground-muted/70 aria-selected:text-foreground-muted/50',
 				),
-				disabled: cx(
+				disabled: cn(
 					'text-foreground-muted opacity-50',
 					defaultClassNames.disabled,
 				),
-				hidden: cx('invisible', defaultClassNames.hidden),
+				hidden: cn('invisible', defaultClassNames.hidden),
 				...classNames,
 			}}
 			components={{
-				Root: ({ className: cn, ...rest }) => {
-					return <div data-slot="calendar" className={cn} {...rest} />
+				Root: ({ className: c, ...rest }) => {
+					return <div data-slot="calendar" className={c} {...rest} />
 				},
-				Chevron: ({ className: cn, orientation, ...rest }) => {
+				Chevron: ({ className: c, orientation, ...rest }) => {
 					if (orientation === 'left') {
-						return <ChevronLeftIcon className={cx('size-4', cn)} {...rest} />
+						return <ChevronLeftIcon className={cn('size-4', c)} {...rest} />
 					}
 
 					if (orientation === 'right') {
-						return <ChevronRightIcon className={cx('size-4', cn)} {...rest} />
+						return <ChevronRightIcon className={cn('size-4', c)} {...rest} />
 					}
 
-					return <ChevronDownIcon className={cx('size-4', cn)} {...rest} />
+					return <ChevronDownIcon className={cn('size-4', c)} {...rest} />
 				},
 				DayButton: CalendarDayButton,
 				WeekNumber: ({ children, ...rest }) => {

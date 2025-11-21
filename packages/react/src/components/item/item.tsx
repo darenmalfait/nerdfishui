@@ -1,6 +1,5 @@
 import { useRender } from '@base-ui-components/react/use-render'
-import { cx } from '@nerdfish/utils'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cn, cva, type VariantProps } from '@nerdfish/utils/class'
 import { type ReactElement, type ComponentProps } from 'react'
 import { Separator } from '../../components/separator/separator'
 
@@ -10,7 +9,7 @@ export function ItemGroup({ className, ...props }: ItemGroupProps) {
 		<div
 			role="list"
 			data-slot="item-group"
-			className={cx('group/item-group flex flex-col', className)}
+			className={cn('group/item-group flex flex-col', className)}
 			{...props}
 		/>
 	)
@@ -22,7 +21,7 @@ export function ItemSeparator({ className, ...props }: ItemSeparatorProps) {
 		<Separator
 			data-slot="item-separator"
 			orientation="horizontal"
-			className={cx('my-0', className)}
+			className={cn('my-0', className)}
 			{...props}
 		/>
 	)
@@ -102,7 +101,7 @@ export function ItemMedia({
 		<div
 			data-slot="item-media"
 			data-variant={variant}
-			className={cx(itemMediaVariants({ variant, className }))}
+			className={cn(itemMediaVariants({ variant, className }))}
 			{...props}
 		/>
 	)
@@ -113,7 +112,7 @@ export function ItemContent({ className, ...props }: ItemContentProps) {
 	return (
 		<div
 			data-slot="item-content"
-			className={cx(
+			className={cn(
 				'gap-bff flex flex-1 flex-col [&+[data-slot=item-content]]:flex-none',
 				className,
 			)}
@@ -127,7 +126,7 @@ export function ItemTitle({ className, ...props }: ItemTitleProps) {
 	return (
 		<div
 			data-slot="item-title"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex w-fit items-center text-sm leading-snug font-medium',
 				className,
 			)}
@@ -141,7 +140,7 @@ export function ItemDescription({ className, ...props }: ItemDescriptionProps) {
 	return (
 		<p
 			data-slot="item-description"
-			className={cx(
+			className={cn(
 				'text-muted-foreground line-clamp-2 text-sm leading-normal font-normal text-balance',
 				'[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
 				className,
@@ -156,7 +155,7 @@ export function ItemActions({ className, ...props }: ItemActionsProps) {
 	return (
 		<div
 			data-slot="item-actions"
-			className={cx('gap-best-friends flex items-center', className)}
+			className={cn('gap-best-friends flex items-center', className)}
 			{...props}
 		/>
 	)
@@ -167,7 +166,7 @@ export function ItemHeader({ className, ...props }: ItemHeaderProps) {
 	return (
 		<div
 			data-slot="item-header"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex basis-full items-center justify-between',
 				className,
 			)}
@@ -181,7 +180,7 @@ export function ItemFooter({ className, ...props }: ItemFooterProps) {
 	return (
 		<div
 			data-slot="item-footer"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex basis-full items-center justify-between',
 				className,
 			)}

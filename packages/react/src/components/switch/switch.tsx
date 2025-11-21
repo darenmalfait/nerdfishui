@@ -1,5 +1,5 @@
 import { Switch as SwitchPrimitive } from '@base-ui-components/react/switch'
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { createContext, useContext, type ComponentProps } from 'react'
 import { type InputVariants } from '../input/input'
 
@@ -79,7 +79,7 @@ export function SwitchThumb({ className, size, ...props }: SwitchThumbProps) {
 	return (
 		<SwitchPrimitive.Thumb
 			data-slot="switch-thumb"
-			className={cx(switchThumbVariants({ size: effectiveSize }), className)}
+			className={cn(switchThumbVariants({ size: effectiveSize }), className)}
 			{...props}
 		/>
 	)
@@ -99,7 +99,7 @@ export function Switch({
 		<SwitchContext.Provider value={{ size: effectiveSize }}>
 			<SwitchPrimitive.Root
 				data-slot="switch"
-				className={cx(switchVariants({ size: effectiveSize }), className)}
+				className={cn(switchVariants({ size: effectiveSize }), className)}
 				{...props}
 			>
 				{children ?? <SwitchThumb />}

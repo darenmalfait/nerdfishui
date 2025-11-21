@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps, type HTMLAttributes } from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
 
@@ -22,7 +22,7 @@ export function DrawerTrigger({ className, ...props }: DrawerTriggerProps) {
 	return (
 		<DrawerPrimitive.Trigger
 			data-slot="drawer-trigger"
-			className={cx(className)}
+			className={cn(className)}
 			{...props}
 		/>
 	)
@@ -43,7 +43,7 @@ export function DrawerOverlay({ className, ...props }: DrawerOverlayProps) {
 	return (
 		<DrawerPrimitive.Overlay
 			data-slot="drawer-overlay"
-			className={cx('fixed inset-0 bg-black/80', className)}
+			className={cn('fixed inset-0 bg-black/80', className)}
 			{...props}
 		/>
 	)
@@ -60,7 +60,7 @@ export function DrawerContent({
 			<DrawerOverlay />
 			<DrawerPrimitive.Content
 				data-slot="drawer-content"
-				className={cx(
+				className={cn(
 					// default
 					'bg-background shadow-outline group fixed flex flex-col',
 					// top
@@ -96,7 +96,7 @@ export type DrawerHeaderProps = HTMLAttributes<HTMLDivElement>
 export const DrawerHeader = ({ className, ...props }: DrawerHeaderProps) => (
 	<div
 		data-slot="drawer-header"
-		className={cx(
+		className={cn(
 			'gap-best-friends p-friends grid text-center sm:text-left',
 			className,
 		)}
@@ -108,7 +108,7 @@ export type DrawerFooterProps = HTMLAttributes<HTMLDivElement>
 export const DrawerFooter = ({ className, ...props }: DrawerFooterProps) => (
 	<div
 		data-slot="drawer-footer"
-		className={cx(
+		className={cn(
 			'gap-best-friends p-friends mt-auto flex flex-col',
 			className,
 		)}
@@ -121,7 +121,7 @@ export function DrawerTitle({ className, ...props }: DrawerTitleProps) {
 	return (
 		<DrawerPrimitive.Title
 			data-slot="drawer-title"
-			className={cx(
+			className={cn(
 				'text-lg leading-none font-semibold tracking-tight',
 				className,
 			)}
@@ -140,7 +140,7 @@ export function DrawerDescription({
 	return (
 		<DrawerPrimitive.Description
 			data-slot="drawer-description"
-			className={cx('text-foreground-muted text-sm', className)}
+			className={cn('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)

@@ -1,4 +1,4 @@
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps, type ReactNode, useMemo, useRef } from 'react'
 
 interface MarqueeProps extends ComponentProps<'div'> {
@@ -63,8 +63,8 @@ export function Marquee({
 			{...props}
 			ref={marqueeRef}
 			data-slot="marquee"
-			className={cx(
-				'group flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem]',
+			className={cn(
+				'group flex gap-(--gap) overflow-hidden p-2 [--duration:40s] [--gap:1rem]',
 				{
 					'flex-row': !vertical,
 					'flex-col': vertical,
@@ -82,15 +82,13 @@ export function Marquee({
 						{Array.from({ length: repeat }, (_, i) => (
 							<div
 								key={i}
-								className={cx(
-									!vertical
-										? 'flex-row [gap:var(--gap)]'
-										: 'flex-col [gap:var(--gap)]',
+								className={cn(
+									!vertical ? 'flex-row gap-(--gap)' : 'flex-col gap-(--gap)',
 									'flex shrink-0 justify-around',
 									!vertical && 'animate-marquee flex-row',
 									vertical && 'animate-marquee-vertical flex-col',
-									pauseOnHover && 'group-hover:[animation-play-state:paused]',
-									reverse && '[animation-direction:reverse]',
+									pauseOnHover && 'group-hover:paused',
+									reverse && 'direction-[reverse]',
 								)}
 							>
 								{children}

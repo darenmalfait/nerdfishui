@@ -1,5 +1,5 @@
 import { AlertDialog as AlertDialogPrimitive } from '@base-ui-components/react/alert-dialog'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export type AlertDialogProps = ComponentProps<typeof AlertDialogPrimitive.Root>
@@ -44,7 +44,7 @@ export function AlertDialogOverlay({
 	return (
 		<AlertDialogPrimitive.Backdrop
 			data-slot="alert-dialog-overlay"
-			className={cx(
+			className={cn(
 				'fixed inset-0 bg-black/50 transition-all duration-200 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0',
 				className,
 			)}
@@ -66,7 +66,7 @@ export function AlertDialogContent({
 			<AlertDialogOverlay />
 			<AlertDialogPrimitive.Popup
 				data-slot="alert-dialog-content"
-				className={cx(
+				className={cn(
 					'bg-popover text-popover-contrast grid w-full sm:max-w-[calc(100%-2rem)]',
 					'fixed bottom-0 w-full sm:top-[50%] sm:bottom-auto sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
 					'rounded-container gap-friends p-friends border shadow-lg outline-none sm:max-w-128 sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
@@ -93,7 +93,7 @@ export function AlertDialogHeader({
 	return (
 		<div
 			data-slot="alert-dialog-header"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex flex-col text-center sm:text-left',
 				className,
 			)}
@@ -110,7 +110,7 @@ export function AlertDialogFooter({
 	return (
 		<div
 			data-slot="alert-dialog-footer"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex flex-col-reverse sm:flex-row sm:justify-end',
 				className,
 			)}
@@ -129,7 +129,7 @@ export function AlertDialogTitle({
 	return (
 		<AlertDialogPrimitive.Title
 			data-slot="alert-dialog-title"
-			className={cx('text-lg font-semibold', className)}
+			className={cn('text-lg font-semibold', className)}
 			{...props}
 		/>
 	)
@@ -145,7 +145,7 @@ export function AlertDialogDescription({
 	return (
 		<AlertDialogPrimitive.Description
 			data-slot="alert-dialog-description"
-			className={cx('text-foreground-muted text-sm', className)}
+			className={cn('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)

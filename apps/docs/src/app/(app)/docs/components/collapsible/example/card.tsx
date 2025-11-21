@@ -8,7 +8,7 @@ import {
 	CollapsibleContent,
 	CollapsibleTrigger,
 } from '@nerdfish/react/collapsible'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { ArrowDown, ArrowUp, ChevronDown, ChevronUp } from 'lucide-react'
 import { useState } from 'react'
 
@@ -76,7 +76,7 @@ export function CollapsibleCardExample() {
 										${stat.value.toLocaleString()}
 									</span>
 									<span
-										className={cx(
+										className={cn(
 											'flex min-w-20 items-center justify-end text-sm font-medium',
 											stat.changeType === 'increase'
 												? 'text-success'

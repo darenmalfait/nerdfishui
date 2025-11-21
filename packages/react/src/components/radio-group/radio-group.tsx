@@ -2,7 +2,7 @@
 
 import { Radio as RadioPrimitive } from '@base-ui-components/react/radio'
 import { RadioGroup as RadioGroupPrimitive } from '@base-ui-components/react/radio-group'
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { CircleIcon } from 'lucide-react'
 import { type ComponentProps, createContext, useContext } from 'react'
 import { type InputVariants } from '../input/input'
@@ -52,7 +52,7 @@ export function RadioGroup({
 		<RadioGroupContext.Provider value={{ size }}>
 			<RadioGroupPrimitive
 				data-slot="radio-group"
-				className={cx('gap-friends grid', className)}
+				className={cn('gap-friends grid', className)}
 				{...props}
 			/>
 		</RadioGroupContext.Provider>
@@ -74,7 +74,7 @@ export function RadioGroupItem({
 	return (
 		<RadioPrimitive.Root
 			data-slot="radio-group-item"
-			className={cx(radioItemVariants({ size: effectiveSize }), className)}
+			className={cn(radioItemVariants({ size: effectiveSize }), className)}
 			{...props}
 		>
 			<RadioPrimitive.Indicator

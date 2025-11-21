@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { OTPInput, OTPInputContext, type RenderProps } from 'input-otp'
 import { MinusIcon } from 'lucide-react'
 import { useContext, type ComponentProps } from 'react'
@@ -15,11 +15,11 @@ export function InputOTP({
 	return (
 		<OTPInput
 			data-slot="input-otp"
-			containerClassName={cx(
+			containerClassName={cn(
 				'gap-best-friends flex items-center has-disabled:opacity-50',
 				containerClassName,
 			)}
-			className={cx('disabled:cursor-not-allowed', className)}
+			className={cn('disabled:cursor-not-allowed', className)}
 			{...props}
 		/>
 	)
@@ -30,7 +30,7 @@ export function InputOTPGroup({ className, ...props }: InputOTPGroupProps) {
 	return (
 		<div
 			data-slot="input-otp-group"
-			className={cx('gap-bff flex items-center', className)}
+			className={cn('gap-bff flex items-center', className)}
 			{...props}
 		/>
 	)
@@ -52,7 +52,7 @@ export function InputOTPSlot({
 		<div
 			data-slot="input-otp-slot"
 			data-active={isActive}
-			className={cx(
+			className={cn(
 				inputVariants({ size: 'md' }),
 				'relative flex size-12 items-center justify-center',
 				'outline-nonedata-[active=true]:z-10 text-sm shadow-xs transition-all data-[active=true]:ring-[3px]',

@@ -1,10 +1,15 @@
-import { type VariantProps, cva } from 'class-variance-authority'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-function cx(...args: ClassValue[]) {
+export function cn(...args: ClassValue[]) {
 	return twMerge(clsx(...args))
 }
 
-export { cx, cva }
-export type { VariantProps }
+export function cx(...args: ClassValue[]) {
+	console.warn(
+		'cx is deprecated. Please use cn from @nerdfish/utils/class instead.',
+	)
+	return cn(...args)
+}
+
+export { type VariantProps, cva } from 'class-variance-authority'

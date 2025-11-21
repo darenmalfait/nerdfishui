@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type * as React from 'react'
@@ -20,7 +20,7 @@ function PageLink({
 }) {
 	return (
 		<Link
-			className={cx('focus-visible:outline-active group w-full outline-none', {
+			className={cn('focus-visible:outline-active group w-full outline-none', {
 				'text-right': !previous,
 			})}
 			href={page.href}

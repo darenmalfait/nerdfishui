@@ -1,7 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cn, cva, type VariantProps } from '@nerdfish/utils/class'
 import { useMemo, type ComponentProps } from 'react'
 import { Label } from '../label/label'
 import { Separator } from '../separator/separator'
@@ -11,7 +10,7 @@ export function FieldSet({ className, ...props }: FieldSetProps) {
 	return (
 		<fieldset
 			data-slot="field-set"
-			className={cx(
+			className={cn(
 				'gap-casual flex flex-col',
 				'has-[>[data-slot=checkbox-group]]:gap-friends has-[>[data-slot=radio-group]]:gap-friends',
 				className,
@@ -33,7 +32,7 @@ export function FieldLegend({
 		<legend
 			data-slot="field-legend"
 			data-variant={variant}
-			className={cx(
+			className={cn(
 				'mb-friends font-medium',
 				'data-[variant=legend]:text-base',
 				'data-[variant=label]:text-sm',
@@ -49,7 +48,7 @@ export function FieldGroup({ className, ...props }: FieldGroupProps) {
 	return (
 		<div
 			data-slot="field-group"
-			className={cx(
+			className={cn(
 				'group/field-group data-[slot=checkbox-group]:gap-casual gap-casual *:data-[slot=field-group]:gap-friends @container/field-group flex w-full flex-col',
 				className,
 			)}
@@ -95,7 +94,7 @@ export function Field({
 			role="group"
 			data-slot="field"
 			data-orientation={orientation}
-			className={cx(fieldVariants({ orientation }), className)}
+			className={cn(fieldVariants({ orientation }), className)}
 			{...props}
 		/>
 	)
@@ -106,7 +105,7 @@ export function FieldContent({ className, ...props }: FieldContentProps) {
 	return (
 		<div
 			data-slot="field-content"
-			className={cx(
+			className={cn(
 				'group/field-content gap-best-friends flex flex-1 flex-col leading-snug',
 				className,
 			)}
@@ -120,7 +119,7 @@ export function FieldLabel({ className, ...props }: FieldLabelProps) {
 	return (
 		<Label
 			data-slot="field-label"
-			className={cx(
+			className={cn(
 				'group/field-label peer/field-label gap-best-friends flex w-fit leading-snug group-data-[disabled=true]/field:opacity-50',
 				'*:data-[slot=field]:p-friends has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border',
 				'has-data-[state=checked]:bg-background/5 has-data-[state=checked]:border-border',
@@ -136,7 +135,7 @@ export function FieldTitle({ className, ...props }: FieldTitleProps) {
 	return (
 		<div
 			data-slot="field-label"
-			className={cx(
+			className={cn(
 				'gap-best-friends flex w-fit items-center text-sm leading-snug font-medium group-data-[disabled=true]/field:opacity-50',
 				className,
 			)}
@@ -153,7 +152,7 @@ export function FieldDescription({
 	return (
 		<p
 			data-slot="field-description"
-			className={cx(
+			className={cn(
 				'text-foreground-muted text-sm leading-normal font-normal group-has-data-[orientation=horizontal]/field:text-balance',
 				'last:mt-0 nth-last-2:-mt-1 [[data-variant=legend]+&]:-mt-1.5',
 				'[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
@@ -174,7 +173,7 @@ export function FieldSeparator({
 		<div
 			data-slot="field-separator"
 			data-content={!!children}
-			className={cx(
+			className={cn(
 				'relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2',
 				className,
 			)}
@@ -233,7 +232,7 @@ export function FieldError({
 		<div
 			role="alert"
 			data-slot="field-error"
-			className={cx('text-destructive text-sm font-normal', className)}
+			className={cn('text-destructive text-sm font-normal', className)}
 			{...props}
 		>
 			{content}

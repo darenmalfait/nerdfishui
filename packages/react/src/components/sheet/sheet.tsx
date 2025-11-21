@@ -1,5 +1,5 @@
 import { Dialog as SheetPrimitive } from '@base-ui-components/react/dialog'
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { XIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'
 import { buttonVariants } from '../button/button'
@@ -21,7 +21,7 @@ export function SheetClose({ className, ...props }: SheetCloseProps) {
 	return (
 		<SheetPrimitive.Close
 			data-slot="sheet-action"
-			className={cx(
+			className={cn(
 				!props.render && buttonVariants({ variant: 'outline' }),
 				className,
 			)}
@@ -35,7 +35,7 @@ export function SheetAction({ className, ...props }: SheetActionProps) {
 	return (
 		<SheetPrimitive.Close
 			data-slot="sheet-close"
-			className={cx(!props.render && buttonVariants(), className)}
+			className={cn(!props.render && buttonVariants(), className)}
 			{...props}
 		/>
 	)
@@ -51,7 +51,7 @@ function SheetBackdrop({ className, ...props }: SheetBackdropProps) {
 	return (
 		<SheetPrimitive.Backdrop
 			data-slot="sheet-overlay"
-			className={cx(
+			className={cn(
 				'data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-closed:animation-duration-[300ms] data-open:fade-in-0 fixed inset-0 bg-black/50',
 				className,
 			)}
@@ -154,7 +154,7 @@ export function SheetContent({
 			<SheetBackdrop />
 			<SheetPrimitive.Popup
 				data-slot="sheet-content"
-				className={cx(sheetVariants({ variant, side }), className)}
+				className={cn(sheetVariants({ variant, side }), className)}
 				{...props}
 			>
 				{children}
@@ -172,7 +172,7 @@ export function SheetHeader({ className, ...props }: SheetHeaderProps) {
 	return (
 		<div
 			data-slot="sheet-header"
-			className={cx('p-friends gap-bff flex flex-col', className)}
+			className={cn('p-friends gap-bff flex flex-col', className)}
 			{...props}
 		/>
 	)
@@ -183,7 +183,7 @@ export function SheetBody({ className, ...props }: SheetBodyProps) {
 	return (
 		<div
 			data-slot="sheet-body"
-			className={cx('py-best-friends px-friends', className)}
+			className={cn('py-best-friends px-friends', className)}
 			{...props}
 		/>
 	)
@@ -194,7 +194,7 @@ export function SheetFooter({ className, ...props }: SheetFooterProps) {
 	return (
 		<div
 			data-slot="sheet-footer"
-			className={cx(
+			className={cn(
 				'p-friends sm:space-x-best-friends flex flex-col-reverse sm:flex-row sm:justify-end',
 				className,
 			)}
@@ -208,7 +208,7 @@ export function SheetTitle({ className, ...props }: SheetTitleProps) {
 	return (
 		<SheetPrimitive.Title
 			data-slot="sheet-title"
-			className={cx('text-foreground font-semibold', className)}
+			className={cn('text-foreground font-semibold', className)}
 			{...props}
 		/>
 	)
@@ -224,7 +224,7 @@ export function SheetDescription({
 	return (
 		<SheetPrimitive.Description
 			data-slot="sheet-description"
-			className={cx('text-foreground-muted text-sm', className)}
+			className={cn('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)

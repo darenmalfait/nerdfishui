@@ -1,7 +1,7 @@
 'use client'
 
 import { Collapsible as BaseCollapsible } from '@base-ui-components/react/collapsible'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export type CollapsibleProps = ComponentProps<typeof BaseCollapsible.Root>
@@ -29,7 +29,7 @@ export function CollapsibleContent({
 	return (
 		<BaseCollapsible.Panel
 			data-slot="collapsible-panel"
-			className={cx(
+			className={cn(
 				'h-(--collapsible-panel-height) overflow-hidden transition-all ease-out data-ending-style:h-0 data-starting-style:h-0',
 				className,
 			)}

@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { Command as CommandPrimitive } from 'cmdk'
 import { SearchIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'
@@ -18,7 +18,7 @@ export function Command({ className, ...props }: CommandProps) {
 	return (
 		<CommandPrimitive
 			data-slot="command"
-			className={cx(
+			className={cn(
 				'bg-popover text-popover-contrast flex h-full w-full flex-col overflow-hidden',
 				className,
 			)}
@@ -48,7 +48,7 @@ export function CommandDialog({
 				<DialogDescription>{description}</DialogDescription>
 			</DialogHeader>
 			<DialogContent
-				className={cx('overflow-hidden p-0!', className)}
+				className={cn('overflow-hidden p-0!', className)}
 				showCloseButton={showCloseButton}
 			>
 				<Command className="[&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
@@ -69,7 +69,7 @@ export function CommandInput({ className, ...props }: CommandInputProps) {
 			<SearchIcon className="size-4 shrink-0 opacity-50" />
 			<CommandPrimitive.Input
 				data-slot="command-input"
-				className={cx(
+				className={cn(
 					'placeholder:text-foreground-muted py-best-friends rounded-compact flex w-full bg-transparent text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50',
 					className,
 				)}
@@ -84,7 +84,7 @@ export function CommandList({ className, ...props }: CommandListProps) {
 	return (
 		<CommandPrimitive.List
 			data-slot="command-list"
-			className={cx(
+			className={cn(
 				'scroll-py-best-friends max-h-75 overflow-x-hidden overflow-y-auto',
 				className,
 			)}
@@ -109,7 +109,7 @@ export function CommandGroup({ className, ...props }: CommandGroupProps) {
 	return (
 		<CommandPrimitive.Group
 			data-slot="command-group"
-			className={cx(
+			className={cn(
 				'text-foreground **:[[cmdk-group-heading]]:text-foreground-muted **:[[cmdk-group-heading]]:px-friends **:[[cmdk-group-heading]]:py-best-friends overflow-hidden **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-medium',
 				className,
 			)}
@@ -128,7 +128,7 @@ export function CommandSeparator({
 	return (
 		<CommandPrimitive.Separator
 			data-slot="command-separator"
-			className={cx('bg-border -mx-1 h-px', className)}
+			className={cn('bg-border -mx-1 h-px', className)}
 			{...props}
 		/>
 	)
@@ -139,7 +139,7 @@ export function CommandItem({ className, ...props }: CommandItemProps) {
 	return (
 		<CommandPrimitive.Item
 			data-slot="command-item"
-			className={cx(
+			className={cn(
 				"data-[selected=true]:bg-background-inverted data-[selected=true]:text-foreground-inverted data-[selected=true]:[&_svg:not([class*='text-'])]:text-foreground-inverted [&_svg:not([class*='text-'])]:text-foreground-muted px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
@@ -153,7 +153,7 @@ export function CommandShortcut({ className, ...props }: CommandShortcutProps) {
 	return (
 		<Kbd
 			data-slot="command-shortcut"
-			className={cx('ml-auto', className)}
+			className={cn('ml-auto', className)}
 			{...props}
 		/>
 	)

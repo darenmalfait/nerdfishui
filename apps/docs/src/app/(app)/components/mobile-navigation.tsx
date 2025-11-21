@@ -6,7 +6,7 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from '@nerdfish/react/popover'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import Link, { type LinkProps } from 'next/link'
 import { useRouter } from 'next/navigation'
 import { type ReactNode, useState } from 'react'
@@ -32,7 +32,7 @@ function MobileLink({
 				router.push(href.toString())
 				onOpenChange?.(false)
 			}}
-			className={cx('text-2xl font-medium', className)}
+			className={cn('text-2xl font-medium', className)}
 			{...props}
 		>
 			{children}
@@ -50,7 +50,7 @@ export function MobileNav({ className }: { className?: string }) {
 					<Button
 						variant="ghost"
 						size="xs"
-						className={cx(
+						className={cn(
 							'extend-touch-target -ml-3 touch-manipulation lg:hidden',
 							className,
 						)}
@@ -58,13 +58,13 @@ export function MobileNav({ className }: { className?: string }) {
 						<div className="relative flex items-center justify-center">
 							<div className="relative size-4">
 								<span
-									className={cx(
+									className={cn(
 										'bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100',
 										open ? 'top-[0.4rem] -rotate-45' : 'top-1',
 									)}
 								/>
 								<span
-									className={cx(
+									className={cn(
 										'bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100',
 										open ? 'top-[0.4rem] rotate-45' : 'top-2.5',
 									)}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRender } from '@base-ui-components/react/use-render'
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ReactElement, type ComponentProps } from 'react'
 import { Button } from '../button/button'
 import { Input, inputVariants } from '../input/input'
@@ -18,7 +18,7 @@ export function InputGroup({
 		props: {
 			'data-slot': 'input-group',
 			role: 'group',
-			className: cx(
+			className: cn(
 				inputVariants(),
 				'!p-0',
 				'group/input-group relative flex w-full items-center border transition-[color,box-shadow] outline-none',
@@ -77,7 +77,7 @@ export function InputGroupAddon({
 			role="group"
 			data-slot="input-group-addon"
 			data-align={align}
-			className={cx(inputGroupAddonVariants({ align }), className)}
+			className={cn(inputGroupAddonVariants({ align }), className)}
 			onClick={(e) => {
 				if ((e.target as HTMLElement).closest('button')) {
 					return
@@ -103,7 +103,7 @@ export type InputGroupTextProps = ComponentProps<'span'>
 export function InputGroupText({ className, ...props }: InputGroupTextProps) {
 	return (
 		<span
-			className={cx(
+			className={cn(
 				"text-foreground-muted gap-best-friends flex items-center text-sm [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
@@ -117,7 +117,7 @@ export function InputGroupInput({ className, ...props }: InputGroupInputProps) {
 	return (
 		<Input
 			data-slot="input-group-control"
-			className={cx(
+			className={cn(
 				'flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0',
 				className,
 			)}
@@ -134,7 +134,7 @@ export function InputGroupTextarea({
 	return (
 		<Textarea
 			data-slot="input-group-control"
-			className={cx(
+			className={cn(
 				'py-friends flex-1 resize-none rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0',
 				className,
 			)}

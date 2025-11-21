@@ -1,4 +1,4 @@
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export type CardProps = ComponentProps<'div'>
@@ -6,8 +6,8 @@ export function Card({ className, ...props }: CardProps) {
 	return (
 		<div
 			data-slot="card"
-			className={cx(
-				'bg-background text-foreground gap-friends rounded-container py-friends flex w-full flex-col border shadow-md shadow-sm',
+			className={cn(
+				'bg-background text-foreground gap-friends rounded-container py-friends flex w-full flex-col border shadow-md',
 				className,
 			)}
 			{...props}
@@ -20,7 +20,7 @@ export function CardHeader({ className, ...props }: CardHeaderProps) {
 	return (
 		<div
 			data-slot="card-header"
-			className={cx(
+			className={cn(
 				'px-friends [.border-b]:pb-friends @container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 has-data-[slot=card-action]:grid-cols-[1fr_auto]',
 				className,
 			)}
@@ -34,7 +34,7 @@ export function CardTitle({ className, ...props }: CardTitleProps) {
 	return (
 		<div
 			data-slot="card-title"
-			className={cx('leading-none font-semibold', className)}
+			className={cn('leading-none font-semibold', className)}
 			{...props}
 		/>
 	)
@@ -45,7 +45,7 @@ export function CardDescription({ className, ...props }: CardDescriptionProps) {
 	return (
 		<div
 			data-slot="card-description"
-			className={cx('text-foreground-muted text-sm', className)}
+			className={cn('text-foreground-muted text-sm', className)}
 			{...props}
 		/>
 	)
@@ -56,7 +56,7 @@ export function CardAction({ className, ...props }: CardActionProps) {
 	return (
 		<div
 			data-slot="card-action"
-			className={cx(
+			className={cn(
 				'col-start-2 row-span-2 row-start-1 self-start justify-self-end',
 				className,
 			)}
@@ -70,7 +70,7 @@ export function CardContent({ className, ...props }: CardContentProps) {
 	return (
 		<div
 			data-slot="card-content"
-			className={cx('px-friends', className)}
+			className={cn('px-friends', className)}
 			{...props}
 		/>
 	)
@@ -81,7 +81,7 @@ export function CardFooter({ className, ...props }: CardFooterProps) {
 	return (
 		<div
 			data-slot="card-footer"
-			className={cx(
+			className={cn(
 				'px-friends [.border-t]:pt-best-friends flex items-center',
 				className,
 			)}

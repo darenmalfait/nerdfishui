@@ -2,7 +2,7 @@ import './styles.css'
 
 import { Spinner } from '@nerdfish/react/spinner'
 import { Toaster } from '@nerdfish/react/toast'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { GeistSans } from 'geist/font/sans'
 import * as React from 'react'
 import { AppProviders } from './app-providers'
@@ -16,7 +16,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 		<html lang="en" suppressHydrationWarning>
 			<head />
 			<body
-				className={cx(
+				className={cn(
 					`bg-background min-h-screen font-sans antialiased ${GeistSans.variable}`,
 					'[--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]',
 				)}

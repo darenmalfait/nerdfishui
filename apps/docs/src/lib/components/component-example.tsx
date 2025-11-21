@@ -7,7 +7,7 @@ import {
 	CodeBlockGroup,
 } from '@nerdfish/react/code-block'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@nerdfish/react/tabs'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ReactNode, type HTMLAttributes, type ReactElement } from 'react'
 import reactElementToJSXString from 'react-element-to-jsx-string'
 import { CopyButton } from './copy-button'
@@ -48,7 +48,7 @@ export function ComponentExample({
 	const Component = component
 
 	return (
-		<div className={cx('mt-friends gap-friends flex flex-col', className)}>
+		<div className={cn('mt-friends gap-friends flex flex-col', className)}>
 			<Tabs defaultValue={Component ? 'example' : 'code'}>
 				<TabsList>
 					{Component ? (

@@ -1,5 +1,5 @@
 import { ScrollArea as ScrollAreaPrimitive } from '@base-ui-components/react/scroll-area'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 
 export type ScrollAreaProps = ComponentProps<typeof ScrollAreaPrimitive.Root>
@@ -7,7 +7,7 @@ export function ScrollArea({ className, children, ...props }: ScrollAreaProps) {
 	return (
 		<ScrollAreaPrimitive.Root
 			data-slot="scroll-area"
-			className={cx('relative', className)}
+			className={cn('relative', className)}
 			{...props}
 		>
 			<ScrollAreaPrimitive.Viewport
@@ -34,7 +34,7 @@ export function ScrollBar({
 		<ScrollAreaPrimitive.Scrollbar
 			data-slot="scroll-area-scrollbar"
 			orientation={orientation}
-			className={cx(
+			className={cn(
 				'flex touch-none p-px opacity-0 transition-[colors,opacity] delay-300 duration-150 select-none data-hovering:opacity-100 data-hovering:delay-0 data-hovering:duration-75 data-scrolling:opacity-100 data-scrolling:delay-0 data-scrolling:duration-75',
 				orientation === 'vertical' &&
 					'h-full w-2 border-l border-l-transparent',

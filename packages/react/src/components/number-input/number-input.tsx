@@ -1,5 +1,5 @@
 import { NumberField as NumberInputPrimitive } from '@base-ui-components/react/number-field'
-import { cx, type VariantProps } from '@nerdfish/utils'
+import { cn, type VariantProps } from '@nerdfish/utils/class'
 import { MinusIcon, MoveHorizontalIcon, PlusIcon } from 'lucide-react'
 import { type ComponentProps, createContext, useContext, useId } from 'react'
 import { buttonVariants } from '../button/button'
@@ -42,7 +42,7 @@ export function NumberInput({
 		<NumberInputContext.Provider value={{ id: fieldId }}>
 			<NumberInputPrimitive.Root
 				id={fieldId}
-				className={cx('flex flex-col items-start gap-1', className)}
+				className={cn('flex flex-col items-start gap-1', className)}
 				data-slot="number-field"
 				{...props}
 			>
@@ -51,7 +51,7 @@ export function NumberInput({
 					className={inputVariants({ variant, size, className: 'flex p-0!' })}
 				>
 					<NumberInputPrimitive.Decrement
-						className={cx(
+						className={cn(
 							buttonVariants({ variant: 'ghost', size }),
 							'rounded-s-base h-full',
 							'border-e-border border-e',
@@ -70,7 +70,7 @@ export function NumberInput({
 						data-slot="number-field-input"
 					/>
 					<NumberInputPrimitive.Increment
-						className={cx(
+						className={cn(
 							buttonVariants({ variant: 'ghost', size }),
 							'rounded-e-base h-full rounded-s-none',
 							'border-s-border border-s',
@@ -97,7 +97,7 @@ export function NumberInputScrubArea({
 
 	return (
 		<NumberInputPrimitive.ScrubArea
-			className={cx('cursor-ew-resize', className)}
+			className={cn('cursor-ew-resize', className)}
 			data-slot="number-field-scrub-area"
 			{...props}
 		>

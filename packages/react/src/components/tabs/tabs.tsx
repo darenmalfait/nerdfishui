@@ -1,7 +1,7 @@
 'use client'
 
 import { Tabs as TabsPrimitive } from '@base-ui-components/react/tabs'
-import { cva, cx, type VariantProps } from '@nerdfish/utils'
+import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ComponentProps, createContext, useContext } from 'react'
 
 // Variants for TabsList
@@ -189,7 +189,7 @@ export function Tabs({ className, ...props }: TabsProps) {
 	return (
 		<TabsPrimitive.Root
 			data-slot="tabs"
-			className={cx('', className)}
+			className={cn('', className)}
 			{...props}
 		/>
 	)
@@ -211,7 +211,7 @@ export function TabsList({
 		>
 			<TabsPrimitive.List
 				data-slot="tabs-list"
-				className={cx(tabsListVariants({ variant, shape, size }), className)}
+				className={cn(tabsListVariants({ variant, shape, size }), className)}
 				{...props}
 			/>
 		</TabsContext.Provider>
@@ -225,7 +225,7 @@ export function TabsTrigger({ className, ...props }: TabsTriggerProps) {
 	return (
 		<TabsPrimitive.Tab
 			data-slot="tabs-trigger"
-			className={cx(tabsTriggerVariants({ variant, size }), className)}
+			className={cn(tabsTriggerVariants({ variant, size }), className)}
 			{...props}
 		/>
 	)
@@ -243,7 +243,7 @@ export function TabsContent({
 	return (
 		<TabsPrimitive.Panel
 			data-slot="tabs-content"
-			className={cx(tabsContentVariants({ variant }), className)}
+			className={cn(tabsContentVariants({ variant }), className)}
 			{...props}
 		/>
 	)

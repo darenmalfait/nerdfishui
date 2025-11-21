@@ -1,5 +1,5 @@
 import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui-components/react/navigation-menu'
-import { cva, cx } from '@nerdfish/utils'
+import { cva, cn } from '@nerdfish/utils/class'
 import { ChevronDownIcon } from 'lucide-react'
 import { type ComponentProps, type CSSProperties } from 'react'
 import { buttonVariants } from '../button/button'
@@ -15,7 +15,7 @@ export function NavigationMenu({
 	return (
 		<NavigationMenuPrimitive.Root
 			data-slot="navigation-menu"
-			className={cx(
+			className={cn(
 				'group/navigation-menu relative flex max-w-max flex-1 items-center justify-center',
 				className,
 			)}
@@ -36,7 +36,7 @@ export function NavigationMenuList({
 	return (
 		<NavigationMenuPrimitive.List
 			data-slot="navigation-menu-list"
-			className={cx(
+			className={cn(
 				'group gap-bff flex flex-1 list-none items-center justify-center',
 				className,
 			)}
@@ -55,7 +55,7 @@ export function NavigationMenuItem({
 	return (
 		<NavigationMenuPrimitive.Item
 			data-slot="navigation-menu-item"
-			className={cx('relative', className)}
+			className={cn('relative', className)}
 			{...props}
 		/>
 	)
@@ -81,7 +81,7 @@ export function NavigationMenuTrigger({
 	return (
 		<NavigationMenuPrimitive.Trigger
 			data-slot="navigation-menu-trigger"
-			className={cx(navigationMenuTriggerStyle(), 'group', className)}
+			className={cn(navigationMenuTriggerStyle(), 'group', className)}
 			{...props}
 		>
 			{children}{' '}
@@ -103,7 +103,7 @@ export function NavigationMenuContent({
 	return (
 		<NavigationMenuPrimitive.Content
 			data-slot="navigation-menu-content"
-			className={cx(
+			className={cn(
 				'xs:min-w-[400px] p-popover-compact h-full w-[calc(100vw-40px)] sm:w-max',
 				'transition-[opacity,transform,translate] duration-(--duration) ease-(--easing)',
 				'data-ending-style:opacity-0 data-starting-style:opacity-0',
@@ -145,7 +145,7 @@ export function NavigationMenuPositioner({
 				sideOffset={10}
 				collisionPadding={{ top: 5, bottom: 5, left: 20, right: 20 }}
 				collisionAvoidance={{ side: 'none' }}
-				className={cx(
+				className={cn(
 					"box-border h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom] duration-(--duration) ease-(--easing) before:absolute before:content-[''] data-instant:transition-none data-[side=bottom]:before:-top-2.5 data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0 data-[side=bottom]:before:h-2.5 data-[side=left]:before:top-0 data-[side=left]:before:-right-2.5 data-[side=left]:before:bottom-0 data-[side=left]:before:w-2.5 data-[side=right]:before:top-0 data-[side=right]:before:bottom-0 data-[side=right]:before:-left-2.5 data-[side=right]:before:w-2.5 data-[side=top]:before:right-0 data-[side=top]:before:-bottom-2.5 data-[side=top]:before:left-0 data-[side=top]:before:h-2.5",
 					className,
 				)}
@@ -173,7 +173,7 @@ export function NavigationMenuPopup({
 }: NavigationMenuPopupProps) {
 	return (
 		<NavigationMenuPrimitive.Popup
-			className={cx(
+			className={cn(
 				'data-[ending-style]:easing-[ease] bg-popover outline-border xs:w-[var(--popup-width)] rounded-popover relative h-(--popup-height) w-(--popup-width) origin-(--transform-origin) shadow-lg outline-1 transition-[opacity,transform,width,height,scale,translate] duration-(--duration) ease-(--easing) data-ending-style:scale-90 data-ending-style:opacity-0 data-ending-style:duration-150 data-starting-style:scale-90 data-starting-style:opacity-0',
 				className,
 			)}
@@ -194,7 +194,7 @@ export function NavigationMenuViewport({
 }: NavigationMenuViewportProps) {
 	return (
 		<NavigationMenuPrimitive.Viewport
-			className={cx('relative h-full w-full overflow-hidden', className)}
+			className={cn('relative h-full w-full overflow-hidden', className)}
 			{...props}
 		/>
 	)
@@ -210,7 +210,7 @@ export function NavigationMenuLink({
 	return (
 		<NavigationMenuPrimitive.Link
 			data-slot="navigation-menu-link"
-			className={cx(
+			className={cn(
 				'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 				"data-active:focus:bg-background-muted data-active:hover:bg-background-muted data-active:bg-background-muted/50 data-active:text-foreground hover:bg-background-muted hover:text-foreground focus:bg-background-muted focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground gap-bff p-popover flex flex-col text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
 				className,
@@ -230,7 +230,7 @@ export function NavigationMenuArrow({
 	return (
 		<NavigationMenuPrimitive.Arrow
 			data-slot="navigation-menu-arrow"
-			className={cx(
+			className={cn(
 				'flex transition-[left] duration-(--duration) ease-(--easing) data-[side=bottom]:-top-2 data-[side=left]:-right-3.25 data-[side=left]:rotate-90 data-[side=right]:-left-3.25 data-[side=right]:-rotate-90 data-[side=top]:-bottom-2 data-[side=top]:rotate-180',
 				className,
 			)}

@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import {
 	type ComponentProps,
 	createContext,
@@ -138,7 +138,7 @@ export function ChartContainer({
 			<div
 				data-slot="chart"
 				data-chart={chartId}
-				className={cx(
+				className={cn(
 					"[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-sector]:outline-hidden [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-surface]:outline-hidden",
 					className,
 				)}
@@ -191,7 +191,7 @@ export function ChartTooltipContent({
 
 		if (labelFormatter) {
 			return (
-				<div className={cx('font-medium', labelClassName)}>
+				<div className={cn('font-medium', labelClassName)}>
 					{labelFormatter(value, payload)}
 				</div>
 			)
@@ -201,7 +201,7 @@ export function ChartTooltipContent({
 			return null
 		}
 
-		return <div className={cx('font-medium', labelClassName)}>{value}</div>
+		return <div className={cn('font-medium', labelClassName)}>{value}</div>
 	}, [
 		label,
 		labelFormatter,
@@ -220,7 +220,7 @@ export function ChartTooltipContent({
 
 	return (
 		<div
-			className={cx(
+			className={cn(
 				'border-border bg-background-secondary rounded-compact gap-best-friends p-best-friends grid min-w-[8rem] items-start border text-xs shadow-xl',
 				className,
 			)}
@@ -235,7 +235,7 @@ export function ChartTooltipContent({
 					return (
 						<div
 							key={item.dataKey}
-							className={cx(
+							className={cn(
 								'[&>svg]:text-foreground-muted gap-best-friends flex w-full flex-wrap items-stretch [&>svg]:h-2.5 [&>svg]:w-2.5',
 								indicator === 'dot' && 'items-center',
 							)}
@@ -249,7 +249,7 @@ export function ChartTooltipContent({
 									) : (
 										!hideIndicator && (
 											<div
-												className={cx(
+												className={cn(
 													'shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)',
 													{
 														'h-2.5 w-2.5': indicator === 'dot',
@@ -269,7 +269,7 @@ export function ChartTooltipContent({
 										)
 									)}
 									<div
-										className={cx(
+										className={cn(
 											'flex flex-1 justify-between leading-none',
 											nestLabel ? 'items-end' : 'items-center',
 										)}
@@ -313,7 +313,7 @@ export function ChartLegendContent({
 
 	return (
 		<div
-			className={cx(
+			className={cn(
 				'gap-friends flex items-center justify-center',
 				verticalAlign === 'top' ? 'pb-friends' : 'pt-friends',
 				className,
@@ -326,7 +326,7 @@ export function ChartLegendContent({
 				return (
 					<div
 						key={item.value}
-						className={cx(
+						className={cn(
 							'[&>svg]:text-foreground-muted gap-best-friends flex items-center [&>svg]:h-3 [&>svg]:w-3',
 						)}
 					>

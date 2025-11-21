@@ -2,7 +2,7 @@
 
 import { Label } from '@nerdfish/react/label'
 import { Slider, SliderThumb } from '@nerdfish/react/slider'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 
 export function SliderTicksExample() {
 	const max = 12
@@ -26,12 +26,12 @@ export function SliderTicksExample() {
 							className="flex w-0 flex-col items-center justify-center gap-2"
 						>
 							<span
-								className={cx(
+								className={cn(
 									'bg-foreground-muted h-1 w-px',
 									i % skipInterval !== 0 && 'h-0.5',
 								)}
 							/>
-							<span className={cx(i % skipInterval !== 0 && 'opacity-0')}>
+							<span className={cn(i % skipInterval !== 0 && 'opacity-0')}>
 								{i}
 							</span>
 						</span>

@@ -1,7 +1,7 @@
 'use client'
 
 import { Accordion as AccordionPrimitive } from '@base-ui-components/react/accordion'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { ChevronDown } from 'lucide-react'
 import { type ComponentProps } from 'react'
 
@@ -10,7 +10,7 @@ export function Accordion({ className, ...props }: AccordionProps) {
 	return (
 		<AccordionPrimitive.Root
 			data-slot="accordion"
-			className={cx('space-y-friends', className)}
+			className={cn('space-y-friends', className)}
 			{...props}
 		/>
 	)
@@ -21,7 +21,7 @@ export function AccordionItem({ className, ...props }: AccordionItemProps) {
 	return (
 		<AccordionPrimitive.Item
 			data-slot="accordion-item"
-			className={cx(
+			className={cn(
 				'focus-within:ring-ring border-border rounded-base group/accordion-item border focus-within:ring',
 				className,
 			)}
@@ -44,7 +44,7 @@ export function AccordionTrigger({
 		<AccordionPrimitive.Header className="flex">
 			<AccordionPrimitive.Trigger
 				data-slot="accordion-trigger"
-				className={cx(
+				className={cn(
 					'p-friends hover:bg-background-muted/20 rounded-base relative flex flex-1 items-center justify-between text-left font-medium transition-all outline-none',
 					'data-panel-open:hover:bg-transparent',
 					'[&[data-panel-open]>[data-slot="accordion-trigger-icon"]>svg]:rotate-180',
@@ -75,7 +75,7 @@ export function AccordionContent({
 	return (
 		<AccordionPrimitive.Panel
 			data-slot="accordion-content"
-			className={cx(
+			className={cn(
 				'h-(--accordion-panel-height) overflow-hidden text-sm transition-[height] ease-out',
 				'data-ending-style:h-0 data-starting-style:h-0',
 				className,

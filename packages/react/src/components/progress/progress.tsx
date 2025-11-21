@@ -1,5 +1,5 @@
 import { Progress as ProgressPrimitive } from '@base-ui-components/react/progress'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { type ReactNode, type ComponentProps } from 'react'
 
 export type ProgressProps = ComponentProps<typeof ProgressPrimitive.Root>
@@ -12,7 +12,7 @@ export function Progress({ className, children, ...props }: ProgressProps) {
 		>
 			<ProgressPrimitive.Track
 				data-slot="progress-track"
-				className={cx(
+				className={cn(
 					'bg-background-muted block h-1.5 w-full overflow-hidden rounded-full',
 					className,
 				)}
@@ -32,7 +32,7 @@ export function ProgressValue({ className, ...props }: ProgressValueProps) {
 	return (
 		<ProgressPrimitive.Value
 			data-slot="progress-value"
-			className={cx(
+			className={cn(
 				'text-foreground mt-1.5 flex justify-end text-sm font-medium',
 				className,
 			)}
@@ -67,7 +67,7 @@ export function ProgressCircle({
 	return (
 		<div
 			data-slot="progress-circle"
-			className={cx(
+			className={cn(
 				'relative inline-flex items-center justify-center',
 				className,
 			)}
@@ -88,7 +88,7 @@ export function ProgressCircle({
 					stroke="currentColor"
 					strokeWidth={strokeWidth}
 					fill="none"
-					className={cx('text-secondary', trackClassName)}
+					className={cn('text-secondary', trackClassName)}
 				/>
 				<circle
 					data-slot="progress-circle-indicator"
@@ -101,7 +101,7 @@ export function ProgressCircle({
 					strokeDasharray={circumference}
 					strokeDashoffset={offset}
 					strokeLinecap="round"
-					className={cx(
+					className={cn(
 						'text-primary transition-all duration-300 ease-in-out',
 						indicatorClassName,
 					)}

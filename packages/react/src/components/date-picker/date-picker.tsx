@@ -1,6 +1,6 @@
 'use client'
 
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import * as React from 'react'
@@ -24,7 +24,7 @@ function Presets({
 	if (!presets.length) return null
 
 	return (
-		<div className={cx('px-friends flex max-w-62.5 flex-wrap', className)}>
+		<div className={cn('px-friends flex max-w-62.5 flex-wrap', className)}>
 			{presets.map(({ value, label }) => {
 				return (
 					<Badge
@@ -63,7 +63,7 @@ function DatePickerTrigger({
 	return (
 		<PopoverTrigger
 			{...props}
-			className={cx(
+			className={cn(
 				buttonVariants({ variant: 'outline' }),
 				'w-70 justify-start text-left font-normal',
 				!selected && 'text-foreground-muted',

@@ -1,6 +1,6 @@
 import { mergeProps } from '@base-ui-components/react/merge-props'
 import { useRender } from '@base-ui-components/react/use-render'
-import { cx } from '@nerdfish/utils'
+import { cn } from '@nerdfish/utils/class'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
 import {
 	type ComponentProps,
@@ -19,7 +19,7 @@ export function BreadcrumbList({ className, ...props }: BreadcrumbListProps) {
 	return (
 		<ol
 			data-slot="breadcrumb-list"
-			className={cx(
+			className={cn(
 				'text-foreground-muted gap-bff flex flex-wrap items-center text-sm wrap-break-word',
 				className,
 			)}
@@ -33,7 +33,7 @@ export function BreadcrumbItem({ className, ...props }: BreadcrumbItemProps) {
 	return (
 		<li
 			data-slot="breadcrumb-item"
-			className={cx('gap-bff inline-flex items-center', className)}
+			className={cn('gap-bff inline-flex items-center', className)}
 			{...props}
 		/>
 	)
@@ -51,7 +51,7 @@ export function BreadcrumbLink({
 }: BreadcrumbLinkProps): ReactElement {
 	const defaultProps = {
 		'data-slot': 'breadcrumb-link',
-		className: cx('hover:text-foreground transition-colors', className),
+		className: cn('hover:text-foreground transition-colors', className),
 	}
 
 	// Determine render element based on asChild prop
@@ -85,7 +85,7 @@ export function BreadcrumbPage({ className, ...props }: BreadcrumbPageProps) {
 			role="link"
 			aria-disabled="true"
 			aria-current="page"
-			className={cx('text-foreground font-normal', className)}
+			className={cn('text-foreground font-normal', className)}
 			{...props}
 		/>
 	)
@@ -102,7 +102,7 @@ export function BreadcrumbSeparator({
 			data-slot="breadcrumb-separator"
 			role="presentation"
 			aria-hidden="true"
-			className={cx('[&>svg]:h-3.5 [&>svg]:w-3.5', className)}
+			className={cn('[&>svg]:h-3.5 [&>svg]:w-3.5', className)}
 			{...props}
 		>
 			{children ?? <ChevronRight className="rtl:rotate-180" />}
@@ -128,7 +128,7 @@ export function BreadcrumbEllipsis({
 			data-slot="breadcrumb-ellipsis"
 			role="presentation"
 			aria-hidden="true"
-			className={cx('flex h-9 w-9 items-center justify-center', className)}
+			className={cn('flex h-9 w-9 items-center justify-center', className)}
 			{...props}
 		>
 			{content}
