@@ -61,9 +61,17 @@ export const docsNav: NavigationGroup[] = [
 			{ title: 'Phone Input', href: '/docs/components/phone-input/' },
 			{ title: 'Radio Group', href: '/docs/components/radio-group/' },
 			{ title: 'Select', href: '/docs/components/select/' },
-			{ title: 'Slider', href: '/docs/components/slider/', status: 'updated' },
+			{
+				title: 'Slider',
+				href: '/docs/components/slider/',
+				status: 'updated',
+			},
 			{ title: 'Switch', href: '/docs/components/switch/' },
-			{ title: 'Toggle', href: '/docs/components/toggle/', status: 'updated' },
+			{
+				title: 'Toggle',
+				href: '/docs/components/toggle/',
+				status: 'updated',
+			},
 			{
 				title: 'Toggle Group',
 				href: '/docs/components/toggle-group/',
@@ -222,13 +230,27 @@ export const docsNav: NavigationGroup[] = [
 	},
 ]
 
+export const blocksNav: NavigationGroup[] = [
+	{
+		title: 'Skeleton',
+		links: [
+			{ title: 'Skeleton Cards', href: '/docs/blocks/skeleton-cards/' },
+			{ title: 'Skeleton Content', href: '/docs/blocks/skeleton-content/' },
+		],
+	},
+]
+
 export const mainNav: NavigationItem[] = [
 	{
 		title: 'Home',
 		href: '/',
 	},
 	{
-		title: 'Docs',
+		title: 'Components',
 		href: '/docs',
+	},
+	{
+		title: 'Blocks',
+		href: '/docs/blocks',
 	},
 ]

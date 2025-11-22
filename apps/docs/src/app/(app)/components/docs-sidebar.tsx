@@ -12,12 +12,24 @@ import {
 } from '@nerdfish/react/sidebar'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { type ComponentProps } from 'react'
+import { useMemo, type ComponentProps } from 'react'
 import { StatusBadge } from './status-badge'
-import { docsNav } from '@/nav'
+import { blocksNav, docsNav } from '@/nav'
 
 export function DocsSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
 	const pathname = usePathname()
+
+	const nav = useMemo(() => {
+		if (pathname.includes('/docs/blocks/')) {
+			return blocksNav
+		}
+
+		if (pathname.includes('/docs/')) {
+			return docsNav
+		}
+
+		return []
+	}, [pathname])
 
 	return (
 		<Sidebar
@@ -28,7 +40,7 @@ export function DocsSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
 			<SidebarContent className="no-scrollbar px-best-friends overflow-x-hidden">
 				<div className="from-background via-background/80 to-background/50 sticky -top-1 z-10 h-8 shrink-0 bg-linear-to-b blur-xs" />
 
-				{docsNav.map((item) => (
+				{nav.map((item) => (
 					<SidebarGroup key={item.title}>
 						<SidebarGroupLabel>{item.title}</SidebarGroupLabel>
 						<SidebarGroupContent>

@@ -8,9 +8,9 @@ import {
 } from '@nerdfish/react/popover'
 import { cn } from '@nerdfish/utils/class'
 import Link, { type LinkProps } from 'next/link'
-import { useRouter } from 'next/navigation'
-import { type ReactNode, useState } from 'react'
-import { docsNav } from '@/nav'
+import { usePathname, useRouter } from 'next/navigation'
+import { type ReactNode, useMemo, useState } from 'react'
+import { blocksNav, docsNav, mainNav } from '@/nav'
 
 function MobileLink({
 	href,
@@ -42,6 +42,19 @@ function MobileLink({
 
 export function MobileNav({ className }: { className?: string }) {
 	const [open, setOpen] = useState(false)
+	const pathname = usePathname()
+
+	const nav = useMemo(() => {
+		if (pathname.includes('/docs/blocks')) {
+			return blocksNav
+		}
+
+		if (pathname.includes('/docs/components')) {
+			return docsNav
+		}
+
+		return docsNav
+	}, [pathname])
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
@@ -89,15 +102,24 @@ export function MobileNav({ className }: { className?: string }) {
 						<div className="text-foreground-muted text-sm font-medium">
 							Menu
 						</div>
-						<div className="best-friends flex flex-col">
+						<div className="gap-best-friends flex flex-col">
 							<MobileLink href="/" onOpenChange={setOpen}>
 								Home
 							</MobileLink>
+							{mainNav.map((item) => (
+								<MobileLink
+									key={item.href}
+									href={item.href}
+									onOpenChange={setOpen}
+								>
+									{item.title}
+								</MobileLink>
+							))}
 						</div>
 					</div>
 
 					<div className="gap-friends flex flex-col">
-						{docsNav.map((item, index) => (
+						{nav.map((item, index) => (
 							<div key={index} className="gap-best-friends flex flex-col">
 								<div className="text-foreground-muted text-sm font-medium">
 									{item.title}
