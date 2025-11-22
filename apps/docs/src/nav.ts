@@ -143,6 +143,7 @@ export const docsNav: NavigationGroup[] = [
 			{
 				title: 'Calendar',
 				href: '/docs/components/calendar/',
+				status: 'updated',
 			},
 			{
 				title: 'Card',

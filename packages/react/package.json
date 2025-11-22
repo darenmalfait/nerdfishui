@@ -38,6 +38,7 @@
     "./button": "./src/components/button/button.tsx",
     "./breadcrumb": "./src/components/breadcrumb/breadcrumb.tsx",
     "./calendar": "./src/components/calendar/calendar.tsx",
+    "./calendar-mini": "./src/components/calendar/calendar-mini.tsx",
     "./card": "./src/components/card/card.tsx",
     "./chart": "./src/components/chart/chart.tsx",
     "./checkbox": "./src/components/checkbox/checkbox.tsx",

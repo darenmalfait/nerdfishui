@@ -15,7 +15,7 @@ import {
 	FieldGroup,
 	FieldLabel,
 } from '@nerdfish/react/field'
-import { PhoneInput } from '@nerdfish/react/phone-input'
+import { type CountryCode, PhoneInput } from '@nerdfish/react/phone-input'
 import { toast } from '@nerdfish/react/toast'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -59,7 +59,12 @@ export function PhoneInputExample() {
 									<FieldLabel htmlFor="form-phone-input-title">
 										Phone
 									</FieldLabel>
-									<PhoneInput variant="default" size="lg" {...field} />
+									<PhoneInput
+										variant="default"
+										size="lg"
+										{...field}
+										value={field.value as CountryCode}
+									/>
 									{fieldState.invalid ? (
 										<FieldError errors={[fieldState.error]} />
 									) : null}

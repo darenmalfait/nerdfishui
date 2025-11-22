@@ -92,11 +92,10 @@ export function DatePicker({
 	children,
 	...props
 }: DatePickerProps) {
-	const [selected, setSelected] = useControllableState(
-		selectedProp,
-		undefined,
-		onSelect,
-	)
+	const [selected, setSelected] = useControllableState<Date | undefined>({
+		prop: selectedProp,
+		onChange: onSelect,
+	})
 
 	return (
 		<Popover>

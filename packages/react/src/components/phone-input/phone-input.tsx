@@ -29,6 +29,8 @@ import { ScrollArea } from '../scroll-area/scroll-area'
 type PhoneInputSize = VariantProps<typeof inputVariants>['size']
 type PhoneInputVariant = VariantProps<typeof inputVariants>['variant']
 
+type CountryEntry = { label: string; value: BasePhoneInput.Country | undefined }
+
 const PhoneInputContext = createContext<{
 	variant: PhoneInputVariant
 	size: PhoneInputSize
@@ -47,9 +49,10 @@ type PhoneInputProps = Omit<
 > &
 	Omit<
 		BasePhoneInput.Props<typeof BasePhoneInput.default>,
-		'onChange' | 'variant' | 'popupClassName' | 'scrollAreaClassName'
+		'onChange' | 'variant' | 'popupClassName' | 'scrollAreaClassName' | 'value'
 	> & {
-		onChange?: (value: BasePhoneInput.Value) => void
+		value?: CountryEntry['value']
+		onChange?: (value: CountryEntry['value']) => void
 		popupClassName?: string
 		scrollAreaClassName?: string
 	}
@@ -64,11 +67,10 @@ export function PhoneInput({
 	value: valueProp,
 	...props
 }: PhoneInputProps) {
-	const [value, setValue] = useControllableState<BasePhoneInput.Value>(
-		valueProp as BasePhoneInput.Value,
-		'' as BasePhoneInput.Value,
+	const [value, setValue] = useControllableState<CountryEntry['value']>({
+		prop: valueProp,
 		onChange,
-	)
+	})
 	const phoneInputSize = size ?? 'md'
 	const phoneInputVariant = variant ?? 'default'
 
@@ -92,8 +94,8 @@ export function PhoneInput({
 				countrySelectComponent={CountrySelect}
 				inputComponent={InputComponent}
 				smartCaret={false}
-				value={value}
-				onChange={(val) => setValue(val ?? ('' as BasePhoneInput.Value))}
+				value={value as BasePhoneInput.Value}
+				onChange={setValue as (value: BasePhoneInput.Value) => void}
 				{...props}
 			/>
 		</PhoneInputContext>
@@ -112,13 +114,11 @@ function InputComponent({ className, ...props }: ComponentProps<typeof Input>) {
 	)
 }
 
-type CountryEntry = { label: string; value: BasePhoneInput.Country | undefined }
-
 type CountrySelectProps = {
 	disabled?: boolean
 	value: BasePhoneInput.Country
 	options: CountryEntry[]
-	onChange: (country: BasePhoneInput.Country) => void
+	onChange: (country: CountryEntry['value']) => void
 }
 
 function CountrySelect({
@@ -127,11 +127,13 @@ function CountrySelect({
 	options: countryList,
 	onChange,
 }: CountrySelectProps) {
-	const [selectedCountry, setSelectedCountry] = useControllableState(
-		value,
-		'' as BasePhoneInput.Country,
+	const [selectedCountry, setSelectedCountry] = useControllableState<
+		CountryEntry['value']
+	>({
+		prop: value,
+		defaultProp: '' as CountryEntry['value'],
 		onChange,
-	)
+	})
 	const { variant, size, popupClassName, scrollAreaClassName } =
 		useContext(PhoneInputContext)
 	const [searchValue, setSearchValue] = useState('')
@@ -147,11 +149,7 @@ function CountrySelect({
 		<Combobox
 			items={filteredCountries}
 			value={selectedCountry}
-			onValueChange={(country) => {
-				if (country) {
-					setSelectedCountry(country as BasePhoneInput.Country)
-				}
-			}}
+			onValueChange={setSelectedCountry as (value: unknown) => void}
 		>
 			<div className="relative">
 				<ComboboxTrigger
@@ -229,3 +227,5 @@ function FlagComponent({ country, countryName }: BasePhoneInput.FlagProps) {
 		</span>
 	)
 }
+
+export type CountryCode = keyof typeof flags
