@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import { cn, type VariantProps } from '@nerdfish/utils/class'
+import { ChevronDownIcon } from 'lucide-react'
 import {
 	type ComponentProps,
 	createContext,
@@ -10,12 +11,10 @@ import {
 import * as BasePhoneInput from 'react-phone-number-input'
 import flags from 'react-phone-number-input/flags'
 import { useControllableState } from '../../hooks/use-controllable-state'
-import { Button } from '../button/button'
 import {
 	Combobox,
 	ComboboxContent,
 	ComboboxEmpty,
-	ComboboxIcon,
 	ComboboxInput,
 	ComboboxItem,
 	ComboboxItemIndicator,
@@ -24,7 +23,7 @@ import {
 	ComboboxTrigger,
 	ComboboxValue,
 } from '../combobox/combobox'
-import { Input, type inputVariants } from '../input/input'
+import { Input, inputVariants } from '../input/input'
 import { ScrollArea } from '../scroll-area/scroll-area'
 
 type PhoneInputSize = VariantProps<typeof inputVariants>['size']
@@ -157,31 +156,26 @@ function CountrySelect({
 			<div className="relative">
 				<ComboboxTrigger
 					render={
-						<Button
-							size={size}
-							variant={variant === 'default' ? 'secondary' : 'outline'}
-							className={cn(
-								[
-									'h-full w-full',
-									'rounded-s-compact rounded-e-none border-e-0 px-0! focus:z-10',
-								],
-								disabled && 'opacity-50',
-							)}
+						<button
 							disabled={disabled}
+							className={cn(
+								inputVariants({
+									variant,
+									size,
+								}),
+								'gap-bff flex items-center rounded-e-none',
+								'hover:bg-background-inverted/20 group/phone-input-trigger h-full',
+							)}
 						>
-							<div className="flex h-full w-18 items-center justify-center gap-1">
-								<div>
-									<ComboboxValue>
-										{(val: BasePhoneInput.Country) => (
-											<FlagComponent country={val} countryName={val} />
-										)}
-									</ComboboxValue>
-								</div>
-								<div>
-									<ComboboxIcon />
-								</div>
+							<ComboboxValue>
+								{(val: BasePhoneInput.Country) => (
+									<FlagComponent country={val} countryName={val} />
+								)}
+							</ComboboxValue>
+							<div>
+								<ChevronDownIcon className="size-4 opacity-60 group-hover/phone-input-trigger:opacity-100" />
 							</div>
-						</Button>
+						</button>
 					}
 				/>
 			</div>
@@ -230,7 +224,7 @@ function FlagComponent({ country, countryName }: BasePhoneInput.FlagProps) {
 	const Flag = flags[country]
 
 	return (
-		<span className="bg-foreground/10 flex h-4 w-6 overflow-hidden rounded-sm [&_svg:not([class*='size-'])]:size-full!">
+		<span className="bg-foreground/10 flex h-4 w-8 overflow-hidden rounded-sm [&_svg:not([class*='size-'])]:size-full!">
 			{Flag ? <Flag title={countryName} /> : null}
 		</span>
 	)
