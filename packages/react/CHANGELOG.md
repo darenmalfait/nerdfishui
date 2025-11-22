@@ -1,5 +1,20 @@
 # @nerdfish/react
 
+## 1.1.0
+
+### Minor Changes
+
+- add new `CalendarMini` component
+
+### Patch Changes
+
+- improve `PhoneInput` component
+
+- Updated dependencies
+  [[`21a4d95`](https://github.com/darenmalfait/nerdfishui/commit/21a4d95d5a4ad3a95f05dcbcbdfdc67d31aaac3f),
+  [`ce05fcc`](https://github.com/darenmalfait/nerdfishui/commit/ce05fcc05e22f297adc756c54e0329afb10b704b)]:
+  - @nerdfish/utils@3.0.0
+
 ## 1.0.5
 
 ### Patch Changes
