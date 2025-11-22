@@ -206,7 +206,7 @@ export function CalendarMiniDay({
 		<Button
 			className={cn(
 				'p-best-friends h-auto min-w-[3rem] flex-col gap-0 text-xs',
-				isTodayDate && !isSelected && 'bg-accent',
+				isTodayDate && !isSelected && 'bg-background-muted',
 				className,
 			)}
 			data-slot="calendar-mini-day"
