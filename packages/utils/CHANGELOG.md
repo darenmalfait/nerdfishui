@@ -1,5 +1,15 @@
 # @nerdfish/utils
 
+## 3.0.0
+
+### Major Changes
+
+- use named props in `useControllableState`
+
+### Minor Changes
+
+- expose utils per type for better treeshaking
+
 ## 2.0.1
 
 ### Patch Changes
