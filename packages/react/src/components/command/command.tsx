@@ -3,7 +3,7 @@
 import { cn } from '@nerdfish/utils/class'
 import { Command as CommandPrimitive } from 'cmdk'
 import { SearchIcon } from 'lucide-react'
-import { type ComponentProps } from 'react'
+import { type ReactNode, type ComponentProps } from 'react'
 import {
 	Dialog,
 	DialogContent,
@@ -52,7 +52,7 @@ export function CommandDialog({
 				showCloseButton={showCloseButton}
 			>
 				<Command className="[&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
-					{children}
+					{children as ReactNode}
 				</Command>
 			</DialogContent>
 		</Dialog>

@@ -1,6 +1,9 @@
 'use client'
 
-import { Slider as SliderPrimitive } from '@base-ui-components/react/slider'
+import {
+	Slider as SliderPrimitive,
+	type SliderRootChangeEventDetails,
+} from '@base-ui-components/react/slider'
 import { cn } from '@nerdfish/utils/class'
 import {
 	type ComponentProps,
@@ -49,20 +52,15 @@ export function Slider({
 
 	const handleValueChange = (
 		newValue: number | readonly number[],
-		eventDetails: {
-			reason: 'none'
-			event: Event
-			cancel: () => void
-			allowPropagation: () => void
-			isCanceled: boolean
-			isPropagationAllowed: boolean
-			activeThumbIndex: number
-		},
+		eventDetails: SliderRootChangeEventDetails,
 	) => {
 		const values = Array.isArray(newValue) ? [...newValue] : [newValue]
 		setInternalValues(values)
 		if (onValueChange) {
-			onValueChange(values, eventDetails)
+			onValueChange(values, {
+				...eventDetails,
+				trigger: eventDetails.event.target as HTMLElement,
+			})
 		}
 	}
 

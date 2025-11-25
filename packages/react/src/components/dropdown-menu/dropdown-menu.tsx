@@ -222,14 +222,7 @@ export function DropdownMenuRadioItem({
 
 export type DropdownMenuSubProps = ComponentProps<typeof BaseMenu.SubmenuRoot>
 export function DropdownMenuSub({ ...props }: DropdownMenuSubProps) {
-	return (
-		<BaseMenu.SubmenuRoot
-			closeDelay={0}
-			delay={0}
-			data-slot="dropdown-menu-sub"
-			{...props}
-		/>
-	)
+	return <BaseMenu.SubmenuRoot data-slot="dropdown-menu-sub" {...props} />
 }
 
 export interface DropdownMenuSubTriggerProps

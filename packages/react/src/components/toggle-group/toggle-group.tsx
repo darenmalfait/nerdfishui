@@ -41,7 +41,7 @@ export function ToggleGroup({
 			data-variant={variant}
 			data-size={size}
 			data-spacing={spacing}
-			style={{ ...style, '--gap': spacing } as CSSProperties}
+			style={{ ...style, '--gap': spacing } as unknown as CSSProperties}
 			className={cn(
 				'group/toggle-group flex items-center gap-1 data-[variant=outline]:shadow-xs',
 				'gap-[--spacing(var(--gap))]',
