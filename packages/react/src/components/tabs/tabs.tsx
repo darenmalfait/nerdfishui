@@ -84,10 +84,10 @@ const tabsTriggerVariants = cva(
 		variants: {
 			variant: {
 				default:
-					'text-foreground-muted data-[selected]:bg-background hover:text-foreground data-[selected]:text-foreground data-[selected]:shadow-xs data-[selected]:shadow-black/5',
+					'text-foreground-muted aria-selected:bg-background hover:text-foreground aria-selected:text-foreground aria-selected:shadow-xs aria-selected:shadow-black/5',
 				button:
-					'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg text-foreground hover:text-foreground data-[selected]:bg-background-muted data-[selected]:text-foreground',
-				line: 'border-b-2 text-foreground-muted border-transparent data-[selected]:border-foreground hover:text-foreground data-[selected]:text-foreground data-[selected]:text-foreground',
+					'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg text-foreground hover:text-foreground aria-selected:bg-background-muted aria-selected:text-foreground',
+				line: 'border-b-2 text-foreground-muted border-transparent aria-selected:border-foreground hover:text-foreground aria-selected:text-foreground aria-selected:text-foreground',
 			},
 			size: {
 				lg: 'gap-casual [&_svg]:size-5 text-sm',
@@ -213,7 +213,9 @@ export function TabsList({
 				data-slot="tabs-list"
 				className={cn(tabsListVariants({ variant, shape, size }), className)}
 				{...props}
-			/>
+			>
+				{props.children}
+			</TabsPrimitive.List>
 		</TabsContext.Provider>
 	)
 }
