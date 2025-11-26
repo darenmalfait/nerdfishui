@@ -73,15 +73,15 @@ export function RadioGroupItem({
 
 	return (
 		<RadioPrimitive.Root
-			data-slot="radio-group-item"
+			data-slot="radio-group-item relative"
 			className={cn(radioItemVariants({ size: effectiveSize }), className)}
 			{...props}
 		>
 			<RadioPrimitive.Indicator
 				data-slot="radio-group-indicator"
-				className="relative flex items-center justify-center"
+				className="relative flex size-full items-center justify-center"
 			>
-				<CircleIcon className="fill-foreground absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+				<CircleIcon className="fill-foreground" />
 			</RadioPrimitive.Indicator>
 		</RadioPrimitive.Root>
 	)
