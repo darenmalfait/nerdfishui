@@ -20,9 +20,9 @@ export const buttonVariants = cva(
 				success:
 					'border-success bg-success-background text-success hover:bg-success-background/80 disabled:bg-success-background/50 disabled:border-success/20 disabled:text-success/50',
 				outline:
-					'bg-transparent text-foreground border-border hover:bg-background-inverted/5 disabled:text-foreground/50 disabled:border-muted',
+					'bg-transparent text-foreground border-border hover:bg-background-muted disabled:text-foreground/50 disabled:border-muted',
 				ghost:
-					'border-transparent text-current hover:bg-background-inverted/10 disabled:text-foreground/50',
+					'border-transparent text-current hover:bg-background-muted disabled:text-foreground/50',
 				link: 'border-none bg-transparent text-foreground underline-offset-4 hover:underline disabled:text-foreground/50',
 			},
 			size: {
