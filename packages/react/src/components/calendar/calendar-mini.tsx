@@ -127,7 +127,7 @@ export function CalendarMini({
 		>
 			<div
 				className={cn(
-					'bg-background gap-best-friends rounded-base p-best-friends flex items-center border',
+					'gap-best-friends rounded-base p-best-friends flex items-center border',
 					className,
 				)}
 				{...props}
