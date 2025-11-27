@@ -1,5 +1,13 @@
 # @nerdfish/react
 
+## 1.1.2
+
+### Patch Changes
+
+- tweak light mode destructive colors and dark mode text-foreground-muted
+
+- improve success color contrast
+
 ## 1.1.1
 
 ### Patch Changes
