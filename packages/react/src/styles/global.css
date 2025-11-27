@@ -25,10 +25,10 @@
 	--destructive-background: oklch(0.9521 0.0088 26.02);
 	--destructive-background-muted: oklch(0.9303 0.0167 26.65);
 
-	--success: oklch(0.7058 0.1377 143.69);
+	--success: oklch(0.5391 0.1742 140.79);
 	--success-contrast: oklch(1 0 0);
-	--success-background: oklch(0.9635 0.0073 132.42);
-	--success-background-muted: oklch(0.9484 0.0124 137.79);
+	--success-background: oklch(0.9545 0.0073 132.42);
+	--success-background-muted: oklch(0.9327 0.0148 132.48);
 
 	--info: oklch(0.5726 0.2176 259.81);
 	--info-contrast: oklch(1 0 0);
