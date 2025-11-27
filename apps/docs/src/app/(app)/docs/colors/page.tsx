@@ -390,6 +390,8 @@ export default function ColorsPage() {
 				title="Colors"
 				description="Colors used in the NerdfishUI library"
 			/>
+			<div className="bg-destructive/10 rounded-base mb-distant aspect-3/1 w-full" />
+			<div className="bg-destructive/5 rounded-base mb-distant aspect-3/1 w-full" />
 			<div className="grid gap-8 lg:gap-16 xl:gap-20">
 				{colors.map((colorPalette) => (
 					<ColorPalette key={colorPalette.name} colorPalette={colorPalette} />
