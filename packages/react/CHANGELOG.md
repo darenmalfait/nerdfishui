@@ -1,5 +1,15 @@
 # @nerdfish/react
 
+## 1.1.1
+
+### Patch Changes
+
+- `Button` slightly tweak hover styles
+
+- Lighten color pallette
+
+- `RadioGroup`: center icon
+
 ## 1.1.0
 
 ### Minor Changes
