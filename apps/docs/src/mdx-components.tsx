@@ -37,7 +37,7 @@ export function useMDXComponents(components: MDXComponents) {
 		),
 		code: (props: React.HTMLAttributes<HTMLElement>) => (
 			<code
-				className="bg-background-muted text-foreground-muted rounded-md px-1.5 py-0.5 text-sm"
+				className="bg-background-muted text-foreground/80 rounded-md px-1.5 py-0.5 text-sm"
 				{...props}
 			/>
 		),
