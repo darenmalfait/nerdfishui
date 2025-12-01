@@ -22,7 +22,7 @@ export function Color({ color }: { color: Color }) {
 	return (
 		<button
 			key={color.className}
-			className="group rounded-base gap-best-friends text-foreground sm:max-w-28.75&>svg]:absolute relative flex w-full flex-1 cursor-pointer flex-col [&>svg]:top-4 [&>svg]:right-4 [&>svg]:z-10 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:opacity-0 [&>svg]:transition-opacity"
+			className="group rounded-base gap-best-friends text-foreground sm:max-w-28.75&>svg]:absolute relative flex w-full flex-1 cursor-pointer flex-col [&>svg]:absolute [&>svg]:top-4 [&>svg]:right-4 [&>svg]:z-10 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:opacity-0 [&>svg]:transition-opacity"
 			data-last-copied={copiedText === color.className}
 			onClick={async () => {
 				await handleCopy(color.className)
