@@ -122,7 +122,7 @@ importers:
         version: 1.5.1(next@15.5.9(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       lodash:
         specifier: ^4.17.21
-        version: 4.17.21
+        version: 4.17.23
       lucide-react:
         specifier: ^0.555.0
         version: 0.555.0(react@19.2.3)
@@ -5936,8 +5936,8 @@ packages:
   lodash.where@3.1.0:
     resolution: {integrity: sha512-9iH6No94IEtewjRRAykRVVW4Sw0DULKFp9H7x92MvbYUjg5EHj/+o58/Jx/kxAu7UWJLItwBH4FemHaQIGFIeg==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+  lodash@4.17.23:
+    resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
 
   log-ok@0.1.1:
     resolution: {integrity: sha512-cc8VrkS6C+9TFuYAwuHpshrcrGRAv7d0tUJ0GdM72ZBlKXtlgjUZF84O+OhQUdiVHoF7U/nVxwpjOdwUJ8d3Vg==}
@@ -15079,7 +15079,7 @@ snapshots:
       lodash._basematches: 3.2.0
       lodash.isarray: 3.0.4
 
-  lodash@4.17.21: {}
+  lodash@4.17.23: {}
 
   log-ok@0.1.1:
     dependencies:
