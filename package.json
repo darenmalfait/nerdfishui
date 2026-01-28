@@ -46,7 +46,7 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@nerdfish/config": "^1.9.4",
-    "@next/eslint-plugin-next": "^15.5.9",
+    "@next/eslint-plugin-next": "^16.1.4",
     "@pnpm/find-workspace-dir": "^1000.1.3",
     "@types/lodash-es": "^4.17.12",
     "eslint": "^9.39.2",
