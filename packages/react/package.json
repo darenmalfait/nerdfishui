@@ -28,6 +28,7 @@
     "./hooks/use-controllable-state": "./src/hooks/use-controllable-state.ts",
     "./hooks/use-copy-to-clipboard": "./src/hooks/use-copy-to-clipboard.ts",
     "./hooks/use-is-mobile": "./src/hooks/use-is-mobile.ts",
+    "./hooks/use-mount-effect": "./src/hooks/use-mount-effect.ts",
     "./accordion": "./src/components/accordion/accordion.tsx",
     "./alert": "./src/components/alert/alert.tsx",
     "./alert-dialog": "./src/components/alert-dialog/alert-dialog.tsx",
