@@ -1,5 +1,11 @@
 # @nerdfish/react
 
+## 1.2.0
+
+### Minor Changes
+
+- feat(hooks): add new use mount effect hook
+
 ## 1.1.2
 
 ### Patch Changes
