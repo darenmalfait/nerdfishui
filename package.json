@@ -49,7 +49,7 @@
     "@next/eslint-plugin-next": "^15.5.9",
     "@pnpm/find-workspace-dir": "^1000.1.3",
     "@types/lodash-es": "^4.17.12",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.3",
     "execa": "^9.6.1",
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
