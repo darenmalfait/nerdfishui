@@ -202,7 +202,7 @@
 
 	--spacing-proximity-1\/4: calc(var(--spacing-proximity) / 4);
 	--spacing-proximity-1\/2: calc(var(--spacing-proximity) / 2);
-	--spacing-proximity: 16px;
+	--spacing-proximity: calc(var(--spacing) * 4);
 	--spacing-proximity-1\.5: calc(var(--spacing-proximity) * 1.5);
 	--spacing-proximity-2: calc(var(--spacing-proximity) * 2);
 	--spacing-proximity-3: calc(var(--spacing-proximity) * 3);
