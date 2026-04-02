@@ -1,5 +1,11 @@
 # @nerdfish/utils
 
+## 3.0.1
+
+### Patch Changes
+
+- Color pallette changes
+
 ## 3.0.0
 
 ### Major Changes

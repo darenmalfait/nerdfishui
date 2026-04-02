@@ -1,5 +1,15 @@
 # @nerdfish/react
 
+## 1.2.1
+
+### Patch Changes
+
+- Color pallette changes
+
+- Updated dependencies
+  [[`1a60bc3`](https://github.com/darenmalfait/nerdfishui/commit/1a60bc305abf808bba797b1ff91d4e3b9027f5d8)]:
+  - @nerdfish/utils@3.0.1
+
 ## 1.2.0
 
 ### Minor Changes
