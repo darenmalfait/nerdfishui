@@ -101,14 +101,14 @@ function DrawerContentContent() {
 						<span className="sr-only">Increase</span>
 					</Button>
 				</div>
-				<div className="mt-3 h-[120px]">
+				<div className="mt-3 h-30">
 					<ResponsiveContainer width="100%" height="100%">
 						<BarChart data={data}>
 							<Bar
 								dataKey="goal"
 								style={
 									{
-										fill: 'var(--success)',
+										fill: 'var(--color-success)',
 										opacity: 0.9,
 									} as React.CSSProperties
 								}

@@ -115,7 +115,7 @@ export function DrawerExample() {
 										dataKey="goal"
 										style={
 											{
-												fill: 'var(--success)',
+												fill: 'var(--color-success)',
 												opacity: 0.9,
 											} as React.CSSProperties
 										}
