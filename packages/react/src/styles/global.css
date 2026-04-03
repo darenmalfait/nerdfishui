@@ -16,9 +16,17 @@
 	--foreground-inverted: oklch(0.9578 0.0058 264.53);
 
 	--background: oklch(0.9578 0.0058 264.53);
-	--background-secondary: oklch(0.906 0.0117 264.51);
 	--background-muted: oklch(0.9335 0.0087 264.52);
+	--background-secondary: oklch(0.906 0.0117 264.51);
 	--background-inverted: oklch(0.0847 0 0);
+
+	--overlay-0: oklch(0.7077 0.0237 274.6);
+	--overlay-1: oklch(0.6536 0.0269 278.12);
+	--overlay-2: oklch(0.6009 0.0305 278.69);
+
+	--surface-0: oklch(0.8575 0.0145 268.48);
+	--surface-1: oklch(0.8083 0.0174 271.2);
+	--surface-2: oklch(0.7584 0.0205 273.15);
 
 	--popover: var(--background-secondary);
 	--popover-contrast: var(--foreground);
@@ -87,6 +95,14 @@
 	--background-muted: oklch(0.2155 0.0254 284.06);
 	--background-inverted: oklch(0.9578 0.0058 264.53);
 
+	--overlay-0: oklch(0.5497 0.0345 277.1);
+	--overlay-1: oklch(0.6176 0.0367 276);
+	--overlay-2: oklch(0.6865 0.0374 274.73);
+
+	--surface-0: oklch(0.324 0.0319 281.98);
+	--surface-1: oklch(0.4037 0.032 280.15);
+	--surface-2: oklch(0.4765 0.034 278.64);
+
 	--popover: var(--background-secondary);
 	--popover-contrast: var(--foreground);
 
@@ -142,11 +158,23 @@
 	--color-foreground: var(--foreground);
 	--color-foreground-muted: var(--foreground-muted);
 	--color-foreground-inverted: var(--foreground-inverted);
+	--color-foreground-body: var(--foreground);
+	--color-foreground-headline: var(--foreground);
+	--color-foreground-subtitle: var(--foreground-muted);
+	--color-foreground-label: var(--foreground-muted);
+	--color-foreground-subtle: var(--overlay-1);
+	--color-foreground-link: var(--accent);
 
 	--color-background: var(--background);
 	--color-background-inverted: var(--background-inverted);
 	--color-background-secondary: var(--background-secondary);
 	--color-background-muted: var(--background-muted);
+	--color-background-surface: var(--surface-0);
+	--color-background-surface-muted: var(--surface-1);
+	--color-background-surface-secondary: var(--surface-2);
+	--color-background-overlay: var(--overlay-0);
+	--color-background-overlay-muted: var(--overlay-1);
+	--color-background-overlay-secondary: var(--overlay-2);
 
 	--color-destructive: var(--destructive);
 	--color-destructive-contrast: var(--destructive-contrast);
