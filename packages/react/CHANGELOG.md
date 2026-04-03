@@ -1,5 +1,11 @@
 # @nerdfish/react
 
+## 1.3.0
+
+### Minor Changes
+
+- feat(global): add more color utils
+
 ## 1.2.1
 
 ### Patch Changes
