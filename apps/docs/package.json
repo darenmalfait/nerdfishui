@@ -76,7 +76,7 @@
     "prettier": "^3.6.2",
     "rehype-pretty-code": "^0.14.1",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "unist-builder": "4.0.0",
     "unist-util-visit": "^5.0.0"
   }
