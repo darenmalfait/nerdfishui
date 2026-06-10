@@ -49,8 +49,8 @@ importers:
         specifier: ^20.0.0
         version: 20.0.0
       '@nerdfish/config':
-        specifier: ^1.9.4
-        version: 1.9.4(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
+        specifier: ^1.10.6
+        version: 1.10.6(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
       '@next/eslint-plugin-next':
         specifier: ^15.5.9
         version: 15.5.9
@@ -182,8 +182,8 @@ importers:
         version: 4.1.13
     devDependencies:
       '@nerdfish/config':
-        specifier: ^1.9.4
-        version: 1.9.4(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
+        specifier: ^1.10.6
+        version: 1.10.6(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
       '@shikijs/compat':
         specifier: ^2.5.0
         version: 2.5.0
@@ -341,8 +341,8 @@ importers:
         version: 3.4.0
     devDependencies:
       '@nerdfish/config':
-        specifier: ^1.9.4
-        version: 1.9.4(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
+        specifier: ^1.10.6
+        version: 1.10.6(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -1575,8 +1575,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@nerdfish/config@1.9.4':
-    resolution: {integrity: sha512-YyX2v3Xs7syc+Wlwl3vB1TtbHOg/HTfUkDzhvcFrfcDJzv6MXsmib33dp9uLBsndrXugNzNKzDAzHdqtS1Zq0g==}
+  '@nerdfish/config@1.10.6':
+    resolution: {integrity: sha512-r9RY6HR9CkbObb9wvhxxAviPz0SbVt8GRTKztD3bmvSsmFVNn6ft1rDn9G5gOM79CywEsV2cNvOrLKfiBvEAxg==}
 
   '@next/env@15.5.15':
     resolution: {integrity: sha512-vcmyu5/MyFzN7CdqRHO3uHO44p/QPCZkuTUXroeUmhNP8bL5PHFEhik22JUazt+CDDoD6EpBYRCaS2pISL+/hg==}
@@ -9674,7 +9674,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@nerdfish/config@1.9.4(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)':
+  '@nerdfish/config@1.10.6(@typescript-eslint/utils@8.46.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.2(jiti@2.6.1))(prettier@3.6.2)(typescript@5.9.3)':
     dependencies:
       '@eslint/compat': 1.4.0(eslint@9.39.2(jiti@2.6.1))
       '@total-typescript/ts-reset': 0.6.1

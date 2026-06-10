@@ -15,6 +15,6 @@ function isObject(value: any): value is Dict {
 	)
 }
 
-const __DEV__ = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV !== 'production'
 
-export { __DEV__, isArray, isObject }
+export { isDev, isArray, isObject }

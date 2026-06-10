@@ -55,7 +55,7 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "@nerdfish/config": "^1.9.4",
+    "@nerdfish/config": "^1.10.6",
     "@shikijs/compat": "^2.5.0",
     "@svgr/webpack": "^8.1.0",
     "@types/eslint": "^9.6.1",

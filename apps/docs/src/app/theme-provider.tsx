@@ -62,7 +62,7 @@ const ThemeScript = memo(
 		themes: string[]
 		defaultTheme: string
 	}) {
-		const defaultSystem = defaultTheme === 'system'
+		const isDefaultSystem = defaultTheme === 'system'
 
 		// Code-golfing the amount of characters in the script
 		const optimization = (() => {
@@ -112,10 +112,10 @@ const ThemeScript = memo(
 				return `!function(){${optimization}${updateDOM(forcedTheme)}}()`
 			}
 
-			return `!function(){try{${optimization}var e=localStorage.getItem('${storageKey}');if('system'===e||(!e&&${defaultSystem})){var t='${MEDIA}',m=window.matchMedia(t);if(m.media!==t||m.matches){${updateDOM(
+			return `!function(){try{${optimization}var e=localStorage.getItem('${storageKey}');if('system'===e||(!e&&${isDefaultSystem})){var t='${MEDIA}',m=window.matchMedia(t);if(m.media!==t||m.matches){${updateDOM(
 				'dark',
 			)}}else{${updateDOM('light')}}}else if(e)${updateDOM('e', true)};${
-				defaultSystem ? '' : `else{${updateDOM(defaultTheme, false, false)}}`
+				isDefaultSystem ? '' : `else{${updateDOM(defaultTheme, false, false)}}`
 			}${fallbackColorScheme}}catch(e){console.error(e.message);}}()`
 		})()
 
