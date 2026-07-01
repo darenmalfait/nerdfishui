@@ -1,7 +1,7 @@
 'use client'
 
-import { Radio as RadioPrimitive } from '@base-ui-components/react/radio'
-import { RadioGroup as RadioGroupPrimitive } from '@base-ui-components/react/radio-group'
+import { Radio as RadioPrimitive } from '@base-ui/react/radio'
+import { RadioGroup as RadioGroupPrimitive } from '@base-ui/react/radio-group'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { CircleIcon } from 'lucide-react'
 import { type ComponentProps, createContext, useContext } from 'react'

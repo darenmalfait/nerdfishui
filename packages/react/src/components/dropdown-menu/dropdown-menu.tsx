@@ -1,6 +1,6 @@
 'use client'
 
-import { Menu as BaseMenu } from '@base-ui-components/react/menu'
+import { Menu as BaseMenu } from '@base-ui/react/menu'
 import { cn } from '@nerdfish/utils/class'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'

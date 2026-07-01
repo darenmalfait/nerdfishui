@@ -1,4 +1,4 @@
-import { Dialog as SheetPrimitive } from '@base-ui-components/react/dialog'
+import { Dialog as SheetPrimitive } from '@base-ui/react/dialog'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { XIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'

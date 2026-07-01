@@ -1,4 +1,4 @@
-import { NumberField as NumberInputPrimitive } from '@base-ui-components/react/number-field'
+import { NumberField as NumberInputPrimitive } from '@base-ui/react/number-field'
 import { cn, type VariantProps } from '@nerdfish/utils/class'
 import { MinusIcon, MoveHorizontalIcon, PlusIcon } from 'lucide-react'
 import { type ComponentProps, createContext, useContext, useId } from 'react'

@@ -1,7 +1,7 @@
 'use client'
 
-import { Toggle as TogglePrimitive } from '@base-ui-components/react/toggle'
-import { ToggleGroup as ToggleGroupPrimitive } from '@base-ui-components/react/toggle-group'
+import { Toggle as TogglePrimitive } from '@base-ui/react/toggle'
+import { ToggleGroup as ToggleGroupPrimitive } from '@base-ui/react/toggle-group'
 import { cn, type VariantProps } from '@nerdfish/utils/class'
 import {
 	type ComponentProps,

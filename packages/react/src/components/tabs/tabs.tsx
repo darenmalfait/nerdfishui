@@ -1,6 +1,6 @@
 'use client'
 
-import { Tabs as TabsPrimitive } from '@base-ui-components/react/tabs'
+import { Tabs as TabsPrimitive } from '@base-ui/react/tabs'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ComponentProps, createContext, useContext } from 'react'
 

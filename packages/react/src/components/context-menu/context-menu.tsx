@@ -1,4 +1,4 @@
-import { ContextMenu as ContextMenuPrimitive } from '@base-ui-components/react/context-menu'
+import { ContextMenu as ContextMenuPrimitive } from '@base-ui/react/context-menu'
 import { cn } from '@nerdfish/utils/class'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'

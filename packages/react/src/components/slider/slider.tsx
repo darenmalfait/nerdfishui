@@ -3,7 +3,7 @@
 import {
 	Slider as SliderPrimitive,
 	type SliderRootChangeEventDetails,
-} from '@base-ui-components/react/slider'
+} from '@base-ui/react/slider'
 import { cn } from '@nerdfish/utils/class'
 import {
 	type ComponentProps,

@@ -1,4 +1,4 @@
-import { useRender } from '@base-ui-components/react/use-render'
+import { useRender } from '@base-ui/react/use-render'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ReactElement, type ComponentProps } from 'react'
 import { Separator } from '../separator/separator'

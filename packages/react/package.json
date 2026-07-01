@@ -98,7 +98,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@base-ui-components/react": "v1.0.0-rc.0",
+    "@base-ui/react": "v1.6.0",
     "@nerdfish/utils": "workspace:*",
     "@radix-ui/react-label": "^2.1.11",
     "@radix-ui/react-slot": "^1.2.5",

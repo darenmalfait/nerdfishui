@@ -1,6 +1,6 @@
 'use client'
 
-import { useRender } from '@base-ui-components/react/use-render'
+import { useRender } from '@base-ui/react/use-render'
 import { type VariantProps, cva } from '@nerdfish/utils/class'
 import { type ReactElement } from 'react'
 

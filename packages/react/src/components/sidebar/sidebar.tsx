@@ -1,6 +1,6 @@
 'use client'
 
-import { useRender } from '@base-ui-components/react/use-render'
+import { useRender } from '@base-ui/react/use-render'
 import { cn, cva, type VariantProps } from '@nerdfish/utils/class'
 
 import { PanelLeftIcon } from 'lucide-react'

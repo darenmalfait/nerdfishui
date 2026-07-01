@@ -1,4 +1,4 @@
-import { Popover as PopoverPrimitive } from '@base-ui-components/react/popover'
+import { Popover as PopoverPrimitive } from '@base-ui/react/popover'
 import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 

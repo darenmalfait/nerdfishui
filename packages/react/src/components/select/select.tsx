@@ -1,4 +1,4 @@
-import { Select as SelectPrimitive } from '@base-ui-components/react/select'
+import { Select as SelectPrimitive } from '@base-ui/react/select'
 import { cn } from '@nerdfish/utils/class'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'

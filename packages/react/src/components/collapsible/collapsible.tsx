@@ -1,6 +1,6 @@
 'use client'
 
-import { Collapsible as BaseCollapsible } from '@base-ui-components/react/collapsible'
+import { Collapsible as BaseCollapsible } from '@base-ui/react/collapsible'
 import { cn } from '@nerdfish/utils/class'
 import { type ComponentProps } from 'react'
 

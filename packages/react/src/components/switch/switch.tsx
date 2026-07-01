@@ -1,4 +1,4 @@
-import { Switch as SwitchPrimitive } from '@base-ui-components/react/switch'
+import { Switch as SwitchPrimitive } from '@base-ui/react/switch'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { createContext, useContext, type ComponentProps } from 'react'
 import { type InputVariants } from '../input/input'

@@ -1,6 +1,6 @@
 'use client'
 
-import { Dialog as DialogPrimitive } from '@base-ui-components/react'
+import { Dialog as DialogPrimitive } from '@base-ui/react/dialog'
 import { cn } from '@nerdfish/utils/class'
 import { XIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'

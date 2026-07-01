@@ -1,6 +1,6 @@
 'use client'
 
-import { Combobox as ComboboxPrimitive } from '@base-ui-components/react/combobox'
+import { Combobox as ComboboxPrimitive } from '@base-ui/react/combobox'
 import { type VariantProps, cn } from '@nerdfish/utils/class'
 import { CheckIcon, ChevronDownIcon, XIcon } from 'lucide-react'
 import { type ComponentProps } from 'react'

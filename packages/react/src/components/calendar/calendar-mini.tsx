@@ -1,6 +1,6 @@
 'use client'
 
-import { useRender } from '@base-ui-components/react'
+import { useRender } from '@base-ui/react/use-render'
 import { cn } from '@nerdfish/utils/class'
 import { addDays, format, isSameDay, isToday } from 'date-fns'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
