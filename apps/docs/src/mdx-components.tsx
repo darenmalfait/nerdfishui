@@ -1,15 +1,10 @@
-import {
-	CodeBlock,
-	CodeBlockCode,
-	CodeBlockGroup,
-} from '@nerdfish/react/code-block'
+import { CodeBlock } from '@nerdfish/react/code-block'
 import { cn } from '@nerdfish/utils/class'
 import { type MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import type * as React from 'react'
 import { ComponentExample } from './lib/components/component-example'
-import { CopyButton } from './lib/components/copy-button'
 import { DocsPageHeader } from './lib/components/docs-page-header'
 import { Icons } from './lib/components/icons'
 import { stripPreSlash } from '@/lib/utils/string'
@@ -20,20 +15,11 @@ export function useMDXComponents(components: MDXComponents) {
 
 		DocsPageHeader,
 		pre: (props: React.HTMLAttributes<HTMLElement>) => (
-			<CodeBlock className="my-friends">
-				<CodeBlockGroup className="border-muted/10 p-best-friends px-friends border-b backdrop-blur-sm">
-					<div className="text-sm font-medium" />
-					<CopyButton
-						code={props.children as string}
-						className="-mr-best-friends"
-					/>
-				</CodeBlockGroup>
-
-				<CodeBlockCode
-					className="max-h-87.5 overflow-auto"
-					code={props.children as string}
-				/>
-			</CodeBlock>
+			<CodeBlock
+				className="my-friends"
+				code={props.children as string}
+				codeClassName="max-h-87.5 overflow-auto"
+			/>
 		),
 		code: (props: React.HTMLAttributes<HTMLElement>) => (
 			<code

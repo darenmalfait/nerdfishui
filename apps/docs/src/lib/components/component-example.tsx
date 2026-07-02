@@ -1,16 +1,10 @@
 'use client'
 
-import { Badge } from '@nerdfish/react/badge'
-import {
-	CodeBlock,
-	CodeBlockCode,
-	CodeBlockGroup,
-} from '@nerdfish/react/code-block'
+import { CodeBlock } from '@nerdfish/react/code-block'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@nerdfish/react/tabs'
 import { cn } from '@nerdfish/utils/class'
 import { type ReactNode, type HTMLAttributes, type ReactElement } from 'react'
 import reactElementToJSXString from 'react-element-to-jsx-string'
-import { CopyButton } from './copy-button'
 
 function Preview({ children }: { children: ReactNode }) {
 	return (
@@ -60,19 +54,11 @@ export function ComponentExample({
 					</TabsContent>
 				) : null}
 				<TabsContent value="code">
-					<CodeBlock>
-						<CodeBlockGroup className="border-muted/10 p-best-friends px-friends bg-background-muted border-b backdrop-blur-sm">
-							<div className="text-sm font-medium">
-								<Badge>{name}</Badge>
-							</div>
-							<CopyButton code={sourceCode} className="-mr-best-friends" />
-						</CodeBlockGroup>
-
-						<CodeBlockCode
-							className="max-h-87.5 overflow-auto"
-							code={sourceCode}
-						/>
-					</CodeBlock>
+					<CodeBlock
+						title={name}
+						code={sourceCode}
+						codeClassName="max-h-87.5 overflow-auto"
+					/>
 				</TabsContent>
 			</Tabs>
 		</div>

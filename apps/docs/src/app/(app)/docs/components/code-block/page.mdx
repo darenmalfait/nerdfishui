@@ -1,0 +1,29 @@
+import { CodeBlockExample } from './example/default'
+import { CodeBlockCustomCopyExample } from './example/custom-copy'
+import { CodeBlockWithHeaderExample } from './example/with-header'
+
+<DocsPageHeader
+	title="Code Block"
+	description="Displays syntax-highlighted code with an optional header for language, title, and actions."
+	githubPath={{
+		package: 'react',
+		path: 'components/code-block/code-block.tsx',
+	}}
+/>
+
+<ComponentExample component={CodeBlockExample} name="default" />
+
+## With Header
+
+Pass `title` and/or `language` to show a header with a copy button.
+
+<ComponentExample component={CodeBlockWithHeaderExample} name="with header" />
+
+## Custom Copy Button
+
+Use the `actions` prop to replace the default icon-only copy button.
+
+<ComponentExample
+	component={CodeBlockCustomCopyExample}
+	name="custom copy button"
+/>

@@ -163,6 +163,11 @@ export const docsNav: NavigationGroup[] = [
 				status: 'new',
 			},
 			{
+				title: 'Code Block',
+				href: '/docs/components/code-block/',
+				status: 'new',
+			},
+			{
 				title: 'Dialog',
 				href: '/docs/components/dialog/',
 			},
