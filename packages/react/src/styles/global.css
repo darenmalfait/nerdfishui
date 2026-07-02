@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import './duration.css';
 @source "../**/*.{ts,tsx}";
 
 @custom-variant dark (&:is(.dark *));
@@ -231,8 +232,8 @@
 	--spacing-distant: var(--spacing-proximity-5);
 	--spacing-strangers: var(--spacing-proximity-7\.5);
 
-	--animate-accordion-down: accordion-down 0.2s ease-out;
-	--animate-accordion-up: accordion-up 0.2s ease-out;
+	--animate-accordion-down: accordion-down var(--duration-fast) ease-out;
+	--animate-accordion-up: accordion-up var(--duration-fast) ease-out;
 	--animate-shake: shake 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 	--animate-pop: pop 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 	--animate-caret-blink: caret-blink 0.8s cubic-bezier(0.4, 0, 0.2, 1);

@@ -68,7 +68,7 @@ export function SelectTrigger({
 			<SelectPrimitive.Icon>
 				<ChevronDownIcon
 					data-slot="select-icon"
-					className="size-4 opacity-50 transition-transform duration-200"
+					className="duration-fast size-4 opacity-50 transition-transform"
 				/>
 			</SelectPrimitive.Icon>
 		</SelectPrimitive.Trigger>

@@ -56,7 +56,7 @@ export function AccordionTrigger({
 				{children}
 				{!hideIcon ? (
 					<div data-slot="accordion-trigger-icon">
-						<ChevronDown className="ml-friends size-5 transition-transform duration-200" />
+						<ChevronDown className="ml-friends duration-fast size-5 transition-transform" />
 					</div>
 				) : null}
 			</AccordionPrimitive.Trigger>

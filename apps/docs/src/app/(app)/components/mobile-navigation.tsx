@@ -72,13 +72,13 @@ export function MobileNav({ className }: { className?: string }) {
 							<div className="relative size-4">
 								<span
 									className={cn(
-										'bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100',
+										'bg-foreground duration-fast-min absolute left-0 block h-0.5 w-4 transition-all',
 										open ? 'top-[0.4rem] -rotate-45' : 'top-1',
 									)}
 								/>
 								<span
 									className={cn(
-										'bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100',
+										'bg-foreground duration-fast-min absolute left-0 block h-0.5 w-4 transition-all',
 										open ? 'top-[0.4rem] rotate-45' : 'top-2.5',
 									)}
 								/>
@@ -92,7 +92,7 @@ export function MobileNav({ className }: { className?: string }) {
 				}
 			/>
 			<PopoverContent
-				className="bg-background/90 no-scrollbar z-50 h-(--available-height) w-(--available-width) overflow-y-auto rounded-none border-none! p-0 shadow-none backdrop-blur duration-100"
+				className="bg-background/90 no-scrollbar duration-fast-min z-50 h-(--available-height) w-(--available-width) overflow-y-auto rounded-none border-none! p-0 shadow-none backdrop-blur"
 				align="start"
 				side="bottom"
 				sideOffset={5}

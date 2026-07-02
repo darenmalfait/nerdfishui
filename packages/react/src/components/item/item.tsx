@@ -28,7 +28,7 @@ export function ItemSeparator({ className, ...props }: ItemSeparatorProps) {
 }
 
 export const itemVariants = cva(
-	'group/item flex items-center border text-sm rounded-base transition-colors [a]:hover:bg-background-inverted/10 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+	'group/item flex items-center border text-sm rounded-base transition-colors [a]:hover:bg-background-inverted/10 [a]:transition-colors duration-fast-min flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
 	{
 		variants: {
 			variant: {

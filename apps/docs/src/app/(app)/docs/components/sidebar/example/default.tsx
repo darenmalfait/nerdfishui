@@ -295,7 +295,7 @@ export function SidebarExample() {
 														<SidebarMenuButton tooltip={item.title}>
 															<item.icon />
 															<span>{item.title}</span>
-															<ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+															<ChevronRight className="duration-fast ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
 														</SidebarMenuButton>
 													}
 												/>

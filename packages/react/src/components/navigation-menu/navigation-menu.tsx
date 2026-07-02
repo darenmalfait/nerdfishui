@@ -86,7 +86,7 @@ export function NavigationMenuTrigger({
 		>
 			{children}{' '}
 			<ChevronDownIcon
-				className="relative top-px ms-1 size-3 transition duration-300 group-data-popup-open:rotate-180"
+				className="duration-medium-min relative top-px ms-1 size-3 transition group-data-popup-open:rotate-180"
 				aria-hidden="true"
 			/>
 		</NavigationMenuPrimitive.Trigger>
@@ -151,7 +151,7 @@ export function NavigationMenuPositioner({
 				)}
 				style={
 					{
-						'--duration': '0.35s',
+						'--duration': 'var(--duration-medium-min)',
 						'--easing': 'cubic-bezier(0.22, 1, 0.36, 1)',
 					} as CSSProperties
 				}
@@ -174,7 +174,7 @@ export function NavigationMenuPopup({
 	return (
 		<NavigationMenuPrimitive.Popup
 			className={cn(
-				'data-[ending-style]:easing-[ease] bg-popover outline-border xs:w-[var(--popup-width)] rounded-popover relative h-(--popup-height) w-(--popup-width) origin-(--transform-origin) shadow-lg outline-1 transition-[opacity,transform,width,height,scale,translate] duration-(--duration) ease-(--easing) data-ending-style:scale-90 data-ending-style:opacity-0 data-ending-style:duration-150 data-starting-style:scale-90 data-starting-style:opacity-0',
+				'data-[ending-style]:easing-[ease] bg-popover outline-border xs:w-[var(--popup-width)] rounded-popover data-ending-style:duration-fast relative h-(--popup-height) w-(--popup-width) origin-(--transform-origin) shadow-lg outline-1 transition-[opacity,transform,width,height,scale,translate] duration-(--duration) ease-(--easing) data-ending-style:scale-90 data-ending-style:opacity-0 data-starting-style:scale-90 data-starting-style:opacity-0',
 				className,
 			)}
 			{...props}

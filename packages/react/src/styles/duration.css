@@ -1,0 +1,23 @@
+:root {
+	--duration-fast-min: 130ms;
+	--duration-fast: 175ms;
+	--duration-fast-max: 230ms;
+	--duration-medium-min: 310ms;
+	--duration-medium: 410ms;
+	--duration-medium-max: 550ms;
+	--duration-slow-min: 730ms;
+	--duration-slow: 975ms;
+	--duration-slow-max: 1300ms;
+}
+
+@theme inline {
+	--transition-duration-fast-min: var(--duration-fast-min);
+	--transition-duration-fast: var(--duration-fast);
+	--transition-duration-fast-max: var(--duration-fast-max);
+	--transition-duration-medium-min: var(--duration-medium-min);
+	--transition-duration-medium: var(--duration-medium);
+	--transition-duration-medium-max: var(--duration-medium-max);
+	--transition-duration-slow-min: var(--duration-slow-min);
+	--transition-duration-slow: var(--duration-slow);
+	--transition-duration-slow-max: var(--duration-slow-max);
+}

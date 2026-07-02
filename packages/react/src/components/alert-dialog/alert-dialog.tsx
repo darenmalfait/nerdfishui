@@ -45,7 +45,7 @@ export function AlertDialogOverlay({
 		<AlertDialogPrimitive.Backdrop
 			data-slot="alert-dialog-overlay"
 			className={cn(
-				'fixed inset-0 bg-black/50 transition-all duration-200 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0',
+				'duration-fast fixed inset-0 bg-black/50 transition-all ease-out data-ending-style:opacity-0 data-starting-style:opacity-0',
 				className,
 			)}
 			{...props}
@@ -70,7 +70,7 @@ export function AlertDialogContent({
 					'bg-popover text-popover-contrast grid w-full sm:max-w-[calc(100%-2rem)]',
 					'fixed bottom-0 w-full sm:top-[50%] sm:bottom-auto sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
 					'rounded-container gap-friends p-friends border shadow-lg outline-none sm:max-w-128 sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
-					'duration-200',
+					'duration-fast',
 					'data-starting-style:translate-y-full data-starting-style:opacity-0',
 					'data-ending-style:translate-y-full data-ending-style:opacity-0',
 					'data-starting-style:sm:translate-y-[-50%] data-starting-style:sm:scale-95',
