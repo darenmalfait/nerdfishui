@@ -47,12 +47,12 @@ export function Toaster({ position = 'top-center', ...props }: ToasterProps) {
 						'[&_[data-icon]]:!p-best-friends [&_[data-icon]]:!rounded-[calc(theme(borderRadius.popover)-theme(padding.popover-compact))] [&_[data-icon]]:!ml-px [&_[data-icon]]:!flex [&_[data-icon]]:!size-auto [&_[data-icon]]:!items-center [&_[data-icon]]:!justify-center',
 					),
 					success:
-						'[&_[data-icon]]:!bg-success [&_[data-icon]]:!text-success-contrast !bg-success-background !text-success !border-success/10',
-					info: '[&_[data-icon]]:!bg-info [&_[data-icon]]:!text-info-contrast !bg-info-background !text-info !border-info/10',
+						'[&_[data-icon]]:!bg-success [&_[data-icon]]:!text-success-contrast  !text-success !border-success/10',
+					info: '[&_[data-icon]]:!bg-info [&_[data-icon]]:!text-info-contrast !text-info !border-info/10',
 					warning:
-						'[&_[data-icon]]:!bg-warning [&_[data-icon]]:!text-warning-contrast !bg-warning-background !text-warning !border-warning/10',
+						'[&_[data-icon]]:!bg-warning [&_[data-icon]]:!text-warning-contrast !text-warning !border-warning/10',
 					error:
-						'[&_[data-icon]]:!bg-destructive [&_[data-icon]]:!text-destructive-contrast !bg-destructive-background !text-destructive !border-destructive/10',
+						'[&_[data-icon]]:!bg-destructive [&_[data-icon]]:!text-destructive-contrast !text-destructive !border-destructive/10',
 
 					description: '!text-foreground-muted',
 
