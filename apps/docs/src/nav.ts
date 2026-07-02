@@ -28,6 +28,7 @@ export const docsNav: NavigationGroup[] = [
 			{ title: 'Radius', href: '/docs/radius/' },
 			{ title: 'Typography', href: '/docs/typography/' },
 			{ title: 'Duration', href: '/docs/duration/' },
+			{ title: 'Easing', href: '/docs/easing/' },
 		],
 	},
 	{

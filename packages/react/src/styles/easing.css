@@ -1,0 +1,7 @@
+:root {
+	--ease-standard: cubic-bezier(0.24, 1, 0.4, 1);
+}
+
+@theme inline {
+	--ease-standard: cubic-bezier(0.24, 1, 0.4, 1);
+}

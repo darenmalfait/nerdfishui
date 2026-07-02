@@ -152,7 +152,7 @@ export function NavigationMenuPositioner({
 				style={
 					{
 						'--duration': 'var(--duration-medium-min)',
-						'--easing': 'cubic-bezier(0.22, 1, 0.36, 1)',
+						'--easing': 'var(--ease-standard)',
 					} as CSSProperties
 				}
 				{...props}

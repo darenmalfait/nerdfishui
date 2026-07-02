@@ -102,7 +102,7 @@ export function ProgressCircle({
 					strokeDashoffset={offset}
 					strokeLinecap="round"
 					className={cn(
-						'text-primary duration-medium-min transition-all ease-in-out',
+						'text-primary duration-medium-min ease-standard transition-all',
 						indicatorClassName,
 					)}
 				/>

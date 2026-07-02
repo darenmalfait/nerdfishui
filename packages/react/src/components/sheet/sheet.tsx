@@ -61,7 +61,7 @@ function SheetBackdrop({ className, ...props }: SheetBackdropProps) {
 }
 
 export const sheetVariants = cva(
-	'bg-background data-[open]:animate-in data-[closed]:animate-out gap-friends fixed flex flex-col shadow-lg transition ease-in-out data-[closed]:duration-medium-min data-[open]:duration-medium-max',
+	'bg-background data-[open]:animate-in data-[closed]:animate-out gap-friends fixed flex flex-col shadow-lg transition ease-standard data-[closed]:duration-medium-min data-[open]:duration-medium-max',
 	{
 		variants: {
 			variant: {
