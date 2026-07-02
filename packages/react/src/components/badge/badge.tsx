@@ -158,8 +158,7 @@ const badgeButtonVariants = cva(
 )
 
 export interface BadgeProps
-	extends useRender.ComponentProps<'span'>,
-		VariantProps<typeof badgeVariants> {
+	extends useRender.ComponentProps<'span'>, VariantProps<typeof badgeVariants> {
 	dotClassName?: string
 	disabled?: boolean
 }
@@ -188,7 +187,8 @@ export function Badge({
 }
 
 export interface BadgeButtonProps
-	extends useRender.ComponentProps<'button'>,
+	extends
+		useRender.ComponentProps<'button'>,
 		VariantProps<typeof badgeButtonVariants> {}
 export function BadgeButton({
 	render,

@@ -30,8 +30,7 @@ export interface FilterFieldGroup<T = unknown> {
 
 // Union type for both flat and grouped field configurations
 export type FilterFieldsConfig<T = unknown> =
-	| FilterFieldConfig<T>[]
-	| FilterFieldGroup<T>[]
+	FilterFieldConfig<T>[] | FilterFieldGroup<T>[]
 
 export interface FilterFieldConfig<T = unknown> {
 	key?: string

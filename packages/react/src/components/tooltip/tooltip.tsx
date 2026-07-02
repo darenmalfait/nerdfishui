@@ -45,8 +45,9 @@ function TooltipArrow({
 	return <TooltipPrimitive.Arrow data-slot="tooltip-arrow" {...props} />
 }
 
-export interface TooltipContentProps
-	extends ComponentProps<typeof TooltipPrimitive.Popup> {
+export interface TooltipContentProps extends ComponentProps<
+	typeof TooltipPrimitive.Popup
+> {
 	align?: TooltipPrimitive.Positioner.Props['align']
 	side?: TooltipPrimitive.Positioner.Props['side']
 	sideOffset?: TooltipPrimitive.Positioner.Props['sideOffset']

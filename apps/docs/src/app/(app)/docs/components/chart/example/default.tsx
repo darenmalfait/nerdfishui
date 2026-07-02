@@ -12,7 +12,6 @@ import {
 	ChartContainer,
 	ChartTooltip,
 	ChartTooltipContent,
-	type CustomTooltipProps,
 } from '@nerdfish/react/chart'
 import { useMemo, useState } from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
@@ -198,7 +197,7 @@ export function ChartExample() {
 							}}
 						/>
 						<ChartTooltip
-							content={(props: CustomTooltipProps) => {
+							content={(props) => {
 								return (
 									<ChartTooltipContent
 										{...props}

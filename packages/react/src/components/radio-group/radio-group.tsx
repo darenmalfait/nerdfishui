@@ -41,7 +41,8 @@ const RadioGroupContext = createContext<{
 }>({ size: 'md' })
 
 export interface RadioGroupProps
-	extends ComponentProps<typeof RadioGroupPrimitive>,
+	extends
+		ComponentProps<typeof RadioGroupPrimitive>,
 		VariantProps<typeof radioItemVariants> {}
 export function RadioGroup({
 	className,
@@ -60,7 +61,8 @@ export function RadioGroup({
 }
 
 export interface RadioGroupItemProps
-	extends ComponentProps<typeof RadioPrimitive.Root>,
+	extends
+		ComponentProps<typeof RadioPrimitive.Root>,
 		VariantProps<typeof radioItemVariants> {}
 export function RadioGroupItem({
 	className,

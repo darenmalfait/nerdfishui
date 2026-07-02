@@ -196,7 +196,8 @@ export function Tabs({ className, ...props }: TabsProps) {
 }
 
 export interface TabsListProps
-	extends ComponentProps<typeof TabsPrimitive.List>,
+	extends
+		ComponentProps<typeof TabsPrimitive.List>,
 		VariantProps<typeof tabsListVariants> {}
 export function TabsList({
 	className,
@@ -234,7 +235,8 @@ export function TabsTrigger({ className, ...props }: TabsTriggerProps) {
 }
 
 export interface TabsContentProps
-	extends ComponentProps<typeof TabsPrimitive.Panel>,
+	extends
+		ComponentProps<typeof TabsPrimitive.Panel>,
 		VariantProps<typeof tabsContentVariants> {}
 export function TabsContent({
 	className,

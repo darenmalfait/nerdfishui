@@ -27,7 +27,8 @@ export const toggleVariants = cva(
 )
 
 export interface ToggleProps
-	extends ComponentProps<typeof TogglePrimitive>,
+	extends
+		ComponentProps<typeof TogglePrimitive>,
 		VariantProps<typeof toggleVariants> {}
 export function Toggle({ className, variant, size, ...props }: ToggleProps) {
 	return (

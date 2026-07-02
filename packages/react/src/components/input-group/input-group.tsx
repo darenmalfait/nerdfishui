@@ -65,8 +65,7 @@ export const inputGroupAddonVariants = cva(
 )
 
 export interface InputGroupAddonProps
-	extends ComponentProps<'div'>,
-		VariantProps<typeof inputGroupAddonVariants> {}
+	extends ComponentProps<'div'>, VariantProps<typeof inputGroupAddonVariants> {}
 export function InputGroupAddon({
 	className,
 	align = 'inline-start',

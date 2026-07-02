@@ -643,7 +643,8 @@ function FilterInput<T = unknown>({
 }
 
 interface FilterRemoveButtonProps
-	extends ButtonHTMLAttributes<HTMLButtonElement>,
+	extends
+		ButtonHTMLAttributes<HTMLButtonElement>,
 		VariantProps<typeof filterRemoveButtonVariants> {
 	icon?: ReactNode
 }

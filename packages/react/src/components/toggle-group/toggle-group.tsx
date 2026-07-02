@@ -22,7 +22,8 @@ const ToggleGroupContext = createContext<
 })
 
 export interface ToggleGroupProps
-	extends ComponentProps<typeof ToggleGroupPrimitive>,
+	extends
+		ComponentProps<typeof ToggleGroupPrimitive>,
 		VariantProps<typeof toggleVariants> {
 	spacing?: number
 }
@@ -57,7 +58,8 @@ export function ToggleGroup({
 }
 
 export interface ToggleGroupItemProps
-	extends ComponentProps<typeof TogglePrimitive>,
+	extends
+		ComponentProps<typeof TogglePrimitive>,
 		VariantProps<typeof toggleVariants> {
 	value: string
 }

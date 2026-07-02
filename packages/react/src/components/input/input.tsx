@@ -45,8 +45,7 @@ export type InputVariant = VariantProps<typeof inputVariants>['variant']
 export type InputVariants = VariantProps<typeof inputVariants>
 
 export interface InputProps
-	extends Omit<React.ComponentProps<'input'>, 'size'>,
-		InputVariants {}
+	extends Omit<React.ComponentProps<'input'>, 'size'>, InputVariants {}
 
 export function Input({
 	className,

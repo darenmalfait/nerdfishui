@@ -3,8 +3,7 @@ import { type ComponentProps } from 'react'
 import { inputVariants, type InputVariants } from '../input/input'
 
 export interface TextareaProps
-	extends ComponentProps<'textarea'>,
-		InputVariants {}
+	extends ComponentProps<'textarea'>, InputVariants {}
 export function Textarea({
 	className,
 	size,

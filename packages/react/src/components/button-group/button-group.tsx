@@ -21,7 +21,8 @@ export const buttonGroupVariants = cva(
 )
 
 export interface ButtonGroupProps
-	extends useRender.ComponentProps<'div'>,
+	extends
+		useRender.ComponentProps<'div'>,
 		VariantProps<typeof buttonGroupVariants> {}
 export function ButtonGroup({
 	className,

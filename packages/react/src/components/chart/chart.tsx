@@ -15,7 +15,6 @@ import * as RechartsPrimitive from 'recharts'
 import { type LegendPayload } from 'recharts/types/component/DefaultLegendContent'
 import {
 	type NameType,
-	type Payload,
 	type ValueType,
 } from 'recharts/types/component/DefaultTooltipContent'
 import { type Props as LegendProps } from 'recharts/types/component/Legend'
@@ -45,17 +44,6 @@ export type CustomTooltipProps = TooltipContentProps<ValueType, NameType> & {
 	indicator?: 'line' | 'dot' | 'dashed'
 	nameKey?: string
 	labelKey?: string
-	labelFormatter?: (
-		label: TooltipContentProps<number, string>['label'],
-		payload: TooltipContentProps<number, string>['payload'],
-	) => ReactNode
-	formatter?: (
-		value: number | string,
-		name: string,
-		item: Payload<number | string, string>,
-		index: number,
-		payload: ReadonlyArray<Payload<number | string, string>>,
-	) => ReactNode
 	labelClassName?: string
 	color?: string
 }
@@ -234,13 +222,13 @@ export function ChartTooltipContent({
 
 					return (
 						<div
-							key={item.dataKey}
+							key={`${key}-${index}`}
 							className={cn(
 								'[&>svg]:text-foreground-muted gap-best-friends flex w-full flex-wrap items-stretch [&>svg]:h-2.5 [&>svg]:w-2.5',
 								indicator === 'dot' && 'items-center',
 							)}
 						>
-							{formatter && item?.value !== undefined && item.name ? (
+							{formatter && item.value !== undefined && item.name ? (
 								formatter(item.value, item.name, item, index, item.payload)
 							) : (
 								<>

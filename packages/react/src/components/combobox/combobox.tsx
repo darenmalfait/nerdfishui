@@ -33,7 +33,8 @@ export function ComboboxValue({ ...props }: ComboboxValueProps) {
 
 // Input - The input element for typing
 export interface ComboboxInputProps
-	extends Omit<ComponentProps<typeof ComboboxPrimitive.Input>, 'size'>,
+	extends
+		Omit<ComponentProps<typeof ComboboxPrimitive.Input>, 'size'>,
 		VariantProps<typeof inputVariants> {}
 export function ComboboxInput({
 	className,
@@ -81,8 +82,9 @@ export function ComboboxBackdrop({ ...props }: ComboboxBackdropProps) {
 	return <ComboboxPrimitive.Backdrop data-slot="combobox-backdrop" {...props} />
 }
 
-export interface ComboboxContentProps
-	extends ComponentProps<typeof ComboboxPrimitive.Popup> {
+export interface ComboboxContentProps extends ComponentProps<
+	typeof ComboboxPrimitive.Popup
+> {
 	align?: ComboboxPrimitive.Positioner.Props['align']
 	sideOffset?: ComboboxPrimitive.Positioner.Props['sideOffset']
 	alignOffset?: ComboboxPrimitive.Positioner.Props['alignOffset']
@@ -353,7 +355,8 @@ export function ComboboxTrigger({ className, ...props }: ComboboxTriggerProps) {
 
 // Chips - A container for selected items as chips (for multi-select)
 export interface ComboboxChipsProps
-	extends ComponentProps<typeof ComboboxPrimitive.Chips>,
+	extends
+		ComponentProps<typeof ComboboxPrimitive.Chips>,
 		VariantProps<typeof inputVariants> {}
 export function ComboboxChips({
 	className,

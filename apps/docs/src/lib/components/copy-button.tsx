@@ -59,8 +59,9 @@ export function CopyButton({
 	)
 }
 
-interface CopyNpmCommandButtonProps
-	extends ComponentPropsWithoutRef<typeof DropdownMenuTrigger> {
+interface CopyNpmCommandButtonProps extends ComponentPropsWithoutRef<
+	typeof DropdownMenuTrigger
+> {
 	commands: Required<NpmCommands>
 }
 

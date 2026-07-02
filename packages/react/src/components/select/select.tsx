@@ -44,8 +44,7 @@ export function SelectValue({ className, ...props }: SelectValueProps) {
 }
 
 export interface SelectTriggerProps
-	extends ComponentProps<typeof SelectPrimitive.Trigger>,
-		InputVariants {}
+	extends ComponentProps<typeof SelectPrimitive.Trigger>, InputVariants {}
 
 export function SelectTrigger({
 	className,

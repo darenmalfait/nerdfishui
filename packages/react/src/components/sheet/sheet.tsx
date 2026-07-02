@@ -140,7 +140,8 @@ export const sheetVariants = cva(
 )
 
 export interface SheetContentProps
-	extends ComponentProps<typeof SheetPrimitive.Popup>,
+	extends
+		ComponentProps<typeof SheetPrimitive.Popup>,
 		VariantProps<typeof sheetVariants> {}
 export function SheetContent({
 	className,

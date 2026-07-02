@@ -74,7 +74,8 @@ export const buttonVariants = cva(
 )
 
 export interface ButtonProps
-	extends useRender.ComponentProps<'button'>,
+	extends
+		useRender.ComponentProps<'button'>,
 		VariantProps<typeof buttonVariants> {}
 
 export function Button({

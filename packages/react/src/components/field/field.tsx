@@ -82,8 +82,7 @@ export const fieldVariants = cva(
 )
 
 export interface FieldProps
-	extends ComponentProps<'div'>,
-		VariantProps<typeof fieldVariants> {}
+	extends ComponentProps<'div'>, VariantProps<typeof fieldVariants> {}
 export function Field({
 	className,
 	orientation = 'vertical',

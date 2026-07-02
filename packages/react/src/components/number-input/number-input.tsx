@@ -22,7 +22,8 @@ const useNumberInput = () => {
 }
 
 export interface NumberInputProps
-	extends ComponentProps<typeof NumberInputPrimitive.Root>,
+	extends
+		ComponentProps<typeof NumberInputPrimitive.Root>,
 		VariantProps<typeof inputVariants> {}
 export function NumberInput({
 	id,

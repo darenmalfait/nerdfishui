@@ -30,8 +30,9 @@ export function AccordionItem({ className, ...props }: AccordionItemProps) {
 	)
 }
 
-export interface AccordionTriggerProps
-	extends ComponentProps<typeof AccordionPrimitive.Trigger> {
+export interface AccordionTriggerProps extends ComponentProps<
+	typeof AccordionPrimitive.Trigger
+> {
 	hideIcon?: boolean
 }
 export function AccordionTrigger({

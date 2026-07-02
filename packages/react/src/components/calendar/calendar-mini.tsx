@@ -138,8 +138,7 @@ export function CalendarMini({
 	)
 }
 
-export interface CalendarMiniNavigationProps
-	extends useRender.ComponentProps<'button'> {
+export interface CalendarMiniNavigationProps extends useRender.ComponentProps<'button'> {
 	direction: 'prev' | 'next'
 }
 
@@ -170,8 +169,10 @@ export const CalendarMiniNavigation = ({
 	})
 }
 
-export interface CalendarMiniDaysProps
-	extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
+export interface CalendarMiniDaysProps extends Omit<
+	HTMLAttributes<HTMLDivElement>,
+	'children'
+> {
 	children: (date: Date) => ReactNode
 }
 export function CalendarMiniDays({

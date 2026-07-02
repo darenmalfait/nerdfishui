@@ -70,7 +70,8 @@ const switchThumbVariants = cva<{
 )
 
 export interface SwitchThumbProps
-	extends ComponentProps<typeof SwitchPrimitive.Thumb>,
+	extends
+		ComponentProps<typeof SwitchPrimitive.Thumb>,
 		Partial<VariantProps<typeof switchThumbVariants>> {}
 export function SwitchThumb({ className, size, ...props }: SwitchThumbProps) {
 	const context = useSwitchContext()
@@ -86,7 +87,8 @@ export function SwitchThumb({ className, size, ...props }: SwitchThumbProps) {
 }
 
 export interface SwitchProps
-	extends ComponentProps<typeof SwitchPrimitive.Root>,
+	extends
+		ComponentProps<typeof SwitchPrimitive.Root>,
 		VariantProps<typeof switchVariants> {}
 export function Switch({
 	className,

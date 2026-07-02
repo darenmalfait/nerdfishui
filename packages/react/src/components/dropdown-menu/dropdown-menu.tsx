@@ -30,8 +30,9 @@ export function DropdownMenuPositioner({
 	return <BaseMenu.Positioner data-slot="dropdown-menu-positioner" {...props} />
 }
 
-export interface DropdownMenuContentProps
-	extends ComponentProps<typeof BaseMenu.Popup> {
+export interface DropdownMenuContentProps extends ComponentProps<
+	typeof BaseMenu.Popup
+> {
 	align?: BaseMenu.Positioner.Props['align']
 	sideOffset?: BaseMenu.Positioner.Props['sideOffset']
 	side?: BaseMenu.Positioner.Props['side']
@@ -70,8 +71,9 @@ export function DropdownMenuGroup({ ...props }: DropdownMenuGroupProps) {
 	return <BaseMenu.Group data-slot="dropdown-menu-group" {...props} />
 }
 
-export interface DropdownMenuItemProps
-	extends ComponentProps<typeof BaseMenu.Item> {
+export interface DropdownMenuItemProps extends ComponentProps<
+	typeof BaseMenu.Item
+> {
 	inset?: boolean
 	variant?: 'default' | 'destructive'
 }
@@ -127,8 +129,9 @@ export function DropdownMenuSeparator({
 	)
 }
 
-export interface DropdownMenuLabelProps
-	extends ComponentProps<typeof BaseMenu.GroupLabel> {
+export interface DropdownMenuLabelProps extends ComponentProps<
+	typeof BaseMenu.GroupLabel
+> {
 	inset?: boolean
 }
 export function DropdownMenuLabel({
@@ -225,8 +228,9 @@ export function DropdownMenuSub({ ...props }: DropdownMenuSubProps) {
 	return <BaseMenu.SubmenuRoot data-slot="dropdown-menu-sub" {...props} />
 }
 
-export interface DropdownMenuSubTriggerProps
-	extends ComponentProps<typeof BaseMenu.SubmenuTrigger> {
+export interface DropdownMenuSubTriggerProps extends ComponentProps<
+	typeof BaseMenu.SubmenuTrigger
+> {
 	inset?: boolean
 }
 export function DropdownMenuSubTrigger({
@@ -254,8 +258,9 @@ export function DropdownMenuSubTrigger({
 	)
 }
 
-export interface DropdownMenuSubContentProps
-	extends ComponentProps<typeof BaseMenu.Popup> {
+export interface DropdownMenuSubContentProps extends ComponentProps<
+	typeof BaseMenu.Popup
+> {
 	align?: BaseMenu.Positioner.Props['align']
 	sideOffset?: BaseMenu.Positioner.Props['sideOffset']
 }

@@ -90,8 +90,7 @@ export const dateInputStyles = `
 `
 
 export interface DateInputProps
-	extends DateInputPropsRa,
-		VariantProps<typeof inputVariants> {
+	extends DateInputPropsRa, VariantProps<typeof inputVariants> {
 	className?: string
 }
 

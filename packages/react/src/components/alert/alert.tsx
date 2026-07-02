@@ -23,8 +23,7 @@ const alertVariants = cva(
 )
 
 export interface AlertProps
-	extends ComponentProps<'div'>,
-		VariantProps<typeof alertVariants> {}
+	extends ComponentProps<'div'>, VariantProps<typeof alertVariants> {}
 export function Alert({ className, variant, ...props }: AlertProps) {
 	return (
 		<div
