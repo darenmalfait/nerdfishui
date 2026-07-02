@@ -1,5 +1,23 @@
 # @nerdfish/react
 
+## 1.3.0
+
+### Minor Changes
+
+- add new duration tokens to theme
+
+- feat(global): add more color utils
+
+- Improve CodeBlock and add to docs
+
+- Add easing tokens
+
+### Patch Changes
+
+- bump base-ui version
+
+- color scheme changes
+
 ## 1.2.1
 
 ### Patch Changes
