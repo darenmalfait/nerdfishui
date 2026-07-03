@@ -1,0 +1,39 @@
+---
+description: Core TypeScript, React, and Next.js standards for nerdfishui
+alwaysApply: true
+---
+
+# Project standards
+
+Monorepo: `packages/react` (`@nerdfish/react`), `apps/docs`, `packages/utils` (`@nerdfish/utils`).
+
+## Stack
+
+- **Components**: `@nerdfish/react` — built on `@base-ui/react`, styled with Tailwind v4
+- **Utilities**: `cn`, `cva` from `@nerdfish/utils/class`
+- **Styles**: `@nerdfish/react/styles/global.css` — semantic tokens, not generic Tailwind/shadcn aliases
+- **Docs**: `apps/docs` — MDX pages with live examples importing `@nerdfish/react/*`
+
+Compose from existing `@nerdfish/react` primitives (`button`, `dialog`, `item`, `field`, etc.) before adding new ones.
+
+## Code style
+
+- Functional components with `function` keyword; no classes
+- Named exports; lowercase-dash directories (`components/attachment`)
+- Prefer interfaces over types; avoid enums — use maps
+- Concise, declarative TypeScript; descriptive names (`isLoading`, `hasError`)
+- File order: types → variants → component → subcomponents
+
+## React & Next.js
+
+- Favor Server Components; minimize `'use client'`, `useEffect`, `setState`
+- `'use client'` only for Web APIs or interactive leaf components
+- Wrap client components in `Suspense` with fallback
+- Use Zod for input validation; `next-safe-action` for server actions
+- Optimize Web Vitals (LCP, CLS, INP)
+
+## UI
+
+- Use semantic spacing/color/radius tokens — see `design-tokens.mdc`
+- Mobile-first responsive design
+- Import components: `import { Button } from '@nerdfish/react/button'`

@@ -1,0 +1,58 @@
+---
+description: Add or update @nerdfish/react components and their docs
+globs: packages/react/src/components/**/*.tsx,apps/docs/src/app/(app)/docs/components/**/*
+alwaysApply: false
+---
+
+# React component checklist
+
+Reference implementations: `item`, `attachment`, `empty`.
+
+## File structure
+
+```
+packages/react/src/components/{name}/{name}.tsx
+apps/docs/src/app/(app)/docs/components/{name}/
+  page.mdx
+  example/default.tsx
+  example/index.ts
+```
+
+## Component code
+
+- Import `cn`, `cva`, `VariantProps` from `@nerdfish/utils/class`
+- Use `@base-ui/react` (`useRender`, `mergeProps`) for polymorphic parts — see `breadcrumb`, `button`
+- Relative imports for sibling components (`../button/button`), never `@/`
+- Export a named `*Props` type per subcomponent (`ComponentProps<'div'>`, `useRender.ComponentProps<'button'>`, etc.)
+- Use `function` declarations, not arrow exports
+- Add `data-slot="{name}-{part}"` on every part; root gets `group/{name}` for child targeting
+- Variants via `cva` with `defaultVariants`; compose with `cn(variants({ ... }), className)`
+- Only add `'use client'` when the file needs client APIs (most primitives omit it)
+
+## package.json export
+
+Add alphabetically to `packages/react/package.json` exports:
+
+```json
+"./{name}": "./src/components/{name}/{name}.tsx"
+```
+
+Run `pnpm build` in `packages/react` so docs resolve `@nerdfish/react/{name}`.
+
+## Docs
+
+1. `page.mdx` — `DocsPageHeader` + `ComponentExample` sections
+2. `example/*.tsx` — `'use client'`, import from `@nerdfish/react/{name}`
+3. `example/index.ts` — re-export examples
+4. `apps/docs/src/app/(app)/docs/components/component-examples.tsx` — add export
+5. `apps/docs/src/nav.ts` — add link (set `status: 'new'` for new components)
+
+## Styling
+
+Follow `design-tokens.mdc`. Use semantic `@nerdfish/react` tokens — never raw Tailwind spacing (`gap-2`, `px-2.5`) or generic color aliases (`bg-card`, `text-muted-foreground`).
+
+## CSS utilities
+
+New animation utilities → `packages/react/src/styles/animations.css`
+Layout/misc utilities → `packages/react/src/styles/utilities.css`
+Import new partials from `global.css`; don't inline large blocks in `global.css`.

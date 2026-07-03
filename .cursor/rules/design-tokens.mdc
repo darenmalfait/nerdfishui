@@ -1,0 +1,69 @@
+---
+description:
+  Semantic spacing, color, radius, and motion tokens for @nerdfish/react
+globs: packages/react/**/*.tsx,packages/react/**/*.css,apps/docs/**/*.tsx
+alwaysApply: false
+---
+
+# Design tokens
+
+Defined in `packages/react/src/styles/global.css` (+ `duration.css`,
+`easing.css`, `animations.css`, `utilities.css`).
+
+## Spacing — prefer semantic names over numeric Tailwind
+
+| Class                       | ~Size | Use for                       |
+| --------------------------- | ----- | ----------------------------- |
+| `bff` / `p-bff` / `gap-bff` | 4px   | Tight gaps, xs padding        |
+| `best-friends`              | 8px   | sm gaps/padding, icon spacing |
+| `friends`                   | 16px  | default gaps/padding          |
+| `casual`                    | 24px  | section spacing               |
+| `acquaintances`             | 64px  | large layout gaps             |
+
+Size scale in components: `xs` → bff, `sm` → best-friends, `default`/`md` →
+friends.
+
+```tsx
+// ❌ raw Tailwind
+'gap-2 px-2.5 py-2 mt-0.5'
+
+// ✅ semantic
+'gap-best-friends px-best-friends py-best-friends mt-bff'
+```
+
+## Colors — use semantic tokens
+
+| Avoid                   | Use                               |
+| ----------------------- | --------------------------------- |
+| `bg-card`               | `bg-background-surface`           |
+| `bg-muted`              | `bg-background-muted`             |
+| `text-muted-foreground` | `text-foreground-muted`           |
+| `text-foreground`       | `text-foreground` ✓               |
+| `border` (alone)        | `border-border`                   |
+| `bg-destructive/10`     | `bg-destructive-background-muted` |
+| `text-destructive/80`   | `text-destructive-muted`          |
+
+Status colors: `destructive`, `success`, `info`, `warning` each have `-muted`,
+`-contrast`, `-background`, `-background-muted` variants.
+
+## Radius
+
+`rounded-compact` (8px) · `rounded-base` (12px) · `rounded-container` (16px) ·
+`rounded-page` (32px)
+
+## Focus & motion
+
+```tsx
+'outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]'
+'transition-[color,box-shadow] duration-fast'
+```
+
+Durations: `duration-fast-min`, `duration-fast`, `duration-fast-max`,
+`duration-medium-*`, `duration-slow-*` Easing: `ease-standard`
+
+## Custom utilities
+
+- `no-scrollbar` — hide scrollbars (not `scrollbar-none`)
+- `shimmer`, `shimmer-once` — text loading state (`animations.css`)
+- `scroll-fade-x`, `scroll-fade-y` — scroll edge fades (`animations.css`)
+- `bg-blurred`, `extend-touch-target`, `container` (`utilities.css`)
