@@ -1,0 +1,71 @@
+import { AttachmentExample } from './example/default'
+import { AttachmentStatesExample } from './example/states'
+import { AttachmentSizesExample } from './example/sizes'
+import { AttachmentGroupExample } from './example/group'
+import { AttachmentTriggerExample } from './example/trigger'
+
+<DocsPageHeader
+	title="Attachment"
+	description="Display file and image attachments with media, metadata, upload states, and actions."
+	githubPath={{
+		package: 'react',
+		path: 'components/attachment/attachment.tsx',
+	}}
+/>
+
+<ComponentExample component={AttachmentExample} name="default" />
+
+## Usage
+
+```tsx
+import {
+	Attachment,
+	AttachmentAction,
+	AttachmentActions,
+	AttachmentContent,
+	AttachmentDescription,
+	AttachmentMedia,
+	AttachmentTitle,
+} from '@nerdfish/react/attachment'
+```
+
+```tsx
+<Attachment>
+	<AttachmentMedia>
+		<FileTextIcon />
+	</AttachmentMedia>
+	<AttachmentContent>
+		<AttachmentTitle>sales-dashboard.pdf</AttachmentTitle>
+		<AttachmentDescription>PDF · 2.4 MB</AttachmentDescription>
+	</AttachmentContent>
+	<AttachmentActions>
+		<AttachmentAction aria-label="Remove sales-dashboard.pdf">
+			<XIcon />
+		</AttachmentAction>
+	</AttachmentActions>
+</Attachment>
+```
+
+## States
+
+Set `state` to reflect the upload lifecycle. `uploading` and `processing` shimmer the title, and `error` switches to a destructive treatment.
+
+<ComponentExample component={AttachmentStatesExample} name="states" />
+
+## Sizes
+
+Use `size` to switch between `default`, `sm`, and `xs`.
+
+<ComponentExample component={AttachmentSizesExample} name="sizes" />
+
+## Group
+
+Wrap attachments in `AttachmentGroup` for a horizontally scrollable, snapping row with an edge fade.
+
+<ComponentExample component={AttachmentGroupExample} name="group" />
+
+## Trigger
+
+Add an `AttachmentTrigger` to make the whole card open a link or dialog. It fills the card behind the actions, so the actions stay clickable.
+
+<ComponentExample component={AttachmentTriggerExample} name="trigger" />

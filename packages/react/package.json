@@ -33,6 +33,7 @@
     "./alert": "./src/components/alert/alert.tsx",
     "./alert-dialog": "./src/components/alert-dialog/alert-dialog.tsx",
     "./aspect-ratio": "./src/components/aspect-ratio/aspect-ratio.tsx",
+    "./attachment": "./src/components/attachment/attachment.tsx",
     "./avatar": "./src/components/avatar/avatar.tsx",
     "./badge": "./src/components/badge/badge.tsx",
     "./button-group": "./src/components/button-group/button-group.tsx",

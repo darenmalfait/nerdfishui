@@ -35,6 +35,11 @@ export const docsNav: NavigationGroup[] = [
 		title: 'Layout',
 		links: [
 			{ title: 'Aspect Ratio', href: '/docs/components/aspect-ratio/' },
+			{
+				title: 'Attachment',
+				href: '/docs/components/attachment/',
+				status: 'new',
+			},
 			{ title: 'Card', href: '/docs/components/card/' },
 			{ title: 'Empty', href: '/docs/components/empty/' },
 			{ title: 'Item', href: '/docs/components/item/', status: 'new' },
