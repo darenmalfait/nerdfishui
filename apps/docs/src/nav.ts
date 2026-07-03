@@ -27,8 +27,8 @@ export const docsNav: NavigationGroup[] = [
 			{ title: 'Spacing', href: '/docs/spacing/' },
 			{ title: 'Radius', href: '/docs/radius/' },
 			{ title: 'Typography', href: '/docs/typography/' },
-			{ title: 'Duration', href: '/docs/duration/' },
-			{ title: 'Easing', href: '/docs/easing/' },
+			{ title: 'Duration', href: '/docs/duration/', status: 'new' },
+			{ title: 'Easing', href: '/docs/easing/', status: 'new' },
 		],
 	},
 	{
@@ -42,14 +42,10 @@ export const docsNav: NavigationGroup[] = [
 			},
 			{ title: 'Card', href: '/docs/components/card/' },
 			{ title: 'Empty', href: '/docs/components/empty/' },
-			{ title: 'Item', href: '/docs/components/item/', status: 'new' },
+			{ title: 'Item', href: '/docs/components/item/' },
 			{ title: 'Separator', href: '/docs/components/separator/' },
 			{ title: 'Tabs', href: '/docs/components/tabs/' },
-			{
-				title: 'Marquee',
-				href: '/docs/components/marquee/',
-				status: 'updated',
-			},
+			{ title: 'Marquee', href: '/docs/components/marquee/' },
 		],
 	},
 	{
@@ -60,7 +56,11 @@ export const docsNav: NavigationGroup[] = [
 			{ title: 'Date Picker', href: '/docs/components/date-picker/' },
 			{ title: 'Field', href: '/docs/components/field/' },
 			{ title: 'Filters', href: '/docs/components/filters/' },
-			{ title: 'Input', href: '/docs/components/input/' },
+			{
+				title: 'Input',
+				href: '/docs/components/input/',
+				status: 'updated',
+			},
 			{ title: 'Input Group', href: '/docs/components/input-group/' },
 			{ title: 'InputOTP', href: '/docs/components/input-otp/' },
 			{ title: 'Label', href: '/docs/components/label/' },
@@ -68,22 +68,10 @@ export const docsNav: NavigationGroup[] = [
 			{ title: 'Phone Input', href: '/docs/components/phone-input/' },
 			{ title: 'Radio Group', href: '/docs/components/radio-group/' },
 			{ title: 'Select', href: '/docs/components/select/' },
-			{
-				title: 'Slider',
-				href: '/docs/components/slider/',
-				status: 'updated',
-			},
+			{ title: 'Slider', href: '/docs/components/slider/' },
 			{ title: 'Switch', href: '/docs/components/switch/' },
-			{
-				title: 'Toggle',
-				href: '/docs/components/toggle/',
-				status: 'updated',
-			},
-			{
-				title: 'Toggle Group',
-				href: '/docs/components/toggle-group/',
-				status: 'new',
-			},
+			{ title: 'Toggle', href: '/docs/components/toggle/' },
+			{ title: 'Toggle Group', href: '/docs/components/toggle-group/' },
 			{ title: 'Textarea', href: '/docs/components/textarea/' },
 		],
 	},
@@ -137,11 +125,7 @@ export const docsNav: NavigationGroup[] = [
 	{
 		title: 'Data Display',
 		links: [
-			{
-				title: 'Accordion',
-				href: '/docs/components/accordion/',
-				status: 'updated',
-			},
+			{ title: 'Accordion', href: '/docs/components/accordion/' },
 			{
 				title: 'Alert',
 				href: '/docs/components/alert/',
@@ -155,20 +139,12 @@ export const docsNav: NavigationGroup[] = [
 				title: 'Badge',
 				href: '/docs/components/badge/',
 			},
-			{
-				title: 'Calendar',
-				href: '/docs/components/calendar/',
-				status: 'updated',
-			},
+			{ title: 'Calendar', href: '/docs/components/calendar/' },
 			{
 				title: 'Card',
 				href: '/docs/components/card/',
 			},
-			{
-				title: 'Chart',
-				href: '/docs/components/chart/',
-				status: 'new',
-			},
+			{ title: 'Chart', href: '/docs/components/chart/' },
 			{
 				title: 'Code Block',
 				href: '/docs/components/code-block/',
@@ -182,25 +158,13 @@ export const docsNav: NavigationGroup[] = [
 				title: 'Drawer',
 				href: '/docs/components/drawer/',
 			},
-			{
-				title: 'Empty',
-				href: '/docs/components/empty/',
-				status: 'new',
-			},
-			{
-				title: 'Kbd',
-				href: '/docs/components/kbd/',
-				status: 'new',
-			},
+			{ title: 'Empty', href: '/docs/components/empty/' },
+			{ title: 'Kbd', href: '/docs/components/kbd/' },
 			{
 				title: 'Popover',
 				href: '/docs/components/popover/',
 			},
-			{
-				title: 'Progress',
-				href: '/docs/components/progress/',
-				status: 'new',
-			},
+			{ title: 'Progress', href: '/docs/components/progress/' },
 			{
 				title: 'Sheet',
 				href: '/docs/components/sheet/',
