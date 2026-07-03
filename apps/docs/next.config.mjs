@@ -9,6 +9,7 @@ const nextConfig = {
 		ignoreBuildErrors: true,
 	},
 	trailingSlash: true,
+	transpilePackages: ['@nerdfish/react'],
 
 	/* We already do linting on GH actions */
 	eslint: {

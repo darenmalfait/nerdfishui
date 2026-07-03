@@ -1,0 +1,37 @@
+import { BubbleExample } from './example/default'
+import { BubbleGroupExample } from './example/group'
+
+<DocsPageHeader
+	title="Bubble"
+	description="Render the visible message surface inside a Message row with variants for sender, receiver, and status treatments."
+	githubPath={{
+		package: 'react',
+		path: 'components/bubble/bubble.tsx',
+	}}
+/>
+
+<ComponentExample component={BubbleExample} name="default" />
+
+## Usage
+
+```tsx
+import { Bubble, BubbleContent } from '@nerdfish/react/bubble'
+```
+
+```tsx
+<Bubble variant="muted">
+	<BubbleContent>How can I help you today?</BubbleContent>
+</Bubble>
+```
+
+Use `Bubble` inside `MessageContent`. Pair with `Message` for avatar, alignment, header, and footer layout.
+
+## Variants
+
+`default` is for the active sender. `muted` is for the other side. `secondary`, `tinted`, `outline`, `ghost`, and `destructive` cover status and low-emphasis surfaces.
+
+## Group
+
+Stack multiple bubbles with `BubbleGroup` and attach reactions with `BubbleReactions`.
+
+<ComponentExample component={BubbleGroupExample} name="group" />

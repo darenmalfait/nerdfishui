@@ -1,0 +1,55 @@
+import { MessageExample } from './example/default'
+import { MessageGroupExample } from './example/group'
+import { MessageHeaderFooterExample } from './example/header-footer'
+
+<DocsPageHeader
+	title="Message"
+	description="Lay out a single message in a conversation with avatar, alignment, header, and footer slots."
+	githubPath={{
+		package: 'react',
+		path: 'components/message/message.tsx',
+	}}
+/>
+
+<ComponentExample component={MessageExample} name="default" />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from '@nerdfish/react/avatar'
+import { Bubble, BubbleContent } from '@nerdfish/react/bubble'
+import { Message, MessageAvatar, MessageContent } from '@nerdfish/react/message'
+```
+
+```tsx
+<Message>
+	<MessageAvatar>
+		<Avatar>
+			<AvatarImage
+				src="https://avatars.githubusercontent.com/u/56068461?v=4"
+				alt="@nerdfish"
+			/>
+			<AvatarFallback>NF</AvatarFallback>
+		</Avatar>
+	</MessageAvatar>
+	<MessageContent>
+		<Bubble>
+			<BubbleContent>How can I help you today?</BubbleContent>
+		</Bubble>
+	</MessageContent>
+</Message>
+```
+
+`Message` owns the row layout — avatar, alignment, header, and footer. Render the visible message surface inside it with `Bubble`.
+
+## Group
+
+Use `MessageGroup` to stack consecutive messages from the same sender. Render an empty `MessageAvatar` on earlier messages to keep alignment with the avatar on the last one.
+
+<ComponentExample component={MessageGroupExample} name="group" />
+
+## Header and Footer
+
+Use `MessageHeader` for a sender name and `MessageFooter` for metadata such as delivery or read status.
+
+<ComponentExample component={MessageHeaderFooterExample} name="header-footer" />

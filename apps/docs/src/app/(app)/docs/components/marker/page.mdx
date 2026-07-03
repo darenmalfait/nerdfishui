@@ -1,0 +1,29 @@
+import { MarkerExample } from './example/default'
+
+<DocsPageHeader
+	title="Marker"
+	description="Inline status, separators, and timeline markers for chat transcripts."
+	githubPath={{
+		package: 'react',
+		path: 'components/marker/marker.tsx',
+	}}
+/>
+
+<ComponentExample component={MarkerExample} name="default" />
+
+## Usage
+
+```tsx
+import { Marker, MarkerContent, MarkerIcon } from '@nerdfish/react/marker'
+```
+
+```tsx
+<Marker role="status">
+	<MarkerIcon>
+		<Spinner />
+	</MarkerIcon>
+	<MarkerContent>Checking the logs...</MarkerContent>
+</Marker>
+```
+
+Use `variant="separator"` for date dividers and `variant="border"` for section labels. Give status markers `role="status"` so assistive tech announces updates.

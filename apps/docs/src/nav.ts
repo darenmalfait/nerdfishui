@@ -35,17 +35,37 @@ export const docsNav: NavigationGroup[] = [
 		title: 'Layout',
 		links: [
 			{ title: 'Aspect Ratio', href: '/docs/components/aspect-ratio/' },
-			{
-				title: 'Attachment',
-				href: '/docs/components/attachment/',
-				status: 'new',
-			},
 			{ title: 'Card', href: '/docs/components/card/' },
 			{ title: 'Empty', href: '/docs/components/empty/' },
 			{ title: 'Item', href: '/docs/components/item/' },
 			{ title: 'Separator', href: '/docs/components/separator/' },
 			{ title: 'Tabs', href: '/docs/components/tabs/' },
 			{ title: 'Marquee', href: '/docs/components/marquee/' },
+		],
+	},
+	{
+		title: 'Chat',
+		links: [
+			{
+				title: 'Attachment',
+				href: '/docs/components/attachment/',
+				status: 'new',
+			},
+			{
+				title: 'Bubble',
+				href: '/docs/components/bubble/',
+				status: 'new',
+			},
+			{
+				title: 'Marker',
+				href: '/docs/components/marker/',
+				status: 'new',
+			},
+			{
+				title: 'Message',
+				href: '/docs/components/message/',
+				status: 'new',
+			},
 		],
 	},
 	{
