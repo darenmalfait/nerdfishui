@@ -26,7 +26,7 @@
 	--accent-contrast: oklch(1 0 0);
 	--accent-muted: rgba(5, 54, 89, 0.1);
 
-	--brand: oklch(0.699 0.1734 28.12);
+	--brand: oklch(0.5617 0.230495 29.233885);
 	--brand-contrast: oklch(1 0 0);
 
 	--destructive: oklch(0.5858 0.2258 21.26);
@@ -91,7 +91,7 @@
 	--accent-contrast: oklch(0.1798 0.0158 227.42);
 	--accent-muted: rgba(223, 226, 229, 0.2);
 
-	--brand: oklch(0.6508 0.2126 27.18);
+	--brand: oklch(0.6401 0.1933 41.82);
 	--brand-contrast: oklch(1 0 0);
 
 	--destructive: oklch(0.6393 0.2215 20.4);
