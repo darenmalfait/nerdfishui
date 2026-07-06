@@ -1,5 +1,17 @@
 # @nerdfish/react
 
+## 1.4.0
+
+### Minor Changes
+
+- Add new Attachment component
+
+- Added multiple Chat components
+
+### Patch Changes
+
+- adjust accent color tint
+
 ## 1.3.0
 
 ### Minor Changes
