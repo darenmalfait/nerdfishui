@@ -23,7 +23,7 @@ export default function Homepage() {
 			<div className="container mx-auto flex max-w-2xl flex-1 items-center">
 				<div>
 					<Logo className="mb-friends h-8" aria-label="Nerdfish UI" />
-					<h1 className="typography-heading mb-casual">
+					<h1 className="typography-heading mb-casual text-accent">
 						Styled UI components for building accessible web apps and design
 						systems.
 					</h1>
