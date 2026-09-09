@@ -1,5 +1,11 @@
 # @nerdfish/react
 
+## 1.4.1
+
+### Patch Changes
+
+- Adjust accent color
+
 ## 1.4.0
 
 ### Minor Changes
