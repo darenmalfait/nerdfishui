@@ -56,4 +56,4 @@ color names over raw Tailwind / shadcn aliases.
 New animation utilities → `animations.css`. Layout/misc → `utilities.css`.
 Import partials from `global.css`; don't dump large blocks into `global.css`.
 
-Reference: `packages/react/src/styles/global.css`, `AGENTS.md`
+Reference: `packages/react/src/styles/tokens.css`, `AGENTS.md`

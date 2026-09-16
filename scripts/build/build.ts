@@ -61,10 +61,16 @@ async function createExportsFor({
 	if (ext === '.css' || ext === '.mjs') {
 		// remove dir from srcPath
 		const outPath = srcPath.replace(`./${dir}/`, './')
-		set(newExports, [key], outPath)
+		// Vite CSS @import uses `style`; some resolvers also ask for `import`.
+		const cssExport = {
+			style: outPath,
+			import: outPath,
+			default: outPath,
+		}
+		set(newExports, [key], cssExport)
 		return {
 			path: [key],
-			importPath: outPath,
+			importPath: cssExport,
 		}
 	}
 
@@ -142,11 +148,22 @@ async function writePackageJson({
 
 			// need to maintain the order of exports
 			for (const key of exportKeys) {
-				const importPath = originalExports[key] as string
+				const rawImportPath = originalExports[key]
+				const importPath =
+					typeof rawImportPath === 'string'
+						? rawImportPath
+						: rawImportPath &&
+							  typeof rawImportPath === 'object' &&
+							  'default' in rawImportPath
+							? String(
+									(rawImportPath as { default?: string; style?: string })
+										.default ?? (rawImportPath as { style?: string }).style,
+								)
+							: null
 
 				if (!importPath) {
 					set(newExports, [key], null)
-					return
+					continue
 				}
 				// eslint-disable-next-line no-await-in-loop
 				const res = await createExportsFor({

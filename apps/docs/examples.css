@@ -1,42 +1,13 @@
-@import '@nerdfish/react/styles/global.css';
-
-@custom-variant dark (
-	&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *)
-);
-
-:root,
-:root[data-theme='dark'],
-.dark {
-	--blume-background: var(--base);
-	--blume-foreground: var(--text);
-	--blume-muted: var(--mantle);
-	--blume-muted-foreground: var(--subtext-0);
-	--blume-border: var(--overlay-0);
-	--blume-accent: var(--brand);
-	--blume-accent-foreground: var(--brand-contrast);
-	--blume-action: var(--brand);
-	--blume-action-foreground: var(--brand-contrast);
-	--blume-code-background: var(--mantle);
-	--blume-radius: var(--radius-base);
-}
-
-@theme inline {
-	--color-background: var(--base);
-	--color-foreground: var(--text);
-	--color-muted: var(--mantle);
-	--color-muted-foreground: var(--subtext-0);
-	--color-border: var(--overlay-0);
-	--color-accent: var(--brand);
-	--color-accent-foreground: var(--brand-contrast);
-	--color-accent-contrast: var(--brand-contrast);
-	--color-action: var(--brand);
-	--color-action-foreground: var(--brand-contrast);
-	--color-code: var(--mantle);
-	--color-background-muted: var(--mantle);
-	--color-background-surface: var(--surface-0);
-	--color-foreground-muted: var(--subtext-0);
-	--radius-blume: var(--radius-base);
-}
+/*
+ * Blume example frames — design-system tokens only (no @import "tailwindcss").
+ * Frames already set data-theme + .dark; both selectors are in tokens.css.
+ * @see https://blume.hm/docs/content/components#component
+ */
+@import '@nerdfish/react/styles/tokens.css';
+@import '@nerdfish/react/styles/animations.css';
+@import 'tw-animate-css';
+@import '@nerdfish/react/styles/utilities.css';
+@import '@nerdfish/react/styles/typography.css';
 
 @source '../../packages/react/src';
 @source './examples';

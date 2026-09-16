@@ -126,7 +126,7 @@ scripts/build/                     # Rollup build for packages
 
 - Component exports: `packages/react/package.json` → `exports`
 - Utils exports: `packages/utils/package.json` → `exports`
-- Tokens: `packages/react/src/styles/global.css`
+- Tokens: `packages/react/src/styles/tokens.css` (via `global.css`)
 - ESLint: `eslint.config.js` (`@nerdfish/config` + conventions)
 - CI: `.github/workflows/code-quality.yml`, `release.yml`
 

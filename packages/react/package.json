@@ -25,6 +25,10 @@
   "exports": {
     "./postcss.config.mjs": "./postcss.config.mjs",
     "./styles/global.css": "./src/styles/global.css",
+    "./styles/tokens.css": "./src/styles/tokens.css",
+    "./styles/animations.css": "./src/styles/animations.css",
+    "./styles/utilities.css": "./src/styles/utilities.css",
+    "./styles/typography.css": "./src/styles/typography.css",
     "./hooks/use-controllable-state": "./src/hooks/use-controllable-state.ts",
     "./hooks/use-copy-to-clipboard": "./src/hooks/use-copy-to-clipboard.ts",
     "./hooks/use-is-mobile": "./src/hooks/use-is-mobile.ts",
