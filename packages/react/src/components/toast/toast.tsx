@@ -8,7 +8,7 @@ import {
 	OctagonXIcon,
 	TriangleAlertIcon,
 } from 'lucide-react'
-import { type CSSProperties } from 'react'
+import { type CSSProperties, type ReactNode } from 'react'
 import {
 	Toaster as Sonner,
 	type ToasterProps as SonnerToasterProps,
@@ -17,19 +17,31 @@ import {
 
 export type ToasterProps = SonnerToasterProps
 
+const toastIcons: {
+	success: ReactNode
+	info: ReactNode
+	warning: ReactNode
+	error: ReactNode
+	loading: ReactNode
+} = {
+	success: <CircleCheckIcon className="size-4!" />,
+	info: <InfoIcon className="size-4!" />,
+	warning: <TriangleAlertIcon className="size-4!" />,
+	error: <OctagonXIcon className="size-4!" />,
+	loading: (
+		<span className="inline-flex size-4! animate-spin">
+			<Loader2Icon className="size-full" />
+		</span>
+	),
+}
+
 export function Toaster({ position = 'top-center', ...props }: ToasterProps) {
 	return (
 		<Sonner
 			theme="dark"
 			className="toaster group"
 			position={position}
-			icons={{
-				success: <CircleCheckIcon className="size-4!" />,
-				info: <InfoIcon className="size-4!" />,
-				warning: <TriangleAlertIcon className="size-4!" />,
-				error: <OctagonXIcon className="size-4!" />,
-				loading: <Loader2Icon className="size-4! animate-spin" />,
-			}}
+			icons={toastIcons}
 			style={
 				{
 					'--normal-bg': 'var(--color-popover)',

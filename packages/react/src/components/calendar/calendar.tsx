@@ -21,6 +21,8 @@ import { Button, buttonVariants } from '../button/button'
 
 export { type DateRange } from 'react-day-picker'
 
+const defaultClassNames = getDefaultClassNames()
+
 export type CalendarDayButtonProps = ComponentProps<typeof DayButton>
 export function CalendarDayButton({
 	className,
@@ -28,8 +30,6 @@ export function CalendarDayButton({
 	modifiers,
 	...props
 }: CalendarDayButtonProps) {
-	const defaultClassNames = getDefaultClassNames()
-
 	const ref = useRef<HTMLButtonElement>(null)
 	useEffect(() => {
 		if (modifiers.focused) ref.current?.focus()
@@ -75,8 +75,6 @@ export function Calendar({
 	cellSize = '32px',
 	...props
 }: CalendarProps) {
-	const defaultClassNames = getDefaultClassNames()
-
 	return (
 		<DayPicker
 			style={

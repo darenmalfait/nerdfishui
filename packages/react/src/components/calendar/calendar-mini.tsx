@@ -98,13 +98,11 @@ export function CalendarMini({
 
 	const handleNavigate = useCallback(
 		(direction: 'prev' | 'next') => {
-			const newStartDate = addDays(
-				currentStartDate,
-				direction === 'next' ? days : -days,
+			setCurrentStartDate((prev) =>
+				addDays(prev, direction === 'next' ? days : -days),
 			)
-			setCurrentStartDate(newStartDate)
 		},
-		[currentStartDate, days, setCurrentStartDate],
+		[days, setCurrentStartDate],
 	)
 
 	return (

@@ -11,7 +11,7 @@ import {
 	useMemo,
 	type CSSProperties,
 } from 'react'
-import * as RechartsPrimitive from 'recharts'
+import { Legend, ResponsiveContainer, Tooltip } from 'recharts'
 import { type LegendPayload } from 'recharts/types/component/DefaultLegendContent'
 import {
 	type NameType,
@@ -107,9 +107,7 @@ export function ChartStyle({ id, config }: ChartStyleProps) {
 
 export interface ChartContainerProps extends ComponentProps<'div'> {
 	config: ChartConfig
-	children: ComponentProps<
-		typeof RechartsPrimitive.ResponsiveContainer
-	>['children']
+	children: ComponentProps<typeof ResponsiveContainer>['children']
 }
 export function ChartContainer({
 	id,
@@ -133,15 +131,13 @@ export function ChartContainer({
 				{...props}
 			>
 				<ChartStyle id={chartId} config={config} />
-				<RechartsPrimitive.ResponsiveContainer>
-					{children}
-				</RechartsPrimitive.ResponsiveContainer>
+				<ResponsiveContainer>{children}</ResponsiveContainer>
 			</div>
 		</ChartContext.Provider>
 	)
 }
 
-export const ChartTooltip = RechartsPrimitive.Tooltip
+export const ChartTooltip = Tooltip
 
 export function ChartTooltipContent({
 	active,
@@ -185,7 +181,7 @@ export function ChartTooltipContent({
 			)
 		}
 
-		if (!value) {
+		if (value == null || value === '') {
 			return null
 		}
 
@@ -268,7 +264,7 @@ export function ChartTooltipContent({
 												{itemConfig?.label ?? item.name}
 											</span>
 										</div>
-										{item.value ? (
+										{item.value != null && item.value !== '' ? (
 											<span className="text-foreground font-mono font-medium tabular-nums">
 												{item.value.toLocaleString()}
 											</span>
@@ -284,7 +280,7 @@ export function ChartTooltipContent({
 	)
 }
 
-export const ChartLegend = RechartsPrimitive.Legend
+export const ChartLegend = Legend
 
 export function ChartLegendContent({
 	className,

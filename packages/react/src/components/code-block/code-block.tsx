@@ -3,7 +3,6 @@
 import { cn } from '@nerdfish/utils/class'
 import { CheckIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState, type ComponentProps, type ReactNode } from 'react'
-import { createCssVariablesTheme, createHighlighter } from 'shiki'
 import { Badge } from '@nerdfish/react/badge'
 import { Button, type ButtonProps } from '@nerdfish/react/button'
 import { useCopyToClipboard } from '@nerdfish/react/hooks/use-copy-to-clipboard'
@@ -104,23 +103,33 @@ export function CodeBlockCode({
 	const [highlightedHtml, setHighlightedHtml] = useState<string | null>(null)
 
 	useEffect(() => {
+		let cancelled = false
+
 		async function highlight() {
 			if (!code) {
-				setHighlightedHtml('<pre><code></code></pre>')
+				if (!cancelled) {
+					setHighlightedHtml('<pre><code></code></pre>')
+				}
 				return
 			}
 
+			const { createHighlighter, createCssVariablesTheme } =
+				await import('shiki')
 			const theme = createCssVariablesTheme({
 				name: 'css-variables',
 				variablePrefix: '--colors-shiki-',
 				variableDefaults: {},
 				fontStyle: true,
 			})
-
 			const highlighter = await createHighlighter({
 				langs: [language],
 				themes: [theme],
 			})
+
+			if (cancelled) {
+				highlighter.dispose()
+				return
+			}
 
 			const html = highlighter.codeToHtml(code, {
 				lang: language,
@@ -131,6 +140,10 @@ export function CodeBlockCode({
 		}
 
 		void highlight()
+
+		return () => {
+			cancelled = true
+		}
 	}, [code, language])
 
 	const classNames = cn(

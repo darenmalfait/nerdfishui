@@ -73,16 +73,18 @@ export function PhoneInput({
 	})
 	const phoneInputSize = size ?? 'md'
 	const phoneInputVariant = variant ?? 'default'
+	const contextValue = useMemo(
+		() => ({
+			variant: phoneInputVariant,
+			size: phoneInputSize,
+			popupClassName,
+			scrollAreaClassName,
+		}),
+		[phoneInputVariant, phoneInputSize, popupClassName, scrollAreaClassName],
+	)
 
 	return (
-		<PhoneInputContext
-			value={{
-				variant: phoneInputVariant,
-				size: phoneInputSize,
-				popupClassName,
-				scrollAreaClassName,
-			}}
-		>
+		<PhoneInputContext value={contextValue}>
 			<BasePhoneInput.default
 				className={cn(
 					'flex',

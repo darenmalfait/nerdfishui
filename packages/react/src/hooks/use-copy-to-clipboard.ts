@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useMountEffect } from './use-mount-effect'
 
 export function useCopyToClipboard({
 	onError,
@@ -9,16 +10,17 @@ export function useCopyToClipboard({
 	const copyTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(
 		null,
 	)
+	const onErrorRef = React.useRef(onError)
+	onErrorRef.current = onError
 
 	const handleCopy = React.useCallback(
 		async (text: string, resetDelay?: number) => {
 			// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- typescript thinks it's always defined, I'd rather check it
 			if (!navigator.clipboard) {
-				onError?.(new Error('Clipboard not supported'))
+				onErrorRef.current?.(new Error('Clipboard not supported'))
 				return false
 			}
 
-			// Try to save to clipboard then save it in the state if worked
 			try {
 				await navigator.clipboard.writeText(text)
 				setCopiedText(text)
@@ -31,23 +33,23 @@ export function useCopyToClipboard({
 
 				return true
 			} catch (error) {
-				onError?.(error as Error)
+				onErrorRef.current?.(error as Error)
 				setCopiedText(null)
 				return false
 			}
 		},
-		[onError],
+		[],
 	)
 
 	const reset = React.useCallback(() => {
 		setCopiedText(null)
 	}, [])
 
-	React.useEffect(() => {
+	useMountEffect(() => {
 		return () => {
 			if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current)
 		}
-	}, [])
+	})
 
 	return { handleCopy, copiedText, reset }
 }

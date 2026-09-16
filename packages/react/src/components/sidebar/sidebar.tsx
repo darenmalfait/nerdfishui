@@ -9,13 +9,14 @@ import {
 	type ReactElement,
 	useCallback,
 	useContext,
-	useEffect,
 	useMemo,
+	useRef,
 	useState,
 	type ComponentProps,
 	type CSSProperties,
 } from 'react'
 import { useIsMobile } from '../../hooks/use-is-mobile'
+import { useMountEffect } from '../../hooks/use-mount-effect'
 import { Button } from '../button/button'
 import { Input } from '../input/input'
 import { Separator } from '../separator/separator'
@@ -83,11 +84,19 @@ export function SidebarProvider({
 	// We use openProp and setOpenProp for control from outside the component.
 	const [_open, _setOpen] = useState(defaultOpen)
 	const open = openProp ?? _open
+	const openRef = useRef(open)
+	openRef.current = open
+	const setOpenPropRef = useRef(setOpenProp)
+	setOpenPropRef.current = setOpenProp
+	const isMobileRef = useRef(isMobile)
+	isMobileRef.current = isMobile
+
 	const setOpen = useCallback(
 		(value: boolean | ((value: boolean) => boolean)) => {
-			const openState = typeof value === 'function' ? value(open) : value
-			if (setOpenProp) {
-				setOpenProp(openState)
+			const openState =
+				typeof value === 'function' ? value(openRef.current) : value
+			if (setOpenPropRef.current) {
+				setOpenPropRef.current(openState)
 			} else {
 				_setOpen(openState)
 			}
@@ -95,29 +104,32 @@ export function SidebarProvider({
 			// This sets the cookie to keep the sidebar state.
 			document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
 		},
-		[setOpenProp, open],
+		[],
 	)
 
 	// Helper to toggle the sidebar.
 	const toggleSidebar = useCallback(() => {
-		return isMobile ? setOpenMobile((o) => !o) : setOpen((o) => !o)
-	}, [isMobile, setOpen, setOpenMobile])
+		return isMobileRef.current ? setOpenMobile((o) => !o) : setOpen((o) => !o)
+	}, [setOpen])
+
+	const toggleSidebarRef = useRef(toggleSidebar)
+	toggleSidebarRef.current = toggleSidebar
 
 	// Adds a keyboard shortcut to toggle the sidebar.
-	useEffect(() => {
+	useMountEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (
 				event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
 				(event.metaKey || event.ctrlKey)
 			) {
 				event.preventDefault()
-				toggleSidebar()
+				toggleSidebarRef.current()
 			}
 		}
 
 		window.addEventListener('keydown', handleKeyDown)
 		return () => window.removeEventListener('keydown', handleKeyDown)
-	}, [toggleSidebar])
+	})
 
 	// We add a state so that we can do data-state="expanded" or "collapsed".
 	// This makes it easier to style the sidebar with Tailwind classes.
@@ -634,9 +646,7 @@ export function SidebarMenuSkeleton({
 	...props
 }: SidebarMenuSkeletonProps): ReactElement {
 	// Random width between 50 to 90%.
-	const width = useMemo(() => {
-		return `${Math.floor(Math.random() * 40) + 50}%`
-	}, [])
+	const [width] = useState(() => `${Math.floor(Math.random() * 40) + 50}%`)
 
 	return (
 		<div

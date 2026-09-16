@@ -55,6 +55,17 @@ import {
 	isGroupLevelField,
 } from './utils'
 
+const patternCache = new Map<string, RegExp>()
+
+function getCachedPattern(pattern: string) {
+	let regex = patternCache.get(pattern)
+	if (!regex) {
+		regex = new RegExp(pattern)
+		patternCache.set(pattern, regex)
+	}
+	return regex
+}
+
 export * from './utils'
 export * from './types'
 
@@ -474,8 +485,7 @@ function FilterInput<T = unknown>({
 	// Validation function to check if input matches pattern
 	const validateInput = (value: string, pattern?: string): boolean => {
 		if (!pattern || !value) return true
-		const regex = new RegExp(pattern)
-		return regex.test(value)
+		return getCachedPattern(pattern).test(value)
 	}
 
 	// Get validation message for field type
@@ -763,10 +773,11 @@ function SelectOptionsPopover<T = unknown>({
 	const isMultiSelect = field.type === 'multiselect' || values.length > 1
 	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	const effectiveValues = (field.value ?? values) || []
+	const selectedValues = new Set(effectiveValues)
 	const selectedOptions =
-		field.options?.filter((opt) => effectiveValues.includes(opt.value)) ?? []
+		field.options?.filter((opt) => selectedValues.has(opt.value)) ?? []
 	const unselectedOptions =
-		field.options?.filter((opt) => !effectiveValues.includes(opt.value)) ?? []
+		field.options?.filter((opt) => !selectedValues.has(opt.value)) ?? []
 
 	const handleClose = () => {
 		setOpen(false)
@@ -1375,10 +1386,11 @@ function FilterValueSelector<T = unknown>({
 	}
 
 	const isMultiSelect = values.length > 1
+	const selectedValues = new Set(values)
 	const selectedOptions =
-		field.options?.filter((opt) => values.includes(opt.value)) ?? []
+		field.options?.filter((opt) => selectedValues.has(opt.value)) ?? []
 	const unselectedOptions =
-		field.options?.filter((opt) => !values.includes(opt.value)) ?? []
+		field.options?.filter((opt) => !selectedValues.has(opt.value)) ?? []
 
 	return (
 		<Popover
