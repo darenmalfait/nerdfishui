@@ -81,11 +81,13 @@ following div element to your application layout root:
 
 ## Docs
 
-The docs are built with [NextJS](https://nextjs.org/) and
-[MDX](https://mdxjs.com/). The docs are located in the `apps/docs` folder.
+The docs are a [Blume](https://useblume.dev) site (Astro/Vite under the hood)
+with [MDX](https://mdxjs.com/) pages and live React examples. They live in
+`apps/docs` (`blume.config.ts`, `content/`, `examples/`).
 
 To run the docs locally, run `pnpm dev` from the root of the project. This will
-run the `dev` script defined in the root `package.json`:
+run the `dev` script defined in the root `package.json` (docs package uses
+`blume dev` / `blume build`):
 
 ```bash
 pnpm dev

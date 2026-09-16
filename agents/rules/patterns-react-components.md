@@ -15,10 +15,9 @@ Reference implementations: `item`, `attachment`, `empty`, `button`.
 
 ```
 packages/react/src/components/{name}/{name}.tsx
-apps/docs/src/app/(app)/docs/components/{name}/
-  page.mdx
-  example/default.tsx
-  example/index.ts
+apps/docs/
+  content/components/(group)/{name}.mdx
+  examples/{name}/{variant}.tsx
 ```
 
 ### Component code
@@ -82,12 +81,36 @@ Add alphabetically to `packages/react/package.json` `exports`:
 Then `pnpm build` / `pnpm build:packages` so docs resolve
 `@nerdfish/react/{name}`.
 
-### Docs
+### Docs (Blume)
 
-1. `page.mdx` — header + `ComponentExample` sections
-2. `example/*.tsx` — `'use client'`, import from `@nerdfish/react/{name}`
-3. `example/index.ts` — re-export
-4. Register in `apps/docs/src/app/(app)/docs/components/component-examples.tsx`
-5. Link in `apps/docs/src/nav.ts` (`status: 'new'` for new components)
+1. `apps/docs/content/components/(group)/{name}.mdx` — frontmatter +
+   `<Component path="…" />`
+2. `apps/docs/examples/{name}/{variant}.tsx` — `'use client'`, default export,
+   import from `@nerdfish/react/{name}`
+3. Sidebar via MDX frontmatter (`sidebar.label`, optional `sidebar.badge`)
+
+**Page pattern:**
+
+```mdx
+---
+title: Button
+description: ...
+sidebar:
+  label: Button
+  badge: New # optional
+---
+
+<Component path="button/default" />
+```
+
+**Example file:**
+
+```tsx
+'use client'
+import { Button } from '@nerdfish/react/button'
+export default function ButtonExample() {
+	return <Button>Button</Button>
+}
+```
 
 Reference: `packages/react/src/components/button/button.tsx`, `AGENTS.md`

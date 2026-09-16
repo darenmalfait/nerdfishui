@@ -1,0 +1,30 @@
+---
+title: 'Toast'
+description: 'An opinionated toast component for React.'
+sidebar:
+  label: 'Toast'
+  order: 55
+---
+
+<Component path="toast/default" />
+
+## Toaster
+
+This needs to be placed in the root component of your application.
+
+```tsx
+function RootLayout({ children }: RootLayoutProps) {
+	return (
+		<html lang="en">
+			<body>
+				<Toaster />
+				{children}
+			</body>
+		</html>
+	)
+}
+```
+
+## Examples
+
+<Component path="toast/examples" />

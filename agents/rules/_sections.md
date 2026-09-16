@@ -10,7 +10,7 @@ The section ID (in parentheses) is the filename prefix used to group rules.
 **Impact:** CRITICAL
 
 **Description:** pnpm/Turbo monorepo boundaries — `packages/react`
-(`@nerdfish/react`), `packages/utils` (`@nerdfish/utils`), `apps/docs` (Next.js
+(`@nerdfish/react`), `packages/utils` (`@nerdfish/utils`), `apps/docs` (Blume
 MDX docs). Component source lives under `packages/react/src/components/{name}/`;
 package exports are subpaths, not a root barrel. No app backend, CMS, or
 database in this repo.
@@ -59,7 +59,7 @@ stack unless asked.
 
 **Description:** Compose from existing primitives (`button`, `dialog`, `item`,
 `field`, …). Early returns, `cva` + `cn`, `data-slot`, Base UI `useRender`, and
-docs MDX + example colocations.
+Blume docs MDX (`content/`) + examples (`examples/`).
 
 ## 8. Team Culture (culture)
 

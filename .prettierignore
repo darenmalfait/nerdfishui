@@ -1,6 +1,8 @@
 **/.changeset/**
 **/.next/**
 **/.turbo/**
+**/.blume/**
+**/.blume-verify/**
 **/dist/**
 **/node_modules/**
 **/build/**

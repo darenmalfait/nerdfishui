@@ -13,7 +13,7 @@ tags: architecture, monorepo, packages
 | ---------------- | ----------------- | --------------------------------------- |
 | `packages/react` | `@nerdfish/react` | Published components + styles           |
 | `packages/utils` | `@nerdfish/utils` | Published helpers (`cn`, `cva`, …)      |
-| `apps/docs`      | `docs` (private)  | Next.js MDX docs site                   |
+| `apps/docs`      | `docs` (private)  | Blume docs site (MDX + live examples)   |
 | `tooling/`       | —                 | Shared GitHub Actions install composite |
 | `scripts/`       | —                 | Rollup build used by packages           |
 

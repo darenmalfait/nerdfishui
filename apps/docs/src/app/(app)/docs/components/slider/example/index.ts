@@ -1,6 +1,0 @@
-export * from './default'
-export * from './labels'
-export * from './tooltip'
-export * from './vertical'
-export * from './rating'
-export * from './ticks'

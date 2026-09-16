@@ -16,16 +16,12 @@ export default [
 				version: 'detect',
 			},
 		},
-		plugins: {
-			'@next/next': (await import('@next/eslint-plugin-next')).default,
-		},
+	},
+	{
+		// Blume islands are referenced by PascalCase component name in MDX.
+		files: ['apps/docs/islands/**/*.{ts,tsx}'],
 		rules: {
-			...(await import('@next/eslint-plugin-next')).default.configs.recommended
-				.rules,
-			...(await import('@next/eslint-plugin-next')).default.configs[
-				'core-web-vitals'
-			].rules,
-			'@next/next/no-img-element': 'error',
+			'unicorn/filename-case': 'off',
 		},
 	},
 	{
@@ -33,6 +29,8 @@ export default [
 			'**/.changeset/**',
 			'**/__generated__/**',
 			'**/.next/**',
+			'**/.blume/**',
+			'**/.blume-verify/**',
 			'**/.react-email/**',
 			'**/.turbo/**',
 			'**/dist/**',

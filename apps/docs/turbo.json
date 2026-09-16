@@ -1,11 +1,12 @@
 {
 	"extends": ["//"],
 	"tasks": {
-		"start": {
-			"cache": false
+		"build": {
+			"outputs": ["dist/**"]
 		},
-		"lint": {
-			"env": ["ANALYZE"]
+		"dev": {
+			"cache": false,
+			"persistent": true
 		}
 	}
 }

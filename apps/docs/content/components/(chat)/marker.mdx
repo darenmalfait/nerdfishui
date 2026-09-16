@@ -1,0 +1,27 @@
+---
+title: 'Marker'
+description: 'Inline status, separators, and timeline markers for chat transcripts.'
+sidebar:
+  label: 'Marker'
+  order: 34
+  badge: 'New'
+---
+
+<Component path="marker/default" />
+
+## Usage
+
+```tsx
+
+```
+
+```tsx
+<Marker role="status">
+	<MarkerIcon>
+		<Spinner />
+	</MarkerIcon>
+	<MarkerContent>Checking the logs...</MarkerContent>
+</Marker>
+```
+
+Use `variant="separator"` for date dividers and `variant="border"` for section labels. Give status markers `role="status"` so assistive tech announces updates.

@@ -10,6 +10,11 @@ packages/*/dist
 
 # Optional npm cache directory
 .npm
+.pnpm-store/
+
+# Local scratch / downloaded packages
+.tmp/
+*.tgz
 
 # Mac files
 .DS_Store

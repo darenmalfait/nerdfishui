@@ -1,0 +1,41 @@
+---
+title: 'Installation'
+description: 'A custom component library built with React and TailwindCSS to help streamline proof of concept development and provide visually pleasing and functional components.'
+sidebar:
+  label: 'Installation'
+  order: 2
+---
+
+## Install
+
+To install the component-library run the following within your project
+directory.
+
+```bash
+npm install @nerdfish/react @nerdfish/utils postcss tailwindcss @tailwindcss/postcss
+```
+
+## Configuration
+
+```bash
+//postcss.config.mjs
+export { default } from '@nerdfish/react/postcss.config.mjs'
+```
+
+Then you need a global css file which you import at the root of the project
+
+```css
+//styles.css
+@import '@nerdfish/react/styles/global.css';
+@source "../../node_modules/@nerdfish/react"; // path to nerdfishui
+```
+
+### Portals
+
+To make portalled components always appear on top of the entire page, add the following div element to your application layout root:
+
+```tsx
+<body>
+	<div className="isolate">{children}</div>
+</body>
+```

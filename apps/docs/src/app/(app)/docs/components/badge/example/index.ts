@@ -1,6 +1,0 @@
-export * from './default'
-export * from './with-icon'
-export * from './size'
-export * from './with-dot'
-export * from './remove-button'
-export * from './disabled'

@@ -5,7 +5,11 @@
 @import './animations.css';
 @source "../**/*.{ts,tsx}";
 
-@custom-variant dark (&:is(.dark *));
+/* Support class-based (.dark) and attribute-based (data-theme) dark mode —
+	   Blume and some hosts use data-theme="dark" on <html>. */
+@custom-variant dark (
+	&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *)
+);
 
 :root {
 	--base: oklch(1 0 0);
@@ -72,7 +76,8 @@
 	--colors-shiki-token-link: var(--info);
 }
 
-.dark {
+.dark,
+:root[data-theme='dark'] {
 	--base: oklch(0.2405 0.0057 285.97);
 	--mantle: oklch(0.1781 0.002 286.19);
 	--crust: oklch(0.2536 0.0339 266.8);

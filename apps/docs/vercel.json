@@ -1,7 +1,14 @@
 {
 	"ignoreCommand": "npx turbo-ignore",
-	"framework": "nextjs",
-	"buildCommand": "turbo build",
+	"framework": null,
+	"buildCommand": "cd ../.. && pnpm build:packages && pnpm --filter docs build",
+	"outputDirectory": "dist",
+	"installCommand": "cd ../.. && pnpm install",
+	"redirects": [
+		{ "source": "/docs", "destination": "/", "permanent": true },
+		{ "source": "/docs/", "destination": "/", "permanent": true },
+		{ "source": "/docs/:path*", "destination": "/:path*", "permanent": true }
+	],
 	"git": {
 		"deploymentEnabled": {
 			"main": false

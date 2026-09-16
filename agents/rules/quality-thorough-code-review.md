@@ -32,7 +32,7 @@ Reviewer: "Requesting changes — address before merge"
 
 - Hard-coded Tailwind spacing → semantic tokens (`quality-design-tokens.md`)
 - Package-root `@nerdfish/react` import → subpath
-- New component without docs example / `nav.ts` entry → incomplete
+- New component without docs MDX / example → incomplete
 - Bare `useEffect` → `useMountEffect` or derived state
 
 Reference: `AGENTS.md` (PR Checklist)

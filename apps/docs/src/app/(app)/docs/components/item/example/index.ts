@@ -1,7 +1,0 @@
-export * from './default'
-export * from './variants'
-export * from './sizes'
-export * from './item-icon'
-export * from './image'
-export * from './avatar'
-export * from './group'

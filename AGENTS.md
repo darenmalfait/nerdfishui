@@ -16,7 +16,7 @@ existing component patterns.
   `bg-background-muted`, `rounded-base`) — not raw `gap-2` / `bg-card`
 - Prefer `@base-ui/react` (`useRender`) for polymorphic parts
 - Add `data-slot` on every part; named exports; `function` keyword
-- Add package `exports` + docs MDX/examples/`nav.ts` for new components
+- Add package `exports` + Blume docs MDX/examples for new components
 - Use conventional commits: `feat:`, `fix:`, `docs:`, `chore:`
 - Create PRs in **draft** mode by default
 - Use Changesets (`pnpm changeset`) for publishable package changes
@@ -48,7 +48,7 @@ Limits apply to code files only (docs, lockfiles, generated excluded).
 Split example for a new component:
 
 1. Primitive + `package.json` export
-2. Docs MDX + examples + `nav.ts`
+2. Docs MDX (`content/`) + examples (`examples/`)
 3. Changeset
 
 ## Commands
@@ -104,9 +104,13 @@ CI Quality Gate (`.github/workflows/code-quality.yml`): **Format**, **Lint**,
 ## Project Structure
 
 ```
-apps/docs/                         # Next.js 15 docs (MDX, live examples)
-  src/app/(app)/docs/components/   # Per-component pages + example/
-  src/nav.ts                       # Docs navigation
+apps/docs/                         # Blume docs (Astro/Vite; MDX + live examples)
+  blume.config.ts
+  content/                         # MDX pages (frontmatter title/description)
+  content/components/(group)/{name}.mdx
+  examples/{name}/{variant}.tsx    # default export, 'use client'
+  examples.css / theme.css         # @nerdfish/react tokens + @source
+  islands/                         # interactive token pages etc.
 packages/react/                    # @nerdfish/react (published)
   src/components/{name}/           # One folder per component
   src/hooks/                       # Shared hooks (subpath exports)
@@ -138,7 +142,8 @@ scripts/build/                     # Rollup build for packages
 - **Primitives**: `@base-ui/react` (+ some Radia/react-aria where present)
 - **Styling**: Tailwind CSS v4, semantic tokens in `@nerdfish/react` styles
 - **Utils**: `clsx` + `tailwind-merge` + `class-variance-authority`
-- **Docs**: Next.js 15 App Router, MDX
+- **Docs**: Blume (Astro/Vite), MDX + live examples (`blume dev` /
+  `blume build`)
 - **Monorepo**: pnpm workspaces + Turbo
 - **Publish**: Changesets → npm (`@nerdfish/react`, `@nerdfish/utils`)
 - **Lint/format**: ESLint 9 + Prettier via `@nerdfish/config`
@@ -210,7 +215,7 @@ useMountEffect(() => {
 - [ ] Title: conventional commits (`feat(react): …`)
 - [ ] `pnpm build:packages` + `pnpm typecheck` / lint / format
 - [ ] Diff small (<500 lines, <10 files) or explicitly split
-- [ ] New/changed public API: `exports` + docs + `nav.ts` as needed
+- [ ] New/changed public API: `exports` + docs MDX/examples as needed
 - [ ] Semantic tokens only (no raw spacing / shadcn color aliases)
 - [ ] Changeset if publishable packages changed
 - [ ] No secrets

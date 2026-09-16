@@ -1,0 +1,65 @@
+---
+title: 'Attachment'
+description: 'Display file and image attachments with media, metadata, upload states, and actions.'
+sidebar:
+  label: 'Attachment'
+  order: 5
+  badge: 'New'
+---
+
+<Component path="attachment/default" />
+
+## Usage
+
+```tsx
+import {
+	Attachment,
+	AttachmentAction,
+	AttachmentActions,
+	AttachmentContent,
+	AttachmentDescription,
+	AttachmentMedia,
+	AttachmentTitle,
+} from '@nerdfish/react/attachment'
+```
+
+```tsx
+<Attachment>
+	<AttachmentMedia>
+		<FileTextIcon />
+	</AttachmentMedia>
+	<AttachmentContent>
+		<AttachmentTitle>sales-dashboard.pdf</AttachmentTitle>
+		<AttachmentDescription>PDF · 2.4 MB</AttachmentDescription>
+	</AttachmentContent>
+	<AttachmentActions>
+		<AttachmentAction aria-label="Remove sales-dashboard.pdf">
+			<XIcon />
+		</AttachmentAction>
+	</AttachmentActions>
+</Attachment>
+```
+
+## States
+
+Set `state` to reflect the upload lifecycle. `uploading` and `processing` shimmer the title, and `error` switches to a destructive treatment.
+
+<Component path="attachment/states" />
+
+## Sizes
+
+Use `size` to switch between `default`, `sm`, and `xs`.
+
+<Component path="attachment/sizes" />
+
+## Group
+
+Wrap attachments in `AttachmentGroup` for a horizontally scrollable, snapping row with an edge fade.
+
+<Component path="attachment/group" />
+
+## Trigger
+
+Add an `AttachmentTrigger` to make the whole card open a link or dialog. It fills the card behind the actions, so the actions stay clickable.
+
+<Component path="attachment/trigger" />
