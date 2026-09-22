@@ -36,7 +36,10 @@ export default function InputInvalidExample() {
 	}
 
 	return (
-		<form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-sm">
+		<form
+			onSubmit={form.handleSubmit(onSubmit)}
+			className="w-sm max-w-[calc(100vw-3rem)]"
+		>
 			<div className="flex flex-col">
 				<FieldGroup>
 					<Controller

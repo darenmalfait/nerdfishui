@@ -4,7 +4,7 @@ import { Input } from '@nerdfish/react/input'
 
 export default function InputSizeExample() {
 	return (
-		<div className="space-y-friends flex flex-col">
+		<div className="space-y-friends flex w-sm max-w-[calc(100vw-3rem)] flex-col">
 			<Input type="email" placeholder="Email" size="xs" />
 			<Input type="email" placeholder="Email" size="sm" />
 			<Input type="email" placeholder="Email" size="md" />

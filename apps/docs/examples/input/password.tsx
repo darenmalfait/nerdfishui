@@ -15,7 +15,7 @@ export default function InputPasswordExample() {
 	const [show, setShow] = useState(false)
 
 	return (
-		<Field className="w-full max-w-sm">
+		<Field className="w-sm max-w-[calc(100vw-3rem)]">
 			<FieldLabel htmlFor="password">Password</FieldLabel>
 			<InputGroup>
 				<InputGroupInput
