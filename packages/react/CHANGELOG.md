@@ -1,5 +1,15 @@
 # @nerdfish/react
 
+## 1.4.2
+
+### Patch Changes
+
+- Restore explicit `border-border` on surfaces that only set border width after
+  the token refactor
+
+- fix PhoneInput flex layout and value typing so the number field grows beside
+  the country trigger and accepts E.164 strings
+
 ## 1.4.1
 
 ### Patch Changes
