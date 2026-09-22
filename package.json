@@ -55,5 +55,10 @@
     "prettier": "^3.9.4",
     "turbo": "^2.10.2"
   },
-  "packageManager": "pnpm@10.34.5"
+  "packageManager": "pnpm@10.34.5",
+  "pnpm": {
+    "overrides": {
+      "js-yaml@^4": "5.4.2"
+    }
+  }
 }
