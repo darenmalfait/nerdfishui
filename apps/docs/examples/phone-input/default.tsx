@@ -15,7 +15,7 @@ import {
 	FieldGroup,
 	FieldLabel,
 } from '@nerdfish/react/field'
-import { type CountryCode, PhoneInput } from '@nerdfish/react/phone-input'
+import { PhoneInput } from '@nerdfish/react/phone-input'
 import { toast } from '@nerdfish/react/toast'
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -39,15 +39,15 @@ export default function PhoneInputExample() {
 	}
 
 	return (
-		<Card>
+		<Card className="w-87.5 max-w-[calc(100vw-3rem)]">
 			<CardHeader>
-				<CardTitle>Submit your email</CardTitle>
+				<CardTitle>Submit your phone</CardTitle>
 			</CardHeader>
 			<CardContent>
 				<form
 					id="form-phone-input"
 					onSubmit={form.handleSubmit(onSubmit)}
-					className="gap-md flex flex-col"
+					className="gap-friends flex flex-col"
 					noValidate
 				>
 					<FieldGroup>
@@ -63,7 +63,7 @@ export default function PhoneInputExample() {
 										variant="default"
 										size="lg"
 										{...field}
-										value={field.value as CountryCode}
+										aria-invalid={fieldState.invalid}
 									/>
 									{fieldState.invalid ? (
 										<FieldError errors={[fieldState.error]} />

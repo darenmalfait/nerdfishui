@@ -51,8 +51,8 @@ type PhoneInputProps = Omit<
 		BasePhoneInput.Props<typeof BasePhoneInput.default>,
 		'onChange' | 'variant' | 'popupClassName' | 'scrollAreaClassName' | 'value'
 	> & {
-		value?: CountryEntry['value']
-		onChange?: (value: CountryEntry['value']) => void
+		value?: string
+		onChange?: (value: string) => void
 		popupClassName?: string
 		scrollAreaClassName?: string
 	}
@@ -67,9 +67,13 @@ export function PhoneInput({
 	value: valueProp,
 	...props
 }: PhoneInputProps) {
-	const [value, setValue] = useControllableState<CountryEntry['value']>({
+	const [value, setValue] = useControllableState<string | undefined>({
 		prop: valueProp,
-		onChange,
+		onChange: onChange
+			? (next) => {
+					onChange(next ?? '')
+				}
+			: undefined,
 	})
 	const phoneInputSize = size ?? 'md'
 	const phoneInputVariant = variant ?? 'default'
@@ -96,8 +100,10 @@ export function PhoneInput({
 				countrySelectComponent={CountrySelect}
 				inputComponent={InputComponent}
 				smartCaret={false}
-				value={value as BasePhoneInput.Value}
-				onChange={setValue as (value: BasePhoneInput.Value) => void}
+				value={value === undefined || value.length === 0 ? undefined : value}
+				onChange={(next) => {
+					setValue(next ?? '')
+				}}
 				{...props}
 			/>
 		</PhoneInputContext>
@@ -110,7 +116,7 @@ function InputComponent({ className, ...props }: ComponentProps<typeof Input>) {
 		<Input
 			variant={variant}
 			size={size}
-			className={cn('rounded-s-none focus:z-1', className)}
+			className={cn('w-0 min-w-0 flex-1 rounded-s-none focus:z-1', className)}
 			{...props}
 		/>
 	)
@@ -153,7 +159,7 @@ function CountrySelect({
 			value={selectedCountry}
 			onValueChange={setSelectedCountry as (value: unknown) => void}
 		>
-			<div className="relative">
+			<div className="relative shrink-0">
 				<ComboboxTrigger
 					render={
 						<button
@@ -163,7 +169,7 @@ function CountrySelect({
 									variant,
 									size,
 								}),
-								'gap-bff flex items-center rounded-e-none',
+								'gap-bff flex w-auto shrink-0 items-center rounded-e-none',
 								'hover:bg-background-inverted/20 group/phone-input-trigger h-full',
 							)}
 						>
