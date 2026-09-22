@@ -34,7 +34,7 @@ export const itemVariants = cva(
 			variant: {
 				default: 'bg-transparent border-transparent',
 				outline: 'border-border',
-				muted: 'bg-background-muted',
+				muted: 'border-transparent bg-background-muted',
 			},
 			size: {
 				default:
@@ -80,7 +80,7 @@ export const itemMediaVariants = cva(
 		variants: {
 			variant: {
 				default: 'bg-transparent',
-				icon: "size-8 border bg-background-muted [&_svg:not([class*='size-'])]:size-4",
+				icon: "size-8 border border-border bg-background-muted [&_svg:not([class*='size-'])]:size-4",
 				image: 'size-10 overflow-hidden [&_img]:size-full [&_img]:object-cover',
 			},
 		},

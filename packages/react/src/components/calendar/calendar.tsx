@@ -125,7 +125,7 @@ export function Calendar({
 					defaultClassNames.dropdowns,
 				),
 				dropdown_root: cn(
-					'has-focus:border-ring border-input has-focus:ring-ring/50 rounded-compact relative border shadow-xs has-focus:ring-[3px]',
+					'has-focus:border-ring border-border has-focus:ring-ring/50 rounded-compact relative border shadow-xs has-focus:ring-[3px]',
 					defaultClassNames.dropdown_root,
 				),
 				dropdown: cn(

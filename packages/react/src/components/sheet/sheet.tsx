@@ -66,7 +66,7 @@ export const sheetVariants = cva(
 		variants: {
 			variant: {
 				default: '',
-				inset: 'rounded-container border-border',
+				inset: 'rounded-container border border-border',
 			},
 			side: {
 				top: 'data-[closed]:slide-out-to-top data-[open]:slide-in-from-top',
@@ -97,7 +97,7 @@ export const sheetVariants = cva(
 			{
 				variant: 'default',
 				side: 'right',
-				className: 'inset-y-0 right-0 h-full border-l w-full',
+				className: 'inset-y-0 right-0 h-full w-full border-l border-border',
 			},
 			{
 				variant: 'inset',
@@ -108,7 +108,7 @@ export const sheetVariants = cva(
 			{
 				variant: 'default',
 				side: 'left',
-				className: 'inset-y-0 left-0 h-full border-r w-full',
+				className: 'inset-y-0 left-0 h-full w-full border-r border-border',
 			},
 			{
 				variant: 'inset',
@@ -119,7 +119,7 @@ export const sheetVariants = cva(
 			{
 				variant: 'default',
 				side: 'bottom',
-				className: 'inset-x-0 bottom-0 h-auto border-t w-full',
+				className: 'inset-x-0 bottom-0 h-auto w-full border-t border-border',
 			},
 			{
 				variant: 'inset',

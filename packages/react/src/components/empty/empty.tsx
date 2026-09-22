@@ -6,7 +6,7 @@ export function Empty({ className, ...props }: ComponentProps<'div'>) {
 		<div
 			data-slot="empty"
 			className={cn(
-				'gap-casual rounded-base p-casual flex min-w-0 flex-1 flex-col items-center justify-center border-dashed text-center text-balance',
+				'gap-casual rounded-base p-casual border-border flex min-w-0 flex-1 flex-col items-center justify-center border border-dashed text-center text-balance',
 				className,
 			)}
 			{...props}

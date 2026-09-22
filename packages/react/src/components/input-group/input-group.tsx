@@ -21,7 +21,7 @@ export function InputGroup({
 			className: cn(
 				inputVariants(),
 				'!p-0',
-				'group/input-group relative flex w-full items-center border transition-[color,box-shadow] outline-none',
+				'group/input-group border-border relative flex w-full items-center border transition-[color,box-shadow] outline-none',
 				'min-w-0 has-[>textarea]:h-auto',
 
 				// Variants based on alignment.

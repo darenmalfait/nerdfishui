@@ -120,7 +120,7 @@ export function FieldLabel({ className, ...props }: FieldLabelProps) {
 			data-slot="field-label"
 			className={cn(
 				'group/field-label peer/field-label gap-best-friends flex w-fit leading-snug group-data-[disabled=true]/field:opacity-50',
-				'*:data-[slot=field]:p-friends has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border',
+				'*:data-[slot=field]:p-friends has-[>[data-slot=field]]:border-border has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border',
 				'has-data-[state=checked]:bg-background/5 has-data-[state=checked]:border-border',
 				className,
 			)}

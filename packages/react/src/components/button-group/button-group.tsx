@@ -48,7 +48,7 @@ export function ButtonGroupText({
 		render: <span />,
 		props: {
 			className: cn(
-				"bg-background-muted gap-best-friends rounded-base px-friends flex items-center border text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
+				"bg-background-muted gap-best-friends rounded-base px-friends border-border flex items-center border text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
 				className,
 			),
 			...props,

@@ -215,7 +215,7 @@ const filterAddButtonVariants = cva(
 	{
 		variants: {
 			variant: {
-				solid: 'border border-input hover:bg-background-muted/60',
+				solid: 'border border-border hover:bg-background-muted/60',
 				outline: 'border border-border hover:bg-background-muted',
 			},
 			size: {

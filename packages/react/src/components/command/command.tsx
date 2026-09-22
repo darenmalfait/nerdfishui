@@ -64,7 +64,7 @@ export function CommandInput({ className, ...props }: CommandInputProps) {
 	return (
 		<div
 			data-slot="command-input-wrapper"
-			className="gap-best-friends px-best-friends flex items-center border-b"
+			className="gap-best-friends px-best-friends border-border flex items-center border-b"
 		>
 			<SearchIcon className="size-4 shrink-0 opacity-50" />
 			<CommandPrimitive.Input
