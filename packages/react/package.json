@@ -95,7 +95,7 @@
     "./tooltip": "./src/components/tooltip/tooltip.tsx"
   },
   "scripts": {
-    "prebuild": "rimraf --glob build build-tests \"*.tsbuildinfo\"",
+    "prebuild": "rm -rf build build-tests *.tsbuildinfo",
     "build": "tsx ../../scripts/build/main.ts --dts && pnpm copy-files",
     "copy-files": "mkdir -p dist/styles && cp -r src/styles/* dist/styles/ && cp -r postcss.config.mjs dist/postcss.config.mjs",
     "dev": "tsx ../../scripts/build/main.ts --dts --watch",
