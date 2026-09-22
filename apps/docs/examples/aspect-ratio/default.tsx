@@ -5,7 +5,7 @@ export default function AspectRatioExample() {
 	return (
 		<AspectRatio
 			ratio={16 / 9}
-			className="bg-background-muted rounded-base w-full md:min-w-125"
+			className="bg-background-muted rounded-base w-125 max-w-[calc(100vw-3rem)]"
 		>
 			<img
 				src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"

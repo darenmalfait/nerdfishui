@@ -4,7 +4,7 @@ import { Slider } from '@nerdfish/react/slider'
 
 export default function SliderVerticalExample() {
 	return (
-		<div className="w-full max-w-xs *:not-first:mt-4">
+		<div className="w-xs max-w-[calc(100vw-3rem)] *:not-first:mt-4">
 			<div className="flex h-40 justify-center">
 				<Slider
 					defaultValue={[2, 7]}

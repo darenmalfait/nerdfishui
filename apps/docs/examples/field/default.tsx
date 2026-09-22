@@ -42,7 +42,7 @@ const years = [
 
 export default function FieldExample() {
 	return (
-		<div className="w-125">
+		<div className="w-125 max-w-[calc(100vw-3rem)]">
 			<form>
 				<FieldGroup>
 					<FieldSet>

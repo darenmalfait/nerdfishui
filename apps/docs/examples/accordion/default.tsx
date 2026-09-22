@@ -9,7 +9,7 @@ import {
 
 export default function AccordionExample() {
 	return (
-		<Accordion className="w-112.5">
+		<Accordion className="w-112.5 max-w-[calc(100vw-3rem)]">
 			<AccordionItem value="item-1">
 				<AccordionTrigger>Fish</AccordionTrigger>
 				<AccordionContent>

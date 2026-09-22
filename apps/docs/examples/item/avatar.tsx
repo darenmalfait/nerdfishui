@@ -41,14 +41,14 @@ export default function ItemAvatarExample() {
 			<Item variant="outline">
 				<ItemMedia>
 					<div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
-						<Avatar className="hidden sm:flex">
+						<Avatar>
 							<AvatarImage
 								src="https://avatars.githubusercontent.com/u/56068461?v=4"
 								alt="@nerdfish"
 							/>
 							<AvatarFallback>CN</AvatarFallback>
 						</Avatar>
-						<Avatar className="hidden sm:flex">
+						<Avatar>
 							<AvatarImage
 								src="https://avatars.githubusercontent.com/u/56068461?v=4"
 								alt="@nerdfish"

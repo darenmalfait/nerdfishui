@@ -9,9 +9,9 @@ export default function TabsVerticalExample() {
 		<Tabs
 			defaultValue="profile"
 			orientation="vertical"
-			className="text-foreground-muted border-border flex w-full flex-col justify-stretch gap-4 rounded-lg border p-4 text-sm lg:w-125 lg:flex-row"
+			className="text-foreground-muted border-border flex w-125 max-w-[calc(100vw-3rem)] flex-row justify-stretch gap-4 rounded-lg border p-4 text-sm"
 		>
-			<div className="lg:w-43.75 lg:shrink-0">
+			<div className="w-43.75 shrink-0">
 				<TabsList
 					variant="button"
 					className="gap-bff! flex flex-col items-stretch *:justify-start"

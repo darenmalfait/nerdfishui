@@ -20,8 +20,8 @@ export default function CardBlurredExample() {
 		<div className="p-acquaintances rounded-container from-info/80 to-info/90 bg-linear-to-tr">
 			<Card className="bg-blurred text-info-contrast border-none">
 				<CardContent>
-					<div className="grid grid-cols-6 items-center justify-center gap-6 md:grid-cols-12 md:gap-4">
-						<div className="relative col-span-6 md:col-span-4">
+					<div className="grid grid-cols-12 items-center justify-center gap-4">
+						<div className="relative col-span-4">
 							<img
 								alt="Album cover"
 								className="rounded-[calc(var(--radius-container)-theme(padding.friends))] object-cover"
@@ -31,7 +31,7 @@ export default function CardBlurredExample() {
 							/>
 						</div>
 
-						<div className="col-span-6 flex flex-col md:col-span-8">
+						<div className="col-span-8 flex flex-col">
 							<div className="flex items-start justify-between">
 								<div className="flex flex-col gap-0">
 									<h3 className="text-info-contrast font-semibold">

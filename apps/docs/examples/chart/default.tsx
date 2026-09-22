@@ -140,8 +140,8 @@ export default function ChartExample() {
 
 	return (
 		<Card className="my-casual w-full">
-			<CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
-				<div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
+			<CardHeader className="flex flex-row items-stretch space-y-0 border-b p-0">
+				<div className="flex flex-1 flex-col justify-center gap-1 px-6 py-6">
 					<CardTitle>Bar Chart - Interactive</CardTitle>
 					<CardDescription>
 						Showing total visitors for the last 3 months
@@ -154,13 +154,13 @@ export default function ChartExample() {
 							<button
 								key={chart}
 								data-active={activeChart === chart}
-								className="data-[active=true]:bg-background-muted px-friends py-best-friends sm:px-casual sm:py-friends relative z-30 flex flex-1 flex-col justify-center gap-1 border-t text-left even:border-l sm:border-t-0 sm:border-l"
+								className="data-[active=true]:bg-background-muted px-casual py-friends relative z-30 flex flex-1 flex-col justify-center gap-1 border-l text-left"
 								onClick={() => setActiveChart(chart)}
 							>
 								<span className="text-foreground-muted text-xs">
 									{chartConfig[chart].label}
 								</span>
-								<span className="text-lg leading-none font-bold sm:text-3xl">
+								<span className="text-3xl leading-none font-bold">
 									{total[key as keyof typeof total].toLocaleString()}
 								</span>
 							</button>
@@ -168,7 +168,7 @@ export default function ChartExample() {
 					})}
 				</div>
 			</CardHeader>
-			<CardContent className="px-best-friends sm:p-friends">
+			<CardContent className="p-friends">
 				<ChartContainer
 					config={chartConfig}
 					className="aspect-auto h-62.5 w-full"

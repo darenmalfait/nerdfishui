@@ -10,7 +10,7 @@ export default function SliderTicksExample() {
 	const ticks = [...Array(max + 1)].map((_, i) => i)
 
 	return (
-		<div className="w-full max-w-xs *:not-first:mt-4">
+		<div className="w-xs max-w-[calc(100vw-3rem)] *:not-first:mt-4">
 			<Label>Slider with ticks</Label>
 			<div>
 				<Slider defaultValue={[5]} max={max} aria-label="Slider with ticks">

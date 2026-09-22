@@ -12,7 +12,7 @@ export default function ProgressVariantsExample() {
 	}, [])
 
 	return (
-		<div className="space-y-casual w-full md:w-125">
+		<div className="space-y-casual w-125 max-w-[calc(100vw-3rem)]">
 			<div className="space-y-2">
 				<h3 className="text-sm font-medium">Default</h3>
 				<Progress value={progress}>

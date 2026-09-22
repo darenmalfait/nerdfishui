@@ -54,7 +54,7 @@ export default function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Home</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid gap-2 md:w-100 lg:w-125 lg:grid-cols-[.75fr_1fr]">
+						<ul className="grid w-125 grid-cols-[.75fr_1fr] gap-2">
 							<li className="row-span-3">
 								<NavigationMenuLink
 									render={
@@ -85,7 +85,7 @@ export default function NavigationMenuExample() {
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Components</NavigationMenuTrigger>
 					<NavigationMenuContent>
-						<ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
+						<ul className="grid w-125 grid-cols-2 gap-2">
 							{components.map((component) => (
 								<ListItem
 									key={component.title}

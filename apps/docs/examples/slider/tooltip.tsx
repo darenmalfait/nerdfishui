@@ -4,7 +4,7 @@ import { Slider } from '@nerdfish/react/slider'
 
 export default function SliderTooltipExample() {
 	return (
-		<div className="w-full max-w-xs *:not-first:mt-4">
+		<div className="w-xs max-w-[calc(100vw-3rem)] *:not-first:mt-4">
 			<div>
 				<span
 					className="text-foreground-muted mb-friends gap-bff flex w-full items-center justify-between text-xs font-medium"

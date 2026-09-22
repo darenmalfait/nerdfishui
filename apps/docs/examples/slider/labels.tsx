@@ -16,7 +16,7 @@ export default function SliderLabelsExample() {
 	}
 
 	return (
-		<div className="w-full max-w-xs *:not-first:mt-3.5">
+		<div className="w-xs max-w-[calc(100vw-3rem)] *:not-first:mt-3.5">
 			<Label className="tabular-nums">
 				From {formatPrice(value[0] ?? 0)} to {formatPrice(value[1] ?? 0)}
 			</Label>

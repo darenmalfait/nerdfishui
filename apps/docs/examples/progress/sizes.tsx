@@ -12,7 +12,7 @@ export default function ProgressSizesExample() {
 	}, [])
 
 	return (
-		<div className="space-y-casual w-full md:w-[500px]">
+		<div className="space-y-casual w-125 max-w-[calc(100vw-3rem)]">
 			<div className="space-y-2">
 				<h3 className="text-sm font-medium">Small</h3>
 				<Progress value={progress} className="h-1">

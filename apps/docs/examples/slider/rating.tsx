@@ -10,7 +10,7 @@ export default function SliderRatingExample() {
 	const labels = ['Awful', 'Poor', 'Okay', 'Good', 'Amazing']
 
 	return (
-		<div className="w-full max-w-xs space-y-3">
+		<div className="w-xs max-w-[calc(100vw-3rem)] space-y-3">
 			<div className="flex items-center justify-between gap-2">
 				<Label className="leading-6">Rate your experience</Label>
 				<span className="text-sm font-medium">{labels[value[0] ?? 0 - 1]}</span>

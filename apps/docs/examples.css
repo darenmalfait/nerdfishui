@@ -2,6 +2,10 @@
  * Blume example frames — design-system tokens only (no @import "tailwindcss").
  * Frames already set data-theme + .dark; both selectors are in tokens.css.
  * @see https://blume.hm/docs/content/components#component
+ *
+ * Demo widths: use a definite `w-*` (shrink-wrapped frame parent makes
+ * `w-full` collapse) plus `max-w-[calc(100vw-3rem)]` (body pads 1.5rem×2;
+ * `100vw` is definite, `max-w-full` is not).
  */
 @import '@nerdfish/react/styles/tokens.css';
 @import '@nerdfish/react/styles/animations.css';

@@ -12,7 +12,7 @@ export default function ProgressExample() {
 	}, [])
 
 	return (
-		<div className="w-full md:w-125">
+		<div className="w-125 max-w-[calc(100vw-3rem)]">
 			<Progress value={progress}>
 				<ProgressValue />
 			</Progress>

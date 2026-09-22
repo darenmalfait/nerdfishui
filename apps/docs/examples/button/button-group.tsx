@@ -33,7 +33,7 @@ export default function ButtonGroupExample() {
 
 	return (
 		<ButtonGroup className="gap-friends">
-			<ButtonGroup className="hidden sm:flex">
+			<ButtonGroup>
 				<Button variant="outline" icon aria-label="Go Back">
 					<ArrowLeftIcon />
 				</Button>

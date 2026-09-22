@@ -67,7 +67,7 @@ export default function ReactHookFormExample() {
 	}
 
 	return (
-		<Card className="w-full sm:max-w-2xl">
+		<Card className="w-full max-w-2xl">
 			<CardHeader>
 				<CardTitle>Bug Report</CardTitle>
 				<CardDescription>

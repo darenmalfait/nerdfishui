@@ -15,7 +15,7 @@ import { Label } from '@nerdfish/react/label'
 
 export default function CardExample() {
 	return (
-		<Card className="w-full md:w-87.5">
+		<Card className="w-87.5 max-w-[calc(100vw-3rem)]">
 			<CardHeader>
 				<CardTitle>Login to your account</CardTitle>
 				<CardDescription>

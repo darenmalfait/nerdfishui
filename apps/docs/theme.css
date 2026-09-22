@@ -1,10 +1,13 @@
 /*
- * Blume site chrome — tokens only (no @import "tailwindcss"; Blume provides it).
+ * Blume site chrome — tokens + typography (no @import "tailwindcss"; Blume provides it).
  * Map --blume-* so docs chrome tracks nerdfish. Declare light + dark: Blume's
  * dark defaults beat a lone :root override.
+ * typography.css must live here too — MDX/islands use typography-* outside
+ * example iframes (those only get examples.css).
  * @see https://blume.hm/docs/configuration/theming#themecss
  */
 @import '@nerdfish/react/styles/tokens.css';
+@import '@nerdfish/react/styles/typography.css';
 
 :root {
 	--blume-background: var(--base);

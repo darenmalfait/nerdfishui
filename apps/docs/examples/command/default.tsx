@@ -21,7 +21,7 @@ import {
 
 export default function CommandExample() {
 	return (
-		<Command className="rounded-base border shadow-md md:min-w-112.5">
+		<Command className="rounded-base w-112.5 max-w-[calc(100vw-3rem)] border shadow-md">
 			<CommandInput placeholder="Type a command or search..." />
 			<CommandList>
 				<CommandEmpty>No results found.</CommandEmpty>

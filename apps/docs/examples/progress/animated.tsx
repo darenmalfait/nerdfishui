@@ -22,7 +22,7 @@ export default function ProgressAnimatedExample() {
 	}, [])
 
 	return (
-		<div className="w-full space-y-2 md:w-125">
+		<div className="w-125 max-w-[calc(100vw-3rem)] space-y-2">
 			<h3 className="text-sm font-medium">Pulsing Animation</h3>
 			<Progress
 				value={progress}
