@@ -1,6 +1,6 @@
 ---
 title: 'Code Block'
-description: 'Displays syntax-highlighted code with an optional header for language, title, and actions.'
+description: 'Syntax-highlighted code with a Blume-style header bar and overlay copy control.'
 sidebar:
   label: 'Code Block'
   order: 15
@@ -11,12 +11,12 @@ sidebar:
 
 ## With Header
 
-Pass `title` and/or `language` to show a header with a copy button.
+Pass `title` (or just `language`) for the top bar — or `actions` alone. Brand language icons load on demand (`icon={false}` to hide, or pass a custom node). Pass `header={false}` to highlight without chrome. Copy sits overlaid on the right.
 
 <Component path="code-block/with-header" />
 
 ## Custom Copy Button
 
-Use the `actions` prop to replace the default icon-only copy button.
+Use the `actions` prop to replace the default overlay copy control.
 
 <Component path="code-block/custom-copy" />

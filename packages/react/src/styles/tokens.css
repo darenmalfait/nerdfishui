@@ -57,16 +57,18 @@
 	--chart-4: var(--color-blue-700);
 	--chart-5: var(--color-blue-800);
 
+	/* Shiki css-variables theme (`createCssVariablesTheme` + `--colors-shiki-`).
+	   References palette tokens so light/dark follow `.dark` / `[data-theme=dark]`. */
 	--colors-shiki-foreground: var(--text);
-	--colors-shiki-background: var(--mantle);
-	--shiki-token-constant: var(--warning);
+	--colors-shiki-background: transparent;
+	--colors-shiki-token-constant: var(--warning);
 	--colors-shiki-token-string: var(--success);
-	--colors-shiki-token-comment: var(--overlay-2);
+	--colors-shiki-token-comment: var(--subtext-1);
 	--colors-shiki-token-keyword: var(--info);
 	--colors-shiki-token-parameter: var(--destructive);
-	--colors-shiki-token-function: var(--info);
+	--colors-shiki-token-function: var(--brand);
 	--colors-shiki-token-string-expression: var(--success);
-	--colors-shiki-token-punctuation: var(--text);
+	--colors-shiki-token-punctuation: var(--subtext-0);
 	--colors-shiki-token-link: var(--info);
 }
 
