@@ -228,5 +228,5 @@ useMountEffect(() => {
 - Fix type errors before chasing style nits
 - Mirror `item` / `attachment` / `empty` / `button` instead of inventing
 - If workspace types are missing: `pnpm build:packages`
-- See `agents/rules/` for modular rules; `agents/skills/` for optional
-  deep-dives (React performance, Web Interface Guidelines)
+- See `.agents/rules/` for repo-specific rules; `.agents/skills/` for installed
+  skills (`npx skills add darenmalfait/nerdfish-agent-skills`)

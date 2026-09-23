@@ -26,6 +26,7 @@ export default [
 	},
 	{
 		ignores: [
+			'**/.agents/**',
 			'**/.changeset/**',
 			'**/__generated__/**',
 			'**/.next/**',
