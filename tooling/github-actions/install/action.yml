@@ -4,7 +4,7 @@ description: 'Sets up Node.js and runs install'
 runs:
   using: composite
   steps:
-    - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
       with:
         node-version-file: '.nvmrc'
 
@@ -12,9 +12,9 @@ runs:
       shell: bash
       run: npm i -g turbo
 
-    - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
+    - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
 
-    - uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5
+    - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
       name: pnpm-cache
       id: pnpm-cache
       with:
@@ -26,7 +26,7 @@ runs:
           ${{ runner.os }}-pnpm
 
     - name: Cache TypeScript TSBuild Info Files
-      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5
+      uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
       with:
         path: '*/*/node_modules/.cache/tsbuildinfo.json'
         # Commit hash is for working around this: https://github.com/actions/cache/issues/106
