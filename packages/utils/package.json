@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "@nerdfish/config": "^1.10.6",
-    "eslint": "^9.39.4",
-    "prettier": "^3.9.4",
+    "eslint": "^9.39.5",
+    "prettier": "^3.9.8",
     "typescript": "^5.9.3"
   },
   "publishConfig": {
