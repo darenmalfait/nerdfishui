@@ -25,10 +25,10 @@ Reference these guidelines when:
 
 ## Rule Categories by Priority
 
-| Priority | Category       | Impact | Prefix     |
-| -------- | -------------- | ------ | ---------- |
-| 1        | Git discipline | HIGH   | `git-`     |
-| 2        | PR creation    | HIGH   | `quality-` |
+| Priority | Category      | Impact | Prefix     |
+| -------- | ------------- | ------ | ---------- |
+| 1        | Git discipline| HIGH   | `git-`     |
+| 2        | PR creation   | HIGH   | `quality-` |
 
 ## Quick Reference
 

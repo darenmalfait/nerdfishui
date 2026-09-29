@@ -17,13 +17,13 @@ property access—explicit methods ensure correct behavior.
 import { useSharedValue } from 'react-native-reanimated'
 
 function Counter() {
-	const count = useSharedValue(0)
+  const count = useSharedValue(0)
 
-	const increment = () => {
-		count.value = count.value + 1 // opts out of react compiler
-	}
+  const increment = () => {
+    count.value = count.value + 1 // opts out of react compiler
+  }
 
-	return <Button onPress={increment} title={`Count: ${count.value}`} />
+  return <Button onPress={increment} title={`Count: ${count.value}`} />
 }
 ```
 
@@ -33,13 +33,13 @@ function Counter() {
 import { useSharedValue } from 'react-native-reanimated'
 
 function Counter() {
-	const count = useSharedValue(0)
+  const count = useSharedValue(0)
 
-	const increment = () => {
-		count.set(count.get() + 1)
-	}
+  const increment = () => {
+    count.set(count.get() + 1)
+  }
 
-	return <Button onPress={increment} title={`Count: ${count.get()}`} />
+  return <Button onPress={increment} title={`Count: ${count.get()}`} />
 }
 ```
 

@@ -14,106 +14,62 @@ January 2026
 
 ## Abstract
 
-Comprehensive performance optimization guide for React Native applications,
-designed for AI agents and LLMs. Contains 35+ rules across 13 categories,
-prioritized by impact from critical (core rendering, list performance) to
-incremental (fonts, imports). Each rule includes detailed explanations,
-real-world examples comparing incorrect vs. correct implementations, and
-specific impact metrics to guide automated refactoring and code generation.
+Comprehensive performance optimization guide for React Native applications, designed for AI agents and LLMs. Contains 35+ rules across 13 categories, prioritized by impact from critical (core rendering, list performance) to incremental (fonts, imports). Each rule includes detailed explanations, real-world examples comparing incorrect vs. correct implementations, and specific impact metrics to guide automated refactoring and code generation.
 
 ---
 
 ## Table of Contents
 
 1. [Core Rendering](#1-core-rendering) — **CRITICAL**
-   - 1.1
-     [Never Use && with Potentially Falsy Values](#11-never-use--with-potentially-falsy-values)
+   - 1.1 [Never Use && with Potentially Falsy Values](#11-never-use--with-potentially-falsy-values)
    - 1.2 [Wrap Strings in Text Components](#12-wrap-strings-in-text-components)
 2. [List Performance](#2-list-performance) — **HIGH**
-   - 2.1
-     [Avoid Inline Objects in renderItem](#21-avoid-inline-objects-in-renderitem)
-   - 2.2
-     [Hoist callbacks to the root of lists](#22-hoist-callbacks-to-the-root-of-lists)
+   - 2.1 [Avoid Inline Objects in renderItem](#21-avoid-inline-objects-in-renderitem)
+   - 2.2 [Hoist callbacks to the root of lists](#22-hoist-callbacks-to-the-root-of-lists)
    - 2.3 [Keep List Items Lightweight](#23-keep-list-items-lightweight)
-   - 2.4
-     [Optimize List Performance with Stable Object References](#24-optimize-list-performance-with-stable-object-references)
-   - 2.5
-     [Pass Primitives to List Items for Memoization](#25-pass-primitives-to-list-items-for-memoization)
-   - 2.6
-     [Use a List Virtualizer for Any List](#26-use-a-list-virtualizer-for-any-list)
+   - 2.4 [Optimize List Performance with Stable Object References](#24-optimize-list-performance-with-stable-object-references)
+   - 2.5 [Pass Primitives to List Items for Memoization](#25-pass-primitives-to-list-items-for-memoization)
+   - 2.6 [Use a List Virtualizer for Any List](#26-use-a-list-virtualizer-for-any-list)
    - 2.7 [Use Compressed Images in Lists](#27-use-compressed-images-in-lists)
-   - 2.8
-     [Use Item Types for Heterogeneous Lists](#28-use-item-types-for-heterogeneous-lists)
+   - 2.8 [Use Item Types for Heterogeneous Lists](#28-use-item-types-for-heterogeneous-lists)
 3. [Animation](#3-animation) — **HIGH**
-   - 3.1
-     [Animate Transform and Opacity Instead of Layout Properties](#31-animate-transform-and-opacity-instead-of-layout-properties)
-   - 3.2
-     [Prefer useDerivedValue Over useAnimatedReaction](#32-prefer-usederivedvalue-over-useanimatedreaction)
-   - 3.3
-     [Use GestureDetector for Animated Press States](#33-use-gesturedetector-for-animated-press-states)
+   - 3.1 [Animate Transform and Opacity Instead of Layout Properties](#31-animate-transform-and-opacity-instead-of-layout-properties)
+   - 3.2 [Prefer useDerivedValue Over useAnimatedReaction](#32-prefer-usederivedvalue-over-useanimatedreaction)
+   - 3.3 [Use GestureDetector for Animated Press States](#33-use-gesturedetector-for-animated-press-states)
 4. [Scroll Performance](#4-scroll-performance) — **HIGH**
-   - 4.1
-     [Never Track Scroll Position in useState](#41-never-track-scroll-position-in-usestate)
+   - 4.1 [Never Track Scroll Position in useState](#41-never-track-scroll-position-in-usestate)
 5. [Navigation](#5-navigation) — **HIGH**
-   - 5.1
-     [Use Native Navigators for Navigation](#51-use-native-navigators-for-navigation)
+   - 5.1 [Use Native Navigators for Navigation](#51-use-native-navigators-for-navigation)
 6. [React State](#6-react-state) — **MEDIUM**
-   - 6.1
-     [Minimize State Variables and Derive Values](#61-minimize-state-variables-and-derive-values)
-   - 6.2
-     [Use fallback state instead of initialState](#62-use-fallback-state-instead-of-initialstate)
-   - 6.3
-     [useState Dispatch updaters for State That Depends on Current Value](#63-usestate-dispatch-updaters-for-state-that-depends-on-current-value)
+   - 6.1 [Minimize State Variables and Derive Values](#61-minimize-state-variables-and-derive-values)
+   - 6.2 [Use fallback state instead of initialState](#62-use-fallback-state-instead-of-initialstate)
+   - 6.3 [useState Dispatch updaters for State That Depends on Current Value](#63-usestate-dispatch-updaters-for-state-that-depends-on-current-value)
 7. [State Architecture](#7-state-architecture) — **MEDIUM**
-   - 7.1
-     [State Must Represent Ground Truth](#71-state-must-represent-ground-truth)
+   - 7.1 [State Must Represent Ground Truth](#71-state-must-represent-ground-truth)
 8. [React Compiler](#8-react-compiler) — **MEDIUM**
-   - 8.1
-     [Destructure Functions Early in Render (React Compiler)](#81-destructure-functions-early-in-render-react-compiler)
-   - 8.2
-     [Use .get() and .set() for Reanimated Shared Values (not .value)](#82-use-get-and-set-for-reanimated-shared-values-not-value)
+   - 8.1 [Destructure Functions Early in Render (React Compiler)](#81-destructure-functions-early-in-render-react-compiler)
+   - 8.2 [Use .get() and .set() for Reanimated Shared Values (not .value)](#82-use-get-and-set-for-reanimated-shared-values-not-value)
 9. [User Interface](#9-user-interface) — **MEDIUM**
    - 9.1 [Measuring View Dimensions](#91-measuring-view-dimensions)
-   - 9.2
-     [Modern React Native Styling Patterns](#92-modern-react-native-styling-patterns)
-   - 9.3
-     [Use contentInset for Dynamic ScrollView Spacing](#93-use-contentinset-for-dynamic-scrollview-spacing)
-   - 9.4
-     [Use contentInsetAdjustmentBehavior for Safe Areas](#94-use-contentinsetadjustmentbehavior-for-safe-areas)
-   - 9.5
-     [Use expo-image for Optimized Images](#95-use-expo-image-for-optimized-images)
-   - 9.6
-     [Use Galeria for Image Galleries and Lightbox](#96-use-galeria-for-image-galleries-and-lightbox)
-   - 9.7
-     [Use Native Menus for Dropdowns and Context Menus](#97-use-native-menus-for-dropdowns-and-context-menus)
-   - 9.8
-     [Use Native Modals Over JS-Based Bottom Sheets](#98-use-native-modals-over-js-based-bottom-sheets)
-   - 9.9
-     [Use Pressable Instead of Touchable Components](#99-use-pressable-instead-of-touchable-components)
+   - 9.2 [Modern React Native Styling Patterns](#92-modern-react-native-styling-patterns)
+   - 9.3 [Use contentInset for Dynamic ScrollView Spacing](#93-use-contentinset-for-dynamic-scrollview-spacing)
+   - 9.4 [Use contentInsetAdjustmentBehavior for Safe Areas](#94-use-contentinsetadjustmentbehavior-for-safe-areas)
+   - 9.5 [Use expo-image for Optimized Images](#95-use-expo-image-for-optimized-images)
+   - 9.6 [Use Galeria for Image Galleries and Lightbox](#96-use-galeria-for-image-galleries-and-lightbox)
+   - 9.7 [Use Native Menus for Dropdowns and Context Menus](#97-use-native-menus-for-dropdowns-and-context-menus)
+   - 9.8 [Use Native Modals Over JS-Based Bottom Sheets](#98-use-native-modals-over-js-based-bottom-sheets)
+   - 9.9 [Use Pressable Instead of Touchable Components](#99-use-pressable-instead-of-touchable-components)
 10. [Design System](#10-design-system) — **MEDIUM**
-
-- 10.1
-  [Use Compound Components Over Polymorphic Children](#101-use-compound-components-over-polymorphic-children)
-
+   - 10.1 [Use Compound Components Over Polymorphic Children](#101-use-compound-components-over-polymorphic-children)
 11. [Monorepo](#11-monorepo) — **LOW**
-
-- 11.1
-  [Install Native Dependencies in App Directory](#111-install-native-dependencies-in-app-directory)
-- 11.2
-  [Use Single Dependency Versions Across Monorepo](#112-use-single-dependency-versions-across-monorepo)
-
+   - 11.1 [Install Native Dependencies in App Directory](#111-install-native-dependencies-in-app-directory)
+   - 11.2 [Use Single Dependency Versions Across Monorepo](#112-use-single-dependency-versions-across-monorepo)
 12. [Third-Party Dependencies](#12-third-party-dependencies) — **LOW**
-
-- 12.1 [Import from Design System Folder](#121-import-from-design-system-folder)
-
+   - 12.1 [Import from Design System Folder](#121-import-from-design-system-folder)
 13. [JavaScript](#13-javascript) — **LOW**
-
-- 13.1 [Hoist Intl Formatter Creation](#131-hoist-intl-formatter-creation)
-
+   - 13.1 [Hoist Intl Formatter Creation](#131-hoist-intl-formatter-creation)
 14. [Fonts](#14-fonts) — **LOW**
-
-- 14.1
-  [Load fonts natively at build time](#141-load-fonts-natively-at-build-time)
+   - 14.1 [Load fonts natively at build time](#141-load-fonts-natively-at-build-time)
 
 ---
 
@@ -121,8 +77,8 @@ specific impact metrics to guide automated refactoring and code generation.
 
 **Impact: CRITICAL**
 
-Fundamental React Native rendering rules. Violations cause runtime crashes or
-broken UI.
+Fundamental React Native rendering rules. Violations cause
+runtime crashes or broken UI.
 
 ### 1.1 Never Use && with Potentially Falsy Values
 
@@ -138,12 +94,12 @@ text outside a `<Text>` component, causing a hard crash in production.
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	return (
-		<View>
-			{name && <Text>{name}</Text>}
-			{count && <Text>{count} items</Text>}
-		</View>
-	)
+  return (
+    <View>
+      {name && <Text>{name}</Text>}
+      {count && <Text>{count} items</Text>}
+    </View>
+  )
 }
 // If name="" or count=0, renders the falsy value → crash
 ```
@@ -152,12 +108,12 @@ function Profile({ name, count }: { name: string; count: number }) {
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	return (
-		<View>
-			{name ? <Text>{name}</Text> : null}
-			{count ? <Text>{count} items</Text> : null}
-		</View>
-	)
+  return (
+    <View>
+      {name ? <Text>{name}</Text> : null}
+      {count ? <Text>{count} items</Text> : null}
+    </View>
+  )
 }
 ```
 
@@ -165,12 +121,12 @@ function Profile({ name, count }: { name: string; count: number }) {
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	return (
-		<View>
-			{!!name && <Text>{name}</Text>}
-			{!!count && <Text>{count} items</Text>}
-		</View>
-	)
+  return (
+    <View>
+      {!!name && <Text>{name}</Text>}
+      {!!count && <Text>{count} items</Text>}
+    </View>
+  )
 }
 ```
 
@@ -178,14 +134,14 @@ function Profile({ name, count }: { name: string; count: number }) {
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	if (!name) return null
+  if (!name) return null
 
-	return (
-		<View>
-			<Text>{name}</Text>
-			{count > 0 ? <Text>{count} items</Text> : null}
-		</View>
-	)
+  return (
+    <View>
+      <Text>{name}</Text>
+      {count > 0 ? <Text>{count} items</Text> : null}
+    </View>
+  )
 }
 ```
 
@@ -213,7 +169,7 @@ direct child of `<View>`.
 import { View } from 'react-native'
 
 function Greeting({ name }: { name: string }) {
-	return <View>Hello, {name}!</View>
+  return <View>Hello, {name}!</View>
 }
 // Error: Text strings must be rendered within a <Text> component.
 ```
@@ -224,11 +180,11 @@ function Greeting({ name }: { name: string }) {
 import { View, Text } from 'react-native'
 
 function Greeting({ name }: { name: string }) {
-	return (
-		<View>
-			<Text>Hello, {name}!</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Text>Hello, {name}!</Text>
+    </View>
+  )
 }
 ```
 
@@ -238,8 +194,8 @@ function Greeting({ name }: { name: string }) {
 
 **Impact: HIGH**
 
-Optimizing virtualized lists (FlatList, LegendList, FlashList) for smooth
-scrolling and fast updates.
+Optimizing virtualized lists (FlatList, LegendList, FlashList)
+for smooth scrolling and fast updates.
 
 ### 2.1 Avoid Inline Objects in renderItem
 
@@ -255,17 +211,17 @@ values directly from `item` instead.
 
 ```tsx
 function UserList({ users }: { users: User[] }) {
-	return (
-		<LegendList
-			data={users}
-			renderItem={({ item }) => (
-				<UserRow
-					// Bad: new object on every render
-					user={{ id: item.id, name: item.name, avatar: item.avatar }}
-				/>
-			)}
-		/>
-	)
+  return (
+    <LegendList
+      data={users}
+      renderItem={({ item }) => (
+        <UserRow
+          // Bad: new object on every render
+          user={{ id: item.id, name: item.name, avatar: item.avatar }}
+        />
+      )}
+    />
+  )
 }
 ```
 
@@ -285,15 +241,15 @@ renderItem={({ item }) => (
 
 ```tsx
 function UserList({ users }: { users: User[] }) {
-	return (
-		<LegendList
-			data={users}
-			renderItem={({ item }) => (
-				// Good: pass the item directly
-				<UserRow user={item} />
-			)}
-		/>
-	)
+  return (
+    <LegendList
+      data={users}
+      renderItem={({ item }) => (
+        // Good: pass the item directly
+        <UserRow user={item} />
+      )}
+    />
+  )
 }
 ```
 
@@ -392,19 +348,19 @@ during scroll—expensive items cause jank.
 
 ```tsx
 function ProductRow({ id }: { id: string }) {
-	// Bad: query inside list item
-	const { data: product } = useQuery(['product', id], () => fetchProduct(id))
-	// Bad: multiple context accesses
-	const theme = useContext(ThemeContext)
-	const user = useContext(UserContext)
-	const cart = useContext(CartContext)
-	// Bad: expensive computation
-	const recommendations = useMemo(
-		() => computeRecommendations(product),
-		[product],
-	)
+  // Bad: query inside list item
+  const { data: product } = useQuery(['product', id], () => fetchProduct(id))
+  // Bad: multiple context accesses
+  const theme = useContext(ThemeContext)
+  const user = useContext(UserContext)
+  const cart = useContext(CartContext)
+  // Bad: expensive computation
+  const recommendations = useMemo(
+    () => computeRecommendations(product),
+    [product]
+  )
 
-	return <View>{/* ... */}</View>
+  return <View>{/* ... */}</View>
 }
 ```
 
@@ -412,14 +368,14 @@ function ProductRow({ id }: { id: string }) {
 
 ```tsx
 function ProductRow({ name, price, imageUrl }: Props) {
-	// Good: receives only primitives, minimal hooks
-	return (
-		<View>
-			<Image source={{ uri: imageUrl }} />
-			<Text>{name}</Text>
-			<Text>{price}</Text>
-		</View>
-	)
+  // Good: receives only primitives, minimal hooks
+  return (
+    <View>
+      <Image source={{ uri: imageUrl }} />
+      <Text>{name}</Text>
+      <Text>{price}</Text>
+    </View>
+  )
 }
 ```
 
@@ -428,16 +384,16 @@ function ProductRow({ name, price, imageUrl }: Props) {
 ```tsx
 // Parent fetches all data once
 function ProductList() {
-	const { data: products } = useQuery(['products'], fetchProducts)
+  const { data: products } = useQuery(['products'], fetchProducts)
 
-	return (
-		<LegendList
-			data={products}
-			renderItem={({ item }) => (
-				<ProductRow name={item.name} price={item.price} imageUrl={item.image} />
-			)}
-		/>
-	)
+  return (
+    <LegendList
+      data={products}
+      renderItem={({ item }) => (
+        <ProductRow name={item.name} price={item.price} imageUrl={item.image} />
+      )}
+    />
+  )
 }
 ```
 
@@ -446,16 +402,16 @@ function ProductList() {
 ```tsx
 // Incorrect: Context causes re-render when any cart value changes
 function ProductRow({ id, name }: Props) {
-	const { items } = useContext(CartContext)
-	const inCart = items.includes(id)
-	// ...
+  const { items } = useContext(CartContext)
+  const inCart = items.includes(id)
+  // ...
 }
 
 // Correct: Zustand selector only re-renders when this specific value changes
 function ProductRow({ id, name }: Props) {
-	// use Set.has (created once at the root) instead of Array.includes()
-	const inCart = useCartStore((s) => s.items.has(id))
-	// ...
+  // use Set.has (created once at the root) instead of Array.includes()
+  const inCart = useCartStore((s) => s.items.has(id))
+  // ...
 }
 ```
 
@@ -493,25 +449,25 @@ Where needed, use context selectors within list items.
 
 ```tsx
 function DomainSearch() {
-	const { keyword, setKeyword } = useKeywordZustandState()
-	const { data: tlds } = useTlds()
+  const { keyword, setKeyword } = useKeywordZustandState()
+  const { data: tlds } = useTlds()
 
-	// Bad: creates new objects on every render, reparenting the entire list on every keystroke
-	const domains = tlds.map((tld) => ({
-		domain: `${keyword}.${tld.name}`,
-		tld: tld.name,
-		price: tld.price,
-	}))
+  // Bad: creates new objects on every render, reparenting the entire list on every keystroke
+  const domains = tlds.map((tld) => ({
+    domain: `${keyword}.${tld.name}`,
+    tld: tld.name,
+    price: tld.price,
+  }))
 
-	return (
-		<>
-			<TextInput value={keyword} onChangeText={setKeyword} />
-			<LegendList
-				data={domains}
-				renderItem={({ item }) => <DomainItem item={item} keyword={keyword} />}
-			/>
-		</>
-	)
+  return (
+    <>
+      <TextInput value={keyword} onChangeText={setKeyword} />
+      <LegendList
+        data={domains}
+        renderItem={({ item }) => <DomainItem item={item} keyword={keyword} />}
+      />
+    </>
+  )
 }
 ```
 
@@ -521,22 +477,22 @@ function DomainSearch() {
 const renderItem = ({ item }) => <DomainItem tld={item} />
 
 function DomainSearch() {
-	const { data: tlds } = useTlds()
+  const { data: tlds } = useTlds()
 
-	return (
-		<LegendList
-			// good: as long as the data is stable, LegendList will not re-render the entire list
-			data={tlds}
-			renderItem={renderItem}
-		/>
-	)
+  return (
+    <LegendList
+      // good: as long as the data is stable, LegendList will not re-render the entire list
+      data={tlds}
+      renderItem={renderItem}
+    />
+  )
 }
 
 function DomainItem({ tld }: { tld: Tld }) {
-	// good: transform within items, and don't pass the dynamic data as a prop
-	// good: use a selector function from zustand to receive a stable string back
-	const domain = useKeywordZustandState((s) => s.keyword + '.' + tld.name)
-	return <Text>{domain}</Text>
+  // good: transform within items, and don't pass the dynamic data as a prop
+  // good: use a selector function from zustand to receive a stable string back
+  const domain = useKeywordZustandState((s) => s.keyword + '.' + tld.name)
+  return <Text>{domain}</Text>
 }
 ```
 
@@ -562,8 +518,8 @@ references are stable.
 
 ```tsx
 function DomainItemFavoriteButton({ tld }: { tld: Tld }) {
-	const isFavorited = useFavoritesStore((s) => s.favorites.has(tld.id))
-	return <TldFavoriteButton isFavorited={isFavorited} />
+  const isFavorited = useFavoritesStore((s) => s.favorites.has(tld.id))
+  return <TldFavoriteButton isFavorited={isFavorited} />
 }
 ```
 
@@ -686,13 +642,13 @@ which gets expensive quickly.
 
 ```tsx
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<ScrollView>
-			{items.map((item) => (
-				<ItemCard key={item.id} item={item} />
-			))}
-		</ScrollView>
-	)
+  return (
+    <ScrollView>
+      {items.map((item) => (
+        <ItemCard key={item.id} item={item} />
+      ))}
+    </ScrollView>
+  )
 }
 // 50 items = 50 components mounted, even if only 10 visible
 ```
@@ -703,15 +659,15 @@ function Feed({ items }: { items: Item[] }) {
 import { LegendList } from '@legendapp/list'
 
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<LegendList
-			data={items}
-			// if you aren't using React Compiler, wrap these with useCallback
-			renderItem={({ item }) => <ItemCard item={item} />}
-			keyExtractor={(item) => item.id}
-			estimatedItemSize={80}
-		/>
-	)
+  return (
+    <LegendList
+      data={items}
+      // if you aren't using React Compiler, wrap these with useCallback
+      renderItem={({ item }) => <ItemCard item={item} />}
+      keyExtractor={(item) => item.id}
+      estimatedItemSize={80}
+    />
+  )
 }
 // Only ~10-15 visible items mounted at a time
 ```
@@ -722,14 +678,14 @@ function Feed({ items }: { items: Item[] }) {
 import { FlashList } from '@shopify/flash-list'
 
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<FlashList
-			data={items}
-			// if you aren't using React Compiler, wrap these with useCallback
-			renderItem={({ item }) => <ItemCard item={item} />}
-			keyExtractor={(item) => item.id}
-		/>
-	)
+  return (
+    <FlashList
+      data={items}
+      // if you aren't using React Compiler, wrap these with useCallback
+      renderItem={({ item }) => <ItemCard item={item} />}
+      keyExtractor={(item) => item.id}
+    />
+  )
 }
 ```
 
@@ -751,16 +707,16 @@ your server or use an image CDN with resize parameters.
 
 ```tsx
 function ProductItem({ product }: { product: Product }) {
-	return (
-		<View>
-			{/* 4000x3000 image loaded for a 100x100 thumbnail */}
-			<Image
-				source={{ uri: product.imageUrl }}
-				style={{ width: 100, height: 100 }}
-			/>
-			<Text>{product.name}</Text>
-		</View>
-	)
+  return (
+    <View>
+      {/* 4000x3000 image loaded for a 100x100 thumbnail */}
+      <Image
+        source={{ uri: product.imageUrl }}
+        style={{ width: 100, height: 100 }}
+      />
+      <Text>{product.name}</Text>
+    </View>
+  )
 }
 ```
 
@@ -768,19 +724,19 @@ function ProductItem({ product }: { product: Product }) {
 
 ```tsx
 function ProductItem({ product }: { product: Product }) {
-	// Request a 200x200 image (2x for retina)
-	const thumbnailUrl = `${product.imageUrl}?w=200&h=200&fit=cover`
+  // Request a 200x200 image (2x for retina)
+  const thumbnailUrl = `${product.imageUrl}?w=200&h=200&fit=cover`
 
-	return (
-		<View>
-			<Image
-				source={{ uri: thumbnailUrl }}
-				style={{ width: 100, height: 100 }}
-				contentFit="cover"
-			/>
-			<Text>{product.name}</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Image
+        source={{ uri: thumbnailUrl }}
+        style={{ width: 100, height: 100 }}
+        contentFit='cover'
+      />
+      <Text>{product.name}</Text>
+    </View>
+  )
 }
 ```
 
@@ -810,23 +766,23 @@ image component.
 type Item = { id: string; text?: string; imageUrl?: string; isHeader?: boolean }
 
 function ListItem({ item }: { item: Item }) {
-	if (item.isHeader) {
-		return <HeaderItem title={item.text} />
-	}
-	if (item.imageUrl) {
-		return <ImageItem url={item.imageUrl} />
-	}
-	return <MessageItem text={item.text} />
+  if (item.isHeader) {
+    return <HeaderItem title={item.text} />
+  }
+  if (item.imageUrl) {
+    return <ImageItem url={item.imageUrl} />
+  }
+  return <MessageItem text={item.text} />
 }
 
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<LegendList
-			data={items}
-			renderItem={({ item }) => <ListItem item={item} />}
-			recycleItems
-		/>
-	)
+  return (
+    <LegendList
+      data={items}
+      renderItem={({ item }) => <ListItem item={item} />}
+      recycleItems
+    />
+  )
 }
 ```
 
@@ -839,24 +795,24 @@ type ImageItem = { id: string; type: 'image'; url: string }
 type FeedItem = HeaderItem | MessageItem | ImageItem
 
 function Feed({ items }: { items: FeedItem[] }) {
-	return (
-		<LegendList
-			data={items}
-			keyExtractor={(item) => item.id}
-			getItemType={(item) => item.type}
-			renderItem={({ item }) => {
-				switch (item.type) {
-					case 'header':
-						return <SectionHeader title={item.title} />
-					case 'message':
-						return <MessageRow text={item.text} />
-					case 'image':
-						return <ImageRow url={item.url} />
-				}
-			}}
-			recycleItems
-		/>
-	)
+  return (
+    <LegendList
+      data={items}
+      keyExtractor={(item) => item.id}
+      getItemType={(item) => item.type}
+      renderItem={({ item }) => {
+        switch (item.type) {
+          case 'header':
+            return <SectionHeader title={item.title} />
+          case 'message':
+            return <MessageRow text={item.text} />
+          case 'image':
+            return <ImageRow url={item.url} />
+        }
+      }}
+      recycleItems
+    />
+  )
 }
 ```
 
@@ -864,25 +820,25 @@ function Feed({ items }: { items: FeedItem[] }) {
 
 ```tsx
 <LegendList
-	data={items}
-	keyExtractor={(item) => item.id}
-	getItemType={(item) => item.type}
-	getEstimatedItemSize={(index, item, itemType) => {
-		switch (itemType) {
-			case 'header':
-				return 48
-			case 'message':
-				return 72
-			case 'image':
-				return 300
-			default:
-				return 72
-		}
-	}}
-	renderItem={({ item }) => {
-		/* ... */
-	}}
-	recycleItems
+  data={items}
+  keyExtractor={(item) => item.id}
+  getItemType={(item) => item.type}
+  getEstimatedItemSize={(index, item, itemType) => {
+    switch (itemType) {
+      case 'header':
+        return 48
+      case 'message':
+        return 72
+      case 'image':
+        return 300
+      default:
+        return 72
+    }
+  }}
+  renderItem={({ item }) => {
+    /* ... */
+  }}
+  recycleItems
 />
 ```
 
@@ -902,16 +858,14 @@ function Feed({ items }: { items: FeedItem[] }) {
 
 **Impact: HIGH**
 
-GPU-accelerated animations, Reanimated patterns, and avoiding render thrashing
-during gestures.
+GPU-accelerated animations, Reanimated patterns, and avoiding
+render thrashing during gestures.
 
 ### 3.1 Animate Transform and Opacity Instead of Layout Properties
 
 **Impact: HIGH (GPU-accelerated animations, no layout recalculation)**
 
-Avoid animating `width`, `height`, `top`, `left`, `margin`, or `padding`. These
-trigger layout recalculation on every frame. Instead, use `transform` (scale,
-translate) and `opacity` which run on the GPU without triggering layout.
+Avoid animating `width`, `height`, `top`, `left`, `margin`, or `padding`. These trigger layout recalculation on every frame. Instead, use `transform` (scale, translate) and `opacity` which run on the GPU without triggering layout.
 
 **Incorrect: animates height, triggers layout every frame**
 
@@ -919,12 +873,12 @@ translate) and `opacity` which run on the GPU without triggering layout.
 import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated'
 
 function CollapsiblePanel({ expanded }: { expanded: boolean }) {
-	const animatedStyle = useAnimatedStyle(() => ({
-		height: withTiming(expanded ? 200 : 0), // triggers layout on every frame
-		overflow: 'hidden',
-	}))
+  const animatedStyle = useAnimatedStyle(() => ({
+    height: withTiming(expanded ? 200 : 0), // triggers layout on every frame
+    overflow: 'hidden',
+  }))
 
-	return <Animated.View style={animatedStyle}>{children}</Animated.View>
+  return <Animated.View style={animatedStyle}>{children}</Animated.View>
 }
 ```
 
@@ -934,18 +888,18 @@ function CollapsiblePanel({ expanded }: { expanded: boolean }) {
 import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated'
 
 function CollapsiblePanel({ expanded }: { expanded: boolean }) {
-	const animatedStyle = useAnimatedStyle(() => ({
-		transform: [{ scaleY: withTiming(expanded ? 1 : 0) }],
-		opacity: withTiming(expanded ? 1 : 0),
-	}))
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scaleY: withTiming(expanded ? 1 : 0) },
+    ],
+    opacity: withTiming(expanded ? 1 : 0),
+  }))
 
-	return (
-		<Animated.View
-			style={[{ height: 200, transformOrigin: 'top' }, animatedStyle]}
-		>
-			{children}
-		</Animated.View>
-	)
+  return (
+    <Animated.View style={[{ height: 200, transformOrigin: 'top' }, animatedStyle]}>
+      {children}
+    </Animated.View>
+  )
 }
 ```
 
@@ -955,17 +909,18 @@ function CollapsiblePanel({ expanded }: { expanded: boolean }) {
 import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated'
 
 function SlideIn({ visible }: { visible: boolean }) {
-	const animatedStyle = useAnimatedStyle(() => ({
-		transform: [{ translateY: withTiming(visible ? 0 : 100) }],
-		opacity: withTiming(visible ? 1 : 0),
-	}))
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [
+      { translateY: withTiming(visible ? 0 : 100) },
+    ],
+    opacity: withTiming(visible ? 1 : 0),
+  }))
 
-	return <Animated.View style={animatedStyle}>{children}</Animated.View>
+  return <Animated.View style={animatedStyle}>{children}</Animated.View>
 }
 ```
 
-GPU-accelerated properties: `transform` (translate, scale, rotate), `opacity`.
-Everything else triggers layout.
+GPU-accelerated properties: `transform` (translate, scale, rotate), `opacity`. Everything else triggers layout.
 
 ### 3.2 Prefer useDerivedValue Over useAnimatedReaction
 
@@ -987,17 +942,17 @@ for side effects, not derivations.
 import { useSharedValue, useAnimatedReaction } from 'react-native-reanimated'
 
 function MyComponent() {
-	const progress = useSharedValue(0)
-	const opacity = useSharedValue(1)
+  const progress = useSharedValue(0)
+  const opacity = useSharedValue(1)
 
-	useAnimatedReaction(
-		() => progress.value,
-		(current) => {
-			opacity.value = 1 - current
-		},
-	)
+  useAnimatedReaction(
+    () => progress.value,
+    (current) => {
+      opacity.value = 1 - current
+    }
+  )
 
-	// ...
+  // ...
 }
 ```
 
@@ -1007,11 +962,11 @@ function MyComponent() {
 import { useSharedValue, useDerivedValue } from 'react-native-reanimated'
 
 function MyComponent() {
-	const progress = useSharedValue(0)
+  const progress = useSharedValue(0)
 
-	const opacity = useDerivedValue(() => 1 - progress.get())
+  const opacity = useDerivedValue(() => 1 - progress.get())
 
-	// ...
+  // ...
 }
 ```
 
@@ -1038,29 +993,29 @@ JS thread round-trip for press animations.
 ```tsx
 import { Pressable } from 'react-native'
 import Animated, {
-	useSharedValue,
-	useAnimatedStyle,
-	withTiming,
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
 } from 'react-native-reanimated'
 
 function AnimatedButton({ onPress }: { onPress: () => void }) {
-	const scale = useSharedValue(1)
+  const scale = useSharedValue(1)
 
-	const animatedStyle = useAnimatedStyle(() => ({
-		transform: [{ scale: scale.value }],
-	}))
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }))
 
-	return (
-		<Pressable
-			onPress={onPress}
-			onPressIn={() => (scale.value = withTiming(0.95))}
-			onPressOut={() => (scale.value = withTiming(1))}
-		>
-			<Animated.View style={animatedStyle}>
-				<Text>Press me</Text>
-			</Animated.View>
-		</Pressable>
-	)
+  return (
+    <Pressable
+      onPress={onPress}
+      onPressIn={() => (scale.value = withTiming(0.95))}
+      onPressOut={() => (scale.value = withTiming(1))}
+    >
+      <Animated.View style={animatedStyle}>
+        <Text>Press me</Text>
+      </Animated.View>
+    </Pressable>
+  )
 }
 ```
 
@@ -1069,42 +1024,42 @@ function AnimatedButton({ onPress }: { onPress: () => void }) {
 ```tsx
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, {
-	useSharedValue,
-	useAnimatedStyle,
-	withTiming,
-	interpolate,
-	runOnJS,
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  interpolate,
+  runOnJS,
 } from 'react-native-reanimated'
 
 function AnimatedButton({ onPress }: { onPress: () => void }) {
-	// Store the press STATE (0 = not pressed, 1 = pressed)
-	const pressed = useSharedValue(0)
+  // Store the press STATE (0 = not pressed, 1 = pressed)
+  const pressed = useSharedValue(0)
 
-	const tap = Gesture.Tap()
-		.onBegin(() => {
-			pressed.set(withTiming(1))
-		})
-		.onFinalize(() => {
-			pressed.set(withTiming(0))
-		})
-		.onEnd(() => {
-			runOnJS(onPress)()
-		})
+  const tap = Gesture.Tap()
+    .onBegin(() => {
+      pressed.set(withTiming(1))
+    })
+    .onFinalize(() => {
+      pressed.set(withTiming(0))
+    })
+    .onEnd(() => {
+      runOnJS(onPress)()
+    })
 
-	// Derive visual values from the state
-	const animatedStyle = useAnimatedStyle(() => ({
-		transform: [
-			{ scale: interpolate(withTiming(pressed.get()), [0, 1], [1, 0.95]) },
-		],
-	}))
+  // Derive visual values from the state
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scale: interpolate(withTiming(pressed.get()), [0, 1], [1, 0.95]) },
+    ],
+  }))
 
-	return (
-		<GestureDetector gesture={tap}>
-			<Animated.View style={animatedStyle}>
-				<Text>Press me</Text>
-			</Animated.View>
-		</GestureDetector>
-	)
+  return (
+    <GestureDetector gesture={tap}>
+      <Animated.View style={animatedStyle}>
+        <Text>Press me</Text>
+      </Animated.View>
+    </GestureDetector>
+  )
 }
 ```
 
@@ -1137,19 +1092,19 @@ for animations or a ref for non-reactive tracking.
 ```tsx
 import { useState } from 'react'
 import {
-	ScrollView,
-	NativeSyntheticEvent,
-	NativeScrollEvent,
+  ScrollView,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
 } from 'react-native'
 
 function Feed() {
-	const [scrollY, setScrollY] = useState(0)
+  const [scrollY, setScrollY] = useState(0)
 
-	const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-		setScrollY(e.nativeEvent.contentOffset.y) // re-renders on every frame
-	}
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    setScrollY(e.nativeEvent.contentOffset.y) // re-renders on every frame
+  }
 
-	return <ScrollView onScroll={onScroll} scrollEventThrottle={16} />
+  return <ScrollView onScroll={onScroll} scrollEventThrottle={16} />
 }
 ```
 
@@ -1157,27 +1112,27 @@ function Feed() {
 
 ```tsx
 import Animated, {
-	useSharedValue,
-	useAnimatedScrollHandler,
+  useSharedValue,
+  useAnimatedScrollHandler,
 } from 'react-native-reanimated'
 
 function Feed() {
-	const scrollY = useSharedValue(0)
+  const scrollY = useSharedValue(0)
 
-	const onScroll = useAnimatedScrollHandler({
-		onScroll: (e) => {
-			scrollY.value = e.contentOffset.y // runs on UI thread, no re-render
-		},
-	})
+  const onScroll = useAnimatedScrollHandler({
+    onScroll: (e) => {
+      scrollY.value = e.contentOffset.y // runs on UI thread, no re-render
+    },
+  })
 
-	return (
-		<Animated.ScrollView
-			onScroll={onScroll}
-			// higher number has better performance, but it fires less often.
-			// unset this if you need higher precision over performance.
-			scrollEventThrottle={16}
-		/>
-	)
+  return (
+    <Animated.ScrollView
+      onScroll={onScroll}
+      // higher number has better performance, but it fires less often.
+      // unset this if you need higher precision over performance.
+      scrollEventThrottle={16}
+    />
+  )
 }
 ```
 
@@ -1186,19 +1141,19 @@ function Feed() {
 ```tsx
 import { useRef } from 'react'
 import {
-	ScrollView,
-	NativeSyntheticEvent,
-	NativeScrollEvent,
+  ScrollView,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
 } from 'react-native'
 
 function Feed() {
-	const scrollY = useRef(0)
+  const scrollY = useRef(0)
 
-	const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-		scrollY.current = e.nativeEvent.contentOffset.y // no re-render
-	}
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    scrollY.current = e.nativeEvent.contentOffset.y // no re-render
+  }
 
-	return <ScrollView onScroll={onScroll} scrollEventThrottle={16} />
+  return <ScrollView onScroll={onScroll} scrollEventThrottle={16} />
 }
 ```
 
@@ -1208,8 +1163,8 @@ function Feed() {
 
 **Impact: HIGH**
 
-Using native navigators for stack and tab navigation instead of JS-based
-alternatives.
+Using native navigators for stack and tab navigation instead of
+JS-based alternatives.
 
 ### 5.1 Use Native Navigators for Navigation
 
@@ -1245,12 +1200,12 @@ import { createStackNavigator } from '@react-navigation/stack'
 const Stack = createStackNavigator()
 
 function App() {
-	return (
-		<Stack.Navigator>
-			<Stack.Screen name="Home" component={HomeScreen} />
-			<Stack.Screen name="Details" component={DetailsScreen} />
-		</Stack.Navigator>
-	)
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='Home' component={HomeScreen} />
+      <Stack.Screen name='Details' component={DetailsScreen} />
+    </Stack.Navigator>
+  )
 }
 ```
 
@@ -1262,12 +1217,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 const Stack = createNativeStackNavigator()
 
 function App() {
-	return (
-		<Stack.Navigator>
-			<Stack.Screen name="Home" component={HomeScreen} />
-			<Stack.Screen name="Details" component={DetailsScreen} />
-		</Stack.Navigator>
-	)
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='Home' component={HomeScreen} />
+      <Stack.Screen name='Details' component={DetailsScreen} />
+    </Stack.Navigator>
+  )
 }
 ```
 
@@ -1278,7 +1233,7 @@ function App() {
 import { Stack } from 'expo-router'
 
 export default function Layout() {
-	return <Stack />
+  return <Stack />
 }
 ```
 
@@ -1290,12 +1245,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 const Tab = createBottomTabNavigator()
 
 function App() {
-	return (
-		<Tab.Navigator>
-			<Tab.Screen name="Home" component={HomeScreen} />
-			<Tab.Screen name="Settings" component={SettingsScreen} />
-		</Tab.Navigator>
-	)
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name='Home' component={HomeScreen} />
+      <Tab.Screen name='Settings' component={SettingsScreen} />
+    </Tab.Navigator>
+  )
 }
 ```
 
@@ -1307,24 +1262,24 @@ import { createNativeBottomTabNavigator } from '@bottom-tabs/react-navigation'
 const Tab = createNativeBottomTabNavigator()
 
 function App() {
-	return (
-		<Tab.Navigator>
-			<Tab.Screen
-				name="Home"
-				component={HomeScreen}
-				options={{
-					tabBarIcon: () => ({ sfSymbol: 'house' }),
-				}}
-			/>
-			<Tab.Screen
-				name="Settings"
-				component={SettingsScreen}
-				options={{
-					tabBarIcon: () => ({ sfSymbol: 'gear' }),
-				}}
-			/>
-		</Tab.Navigator>
-	)
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name='Home'
+        component={HomeScreen}
+        options={{
+          tabBarIcon: () => ({ sfSymbol: 'house' }),
+        }}
+      />
+      <Tab.Screen
+        name='Settings'
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: () => ({ sfSymbol: 'gear' }),
+        }}
+      />
+    </Tab.Navigator>
+  )
 }
 ```
 
@@ -1335,18 +1290,18 @@ function App() {
 import { NativeTabs } from 'expo-router/unstable-native-tabs'
 
 export default function TabLayout() {
-	return (
-		<NativeTabs>
-			<NativeTabs.Trigger name="index">
-				<NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
-				<NativeTabs.Trigger.Icon sf="house.fill" md="home" />
-			</NativeTabs.Trigger>
-			<NativeTabs.Trigger name="settings">
-				<NativeTabs.Trigger.Label>Settings</NativeTabs.Trigger.Label>
-				<NativeTabs.Trigger.Icon sf="gear" md="settings" />
-			</NativeTabs.Trigger>
-		</NativeTabs>
-	)
+  return (
+    <NativeTabs>
+      <NativeTabs.Trigger name='index'>
+        <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf='house.fill' md='home' />
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name='settings'>
+        <NativeTabs.Trigger.Label>Settings</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf='gear' md='settings' />
+      </NativeTabs.Trigger>
+    </NativeTabs>
+  )
 }
 ```
 
@@ -1362,11 +1317,11 @@ behind the translucent tab bar. If you need to disable this, use
 
 ```tsx
 <Stack.Screen
-	name="Profile"
-	component={ProfileScreen}
-	options={{
-		header: () => <CustomHeader title="Profile" />,
-	}}
+  name='Profile'
+  component={ProfileScreen}
+  options={{
+    header: () => <CustomHeader title='Profile' />,
+  }}
 />
 ```
 
@@ -1374,15 +1329,15 @@ behind the translucent tab bar. If you need to disable this, use
 
 ```tsx
 <Stack.Screen
-	name="Profile"
-	component={ProfileScreen}
-	options={{
-		title: 'Profile',
-		headerLargeTitleEnabled: true,
-		headerSearchBarOptions: {
-			placeholder: 'Search',
-		},
-	}}
+  name='Profile'
+  component={ProfileScreen}
+  options={{
+    title: 'Profile',
+    headerLargeTitleEnabled: true,
+    headerSearchBarOptions: {
+      placeholder: 'Search',
+    },
+  }}
 />
 ```
 
@@ -1406,35 +1361,33 @@ safe area handling automatically.
 
 **Impact: MEDIUM**
 
-Patterns for managing React state to avoid stale closures and unnecessary
-re-renders.
+Patterns for managing React state to avoid stale closures and
+unnecessary re-renders.
 
 ### 6.1 Minimize State Variables and Derive Values
 
 **Impact: MEDIUM (fewer re-renders, less state drift)**
 
-Use the fewest state variables possible. If a value can be computed from
-existing state or props, derive it during render instead of storing it in state.
-Redundant state causes unnecessary re-renders and can drift out of sync.
+Use the fewest state variables possible. If a value can be computed from existing state or props, derive it during render instead of storing it in state. Redundant state causes unnecessary re-renders and can drift out of sync.
 
 **Incorrect: redundant state**
 
 ```tsx
 function Cart({ items }: { items: Item[] }) {
-	const [total, setTotal] = useState(0)
-	const [itemCount, setItemCount] = useState(0)
+  const [total, setTotal] = useState(0)
+  const [itemCount, setItemCount] = useState(0)
 
-	useEffect(() => {
-		setTotal(items.reduce((sum, item) => sum + item.price, 0))
-		setItemCount(items.length)
-	}, [items])
+  useEffect(() => {
+    setTotal(items.reduce((sum, item) => sum + item.price, 0))
+    setItemCount(items.length)
+  }, [items])
 
-	return (
-		<View>
-			<Text>{itemCount} items</Text>
-			<Text>Total: ${total}</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Text>{itemCount} items</Text>
+      <Text>Total: ${total}</Text>
+    </View>
+  )
 }
 ```
 
@@ -1442,15 +1395,15 @@ function Cart({ items }: { items: Item[] }) {
 
 ```tsx
 function Cart({ items }: { items: Item[] }) {
-	const total = items.reduce((sum, item) => sum + item.price, 0)
-	const itemCount = items.length
+  const total = items.reduce((sum, item) => sum + item.price, 0)
+  const itemCount = items.length
 
-	return (
-		<View>
-			<Text>{itemCount} items</Text>
-			<Text>Total: ${total}</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Text>{itemCount} items</Text>
+      <Text>Total: ${total}</Text>
+    </View>
+  )
 }
 ```
 
@@ -1470,8 +1423,7 @@ const fullName = `${firstName} ${lastName}`
 
 State should be the minimal source of truth. Everything else is derived.
 
-Reference:
-[https://react.dev/learn/choosing-the-state-structure](https://react.dev/learn/choosing-the-state-structure)
+Reference: [https://react.dev/learn/choosing-the-state-structure](https://react.dev/learn/choosing-the-state-structure)
 
 ### 6.2 Use fallback state instead of initialState
 
@@ -1491,11 +1443,11 @@ source changes, not just on initial render.
 type Props = { fallbackEnabled: boolean }
 
 function Toggle({ fallbackEnabled }: Props) {
-	const [enabled, setEnabled] = useState(defaultEnabled)
-	// If fallbackEnabled changes, state is stale
-	// State mixes user intent with default value
+  const [enabled, setEnabled] = useState(defaultEnabled)
+  // If fallbackEnabled changes, state is stale
+  // State mixes user intent with default value
 
-	return <Switch value={enabled} onValueChange={setEnabled} />
+  return <Switch value={enabled} onValueChange={setEnabled} />
 }
 ```
 
@@ -1505,13 +1457,13 @@ function Toggle({ fallbackEnabled }: Props) {
 type Props = { fallbackEnabled: boolean }
 
 function Toggle({ fallbackEnabled }: Props) {
-	const [_enabled, setEnabled] = useState<boolean | undefined>(undefined)
-	const enabled = _enabled ?? defaultEnabled
-	// undefined = user hasn't touched it, falls back to prop
-	// If defaultEnabled changes, component reflects it
-	// Once user interacts, their choice persists
+  const [_enabled, setEnabled] = useState<boolean | undefined>(undefined)
+  const enabled = _enabled ?? defaultEnabled
+  // undefined = user hasn't touched it, falls back to prop
+  // If defaultEnabled changes, component reflects it
+  // Once user interacts, their choice persists
 
-	return <Switch value={enabled} onValueChange={setEnabled} />
+  return <Switch value={enabled} onValueChange={setEnabled} />
 }
 ```
 
@@ -1519,12 +1471,12 @@ function Toggle({ fallbackEnabled }: Props) {
 
 ```tsx
 function ProfileForm({ data }: { data: User }) {
-	const [_theme, setTheme] = useState<string | undefined>(undefined)
-	const theme = _theme ?? data.theme
-	// Shows server value until user overrides
-	// Server refetch updates the fallback automatically
+  const [_theme, setTheme] = useState<string | undefined>(undefined)
+  const theme = _theme ?? data.theme
+  // Shows server value until user overrides
+  // Server refetch updates the fallback automatically
 
-	return <ThemePicker value={theme} onChange={setTheme} />
+  return <ThemePicker value={theme} onChange={setTheme} />
 }
 ```
 
@@ -1546,11 +1498,11 @@ latest value.
 const [size, setSize] = useState<Size | undefined>(undefined)
 
 const onLayout = (e: LayoutChangeEvent) => {
-	const { width, height } = e.nativeEvent.layout
-	// size may be stale in this closure
-	if (size?.width !== width || size?.height !== height) {
-		setSize({ width, height })
-	}
+  const { width, height } = e.nativeEvent.layout
+  // size may be stale in this closure
+  if (size?.width !== width || size?.height !== height) {
+    setSize({ width, height })
+  }
 }
 ```
 
@@ -1560,11 +1512,11 @@ const onLayout = (e: LayoutChangeEvent) => {
 const [size, setSize] = useState<Size | undefined>(undefined)
 
 const onLayout = (e: LayoutChangeEvent) => {
-	const { width, height } = e.nativeEvent.layout
-	setSize((prev) => {
-		if (prev?.width === width && prev?.height === height) return prev
-		return { width, height }
-	})
+  const { width, height } = e.nativeEvent.layout
+  setSize((prev) => {
+    if (prev?.width === width && prev?.height === height) return prev
+    return { width, height }
+  })
 }
 ```
 
@@ -1580,8 +1532,8 @@ re-render.
 const [size, setSize] = useState<Size | undefined>(undefined)
 
 const onLayout = (e: LayoutChangeEvent) => {
-	const { width, height } = e.nativeEvent.layout
-	setSize((prev) => (prev === width ? prev : width))
+  const { width, height } = e.nativeEvent.layout
+  setSize((prev) => (prev === width ? prev : width))
 }
 ```
 
@@ -1591,8 +1543,8 @@ const onLayout = (e: LayoutChangeEvent) => {
 const [size, setSize] = useState<Size | undefined>(undefined)
 
 const onLayout = (e: LayoutChangeEvent) => {
-	const { width, height } = e.nativeEvent.layout
-	setSize(width)
+  const { width, height } = e.nativeEvent.layout
+  setSize(width)
 }
 ```
 
@@ -1606,7 +1558,7 @@ dispatch updater.
 const [count, setCount] = useState(0)
 
 const onTap = () => {
-	setCount(count + 1)
+  setCount(count + 1)
 }
 ```
 
@@ -1616,7 +1568,7 @@ const onTap = () => {
 const [count, setCount] = useState(0)
 
 const onTap = () => {
-	setCount((prev) => prev + 1)
+  setCount((prev) => prev + 1)
 }
 ```
 
@@ -1646,15 +1598,15 @@ visual values from state using computation or interpolation.
 const scale = useSharedValue(1)
 
 const tap = Gesture.Tap()
-	.onBegin(() => {
-		scale.set(withTiming(0.95))
-	})
-	.onFinalize(() => {
-		scale.set(withTiming(1))
-	})
+  .onBegin(() => {
+    scale.set(withTiming(0.95))
+  })
+  .onFinalize(() => {
+    scale.set(withTiming(1))
+  })
 
 const animatedStyle = useAnimatedStyle(() => ({
-	transform: [{ scale: scale.get() }],
+  transform: [{ scale: scale.get() }],
 }))
 ```
 
@@ -1664,15 +1616,15 @@ const animatedStyle = useAnimatedStyle(() => ({
 const pressed = useSharedValue(0) // 0 = not pressed, 1 = pressed
 
 const tap = Gesture.Tap()
-	.onBegin(() => {
-		pressed.set(withTiming(1))
-	})
-	.onFinalize(() => {
-		pressed.set(withTiming(0))
-	})
+  .onBegin(() => {
+    pressed.set(withTiming(1))
+  })
+  .onFinalize(() => {
+    pressed.set(withTiming(0))
+  })
 
 const animatedStyle = useAnimatedStyle(() => ({
-	transform: [{ scale: interpolate(pressed.get(), [0, 1], [1, 0.95]) }],
+  transform: [{ scale: interpolate(pressed.get(), [0, 1], [1, 0.95]) }],
 }))
 ```
 
@@ -1704,7 +1656,7 @@ const [isExpanded, setIsExpanded] = useState(false)
 const [height, setHeight] = useState(0)
 
 useEffect(() => {
-	setHeight(isExpanded ? 200 : 0)
+  setHeight(isExpanded ? 200 : 0)
 }, [isExpanded])
 
 // Correct: derive from state
@@ -1720,7 +1672,8 @@ State is the minimal truth. Everything else is derived.
 
 **Impact: MEDIUM**
 
-Compatibility patterns for React Compiler with React Native and Reanimated.
+Compatibility patterns for React Compiler with React Native and
+Reanimated.
 
 ### 8.1 Destructure Functions Early in Render (React Compiler)
 
@@ -1740,15 +1693,15 @@ creates new references and breaks memoization.
 import { useRouter } from 'expo-router'
 
 function SaveButton(props) {
-	const router = useRouter()
+  const router = useRouter()
 
-	// bad: react-compiler will key the cache on "props" and "router", which are objects that change each render
-	const handlePress = () => {
-		props.onSave()
-		router.push('/success') // unstable reference
-	}
+  // bad: react-compiler will key the cache on "props" and "router", which are objects that change each render
+  const handlePress = () => {
+    props.onSave()
+    router.push('/success') // unstable reference
+  }
 
-	return <Button onPress={handlePress}>Save</Button>
+  return <Button onPress={handlePress}>Save</Button>
 }
 ```
 
@@ -1758,15 +1711,15 @@ function SaveButton(props) {
 import { useRouter } from 'expo-router'
 
 function SaveButton({ onSave }) {
-	const { push } = useRouter()
+  const { push } = useRouter()
 
-	// good: react-compiler will key on push and onSave
-	const handlePress = () => {
-		onSave()
-		push('/success') // stable reference
-	}
+  // good: react-compiler will key on push and onSave
+  const handlePress = () => {
+    onSave()
+    push('/success') // stable reference
+  }
 
-	return <Button onPress={handlePress}>Save</Button>
+  return <Button onPress={handlePress}>Save</Button>
 }
 ```
 
@@ -1786,13 +1739,13 @@ property access—explicit methods ensure correct behavior.
 import { useSharedValue } from 'react-native-reanimated'
 
 function Counter() {
-	const count = useSharedValue(0)
+  const count = useSharedValue(0)
 
-	const increment = () => {
-		count.value = count.value + 1 // opts out of react compiler
-	}
+  const increment = () => {
+    count.value = count.value + 1 // opts out of react compiler
+  }
 
-	return <Button onPress={increment} title={`Count: ${count.value}`} />
+  return <Button onPress={increment} title={`Count: ${count.value}`} />
 }
 ```
 
@@ -1802,13 +1755,13 @@ function Counter() {
 import { useSharedValue } from 'react-native-reanimated'
 
 function Counter() {
-	const count = useSharedValue(0)
+  const count = useSharedValue(0)
 
-	const increment = () => {
-		count.set(count.get() + 1)
-	}
+  const increment = () => {
+    count.set(count.get() + 1)
+  }
 
-	return <Button onPress={increment} title={`Count: ${count.get()}`} />
+  return <Button onPress={increment} title={`Count: ${count.get()}`} />
 }
 ```
 
@@ -1824,8 +1777,8 @@ for more.
 
 **Impact: MEDIUM**
 
-Native UI patterns for images, menus, modals, styling, and platform-consistent
-interfaces.
+Native UI patterns for images, menus, modals, styling, and
+platform-consistent interfaces.
 
 ### 9.1 Measuring View Dimensions
 
@@ -1846,25 +1799,25 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { View, LayoutChangeEvent } from 'react-native'
 
 function MeasuredBox({ children }: { children: React.ReactNode }) {
-	const ref = useRef<View>(null)
-	const [height, setHeight] = useState<number | undefined>(undefined)
+  const ref = useRef<View>(null)
+  const [height, setHeight] = useState<number | undefined>(undefined)
 
-	useLayoutEffect(() => {
-		// Sync measurement on mount (RN 0.82+)
-		const rect = ref.current?.getBoundingClientRect()
-		if (rect) setHeight(rect.height)
-		// Pre-0.82: ref.current?.measure((x, y, w, h) => setHeight(h))
-	}, [])
+  useLayoutEffect(() => {
+    // Sync measurement on mount (RN 0.82+)
+    const rect = ref.current?.getBoundingClientRect()
+    if (rect) setHeight(rect.height)
+    // Pre-0.82: ref.current?.measure((x, y, w, h) => setHeight(h))
+  }, [])
 
-	const onLayout = (e: LayoutChangeEvent) => {
-		setHeight(e.nativeEvent.layout.height)
-	}
+  const onLayout = (e: LayoutChangeEvent) => {
+    setHeight(e.nativeEvent.layout.height)
+  }
 
-	return (
-		<View ref={ref} onLayout={onLayout}>
-			{children}
-		</View>
-	)
+  return (
+    <View ref={ref} onLayout={onLayout}>
+      {children}
+    </View>
+  )
 }
 ```
 
@@ -1877,28 +1830,28 @@ import { View, LayoutChangeEvent } from 'react-native'
 type Size = { width: number; height: number }
 
 function MeasuredBox({ children }: { children: React.ReactNode }) {
-	const ref = useRef<View>(null)
-	const [size, setSize] = useState<Size | undefined>(undefined)
+  const ref = useRef<View>(null)
+  const [size, setSize] = useState<Size | undefined>(undefined)
 
-	useLayoutEffect(() => {
-		const rect = ref.current?.getBoundingClientRect()
-		if (rect) setSize({ width: rect.width, height: rect.height })
-	}, [])
+  useLayoutEffect(() => {
+    const rect = ref.current?.getBoundingClientRect()
+    if (rect) setSize({ width: rect.width, height: rect.height })
+  }, [])
 
-	const onLayout = (e: LayoutChangeEvent) => {
-		const { width, height } = e.nativeEvent.layout
-		setSize((prev) => {
-			// for non-primitive states, compare values before firing a re-render
-			if (prev?.width === width && prev?.height === height) return prev
-			return { width, height }
-		})
-	}
+  const onLayout = (e: LayoutChangeEvent) => {
+    const { width, height } = e.nativeEvent.layout
+    setSize((prev) => {
+      // for non-primitive states, compare values before firing a re-render
+      if (prev?.width === width && prev?.height === height) return prev
+      return { width, height }
+    })
+  }
 
-	return (
-		<View ref={ref} onLayout={onLayout}>
-			{children}
-		</View>
-	)
+  return (
+    <View ref={ref} onLayout={onLayout}>
+      {children}
+    </View>
+  )
 }
 ```
 
@@ -1932,8 +1885,8 @@ Follow these styling patterns for cleaner, more consistent React Native code.
 
 ```tsx
 <View style={{ padding: 16, gap: 12 }}>
-	<Text>First</Text>
-	<Text>Second</Text>
+  <Text>First</Text>
+  <Text>Second</Text>
 </View>
 ```
 
@@ -1996,11 +1949,11 @@ scroll area without re-rendering content.
 
 ```tsx
 function Feed({ bottomOffset }: { bottomOffset: number }) {
-	return (
-		<ScrollView contentContainerStyle={{ paddingBottom: bottomOffset }}>
-			{children}
-		</ScrollView>
-	)
+  return (
+    <ScrollView contentContainerStyle={{ paddingBottom: bottomOffset }}>
+      {children}
+    </ScrollView>
+  )
 }
 // Changing bottomOffset triggers full layout recalculation
 ```
@@ -2009,14 +1962,14 @@ function Feed({ bottomOffset }: { bottomOffset: number }) {
 
 ```tsx
 function Feed({ bottomOffset }: { bottomOffset: number }) {
-	return (
-		<ScrollView
-			contentInset={{ bottom: bottomOffset }}
-			scrollIndicatorInsets={{ bottom: bottomOffset }}
-		>
-			{children}
-		</ScrollView>
-	)
+  return (
+    <ScrollView
+      contentInset={{ bottom: bottomOffset }}
+      scrollIndicatorInsets={{ bottom: bottomOffset }}
+    >
+      {children}
+    </ScrollView>
+  )
 }
 // Changing bottomOffset only adjusts scroll bounds
 ```
@@ -2029,9 +1982,7 @@ indicator aligned. For static spacing that never changes, padding is fine.
 
 **Impact: MEDIUM (native safe area handling, no layout shifts)**
 
-Use `contentInsetAdjustmentBehavior="automatic"` on the root ScrollView instead
-of wrapping content in SafeAreaView or manual padding. This lets iOS handle safe
-area insets natively with proper scroll behavior.
+Use `contentInsetAdjustmentBehavior="automatic"` on the root ScrollView instead of wrapping content in SafeAreaView or manual padding. This lets iOS handle safe area insets natively with proper scroll behavior.
 
 **Incorrect: SafeAreaView wrapper**
 
@@ -2039,15 +1990,15 @@ area insets natively with proper scroll behavior.
 import { SafeAreaView, ScrollView, View, Text } from 'react-native'
 
 function MyScreen() {
-	return (
-		<SafeAreaView style={{ flex: 1 }}>
-			<ScrollView>
-				<View>
-					<Text>Content</Text>
-				</View>
-			</ScrollView>
-		</SafeAreaView>
-	)
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView>
+        <View>
+          <Text>Content</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  )
 }
 ```
 
@@ -2058,15 +2009,15 @@ import { ScrollView, View, Text } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 function MyScreen() {
-	const insets = useSafeAreaInsets()
+  const insets = useSafeAreaInsets()
 
-	return (
-		<ScrollView contentContainerStyle={{ paddingTop: insets.top }}>
-			<View>
-				<Text>Content</Text>
-			</View>
-		</ScrollView>
-	)
+  return (
+    <ScrollView contentContainerStyle={{ paddingTop: insets.top }}>
+      <View>
+        <Text>Content</Text>
+      </View>
+    </ScrollView>
+  )
 }
 ```
 
@@ -2076,27 +2027,23 @@ function MyScreen() {
 import { ScrollView, View, Text } from 'react-native'
 
 function MyScreen() {
-	return (
-		<ScrollView contentInsetAdjustmentBehavior="automatic">
-			<View>
-				<Text>Content</Text>
-			</View>
-		</ScrollView>
-	)
+  return (
+    <ScrollView contentInsetAdjustmentBehavior='automatic'>
+      <View>
+        <Text>Content</Text>
+      </View>
+    </ScrollView>
+  )
 }
 ```
 
-The native approach handles dynamic safe areas (keyboard, toolbars) and allows
-content to scroll behind the status bar naturally.
+The native approach handles dynamic safe areas (keyboard, toolbars) and allows content to scroll behind the status bar naturally.
 
 ### 9.5 Use expo-image for Optimized Images
 
-**Impact: HIGH (memory efficiency, caching, blurhash placeholders, progressive
-loading)**
+**Impact: HIGH (memory efficiency, caching, blurhash placeholders, progressive loading)**
 
-Use `expo-image` instead of React Native's `Image`. It provides memory-efficient
-caching, blurhash placeholders, progressive loading, and better performance for
-lists.
+Use `expo-image` instead of React Native's `Image`. It provides memory-efficient caching, blurhash placeholders, progressive loading, and better performance for lists.
 
 **Incorrect: React Native Image**
 
@@ -2104,7 +2051,7 @@ lists.
 import { Image } from 'react-native'
 
 function Avatar({ url }: { url: string }) {
-	return <Image source={{ uri: url }} style={styles.avatar} />
+  return <Image source={{ uri: url }} style={styles.avatar} />
 }
 ```
 
@@ -2114,7 +2061,7 @@ function Avatar({ url }: { url: string }) {
 import { Image } from 'expo-image'
 
 function Avatar({ url }: { url: string }) {
-	return <Image source={{ uri: url }} style={styles.avatar} />
+  return <Image source={{ uri: url }} style={styles.avatar} />
 }
 ```
 
@@ -2122,11 +2069,11 @@ function Avatar({ url }: { url: string }) {
 
 ```tsx
 <Image
-	source={{ uri: url }}
-	placeholder={{ blurhash: 'LGF5]+Yk^6#M@-5c,1J5@[or[Q6.' }}
-	contentFit="cover"
-	transition={200}
-	style={styles.image}
+  source={{ uri: url }}
+  placeholder={{ blurhash: 'LGF5]+Yk^6#M@-5c,1J5@[or[Q6.' }}
+  contentFit="cover"
+  transition={200}
+  style={styles.image}
 />
 ```
 
@@ -2134,10 +2081,10 @@ function Avatar({ url }: { url: string }) {
 
 ```tsx
 <Image
-	source={{ uri: url }}
-	priority="high"
-	cachePolicy="memory-disk"
-	style={styles.hero}
+  source={{ uri: url }}
+  priority="high"
+  cachePolicy="memory-disk"
+  style={styles.hero}
 />
 ```
 
@@ -2155,11 +2102,9 @@ function Avatar({ url }: { url: string }) {
 
 - `recyclingKey` — Unique key for list recycling
 
-For cross-platform (web + native), use `SolitoImage` from `solito/image` which
-uses `expo-image` under the hood.
+For cross-platform (web + native), use `SolitoImage` from `solito/image` which uses `expo-image` under the hood.
 
-Reference:
-[https://docs.expo.dev/versions/latest/sdk/image/](https://docs.expo.dev/versions/latest/sdk/image/)
+Reference: [https://docs.expo.dev/versions/latest/sdk/image/](https://docs.expo.dev/versions/latest/sdk/image/)
 
 ### 9.6 Use Galeria for Image Galleries and Lightbox
 
@@ -2175,20 +2120,20 @@ zoom, and pan-to-close. Works with any image component including `expo-image`.
 
 ```tsx
 function ImageGallery({ urls }: { urls: string[] }) {
-	const [selected, setSelected] = useState<string | null>(null)
+  const [selected, setSelected] = useState<string | null>(null)
 
-	return (
-		<>
-			{urls.map((url) => (
-				<Pressable key={url} onPress={() => setSelected(url)}>
-					<Image source={{ uri: url }} style={styles.thumbnail} />
-				</Pressable>
-			))}
-			<Modal visible={!!selected} onRequestClose={() => setSelected(null)}>
-				<Image source={{ uri: selected! }} style={styles.fullscreen} />
-			</Modal>
-		</>
-	)
+  return (
+    <>
+      {urls.map((url) => (
+        <Pressable key={url} onPress={() => setSelected(url)}>
+          <Image source={{ uri: url }} style={styles.thumbnail} />
+        </Pressable>
+      ))}
+      <Modal visible={!!selected} onRequestClose={() => setSelected(null)}>
+        <Image source={{ uri: selected! }} style={styles.fullscreen} />
+      </Modal>
+    </>
+  )
 }
 ```
 
@@ -2199,15 +2144,15 @@ import { Galeria } from '@nandorojo/galeria'
 import { Image } from 'expo-image'
 
 function ImageGallery({ urls }: { urls: string[] }) {
-	return (
-		<Galeria urls={urls}>
-			{urls.map((url, index) => (
-				<Galeria.Image index={index} key={url}>
-					<Image source={{ uri: url }} style={styles.thumbnail} />
-				</Galeria.Image>
-			))}
-		</Galeria>
-	)
+  return (
+    <Galeria urls={urls}>
+      {urls.map((url, index) => (
+        <Galeria.Image index={index} key={url}>
+          <Image source={{ uri: url }} style={styles.thumbnail} />
+        </Galeria.Image>
+      ))}
+    </Galeria>
+  )
 }
 ```
 
@@ -2218,13 +2163,13 @@ import { Galeria } from '@nandorojo/galeria'
 import { Image } from 'expo-image'
 
 function Avatar({ url }: { url: string }) {
-	return (
-		<Galeria urls={[url]}>
-			<Galeria.Image>
-				<Image source={{ uri: url }} style={styles.avatar} />
-			</Galeria.Image>
-		</Galeria>
-	)
+  return (
+    <Galeria urls={[url]}>
+      <Galeria.Image>
+        <Image source={{ uri: url }} style={styles.avatar} />
+      </Galeria.Image>
+    </Galeria>
+  )
 }
 ```
 
@@ -2232,11 +2177,11 @@ function Avatar({ url }: { url: string }) {
 
 ```tsx
 <Galeria urls={highResUrls}>
-	{lowResUrls.map((url, index) => (
-		<Galeria.Image index={index} key={url}>
-			<Image source={{ uri: url }} style={styles.thumbnail} />
-		</Galeria.Image>
-	))}
+  {lowResUrls.map((url, index) => (
+    <Galeria.Image index={index} key={url}>
+      <Image source={{ uri: url }} style={styles.thumbnail} />
+    </Galeria.Image>
+  ))}
 </Galeria>
 ```
 
@@ -2244,16 +2189,16 @@ function Avatar({ url }: { url: string }) {
 
 ```tsx
 <Galeria urls={urls}>
-	<FlashList
-		data={urls}
-		renderItem={({ item, index }) => (
-			<Galeria.Image index={index}>
-				<Image source={{ uri: item }} style={styles.thumbnail} />
-			</Galeria.Image>
-		)}
-		numColumns={3}
-		estimatedItemSize={100}
-	/>
+  <FlashList
+    data={urls}
+    renderItem={({ item, index }) => (
+      <Galeria.Image index={index}>
+        <Image source={{ uri: item }} style={styles.thumbnail} />
+      </Galeria.Image>
+    )}
+    numColumns={3}
+    estimatedItemSize={100}
+  />
 </Galeria>
 ```
 
@@ -2261,8 +2206,7 @@ Works with `expo-image`, `SolitoImage`, `react-native` Image, or any image
 
 component.
 
-Reference:
-[https://github.com/nandorojo/galeria](https://github.com/nandorojo/galeria)
+Reference: [https://github.com/nandorojo/galeria](https://github.com/nandorojo/galeria)
 
 ### 9.7 Use Native Menus for Dropdowns and Context Menus
 
@@ -2281,25 +2225,25 @@ import { useState } from 'react'
 import { View, Pressable, Text } from 'react-native'
 
 function MyMenu() {
-	const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
-	return (
-		<View>
-			<Pressable onPress={() => setOpen(!open)}>
-				<Text>Open Menu</Text>
-			</Pressable>
-			{open && (
-				<View style={{ position: 'absolute', top: 40 }}>
-					<Pressable onPress={() => console.log('edit')}>
-						<Text>Edit</Text>
-					</Pressable>
-					<Pressable onPress={() => console.log('delete')}>
-						<Text>Delete</Text>
-					</Pressable>
-				</View>
-			)}
-		</View>
-	)
+  return (
+    <View>
+      <Pressable onPress={() => setOpen(!open)}>
+        <Text>Open Menu</Text>
+      </Pressable>
+      {open && (
+        <View style={{ position: 'absolute', top: 40 }}>
+          <Pressable onPress={() => console.log('edit')}>
+            <Text>Edit</Text>
+          </Pressable>
+          <Pressable onPress={() => console.log('delete')}>
+            <Text>Delete</Text>
+          </Pressable>
+        </View>
+      )}
+    </View>
+  )
 }
 ```
 
@@ -2309,29 +2253,29 @@ function MyMenu() {
 import * as DropdownMenu from 'zeego/dropdown-menu'
 
 function MyMenu() {
-	return (
-		<DropdownMenu.Root>
-			<DropdownMenu.Trigger>
-				<Pressable>
-					<Text>Open Menu</Text>
-				</Pressable>
-			</DropdownMenu.Trigger>
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>
+        <Pressable>
+          <Text>Open Menu</Text>
+        </Pressable>
+      </DropdownMenu.Trigger>
 
-			<DropdownMenu.Content>
-				<DropdownMenu.Item key="edit" onSelect={() => console.log('edit')}>
-					<DropdownMenu.ItemTitle>Edit</DropdownMenu.ItemTitle>
-				</DropdownMenu.Item>
+      <DropdownMenu.Content>
+        <DropdownMenu.Item key='edit' onSelect={() => console.log('edit')}>
+          <DropdownMenu.ItemTitle>Edit</DropdownMenu.ItemTitle>
+        </DropdownMenu.Item>
 
-				<DropdownMenu.Item
-					key="delete"
-					destructive
-					onSelect={() => console.log('delete')}
-				>
-					<DropdownMenu.ItemTitle>Delete</DropdownMenu.ItemTitle>
-				</DropdownMenu.Item>
-			</DropdownMenu.Content>
-		</DropdownMenu.Root>
-	)
+        <DropdownMenu.Item
+          key='delete'
+          destructive
+          onSelect={() => console.log('delete')}
+        >
+          <DropdownMenu.ItemTitle>Delete</DropdownMenu.ItemTitle>
+        </DropdownMenu.Item>
+      </DropdownMenu.Content>
+    </DropdownMenu.Root>
+  )
 }
 ```
 
@@ -2341,25 +2285,25 @@ function MyMenu() {
 import * as ContextMenu from 'zeego/context-menu'
 
 function MyContextMenu() {
-	return (
-		<ContextMenu.Root>
-			<ContextMenu.Trigger>
-				<View style={{ padding: 20 }}>
-					<Text>Long press me</Text>
-				</View>
-			</ContextMenu.Trigger>
+  return (
+    <ContextMenu.Root>
+      <ContextMenu.Trigger>
+        <View style={{ padding: 20 }}>
+          <Text>Long press me</Text>
+        </View>
+      </ContextMenu.Trigger>
 
-			<ContextMenu.Content>
-				<ContextMenu.Item key="copy" onSelect={() => console.log('copy')}>
-					<ContextMenu.ItemTitle>Copy</ContextMenu.ItemTitle>
-				</ContextMenu.Item>
+      <ContextMenu.Content>
+        <ContextMenu.Item key='copy' onSelect={() => console.log('copy')}>
+          <ContextMenu.ItemTitle>Copy</ContextMenu.ItemTitle>
+        </ContextMenu.Item>
 
-				<ContextMenu.Item key="paste" onSelect={() => console.log('paste')}>
-					<ContextMenu.ItemTitle>Paste</ContextMenu.ItemTitle>
-				</ContextMenu.Item>
-			</ContextMenu.Content>
-		</ContextMenu.Root>
-	)
+        <ContextMenu.Item key='paste' onSelect={() => console.log('paste')}>
+          <ContextMenu.ItemTitle>Paste</ContextMenu.ItemTitle>
+        </ContextMenu.Item>
+      </ContextMenu.Content>
+    </ContextMenu.Root>
+  )
 }
 ```
 
@@ -2369,28 +2313,28 @@ function MyContextMenu() {
 import * as DropdownMenu from 'zeego/dropdown-menu'
 
 function SettingsMenu() {
-	const [notifications, setNotifications] = useState(true)
+  const [notifications, setNotifications] = useState(true)
 
-	return (
-		<DropdownMenu.Root>
-			<DropdownMenu.Trigger>
-				<Pressable>
-					<Text>Settings</Text>
-				</Pressable>
-			</DropdownMenu.Trigger>
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>
+        <Pressable>
+          <Text>Settings</Text>
+        </Pressable>
+      </DropdownMenu.Trigger>
 
-			<DropdownMenu.Content>
-				<DropdownMenu.CheckboxItem
-					key="notifications"
-					value={notifications}
-					onValueChange={() => setNotifications((prev) => !prev)}
-				>
-					<DropdownMenu.ItemIndicator />
-					<DropdownMenu.ItemTitle>Notifications</DropdownMenu.ItemTitle>
-				</DropdownMenu.CheckboxItem>
-			</DropdownMenu.Content>
-		</DropdownMenu.Root>
-	)
+      <DropdownMenu.Content>
+        <DropdownMenu.CheckboxItem
+          key='notifications'
+          value={notifications}
+          onValueChange={() => setNotifications((prev) => !prev)}
+        >
+          <DropdownMenu.ItemIndicator />
+          <DropdownMenu.ItemTitle>Notifications</DropdownMenu.ItemTitle>
+        </DropdownMenu.CheckboxItem>
+      </DropdownMenu.Content>
+    </DropdownMenu.Root>
+  )
 }
 ```
 
@@ -2400,42 +2344,41 @@ function SettingsMenu() {
 import * as DropdownMenu from 'zeego/dropdown-menu'
 
 function MenuWithSubmenu() {
-	return (
-		<DropdownMenu.Root>
-			<DropdownMenu.Trigger>
-				<Pressable>
-					<Text>Options</Text>
-				</Pressable>
-			</DropdownMenu.Trigger>
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>
+        <Pressable>
+          <Text>Options</Text>
+        </Pressable>
+      </DropdownMenu.Trigger>
 
-			<DropdownMenu.Content>
-				<DropdownMenu.Item key="home" onSelect={() => console.log('home')}>
-					<DropdownMenu.ItemTitle>Home</DropdownMenu.ItemTitle>
-				</DropdownMenu.Item>
+      <DropdownMenu.Content>
+        <DropdownMenu.Item key='home' onSelect={() => console.log('home')}>
+          <DropdownMenu.ItemTitle>Home</DropdownMenu.ItemTitle>
+        </DropdownMenu.Item>
 
-				<DropdownMenu.Sub>
-					<DropdownMenu.SubTrigger key="more">
-						<DropdownMenu.ItemTitle>More Options</DropdownMenu.ItemTitle>
-					</DropdownMenu.SubTrigger>
+        <DropdownMenu.Sub>
+          <DropdownMenu.SubTrigger key='more'>
+            <DropdownMenu.ItemTitle>More Options</DropdownMenu.ItemTitle>
+          </DropdownMenu.SubTrigger>
 
-					<DropdownMenu.SubContent>
-						<DropdownMenu.Item key="settings">
-							<DropdownMenu.ItemTitle>Settings</DropdownMenu.ItemTitle>
-						</DropdownMenu.Item>
+          <DropdownMenu.SubContent>
+            <DropdownMenu.Item key='settings'>
+              <DropdownMenu.ItemTitle>Settings</DropdownMenu.ItemTitle>
+            </DropdownMenu.Item>
 
-						<DropdownMenu.Item key="help">
-							<DropdownMenu.ItemTitle>Help</DropdownMenu.ItemTitle>
-						</DropdownMenu.Item>
-					</DropdownMenu.SubContent>
-				</DropdownMenu.Sub>
-			</DropdownMenu.Content>
-		</DropdownMenu.Root>
-	)
+            <DropdownMenu.Item key='help'>
+              <DropdownMenu.ItemTitle>Help</DropdownMenu.ItemTitle>
+            </DropdownMenu.Item>
+          </DropdownMenu.SubContent>
+        </DropdownMenu.Sub>
+      </DropdownMenu.Content>
+    </DropdownMenu.Root>
+  )
 }
 ```
 
-Reference:
-[https://zeego.dev/components/dropdown-menu](https://zeego.dev/components/dropdown-menu)
+Reference: [https://zeego.dev/components/dropdown-menu](https://zeego.dev/components/dropdown-menu)
 
 ### 9.8 Use Native Modals Over JS-Based Bottom Sheets
 
@@ -2455,18 +2398,18 @@ for low-level primitives.
 import BottomSheet from 'custom-js-bottom-sheet'
 
 function MyScreen() {
-	const sheetRef = useRef<BottomSheet>(null)
+  const sheetRef = useRef<BottomSheet>(null)
 
-	return (
-		<View style={{ flex: 1 }}>
-			<Button onPress={() => sheetRef.current?.expand()} title="Open" />
-			<BottomSheet ref={sheetRef} snapPoints={['50%', '90%']}>
-				<View>
-					<Text>Sheet content</Text>
-				</View>
-			</BottomSheet>
-		</View>
-	)
+  return (
+    <View style={{ flex: 1 }}>
+      <Button onPress={() => sheetRef.current?.expand()} title='Open' />
+      <BottomSheet ref={sheetRef} snapPoints={['50%', '90%']}>
+        <View>
+          <Text>Sheet content</Text>
+        </View>
+      </BottomSheet>
+    </View>
+  )
 }
 ```
 
@@ -2476,23 +2419,23 @@ function MyScreen() {
 import { Modal, View, Text, Button } from 'react-native'
 
 function MyScreen() {
-	const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false)
 
-	return (
-		<View style={{ flex: 1 }}>
-			<Button onPress={() => setVisible(true)} title="Open" />
-			<Modal
-				visible={visible}
-				presentationStyle="formSheet"
-				animationType="slide"
-				onRequestClose={() => setVisible(false)}
-			>
-				<View>
-					<Text>Sheet content</Text>
-				</View>
-			</Modal>
-		</View>
-	)
+  return (
+    <View style={{ flex: 1 }}>
+      <Button onPress={() => setVisible(true)} title='Open' />
+      <Modal
+        visible={visible}
+        presentationStyle='formSheet'
+        animationType='slide'
+        onRequestClose={() => setVisible(false)}
+      >
+        <View>
+          <Text>Sheet content</Text>
+        </View>
+      </Modal>
+    </View>
+  )
 }
 ```
 
@@ -2501,12 +2444,12 @@ function MyScreen() {
 ```tsx
 // In your navigator
 <Stack.Screen
-	name="Details"
-	component={DetailsScreen}
-	options={{
-		presentation: 'formSheet',
-		sheetAllowedDetents: 'fitToContents',
-	}}
+  name='Details'
+  component={DetailsScreen}
+  options={{
+    presentation: 'formSheet',
+    sheetAllowedDetents: 'fitToContents',
+  }}
 />
 ```
 
@@ -2528,11 +2471,11 @@ Never use `TouchableOpacity` or `TouchableHighlight`. Use `Pressable` from
 import { TouchableOpacity } from 'react-native'
 
 function MyButton({ onPress }: { onPress: () => void }) {
-	return (
-		<TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-			<Text>Press me</Text>
-		</TouchableOpacity>
-	)
+  return (
+    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+      <Text>Press me</Text>
+    </TouchableOpacity>
+  )
 }
 ```
 
@@ -2542,11 +2485,11 @@ function MyButton({ onPress }: { onPress: () => void }) {
 import { Pressable } from 'react-native'
 
 function MyButton({ onPress }: { onPress: () => void }) {
-	return (
-		<Pressable onPress={onPress}>
-			<Text>Press me</Text>
-		</Pressable>
-	)
+  return (
+    <Pressable onPress={onPress}>
+      <Text>Press me</Text>
+    </Pressable>
+  )
 }
 ```
 
@@ -2556,11 +2499,11 @@ function MyButton({ onPress }: { onPress: () => void }) {
 import { Pressable } from 'react-native-gesture-handler'
 
 function ListItem({ onPress }: { onPress: () => void }) {
-	return (
-		<Pressable onPress={onPress}>
-			<Text>Item</Text>
-		</Pressable>
-	)
+  return (
+    <Pressable onPress={onPress}>
+      <Text>Item</Text>
+    </Pressable>
+  )
 }
 ```
 
@@ -2582,7 +2525,8 @@ with Reanimated shared values instead of Pressable's style callback. See the
 
 **Impact: MEDIUM**
 
-Architecture patterns for building maintainable component libraries.
+Architecture patterns for building maintainable component
+libraries.
 
 ### 10.1 Use Compound Components Over Polymorphic Children
 
@@ -2656,7 +2600,8 @@ function ButtonIcon({ children }: { children: React.ReactNode }) {
 
 **Impact: LOW**
 
-Dependency management and native module configuration in monorepos.
+Dependency management and native module configuration in
+monorepos.
 
 ### 11.1 Install Native Dependencies in App Directory
 
@@ -2685,9 +2630,9 @@ Autolinking fails—native code not linked.
 ```json
 // packages/app/package.json
 {
-	"dependencies": {
-		"react-native-reanimated": "3.16.1"
-	}
+  "dependencies": {
+    "react-native-reanimated": "3.16.1"
+  }
 }
 ```
 
@@ -2764,7 +2709,8 @@ the root. When adding dependencies, specify exact versions without `^` or `~`.
 
 **Impact: LOW**
 
-Wrapping and re-exporting third-party dependencies for maintainability.
+Wrapping and re-exporting third-party dependencies for
+maintainability.
 
 ### 12.1 Import from Design System Folder
 
@@ -2781,12 +2727,12 @@ import { View, Text } from 'react-native'
 import { Button } from '@ui/button'
 
 function Profile() {
-	return (
-		<View>
-			<Text>Hello</Text>
-			<Button>Save</Button>
-		</View>
-	)
+  return (
+    <View>
+      <Text>Hello</Text>
+      <Button>Save</Button>
+    </View>
+  )
 }
 ```
 
@@ -2798,12 +2744,12 @@ import { Text } from '@/components/text'
 import { Button } from '@/components/button'
 
 function Profile() {
-	return (
-		<View>
-			<Text>Hello</Text>
-			<Button>Save</Button>
-		</View>
-	)
+  return (
+    <View>
+      <Text>Hello</Text>
+      <Button>Save</Button>
+    </View>
+  )
 }
 ```
 
@@ -2831,11 +2777,11 @@ instantiate. Hoist to module scope when the locale/options are static.
 
 ```tsx
 function Price({ amount }: { amount: number }) {
-	const formatter = new Intl.NumberFormat('en-US', {
-		style: 'currency',
-		currency: 'USD',
-	})
-	return <Text>{formatter.format(amount)}</Text>
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  })
+  return <Text>{formatter.format(amount)}</Text>
 }
 ```
 
@@ -2843,12 +2789,12 @@ function Price({ amount }: { amount: number }) {
 
 ```tsx
 const currencyFormatter = new Intl.NumberFormat('en-US', {
-	style: 'currency',
-	currency: 'USD',
+  style: 'currency',
+  currency: 'USD',
 })
 
 function Price({ amount }: { amount: number }) {
-	return <Text>{currencyFormatter.format(amount)}</Text>
+  return <Text>{currencyFormatter.format(amount)}</Text>
 }
 ```
 
@@ -2856,8 +2802,8 @@ function Price({ amount }: { amount: number }) {
 
 ```tsx
 const dateFormatter = useMemo(
-	() => new Intl.DateTimeFormat(locale, { dateStyle: 'medium' }),
-	[locale],
+  () => new Intl.DateTimeFormat(locale, { dateStyle: 'medium' }),
+  [locale]
 )
 ```
 
@@ -2869,7 +2815,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' })
 const timeFormatter = new Intl.DateTimeFormat('en-US', { timeStyle: 'short' })
 const percentFormatter = new Intl.NumberFormat('en-US', { style: 'percent' })
 const relativeFormatter = new Intl.RelativeTimeFormat('en-US', {
-	numeric: 'auto',
+  numeric: 'auto',
 })
 ```
 
@@ -2902,19 +2848,19 @@ import { useFonts } from 'expo-font'
 import { Text, View } from 'react-native'
 
 function App() {
-	const [fontsLoaded] = useFonts({
-		'Geist-Bold': require('./assets/fonts/Geist-Bold.otf'),
-	})
+  const [fontsLoaded] = useFonts({
+    'Geist-Bold': require('./assets/fonts/Geist-Bold.otf'),
+  })
 
-	if (!fontsLoaded) {
-		return null
-	}
+  if (!fontsLoaded) {
+    return null
+  }
 
-	return (
-		<View>
-			<Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
+    </View>
+  )
 }
 ```
 
@@ -2924,12 +2870,12 @@ function App() {
 import { Text, View } from 'react-native'
 
 function App() {
-	// No loading state needed—font is already available
-	return (
-		<View>
-			<Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
-		</View>
-	)
+  // No loading state needed—font is already available
+  return (
+    <View>
+      <Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
+    </View>
+  )
 }
 ```
 

@@ -18,23 +18,23 @@ image component.
 type Item = { id: string; text?: string; imageUrl?: string; isHeader?: boolean }
 
 function ListItem({ item }: { item: Item }) {
-	if (item.isHeader) {
-		return <HeaderItem title={item.text} />
-	}
-	if (item.imageUrl) {
-		return <ImageItem url={item.imageUrl} />
-	}
-	return <MessageItem text={item.text} />
+  if (item.isHeader) {
+    return <HeaderItem title={item.text} />
+  }
+  if (item.imageUrl) {
+    return <ImageItem url={item.imageUrl} />
+  }
+  return <MessageItem text={item.text} />
 }
 
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<LegendList
-			data={items}
-			renderItem={({ item }) => <ListItem item={item} />}
-			recycleItems
-		/>
-	)
+  return (
+    <LegendList
+      data={items}
+      renderItem={({ item }) => <ListItem item={item} />}
+      recycleItems
+    />
+  )
 }
 ```
 
@@ -47,24 +47,24 @@ type ImageItem = { id: string; type: 'image'; url: string }
 type FeedItem = HeaderItem | MessageItem | ImageItem
 
 function Feed({ items }: { items: FeedItem[] }) {
-	return (
-		<LegendList
-			data={items}
-			keyExtractor={(item) => item.id}
-			getItemType={(item) => item.type}
-			renderItem={({ item }) => {
-				switch (item.type) {
-					case 'header':
-						return <SectionHeader title={item.title} />
-					case 'message':
-						return <MessageRow text={item.text} />
-					case 'image':
-						return <ImageRow url={item.url} />
-				}
-			}}
-			recycleItems
-		/>
-	)
+  return (
+    <LegendList
+      data={items}
+      keyExtractor={(item) => item.id}
+      getItemType={(item) => item.type}
+      renderItem={({ item }) => {
+        switch (item.type) {
+          case 'header':
+            return <SectionHeader title={item.title} />
+          case 'message':
+            return <MessageRow text={item.text} />
+          case 'image':
+            return <ImageRow url={item.url} />
+        }
+      }}
+      recycleItems
+    />
+  )
 }
 ```
 
@@ -78,25 +78,25 @@ function Feed({ items }: { items: FeedItem[] }) {
 
 ```tsx
 <LegendList
-	data={items}
-	keyExtractor={(item) => item.id}
-	getItemType={(item) => item.type}
-	getEstimatedItemSize={(index, item, itemType) => {
-		switch (itemType) {
-			case 'header':
-				return 48
-			case 'message':
-				return 72
-			case 'image':
-				return 300
-			default:
-				return 72
-		}
-	}}
-	renderItem={({ item }) => {
-		/* ... */
-	}}
-	recycleItems
+  data={items}
+  keyExtractor={(item) => item.id}
+  getItemType={(item) => item.type}
+  getEstimatedItemSize={(index, item, itemType) => {
+    switch (itemType) {
+      case 'header':
+        return 48
+      case 'message':
+        return 72
+      case 'image':
+        return 300
+      default:
+        return 72
+    }
+  }}
+  renderItem={({ item }) => {
+    /* ... */
+  }}
+  recycleItems
 />
 ```
 

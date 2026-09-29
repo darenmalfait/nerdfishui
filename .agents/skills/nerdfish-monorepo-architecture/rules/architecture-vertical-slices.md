@@ -10,10 +10,10 @@ tags: architecture, vertical-slices, ddd, organization
 
 **Impact: CRITICAL**
 
-Organize the web app by **domain**, not by technical layer. A `features/` (or
-equivalent) tree holds **reusable domain blocks** (UI, `api.ts`, utils, forms).
-App Router `page.tsx` / `layout.tsx` files own **route composition** — metadata,
-route-level data loading, and wiring feature blocks together.
+Organize the web app by **domain**, not by technical layer. A `features/`
+(or equivalent) tree holds **reusable domain blocks** (UI, `api.ts`, utils,
+forms). App Router `page.tsx` / `layout.tsx` files own **route composition** —
+metadata, route-level data loading, and wiring feature blocks together.
 
 **Incorrect (traditional layered architecture):**
 

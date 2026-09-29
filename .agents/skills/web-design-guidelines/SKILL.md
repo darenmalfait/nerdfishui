@@ -1,12 +1,9 @@
 ---
 name: web-design-guidelines
-description:
-  Review UI code for Web Interface Guidelines compliance. Use when asked to
-  "review my UI", "check accessibility", "audit design", "review UX", or "check
-  my site against best practices".
+description: Review UI code for Web Interface Guidelines compliance. Use when asked to "review my UI", "check accessibility", "audit design", "review UX", or "check my site against best practices".
 metadata:
   author: nerdfish
-  version: '1.0.0'
+  version: "1.0.0"
   argument-hint: <file-or-pattern>
 ---
 
@@ -29,13 +26,11 @@ Fetch fresh guidelines before each review:
 https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md
 ```
 
-Use WebFetch to retrieve the latest rules. The fetched content contains all the
-rules and output format instructions.
+Use WebFetch to retrieve the latest rules. The fetched content contains all the rules and output format instructions.
 
 ## Usage
 
 When a user provides a file or pattern argument:
-
 1. Fetch guidelines from the source URL above
 2. Read the specified files
 3. Apply all rules from the fetched guidelines

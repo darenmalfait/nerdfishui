@@ -42,6 +42,5 @@ for (const item of data) {
 ```
 
 **Important:** Simple doesn't mean anemic. Matching an existing pattern (schema
-
-- action + form, leaf imports, etc.) is not gold-plating — inventing a clever
-  shortcut around it is.
++ action + form, leaf imports, etc.) is not gold-plating — inventing a clever
+shortcut around it is.

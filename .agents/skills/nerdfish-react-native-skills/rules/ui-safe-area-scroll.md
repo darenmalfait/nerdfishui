@@ -7,9 +7,7 @@ tags: safe-area, scrollview, layout
 
 ## Use contentInsetAdjustmentBehavior for Safe Areas
 
-Use `contentInsetAdjustmentBehavior="automatic"` on the root ScrollView instead
-of wrapping content in SafeAreaView or manual padding. This lets iOS handle safe
-area insets natively with proper scroll behavior.
+Use `contentInsetAdjustmentBehavior="automatic"` on the root ScrollView instead of wrapping content in SafeAreaView or manual padding. This lets iOS handle safe area insets natively with proper scroll behavior.
 
 **Incorrect (SafeAreaView wrapper):**
 
@@ -17,15 +15,15 @@ area insets natively with proper scroll behavior.
 import { SafeAreaView, ScrollView, View, Text } from 'react-native'
 
 function MyScreen() {
-	return (
-		<SafeAreaView style={{ flex: 1 }}>
-			<ScrollView>
-				<View>
-					<Text>Content</Text>
-				</View>
-			</ScrollView>
-		</SafeAreaView>
-	)
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView>
+        <View>
+          <Text>Content</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  )
 }
 ```
 
@@ -36,15 +34,15 @@ import { ScrollView, View, Text } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 function MyScreen() {
-	const insets = useSafeAreaInsets()
+  const insets = useSafeAreaInsets()
 
-	return (
-		<ScrollView contentContainerStyle={{ paddingTop: insets.top }}>
-			<View>
-				<Text>Content</Text>
-			</View>
-		</ScrollView>
-	)
+  return (
+    <ScrollView contentContainerStyle={{ paddingTop: insets.top }}>
+      <View>
+        <Text>Content</Text>
+      </View>
+    </ScrollView>
+  )
 }
 ```
 
@@ -54,15 +52,14 @@ function MyScreen() {
 import { ScrollView, View, Text } from 'react-native'
 
 function MyScreen() {
-	return (
-		<ScrollView contentInsetAdjustmentBehavior="automatic">
-			<View>
-				<Text>Content</Text>
-			</View>
-		</ScrollView>
-	)
+  return (
+    <ScrollView contentInsetAdjustmentBehavior='automatic'>
+      <View>
+        <Text>Content</Text>
+      </View>
+    </ScrollView>
+  )
 }
 ```
 
-The native approach handles dynamic safe areas (keyboard, toolbars) and allows
-content to scroll behind the status bar naturally.
+The native approach handles dynamic safe areas (keyboard, toolbars) and allows content to scroll behind the status bar naturally.

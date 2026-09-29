@@ -15,17 +15,17 @@ values directly from `item` instead.
 
 ```tsx
 function UserList({ users }: { users: User[] }) {
-	return (
-		<LegendList
-			data={users}
-			renderItem={({ item }) => (
-				<UserRow
-					// Bad: new object on every render
-					user={{ id: item.id, name: item.name, avatar: item.avatar }}
-				/>
-			)}
-		/>
-	)
+  return (
+    <LegendList
+      data={users}
+      renderItem={({ item }) => (
+        <UserRow
+          // Bad: new object on every render
+          user={{ id: item.id, name: item.name, avatar: item.avatar }}
+        />
+      )}
+    />
+  )
 }
 ```
 
@@ -45,15 +45,15 @@ renderItem={({ item }) => (
 
 ```tsx
 function UserList({ users }: { users: User[] }) {
-	return (
-		<LegendList
-			data={users}
-			renderItem={({ item }) => (
-				// Good: pass the item directly
-				<UserRow user={item} />
-			)}
-		/>
-	)
+  return (
+    <LegendList
+      data={users}
+      renderItem={({ item }) => (
+        // Good: pass the item directly
+        <UserRow user={item} />
+      )}
+    />
+  )
 }
 ```
 

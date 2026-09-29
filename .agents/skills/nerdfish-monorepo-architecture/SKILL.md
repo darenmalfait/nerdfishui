@@ -28,11 +28,11 @@ Reference these guidelines when:
 
 ## Rule Categories by Priority
 
-| Priority | Category              | Impact   | Prefix          |
-| -------- | --------------------- | -------- | --------------- |
-| 1        | Vertical slices       | CRITICAL | `architecture-` |
-| 2        | Acyclic dependencies  | CRITICAL | `architecture-` |
-| 3        | Entry-point factories | HIGH     | `patterns-`     |
+| Priority | Category             | Impact   | Prefix           |
+| -------- | -------------------- | -------- | ---------------- |
+| 1        | Vertical slices      | CRITICAL | `architecture-`  |
+| 2        | Acyclic dependencies | CRITICAL | `architecture-`  |
+| 3        | Entry-point factories| HIGH     | `patterns-`      |
 
 ## Quick Reference
 

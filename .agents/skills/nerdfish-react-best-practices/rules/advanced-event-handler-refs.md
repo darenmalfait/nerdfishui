@@ -7,17 +7,16 @@ tags: advanced, hooks, refs, event-handlers, optimization
 
 ## Store Event Handlers in Refs
 
-Store callbacks in refs when used in effects that shouldn't re-subscribe on
-callback changes.
+Store callbacks in refs when used in effects that shouldn't re-subscribe on callback changes.
 
 **Incorrect (re-subscribes on every render):**
 
 ```tsx
 function useWindowEvent(event: string, handler: (e) => void) {
-	useEffect(() => {
-		window.addEventListener(event, handler)
-		return () => window.removeEventListener(event, handler)
-	}, [event, handler])
+  useEffect(() => {
+    window.addEventListener(event, handler)
+    return () => window.removeEventListener(event, handler)
+  }, [event, handler])
 }
 ```
 
@@ -25,16 +24,16 @@ function useWindowEvent(event: string, handler: (e) => void) {
 
 ```tsx
 function useWindowEvent(event: string, handler: (e) => void) {
-	const handlerRef = useRef(handler)
-	useEffect(() => {
-		handlerRef.current = handler
-	}, [handler])
+  const handlerRef = useRef(handler)
+  useEffect(() => {
+    handlerRef.current = handler
+  }, [handler])
 
-	useEffect(() => {
-		const listener = (e) => handlerRef.current(e)
-		window.addEventListener(event, listener)
-		return () => window.removeEventListener(event, listener)
-	}, [event])
+  useEffect(() => {
+    const listener = (e) => handlerRef.current(e)
+    window.addEventListener(event, listener)
+    return () => window.removeEventListener(event, listener)
+  }, [event])
 }
 ```
 
@@ -44,14 +43,13 @@ function useWindowEvent(event: string, handler: (e) => void) {
 import { useEffectEvent } from 'react'
 
 function useWindowEvent(event: string, handler: (e) => void) {
-	const onEvent = useEffectEvent(handler)
+  const onEvent = useEffectEvent(handler)
 
-	useEffect(() => {
-		window.addEventListener(event, onEvent)
-		return () => window.removeEventListener(event, onEvent)
-	}, [event])
+  useEffect(() => {
+    window.addEventListener(event, onEvent)
+    return () => window.removeEventListener(event, onEvent)
+  }, [event])
 }
 ```
 
-`useEffectEvent` provides a cleaner API for the same pattern: it creates a
-stable function reference that always calls the latest version of the handler.
+`useEffectEvent` provides a cleaner API for the same pattern: it creates a stable function reference that always calls the latest version of the handler.

@@ -15,16 +15,16 @@ your server or use an image CDN with resize parameters.
 
 ```tsx
 function ProductItem({ product }: { product: Product }) {
-	return (
-		<View>
-			{/* 4000x3000 image loaded for a 100x100 thumbnail */}
-			<Image
-				source={{ uri: product.imageUrl }}
-				style={{ width: 100, height: 100 }}
-			/>
-			<Text>{product.name}</Text>
-		</View>
-	)
+  return (
+    <View>
+      {/* 4000x3000 image loaded for a 100x100 thumbnail */}
+      <Image
+        source={{ uri: product.imageUrl }}
+        style={{ width: 100, height: 100 }}
+      />
+      <Text>{product.name}</Text>
+    </View>
+  )
 }
 ```
 
@@ -32,19 +32,19 @@ function ProductItem({ product }: { product: Product }) {
 
 ```tsx
 function ProductItem({ product }: { product: Product }) {
-	// Request a 200x200 image (2x for retina)
-	const thumbnailUrl = `${product.imageUrl}?w=200&h=200&fit=cover`
+  // Request a 200x200 image (2x for retina)
+  const thumbnailUrl = `${product.imageUrl}?w=200&h=200&fit=cover`
 
-	return (
-		<View>
-			<Image
-				source={{ uri: thumbnailUrl }}
-				style={{ width: 100, height: 100 }}
-				contentFit="cover"
-			/>
-			<Text>{product.name}</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Image
+        source={{ uri: thumbnailUrl }}
+        style={{ width: 100, height: 100 }}
+        contentFit='cover'
+      />
+      <Text>{product.name}</Text>
+    </View>
+  )
 }
 ```
 

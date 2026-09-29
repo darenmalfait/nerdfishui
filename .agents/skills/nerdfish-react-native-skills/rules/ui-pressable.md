@@ -16,11 +16,11 @@ Never use `TouchableOpacity` or `TouchableHighlight`. Use `Pressable` from
 import { TouchableOpacity } from 'react-native'
 
 function MyButton({ onPress }: { onPress: () => void }) {
-	return (
-		<TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-			<Text>Press me</Text>
-		</TouchableOpacity>
-	)
+  return (
+    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+      <Text>Press me</Text>
+    </TouchableOpacity>
+  )
 }
 ```
 
@@ -30,11 +30,11 @@ function MyButton({ onPress }: { onPress: () => void }) {
 import { Pressable } from 'react-native'
 
 function MyButton({ onPress }: { onPress: () => void }) {
-	return (
-		<Pressable onPress={onPress}>
-			<Text>Press me</Text>
-		</Pressable>
-	)
+  return (
+    <Pressable onPress={onPress}>
+      <Text>Press me</Text>
+    </Pressable>
+  )
 }
 ```
 
@@ -44,11 +44,11 @@ function MyButton({ onPress }: { onPress: () => void }) {
 import { Pressable } from 'react-native-gesture-handler'
 
 function ListItem({ onPress }: { onPress: () => void }) {
-	return (
-		<Pressable onPress={onPress}>
-			<Text>Item</Text>
-		</Pressable>
-	)
+  return (
+    <Pressable onPress={onPress}>
+      <Text>Item</Text>
+    </Pressable>
+  )
 }
 ```
 

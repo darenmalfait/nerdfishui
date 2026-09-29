@@ -17,19 +17,19 @@ import { useFonts } from 'expo-font'
 import { Text, View } from 'react-native'
 
 function App() {
-	const [fontsLoaded] = useFonts({
-		'Geist-Bold': require('./assets/fonts/Geist-Bold.otf'),
-	})
+  const [fontsLoaded] = useFonts({
+    'Geist-Bold': require('./assets/fonts/Geist-Bold.otf'),
+  })
 
-	if (!fontsLoaded) {
-		return null
-	}
+  if (!fontsLoaded) {
+    return null
+  }
 
-	return (
-		<View>
-			<Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
+    </View>
+  )
 }
 ```
 
@@ -38,16 +38,16 @@ function App() {
 ```json
 // app.json
 {
-	"expo": {
-		"plugins": [
-			[
-				"expo-font",
-				{
-					"fonts": ["./assets/fonts/Geist-Bold.otf"]
-				}
-			]
-		]
-	}
+  "expo": {
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/Geist-Bold.otf"]
+        }
+      ]
+    ]
+  }
 }
 ```
 
@@ -55,12 +55,12 @@ function App() {
 import { Text, View } from 'react-native'
 
 function App() {
-	// No loading state needed—font is already available
-	return (
-		<View>
-			<Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
-		</View>
-	)
+  // No loading state needed—font is already available
+  return (
+    <View>
+      <Text style={{ fontFamily: 'Geist-Bold' }}>Hello</Text>
+    </View>
+  )
 }
 ```
 

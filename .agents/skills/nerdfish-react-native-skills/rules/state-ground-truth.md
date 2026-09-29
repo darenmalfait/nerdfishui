@@ -18,15 +18,15 @@ visual values from state using computation or interpolation.
 const scale = useSharedValue(1)
 
 const tap = Gesture.Tap()
-	.onBegin(() => {
-		scale.set(withTiming(0.95))
-	})
-	.onFinalize(() => {
-		scale.set(withTiming(1))
-	})
+  .onBegin(() => {
+    scale.set(withTiming(0.95))
+  })
+  .onFinalize(() => {
+    scale.set(withTiming(1))
+  })
 
 const animatedStyle = useAnimatedStyle(() => ({
-	transform: [{ scale: scale.get() }],
+  transform: [{ scale: scale.get() }],
 }))
 ```
 
@@ -36,15 +36,15 @@ const animatedStyle = useAnimatedStyle(() => ({
 const pressed = useSharedValue(0) // 0 = not pressed, 1 = pressed
 
 const tap = Gesture.Tap()
-	.onBegin(() => {
-		pressed.set(withTiming(1))
-	})
-	.onFinalize(() => {
-		pressed.set(withTiming(0))
-	})
+  .onBegin(() => {
+    pressed.set(withTiming(1))
+  })
+  .onFinalize(() => {
+    pressed.set(withTiming(0))
+  })
 
 const animatedStyle = useAnimatedStyle(() => ({
-	transform: [{ scale: interpolate(pressed.get(), [0, 1], [1, 0.95]) }],
+  transform: [{ scale: interpolate(pressed.get(), [0, 1], [1, 0.95]) }],
 }))
 ```
 
@@ -69,7 +69,7 @@ const [isExpanded, setIsExpanded] = useState(false)
 const [height, setHeight] = useState(0)
 
 useEffect(() => {
-	setHeight(isExpanded ? 200 : 0)
+  setHeight(isExpanded ? 200 : 0)
 }, [isExpanded])
 
 // Correct: derive from state

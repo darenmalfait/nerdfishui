@@ -18,18 +18,18 @@ for low-level primitives.
 import BottomSheet from 'custom-js-bottom-sheet'
 
 function MyScreen() {
-	const sheetRef = useRef<BottomSheet>(null)
+  const sheetRef = useRef<BottomSheet>(null)
 
-	return (
-		<View style={{ flex: 1 }}>
-			<Button onPress={() => sheetRef.current?.expand()} title="Open" />
-			<BottomSheet ref={sheetRef} snapPoints={['50%', '90%']}>
-				<View>
-					<Text>Sheet content</Text>
-				</View>
-			</BottomSheet>
-		</View>
-	)
+  return (
+    <View style={{ flex: 1 }}>
+      <Button onPress={() => sheetRef.current?.expand()} title='Open' />
+      <BottomSheet ref={sheetRef} snapPoints={['50%', '90%']}>
+        <View>
+          <Text>Sheet content</Text>
+        </View>
+      </BottomSheet>
+    </View>
+  )
 }
 ```
 
@@ -39,23 +39,23 @@ function MyScreen() {
 import { Modal, View, Text, Button } from 'react-native'
 
 function MyScreen() {
-	const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false)
 
-	return (
-		<View style={{ flex: 1 }}>
-			<Button onPress={() => setVisible(true)} title="Open" />
-			<Modal
-				visible={visible}
-				presentationStyle="formSheet"
-				animationType="slide"
-				onRequestClose={() => setVisible(false)}
-			>
-				<View>
-					<Text>Sheet content</Text>
-				</View>
-			</Modal>
-		</View>
-	)
+  return (
+    <View style={{ flex: 1 }}>
+      <Button onPress={() => setVisible(true)} title='Open' />
+      <Modal
+        visible={visible}
+        presentationStyle='formSheet'
+        animationType='slide'
+        onRequestClose={() => setVisible(false)}
+      >
+        <View>
+          <Text>Sheet content</Text>
+        </View>
+      </Modal>
+    </View>
+  )
 }
 ```
 
@@ -64,12 +64,12 @@ function MyScreen() {
 ```tsx
 // In your navigator
 <Stack.Screen
-	name="Details"
-	component={DetailsScreen}
-	options={{
-		presentation: 'formSheet',
-		sheetAllowedDetents: 'fitToContents',
-	}}
+  name='Details'
+  component={DetailsScreen}
+  options={{
+    presentation: 'formSheet',
+    sheetAllowedDetents: 'fitToContents',
+  }}
 />
 ```
 

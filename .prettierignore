@@ -15,3 +15,6 @@
 pnpm-lock.yaml
 nerdfishui.css
 **/.source/**
+# vendored via `npx skills` — keep lock hashes / upstream formatting intact
+.agents/skills/**
+skills-lock.json

@@ -15,12 +15,12 @@ text outside a `<Text>` component, causing a hard crash in production.
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	return (
-		<View>
-			{name && <Text>{name}</Text>}
-			{count && <Text>{count} items</Text>}
-		</View>
-	)
+  return (
+    <View>
+      {name && <Text>{name}</Text>}
+      {count && <Text>{count} items</Text>}
+    </View>
+  )
 }
 // If name="" or count=0, renders the falsy value → crash
 ```
@@ -29,12 +29,12 @@ function Profile({ name, count }: { name: string; count: number }) {
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	return (
-		<View>
-			{name ? <Text>{name}</Text> : null}
-			{count ? <Text>{count} items</Text> : null}
-		</View>
-	)
+  return (
+    <View>
+      {name ? <Text>{name}</Text> : null}
+      {count ? <Text>{count} items</Text> : null}
+    </View>
+  )
 }
 ```
 
@@ -42,12 +42,12 @@ function Profile({ name, count }: { name: string; count: number }) {
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	return (
-		<View>
-			{!!name && <Text>{name}</Text>}
-			{!!count && <Text>{count} items</Text>}
-		</View>
-	)
+  return (
+    <View>
+      {!!name && <Text>{name}</Text>}
+      {!!count && <Text>{count} items</Text>}
+    </View>
+  )
 }
 ```
 
@@ -55,14 +55,14 @@ function Profile({ name, count }: { name: string; count: number }) {
 
 ```tsx
 function Profile({ name, count }: { name: string; count: number }) {
-	if (!name) return null
+  if (!name) return null
 
-	return (
-		<View>
-			<Text>{name}</Text>
-			{count > 0 ? <Text>{count} items</Text> : null}
-		</View>
-	)
+  return (
+    <View>
+      <Text>{name}</Text>
+      {count > 0 ? <Text>{count} items</Text> : null}
+    </View>
+  )
 }
 ```
 

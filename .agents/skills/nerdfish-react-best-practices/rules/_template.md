@@ -9,8 +9,7 @@ tags: tag1, tag2
 
 **Impact: MEDIUM (optional impact description)**
 
-Brief explanation of the rule and why it matters. This should be clear and
-concise, explaining the performance implications.
+Brief explanation of the rule and why it matters. This should be clear and concise, explaining the performance implications.
 
 **Incorrect (description of what's wrong):**
 

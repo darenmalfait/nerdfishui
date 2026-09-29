@@ -13,5 +13,4 @@ skills this one loads.
 npx skills add darenmalfait/nerdfish-agent-skills --skill nerdfish-review
 ```
 
-Then ask the agent: “nerdfish review” / “analyze my changes with nerdfish
-skills”.
+Then ask the agent: “nerdfish review” / “analyze my changes with nerdfish skills”.

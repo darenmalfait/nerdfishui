@@ -16,13 +16,13 @@ which gets expensive quickly.
 
 ```tsx
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<ScrollView>
-			{items.map((item) => (
-				<ItemCard key={item.id} item={item} />
-			))}
-		</ScrollView>
-	)
+  return (
+    <ScrollView>
+      {items.map((item) => (
+        <ItemCard key={item.id} item={item} />
+      ))}
+    </ScrollView>
+  )
 }
 // 50 items = 50 components mounted, even if only 10 visible
 ```
@@ -33,15 +33,15 @@ function Feed({ items }: { items: Item[] }) {
 import { LegendList } from '@legendapp/list'
 
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<LegendList
-			data={items}
-			// if you aren't using React Compiler, wrap these with useCallback
-			renderItem={({ item }) => <ItemCard item={item} />}
-			keyExtractor={(item) => item.id}
-			estimatedItemSize={80}
-		/>
-	)
+  return (
+    <LegendList
+      data={items}
+      // if you aren't using React Compiler, wrap these with useCallback
+      renderItem={({ item }) => <ItemCard item={item} />}
+      keyExtractor={(item) => item.id}
+      estimatedItemSize={80}
+    />
+  )
 }
 // Only ~10-15 visible items mounted at a time
 ```
@@ -52,14 +52,14 @@ function Feed({ items }: { items: Item[] }) {
 import { FlashList } from '@shopify/flash-list'
 
 function Feed({ items }: { items: Item[] }) {
-	return (
-		<FlashList
-			data={items}
-			// if you aren't using React Compiler, wrap these with useCallback
-			renderItem={({ item }) => <ItemCard item={item} />}
-			keyExtractor={(item) => item.id}
-		/>
-	)
+  return (
+    <FlashList
+      data={items}
+      // if you aren't using React Compiler, wrap these with useCallback
+      renderItem={({ item }) => <ItemCard item={item} />}
+      keyExtractor={(item) => item.id}
+    />
+  )
 }
 ```
 

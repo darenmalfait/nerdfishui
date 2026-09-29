@@ -36,9 +36,9 @@ packages/
 ```json
 // packages/app/package.json
 {
-	"dependencies": {
-		"react-native-reanimated": "3.16.1"
-	}
+  "dependencies": {
+    "react-native-reanimated": "3.16.1"
+  }
 }
 ```
 

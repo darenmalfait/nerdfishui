@@ -18,11 +18,11 @@ source changes, not just on initial render.
 type Props = { fallbackEnabled: boolean }
 
 function Toggle({ fallbackEnabled }: Props) {
-	const [enabled, setEnabled] = useState(defaultEnabled)
-	// If fallbackEnabled changes, state is stale
-	// State mixes user intent with default value
+  const [enabled, setEnabled] = useState(defaultEnabled)
+  // If fallbackEnabled changes, state is stale
+  // State mixes user intent with default value
 
-	return <Switch value={enabled} onValueChange={setEnabled} />
+  return <Switch value={enabled} onValueChange={setEnabled} />
 }
 ```
 
@@ -32,13 +32,13 @@ function Toggle({ fallbackEnabled }: Props) {
 type Props = { fallbackEnabled: boolean }
 
 function Toggle({ fallbackEnabled }: Props) {
-	const [_enabled, setEnabled] = useState<boolean | undefined>(undefined)
-	const enabled = _enabled ?? defaultEnabled
-	// undefined = user hasn't touched it, falls back to prop
-	// If defaultEnabled changes, component reflects it
-	// Once user interacts, their choice persists
+  const [_enabled, setEnabled] = useState<boolean | undefined>(undefined)
+  const enabled = _enabled ?? defaultEnabled
+  // undefined = user hasn't touched it, falls back to prop
+  // If defaultEnabled changes, component reflects it
+  // Once user interacts, their choice persists
 
-	return <Switch value={enabled} onValueChange={setEnabled} />
+  return <Switch value={enabled} onValueChange={setEnabled} />
 }
 ```
 
@@ -46,11 +46,11 @@ function Toggle({ fallbackEnabled }: Props) {
 
 ```tsx
 function ProfileForm({ data }: { data: User }) {
-	const [_theme, setTheme] = useState<string | undefined>(undefined)
-	const theme = _theme ?? data.theme
-	// Shows server value until user overrides
-	// Server refetch updates the fallback automatically
+  const [_theme, setTheme] = useState<string | undefined>(undefined)
+  const theme = _theme ?? data.theme
+  // Shows server value until user overrides
+  // Server refetch updates the fallback automatically
 
-	return <ThemePicker value={theme} onChange={setTheme} />
+  return <ThemePicker value={theme} onChange={setTheme} />
 }
 ```

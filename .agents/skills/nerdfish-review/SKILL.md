@@ -38,37 +38,35 @@ git diff main...HEAD --stat
 git log main..HEAD --oneline
 ```
 
-Summarize: languages, areas (React UI, packages, tests, docs), and risk
-hotspots.
+Summarize: languages, areas (React UI, packages, tests, docs), and risk hotspots.
 
 ### 2. Select skills (always-on vs conditional)
 
-**Always load** (read each skill’s `SKILL.md`, then relevant `rules/` /
-`AGENTS.md` as needed):
+**Always load** (read each skill’s `SKILL.md`, then relevant `rules/` / `AGENTS.md`
+as needed):
 
-| Priority | Skill                            | Why                                      |
-| -------- | -------------------------------- | ---------------------------------------- |
-| 1        | `nerdfish-react-best-practices`  | Waterfalls, bundle, server/client perf   |
-| 2        | `nerdfish-composition-patterns`  | Boolean props, compound components       |
-| 3        | `nerdfish-monorepo-architecture` | Vertical slices, cycles, factories       |
-| 4        | `nerdfish-code-quality`          | Clarity, comments, review rigor, effects |
+| Priority | Skill | Why |
+| -------- | ----- | --- |
+| 1 | `nerdfish-react-best-practices` | Waterfalls, bundle, server/client perf |
+| 2 | `nerdfish-composition-patterns` | Boolean props, compound components |
+| 3 | `nerdfish-monorepo-architecture` | Vertical slices, cycles, factories |
+| 4 | `nerdfish-code-quality` | Clarity, comments, review rigor, effects |
 
 **Load if the diff touches that domain:**
 
-| Skill                             | Load when                                                 |
-| --------------------------------- | --------------------------------------------------------- |
-| `nerdfish-bdd-testing`            | Specs, page/screen objects, fixtures, e2e/component tests |
-| `nerdfish-pr-discipline`          | User is about to push/PR/commit, or reviewing PR workflow |
-| `nerdfish-react-view-transitions` | View transitions, route animations, `transitionTypes`     |
-| `nerdfish-react-native-skills`    | React Native / Expo files                                 |
+| Skill | Load when |
+| ----- | --------- |
+| `nerdfish-bdd-testing` | Specs, page/screen objects, fixtures, e2e/component tests |
+| `nerdfish-pr-discipline` | User is about to push/PR/commit, or reviewing PR workflow |
+| `nerdfish-react-view-transitions` | View transitions, route animations, `transitionTypes` |
+| `nerdfish-react-native-skills` | React Native / Expo files |
 
 **Optional (not `nerdfish-*` but useful alongside):**
 
-| Skill                   | Load when                                   |
-| ----------------------- | ------------------------------------------- |
-| `web-design-guidelines` | UI / a11y / UX surfaces                     |
+| Skill | Load when |
+| ----- | --------- |
+| `web-design-guidelines` | UI / a11y / UX surfaces |
 | `specification-website` | Site-wide capability / compliance questions |
-| `writing-guidelines`    | Docs / prose                                |
 
 Paths (same repo after install):
 
@@ -100,28 +98,26 @@ Use this structure:
 ```markdown
 ## Nerdfish review
 
-**Scope:** <branch / files / vs main> **Skills applied:** <list> **Skills
-skipped:** <list + why>
+**Scope:** <branch / files / vs main>
+**Skills applied:** <list>
+**Skills skipped:** <list + why>
 
 ### Critical
-
 - `file:line` — <rule id> — <issue> — <fix direction>
 
 ### High
-
 - …
 
 ### Medium / nits
-
 - …
 
 ### Clean
-
 - <areas that looked fine under applied skills>
 ```
 
-Severity order: Critical → High → Medium. Group by severity, not by skill. Cite
-the skill + rule id (e.g. `nerdfish-react-best-practices` / `async-parallel`).
+Severity order: Critical → High → Medium. Group by severity, not by skill.
+Cite the skill + rule id (e.g. `nerdfish-react-best-practices` /
+`async-parallel`).
 
 ### 5. Stop conditions
 

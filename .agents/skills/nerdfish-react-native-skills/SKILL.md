@@ -62,8 +62,7 @@ Reference these guidelines when:
 
 ### 3. Navigation (HIGH)
 
-- `navigation-native-navigators` - Use native stack and native tabs over JS
-  navigators
+- `navigation-native-navigators` - Use native stack and native tabs over JS navigators
 
 ### 4. UI Patterns (HIGH)
 

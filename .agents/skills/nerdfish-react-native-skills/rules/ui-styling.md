@@ -39,8 +39,8 @@ Follow these styling patterns for cleaner, more consistent React Native code.
 
 ```tsx
 <View style={{ padding: 16, gap: 12 }}>
-	<Text>First</Text>
-	<Text>Second</Text>
+  <Text>First</Text>
+  <Text>Second</Text>
 </View>
 ```
 

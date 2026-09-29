@@ -16,7 +16,7 @@ direct child of `<View>`.
 import { View } from 'react-native'
 
 function Greeting({ name }: { name: string }) {
-	return <View>Hello, {name}!</View>
+  return <View>Hello, {name}!</View>
 }
 // Error: Text strings must be rendered within a <Text> component.
 ```
@@ -27,10 +27,10 @@ function Greeting({ name }: { name: string }) {
 import { View, Text } from 'react-native'
 
 function Greeting({ name }: { name: string }) {
-	return (
-		<View>
-			<Text>Hello, {name}!</Text>
-		</View>
-	)
+  return (
+    <View>
+      <Text>Hello, {name}!</Text>
+    </View>
+  )
 }
 ```
