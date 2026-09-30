@@ -1,5 +1,13 @@
 # @nerdfish/react
 
+## 1.5.0
+
+### Minor Changes
+
+- Blume-style CodeBlock chrome: overlay copy, vendored lazy language icons
+  (`icon` slot / `false` to hide), `header={false}` to suppress chrome, and
+  fixed shiki CSS variable tokens.
+
 ## 1.4.2
 
 ### Patch Changes
