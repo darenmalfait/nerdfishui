@@ -3,7 +3,7 @@ name: Update agent skills
 on:
   schedule:
     # Daily 08:00 UTC
-    - cron: "0 8 * * *"
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 permissions:
@@ -26,12 +26,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
 
       - name: Update project skills
         # Do not use secrets.GITHUB_TOKEN here — it cannot read the private skills repo.
         env:
-          DISABLE_TELEMETRY: "1"
+          DISABLE_TELEMETRY: '1'
           GH_TOKEN: ${{ secrets.NERDFISH_SKILLS_TOKEN }}
         run: npx --yes skills@latest update -p -y
 
@@ -41,8 +41,8 @@ jobs:
           branch: chore/update-agent-skills
           delete-branch: true
           draft: true
-          title: "chore: update agent skills"
-          commit-message: "chore(agents): update skill dependencies"
+          title: 'chore: update agent skills'
+          commit-message: 'chore(agents): update skill dependencies'
           body: |
             Automated update via `npx skills update -p -y`.
 
