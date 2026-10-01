@@ -48,7 +48,7 @@
     "@nerdfish/config": "^1.10.6",
     "@pnpm/find-workspace-dir": "^1000.1.5",
     "@types/lodash-es": "^4.17.12",
-    "eslint": "^9.39.4",
+    "eslint": "^10.11.0",
     "execa": "^9.6.1",
     "husky": "^9.1.7",
     "npm-run-all2": "^8.0.4",
