@@ -1,13 +1,13 @@
 # Code Quality
 
-Structured rules for clarity, comments, review rigor, and effects discipline.
+Structured rules for clarity, comments, review rigor, effects discipline, and
+feature-flag shape.
 
 ## Structure
 
 - `rules/` - Individual rule files
   - `_sections.md` - Section metadata
   - `_template.md` - Template for creating new rules
-- `metadata.json` - Document metadata
 - **`AGENTS.md`** - Compiled output
 - **`SKILL.md`** - Agent skill entry point
 
@@ -19,6 +19,7 @@ Structured rules for clarity, comments, review rigor, and effects discipline.
 - `quality-code-comments.md` - Comments explain why, not what
 - `quality-thorough-code-review.md` - Address all nits before merge
 - `quality-no-use-effect.md` - No bare `useEffect`
+- `quality-feature-flag-shape.md` - Shape flags for easy removal
 
 ## Creating a New Rule
 
