@@ -5,7 +5,6 @@ description: >
   Use when the user asks to "nerdfish review", "review with nerdfish skills",
   "analyze my changes against nerdfish", "audit this PR/diff", or wants a manual
   pass with the most important nerdfish guidelines before shipping.
-license: MIT
 metadata:
   author: nerdfish
   version: '1.0.0'
@@ -50,7 +49,7 @@ as needed):
 | 1 | `vercel-react-best-practices` | Waterfalls, bundle, server/client perf |
 | 2 | `vercel-composition-patterns` | Boolean props, compound components |
 | 3 | `nerdfish-monorepo-architecture` | Vertical slices, cycles, factories |
-| 4 | `nerdfish-code-quality` | Clarity, comments, review rigor, effects |
+| 4 | `nerdfish-code-quality` | Clarity, comments, review rigor, effects, flag shape |
 
 **Load if the diff touches that domain:**
 
@@ -73,10 +72,10 @@ Paths (same repo after install):
 ```
 skills/vercel-react-best-practices/SKILL.md
 skills/vercel-composition-patterns/SKILL.md
-skills/monorepo-architecture/SKILL.md
-skills/code-quality/SKILL.md
-skills/bdd-testing/SKILL.md
-skills/pr-discipline/SKILL.md
+skills/nerdfish-monorepo-architecture/SKILL.md
+skills/nerdfish-code-quality/SKILL.md
+skills/nerdfish-bdd-testing/SKILL.md
+skills/nerdfish-pr-discipline/SKILL.md
 skills/vercel-react-view-transitions/SKILL.md
 skills/vercel-react-native-skills/SKILL.md
 ```
