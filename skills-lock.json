@@ -17,7 +17,7 @@
       "source": "darenmalfait/nerdfish-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/nerdfish-bdd-testing/SKILL.md",
-      "computedHash": "de37444e1e146b6d3ee8d096063e36013f3f1bf5651123d4c880c19a6731324e"
+      "computedHash": "42142e46db93ab9e7f09e78e712d32e27010f703d5e6914f8a5ad8f3153c95c9"
     },
     "nerdfish-code-quality": {
       "source": "darenmalfait/nerdfish-agent-skills",
