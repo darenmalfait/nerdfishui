@@ -48,3 +48,6 @@ yarn-error.log
 .env*
 !.env.example
 packages/theme/nerdfishui.css
+
+# local skills restored from skills-lock.json
+.agents/skills/

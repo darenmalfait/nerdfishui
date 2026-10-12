@@ -1,64 +1,66 @@
 {
-  "name": "nerdfishui",
-  "private": true,
-  "author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
-  "type": "module",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "tooling/*"
-  ],
-  "scripts": {
-    "build": "turbo run build",
-    "build:packages": "turbo run build --filter=!docs",
-    "changeset": "changeset",
-    "changeset:release": "changeset publish",
-    "changeset:version": "changeset version && pnpm install --no-frozen-lockfile && git add .",
-    "checks": "npm-run-all2 format lint typecheck",
-    "checks:fix": "npm-run-all2 format:fix lint:fix typecheck",
-    "clean": "turbo clean && rm -rf node_modules && rm -rf .turbo",
-    "dev": "turbo run dev --no-cache --continue",
-    "format": "prettier . --check --cache --cache-location=\"node_modules/.cache/prettiercache\"",
-    "format:fix": "prettier . --write --cache --cache-location=\"node_modules/.cache/prettiercache\" --log-level=warn",
-    "preinstall": "npx only-allow pnpm",
-    "lint": "eslint . --max-warnings 0",
-    "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
-    "prepare": "husky",
-    "release": "turbo run build --ignore=docs^... && changeset publish",
-    "typecheck": "turbo typecheck",
-    "vercel-build": "turbo build"
-  },
-  "prettier": "@nerdfish/config/prettier",
-  "dependencies": {
-    "@rollup/plugin-alias": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-replace": "^6.0.3",
-    "lodash-es": "^4.18.1",
-    "rollup": "^4.62.2",
-    "rollup-plugin-esbuild": "^6.2.1",
-    "rollup-plugin-preserve-directives": "^0.4.0",
-    "tailwindcss": "^4.3.2",
-    "tsx": "^4.22.4"
-  },
-  "devDependencies": {
-    "@changesets/changelog-github": "^0.7.0",
-    "@changesets/cli": "^2.31.0",
-    "@commitlint/cli": "^20.5.3",
-    "@commitlint/config-conventional": "^20.5.3",
-    "@nerdfish/config": "^1.10.6",
-    "@pnpm/find-workspace-dir": "^1000.1.5",
-    "@types/lodash-es": "^4.17.12",
-    "eslint": "^9.39.4",
-    "execa": "^9.6.1",
-    "husky": "^9.1.7",
-    "npm-run-all2": "^8.0.4",
-    "prettier": "^3.9.4",
-    "turbo": "^2.10.2"
-  },
-  "packageManager": "pnpm@10.34.5",
-  "pnpm": {
-    "overrides": {
-      "js-yaml@^4": "5.4.2"
-    }
-  }
+	"name": "nerdfishui",
+	"private": true,
+	"author": "Daren Malfait <daren@nerdfish.be> (https://nerdfish.be)",
+	"type": "module",
+	"workspaces": [
+		"apps/*",
+		"packages/*",
+		"tooling/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"build:packages": "turbo run build --filter=!docs",
+		"changeset": "changeset",
+		"changeset:release": "changeset publish",
+		"changeset:version": "changeset version && pnpm install --no-frozen-lockfile && git add .",
+		"checks": "npm-run-all2 format lint typecheck",
+		"checks:fix": "npm-run-all2 format:fix lint:fix typecheck",
+		"clean": "turbo clean && rm -rf node_modules && rm -rf .turbo",
+		"dev": "turbo run dev --no-cache --continue",
+		"format": "prettier . --check --cache --cache-location=\"node_modules/.cache/prettiercache\"",
+		"format:fix": "prettier . --write --cache --cache-location=\"node_modules/.cache/prettiercache\" --log-level=warn",
+		"preinstall": "npx only-allow pnpm",
+		"lint": "eslint . --max-warnings 0",
+		"lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
+		"prepare": "husky",
+		"release": "turbo run build --ignore=docs^... && changeset publish",
+		"typecheck": "turbo typecheck",
+		"vercel-build": "turbo build",
+		"skills:install": "DISABLE_TELEMETRY=1 npx --yes skills experimental_install",
+		"skills:update": "DISABLE_TELEMETRY=1 npx --yes skills update -p -y"
+	},
+	"prettier": "@nerdfish/config/prettier",
+	"dependencies": {
+		"@rollup/plugin-alias": "^6.0.0",
+		"@rollup/plugin-node-resolve": "^16.0.3",
+		"@rollup/plugin-replace": "^6.0.3",
+		"lodash-es": "^4.18.1",
+		"rollup": "^4.62.2",
+		"rollup-plugin-esbuild": "^6.2.1",
+		"rollup-plugin-preserve-directives": "^0.4.0",
+		"tailwindcss": "^4.3.2",
+		"tsx": "^4.22.4"
+	},
+	"devDependencies": {
+		"@changesets/changelog-github": "^0.7.0",
+		"@changesets/cli": "^2.31.0",
+		"@commitlint/cli": "^20.5.3",
+		"@commitlint/config-conventional": "^20.5.3",
+		"@nerdfish/config": "^1.10.6",
+		"@pnpm/find-workspace-dir": "^1000.1.5",
+		"@types/lodash-es": "^4.17.12",
+		"eslint": "^9.39.4",
+		"execa": "^9.6.1",
+		"husky": "^9.1.7",
+		"npm-run-all2": "^8.0.4",
+		"prettier": "^3.9.4",
+		"turbo": "^2.10.2"
+	},
+	"packageManager": "pnpm@10.34.5",
+	"pnpm": {
+		"overrides": {
+			"js-yaml@^4": "5.4.2"
+		}
+	}
 }
