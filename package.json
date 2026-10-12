@@ -25,6 +25,8 @@
     "lint:fix": "eslint . --fix --cache --cache-location \"node_modules/.cache/.eslintcache\" --max-warnings 0",
     "prepare": "husky",
     "release": "turbo run build --ignore=docs^... && changeset publish",
+    "skills:install": "DISABLE_TELEMETRY=1 npx --yes skills experimental_install",
+    "skills:update": "DISABLE_TELEMETRY=1 npx --yes skills update -p -y",
     "typecheck": "turbo typecheck",
     "vercel-build": "turbo build"
   },

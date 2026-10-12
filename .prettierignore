@@ -17,4 +17,7 @@ nerdfishui.css
 **/.source/**
 # vendored via `npx skills` — keep lock hashes / upstream formatting intact
 .agents/skills/**
+.claude/skills/**
+.cursor/skills/**
+.codex/skills/**
 skills-lock.json
