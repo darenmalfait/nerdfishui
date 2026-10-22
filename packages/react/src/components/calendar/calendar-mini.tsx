@@ -11,7 +11,7 @@ import {
 	type MouseEventHandler,
 	type ReactNode,
 	useCallback,
-	useContext,
+	use,
 	useMemo,
 } from 'react'
 import { useControllableState } from '../../hooks/use-controllable-state'
@@ -29,7 +29,7 @@ type CalendarMiniContextType = {
 const CalendarMiniContext = createContext<CalendarMiniContextType | null>(null)
 
 function useCalendarMini() {
-	const context = useContext(CalendarMiniContext)
+	const context = use(CalendarMiniContext)
 
 	if (!context) {
 		throw new Error('CalendarMini components must be used within CalendarMini')
@@ -70,7 +70,7 @@ export function CalendarMini({
 	defaultValue,
 	onValueChange,
 	startDate,
-	defaultStartDate = new Date(),
+	defaultStartDate,
 	onStartDateChange,
 	days = 5,
 	className,
@@ -87,7 +87,7 @@ export function CalendarMini({
 
 	const [currentStartDate, setCurrentStartDate] = useControllableState({
 		prop: startDate,
-		defaultProp: defaultStartDate,
+		defaultProp: defaultStartDate ?? new Date(),
 		onChange: onStartDateChange,
 	})
 
@@ -140,9 +140,11 @@ export interface CalendarMiniNavigationProps extends useRender.ComponentProps<'b
 	direction: 'prev' | 'next'
 }
 
+const defaultNavigationRender = <Button icon type="button" variant="ghost" />
+
 export const CalendarMiniNavigation = ({
 	direction,
-	render = <Button icon type="button" variant="ghost" />,
+	render = defaultNavigationRender,
 	children,
 	onClick,
 	...props

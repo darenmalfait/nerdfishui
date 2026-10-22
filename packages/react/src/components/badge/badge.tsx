@@ -3,7 +3,7 @@ import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { type ReactElement, type HTMLAttributes } from 'react'
 
 export const badgeVariants = cva(
-	'inline-flex items-center justify-center border border-transparent font-medium focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 [&_svg]:-ms-px [&_svg]:shrink-0',
+	'inline-flex items-center justify-center border border-transparent font-medium outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&_svg]:-ms-px [&_svg]:shrink-0',
 	{
 		variants: {
 			variant: {
@@ -144,7 +144,7 @@ export const badgeVariants = cva(
 )
 
 const badgeButtonVariants = cva(
-	'cursor-pointer transition-all inline-flex items-center justify-center leading-none size-3.5 [&>svg]:opacity-100! [&>svg]:size-3.5 p-0 rounded-md -me-0.5 opacity-60 hover:opacity-100',
+	'cursor-pointer transition-opacity inline-flex items-center justify-center leading-none size-3.5 [&>svg]:opacity-100! [&>svg]:size-3.5 p-0 rounded-md -me-0.5 opacity-60 hover:opacity-100',
 	{
 		variants: {
 			variant: {

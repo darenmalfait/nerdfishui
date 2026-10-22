@@ -27,7 +27,7 @@ export default function InputGroupExample() {
 	return (
 		<div className="grid w-full gap-6">
 			<InputGroup>
-				<InputGroupInput placeholder="Search..." />
+				<InputGroupInput placeholder="Search…" />
 				<InputGroupAddon>
 					<SearchIcon />
 				</InputGroupAddon>
@@ -54,7 +54,7 @@ export default function InputGroupExample() {
 				</InputGroupAddon>
 			</InputGroup>
 			<InputGroup>
-				<InputGroupTextarea placeholder="Ask, Search or Chat..." />
+				<InputGroupTextarea placeholder="Ask, Search or Chat…" />
 				<InputGroupAddon align="block-end">
 					<InputGroupButton
 						variant="outline"

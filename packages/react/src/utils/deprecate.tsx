@@ -1,9 +1,4 @@
-import {
-	forwardRef,
-	type ForwardRefExoticComponent,
-	type PropsWithoutRef,
-	type RefAttributes,
-} from 'react'
+import { type ComponentType } from 'react'
 
 const warnedMessages: {
 	[message: string]: boolean
@@ -16,16 +11,16 @@ const warnOnce = (message: string) => {
 	}
 }
 
-function deprecateComponent<P, T>(
-	Component: ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<T>>,
+function deprecateComponent<P extends object>(
+	Component: ComponentType<P>,
 	message: string,
-): typeof Component {
-	const Deprecated = forwardRef<T, P>((props, ref) => {
+) {
+	function Deprecated(props: P) {
 		warnOnce(message)
-		return <Component ref={ref} {...props} />
-	})
+		return <Component {...props} />
+	}
 
-	Deprecated.displayName = `deprecated(${Component.displayName})`
+	Deprecated.displayName = `deprecated(${Component.displayName ?? Component.name})`
 
 	return Deprecated
 }

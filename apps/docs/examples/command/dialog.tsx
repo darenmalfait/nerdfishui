@@ -43,7 +43,7 @@ export default function CommandDialogExample() {
 				<Kbd>J</Kbd>
 			</p>
 			<CommandDialog open={open} onOpenChange={setOpen}>
-				<CommandInput placeholder="Type a command or search..." />
+				<CommandInput placeholder="Type a command or search…" />
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
 					<CommandGroup heading="Suggestions">

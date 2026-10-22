@@ -10,7 +10,7 @@ export default function MarkerExample() {
 				<MarkerIcon>
 					<Spinner />
 				</MarkerIcon>
-				<MarkerContent>Checking the logs...</MarkerContent>
+				<MarkerContent>Checking the logs…</MarkerContent>
 			</Marker>
 			<Marker variant="separator">
 				<MarkerContent>Today</MarkerContent>

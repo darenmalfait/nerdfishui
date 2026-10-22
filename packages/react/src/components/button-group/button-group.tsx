@@ -27,11 +27,12 @@ export interface ButtonGroupProps
 export function ButtonGroup({
 	className,
 	orientation,
-	render = <div />,
+	render,
 	...props
 }: ButtonGroupProps): ReactElement {
 	return useRender({
 		render,
+		defaultTagName: 'div',
 		props: {
 			className: cn(buttonGroupVariants({ orientation }), className),
 			...props,

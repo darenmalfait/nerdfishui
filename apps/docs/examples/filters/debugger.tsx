@@ -181,7 +181,7 @@ const fields: FilterFieldConfig[] = [
 ]
 
 export default function FiltersDebugExample() {
-	const [filters, setFilters] = useState<Filter[]>([
+	const [filters, setFilters] = useState<Filter[]>(() => [
 		createFilter('assignee', 'is', ['john']),
 		createFilter('isActive', 'is', [true]),
 	])

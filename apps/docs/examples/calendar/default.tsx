@@ -4,7 +4,7 @@ import { Calendar } from '@nerdfish/react/calendar'
 import * as React from 'react'
 
 export default function CalendarExample() {
-	const [date, setDate] = React.useState<Date | undefined>(new Date())
+	const [date, setDate] = React.useState<Date | undefined>(() => new Date())
 
 	return (
 		<Calendar

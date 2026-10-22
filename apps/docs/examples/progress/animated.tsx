@@ -29,7 +29,7 @@ export default function ProgressAnimatedExample() {
 				className="**:data-[slot=progress-indicator]:animate-pulse **:data-[slot=progress-indicator]:bg-purple-600"
 			/>
 			<div className="text-muted-foreground inline-flex items-center gap-2 text-xs">
-				Processing data...
+				Processing data…
 				<span>{Math.round(progress)}%</span>
 			</div>
 		</div>

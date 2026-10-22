@@ -59,7 +59,7 @@ export default function NavigationMenuExample() {
 								<NavigationMenuLink
 									render={
 										<a
-											className="from-muted/50 to-muted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] flex h-full w-full flex-col justify-end bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
+											className="from-muted/50 to-muted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] flex h-full w-full flex-col justify-end bg-linear-to-b p-6 no-underline select-none focus:shadow-md focus-visible:outline-hidden"
 											href="/"
 										/>
 									}
@@ -77,7 +77,7 @@ export default function NavigationMenuExample() {
 								How to install dependencies and structure your app.
 							</ListItem>
 							<ListItem href="/docs/primitives/typography" title="Typography">
-								Styles for headings, paragraphs, lists...etc
+								Styles for headings, paragraphs, lists…etc
 							</ListItem>
 						</ul>
 					</NavigationMenuContent>

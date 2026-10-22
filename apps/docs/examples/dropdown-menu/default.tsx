@@ -50,7 +50,7 @@ export default function DropdownMenuExample() {
 								<DropdownMenuItem>Email</DropdownMenuItem>
 								<DropdownMenuItem>Message</DropdownMenuItem>
 								<DropdownMenuSeparator />
-								<DropdownMenuItem>More...</DropdownMenuItem>
+								<DropdownMenuItem>More…</DropdownMenuItem>
 							</DropdownMenuSubContent>
 						</DropdownMenuPortal>
 					</DropdownMenuSub>

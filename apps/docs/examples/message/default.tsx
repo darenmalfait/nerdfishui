@@ -83,7 +83,7 @@ export default function MessageExample() {
 			</Message>
 			<Marker role="status">
 				<MarkerContent className="shimmer">
-					<span className="font-medium">Oliver</span> is typing...
+					<span className="font-medium">Oliver</span> is typing…
 				</MarkerContent>
 			</Marker>
 		</div>

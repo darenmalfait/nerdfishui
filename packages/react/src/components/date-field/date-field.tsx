@@ -74,7 +74,7 @@ export function DateSegment({ className, ...props }: DateSegmentProps) {
 		<DateSegmentRa
 			className={composeRenderProps(className, (c) =>
 				cn(
-					`text-foreground data-[type=literal]:text-foreground-muted/70 data-placeholder:text-foreground-muted/70 data-invalid:data-focused:bg-destructive data-invalid:data-placeholder:text-destructive data-invalid:text-destructive data-invalid:data-focused:data-placeholder:text-destructive-foreground data-invalid:data-focused:text-destructive-foreground data-focused:bg-background-inverted/20 data-focused:data-placeholder:text-foreground data-focused:text-foreground inline-flex rounded px-0.5 caret-transparent outline-hidden data-disabled:cursor-not-allowed data-disabled:opacity-50 data-[type=literal]:px-0`,
+					`text-foreground data-[type=literal]:text-foreground-muted/70 data-placeholder:text-foreground-muted/70 data-invalid:data-focused:bg-destructive data-invalid:data-placeholder:text-destructive data-invalid:text-destructive data-invalid:data-focused:data-placeholder:text-destructive-foreground data-invalid:data-focused:text-destructive-foreground data-focused:bg-background-inverted/20 data-focused:data-placeholder:text-foreground data-focused:text-foreground inline-flex rounded px-0.5 caret-transparent focus-visible:outline-hidden data-disabled:cursor-not-allowed data-disabled:opacity-50 data-[type=literal]:px-0`,
 					c,
 				),
 			)}

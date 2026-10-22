@@ -7,7 +7,7 @@ import {
 	type ComponentProps,
 	createContext,
 	type CSSProperties,
-	useContext,
+	use,
 } from 'react'
 import { toggleVariants } from '../toggle/toggle'
 
@@ -50,9 +50,9 @@ export function ToggleGroup({
 			)}
 			{...props}
 		>
-			<ToggleGroupContext.Provider value={{ variant, size, spacing }}>
+			<ToggleGroupContext value={{ variant, size, spacing }}>
 				{children}
-			</ToggleGroupContext.Provider>
+			</ToggleGroupContext>
 		</ToggleGroupPrimitive>
 	)
 }
@@ -71,7 +71,7 @@ export function ToggleGroupItem({
 	value,
 	...props
 }: ToggleGroupItemProps) {
-	const context = useContext(ToggleGroupContext)
+	const context = use(ToggleGroupContext)
 
 	return (
 		<TogglePrimitive

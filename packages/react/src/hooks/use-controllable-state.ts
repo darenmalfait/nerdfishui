@@ -18,13 +18,13 @@ export function useControllableState<T>({
 	const value = isControlled ? prop : uncontrolledProp
 
 	const onChangeRef = React.useRef(onChange)
-	onChangeRef.current = onChange
-
 	const propRef = React.useRef(prop)
-	propRef.current = prop
-
 	const uncontrolledRef = React.useRef(uncontrolledProp)
-	uncontrolledRef.current = uncontrolledProp
+	React.useLayoutEffect(() => {
+		onChangeRef.current = onChange
+		propRef.current = prop
+		uncontrolledRef.current = uncontrolledProp
+	})
 
 	const setValue = React.useCallback((next: T | SetStateFn<T>) => {
 		const isControlledValue = propRef.current !== undefined

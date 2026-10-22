@@ -6,12 +6,7 @@ import {
 	ChevronLeftIcon,
 	ChevronRightIcon,
 } from 'lucide-react'
-import {
-	type CSSProperties,
-	useEffect,
-	useRef,
-	type ComponentProps,
-} from 'react'
+import { type CSSProperties, useCallback, type ComponentProps } from 'react'
 import {
 	type DayButton,
 	DayPicker,
@@ -30,14 +25,16 @@ export function CalendarDayButton({
 	modifiers,
 	...props
 }: CalendarDayButtonProps) {
-	const ref = useRef<HTMLButtonElement>(null)
-	useEffect(() => {
-		if (modifiers.focused) ref.current?.focus()
-	}, [modifiers.focused])
+	const focusRef = useCallback(
+		(node: HTMLButtonElement | null) => {
+			if (modifiers.focused) node?.focus()
+		},
+		[modifiers.focused],
+	)
 
 	return (
 		<Button
-			ref={ref}
+			ref={focusRef}
 			variant="ghost"
 			icon
 			data-day={day.date.toLocaleDateString()}

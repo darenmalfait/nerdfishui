@@ -10,18 +10,19 @@ import { Textarea } from '../textarea/textarea'
 export type InputGroupProps = useRender.ComponentProps<'div'>
 export function InputGroup({
 	className,
-	render = <div />,
+	render,
 	...props
 }: InputGroupProps): ReactElement {
 	return useRender({
 		render,
+		defaultTagName: 'div',
 		props: {
 			'data-slot': 'input-group',
 			role: 'group',
 			className: cn(
 				inputVariants(),
 				'!p-0',
-				'group/input-group border-border relative flex w-full items-center border transition-[color,box-shadow] outline-none',
+				'group/input-group border-border relative flex w-full items-center border transition-[color,box-shadow] focus-visible:outline-none',
 				'min-w-0 has-[>textarea]:h-auto',
 
 				// Variants based on alignment.

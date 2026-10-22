@@ -2,7 +2,7 @@
 
 import { Tabs as TabsPrimitive } from '@base-ui/react/tabs'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
-import { type ComponentProps, createContext, useContext } from 'react'
+import { type ComponentProps, createContext, use } from 'react'
 
 // Variants for TabsList
 const tabsListVariants = cva('flex items-center shrink-0 w-fit', {
@@ -207,9 +207,7 @@ export function TabsList({
 	...props
 }: TabsListProps) {
 	return (
-		<TabsContext.Provider
-			value={{ variant: variant ?? 'default', size: size ?? 'md' }}
-		>
+		<TabsContext value={{ variant: variant ?? 'default', size: size ?? 'md' }}>
 			<TabsPrimitive.List
 				data-slot="tabs-list"
 				className={cn(tabsListVariants({ variant, shape, size }), className)}
@@ -217,13 +215,13 @@ export function TabsList({
 			>
 				{props.children}
 			</TabsPrimitive.List>
-		</TabsContext.Provider>
+		</TabsContext>
 	)
 }
 
 export type TabsTriggerProps = ComponentProps<typeof TabsPrimitive.Tab>
 export function TabsTrigger({ className, ...props }: TabsTriggerProps) {
-	const { variant, size } = useContext(TabsContext)
+	const { variant, size } = use(TabsContext)
 
 	return (
 		<TabsPrimitive.Tab

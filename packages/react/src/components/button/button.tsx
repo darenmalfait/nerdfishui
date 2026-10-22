@@ -5,7 +5,7 @@ import { type VariantProps, cva } from '@nerdfish/utils/class'
 import { type ReactElement } from 'react'
 
 export const buttonVariants = cva(
-	'focus-within:ring-ring focus-within:ring-[3px] !outline-none relative inline-flex gap-best-friends items-center justify-center rounded-base border font-medium transition-all active:scale-95 disabled:pointer-events-none',
+	'focus-within:ring-ring focus-within:ring-[3px] focus-visible:!outline-none relative inline-flex gap-best-friends items-center justify-center rounded-base border font-medium transition active:scale-95 disabled:pointer-events-none',
 	{
 		variants: {
 			variant: {
@@ -81,13 +81,14 @@ export interface ButtonProps
 export function Button({
 	variant,
 	size,
-	render = <button />,
+	render,
 	icon,
 	className,
 	...props
 }: ButtonProps): ReactElement {
 	return useRender({
 		render,
+		defaultTagName: 'button',
 		props: {
 			'data-slot': 'button',
 			className: buttonVariants({

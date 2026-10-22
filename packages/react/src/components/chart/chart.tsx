@@ -4,7 +4,7 @@ import { cn } from '@nerdfish/utils/class'
 import {
 	type ComponentProps,
 	createContext,
-	useContext,
+	use,
 	type ComponentType,
 	type ReactNode,
 	useId,
@@ -59,7 +59,7 @@ export type ChartLegendContentProps = {
 const ChartContext = createContext<ChartContextProps | null>(null)
 
 function useChart() {
-	const context = useContext(ChartContext)
+	const context = use(ChartContext)
 
 	if (!context) {
 		throw new Error('useChart must be used within a <ChartContainer />')
@@ -120,12 +120,12 @@ export function ChartContainer({
 	const chartId = `chart-${id ?? uniqueId.replace(/:/g, '')}`
 
 	return (
-		<ChartContext.Provider value={{ config }}>
+		<ChartContext value={{ config }}>
 			<div
 				data-slot="chart"
 				data-chart={chartId}
 				className={cn(
-					"[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-sector]:outline-hidden [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-surface]:outline-hidden",
+					"[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-surface]:focus-visible:ring-ring/50 flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-sector]:outline-hidden [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-surface]:outline-hidden [&_.recharts-surface]:focus-visible:ring-[3px]",
 					className,
 				)}
 				{...props}
@@ -133,7 +133,7 @@ export function ChartContainer({
 				<ChartStyle id={chartId} config={config} />
 				<ResponsiveContainer>{children}</ResponsiveContainer>
 			</div>
-		</ChartContext.Provider>
+		</ChartContext>
 	)
 }
 
@@ -355,15 +355,13 @@ function getPayloadConfigFromPayload(
 		key in payload &&
 		typeof payload[key as keyof typeof payload] === 'string'
 	) {
-		configLabelKey = payload[key as keyof typeof payload] as string
+		configLabelKey = payload[key as keyof typeof payload]
 	} else if (
 		payloadPayload &&
 		key in payloadPayload &&
 		typeof payloadPayload[key as keyof typeof payloadPayload] === 'string'
 	) {
-		configLabelKey = payloadPayload[
-			key as keyof typeof payloadPayload
-		] as string
+		configLabelKey = payloadPayload[key as keyof typeof payloadPayload]
 	}
 
 	return configLabelKey in config ? config[configLabelKey] : config[key]

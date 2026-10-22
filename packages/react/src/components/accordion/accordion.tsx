@@ -46,7 +46,7 @@ export function AccordionTrigger({
 			<AccordionPrimitive.Trigger
 				data-slot="accordion-trigger"
 				className={cn(
-					'p-friends hover:bg-background-muted/20 rounded-base relative flex flex-1 items-center justify-between text-left font-medium transition-all outline-none',
+					'p-friends hover:bg-background-muted/20 rounded-base relative flex flex-1 items-center justify-between text-left font-medium transition-colors focus-visible:outline-none',
 					'data-panel-open:hover:bg-transparent',
 					'[&[data-panel-open]>[data-slot="accordion-trigger-icon"]>svg]:rotate-180',
 					'font-bold',

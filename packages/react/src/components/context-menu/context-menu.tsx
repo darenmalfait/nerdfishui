@@ -66,7 +66,7 @@ export function ContextMenuSubTrigger({
 			data-slot="context-menu-sub-trigger"
 			data-inset={inset}
 			className={cn(
-				"focus:bg-background-inverted focus:text-foreground-inverted data-[state=open]:bg-background-inverted data-[state=open]:text-accent-foreground rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends flex cursor-default items-center text-sm outline-hidden select-none data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5",
+				"focus:bg-background-inverted focus:text-foreground-inverted data-[state=open]:bg-background-inverted data-[state=open]:text-accent-foreground rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends flex cursor-default items-center text-sm select-none focus-visible:outline-hidden data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5",
 				className,
 			)}
 			{...props}
@@ -88,7 +88,7 @@ export function ContextMenuSubPopup({
 		<ContextMenuPrimitive.Popup
 			data-slot="context-menu-sub-popup"
 			className={cn(
-				'bg-popover text-popover-contrast data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 rounded-popover p-best-friends border-border max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto border shadow-md outline-none',
+				'bg-popover text-popover-contrast data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 rounded-popover p-best-friends border-border max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto border shadow-md focus-visible:outline-none',
 				className,
 			)}
 			{...props}
@@ -139,7 +139,7 @@ function ContextMenuPopup({
 		<ContextMenuPrimitive.Popup
 			data-slot="context-menu-content"
 			className={cn(
-				'bg-popover text-popover-contrast data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 rounded-popover p-best-friends border-border max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto border shadow-md outline-none',
+				'bg-popover text-popover-contrast data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 rounded-popover p-best-friends border-border max-h-(--radix-context-menu-content-available-height) min-w-[8rem] origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto border shadow-md focus-visible:outline-none',
 				className,
 			)}
 			{...props}
@@ -198,7 +198,7 @@ export function ContextMenuItem({
 			data-inset={inset}
 			data-variant={variant}
 			className={cn(
-				"focus:bg-background-inverted focus:text-foreground-inverted data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:text-destructive! [&_svg:not([class*='text-'])]:text-foreground-muted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"focus:bg-background-inverted focus:text-foreground-inverted data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:text-destructive! [&_svg:not([class*='text-'])]:text-foreground-muted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm select-none focus-visible:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:ps-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -219,7 +219,7 @@ export function ContextMenuCheckboxItem({
 		<ContextMenuPrimitive.CheckboxItem
 			data-slot="context-menu-checkbox-item"
 			className={cn(
-				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 pe-2 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 pe-2 text-sm select-none focus-visible:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			checked={checked}
@@ -247,7 +247,7 @@ export function ContextMenuRadioItem({
 		<ContextMenuPrimitive.RadioItem
 			data-slot="context-menu-radio-item"
 			className={cn(
-				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"focus:bg-background-inverted focus:text-foreground-inverted rounded-[calc(var(--radius-base)-theme(padding.best-friends))] py-best-friends gap-best-friends relative flex cursor-default items-center ps-7 text-sm select-none focus-visible:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}
@@ -324,7 +324,7 @@ export function ContextMenuPositioner({
 	return (
 		<ContextMenuPrimitive.Positioner
 			data-slot="context-menu-positioner"
-			className="outline-none"
+			className="focus-visible:outline-none"
 			{...props}
 		/>
 	)

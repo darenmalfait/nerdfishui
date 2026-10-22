@@ -70,7 +70,7 @@ export function CommandInput({ className, ...props }: CommandInputProps) {
 			<CommandPrimitive.Input
 				data-slot="command-input"
 				className={cn(
-					'placeholder:text-foreground-muted py-best-friends rounded-compact flex w-full bg-transparent text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50',
+					'placeholder:text-foreground-muted py-best-friends rounded-compact flex w-full bg-transparent text-sm focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50',
 					className,
 				)}
 				{...props}
@@ -140,7 +140,7 @@ export function CommandItem({ className, ...props }: CommandItemProps) {
 		<CommandPrimitive.Item
 			data-slot="command-item"
 			className={cn(
-				"data-[selected=true]:bg-background-inverted data-[selected=true]:text-foreground-inverted data-[selected=true]:[&_svg:not([class*='text-'])]:text-foreground-inverted [&_svg:not([class*='text-'])]:text-foreground-muted px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+				"data-[selected=true]:bg-background-inverted data-[selected=true]:text-foreground-inverted data-[selected=true]:[&_svg:not([class*='text-'])]:text-foreground-inverted [&_svg:not([class*='text-'])]:text-foreground-muted px-best-friends py-best-friends gap-best-friends relative flex cursor-default items-center text-sm select-none focus-visible:outline-hidden data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}

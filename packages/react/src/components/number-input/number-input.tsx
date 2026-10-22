@@ -1,7 +1,7 @@
 import { NumberField as NumberInputPrimitive } from '@base-ui/react/number-field'
 import { cn, type VariantProps } from '@nerdfish/utils/class'
 import { MinusIcon, MoveHorizontalIcon, PlusIcon } from 'lucide-react'
-import { type ComponentProps, createContext, useContext, useId } from 'react'
+import { type ComponentProps, createContext, use, useId } from 'react'
 import { buttonVariants } from '../button/button'
 import { inputVariants } from '../input/input'
 
@@ -12,7 +12,7 @@ type NumberInputContextType = {
 const NumberInputContext = createContext<NumberInputContextType | null>(null)
 
 const useNumberInput = () => {
-	const context = useContext(NumberInputContext)
+	const context = use(NumberInputContext)
 
 	if (!context) {
 		throw new Error('useNumberInput must be used within a NumberInput')
@@ -40,7 +40,7 @@ export function NumberInput({
 	}
 
 	return (
-		<NumberInputContext.Provider value={{ id: fieldId }}>
+		<NumberInputContext value={{ id: fieldId }}>
 			<NumberInputPrimitive.Root
 				id={fieldId}
 				className={cn('flex flex-col items-start gap-1', className)}
@@ -82,7 +82,7 @@ export function NumberInput({
 					</NumberInputPrimitive.Increment>
 				</NumberInputPrimitive.Group>
 			</NumberInputPrimitive.Root>
-		</NumberInputContext.Provider>
+		</NumberInputContext>
 	)
 }
 

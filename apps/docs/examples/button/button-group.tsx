@@ -80,7 +80,7 @@ export default function ButtonGroupExample() {
 							<DropdownMenuSub>
 								<DropdownMenuSubTrigger>
 									<TagIcon />
-									Label As...
+									Label As…
 								</DropdownMenuSubTrigger>
 								<DropdownMenuSubContent>
 									<DropdownMenuRadioGroup

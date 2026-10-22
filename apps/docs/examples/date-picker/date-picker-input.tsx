@@ -10,7 +10,7 @@ import { CalendarIcon } from 'lucide-react'
 import { useState } from 'react'
 
 export default function DatePickerInputExample() {
-	const [date, setDate] = useState<string | null | undefined>(
+	const [date, setDate] = useState<string | null | undefined>(() =>
 		today(getLocalTimeZone()).toString(),
 	)
 

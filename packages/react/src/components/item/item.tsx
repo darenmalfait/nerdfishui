@@ -55,11 +55,12 @@ export function Item({
 	className,
 	variant = 'default',
 	size = 'default',
-	render = <div />,
+	render,
 	...props
 }: ItemProps): ReactElement {
 	return useRender({
 		render,
+		defaultTagName: 'div',
 		props: {
 			'data-slot': 'item',
 			'data-variant': variant,

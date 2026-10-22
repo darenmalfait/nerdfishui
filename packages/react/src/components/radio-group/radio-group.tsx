@@ -4,7 +4,7 @@ import { Radio as RadioPrimitive } from '@base-ui/react/radio'
 import { RadioGroup as RadioGroupPrimitive } from '@base-ui/react/radio-group'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
 import { CircleIcon } from 'lucide-react'
-import { type ComponentProps, createContext, useContext } from 'react'
+import { type ComponentProps, createContext, use } from 'react'
 import { type InputVariants } from '../input/input'
 
 type SizeVariants = InputVariants['size']
@@ -50,13 +50,13 @@ export function RadioGroup({
 	...props
 }: RadioGroupProps) {
 	return (
-		<RadioGroupContext.Provider value={{ size }}>
+		<RadioGroupContext value={{ size }}>
 			<RadioGroupPrimitive
 				data-slot="radio-group"
 				className={cn('gap-friends grid', className)}
 				{...props}
 			/>
-		</RadioGroupContext.Provider>
+		</RadioGroupContext>
 	)
 }
 
@@ -70,7 +70,7 @@ export function RadioGroupItem({
 	...props
 }: RadioGroupItemProps) {
 	// Use the size from context if not provided at the item level.
-	const { size: contextSize } = useContext(RadioGroupContext)
+	const { size: contextSize } = use(RadioGroupContext)
 	const effectiveSize = size ?? contextSize
 
 	return (

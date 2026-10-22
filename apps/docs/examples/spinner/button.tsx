@@ -8,7 +8,7 @@ export default function SpinnerButtonExample() {
 		<div className="flex flex-col items-center gap-4">
 			<Button disabled size="sm">
 				<Spinner />
-				Loading...
+				Loading…
 			</Button>
 			<Button variant="outline" disabled size="sm">
 				<Spinner />

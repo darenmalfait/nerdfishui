@@ -300,7 +300,7 @@ export default function FiltersExample() {
 		},
 	]
 
-	const [filters, setFilters] = useState<Filter[]>([
+	const [filters, setFilters] = useState<Filter[]>(() => [
 		createFilter('priority', 'contains', ['low', 'medium', 'critical']),
 	])
 

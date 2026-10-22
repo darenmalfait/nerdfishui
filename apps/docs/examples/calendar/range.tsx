@@ -4,10 +4,10 @@ import { Calendar, type DateRange } from '@nerdfish/react/calendar'
 import { useState } from 'react'
 
 export default function CalendarRangeExample() {
-	const [range, setRange] = useState<DateRange | undefined>({
+	const [range, setRange] = useState<DateRange | undefined>(() => ({
 		from: new Date(),
 		to: new Date(),
-	})
+	}))
 
 	return (
 		<div className="max-w-sm">

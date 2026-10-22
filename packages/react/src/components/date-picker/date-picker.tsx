@@ -13,7 +13,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '../popover/popover'
 export type DatePickerPreset = { value: Date; label: string }
 
 function Presets({
-	presets = [],
+	presets,
 	onChange,
 	className,
 }: {
@@ -21,7 +21,7 @@ function Presets({
 	onChange?: (value: Date | undefined) => void
 	className?: string
 }) {
-	if (!presets.length) return null
+	if (!presets?.length) return null
 
 	return (
 		<div className={cn('px-friends flex max-w-62.5 flex-wrap', className)}>

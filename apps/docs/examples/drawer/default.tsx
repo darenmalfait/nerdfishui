@@ -61,7 +61,7 @@ export default function DrawerExample() {
 	const [goal, setGoal] = React.useState(350)
 
 	function onClick(adjustment: number) {
-		setGoal(Math.max(200, Math.min(400, goal + adjustment)))
+		setGoal((prev) => Math.max(200, Math.min(400, prev + adjustment)))
 	}
 
 	return (
@@ -113,12 +113,10 @@ export default function DrawerExample() {
 								<BarChart data={data}>
 									<Bar
 										dataKey="goal"
-										style={
-											{
-												fill: 'var(--color-success)',
-												opacity: 0.9,
-											} as React.CSSProperties
-										}
+										style={{
+											fill: 'var(--color-success)',
+											opacity: 0.9,
+										}}
 									/>
 								</BarChart>
 							</ResponsiveContainer>

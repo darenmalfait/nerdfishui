@@ -3,7 +3,7 @@
 import { cn } from '@nerdfish/utils/class'
 import { OTPInput, OTPInputContext, type RenderProps } from 'input-otp'
 import { MinusIcon } from 'lucide-react'
-import { useContext, type ComponentProps } from 'react'
+import { use, type ComponentProps } from 'react'
 import { inputVariants } from '../input/input'
 
 export type InputOTPProps = ComponentProps<typeof OTPInput>
@@ -44,7 +44,7 @@ export function InputOTPSlot({
 	className,
 	...props
 }: InputOTPSlotProps) {
-	const inputOTPContext: RenderProps | undefined = useContext(OTPInputContext)
+	const inputOTPContext: RenderProps | undefined = use(OTPInputContext)
 
 	const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index] ?? {}
 
@@ -55,7 +55,7 @@ export function InputOTPSlot({
 			className={cn(
 				inputVariants({ size: 'md' }),
 				'relative flex size-12 items-center justify-center',
-				'outline-nonedata-[active=true]:z-10 text-sm shadow-xs transition-all data-[active=true]:ring-[3px]',
+				'text-sm shadow-xs transition focus-visible:outline-none data-[active=true]:z-10 data-[active=true]:ring-[3px]',
 				'data-[active=true]:border-ring data-[active=true]:ring-ring/50 data-[active=true]:aria-invalid:ring-destructive/20 aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive',
 				className,
 			)}

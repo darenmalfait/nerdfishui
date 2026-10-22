@@ -5,7 +5,7 @@ import { type ComponentProps, type ReactElement } from 'react'
 import { Button } from '../button/button'
 
 const attachmentVariants = cva(
-	'group/attachment relative flex w-fit max-w-full min-w-0 shrink-0 flex-wrap rounded-container border border-border bg-background-surface text-foreground outline-none transition-[color,box-shadow] duration-fast focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] has-[>a,>button]:hover:bg-background-muted data-[state=error]:border-destructive/30 data-[state=idle]:border-dashed',
+	'group/attachment relative flex w-fit max-w-full min-w-0 shrink-0 flex-wrap rounded-container border border-border bg-background-surface text-foreground focus-visible:outline-none transition-[color,box-shadow] duration-fast focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] has-[>a,>button]:hover:bg-background-muted data-[state=error]:border-destructive/30 data-[state=idle]:border-dashed',
 	{
 		variants: {
 			size: {
@@ -183,7 +183,10 @@ export function AttachmentTrigger({
 		props: mergeProps<'button'>(
 			{
 				type: render ? type : (type ?? 'button'),
-				className: cn('absolute inset-0 z-10 outline-none', className),
+				className: cn(
+					'absolute inset-0 z-10 focus-visible:outline-none',
+					className,
+				),
 			},
 			props,
 		),

@@ -212,7 +212,7 @@ export function NavigationMenuLink({
 			data-slot="navigation-menu-link"
 			className={cn(
 				'rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
-				"data-active:focus:bg-background-muted data-active:hover:bg-background-muted data-active:bg-background-muted/50 data-active:text-foreground hover:bg-background-muted hover:text-foreground focus:bg-background-muted focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground gap-bff p-popover flex flex-col text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+				"data-active:focus:bg-background-muted data-active:hover:bg-background-muted data-active:bg-background-muted/50 data-active:text-foreground hover:bg-background-muted hover:text-foreground focus:bg-background-muted focus:text-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground gap-bff p-popover flex flex-col text-sm transition outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
 				className,
 			)}
 			{...props}

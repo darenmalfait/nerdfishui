@@ -13,7 +13,7 @@ import {
 	type ReactNode,
 	createContext,
 	useCallback,
-	useContext,
+	use,
 	useMemo,
 	useState,
 } from 'react'
@@ -104,7 +104,7 @@ const FilterContext = createContext<FilterContextValue>({
 	allowMultiple: true,
 })
 
-const useFilterContext = () => useContext(FilterContext)
+const useFilterContext = () => use(FilterContext)
 
 const filterSizeVariants = cva(['gap-popover-compact'], {
 	variants: {
@@ -121,10 +121,9 @@ const filterSizeVariants = cva(['gap-popover-compact'], {
 // Reusable input variant component for consistent styling
 const filterInputVariants = cva(
 	[
-		'transition shrink-0 outline-none text-foreground relative flex items-center',
+		'transition shrink-0 focus-visible:outline-none text-foreground relative flex items-center',
 		'has-[[data-slot=filters-input]:focus-visible]:ring-ring/30',
 		'has-[[data-slot=filters-input]:focus-visible]:border-ring',
-		'has-[[data-slot=filters-input]:focus-visible]:outline-none',
 		'has-[[data-slot=filters-input]:focus-visible]:ring-[3px]',
 		'has-[[data-slot=filters-input]:focus-visible]:z-1',
 		'has-[[data-slot=filters-input]:[aria-invalid=true]]:border',
@@ -542,7 +541,7 @@ function FilterInput<T = unknown>({
 
 		// Call onInputChange if provided (for blur-based filter updates)
 		if (onInputChange) {
-			onInputChange(e as ChangeEvent<HTMLInputElement>)
+			onInputChange(e)
 		}
 
 		// Call the original onBlur if provided
@@ -574,7 +573,7 @@ function FilterInput<T = unknown>({
 			const syntheticEvent = {
 				...e,
 				target: e.target as HTMLInputElement,
-				currentTarget: e.currentTarget as HTMLInputElement,
+				currentTarget: e.currentTarget,
 			} as ChangeEvent<HTMLInputElement>
 			onInputChange(syntheticEvent)
 		}
@@ -606,7 +605,7 @@ function FilterInput<T = unknown>({
 
 			<div className="flex w-full items-stretch">
 				<input
-					className="w-full outline-none"
+					className="w-full focus-visible:outline-none"
 					aria-invalid={!isValid}
 					aria-describedby={
 						!isValid && validationMessage
@@ -661,7 +660,7 @@ interface FilterRemoveButtonProps
 
 function FilterRemoveButton({
 	className,
-	icon = <XIcon />,
+	icon,
 	...props
 }: FilterRemoveButtonProps) {
 	const context = useFilterContext()
@@ -680,7 +679,7 @@ function FilterRemoveButton({
 			)}
 			{...props}
 		>
-			{icon}
+			{icon ?? <XIcon />}
 		</button>
 	)
 }
@@ -1209,7 +1208,6 @@ function FilterValueSelector<T = unknown>({
 				case 'daterange':
 				case 'date':
 				case 'number':
-				default:
 					return 'text'
 			}
 		}
@@ -1235,7 +1233,6 @@ function FilterValueSelector<T = unknown>({
 				case 'numberrange':
 				case 'daterange':
 				case 'date':
-				default:
 					return undefined
 			}
 		}
@@ -1865,7 +1862,7 @@ export function Filters<T = unknown>({
 	}, [fields, filters, allowMultiple])
 
 	return (
-		<FilterContext.Provider
+		<FilterContext
 			value={{
 				variant,
 				size,
@@ -1935,7 +1932,7 @@ export function Filters<T = unknown>({
 												selectedFieldForOptions.type === 'select'
 											addFilterWithOption(
 												selectedFieldForOptions,
-												values as unknown[],
+												values,
 												shouldClosePopover,
 											)
 										}}
@@ -2139,6 +2136,6 @@ export function Filters<T = unknown>({
 					)
 				})}
 			</div>
-		</FilterContext.Provider>
+		</FilterContext>
 	)
 }

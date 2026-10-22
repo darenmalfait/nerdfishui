@@ -4,7 +4,7 @@ import { ChevronDownIcon } from 'lucide-react'
 import {
 	type ComponentProps,
 	createContext,
-	useContext,
+	use,
 	useMemo,
 	useState,
 } from 'react'
@@ -111,7 +111,7 @@ export function PhoneInput({
 }
 
 function InputComponent({ className, ...props }: ComponentProps<typeof Input>) {
-	const { variant, size } = useContext(PhoneInputContext)
+	const { variant, size } = use(PhoneInputContext)
 	return (
 		<Input
 			variant={variant}
@@ -143,7 +143,7 @@ function CountrySelect({
 		onChange,
 	})
 	const { variant, size, popupClassName, scrollAreaClassName } =
-		useContext(PhoneInputContext)
+		use(PhoneInputContext)
 	const [searchValue, setSearchValue] = useState('')
 
 	const filteredCountries = useMemo(() => {

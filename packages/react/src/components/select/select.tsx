@@ -96,7 +96,7 @@ export function SelectContent({
 	return (
 		<SelectPortal>
 			<SelectPositioner
-				className="outline-none select-none"
+				className="select-none focus-visible:outline-none"
 				side={side}
 				sideOffset={sideOffset}
 				alignItemWithTrigger={position === 'item-aligned'}
@@ -139,7 +139,7 @@ export function SelectItem({ className, children, ...props }: SelectItemProps) {
 		<SelectPrimitive.Item
 			data-slot="select-item"
 			className={cn(
-				"data-highlighted:bg-background-inverted data-highlighted:text-foreground-inverted data-highlighted:[&_svg:not([class*='text-'])]:text-foreground-inverted [&_svg:not([class*='text-'])]:text-foreground-muted gap-best-friends *:[span]:last:gap-best-friends pl-best-friends relative flex w-full cursor-default items-center pr-8 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center",
+				"data-highlighted:bg-background-inverted data-highlighted:text-foreground-inverted data-highlighted:[&_svg:not([class*='text-'])]:text-foreground-inverted [&_svg:not([class*='text-'])]:text-foreground-muted gap-best-friends *:[span]:last:gap-best-friends pl-best-friends relative flex w-full cursor-default items-center pr-8 text-sm select-none focus-visible:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center",
 				'py-best-friends rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
 				className,
 			)}

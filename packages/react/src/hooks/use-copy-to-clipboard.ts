@@ -11,7 +11,9 @@ export function useCopyToClipboard({
 		null,
 	)
 	const onErrorRef = React.useRef(onError)
-	onErrorRef.current = onError
+	React.useLayoutEffect(() => {
+		onErrorRef.current = onError
+	})
 
 	const handleCopy = React.useCallback(
 		async (text: string, resetDelay?: number) => {

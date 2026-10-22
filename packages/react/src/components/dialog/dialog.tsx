@@ -31,7 +31,7 @@ export function DialogOverlay({ className, ...props }: DialogOverlayProps) {
 		<DialogPrimitive.Backdrop
 			data-slot="dialog-overlay"
 			className={cn(
-				'duration-fast fixed inset-0 bg-black/50 transition-all data-ending-style:opacity-0 data-starting-style:opacity-0',
+				'duration-fast fixed inset-0 bg-black/50 transition-opacity data-ending-style:opacity-0 data-starting-style:opacity-0',
 				className,
 			)}
 			{...props}
@@ -57,7 +57,7 @@ export function DialogContent({
 				data-slot="dialog-content"
 				className={cn(
 					'bg-popover text-popover-contrast fixed grid w-full sm:max-w-[calc(100%-2rem)]',
-					'p-friends gap-friends rounded-container duration-fast border-border border shadow-lg outline-none sm:max-w-128 sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
+					'p-friends gap-friends rounded-container duration-fast border-border border shadow-lg focus-visible:outline-none sm:max-w-128 sm:scale-[calc(1-0.1*var(--nested-dialogs))]',
 					'fixed bottom-0 w-full sm:top-[50%] sm:bottom-auto sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
 					'duration-fast',
 					'data-starting-style:translate-y-full data-starting-style:opacity-0',
@@ -70,7 +70,7 @@ export function DialogContent({
 			>
 				{children}
 				{showCloseButton ? (
-					<DialogClose className="ring-offset-popover focus:ring-ring text-foreground-muted rounded-base absolute top-3 right-3 opacity-50 transition-opacity hover:opacity-100 focus:ring-[3px] focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+					<DialogClose className="ring-offset-popover focus-visible:ring-ring text-foreground-muted rounded-base absolute top-3 right-3 opacity-50 outline-hidden transition-opacity hover:opacity-100 focus-visible:ring-[3px] focus-visible:ring-offset-2 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
 						<XIcon />
 						<span className="sr-only">Close</span>
 					</DialogClose>

@@ -19,7 +19,7 @@ export function Progress({ className, children, ...props }: ProgressProps) {
 			>
 				<ProgressPrimitive.Indicator
 					data-slot="progress-indicator"
-					className="bg-background-inverted duration-fast block h-full w-full transition-all"
+					className="bg-background-inverted duration-fast block h-full w-full transition-[width]"
 				/>
 			</ProgressPrimitive.Track>
 			{children}
@@ -102,7 +102,7 @@ export function ProgressCircle({
 					strokeDashoffset={offset}
 					strokeLinecap="round"
 					className={cn(
-						'text-primary duration-medium-min ease-standard transition-all',
+						'text-primary duration-medium-min ease-standard transition-[stroke-dashoffset]',
 						indicatorClassName,
 					)}
 				/>

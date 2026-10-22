@@ -1,6 +1,6 @@
 import { Switch as SwitchPrimitive } from '@base-ui/react/switch'
 import { cva, cn, type VariantProps } from '@nerdfish/utils/class'
-import { createContext, useContext, type ComponentProps } from 'react'
+import { createContext, use, type ComponentProps } from 'react'
 import { type InputVariants } from '../input/input'
 
 // Define a context for `size` state
@@ -9,7 +9,7 @@ const SwitchContext = createContext<InputVariants | null>({
 })
 
 const useSwitchContext = () => {
-	const context = useContext(SwitchContext)
+	const context = use(SwitchContext)
 
 	if (!context) {
 		throw new Error('SwitchThumb must be used within a Switch component')
@@ -28,7 +28,7 @@ export const switchVariants = cva<{
 	`
     peer data-[checked]:bg-success data-[unchecked]:bg-background-inverted/15 focus-visible:border-ring focus-visible:ring-ring/50  
     aria-invalid:border-destructive/60 aria-invalid:ring-destructive/10 
-    inline-flex shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] 
+    inline-flex shrink-0 items-center rounded-full border border-transparent shadow-xs transition outline-none focus-visible:ring-[3px] 
     disabled:cursor-not-allowed disabled:opacity-50 
   `,
 	{
@@ -98,7 +98,7 @@ export function Switch({
 }: SwitchProps) {
 	const effectiveSize = size ?? 'md'
 	return (
-		<SwitchContext.Provider value={{ size: effectiveSize }}>
+		<SwitchContext value={{ size: effectiveSize }}>
 			<SwitchPrimitive.Root
 				data-slot="switch"
 				className={cn(switchVariants({ size: effectiveSize }), className)}
@@ -106,6 +106,6 @@ export function Switch({
 			>
 				{children ?? <SwitchThumb />}
 			</SwitchPrimitive.Root>
-		</SwitchContext.Provider>
+		</SwitchContext>
 	)
 }

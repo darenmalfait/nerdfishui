@@ -132,7 +132,7 @@ export function ComboboxPositioner({
 	return (
 		<ComboboxPrimitive.Positioner
 			data-slot="combobox-positioner"
-			className={cn('outline-none', className)}
+			className={cn('focus-visible:outline-none', className)}
 			{...props}
 		/>
 	)
@@ -201,7 +201,7 @@ export function ComboboxItem({ className, ...props }: ComboboxItemProps) {
 			className={cn(
 				'relative flex cursor-default items-center',
 				'py-best-friends rounded-[calc(var(--radius-popover)-theme(padding.popover-compact))]',
-				'text-foreground gap-best-friends relative items-center ps-7 pe-2 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50',
+				'text-foreground gap-best-friends relative items-center ps-7 pe-2 text-sm transition-colors select-none focus-visible:outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50',
 				'[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-4 [&_svg:not([role=img]):not([class*=text-])]:opacity-60',
 				'data-highlighted:text-foreground-inverted data-highlighted:bg-background-inverted data-highlighted:[&_svg:not([role=img])]:text-foreground-inverted',
 				className,
@@ -291,7 +291,7 @@ export function ComboboxClear({
 					data-slot="combobox-clear"
 					className={cn(
 						'ring-offset-background rounded-base absolute end-6 top-1/2 -translate-y-1/2 cursor-pointer opacity-70',
-						'focus:ring-ring opacity-60 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none',
+						'focus-visible:ring-ring opacity-60 transition-opacity outline-none hover:opacity-100 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none',
 						'data-disabled:pointer-events-none',
 						className,
 					)}
@@ -316,7 +316,7 @@ export function ComboboxIcon({
 			data-slot="combobox-icon"
 			className={cn(
 				'ring-offset-background rounded-base absolute end-2 top-1/2 -translate-y-1/2 cursor-pointer opacity-70 transition-opacity',
-				'focus:ring-ring opacity-60 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none',
+				'focus-visible:ring-ring opacity-60 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none',
 				'data-disabled:pointer-events-none',
 				className,
 			)}
@@ -371,7 +371,7 @@ export function ComboboxChips({
 				'**:data-[slot=combobox-input]:px-0 **:data-[slot=combobox-input]:py-0',
 				'**:data-[slot=combobox-input]:min-h-0 **:data-[slot=combobox-input]:flex-1',
 				'**:data-[slot=combobox-input]:rounded-none **:data-[slot=combobox-input]:border-0 **:data-[slot=combobox-input]:shadow-none',
-				'**:data-[slot=combobox-input]:ring-0 **:data-[slot=combobox-input]:outline-none',
+				'**:data-[slot=combobox-input]:ring-0 **:data-[slot=combobox-input]:focus-visible:outline-none',
 				inputVariants({ variant, size }),
 				'gap-bff flex flex-wrap items-center',
 				className,

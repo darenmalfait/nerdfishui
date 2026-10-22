@@ -8,7 +8,8 @@ import {
 	createContext,
 	type ReactElement,
 	useCallback,
-	useContext,
+	use,
+	useLayoutEffect,
 	useMemo,
 	useRef,
 	useState,
@@ -55,7 +56,7 @@ type SidebarContextProps = {
 const SidebarContext = createContext<SidebarContextProps | null>(null)
 
 export function useSidebar() {
-	const context = useContext(SidebarContext)
+	const context = use(SidebarContext)
 	if (!context) {
 		throw new Error('useSidebar must be used within a SidebarProvider.')
 	}
@@ -85,11 +86,13 @@ export function SidebarProvider({
 	const [_open, _setOpen] = useState(defaultOpen)
 	const open = openProp ?? _open
 	const openRef = useRef(open)
-	openRef.current = open
 	const setOpenPropRef = useRef(setOpenProp)
-	setOpenPropRef.current = setOpenProp
 	const isMobileRef = useRef(isMobile)
-	isMobileRef.current = isMobile
+	useLayoutEffect(() => {
+		openRef.current = open
+		setOpenPropRef.current = setOpenProp
+		isMobileRef.current = isMobile
+	})
 
 	const setOpen = useCallback(
 		(value: boolean | ((value: boolean) => boolean)) => {
@@ -112,9 +115,6 @@ export function SidebarProvider({
 		return isMobileRef.current ? setOpenMobile((o) => !o) : setOpen((o) => !o)
 	}, [setOpen])
 
-	const toggleSidebarRef = useRef(toggleSidebar)
-	toggleSidebarRef.current = toggleSidebar
-
 	// Adds a keyboard shortcut to toggle the sidebar.
 	useMountEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
@@ -123,7 +123,7 @@ export function SidebarProvider({
 				(event.metaKey || event.ctrlKey)
 			) {
 				event.preventDefault()
-				toggleSidebarRef.current()
+				toggleSidebar()
 			}
 		}
 
@@ -149,7 +149,7 @@ export function SidebarProvider({
 	)
 
 	return (
-		<SidebarContext.Provider value={contextValue}>
+		<SidebarContext value={contextValue}>
 			<TooltipProvider>
 				<div
 					data-slot="sidebar-wrapper"
@@ -169,7 +169,7 @@ export function SidebarProvider({
 					{children}
 				</div>
 			</TooltipProvider>
-		</SidebarContext.Provider>
+		</SidebarContext>
 	)
 }
 
@@ -318,7 +318,7 @@ export function SidebarRail({ className, ...props }: SidebarRailProps) {
 			onClick={toggleSidebar}
 			title="Toggle Sidebar"
 			className={cn(
-				'hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:left-1/2 after:w-0.5 sm:flex',
+				'hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:left-1/2 after:w-0.5 sm:flex',
 				'in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize',
 				'[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
 				'hover:group-data-[collapsible=offcanvas]:bg-sidebar group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full',
@@ -430,11 +430,12 @@ export function SidebarGroup({ className, ...props }: SidebarGroupProps) {
 export type SidebarGroupLabelProps = useRender.ComponentProps<'div'>
 export function SidebarGroupLabel({
 	className,
-	render = <div />,
+	render,
 	...props
 }: SidebarGroupLabelProps): ReactElement {
 	return useRender({
 		render,
+		defaultTagName: 'div',
 		props: {
 			'data-slot': 'sidebar-group-label',
 			'data-sidebar': 'group-label',
@@ -541,7 +542,7 @@ export function SidebarMenuButton({
 	isActive = false,
 	variant = 'default',
 	size = 'default',
-	render = <button />,
+	render,
 	tooltip,
 	className,
 	...props
@@ -550,6 +551,7 @@ export function SidebarMenuButton({
 
 	const button: any = useRender({
 		render,
+		defaultTagName: 'button',
 		props: {
 			'data-slot': 'sidebar-menu-button',
 			'data-sidebar': 'menu-button',
@@ -588,12 +590,13 @@ export type SidebarMenuActionProps = useRender.ComponentProps<'button'> & {
 }
 export function SidebarMenuAction({
 	className,
-	render = <button />,
+	render,
 	showOnHover = false,
 	...props
 }: SidebarMenuActionProps): ReactElement {
 	return useRender({
 		render,
+		defaultTagName: 'button',
 		props: {
 			'data-slot': 'sidebar-menu-action',
 			'data-sidebar': 'menu-action',
@@ -718,13 +721,14 @@ export type SidebarMenuSubButtonProps = useRender.ComponentProps<'a'> & {
 export function SidebarMenuSubButton({
 	size = 'md',
 	isActive = false,
-	render = <a />,
+	render,
 	className,
 	ref,
 	...props
 }: SidebarMenuSubButtonProps): ReactElement {
 	return useRender({
 		render,
+		defaultTagName: 'a',
 		props: {
 			'data-slot': 'sidebar-menu-sub-button',
 			'data-sidebar': 'menu-sub-button',

@@ -5,13 +5,7 @@ import {
 	type SliderRootChangeEventDetails,
 } from '@base-ui/react/slider'
 import { cn } from '@nerdfish/utils/class'
-import {
-	type ComponentProps,
-	type ReactNode,
-	useCallback,
-	useEffect,
-	useState,
-} from 'react'
+import { type ComponentProps, type ReactNode, useState } from 'react'
 import {
 	Tooltip,
 	TooltipContent,
@@ -36,26 +30,22 @@ export function Slider({
 	children,
 	...props
 }: SliderProps) {
-	const [internalValues, setInternalValues] = useState<number[]>(
-		Array.isArray(value)
-			? value
-			: Array.isArray(defaultValue)
-				? defaultValue
-				: [min, max],
-	)
-
-	useEffect(() => {
-		if (value !== undefined) {
-			setInternalValues(Array.isArray(value) ? value : [value])
-		}
-	}, [value])
+	const [uncontrolledValues, setUncontrolledValues] = useState<
+		readonly number[]
+	>(Array.isArray(defaultValue) ? defaultValue : [min, max])
+	const internalValues =
+		value === undefined
+			? uncontrolledValues
+			: Array.isArray(value)
+				? value
+				: [value]
 
 	const handleValueChange = (
 		newValue: number | readonly number[],
 		eventDetails: SliderRootChangeEventDetails,
 	) => {
 		const values = Array.isArray(newValue) ? [...newValue] : [newValue]
-		setInternalValues(values)
+		setUncontrolledValues(values)
 		if (onValueChange) {
 			onValueChange(values, {
 				...eventDetails,
@@ -67,25 +57,12 @@ export function Slider({
 	const [showTooltipState, setShowTooltipState] = useState(false)
 
 	const handlePointerDown = () => {
-		if (showTooltip) {
-			setShowTooltipState(true)
-		}
+		if (!showTooltip) return
+		setShowTooltipState(true)
+		document.addEventListener('pointerup', () => setShowTooltipState(false), {
+			once: true,
+		})
 	}
-
-	const handlePointerUp = useCallback(() => {
-		if (showTooltip) {
-			setShowTooltipState(false)
-		}
-	}, [showTooltip])
-
-	useEffect(() => {
-		if (showTooltip) {
-			document.addEventListener('pointerup', handlePointerUp)
-			return () => {
-				document.removeEventListener('pointerup', handlePointerUp)
-			}
-		}
-	}, [showTooltip, handlePointerUp])
 
 	const renderThumb = (thumbValue: number, index: number) => {
 		const thumb = (
@@ -93,7 +70,7 @@ export function Slider({
 				key={index}
 				data-slot="slider-thumb"
 				className={cn(
-					'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
+					'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
 				)}
 				onPointerDown={handlePointerDown}
 			/>
@@ -151,7 +128,7 @@ export function SliderThumb({ className, ...props }: SliderThumbProps) {
 		<SliderPrimitive.Thumb
 			data-slot="slider-thumb"
 			className={cn(
-				'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] outline-none hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
+				'border-info bg-background ring-ring/20 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
 				className,
 			)}
 			{...props}
